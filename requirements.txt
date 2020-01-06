@@ -1,0 +1,8 @@
+pyyaml
+Jinja2
+mkdocs
+click-man
+mkdocs-macros-plugin
+mypy
+networkx
+pydot

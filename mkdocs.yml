@@ -1,0 +1,38 @@
+site_name: map4sci
+site_url: https://cns-iu.github.io/map4sci/
+site_description: Multi-level tree based approach for interactive graph visualization with semantic zoom (ZMLT)
+site_author: Cyberinfrastructure for Network Science Center & University of Arizona
+
+repo_url: https://github.com/cns-iu/map4sci/
+
+# Set edit_uri to "" to remove the "Edit on GitHub" link
+# edit_uri: ""
+
+use_directory_urls: false
+
+nav:
+  - About: index.md
+  - Change Log: CHANGELOG.md
+
+plugins:
+  - search
+  - macros
+
+# Module defining additional variables/macros for jinja2 processing
+python_module: mkdocs_macros_extras
+
+extra:
+  source_prefix: 'https://github.com/cns-iu/map4sci/blob/develop/'
+
+  # MkPDFs doesn't work with readthedocs theme and
+  # the generated schema html. So for now, we'll
+  # turn PDF generation off.
+  # TODO: Report bugs to mkpdfs-mkdocs repo.
+  # - mkpdfs:
+  #     output_path: pdf/a2agc-documentation.pdf
+
+theme: readthedocs
+
+markdown_extensions:
+  - toc:
+      permalink: True
