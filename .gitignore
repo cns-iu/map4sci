@@ -98,9 +98,6 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# mkdocs documentation
-/site
-
 # mypy
 .mypy_cache/
 
@@ -118,13 +115,13 @@ env.sh
 
 # Schemaspy-generated schema docs
 /docs/schema
-/docs/dataset/tables/*.md
 
 # Raw Data
 /raw-data
 
 # Scratch code (not to be committed)
 /scratch
+/tmp
 
 # Generated documentation site
 /site
@@ -134,3 +131,7 @@ node_modules
 
 # Visual Studio Code
 .vscode/
+
+# Third party/external library build files
+/libs/eba/kmeans
+/lib/eba/build/
