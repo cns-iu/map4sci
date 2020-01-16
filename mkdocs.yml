@@ -17,9 +17,7 @@ nav:
 plugins:
   - search
   - macros
-
-# Module defining additional variables/macros for jinja2 processing
-python_module: mkdocs_macros_extras
+      module_name: src.mkdocs_macros
 
 extra:
   source_prefix: 'https://github.com/cns-iu/map4sci/blob/develop/'
