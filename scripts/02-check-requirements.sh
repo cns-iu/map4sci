@@ -2,13 +2,17 @@
 source constants.sh
 set -ev
 
+abort () {
+  echo >&2 "$1 Aborting!";
+  exit 1;
+}
 
 prog_exists () {
-  # From https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script
-  command -v $1 >/dev/null 2>&1 || {
-    echo >&2 "$1 must be installed. Aborting!";
-    exit 1;
-  }
+  for prog in "$@"
+  do
+    # From https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script
+    command -v "$prog" >/dev/null 2>&1 || abort "$prog must be installed."
+  done
 }
 
 pymodule_exists () {
@@ -17,27 +21,22 @@ pymodule_exists () {
   fi
   for mod in "$@"
   do
-    if [[ "$pymodules" != *"$mod"* ]]; then
-      echo >&2 "Missing python module $mod. Aborting!";
-      exit 1;
-    fi
+    [[ "$pymodules" == *"$mod"* ]] || abort "Missing python module $mod."
   done
 }
 
 # Python
-prog_exists python3
-prog_exists pip3
+prog_exists python3 pip3
 
 pymodule_exists mkdocs click-man mkdocs-macros-plugin
-pymodule_exists numpy networkx pygraphviz
+pymodule_exists numpy pandas geojson
+pymodule_exists networkx pygraphviz
 
 # Java
 prog_exists java
 
 # Graphviz & other graph tools
-prog_exists dot
-prog_exists sfdp
-prog_exists neato
+prog_exists dot sfdp neato
 prog_exists gvmap
 
 # Other libraries
