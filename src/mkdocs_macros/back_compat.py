@@ -1,4 +1,5 @@
 import json
+import csv
 
 # Utility
 def _multiline(*lines):
@@ -35,6 +36,34 @@ def declare_variables(variables, macro):
         format_sql(text.read()),
         source_tag('SQL', file, prefix) if source else None
       )
+  
+  # Convert CSV to Markdown
+  @macro
+  def include_csv_to_md(file):
+    md_header = "|"
+    with open(file) as f:
+
+        rows = list(csv.reader(f))
+        header = rows[0]
+        lines = rows[1:]
+
+        # Header
+        md_header += '|'.join(header) + "|\n"
+
+        # Divider between header and data
+        md_divider = "|"
+        for _ in range(len(header)):
+            md_divider += '-------|'
+        md_divider += "\n"
+
+        # CSV data
+        md_data = ""
+        for line in lines:
+            md_data += f'|{"|".join(line)}   |\n'
+
+        # Complete markdown
+        markdown = md_header + md_divider + md_data
+        return markdown
 
   # Mav Embed functionality
   variables['mav_embed_script_tags'] = _multiline(
@@ -75,34 +104,30 @@ def declare_variables(variables, macro):
 
   # Vega functionality
   variables['vega_script_tags'] = _multiline(
-    '<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>'
-    '<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>'
-    '<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>'
+    '<script src="https://cdn.jsdelivr.net/npm/vega@5.4.0"></script>'
+    '<script src="https://cdn.jsdelivr.net/npm/vega-lite@3.3.0"></script>'
+    '<script src="https://cdn.jsdelivr.net/npm/vega-embed@4.2.0"></script>'
   )
 
   @macro
-  def include_vega(spec, opt = None):
+  def include_vega(spec):
     vid = unique('vega-embed-id')
     json_spec = json.dumps(spec, separators=(',', ':'))
-    opts = { 'rendered': 'canvas', 'actions': False, **(opt or {}) }
-    json_opts = json.dumps(opts, separators=(',', ':'))
-
     return _multiline(
       f'<div id="{ vid }"></div>',
       f'<script type="text/javascript">',
-      f'  vegaEmbed("#{ vid }", JSON.parse(\'{ json_spec }\'), JSON.parse(\'{ json_opts }\'));',
+      f'  var opt = {{ "renderer": "canvas", "actions": true }};',
+      f'  vegaEmbed("#{ vid }", JSON.parse(\'{ json_spec }\'), opt);',
       f'</script>'
     )
 
   @macro
-  def include_vega_ext(url, opt = None):
+  def include_vega_ext(url):
     vid = unique('vega-embed-id')
-    opts = { 'renderer': 'canvas', 'actions': False, **(opt or {}) }
-    json_opts = json.dumps(opts, separators=(',', ':'))
-
     return _multiline(
       f'<div id="{ vid }"></div>',
       f'<script type="text/javascript">',
-      f'  vegaEmbed("#{ vid }", "{ url }", JSON.parse(\'{ json_opts }\'));',
+      f'  var opt = {{ "renderer": "canvas", "actions": true }};',
+      f'  vegaEmbed("#{ vid }", "{ url }", opt);',
       f'</script>'
     )
