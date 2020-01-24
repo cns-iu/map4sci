@@ -4,6 +4,13 @@ from typing import TYPE_CHECKING
 
 
 def run_original(args: argparse.Namespace) -> None:
+    """Runs quality measurements using the original algorithms.
+
+    Parameters
+    ----------
+    args : argparse.Namespace
+        Metrics configuration arguments.
+    """
     metrics = []
     if args.crossings:
         metrics.append('cr')

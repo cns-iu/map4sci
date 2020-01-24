@@ -39,5 +39,8 @@ prog_exists java
 prog_exists dot sfdp neato
 prog_exists gvmap
 
+# Nodejs tools
+prog_exists node parcel
+
 # Other libraries
-prog_exists libs/eba/kmeans
+prog_exists libs/eba/kmeans # Build script: 00x-build-libs.sh
