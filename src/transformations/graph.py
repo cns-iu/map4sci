@@ -1,7 +1,7 @@
 import networkx as nx
 import math
 
-import vertices as vx
+from src.graph import vertex as vx
 
 def translate_graph(graph: nx.Graph, translation_dx: float, translation_dy: float) -> nx.Graph:
 	"""Translated the given graph
@@ -22,7 +22,7 @@ def translate_graph(graph: nx.Graph, translation_dx: float, translation_dy: floa
 	""" 
 
 	for currVertex in nx.nodes(graph):
-		vx.vertex.shift_vertex(graph.node[currVertex], translation_dx, translation_dy)
+		vx.shift_vertex(graph.nodes[currVertex], translation_dx, translation_dy)
 
 	return graph
 
@@ -45,11 +45,11 @@ def scale(graph: nx.Graph, scaling_factor: float) -> nx.Graph:
 	# NOTE: In original impored.py it was tranlated too along with scalling 
 	# translate_graph(G, min_x, min_y)
 	for currVertex in nx.nodes(graph):
-		v = graph.node[currVertex]		
-		v_x, v_y = vx.vertex.get_coordinate(v)
+		v = graph.nodes[currVertex]		
+		v_x, v_y = vx.get_coordinate(v)
 		v_x_scaled = v_x * scaling_factor
 		v_y_scaled = v_y * scaling_factor
-		vx.vertex.set_coordinate(v, v_x_scaled, v_y_scaled)
+		vx.set_coordinate(v, v_x_scaled, v_y_scaled)
 
 	return graph
 

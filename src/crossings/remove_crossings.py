@@ -3,9 +3,9 @@ import sys
 import networkx as nx
 from networkx.drawing.nx_agraph import read_dot
 
-import vertices as vx
-from graph import crossings
-from transformations import graph as graph_transformations
+import src.graph.vertex as vx
+from src.graph import crossings
+from src.transformations import graph as graph_transformations
 
 
 def remove_crossings(graph):
@@ -41,7 +41,7 @@ def remove_crossings(graph):
 				break
 
 		# Translating the graph for better scaling
-		translation_dx, translation_dy =  vx.vertex.get_cordinate(graph.nodes[main_vertex])
+		translation_dx, translation_dy =  vx.get_coordinate(graph.nodes[main_vertex])
 		graph_transformations.translate_graph(graph, -translation_dx, -translation_dy)
 
 
@@ -66,6 +66,6 @@ def remove_crossings(graph):
 
 if __name__ == '__main__':
 
-	graph_path  = sys.argv[0]
-	G = nx.Graph(read_dot(graph_path))
-	remove_crossings(G)
+	graph_path  = sys.argv[1]
+	graph = read_dot(graph_path)
+	remove_crossings(graph)

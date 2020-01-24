@@ -1,7 +1,7 @@
 import math
 import networkx as nx
 
-import vertex as vx
+import src.graph.vertex as vx
 
 
 def avg_length(G: nx.Graph) -> float:
@@ -23,8 +23,8 @@ def avg_length(G: nx.Graph) -> float:
     for edge in G.edges():
 
         s,t = edge
-        s = G.node[s]
-        t = G.node[t]
+        s = G.nodes[s]
+        t = G.nodes[t]
 
         x_source1, y_source1  = vx.get_coordinate(s)
         x_target1, y_target1 = vx.get_coordinate(t)
@@ -81,7 +81,7 @@ def get_orientation(px, py, qx, qy, rx, ry):
  # for details of below formula.
 	val = (qy - py) * (rx - qx) - (qx - px) * (ry - qy)
 
-	if (val == 0):return 0
+	if (val == 0): return 0
 
 	# clock or counterclock wise
 	if (val > 0):
@@ -90,7 +90,7 @@ def get_orientation(px, py, qx, qy, rx, ry):
 		return 2
 
 def is_on_segment(px, py, qx, qy, rx, ry):
-	return qx <= max(px, rx) and qx >= min(px, rx) and qy <= max(py, ry) and qy >= min(py, ry):
+	return qx <= max(px, rx) and qx >= min(px, rx) and qy <= max(py, ry) and qy >= min(py, ry)
 
 def do_segments_intersect(p1x, p1y, q1x, q1y, p2x, p2y, q2x, q2y):
  # Find the four orientations needed for general and

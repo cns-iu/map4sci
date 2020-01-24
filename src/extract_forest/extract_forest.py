@@ -1,9 +1,11 @@
-import networkx as nx
+import argparse
 import os
 import sys
-from networkx.drawing.nx_agraph import write_dot
+
+import networkx as nx
 from networkx.drawing.nx_agraph import read_dot as nx_read_dot
-import argparse
+from networkx.drawing.nx_agraph import write_dot
+
 
 def extract(layer1: nx.Graph, layer2: nx.Graph) -> nx.Graph:
 	"""Takes in two graphs and returns the tree.
@@ -40,18 +42,15 @@ if __name__ == "__main__":
 	args = parser.parse_args()
 
 	files = os.listdir(args.path_to_layers)
-	print(files)	
 	for i in range(len(files)-1):
 
 		curr_file_name = files[i]
 		next_file_name = files[i+1]
 
 		layer1 = nx_read_dot(f'{args.path_to_layers}/{curr_file_name}')
-		layer2 = nx_read_dot(f'{args.path_to_layers}/{curr_file_name}')
+		layer2 = nx_read_dot(f'{args.path_to_layers}/{next_file_name}')
 
 		forest = extract(layer1, layer2)
 		layer2_name = os.path.basename(next_file_name).split(".")[0]
 
 		write_dot(forest, f'{args.output_path}/{layer2_name}_forest.dot')
-
-

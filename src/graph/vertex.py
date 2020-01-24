@@ -1,9 +1,9 @@
 
-from typing import List
+from typing import Tuple
 import networkx as nx
 import math
 
-Coordinates = List[float, float]
+Coordinates = Tuple[float, float]
 
 def get_coordinate(vertex) -> Coordinates:
 	"""Get the x, y coordinates for the given vertex
@@ -19,7 +19,7 @@ def get_coordinate(vertex) -> Coordinates:
 	"""	
 	x, y = vertex['pos'].split(',')
 
-	return [float(x), float(y)]
+	return float(x), float(y)
 
 
 def set_coordinate(vertex, x: float, y: float) -> None:
@@ -70,7 +70,7 @@ def get_Angle(x1: float, y1: float, x2: float, y2: float) -> float:
 	yDiff = y2 - y1
 	return math.degrees(math.atan2(yDiff, xDiff))
 
-def get_sectors_angles(graph: nx.Graph, commonVertex) -> float:
+def get_sectors_angle(graph: nx.Graph, commonVertex) -> float:
 
     angle_dict = dict()
 
@@ -111,7 +111,6 @@ def get_sectors_angles(graph: nx.Graph, commonVertex) -> float:
         v1_id = angle_dict[first_slope][0]
         v2_id = angle_dict[next_slope][0]
 
-        center = graph.nodes[commonVertex]
         v1 = graph.nodes[v1_id]
         v2 = graph.nodes[v2_id]
 
@@ -138,19 +137,19 @@ def monotone_draw(graph, root, edge_length):
 
 	i = 0 # starting with zero angle
 
-	set_coordinate(G.nodes[root], 0.0, 0.0)
+	set_coordinate(graph.nodes[root], 0.0, 0.0)
 
-	for e in nx.dfs_edges(G,root):
+	for e in nx.dfs_edges(graph, root):
 		u, v = e
 		slp = math.atan(i)
 
-		x_u, y_u = set_coordinate(G.nodes[u])
+		x_u, y_u = get_coordinate(graph.nodes[u])
 
 		x_v = x_u + math.cos(slp)
 		y_v = y_u + math.sin(slp)
 
-		set_coordinate(G.nodes[v], x_v+edge_length, y_v+edge_length)
+		set_coordinate(graph.nodes[v], x_v+edge_length, y_v+edge_length)
 
 		i = i + 1
 
-	return G
+	return graph
