@@ -2,9 +2,12 @@
 source constants.sh
 set -ev
 
-INFILE="TODO"
+INFILE=$OUT/impred/layer7.dot
 OUTFILE=$OUT/clustered/map.svg
 
-libs/eba/kmeans -action=clustering -C=modularity <"$INFILE" |
+mkdir -p $OUT/clustered
+
+sed '/^$/d' $INFILE | perl -pe 's/\ \[\ \]//g' | # kmeans can't handle empty lines and empty attribute lists
+libs/eba/kmeans -action=clustering -C=modularity |
 gvmap -e |
 neato -Nshape=rectangle -GforcelabelsX=false -Ecolor=grey -Gstart=123  -n2 -Tsvg >"$OUTFILE"
