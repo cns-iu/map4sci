@@ -3,6 +3,18 @@ import networkx as nx
 
 import src.graph.vertex as vx
 
+def zero_length_edges(G: nx.Graph):
+	"""Yields all zero-length edges"""
+	for edge in G.edges():
+			s,t = edge
+			s = G.nodes[s]
+			t = G.nodes[t]
+
+			x_source1, y_source1  = vx.get_coordinate(s)
+			x_target1, y_target1 = vx.get_coordinate(t)
+
+			if isSameCoord(x_source1, y_source1, x_target1, y_target1):
+				yield edge
 
 def avg_length(G: nx.Graph) -> float:
     """Returning the average lenght for all the edges of the graph
@@ -33,7 +45,7 @@ def avg_length(G: nx.Graph) -> float:
 
         sum_edge_length += curr_length
 
-    avg_edge_len = sum_edge_length/edge_count
+    avg_edge_len = sum_edge_length/edge_count if edge_count > 0 else 0
     return avg_edge_len
 
 

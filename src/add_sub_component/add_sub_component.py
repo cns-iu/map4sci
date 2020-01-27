@@ -28,7 +28,7 @@ def main(graph_path, subgraph_path, output_path):
 	if len(crossings.count_crossings_single_graph(graph)):
 		print(graph_name + "  has crossings.")
 		print("exiting")
-		sys.exit()
+		sys.exit(-1)
 
 
 	v_counter=0
@@ -125,6 +125,7 @@ def main(graph_path, subgraph_path, output_path):
 		#Place back the graph at original position
 		graph_transformations.translate_graph(graph, translation_dx, translation_dy)
 
+	graph.remove_edges_from(list(edge.zero_length_edges(graph)))
 	graph = nx.Graph(graph)
 
 	nx.set_node_attributes(graph, nx.get_node_attributes(subgraph, 'level'), 'level')
