@@ -107,12 +107,13 @@ def make_node(graph: nx.Graph, id: Any,
               properties: dict = None) -> geo.Feature:
     point = MapPoint.make(x, y, config)
     props = graph.nodes[id].copy()
+    props.setdefault('label', id)
     props.update(properties or {})
     return geo.Feature(f'node{id}', point, props)
 
 
 def make_edge(graph: nx.Graph, src: Any, dest: Any,
-              points: Iterable[Point2D], level: int,
+              points: Iterable[Point2D],
               config: dict, *, properties: dict = None) -> geo.Feature:
     id = f'edge{src}{dest}'
     labels = graph.nodes.data('label', default='')
@@ -123,7 +124,7 @@ def make_edge(graph: nx.Graph, src: Any, dest: Any,
         'dest': dest,
         'label': f'{labels[src]} -- {labels[dest]}',
         'weight': '', # graph.edges[src][dest].get('weight', ''),
-        'level': level
+        'level': graph[src][dest].get('level', 8)
     })
     return geo.Feature(id, line, props)
 
@@ -188,7 +189,7 @@ def process(graph: nx.Graph, tree: etree.ElementTree,
                 src, dest = child[0].text.split('--')
                 points = split_points(
                     re.sub(edge_path_regex, ' ', child[1].attrib.pop('d')).strip())
-                edge = make_edge(graph, src, dest, points, 1,
+                edge = make_edge(graph, src, dest, points,
                                  config, properties=child[1].attrib)
                 edges.append(edge)
 

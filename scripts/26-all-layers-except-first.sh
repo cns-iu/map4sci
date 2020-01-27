@@ -13,6 +13,7 @@ do
 
   j=$(( ${i}-1 ))
   LPREV=$OUT/impred/layer${j}.dot
+  LAYER=$OUT/layers/layer${i}.dot
   LO=$OUT/sfdp_output/layer${i}.dot
   LI=$OUT/impred/layer${i}.dot
   FL=$OUT/extract_forest/layer${i}_forest.dot
@@ -30,6 +31,10 @@ do
 
   # Remove the overlap of the labels
   java -jar "libs/impred/ImPredoverlapremoval.jar" --inputgraph=$LI --edgeattraction=10 --nodenoderepulsion=10 --edgenoderepulsion=5 --iterations=1 --outputfile=$LI
+
+  # Impred discards most attributes -> add them back in
+  python3 -msrc.property_fetcher $LAYER $LI
 done
 
 java -jar "libs/impred/ImPredoverlapremoval.jar" --inputgraph=$LI --edgeattraction=10 --nodenoderepulsion=10 --edgenoderepulsion=5 --iterations=20 --outputfile=$LI
+python3 -msrc.property_fetcher $LAYER $LI

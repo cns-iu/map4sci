@@ -135,7 +135,7 @@ if bb or all:
     csv_head_line += "bounding\_box"
     csv_line += str(bbox_val) + "&"
 
-if lblo or all:
+if False: # lblo or all:
     value = labelsmeas.totLabelsOverlappingArea(G)
     output_line =  "lblo: " + str(value) + "\n"
     output_txt += output_line

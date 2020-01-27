@@ -162,7 +162,7 @@ function addMapClusters(map){
 }
 
 const zoom = {
-    1: 3,
+    1: 0,
     2: 5.5,
     3: 6.5,
     4: 7,
@@ -175,14 +175,14 @@ const zoom = {
 
 function addMapEdges(map){
     const lines = [
-        { 'level': 1    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderColor':'#F9D776'    ,'borderWidth': 1 },
-        { 'level': 2    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderColor':'#F9D776'    ,'borderWidth': 1 },
-        { 'level': 3    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7 },
-        { 'level': 4    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7 },
-        { 'level': 5    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5 },
-        { 'level': 6    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5 },
-        { 'level': 7    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5 },
-        { 'level': 8    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5 }
+        { 'level': '1'    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderColor':'#F9D776'    ,'borderWidth': 1 },
+        { 'level': '2'    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderColor':'#F9D776'    ,'borderWidth': 1 },
+        { 'level': '3'    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7 },
+        { 'level': '4'    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7 },
+        { 'level': '5'    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5 },
+        { 'level': '6'    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5 },
+        { 'level': '7'    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5 },
+        { 'level': '8'    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5 }
     ]
 
     lines.forEach((line) => {
@@ -242,14 +242,14 @@ function addMapNodes(map){
             "layout": {
                 "text-field": "{label}",
                 "text-font": ["Open Sans Regular"],
-                "text-size": ["to-number", ["get", "fontsize"]],
+                "text-size": 12, //["to-number", ["get", "fontsize"]],
                 //"text-variable-anchor": ["top", "bottom", "right", "left", "top-right", "top-left", "bottom-right", "bottom-left"],
                 "text-anchor": "center",
                 "text-justify": "center",
-                "text-allow-overlap": true,
+                "text-allow-overlap": false,
                 //"text-radial-offset": .25,
             },
-            "filter": ["==", "level", level]
+            "filter": ["==", "level", String(level)]
         });
     }
 }

@@ -76,8 +76,15 @@ def get_layers(graph: nx.Graph, fractions: Iterable[float],
     root = sorted_nodes[0]
     predecessors = dict(nx.bfs_predecessors(tree, root))
 
-    for frac in fractions:
+    for level, frac in enumerate(fractions):
         count = int(frac * len(tree))
         nodes = _take_n(iter(sorted_nodes), count)
-        yield tree_util.subtree(tree, nodes, predecessors)
+        subtree = tree_util.subtree(tree, nodes, predecessors)
+
+        for _n, data in subtree.nodes.data():
+            data.setdefault('level', level + 1)
+        for _u, _v, data in subtree.edges.data():
+            data.setdefault('level', level + 1)
+
+        yield subtree
     yield tree
