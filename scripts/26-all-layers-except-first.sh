@@ -26,7 +26,7 @@ do
   # time python3 $setup_boxsizes_scriptfile $complete_graph_path ${font_sizes[${i}]}
 
   # Improve the drawing
-  java -jar "libs/impred/impred.jar" --inputgraph=$LO --edgeattraction=$EDEGE_ATTRACTION --nodenoderepulsion=$NODE_NODE_REPLUSION --edgenoderepulsion=$EDGE_NODE_REPULSION --iterations=$ITERATIONS --outputfile=$LI
+  java -jar "libs/impred/ImPred.jar" --inputgraph=$LO --edgeattraction=$EDEGE_ATTRACTION --nodenoderepulsion=$NODE_NODE_REPLUSION --edgenoderepulsion=$EDGE_NODE_REPULSION --iterations=$ITERATIONS --outputfile=$LI
 
   # Remove the overlap of the labels
   java -jar "libs/impred/ImPredoverlapremoval.jar" --inputgraph=$LI --edgeattraction=10 --nodenoderepulsion=10 --edgenoderepulsion=5 --iterations=1 --outputfile=$LI

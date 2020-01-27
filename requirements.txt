@@ -6,3 +6,7 @@ mkdocs-macros-plugin
 mypy
 networkx
 pydot
+numpy
+pandas
+geojson
+pygraphviz
