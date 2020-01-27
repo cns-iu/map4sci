@@ -13,10 +13,11 @@ use_directory_urls: false
 nav:
   - About: index.md
   - Change Log: CHANGELOG.md
+  - Map: data/visualization/index.html
 
 plugins:
   - search
-  - macros
+  - macros:
       module_name: src.mkdocs_macros
 
 extra:
