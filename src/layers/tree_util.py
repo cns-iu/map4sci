@@ -1,11 +1,11 @@
 import itertools
-from typing import (Any, Callable, Iterable, Iterator, List, Mapping, Tuple,
-                    TypeVar)
+from typing import (Any, Callable, Iterable, Iterator,
+                    List, Mapping, Tuple, TypeVar)
 
 import networkx as nx
 
 T = TypeVar('T')
-Node = TypeVar('Node')
+Node = Any
 
 
 def _peek(iterator: Iterator[T], count=1) -> Tuple[Tuple[T, ...], Iterator[T]]:
