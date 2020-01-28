@@ -1,16 +1,8 @@
 #!/bin/bash
 set -ev
 
-VENV=.venv
-NAME="map4scr-venv"
-
-# Parse command line arguments
-if [ "$1" != "" ]; then
-  VENV="$1"
-fi
-if [ "$2" != "" ]; then
-  NAME="$2"
-fi
+VENV=${1:-.venv}
+NAME=${2:-"map4sci-venv"}
 
 # Create virtual environment
 python3 -m venv "$VENV" --clear --prompt "$NAME"
@@ -20,6 +12,7 @@ source "$VENV/bin/activate"
 
 # Install python requirements
 pip install nodeenv
+pip install mypy
 pip install mkdocs click-man mkdocs-macros-plugin
 pip install numpy pandas geojson
 pip install networkx pygraphviz
@@ -27,7 +20,7 @@ pip install networkx pygraphviz
 # Install node
 nodeenv -p
 
-# Exit/Reenter environment to reload available commands (for `node` and `npm`)
+# Reenter environment to reload available commands (for `node` and `npm`)
 deactivate
 source "$VENV/bin/activate"
 

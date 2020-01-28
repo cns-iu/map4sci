@@ -8,4 +8,5 @@ BASE_URL="http://localhost:${DEV_PORT}"
 # Whether to sync with box.com
 DOSYNC=true
 
+# Load dataset specific configuration
 source datasets/sample/config.sh
