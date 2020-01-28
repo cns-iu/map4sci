@@ -1,6 +1,5 @@
 #!/bin/bash
-source constants.sh
 set -ev
 
-
+# Build kmeans c++ program
 make -C libs/eba/
