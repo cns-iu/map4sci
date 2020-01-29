@@ -14,7 +14,7 @@ do
   j=$(( ${i}-1 ))
   LPREV=$OUT/impred/layer${j}.dot
   LAYER=$OUT/layers/layer${i}.dot
-  LO=$OUT/sfdp_output/layer${i}.dot
+  LO=$LAYOUT_DIR/layer${i}.dot
   LI=$OUT/impred/layer${i}.dot
   FL=$OUT/extract_forest/layer${i}_forest.dot
 

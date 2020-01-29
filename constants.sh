@@ -19,6 +19,7 @@ OUT="./raw-data/$DATASET/$VERSION"
 SITE_DATA_DIR="$OUT/site-data"
 LAYERS_DIR="$OUT/layers"
 FORESTS_DIR="$OUT/forests"
+LAYOUT_DIR="$OUT/layout"
 
 # Check required configuration
 [ ${DATASET:?"No dataset selected!"} ]
@@ -31,4 +32,4 @@ FORESTS_DIR="$OUT/forests"
 [ ${MEASUREMENTS=} ]
 
 # Create directories
-mkdir -p "$ORIG" "$SITE_DATA_DIR" "$LAYERS_DIR" "$FORESTS_DIR"
+mkdir -p "$ORIG" "$SITE_DATA_DIR" "$LAYERS_DIR" "$FORESTS_DIR" "$LAYOUT_DIR"
