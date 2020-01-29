@@ -23,6 +23,7 @@ FORESTS_DIR="$OUT/forests"
 # Check required configuration
 [ ${DATASET:?"No dataset selected!"} ]
 [ ${NETWORK:?"No network file selected!"} ]
+[ ${LAYERS:?"No layers specified!"} ]
 
 # Set defaults
 [ ${ITERATIONS:=1} ]

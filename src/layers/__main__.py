@@ -1,28 +1,10 @@
 import argparse
 import pathlib
-from typing import TYPE_CHECKING, Any, Iterable, Sequence, Tuple, Union
+from typing import TYPE_CHECKING
 
 import networkx as nx
 
 from src.layers import extract
-
-
-class _ExtendAction(argparse.Action):
-    """Action that collects arguments into a list.
-
-    This action was not added until python 3.8+ which
-    is why it needs to be polyfilled. It is almost an exact
-    copy of the 3.8 argparse module code.
-    """
-
-    def __call__(self, parser: argparse.ArgumentParser,
-                 namespace: argparse.Namespace,
-                 values: Union[str, Sequence[Any]] = None,
-                 options_string: str = None) -> None:
-        items = getattr(namespace, self.dest, None)
-        items = items[:] if items is not None else []
-        items.extend(values)
-        setattr(namespace, self.dest, items)
 
 
 def correct_weight_type(graph: nx.Graph, weight: extract.WeightSelector) -> None:
@@ -58,7 +40,7 @@ def setup_cmdline() -> argparse.ArgumentParser:
                                      description='Extract layers from a network')
     parser.add_argument('input', type=pathlib.Path, help='Input network file')
     parser.add_argument('output', type=pathlib.Path, help='Output folder')
-    parser.add_argument('--layers', action=_ExtendAction, nargs='+',
+    parser.add_argument('--layers', type=lambda arg: arg.split(','),
                         required=True, help='Percentage of total in each layer')
     parser.add_argument('--selector', default='weight',
                         help='Data field containing the weights')
