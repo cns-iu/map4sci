@@ -1,19 +1,36 @@
-import nodes from '../../raw-data/sample/2020-01-06/clustered/nodes.geojson'
-import edges from '../../raw-data/sample/2020-01-06/clustered/edges.geojson'
-import cluster from '../../raw-data/sample/2020-01-06/clustered/cluster.geojson'
-import clusterBoundary from '../../raw-data/sample/2020-01-06/clustered/boundary.geojson'
+import MiniMap from "./mapboxgl-minimap.js"
 
+import nodes from '../../raw-data/nodes.geojson'
+import edges from '../../raw-data/edges.geojson'
+import cluster from '../../raw-data/cluster.geojson'
+import clusterBoundary from '../../raw-data/boundary.geojson'
 console.log('index.js loaded')
 
-/* @TODO:
-    check for alledges, add to layer 9 if so
-    navigation pane <- no built in way to accomplish this.
-    proper pop ups <- method is built with basics, need design direction to finish
-
-    change color on hover? <- captured the hover event, can't access feature id for some reason
-*/
-
 var geo_data = { nodes, edges, cluster, clusterBoundary };
+
+/* @TODO:
+    check for alledges, add to layer 9 if so <- script not working on alledges geojson files for some reason
+    navigation pane <- no built in way to accomplish this.
+                    <- used github library as base, required modification. works pretty well
+    proper pop ups <- method is built with basics, need design direction to finish
+    change color on hover? <- captured the hover event, can't access feature id for some reason
+
+    remove addLayer loops -> find built in mapbox ways to use the dictionaries
+                        -> done. required tracking of zoom event and re-filtering layers. not sure of performance impact
+
+    make sure nodes are single point
+    -> edges go to the single point
+
+    switch to using urls from files
+
+    turn reusable code into api zmltMap(container, config) => Map
+    config and zmltMap call go in index.html
+
+    ------------------------------------------------------------------------------------------------------------
+    near future: code will likely be transformed into TypeScript
+    future: could create a scimap2020Map function which does zmltMap + more customization (like specific popups)
+    future: push to NPM
+*/
 
 var blankStyle = {
     "version": 8,
@@ -38,12 +55,13 @@ var blankStyle = {
     "id": "blank"
 };
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYWRwaGlsbGlwczIwMTciLCJhIjoiY2s1NDNvaHdrMGZidDNobHFkdHB5MG1wcCJ9.NG8JyVzQuA6pP9UfZhlubg';
 var map = new mapboxgl.Map({
     container: 'map',
     style: blankStyle,
     center: [-0, 0],
-    zoom: 1,
+    zoom: 2,
+    maxZoom: 10,
+    minZoom: 2,
     renderWorldCopies: false,
     dragRotate: false
 });
@@ -59,6 +77,16 @@ map.on('load', () => {
 
     // For Testing.
     map.on('moveend', function (e) { console.log('Zoom Level: ', map.getZoom()) });
+
+    map.on('zoomend', function (e) {
+        // if(current zoom +- old zoom != different zoom level) return;
+        map.setFilter('node_labels', [">=", map.getZoom(), ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]])
+        map.setFilter('edges_border', [">=", map.getZoom(), ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]])  
+        map.setFilter('edges', [">=", map.getZoom(), ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]])  
+    });
+
+    // Possible position values are 'bottom-left', 'bottom-right', 'top-left', 'top-right'
+    map.addControl(new MiniMap(), 'bottom-left');
 
     addPopupOnClick(map, 'nodes', 'label');
     addPopupOnClick(map, 'edges', 'label');
@@ -91,10 +119,6 @@ function createPopulHTML(description, field){
         <p class="popup-label">${capitalizeString(field)}</p>
         <p>${description[field]}</p>
     `
-}
-
-function capitalizeString(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function addMapSources(map){
@@ -161,8 +185,9 @@ function addMapClusters(map){
     });
 }
 
+// GeoJson 'level' to Mapbox minzoom level.
 const zoom = {
-    1: 0,
+    1: 3,
     2: 5.5,
     3: 6.5,
     4: 7,
@@ -173,55 +198,67 @@ const zoom = {
     9: 8.5
 }
 
+const lines = [
+    {},
+    { 'level': 1    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderOpacity':1.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[1] },
+    { 'level': 2    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderOpacity':1.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[2] },
+    { 'level': 3    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7    ,'borderOpacity':0.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[3] },
+    { 'level': 4    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7    ,'borderOpacity':0.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[4] },
+    { 'level': 5    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5    ,'borderOpacity':0.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[5] },
+    { 'level': 6    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5    ,'borderOpacity':0.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[6] },
+    { 'level': 7    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5    ,'borderOpacity':0.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[7] },
+    { 'level': 8    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5    ,'borderOpacity':0.0   ,'borderColor':'#F9D776'    ,'borderWidth': 1, 'zoom': zoom[8] },
+];
+
 function addMapEdges(map){
-    const lines = [
-        { 'level': '1'    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderColor':'#F9D776'    ,'borderWidth': 1 },
-        { 'level': '2'    ,'color': '#FFEBA1'     ,'width': 3     ,'opacity':1.0    ,'borderColor':'#F9D776'    ,'borderWidth': 1 },
-        { 'level': '3'    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7 },
-        { 'level': '4'    ,'color': '#F9D776'     ,'width': 2.5   ,'opacity':0.7 },
-        { 'level': '5'    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5 },
-        { 'level': '6'    ,'color': 'gray'        ,'width': 2     ,'opacity':0.5 },
-        { 'level': '7'    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5 },
-        { 'level': '8'    ,'color': 'gray'        ,'width': 1.5   ,'opacity':0.5 }
-    ]
-
-    lines.forEach((line) => {
-        map.addLayer({
-            "id": "edges_" + line.level,
-            "type": "line",
-            "source": "edges_source",
-            "layout": {},
-            "paint": {
-                "line-color": line.color,
-                "line-width": line.width,
-                "line-opacity": line.opacity
-            },
-            "filter": ['==', "level", line.level],
-            "minzoom": zoom[line.level],
-        });
-
-        if(line.borderWidth){
-            map.addLayer({
-                "id": "edges_border_" + line.level,
-                "type": "line",
-                "source": "edges_source",
-                "layout": {},
-                "paint": {
-                    "line-color": line.borderColor,
-                    "line-width": line.borderWidth,
-                    "line-opacity": line.opacity,
-                    "line-gap-width": line.width
-                },
-                "minzoom": zoom[line.level],
-                "filter": ['==', "level", line.level]
-            });
-        }
+    map.addLayer({
+        "id": "edges",
+        "type": "line",
+        "source": "edges_source",
+        "layout": {},
+        "paint": {
+            "line-color": ["get", "color", ["at", ["get", "level"], ["literal", lines]]],
+            "line-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
+            "line-opacity":  ["get", "opacity", ["at", ["get", "level"], ["literal", lines]]]
+        },
+        "minzoom": 1,
+        "filter": [">=", map.getZoom(), ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
+    });
+    map.addLayer({
+        "id": "edges_border",
+        "type": "line",
+        "source": "edges_source",
+        "layout": {},
+        "paint": {
+            "line-color": ["get", "borderColor", ["at", ["get", "level"], ["literal", lines]]],
+            "line-width": ["get", "borderWidth", ["at", ["get", "level"], ["literal", lines]]],
+            "line-opacity": ["get", "borderOpacity", ["at", ["get", "level"], ["literal", lines]]],
+            "line-gap-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
+        },
+        "minzoom": 1,
+        "filter": [">=", map.getZoom(), ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
 }
 
 function addMapNodes(map){
-    for(let level = 1; level <= 9; level++) {
-        // map.addLayer({
+    map.addLayer({
+        "id": "node_labels",
+        "type": "symbol",
+        "source": "nodes_source",
+        "layout": {
+            "text-field": "{label}",
+            "text-font": ["Open Sans Regular"],
+            "text-size": ["to-number", ["get", "fontsize"]],
+            //"text-variable-anchor": ["center", "top", "bottom", "right", "left", "top-right", "top-left", "bottom-right", "bottom-left"],
+            "text-variable-anchor": ["center", "right", "left"],
+            //"text-anchor": "center",
+            "text-justify": "auto",
+            "text-allow-overlap": true,
+            //"text-radial-offset": 1,
+        },
+        "filter": [">=", map.getZoom(), ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
+    });
+    // map.addLayer({
         //     "id": "nodes_" + level,
         //     "type": "circle",
         //     "minzoom": zoom[level],
@@ -232,24 +269,13 @@ function addMapNodes(map){
         //         "circle-radius": 3
         //     },
         //     "filter": ["==", "level", level]
-        // });
+    // });
+}
 
-        map.addLayer({
-            "id": "node_labels_" + level,
-            "type": "symbol",
-            "minzoom": zoom[level],
-            "source": "nodes_source",
-            "layout": {
-                "text-field": "{label}",
-                "text-font": ["Open Sans Regular"],
-                "text-size": 12, //["to-number", ["get", "fontsize"]],
-                //"text-variable-anchor": ["top", "bottom", "right", "left", "top-right", "top-left", "bottom-right", "bottom-left"],
-                "text-anchor": "center",
-                "text-justify": "center",
-                "text-allow-overlap": false,
-                //"text-radial-offset": .25,
-            },
-            "filter": ["==", "level", String(level)]
-        });
-    }
+function capitalizeString(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function zmltMap(container, config) {
+    return 
 }
