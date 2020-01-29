@@ -8,7 +8,6 @@ NETWORK="datasets/sample/network.dot"
 # -----------------------
 
 # Number of nodes in each layer
-# Space separated values of percentage[,max] or percentage[,min,max]
 LAYERS="0.005 0.05 0.10 0.20 0.30 0.50 0.85"
 
 # Number of times the layout algorithm is run

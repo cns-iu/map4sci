@@ -2,5 +2,4 @@
 source constants.sh
 set -ev
 
-mkdir -p $OUT/layers
-python3 -msrc.layers $NETWORK $OUT/layers --sizes $LAYERS
+python3 -msrc.layers $NETWORK "$LAYERS_DIR" --layers $LAYERS

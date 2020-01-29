@@ -56,9 +56,9 @@ def setup_cmdline() -> argparse.ArgumentParser:
     """
     parser = argparse.ArgumentParser(prog='layers',
                                      description='Extract layers from a network')
-    parser.add_argument('input', help='Input network file')
+    parser.add_argument('input', type=pathlib.Path, help='Input network file')
     parser.add_argument('output', type=pathlib.Path, help='Output folder')
-    parser.add_argument('--sizes', action=_ExtendAction, nargs='+',
+    parser.add_argument('--layers', action=_ExtendAction, nargs='+',
                         required=True, help='Percentage of total in each layer')
     parser.add_argument('--selector', default='weight',
                         help='Data field containing the weights')
@@ -78,14 +78,14 @@ def run(args: argparse.Namespace) -> None:
     args : argparse.Namespace
         Arguments for the run.
     """
-    graph = nx.drawing.nx_agraph.read_dot(args.input)
+    graph = nx.drawing.nx_agraph.read_dot(str(args.input))
     correct_weight_type(graph, args.selector)
-    layers = extract.get_layers(graph, map(float, args.sizes), maximum=(not args.minimum),
+    layers = extract.get_layers(graph, map(float, args.layers), maximum=(not args.minimum),
                                 weight=args.selector, algorithm=args.algorithm)
     for index, layer in enumerate(layers):
-        path = str(args.output / f'layer{index}.dot')
+        path: pathlib.Path = args.output / f'layer{index}.dot'
         layer.graph['name'] = f'layer{index}'
-        nx.drawing.nx_agraph.write_dot(layer, path)
+        nx.drawing.nx_agraph.write_dot(layer, str(path))
 
 
 # Main execution flow

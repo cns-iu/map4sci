@@ -8,8 +8,7 @@ NETWORK=path/to/file
 # -----------------------
 
 # Number of nodes in each layer
-# Space separated values of percentage[,max] or percentage[,min,max]
-LAYERS=0.1 0.2 0.3,100 0.4,1000,2000
+LAYERS=0.1 0.2 0.3 0.4
 
 # Number of times the layout algorithm is run
 # Optional (but it is highly recommended that this is set)
