@@ -22,14 +22,14 @@ FORESTS_DIR="$OUT/forests"
 LAYOUT_DIR="$OUT/layout"
 
 # Check required configuration
-[ ${DATASET:?"No dataset selected!"} ]
-[ ${NETWORK:?"No network file selected!"} ]
-[ ${LAYERS:?"No layers specified!"} ]
+_=${DATASET:?"No dataset selected!"}
+_=${NETWORK:?"No network file selected!"}
+_=${LAYERS:?"No layers specified!"}
 
 # Set defaults
-[ ${ITERATIONS:=1} ]
-[ ${EXTRA_ARGS=} ]
-[ ${MEASUREMENTS=} ]
+_=${ITERATIONS:=1}
+_=${EXTRA_ARGS=}
+_=${MEASUREMENTS=}
 
 # Create directories
 mkdir -p "$ORIG" "$SITE_DATA_DIR" "$LAYERS_DIR" "$FORESTS_DIR" "$LAYOUT_DIR"

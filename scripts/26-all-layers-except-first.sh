@@ -5,7 +5,7 @@ set -ev
 EDEGE_ATTRACTION=30
 NODE_NODE_REPLUSION=20
 EDGE_NODE_REPULSION=20
-ITERATIONS=1
+ITERATIONS=10
 
 for i in {1..7}
 do
@@ -16,7 +16,7 @@ do
   LAYER=$OUT/layers/layer${i}.dot
   LO=$LAYOUT_DIR/layer${i}.dot
   LI=$OUT/impred/layer${i}.dot
-  FL=$OUT/extract_forest/layer${i}_forest.dot
+  FL=$FORESTS_DIR/forest${i}.dot
 
   # Add the forest to the improved drawing of the previous level
   # To get the new level
