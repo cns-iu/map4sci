@@ -132,11 +132,11 @@ def make_edge(graph: nx.Graph, src: Any, dest: Any,
 def make_polygon(graph: nx.Graph, id: Any, points: Iterable[Point2D],
                  config: dict, *, properties: dict = None) -> geo.Feature:
     coordinates = [MapPoint.make(x, y, config) for x, y in points]
-    polygon = geo.Polygon(coordinates)
+    polygon = geo.Polygon([coordinates])
     area = polygon_area(coordinates)
     props = properties.copy() if properties else {}
     props.update({
-        'label': str(area),
+        'label': str(id),
         'area': area
     })
     return geo.Feature(f'cluster{id}', polygon, props)

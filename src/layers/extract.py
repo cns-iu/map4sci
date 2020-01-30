@@ -6,7 +6,6 @@ import networkx as nx
 from src.layers import tree_util
 
 T = TypeVar('T')
-Node = tree_util.Node
 WeightSelector = Union[str, Tuple[str, str]]
 
 

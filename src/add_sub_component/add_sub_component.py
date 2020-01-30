@@ -5,8 +5,8 @@ from networkx.drawing.nx_agraph import read_dot as nx_read_dot
 from networkx.drawing.nx_agraph import write_dot
 
 import networkx as nx
-from graph import crossings, edge, vertex as vx, subcomponent
-from transformations import graph as graph_transformations
+from src.graph import crossings, edge, vertex as vx, subcomponent
+from src.transformations import graph as graph_transformations
 
 
 def main(graph_path, subgraph_path, output_path):

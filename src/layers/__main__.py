@@ -1,24 +1,10 @@
 import argparse
 import pathlib
-from typing import TYPE_CHECKING, Any, Iterable, Tuple, Union
+from typing import TYPE_CHECKING
 
 import networkx as nx
 
 from src.layers import extract
-
-if hasattr(argparse, '_ExtendAction'):
-    ExtendAction = 'extend'
-else:
-    # Pretty much copied from latest python version (3.8)
-    class ExtendAction(argparse.Action):
-        def __call__(self, parser: argparse.ArgumentParser,
-                     namespace: argparse.Namespace,
-                     values: Iterable[Any],
-                     options_string: str = None) -> None:
-            items = getattr(namespace, self.dest, None)
-            items = items[:] if items is not None else []
-            items.extend(values)
-            setattr(namespace, self.dest, items)
 
 
 def correct_weight_type(graph: nx.Graph, weight: extract.WeightSelector) -> None:
@@ -52,9 +38,9 @@ def setup_cmdline() -> argparse.ArgumentParser:
     """
     parser = argparse.ArgumentParser(prog='layers',
                                      description='Extract layers from a network')
-    parser.add_argument('input', help='Input network file')
+    parser.add_argument('input', type=pathlib.Path, help='Input network file')
     parser.add_argument('output', type=pathlib.Path, help='Output folder')
-    parser.add_argument('--sizes', action=ExtendAction, nargs='+',
+    parser.add_argument('--layers', type=lambda arg: arg.split(','),
                         required=True, help='Percentage of total in each layer')
     parser.add_argument('--selector', default='weight',
                         help='Data field containing the weights')
@@ -74,14 +60,14 @@ def run(args: argparse.Namespace) -> None:
     args : argparse.Namespace
         Arguments for the run.
     """
-    graph = nx.drawing.nx_agraph.read_dot(args.input)
+    graph = nx.drawing.nx_agraph.read_dot(str(args.input))
     correct_weight_type(graph, args.selector)
-    layers = extract.get_layers(graph, map(float, args.sizes), maximum=(not args.minimum),
+    layers = extract.get_layers(graph, map(float, args.layers), maximum=(not args.minimum),
                                 weight=args.selector, algorithm=args.algorithm)
     for index, layer in enumerate(layers):
-        path = str(args.output / f'layer{index}.dot')
+        path: pathlib.Path = args.output / f'layer{index}.dot'
         layer.graph['name'] = f'layer{index}'
-        nx.drawing.nx_agraph.write_dot(layer, path)
+        nx.drawing.nx_agraph.write_dot(layer, str(path))
 
 
 # Main execution flow
