@@ -10,13 +10,35 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" type="text/css" href="index.css">
-    </script>
 </head>
 
 <body>
     <div id="map"></div>
-
-    <script src="index.js" type="text/javascript"></script>
 </body>
+<script src="index.js"></script>
+<script>
+    const config = {
+        data : {
+            'nodes': 'https://raw.githubusercontent.com/adphillips2017/map4sci-map/master/geojson/direct_topics/nodes.geojson',
+            'edges': 'https://raw.githubusercontent.com/adphillips2017/map4sci-map/master/geojson/direct_topics/edges.geojson',
+            'clusters': 'https://raw.githubusercontent.com/adphillips2017/map4sci-map/master/geojson/direct_topics/cluster.geojson',
+            'clusterBoundaries': 'https://raw.githubusercontent.com/adphillips2017/map4sci-map/master/geojson/direct_topics/cluster_boundary.geojson'
+        },
+        lines: [
+            { 'level': 0   ,'zoom': 0 }, // left empty so index matches level number
+            { 'level': 1   ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2 ,'zoom': 3.0 },
+            { 'level': 2   ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 5.5 },
+            { 'level': 3   ,'color': '#F9D776'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 6.5 },
+            { 'level': 4   ,'color': '#c1b276'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 7.0 },
+            { 'level': 5   ,'color': '#94895f'  ,'width': 2.2   ,'opacity':0.8  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 7.4 },
+            { 'level': 6   ,'color': '#615b43'  ,'width': 2.2   ,'opacity':0.8  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 7.7 },
+            { 'level': 7   ,'color': 'gray'     ,'width': 2     ,'opacity':0.7  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 8.0 },
+            { 'level': 8   ,'color': 'gray'     ,'width': 2     ,'opacity':0.6  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 8.2 },
+            { 'level': 9   ,'color': 'gray'     ,'width': 1     ,'opacity':0.5  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 9.0 }
+        ]
+    };
+
+    zmltMap('map', config);
+</script>
 
 </html>

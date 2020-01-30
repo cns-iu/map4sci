@@ -2,9 +2,6 @@
 	https://github.com/brendanmatkin/mapboxgl-minimap
 */
 
-import cluster from '../../raw-data/cluster.geojson';
-import nodes from '../../raw-data/nodes.geojson';
-
 var blankStyle = {
     "version": 8,
     "name": "Blank",
@@ -27,7 +24,6 @@ var blankStyle = {
     ],
     "id": "blank"
 };
-
 let defaultOptions = {
 	id: "mapboxgl-minimap",
 	width: "320px",
@@ -70,7 +66,8 @@ let defaultOptions = {
 };
 
 class Minimap {
-	constructor(_options){
+	constructor(sources, _options=defaultOptions){
+		this.sources = sources;
 		this.options = defaultOptions;
 		Object.assign(this.options, _options);
 		
@@ -145,10 +142,11 @@ class Minimap {
 			}
 		});
 
+		// Add the geojson layers of our data so the minimap matches the parent map
 		miniMap.addLayer({
 			"id": "cluster",
 			"type": "fill",
-			"source": { "type": "geojson", "data": cluster },
+			"source": { "type": "geojson", "data":  this.sources.clusters },
 			"layout": {},
 			"paint": {
 				"fill-color": ['get', 'fill'],
@@ -160,7 +158,7 @@ class Minimap {
 			"id": "cluster_boundary",
 			"type": "line",
 			"minzoom": 2,
-			"source": { "type": "geojson", "data": cluster },
+			"source": { "type": "geojson", "data": this.sources.clusters },
 			"layout": {},
 			"paint": {
 				"line-color": ['get', 'stroke'],
@@ -172,7 +170,7 @@ class Minimap {
             "id": "node_labels",
             "type": "symbol",
             "minzoom": 2,
-            "source": { "type": "geojson", "data": nodes },
+            "source": { "type": "geojson", "data": this.sources.nodes },
             "layout": {
                 "text-field": "{label}",
                 "text-font": ["Open Sans Regular"],
