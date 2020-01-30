@@ -136,3 +136,7 @@ node_modules
 # Third party/external library build files
 /libs/eba/kmeans
 /lib/eba/build/
+
+# Only sample datasets should be committed
+/datasets/*
+!/datasets/sample
