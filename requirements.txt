@@ -1,12 +1,10 @@
-pyyaml
-Jinja2
-mkdocs
-click-man
-mkdocs-macros-plugin
 mypy
-networkx
-pydot
+mkdocs
+mkdocs-macros-plugin
+click-man
+pyyaml
 numpy
 pandas
 geojson
+networkx
 pygraphviz

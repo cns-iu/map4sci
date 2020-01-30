@@ -12,10 +12,7 @@ source "$VENV/bin/activate"
 
 # Install python requirements
 pip install nodeenv
-pip install mypy
-pip install mkdocs click-man mkdocs-macros-plugin
-pip install numpy pandas geojson
-pip install networkx pygraphviz
+pip install -r requirements.txt
 
 # Install node
 nodeenv -p
