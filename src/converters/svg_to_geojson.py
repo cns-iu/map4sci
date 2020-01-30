@@ -136,7 +136,7 @@ def make_polygon(graph: nx.Graph, id: Any, points: Iterable[Point2D],
     area = polygon_area(coordinates)
     props = properties.copy() if properties else {}
     props.update({
-        'label': str(area),
+        'label': str(id),
         'area': area
     })
     return geo.Feature(f'cluster{id}', polygon, props)
