@@ -140,3 +140,4 @@ node_modules
 # Only sample datasets should be committed
 /datasets/*
 !/datasets/sample
+!/datasets/config.example.sh
