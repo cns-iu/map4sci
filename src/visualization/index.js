@@ -211,7 +211,8 @@ function addMapNodes(map, nodeFontSizes){
             "text-field": "{label}",
             "text-font": ["Open Sans Regular"],
             "text-size": ["at", ["get", "level"], ["literal", nodeFontSizes]],
-            "text-variable-anchor": ["center", "right", "left"],
+            "text-variable-anchor": ["top", "bottom", "top-left", "top-right", "bottom-left", "bottom-right", "left", "right", "center"],
+            "text-radial-offset": 0.25,
             "text-justify": "auto",
             "text-allow-overlap": true
         },
