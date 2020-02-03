@@ -72,7 +72,7 @@ function loadMap(map, config) {
     addMapSources(map, config.data);
     addMapClusters(map);
     addMapEdges(map, config.data);
-    addMapNodes(map);
+    addMapNodes(map, config.nodeFontSizes);
 
     // Add zoom controls (without rotation controls) to the map.
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
@@ -124,23 +124,23 @@ function addMapClusters(map){
         },
     });
 
-    map.addLayer({
-        "id": "cluster-labels",
-        "type": "symbol",
-        "minzoom": 2,
-        "source": "cluster_source",
-        "layout": {
-            "text-field": "{label}",
-            "text-font": [
-                "Roboto Regular"
-            ],
-            "text-max-width": 5,
-            "text-size": 15,
-            "text-anchor": "center",
-            "text-radial-offset": 1
-        },
-        "paint": {},
-    });
+    // map.addLayer({
+    //     "id": "cluster-labels",
+    //     "type": "symbol",
+    //     "minzoom": 2,
+    //     "source": "cluster_source",
+    //     "layout": {
+    //         "text-field": "{label}",
+    //         "text-font": [
+    //             "Roboto Regular"
+    //         ],
+    //         "text-max-width": 5,
+    //         "text-size": 15,
+    //         "text-anchor": "center",
+    //         "text-radial-offset": 1
+    //     },
+    //     "paint": {},
+    // });
 
     map.addLayer({
         "id": "cluster_boundary",
@@ -201,7 +201,7 @@ function addMapEdges(map, sources){
     }
 }
 
-function addMapNodes(map){
+function addMapNodes(map, nodeFontSizes){
     const currentZoom = map.getZoom();
     map.addLayer({
         "id": "node_labels",
@@ -210,7 +210,7 @@ function addMapNodes(map){
         "layout": {
             "text-field": "{label}",
             "text-font": ["Open Sans Regular"],
-            "text-size": ["to-number", ["get", "fontsize"]],
+            "text-size": ["at", ["get", "level"], ["literal", nodeFontSizes]],
             "text-variable-anchor": ["center", "right", "left"],
             "text-justify": "auto",
             "text-allow-overlap": true
