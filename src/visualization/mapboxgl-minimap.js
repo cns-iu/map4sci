@@ -177,7 +177,7 @@ class Minimap {
                 "text-size": 14,
                 "text-anchor": "center",
 				"text-justify": "center",
-				"text-allow-overlap": true
+				"text-allow-overlap": false
 				
             },
             "filter": ["==", "level", 1]
