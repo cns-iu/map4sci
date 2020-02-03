@@ -1,6 +1,5 @@
 import argparse
 import pathlib
-from typing import TYPE_CHECKING
 
 import networkx as nx
 
@@ -71,6 +70,6 @@ def run(args: argparse.Namespace) -> None:
 
 
 # Main execution flow
-if not TYPE_CHECKING:
+if __name__ == '__main__':
     args = setup_cmdline().parse_args()
     run(args)

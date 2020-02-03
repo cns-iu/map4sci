@@ -14,11 +14,17 @@ nav:
   - About: index.md
   - Change Log: CHANGELOG.md
   - Map: data/visualization/index.html
+  - api-docs-API
 
 plugins:
   - search
   - macros:
       module_name: src.mkdocs_macros
+  - mktheapidocs:
+      modules:
+        layers:
+          section: API
+          source_repo: 'https://github.com/cns-iu/map4sci/tree/workflow/src'
 
 extra:
   source_prefix: 'https://github.com/cns-iu/map4sci/blob/develop/'
@@ -30,7 +36,7 @@ extra:
   # - mkpdfs:
   #     output_path: pdf/a2agc-documentation.pdf
 
-theme: readthedocs
+theme: ivory
 
 markdown_extensions:
   - toc:

@@ -1,6 +1,8 @@
 mypy
 mkdocs
+mkdocs-ivory
 mkdocs-macros-plugin
+mktheapidocs[plugin]
 click-man
 pyyaml
 numpy

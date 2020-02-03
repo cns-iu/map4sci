@@ -1,11 +1,11 @@
 import itertools
 from typing import (Any, Callable, Iterable, Iterator,
-                    List, Mapping, Tuple, TypeVar)
+                    List, Mapping, NewType, Tuple, TypeVar)
 
 import networkx as nx
 
 T = TypeVar('T')
-Node = Any
+Node = NewType('Node', object)
 
 
 def _peek(iterator: Iterator[T], count=1) -> Tuple[Tuple[T, ...], Iterator[T]]:
@@ -96,11 +96,6 @@ def parents(node: Node, predecessors: Mapping[Node, Node]) -> Iterator[Node]:
         Start node (not included in output).
     predecessors : Mapping[Node, Node]
         A mapping of node to parent node.
-
-    Returns
-    -------
-    Iterator[Node]
-        [description]
 
     Yields
     -------
