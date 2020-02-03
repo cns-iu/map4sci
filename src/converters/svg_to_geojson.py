@@ -109,6 +109,8 @@ def make_node(graph: nx.Graph, id: Any,
     props = graph.nodes[id].copy()
     props.setdefault('label', id)
     props.update(properties or {})
+    if 'level' in props:
+        props['level'] = int(props['level'])
     return geo.Feature(f'node{id}', point, props)
 
 
@@ -124,7 +126,7 @@ def make_edge(graph: nx.Graph, src: Any, dest: Any,
         'dest': dest,
         'label': f'{labels[src]} -- {labels[dest]}',
         'weight': '', # graph.edges[src][dest].get('weight', ''),
-        'level': graph[src][dest].get('level', 8)
+        'level': int(graph[src][dest].get('level', 8))
     })
     return geo.Feature(id, line, props)
 
