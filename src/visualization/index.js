@@ -5,15 +5,12 @@ console.log('index.js loaded')
     check for alledges, add to layer 9 if so <- script not working on alledges geojson files for some reason
 
     proper pop ups <- method is built with basics, need design direction to finish
+                <- add ability to customize the popups from config object in index.html
+    
     change color on hover? <- captured the hover event, can't access feature id for some reason
 
     make sure nodes are single point
-    -> edges go to the single point
-
-    switch to using urls from files
-
-    turn reusable code into api zmltMap(container, config) => Map
-    config and zmltMap call go in index.html
+    make sure edges go to the single point
 
     ------------------------------------------------------------------------------------------------------------
     near future: code will likely be transformed into TypeScript
@@ -45,7 +42,7 @@ const blankStyle = {
 };
 let oldZoomIndex = 0;
 let lines = [ // default in case lines isn't passed in the config object
-    { 'level': 0   ,'zoom': 0 }, // left empty so index matches level number
+    { 'level': 0   ,'zoom': 0 },
     { 'level': 1   ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2 ,'zoom': 3.0 },
     { 'level': 2   ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 5.5 },
     { 'level': 3   ,'color': '#F9D776'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 6.5 },
@@ -58,7 +55,7 @@ let lines = [ // default in case lines isn't passed in the config object
 ];
 
 window.zmltMap = function zmltMap(container, config) {
-    if(config["lines"]) lines = config["lines"];
+    if(config.lines) lines = config.lines;
     var map = new mapboxgl.Map({
         container: container,
         style: blankStyle,
@@ -74,18 +71,17 @@ window.zmltMap = function zmltMap(container, config) {
 }
 
 function loadMap(map, config) {
-    addMapSources(map, config["data"]);
+    addMapSources(map, config.data);
     addMapClusters(map);
     addMapEdges(map);
     addMapNodes(map);
 
     // Add zoom controls (without rotation controls) to the map.
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
-    map.addControl(new MiniMap(config["data"]), 'bottom-left');
 
-    addPopupOnClick(map, 'nodes', 'label');
-    addPopupOnClick(map, 'edges', 'label');
-
+    if(config.minimapOptions.style === "blankStyle") config.minimapOptions.style = blankStyle;
+    if(config.popups) addPopups(map, config.popups);
+    map.addControl(new MiniMap(config.data, config.minimapOptions), 'bottom-left');
     map.on('zoom', () => updateMapFilters(map));
 
     // For Testing.
@@ -95,19 +91,19 @@ function loadMap(map, config) {
 function addMapSources(map, sources){
     map.addSource('edges_source', {
         'type': 'geojson',
-        'data': sources["edges"]
+        'data': sources.edges
     });
     map.addSource('nodes_source', {
         'type': 'geojson',
-        'data': sources["nodes"]
+        'data': sources.nodes
     });
     map.addSource('cluster_source', {
         'type': 'geojson',
-        'data': sources["clusters"]
+        'data': sources.clusters
     });
     map.addSource('cluster_boundary_source', {
         'type': 'geojson',
-        'data': sources["clusterBoundaries"]
+        'data': sources.clusterBoundaries
     });
 }
 
@@ -216,11 +212,17 @@ function addMapNodes(map){
     // });
 }
 
-function addPopupOnClick(map, layer, field) {
+function addPopups(map, popups){
+    popups.forEach(popup => {
+        addPopupOnClick(map, popup.layer, popup.content)
+    })
+}
+
+function addPopupOnClick(map, layer, content) {
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', layer, function (e) {
-        let descriptionHTML = createPopulHTML(e.features[0].properties, field);
+        let descriptionHTML = createPopulHTML(e.features[0].properties, content);
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(descriptionHTML)
@@ -238,15 +240,14 @@ function addPopupOnClick(map, layer, field) {
     });
 }
 
-function createPopulHTML(description, field){
-    return `
-        <p class="popup-label">${capitalizeString(field)}</p>
-        <p>${description[field]}</p>
-    `
-}
+function createPopulHTML(description, content){
+    let html = '';
+    content.forEach((element, index) => {
+        if(index % 2 == 0) html += element;
+        else html += description[element];
+    });
 
-function capitalizeString(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return html;
 }
 
 function updateMapFilters(map){
