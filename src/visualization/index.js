@@ -61,7 +61,7 @@ window.zmltMap = function zmltMap(container, config) {
         maxZoom: 10,
         minZoom: 2,
         renderWorldCopies: false,
-        dragRotate: false
+        dragRotate: true
     });
 
     map.on('load', () => { loadMap(map, config)});
