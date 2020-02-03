@@ -174,11 +174,30 @@ class Minimap {
             "layout": {
                 "text-field": "{label}",
                 "text-font": ["Open Sans Regular"],
-                "text-size": 12,
+                "text-size": 14,
+                "text-anchor": "center",
+				"text-justify": "center",
+				"text-allow-overlap": true
+				
+            },
+            "filter": ["==", "level", 1]
+		});
+		miniMap.addLayer({
+            "id": "node_labels_2",
+            "type": "symbol",
+            "minzoom": 3,
+            "source": { "type": "geojson", "data": this.sources.nodes },
+            "layout": {
+                "text-field": "{label}",
+                "text-font": ["Open Sans Regular"],
+                "text-size": 9,
                 "text-anchor": "center",
                 "text-justify": "center"
             },
-            "filter": ["==", "level", 1]
+			"filter": ["all",
+				["<=", "level", 3],
+				[">", "level", 1]
+			]
         });
 
 		miniMap.addLayer({

@@ -17,6 +17,9 @@
 </body>
 <script src="index.js"></script>
 <script>
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     const config = {
         data : {
             'nodes': 'nodes.geojson',
@@ -25,7 +28,7 @@
             'clusterBoundaries': 'boundary.geojson'
         },
         lines: [
-            { 'level': 0   ,'zoom': 0 }, // left empty so index matches level number
+            { 'level': 0   ,'zoom': 0 },
             { 'level': 1   ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2 ,'zoom': 3.0 },
             { 'level': 2   ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 5.5 },
             { 'level': 3   ,'color': '#F9D776'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 6.5 },
@@ -35,10 +38,72 @@
             { 'level': 7   ,'color': 'gray'     ,'width': 2     ,'opacity':0.7  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 8.0 },
             { 'level': 8   ,'color': 'gray'     ,'width': 2     ,'opacity':0.6  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 8.2 },
             { 'level': 9   ,'color': 'gray'     ,'width': 1     ,'opacity':0.5  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 9.0 }
-        ]
-    };
+        ],
+        popups: [
+            {
+                layer: 'edges',
+                content: [
+                    '<p class="popup-label">Edge</p><p>',
+                    ['label', capitalizeFirstLetter],
+                    '</p>'
+                ]
+            },
+            {
+                layer: 'nodes',
+                content: [
+                    '<p class="popup-label">Node</p><p>',
+                    'label',
+                    '</p>'
+                ]
+            }
+            
+        ],
+        minimapOptions: {
+            id: "mapboxgl-minimap",
+            width: "320px",
+            height: "180px",
+            style: "blankStyle",
+            center: [0, 0],
+            zoom: 0,
 
-    zmltMap('map', config);
+            containerStyles: `; 
+                border: 1px solid lightgray; 
+                border-radius: 5px; 
+                -webkit-box-shadow: 3px 3px 5px 4px #00000021; 
+                -moz-box-shadow: 3px 3px 5px 4px #00000021; 
+                box-shadow: 3px 3px 5px 4px #00000021;
+            `,
+
+            // should be a function; will be bound to Minimap
+            zoomAdjust: null,
+
+            // [a, b, c]
+            // if parent map zoom >= a, and minimap zoom >= b, set minimap zoom to c
+            // must be defined from most zoomed in rule, to least zoomed in rule.
+            zoomLevels: [
+                [9, 3, 4],
+                [8, 2, 3],
+                [6, 0, 2]
+            ],
+
+            lineColor: "#08F",
+            lineWidth: 1,
+            lineOpacity: 1,
+
+            fillColor: "#F80",
+            fillOpacity: 0.25,
+
+            dragPan: false,
+            scrollZoom: false,
+            boxZoom: false,
+            dragRotate: false,
+            keyboard: false,
+            doubleClickZoom: false,
+            touchZoomRotate: false
+        }
+    }
+
+    const map = zmltMap('map', config);
 </script>
 
 </html>

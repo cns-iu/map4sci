@@ -3,17 +3,11 @@ console.log('index.js loaded')
 
 /* @TODO:
     check for alledges, add to layer 9 if so <- script not working on alledges geojson files for some reason
-
-    proper pop ups <- method is built with basics, need design direction to finish
+    
     change color on hover? <- captured the hover event, can't access feature id for some reason
 
     make sure nodes are single point
-    -> edges go to the single point
-
-    switch to using urls from files
-
-    turn reusable code into api zmltMap(container, config) => Map
-    config and zmltMap call go in index.html
+    make sure edges go to the single point
 
     ------------------------------------------------------------------------------------------------------------
     near future: code will likely be transformed into TypeScript
@@ -45,7 +39,7 @@ const blankStyle = {
 };
 let oldZoomIndex = 0;
 let lines = [ // default in case lines isn't passed in the config object
-    { 'level': 0   ,'zoom': 0 }, // left empty so index matches level number
+    { 'level': 0   ,'zoom': 0 },
     { 'level': 1   ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2 ,'zoom': 3.0 },
     { 'level': 2   ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 5.5 },
     { 'level': 3   ,'color': '#F9D776'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 6.5 },
@@ -58,7 +52,7 @@ let lines = [ // default in case lines isn't passed in the config object
 ];
 
 window.zmltMap = function zmltMap(container, config) {
-    if(config["lines"]) lines = config["lines"];
+    if(config.lines) lines = config.lines;
     var map = new mapboxgl.Map({
         container: container,
         style: blankStyle,
@@ -71,21 +65,21 @@ window.zmltMap = function zmltMap(container, config) {
     });
 
     map.on('load', () => { loadMap(map, config)});
+    return map;
 }
 
 function loadMap(map, config) {
-    addMapSources(map, config["data"]);
+    addMapSources(map, config.data);
     addMapClusters(map);
-    addMapEdges(map);
+    addMapEdges(map, config.data);
     addMapNodes(map);
 
     // Add zoom controls (without rotation controls) to the map.
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
-    map.addControl(new MiniMap(config["data"]), 'bottom-left');
 
-    addPopupOnClick(map, 'nodes', 'label');
-    addPopupOnClick(map, 'edges', 'label');
-
+    if(config.minimapOptions.style === "blankStyle") config.minimapOptions.style = blankStyle;
+    if(config.popups) addPopups(map, config.popups);
+    map.addControl(new MiniMap(config.data, config.minimapOptions), 'bottom-left');
     map.on('zoom', () => updateMapFilters(map));
 
     // For Testing.
@@ -95,20 +89,26 @@ function loadMap(map, config) {
 function addMapSources(map, sources){
     map.addSource('edges_source', {
         'type': 'geojson',
-        'data': sources["edges"]
+        'data': sources.edges
     });
     map.addSource('nodes_source', {
         'type': 'geojson',
-        'data': sources["nodes"]
+        'data': sources.nodes
     });
     map.addSource('cluster_source', {
         'type': 'geojson',
-        'data': sources["clusters"]
+        'data': sources.clusters
     });
     map.addSource('cluster_boundary_source', {
         'type': 'geojson',
-        'data': sources["clusterBoundaries"]
+        'data': sources.clusterBoundaries
     });
+    if(sources.allEdges){
+        map.addSource('all_edges_source', {
+            'type': 'geojson',
+            'data': sources.allEdges
+        });
+    }
 }
 
 function addMapClusters(map){
@@ -156,7 +156,7 @@ function addMapClusters(map){
     });
 }
 
-function addMapEdges(map){
+function addMapEdges(map, sources){
     const currentZoom = map.getZoom();
     map.addLayer({
         "id": "edges",
@@ -168,7 +168,6 @@ function addMapEdges(map){
             "line-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
             "line-opacity":  ["get", "opacity", ["at", ["get", "level"], ["literal", lines]]]
         },
-        "minzoom": 1,
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
     map.addLayer({
@@ -182,9 +181,24 @@ function addMapEdges(map){
             "line-opacity": ["get", "borderOpacity", ["at", ["get", "level"], ["literal", lines]]],
             "line-gap-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
         },
-        "minzoom": 1,
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
+
+    if(sources.allEdges){
+        map.addLayer({
+            "id": "all_edges",
+            "type": "line",
+            "source": "all_edges_source",
+            "layout": {},
+            "paint": {
+                "line-color": ["get", "borderColor", ["at", lines.length-1, ["literal", lines]]],
+                "line-width": ["get", "borderWidth", ["at", lines.length-1, ["literal", lines]]],
+                "line-opacity": ["get", "borderOpacity", ["at", lines.length-1, ["literal", lines]]],
+                "line-gap-width": ["get", "width", ["at", lines.length-1, ["literal", lines]]],
+            },
+            "minzoom": map.getMaxZoom()
+        });
+    }
 }
 
 function addMapNodes(map){
@@ -203,24 +217,30 @@ function addMapNodes(map){
         },
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
-    // map.addLayer({
-        //     "id": "nodes_" + level,
-        //     "type": "circle",
-        //     "source": "nodes_source",
-        //     "layout": {},
-        //     "paint": {
-        //         "circle-color": "black",
-        //         "circle-radius": 3
-        //     },
-        //     "filter": [">=", map.getZoom(), [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]]
-    // });
+    map.addLayer({
+            "id": "nodes",
+            "type": "circle",
+            "source": "nodes_source",
+            "layout": {},
+            "paint": {
+                "circle-color": "black",
+                "circle-radius": 3
+            },
+            "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
+    });
 }
 
-function addPopupOnClick(map, layer, field) {
+function addPopups(map, popups){
+    popups.forEach(popup => {
+        addPopupOnClick(map, popup.layer, popup.content)
+    })
+}
+
+function addPopupOnClick(map, layer, content) {
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', layer, function (e) {
-        let descriptionHTML = createPopulHTML(e.features[0].properties, field);
+        let descriptionHTML = createPopulHTML(e.features[0].properties, content);
         new mapboxgl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(descriptionHTML)
@@ -238,20 +258,21 @@ function addPopupOnClick(map, layer, field) {
     });
 }
 
-function createPopulHTML(description, field){
-    return `
-        <p class="popup-label">${capitalizeString(field)}</p>
-        <p>${description[field]}</p>
-    `
-}
+function createPopulHTML(description, content){
+    let html = '';
+    content.forEach((element, index) => {
+        if(index % 2 == 0) html += element;
+        else if(typeof(element) === 'string') html += description[element];
+        else html += element[1](description[element[0]]);
+    });
 
-function capitalizeString(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    return html;
 }
 
 function updateMapFilters(map){
     const currentZoom = map.getZoom();
     if(!zoomLevelChange(currentZoom)) return;
+    map.setFilter('nodes',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     map.setFilter('node_labels',    [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     map.setFilter('edges_border',   [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     map.setFilter('edges',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
