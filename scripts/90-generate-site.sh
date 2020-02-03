@@ -10,3 +10,4 @@ rm -f docs/CHANGELOG.md
 
 rm -rf site/data
 cp -r $OUT/site-data site/data
+cp -r $OUT/clustered/*.geojson site/data/visualization
