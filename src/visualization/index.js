@@ -3,9 +3,6 @@ console.log('index.js loaded')
 
 /* @TODO:
     check for alledges, add to layer 9 if so <- script not working on alledges geojson files for some reason
-
-    proper pop ups <- method is built with basics, need design direction to finish
-                <- add ability to customize the popups from config object in index.html
     
     change color on hover? <- captured the hover event, can't access feature id for some reason
 
@@ -68,12 +65,13 @@ window.zmltMap = function zmltMap(container, config) {
     });
 
     map.on('load', () => { loadMap(map, config)});
+    return map;
 }
 
 function loadMap(map, config) {
     addMapSources(map, config.data);
     addMapClusters(map);
-    addMapEdges(map);
+    addMapEdges(map, config.data);
     addMapNodes(map);
 
     // Add zoom controls (without rotation controls) to the map.
@@ -105,6 +103,12 @@ function addMapSources(map, sources){
         'type': 'geojson',
         'data': sources.clusterBoundaries
     });
+    if(sources.allEdges){
+        map.addSource('all_edges_source', {
+            'type': 'geojson',
+            'data': sources.allEdges
+        });
+    }
 }
 
 function addMapClusters(map){
@@ -152,7 +156,7 @@ function addMapClusters(map){
     });
 }
 
-function addMapEdges(map){
+function addMapEdges(map, sources){
     const currentZoom = map.getZoom();
     map.addLayer({
         "id": "edges",
@@ -164,7 +168,6 @@ function addMapEdges(map){
             "line-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
             "line-opacity":  ["get", "opacity", ["at", ["get", "level"], ["literal", lines]]]
         },
-        "minzoom": 1,
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
     map.addLayer({
@@ -178,9 +181,24 @@ function addMapEdges(map){
             "line-opacity": ["get", "borderOpacity", ["at", ["get", "level"], ["literal", lines]]],
             "line-gap-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
         },
-        "minzoom": 1,
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
+
+    if(sources.allEdges){
+        map.addLayer({
+            "id": "all_edges",
+            "type": "line",
+            "source": "all_edges_source",
+            "layout": {},
+            "paint": {
+                "line-color": ["get", "borderColor", ["at", lines.length-1, ["literal", lines]]],
+                "line-width": ["get", "borderWidth", ["at", lines.length-1, ["literal", lines]]],
+                "line-opacity": ["get", "borderOpacity", ["at", lines.length-1, ["literal", lines]]],
+                "line-gap-width": ["get", "width", ["at", lines.length-1, ["literal", lines]]],
+            },
+            "minzoom": map.getMaxZoom()
+        });
+    }
 }
 
 function addMapNodes(map){
@@ -199,17 +217,17 @@ function addMapNodes(map){
         },
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
-    // map.addLayer({
-        //     "id": "nodes_" + level,
-        //     "type": "circle",
-        //     "source": "nodes_source",
-        //     "layout": {},
-        //     "paint": {
-        //         "circle-color": "black",
-        //         "circle-radius": 3
-        //     },
-        //     "filter": [">=", map.getZoom(), [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]]
-    // });
+    map.addLayer({
+            "id": "nodes",
+            "type": "circle",
+            "source": "nodes_source",
+            "layout": {},
+            "paint": {
+                "circle-color": "black",
+                "circle-radius": 3
+            },
+            "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
+    });
 }
 
 function addPopups(map, popups){
@@ -244,7 +262,8 @@ function createPopulHTML(description, content){
     let html = '';
     content.forEach((element, index) => {
         if(index % 2 == 0) html += element;
-        else html += description[element];
+        else if(typeof(element) === 'string') html += description[element];
+        else html += element[1](description[element[0]]);
     });
 
     return html;
@@ -253,6 +272,7 @@ function createPopulHTML(description, content){
 function updateMapFilters(map){
     const currentZoom = map.getZoom();
     if(!zoomLevelChange(currentZoom)) return;
+    map.setFilter('nodes',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     map.setFilter('node_labels',    [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     map.setFilter('edges_border',   [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     map.setFilter('edges',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);

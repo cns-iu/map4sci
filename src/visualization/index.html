@@ -17,6 +17,9 @@
 </body>
 <script src="index.js"></script>
 <script>
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
     const config = {
         data : {
             nodes: 'https://raw.githubusercontent.com/adphillips2017/map4sci-map/master/geojson/direct_topics/nodes.geojson',
@@ -41,7 +44,7 @@
                 layer: 'edges',
                 content: [
                     '<p class="popup-label">Edge</p><p>',
-                    'label',
+                    ['label', capitalizeFirstLetter],
                     '</p>'
                 ]
             },
@@ -74,7 +77,9 @@
             // should be a function; will be bound to Minimap
             zoomAdjust: null,
 
-            // if parent map zoom >= a and minimap zoom >= b, set minimap zoom to c
+            // [a, b, c]
+            // if parent map zoom >= a, and minimap zoom >= b, set minimap zoom to c
+            // must be defined from most zoomed in rule, to least zoomed in rule.
             zoomLevels: [
                 [9, 3, 4],
                 [8, 2, 3],
@@ -98,7 +103,7 @@
         }
     }
 
-    zmltMap('map', config);
+    const map = zmltMap('map', config);
 </script>
 
 </html>
