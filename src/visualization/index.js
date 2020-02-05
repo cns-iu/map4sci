@@ -2,12 +2,7 @@ import MiniMap from "./mapboxgl-minimap.js"
 console.log('index.js loaded')
 
 /* @TODO:
-    check for alledges, add to layer 9 if so <- script not working on alledges geojson files for some reason
-    
     change color on hover? <- captured the hover event, can't access feature id for some reason
-
-    make sure nodes are single point
-    make sure edges go to the single point
 
     ------------------------------------------------------------------------------------------------------------
     near future: code will likely be transformed into TypeScript
@@ -37,7 +32,9 @@ const blankStyle = {
     ],
     "id": "blank"
 };
-let oldZoomIndex = 0;
+let textOverlapEnabled = false;
+let oldLineZoomIndex = 0;
+let oldNodeZoomIndex = 0;
 let lines = [ // default in case lines isn't passed in the config object
     { 'level': 0   ,'zoom': 0 },
     { 'level': 1   ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2 ,'zoom': 3.0 },
@@ -50,16 +47,28 @@ let lines = [ // default in case lines isn't passed in the config object
     { 'level': 8   ,'color': 'gray'     ,'width': 2     ,'opacity':0.6  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 8.2 },
     { 'level': 9   ,'color': 'gray'     ,'width': 1     ,'opacity':0.5  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1   ,'zoom': 9.0 }
 ];
+const lineNodeZoomDifference = -1;
+let nodes = [
+    { 'level':0     ,'zoom':0                                 ,'fontsize':0  },
+    { 'level':1     ,'zoom':lines[1]+lineNodeZoomDifference   ,'fontsize':20 },
+    { 'level':2     ,'zoom':lines[2]+lineNodeZoomDifference   ,'fontsize':18 },
+    { 'level':3     ,'zoom':lines[3]+lineNodeZoomDifference   ,'fontsize':18 },
+    { 'level':4     ,'zoom':lines[4]+lineNodeZoomDifference   ,'fontsize':16 },
+    { 'level':5     ,'zoom':lines[5]+lineNodeZoomDifference   ,'fontsize':16 },
+    { 'level':6     ,'zoom':lines[6]+lineNodeZoomDifference   ,'fontsize':14 },
+    { 'level':7     ,'zoom':lines[7]+lineNodeZoomDifference   ,'fontsize':14 },
+    { 'level':8     ,'zoom':lines[8]+lineNodeZoomDifference   ,'fontsize':12 },
+    { 'level':9     ,'zoom':lines[9]+lineNodeZoomDifference   ,'fontsize':12 },
+];
 
 window.zmltMap = function zmltMap(container, config) {
-    if(config.lines) lines = config.lines;
     var map = new mapboxgl.Map({
         container: container,
         style: blankStyle,
         center: [-0, 0],
         zoom: 2,
         maxZoom: 10,
-        minZoom: 2,
+        minZoom: 1,
         renderWorldCopies: false,
         dragRotate: true
     });
@@ -71,8 +80,8 @@ window.zmltMap = function zmltMap(container, config) {
 function loadMap(map, config) {
     addMapSources(map, config.data);
     addMapClusters(map);
-    addMapEdges(map, config.data);
-    addMapNodes(map, config.nodeFontSizes);
+    addMapEdges(map, config);
+    addMapNodes(map, config);
 
     // Add zoom controls (without rotation controls) to the map.
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
@@ -156,7 +165,8 @@ function addMapClusters(map){
     });
 }
 
-function addMapEdges(map, sources){
+function addMapEdges(map, config){
+    if(config.lines) lines = config.lines;
     const currentZoom = map.getZoom();
     map.addLayer({
         "id": "edges",
@@ -184,7 +194,7 @@ function addMapEdges(map, sources){
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
 
-    if(sources.allEdges){
+    if(config.data.allEdges){
         map.addLayer({
             "id": "all_edges",
             "type": "line",
@@ -201,7 +211,8 @@ function addMapEdges(map, sources){
     }
 }
 
-function addMapNodes(map, nodeFontSizes){
+function addMapNodes(map, config){
+    if(config.nodes) nodes = config.nodes;
     const currentZoom = map.getZoom();
     map.addLayer({
         "id": "node_labels",
@@ -210,13 +221,18 @@ function addMapNodes(map, nodeFontSizes){
         "layout": {
             "text-field": "{label}",
             "text-font": ["Open Sans Regular"],
-            "text-size": ["at", ["get", "level"], ["literal", nodeFontSizes]],
+            "text-size": ["get", "fontsize", ["at", ["get", "level"], ["literal", nodes]]],
             "text-variable-anchor": ["top", "bottom", "top-left", "top-right", "bottom-left", "bottom-right", "left", "right", "center"],
             "text-radial-offset": 0.25,
             "text-justify": "auto",
-            "text-allow-overlap": true
+            "text-allow-overlap": false
+            // "text-allow-overlap": [ "case",
+            //     ["<=", ["zoom"], 3], false,
+            //     [">", ["zoom"], 3], true,
+            //     true
+            // ]
         },
-        "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
+        "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]
     });
     map.addLayer({
             "id": "nodes",
@@ -227,7 +243,7 @@ function addMapNodes(map, nodeFontSizes){
                 "circle-color": "black",
                 "circle-radius": 3
             },
-            "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
+            "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]
     });
 }
 
@@ -272,23 +288,47 @@ function createPopulHTML(description, content){
 
 function updateMapFilters(map){
     const currentZoom = map.getZoom();
-    if(!zoomLevelChange(currentZoom)) return;
-    map.setFilter('nodes',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
-    map.setFilter('node_labels',    [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
-    map.setFilter('edges_border',   [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
-    map.setFilter('edges',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
+    if(zoomLevelChange(currentZoom, 'nodes')){
+        map.setFilter('nodes',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]);
+        map.setFilter('node_labels',    [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]);
+        //map.setLayoutProperty('node_labels', 'text-allow-overlap', ["case", [">=", currentZoom, ["+", ["get", "level"], 1]], false, true]);
+        if(!textOverlapEnabled && currentZoom > 3){
+            map.setLayoutProperty('node_labels', 'text-allow-overlap', true);
+            textOverlapEnabled = true;
+        }else if(currentZoom < 3){
+            map.setLayoutProperty('node_labels', 'text-allow-overlap', false);
+            textOverlapEnabled = false;
+        }
+    }
+    if(zoomLevelChange(currentZoom, 'lines')){
+        map.setFilter('edges_border',   [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
+        map.setFilter('edges',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
+    }
 }
 
-function zoomLevelChange(currentZoom){
-    let currentIndex = findZoomIndex(currentZoom);
-    if(currentIndex === oldZoomIndex) return false;
-    oldZoomIndex = currentIndex;
+function zoomLevelChange(currentZoom, zoomType){
+    let currentIndex;
+    switch(zoomType){
+        case('nodes'): {
+            currentIndex = findZoomIndex(currentZoom, nodes);
+            if(currentIndex === oldNodeZoomIndex) return false;
+            oldNodeZoomIndex = currentIndex;
+            break;
+        }
+        case('lines'): {
+            currentIndex = findZoomIndex(currentZoom, lines);
+            if(currentIndex === oldLineZoomIndex) return false;
+            oldLineZoomIndex = currentIndex;
+            break;
+        }
+        default: break;
+    }
     return true;
 }
 
-function findZoomIndex(zoom){
-    for(let index = 0; index <= lines.length; index++){
-        if(index == (lines.length-1)) return index;
-        if(zoom >= lines[index]["zoom"] && zoom < lines[index + 1]["zoom"]) return index;
+function findZoomIndex(zoom, zoomLookup){
+    for(let index = 0; index <= zoomLookup.length; index++){
+        if(index == (zoomLookup.length-1)) return index;
+        if(zoom >= zoomLookup[index]["zoom"] && zoom < zoomLookup[index + 1]["zoom"]) return index;
     }
 }
