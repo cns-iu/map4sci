@@ -92,6 +92,7 @@ function loadMap(map, config) {
     if(config.minimapOptions.style === "blankStyle") config.minimapOptions.style = blankStyle;
     if(config.popups) addPopups(map, config.popups);
     map.addControl(new MiniMap(config.data, config.minimapOptions), 'bottom-left');
+    map.addControl(new mapboxgl.FullscreenControl());
     map.on('zoom', () => updateMapFilters(map));
 
     // For Testing.
@@ -247,7 +248,7 @@ function addMapNodes(map, config){
             ],
                 "circle-radius": 3
             },
-            "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]
+            "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]
     });
 }
 
@@ -351,9 +352,7 @@ function createPopulHTML(description, content){
 function updateMapFilters(map){
     const currentZoom = map.getZoom();
     if(zoomLevelChange(currentZoom, 'nodes')){
-        map.setFilter('nodes',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]);
         map.setFilter('node_labels',    [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]);
-        //map.setLayoutProperty('node_labels', 'text-allow-overlap', ["case", [">=", currentZoom, ["+", ["get", "level"], 1]], false, true]);
         if(!textOverlapEnabled && currentZoom > 3){
             map.setLayoutProperty('node_labels', 'text-allow-overlap', true);
             textOverlapEnabled = true;
@@ -363,6 +362,7 @@ function updateMapFilters(map){
         }
     }
     if(zoomLevelChange(currentZoom, 'lines')){
+        map.setFilter('nodes',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
         map.setFilter('edges_border',   [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
         map.setFilter('edges',          [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", lines]]]]);
     }
