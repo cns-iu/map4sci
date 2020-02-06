@@ -81,7 +81,10 @@ function loadMap(map, config) {
     addMapSources(map, config.data);
     addMapClusters(map);
     addMapEdges(map, config);
+    addEdgeHover(map);
     addMapNodes(map, config);
+    addNodeHover(map);
+    
 
     // Add zoom controls (without rotation controls) to the map.
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
@@ -174,7 +177,10 @@ function addMapEdges(map, config){
         "source": "edges_source",
         "layout": {},
         "paint": {
-            "line-color": ["get", "color", ["at", ["get", "level"], ["literal", lines]]],
+            "line-color": ["case",
+                ['boolean', ['feature-state', 'hover'], false], "red",
+                ["get", "color", ["at", ["get", "level"], ["literal", lines]]]
+            ],
             "line-width": ["get", "width", ["at", ["get", "level"], ["literal", lines]]],
             "line-opacity":  ["get", "opacity", ["at", ["get", "level"], ["literal", lines]]]
         },
@@ -226,11 +232,6 @@ function addMapNodes(map, config){
             "text-radial-offset": 0.25,
             "text-justify": "auto",
             "text-allow-overlap": false
-            // "text-allow-overlap": [ "case",
-            //     ["<=", ["zoom"], 3], false,
-            //     [">", ["zoom"], 3], true,
-            //     true
-            // ]
         },
         "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]
     });
@@ -240,10 +241,71 @@ function addMapNodes(map, config){
             "source": "nodes_source",
             "layout": {},
             "paint": {
-                "circle-color": "black",
+                "circle-color": ["case",
+                ['boolean', ['feature-state', 'hover'], false], "red",
+                "black"
+            ],
                 "circle-radius": 3
             },
             "filter": [">=", currentZoom, ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]]]
+    });
+}
+
+let hoverEdgeID = null;
+function addEdgeHover(map){
+    map.on('mousemove', 'edges', function(e) {
+        if (e.features.length > 0) {
+            if (hoverEdgeID) {
+                map.setFeatureState({
+                    source: 'edges_source', id: hoverEdgeID },
+                    { hover: false }
+                );
+            }
+            hoverEdgeID = e.features[0].id;
+            map.setFeatureState(
+                    { source: 'edges_source', id: hoverEdgeID },
+                    { hover: true }
+                );
+            }
+    });
+     
+    map.on('mouseleave', 'edges', function() {
+        if (hoverEdgeID) {
+            map.setFeatureState(
+                { source: 'edges_source', id: hoverEdgeID },
+                { hover: false }
+            );
+        }
+        hoverEdgeID = null;
+    });
+}
+
+let hoverNodeID = null;
+function addNodeHover(map){
+    map.on('mousemove', 'nodes', function(e) {
+        if (e.features.length > 0) {
+            if (hoverNodeID) {
+                map.setFeatureState({
+                    source: 'nodes_source', id: hoverNodeID },
+                    { hover: false }
+                );
+            }
+            hoverNodeID = e.features[0].id;
+            map.setFeatureState(
+                    { source: 'nodes_source', id: hoverNodeID },
+                    { hover: true }
+                );
+            }
+    });
+
+    map.on('mouseleave', 'nodes', function() {
+        if (hoverNodeID) {
+            map.setFeatureState(
+                { source: 'nodes_source', id: hoverNodeID },
+                { hover: false }
+            );
+        }
+        hoverNodeID = null;
     });
 }
 

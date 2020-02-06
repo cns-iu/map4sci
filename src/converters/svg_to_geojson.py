@@ -111,13 +111,13 @@ def make_node(graph: nx.Graph, id: Any,
     props.update(properties or {})
     if 'level' in props:
         props['level'] = int(props['level'])
-    return geo.Feature(f'node{id}', point, props)
+    return geo.Feature(f'{id}', point, props)
 
 
 def make_edge(graph: nx.Graph, src: Any, dest: Any,
               points: Iterable[Point2D],
               config: dict, *, properties: dict = None) -> geo.Feature:
-    id = f'edge{src}{dest}'
+    id = f'{src}{dest}'
     labels = graph.nodes.data('label', default='')
     line = geo.LineString([MapPoint.make(x, y, config) for x, y in points])
     props = properties.copy() if properties else {}
