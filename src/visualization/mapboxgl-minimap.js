@@ -102,6 +102,10 @@ class Minimap {
 		return this._container;
 	}
 
+	onRemove ( parentMap ) {
+		return;
+	}
+
 	_load ()
 	{
 		var opts = this.options;

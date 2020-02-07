@@ -1,7 +1,4 @@
 {
-  "dependencies": {
-    "mapbox-gl": "^1.7.0"
-  },
   "devDependencies": {
     "cssnano": "^4.1.10"
   }
