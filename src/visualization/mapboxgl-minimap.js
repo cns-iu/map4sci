@@ -43,15 +43,18 @@ let defaultOptions = {
 	// should be a function; will be bound to Minimap
 	zoomAdjust: null,
 
-	// if parent map zoom >= a and minimap zoom >= b, set minimap zoom to c
+	// [a, b, c]
+	// if parent map zoom >= a, and minimap zoom >= b, set minimap zoom to c
+	// must be defined from most zoomed in rule, to least zoomed in rule.
 	zoomLevels: [
-		[6, 0, 2],
-		[8, 2, 4]
+		[9, 3, 4],
+		[8, 2, 3],
+		[6, 0, 2]
 	],
 
-	lineColor: "#08F",
-	lineWidth: 1,
-	lineOpacity: 1,
+	edgeColor: "#08F",
+	edgeWidth: 1,
+	edgeOpacity: 1,
 
 	fillColor: "#F80",
 	fillOpacity: 0.25,
@@ -210,9 +213,9 @@ class Minimap {
 			"source": "trackingRect",
 			"layout": {},
 			"paint": {
-				"line-color": opts.lineColor,
-				"line-width": opts.lineWidth,
-				"line-opacity": opts.lineOpacity
+				"line-color": opts.edgeColor,
+				"line-width": opts.edgeWidth,
+				"line-opacity": opts.edgeOpacity
 			}
 		});
 

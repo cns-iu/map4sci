@@ -22,7 +22,7 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     const config = {
-        data : {
+        sources : {
             'nodes': 'nodes.geojson',
             'edges': 'edges.geojson',
             'clusters': 'cluster.geojson',
@@ -99,9 +99,9 @@
                 [6, 0, 2]
             ],
 
-            lineColor: "#08F",
-            lineWidth: 1,
-            lineOpacity: 1,
+            edgeColor: "#08F",
+            edgeWidth: 1,
+            edgeOpacity: 1,
 
             fillColor: "#F80",
             fillOpacity: 0.25,
@@ -116,7 +116,8 @@
         }
     }
 
-    const map = zmltMap('map', config);
+    const map = new ZmltMap(config);
+    map.load('map');
 </script>
 
 </html>
