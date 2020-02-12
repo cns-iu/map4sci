@@ -22,13 +22,17 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     const config = {
+        minZoom: 1,
+        maxZoom: 10,
+        textOverlapEnabledZoom: 3,
+        initialZoom: 2,
         sources : {
             'nodes': 'nodes.geojson',
             'edges': 'edges.geojson',
             'clusters': 'cluster.geojson',
             'clusterBoundaries': 'boundary.geojson'
         },
-        lines: [
+        edges: [
             { 'level': 0   ,'zoom': 0 },
             { 'level': 1   ,'zoom': 1.5     ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2  },
             { 'level': 2   ,'zoom': 3.5     ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
@@ -42,7 +46,7 @@
         ],
         nodes: [
             { 'level':0     ,'zoom':0.0   ,'fontsize':0  },
-            { 'level':1     ,'zoom':2.3   ,'fontsize':20 },
+            { 'level':1     ,'zoom':2.0   ,'fontsize':20 },
             { 'level':2     ,'zoom':4.5   ,'fontsize':18 },
             { 'level':3     ,'zoom':5.0   ,'fontsize':18 },
             { 'level':4     ,'zoom':5.5   ,'fontsize':16 },
@@ -75,7 +79,6 @@
             id: "mapboxgl-minimap",
             width: "320px",
             height: "180px",
-            style: "blankStyle",
             center: [0, 0],
             zoom: 0,
 

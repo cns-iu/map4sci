@@ -1,8 +1,7 @@
 /*
 	https://github.com/brendanmatkin/mapboxgl-minimap
 */
-
-var blankStyle = {
+const blankStyle = {
     "version": 8,
     "name": "Blank",
     "center": [
@@ -21,57 +20,12 @@ var blankStyle = {
                 "background-color": "rgba(255,255,255,1)"
             }
         }
-    ],
-    "id": "blank"
+    ]
 };
-let defaultOptions = {
-	id: "mapboxgl-minimap",
-	width: "320px",
-	height: "180px",
-	style: blankStyle,
-	center: [0, 0],
-	zoom: 0,
-
-	containerStyles: `; 
-		border: 1px solid lightgray; 
-		border-radius: 5px; 
-		-webkit-box-shadow: 3px 3px 5px 4px #00000021; 
-		-moz-box-shadow: 3px 3px 5px 4px #00000021; 
-		box-shadow: 3px 3px 5px 4px #00000021;
-	`,
-
-	// should be a function; will be bound to Minimap
-	zoomAdjust: null,
-
-	// [a, b, c]
-	// if parent map zoom >= a, and minimap zoom >= b, set minimap zoom to c
-	// must be defined from most zoomed in rule, to least zoomed in rule.
-	zoomLevels: [
-		[9, 3, 4],
-		[8, 2, 3],
-		[6, 0, 2]
-	],
-
-	edgeColor: "#08F",
-	edgeWidth: 1,
-	edgeOpacity: 1,
-
-	fillColor: "#F80",
-	fillOpacity: 0.25,
-
-	dragPan: false,
-	scrollZoom: false,
-	boxZoom: false,
-	dragRotate: false,
-	keyboard: false,
-	doubleClickZoom: false,
-	touchZoomRotate: false
-};
-
 class Minimap {
-	constructor(sources, _options=defaultOptions){
+	constructor(sources, _options){
 		this.sources = sources;
-		this.options = defaultOptions;
+		this.options = _options;
 		Object.assign(this.options, _options);
 		
 		this._ticking = false;
@@ -93,7 +47,7 @@ class Minimap {
 		var miniMap = this._miniMap = new mapboxgl.Map({
 			attributionControl: false,
 			container: container,
-			style: opts.style,
+			style: blankStyle,
 			zoom: opts.zoom,
 			center: opts.center
 		});
