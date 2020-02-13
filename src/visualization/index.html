@@ -22,40 +22,56 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     const config = {
-        minZoom: 1,
+        // Sources is the only required property for the config object.
+        sources : {
+            nodes: 'nodes.geojson',
+            edges: 'edges.geojson',
+            clusters: 'cluster.geojson',
+            clusterBoundaries: 'boundary.geojson'
+        },
+        minZoom: 0,
         maxZoom: 10,
         textOverlapEnabledZoom: 3,
         initialZoom: 2,
-        sources : {
-            'nodes': 'nodes.geojson',
-            'edges': 'edges.geojson',
-            'clusters': 'cluster.geojson',
-            'clusterBoundaries': 'boundary.geojson'
-        },
         edges: [
-            { 'level': 0   ,'zoom': 0 },
-            { 'level': 1   ,'zoom': 1.5     ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2  },
-            { 'level': 2   ,'zoom': 3.5     ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 3   ,'zoom': 4.5     ,'color': '#F9D776'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 4   ,'zoom': 5.0     ,'color': '#c1b276'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 5   ,'zoom': 5.4     ,'color': '#94895f'  ,'width': 2.2   ,'opacity':0.8  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 6   ,'zoom': 5.7     ,'color': '#615b43'  ,'width': 2.2   ,'opacity':0.8  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 7   ,'zoom': 6.0     ,'color': 'gray'     ,'width': 2     ,'opacity':0.7  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 8   ,'zoom': 6.2     ,'color': 'gray'     ,'width': 2     ,'opacity':0.6  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-            { 'level': 9   ,'zoom': 7.0     ,'color': 'gray'     ,'width': 1     ,'opacity':0.5  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    }
+            { level: 0   ,zoom: 0 },
+            { level: 1   ,zoom: 1.5     ,color: '#FFEBA1'  ,width: 3.2   ,opacity:1.0  ,borderOpacity:1.0   ,borderColor:'yellow'    ,borderWidth: 1.2  },
+            { level: 2   ,zoom: 3.5     ,color: '#FFEBA1'  ,width: 3     ,opacity:1.0  ,borderOpacity:1.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 3   ,zoom: 4.5     ,color: '#F9D776'  ,width: 2.7   ,opacity:0.9  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 4   ,zoom: 5.0     ,color: '#c1b276'  ,width: 2.7   ,opacity:0.9  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 5   ,zoom: 5.4     ,color: '#94895f'  ,width: 2.2   ,opacity:0.8  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 6   ,zoom: 5.7     ,color: '#615b43'  ,width: 2.2   ,opacity:0.8  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 7   ,zoom: 6.0     ,color: 'gray'     ,width: 2     ,opacity:0.7  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 8   ,zoom: 6.2     ,color: 'gray'     ,width: 2     ,opacity:0.6  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    },
+            { level: 9   ,zoom: 7.0     ,color: 'gray'     ,width: 1     ,opacity:0.5  ,borderOpacity:0.0   ,borderColor:'#F9D776'   ,borderWidth: 1    }
         ],
         nodes: [
-            { 'level':0     ,'zoom':0.0   ,'fontsize':0  },
-            { 'level':1     ,'zoom':2.0   ,'fontsize':20 },
-            { 'level':2     ,'zoom':4.5   ,'fontsize':18 },
-            { 'level':3     ,'zoom':5.0   ,'fontsize':18 },
-            { 'level':4     ,'zoom':5.5   ,'fontsize':16 },
-            { 'level':5     ,'zoom':6.0   ,'fontsize':16 },
-            { 'level':6     ,'zoom':6.2   ,'fontsize':14 },
-            { 'level':7     ,'zoom':6.5   ,'fontsize':14 },
-            { 'level':8     ,'zoom':6.7   ,'fontsize':12 },
-            { 'level':9     ,'zoom':7.5   ,'fontsize':12 },
+            { level:0     ,zoom:0.0   ,fontsize:0  },
+            { level:1     ,zoom:0.0   ,fontsize:20 },
+            { level:2     ,zoom:4.5   ,fontsize:18 },
+            { level:3     ,zoom:5.0   ,fontsize:18 },
+            { level:4     ,zoom:5.5   ,fontsize:16 },
+            { level:5     ,zoom:6.0   ,fontsize:16 },
+            { level:6     ,zoom:6.2   ,fontsize:14 },
+            { level:7     ,zoom:6.5   ,fontsize:14 },
+            { level:8     ,zoom:6.7   ,fontsize:12 },
+            { level:9     ,zoom:7.5   ,fontsize:12 },
         ],
+        clusters: {
+            fillOpacity: 0.7,
+            borderLineWidth: 0.5,
+            borderLineOpacity: 0.8,
+            borderLineMinZoom: 3
+        },
+
+        /*
+            Popup content needs to follow specific pattern to function properly.
+            Property names will be used to look up data from the geoJson sources.
+            Pass in format ['<anyHTML>and text</anyHTML><p>', 'propertyName', '</p>more html or text']
+     
+            You can pass in as many as you like but they need to alternate between raw html, and property names.
+            You can also pass in a formatter with the property name in format ['propertyName', formatterMethod]
+        */
         popups: [
             {
                 layer: 'edges',
