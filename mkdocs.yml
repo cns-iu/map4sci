@@ -22,7 +22,7 @@ plugins:
       module_name: src.mkdocs_macros
   - mktheapidocs:
       modules:
-        layers: &API_DOCS
+        src: &API_DOCS
           section: API
           source_repo: &SOURCE_REPO https://github.com/cns-iu/map4sci/tree/workflow/src
 

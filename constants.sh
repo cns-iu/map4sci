@@ -3,7 +3,7 @@ shopt -s expand_aliases
 # Set global configuration
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
-export PYTHONPATH="./src"
+export PYTHONPATH=".:./src"
 export GPG_TTY=$(tty)
 
 # Load environment
