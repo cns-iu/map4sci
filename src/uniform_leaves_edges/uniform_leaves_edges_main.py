@@ -9,16 +9,18 @@ import random
 
 import uniform_leaves_edges.uniform_leaves as uniformer
 
-tree_path = sys.argv[1]
+if __name__ == '__main__':
 
-# Main Graph
-tree_path_name = os.path.basename(tree_path).split(".")[0]
+    tree_path = sys.argv[1]
 
-# Reading graph and subgraph
-G = nx_read_dot(tree_path)
+    # Main Graph
+    tree_path_name = os.path.basename(tree_path).split(".")[0]
 
-G = uniformer.unify_leaves_edges_leghths(G)
+    # Reading graph and subgraph
+    G = nx_read_dot(tree_path)
+
+    G = uniformer.unify_leaves_edges_leghths(G)
 
 
-G = nx.Graph(G)
-write_dot(G, tree_path)
+    G = nx.Graph(G)
+    write_dot(G, tree_path)

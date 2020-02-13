@@ -1,6 +1,5 @@
 import argparse
 import subprocess
-from typing import TYPE_CHECKING
 
 
 def run_original(args: argparse.Namespace) -> None:
@@ -70,6 +69,6 @@ def setup_cmdline() -> argparse.ArgumentParser:
 
 
 # Main execution flow
-if not TYPE_CHECKING:
+if __name__ == '__main__':
     args = setup_cmdline().parse_args()
     run_original(args)
