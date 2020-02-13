@@ -1,9 +1,10 @@
-mypy
 mkdocs
 mkdocs-ivory
 mkdocs-macros-plugin
 mktheapidocs[plugin]
 click-man
+mypy
+typing_extensions
 pyyaml
 numpy
 pandas
