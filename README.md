@@ -82,15 +82,14 @@ S. No. | Name |Description | Input Location | Output Location
 8 | `22-remove-crossings-first-layer.sh` | Removes the crossing if they are present in the first layer | [$LAYERS_DIR](constants.sh)/layer0.dot | None
 9 | `23-impred.sh` | Run impred | [$LAYERS_DIR](constants.sh)/layer0.dot | [$OUT](constants.sh)/impred/layer0.dot
 10 | `24-impred-remove-label-overlap.sh` | Impred to remove the label overlap | [$OUT](constants.sh)/impred/layer0.dot | [$OUT](constants.sh)/impred/layer0.dot
-11 | `25-shorten-leaves.sh` | TODO: Check if USED |  |
-12 | `26-all-layers-except-first.sh` | Adding subcomponents and running impred on all layers except the first one |  |
-13 | `30-generate-clusters.sh` | Creates clusters for the completed layout | [$OUT](constants.sh)/impred/layer7.dot | [$OUT](constants.sh)/clustered/map.svg
-14 | `40-convert-to-geojson.sh` | Converts to the geojson files | [$OUT](constants.sh)/impred/layer7.dot | [$OUT](constants.sh)/clustered
-15 | `50-build-map-page.sh` | None |  [$OUT](constants.sh)/site-data/visualization
-16 | `60-measure-quality.sh` | [$OUT](constants.sh)/impred/layer7.dot | [$OUT](constants.sh)/quality_measurement/result.txt
-17 | `90-generate-site.sh` |  |
-18 | `90x-serve-site.sh` |  |  
-19 | `99x-publish.sh` |  |
+11 | `26-all-layers-except-first.sh` | Adding subcomponents and running impred on all layers except the first one |  |
+12 | `30-generate-clusters.sh` | Creates clusters for the completed layout | [$OUT](constants.sh)/impred/layer7.dot | [$OUT](constants.sh)/clustered/map.svg
+13 | `40-convert-to-geojson.sh` | Converts to the geojson files | [$OUT](constants.sh)/impred/layer7.dot | [$OUT](constants.sh)/clustered
+14 | `50-build-map-page.sh` | None |  [$OUT](constants.sh)/site-data/visualization
+15 | `60-measure-quality.sh` | [$OUT](constants.sh)/impred/layer7.dot | [$OUT](constants.sh)/quality_measurement/result.txt
+16 | `90-generate-site.sh` |  |
+17 | `90x-serve-site.sh` |  |  
+18 | `99x-publish.sh` |  |
 
 ### Environment Variables Details
 
