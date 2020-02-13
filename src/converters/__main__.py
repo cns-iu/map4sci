@@ -1,6 +1,5 @@
 import argparse
 import json
-from typing import TYPE_CHECKING
 import xml.etree.ElementTree as etree
 
 import networkx as nx
@@ -36,7 +35,7 @@ def setup_cmdline() -> argparse.ArgumentParser:
 
 
 # Main execution flow
-if not TYPE_CHECKING:
+if __name__ == '__main__':
     args = setup_cmdline().parse_args()
     if args.command == 'svg2geo':
         run_svg2geo(args)
