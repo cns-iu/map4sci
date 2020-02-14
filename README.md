@@ -94,7 +94,7 @@ S. No. | Name |Description | Input Location | Output Location
 ### Environment Variables Details
 
 S. No. | Name | File | Default Value
---- | --- | --- | ---|
+--- | --- | --- | ---
 1 | $OUT | [constants.sh](constants.sh) | `raw-data/$DATASET/$VERSION`
 2 | $LAYERS_DIR |[constants.sh](constants.sh) | `$OUT/layers`
 3 | $NETWORK | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot`
