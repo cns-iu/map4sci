@@ -94,6 +94,18 @@ class MapPoint(NamedTuple):
 
 
 def polygon_area(points: List[Point2D]) -> float:
+    """Calculates the area of a polygon
+    
+    Parameters
+    ----------
+    points : List[Point2D]
+        The list of vertices
+    
+    Returns
+    -------
+    float
+        The area of the polygon
+    """    
     area = 0
     x1, y1 = points[-1]
     for x2, y2 in points:

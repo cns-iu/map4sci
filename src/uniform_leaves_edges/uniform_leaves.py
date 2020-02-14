@@ -95,14 +95,26 @@ def extract_leaves(graph: nx.Graph):
     return leaves
 
 
-def unify_leaves_edges_leghths(G, value=-1):
+def unify_leaves_edges_leghths(G: nx.Graph, value: -1) -> nx.Graph:
     """This function sets the length of the edges incident on the leaves
     of a tree to a fixed value.
     The idea is to position the leaves next to their parent to save space.
     The edges are set to the given <tt>value</tt> parameter. If no value is given
     or it is set to -1 then the edges are set to half the length of the average
-    edge lenght."""
-
+    edge lenght.
+    
+    Parameters
+    ----------
+    G : nx.Graph
+        The given graph     
+    value : int
+        The fixed length value, if it is not supplied then default value is half of the average edge lenght of the graph.
+    
+    Returns
+    -------
+    nx.Graph
+        Returns the graph with the given fixed length or setting all edges to half of average edge lenght of graph
+    """
 
     # If the edge length value is not given set it half the length of the
     # average length value
