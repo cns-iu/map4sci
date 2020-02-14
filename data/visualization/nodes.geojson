@@ -7,15 +7,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          41.439705,
-          -39.822543
+          27.94684,
+          -54.850407
         ]
       },
       "properties": {
         "label": "Progesterone Receptor Signaling Mechanisms.",
         "level": 6,
         "paper_id": "27380738",
-        "pos": "51192.73,-24486.33",
+        "pos": "39963.60,-34904.42",
         "weight": "24.0"
       }
     },
@@ -25,8 +25,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          39.296834,
-          -40.236578
+          30.245726,
+          -54.128977
         ]
       },
       "properties": {
@@ -34,7 +34,7 @@
         "label": "The biology of progesterone receptor in the normal mammary gland and in breast cancer.",
         "level": 1,
         "paper_id": "22193050",
-        "pos": "49138.16,-25065.88",
+        "pos": "42155.81,-33695.56",
         "weight": "78.0",
         "width": "6.94"
       }
@@ -45,14 +45,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          43.003212,
-          -39.425063
+          26.606766,
+          -55.180545
         ]
       },
       "properties": {
         "label": "Revisiting progesterone receptor (PR) actions in breast cancer: Insights into PR repressive functions.",
         "paper_id": "29317254",
-        "pos": "52691.81,-23933.23",
+        "pos": "38685.71,-35464.83",
         "weight": "0.0"
       }
     },
@@ -62,15 +62,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.233615,
-          -38.183182
+          28.635454,
+          -52.086454
         ]
       },
       "properties": {
         "label": "Progesterone/RANKL is a major regulatory axis in the human breast.",
         "level": 4,
         "paper_id": "23616122",
-        "pos": "47159.96,-22225.12",
+        "pos": "40620.26,-30383.29",
         "weight": "57.0"
       }
     },
@@ -80,15 +80,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          37.509045,
-          -37.13538
+          27.10531,
+          -52.115159
         ]
       },
       "properties": {
         "label": "Comment on \"Progesterone/RANKL is a major regulatory axis in the human breast\".",
         "level": 7,
         "paper_id": "24337478",
-        "pos": "47424.04,-20806.48",
+        "pos": "39161.12,-30428.77",
         "weight": "8.0"
       }
     },
@@ -98,15 +98,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          34.602496,
-          -38.735727
+          29.082582,
+          -50.459749
         ]
       },
       "properties": {
         "label": "RANKL expression in normal and malignant breast tissue responds to progesterone and is up-regulated during the luteal phase.",
         "level": 6,
         "paper_id": "25007964",
-        "pos": "44637.26,-22981.43",
+        "pos": "41046.64,-27852.26",
         "weight": "19.0"
       }
     },
@@ -116,8 +116,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -17.143664,
-          -58.866518
+          -28.78708,
+          -64.157533
         ]
       },
       "properties": {
@@ -125,7 +125,7 @@
         "label": "Parity induces differentiation and reduces Wnt/Notch signaling ratio and proliferation potential of basal stem/progenitor cells isolated from mouse mammary epithelium.",
         "level": 1,
         "paper_id": "23621987",
-        "pos": "-4976.61,-56369.26",
+        "pos": "-14137.68,-52888.71",
         "weight": "52.0",
         "width": "13.14"
       }
@@ -136,15 +136,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -25.21385,
-          -58.175081
+          -35.736852,
+          -65.653018
         ]
       },
       "properties": {
         "label": "Somatic loss of p53 leads to stem/progenitor cell amplification in both mammary epithelial compartments, basal and luminal.",
         "level": 3,
         "paper_id": "23712598",
-        "pos": "-12714.25,-54950.01",
+        "pos": "-20764.96,-56321.55",
         "weight": "17.0"
       }
     },
@@ -154,8 +154,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -35.502679,
-          -65.82999
+          -38.787313,
+          -71.926138
         ]
       },
       "properties": {
@@ -163,7 +163,7 @@
         "label": "Progesterone and Wnt4 control mammary stem cells via myoepithelial crosstalk.",
         "level": 1,
         "paper_id": "25603931",
-        "pos": "-22579.11,-72533.87",
+        "pos": "-23673.87,-73318.89",
         "weight": "34.0",
         "width": "6.27"
       }
@@ -174,15 +174,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -17.668668,
-          -57.407185
+          -30.993515,
+          -63.023643
         ]
       },
       "properties": {
         "label": "Differential gene expression in nuclear label-retaining cells in the developing mouse mammary gland.",
         "level": 7,
         "paper_id": "23199335",
-        "pos": "-5479.98,-53405.80",
+        "pos": "-16241.73,-50407.18",
         "weight": "6.0"
       }
     },
@@ -192,15 +192,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -8.679681,
-          -53.356439
+          -15.246398,
+          -66.109357
         ]
       },
       "properties": {
         "label": "Small molecule antagonists of the Wnt/\u03b2-catenin signaling pathway target breast tumor-initiating cells in a Her2/Neu mouse model of breast cancer.",
         "level": 2,
         "paper_id": "22470504",
-        "pos": "3138.60,-45755.22",
+        "pos": "-1225.33,-57408.48",
         "weight": "48.0"
       }
     },
@@ -210,15 +210,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -16.210835,
-          -57.307832
+          -30.195316,
+          -62.471732
         ]
       },
       "properties": {
         "label": "Pregnancy in the mature adult mouse does not alter the proportion of mammary epithelial stem/progenitor cells.",
         "level": 5,
         "paper_id": "19386118",
-        "pos": "-4082.22,-53208.38",
+        "pos": "-15480.57,-49234.08",
         "weight": "35.0"
       }
     },
@@ -228,8 +228,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -24.365795,
-          -49.109989
+          -29.843134,
+          -56.70389
         ]
       },
       "properties": {
@@ -237,7 +237,7 @@
         "label": "Cooperative signaling between Wnt1 and integrin-linked kinase induces accelerated breast tumor development.",
         "level": 1,
         "paper_id": "20565980",
-        "pos": "-11901.14,-38479.57",
+        "pos": "-15144.73,-38112.65",
         "weight": "14.0",
         "width": "8.66"
       }
@@ -248,15 +248,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -17.746975,
-          -60.39592
+          -25.790048,
+          -63.785294
         ]
       },
       "properties": {
         "label": "Chromatin effector Pygo2 mediates Wnt-notch crosstalk to suppress luminal/alveolar potential of mammary stem and basal cells.",
         "level": 5,
         "paper_id": "23684539",
-        "pos": "-5555.06,-59612.29",
+        "pos": "-11279.72,-52063.10",
         "weight": "35.0"
       }
     },
@@ -266,15 +266,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -20.458373,
-          -59.273153
+          -31.446621,
+          -64.914869
         ]
       },
       "properties": {
         "label": "Wnt and Notch pathways have interrelated opposing roles on prostate progenitor cell proliferation and differentiation.",
         "level": 6,
         "paper_id": "21308863",
-        "pos": "-8154.73,-57217.21",
+        "pos": "-16673.81,-54603.23",
         "weight": "27.0"
       }
     },
@@ -284,15 +284,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -15.410371,
-          -60.162654
+          -29.144086,
+          -65.584514
         ]
       },
       "properties": {
         "label": "Molecular profiling of human mammary gland links breast cancer risk to a p27(+) cell population with progenitor characteristics.",
         "level": 4,
         "paper_id": "23770079",
-        "pos": "-3314.74,-59107.99",
+        "pos": "-14478.12,-56160.04",
         "weight": "49.0"
       }
     },
@@ -302,15 +302,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -14.886567,
-          -59.424017
+          -27.69665,
+          -65.118428
         ]
       },
       "properties": {
         "label": "Nitric oxide production upregulates Wnt/\u03b2-catenin signaling by inhibiting Dickkopf-1.",
         "level": 6,
         "paper_id": "24008318",
-        "pos": "-2812.52,-57534.38",
+        "pos": "-13097.85,-55072.31",
         "weight": "20.0"
       }
     },
@@ -320,15 +320,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -14.773675,
-          -58.302417
+          -32.500001,
+          -63.673097
         ]
       },
       "properties": {
         "label": "Dietary energy balance modulates epithelial-to-mesenchymal transition and tumor progression in murine claudin-low and basal-like mammary tumor models.",
         "level": 5,
         "paper_id": "22588949",
-        "pos": "-2704.28,-55209.29",
+        "pos": "-17678.31,-51816.39",
         "weight": "35.0"
       }
     },
@@ -338,15 +338,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -19.033759,
-          -60.004267
+          -31.846371,
+          -64.055428
         ]
       },
       "properties": {
         "label": "Tissue-dependent consequences of Apc inactivation on proliferation and differentiation of ciliated cell progenitors via Wnt and notch signaling.",
         "level": 7,
         "paper_id": "23646120",
-        "pos": "-6788.82,-58767.61",
+        "pos": "-17055.01,-52661.15",
         "weight": "13.0"
       }
     },
@@ -356,15 +356,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -19.677579,
-          -57.70619
+          -27.534076,
+          -62.803041
         ]
       },
       "properties": {
         "label": "How pregnancy at early age protects against breast cancer.",
         "level": 6,
         "paper_id": "24355762",
-        "pos": "-7406.11,-54003.19",
+        "pos": "-12942.82,-49935.65",
         "weight": "27.0"
       }
     },
@@ -374,15 +374,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -20.778629,
-          -57.914888
+          -25.347859,
+          -65.276399
         ]
       },
       "properties": {
         "label": "Wnt signaling in triple negative breast cancer is associated with metastasis.",
         "level": 2,
         "paper_id": "24209998",
-        "pos": "-8461.79,-54423.08",
+        "pos": "-10858.05,-55438.82",
         "weight": "96.0"
       }
     },
@@ -392,15 +392,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.626082,
-          -59.600901
+          -20.36937,
+          -61.06529
         ]
       },
       "properties": {
         "label": "Overexpression of EphB4 in the mammary epithelium shifts the differentiation pathway of progenitor cells and promotes branching activity and vascularization.",
         "level": 2,
         "paper_id": "24635767",
-        "pos": "8942.75,-57908.06",
+        "pos": "-6110.58,-46339.76",
         "weight": "5.0"
       }
     },
@@ -410,15 +410,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -13.677025,
-          -64.566375
+          -44.651501,
+          -60.950131
         ]
       },
       "properties": {
         "label": "Elf5 regulates mammary gland stem/progenitor cell fate by influencing notch signaling.",
         "level": 2,
         "paper_id": "22523003",
-        "pos": "-1652.82,-69304.55",
+        "pos": "-29265.94,-46108.52",
         "weight": "66.0"
       }
     },
@@ -428,15 +428,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -27.158805,
-          -57.700687
+          -38.46679,
+          -65.484193
         ]
       },
       "properties": {
         "label": "CCAAT/enhancer binding protein beta regulates stem cell activity and specifies luminal cell fate in the mammary gland.",
         "level": 6,
         "paper_id": "20054865",
-        "pos": "-14579.06,-53992.15",
+        "pos": "-23368.22,-55924.28",
         "weight": "26.0"
       }
     },
@@ -446,15 +446,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -24.771544,
-          -57.17351
+          -37.292037,
+          -64.50634
         ]
       },
       "properties": {
         "label": "The proto-oncogene Myc is essential for mammary stem cell function.",
         "level": 6,
         "paper_id": "22438054",
-        "pos": "-12290.17,-52942.32",
+        "pos": "-22247.98,-53672.46",
         "weight": "25.0"
       }
     },
@@ -464,15 +464,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -28.18011,
-          -59.109194
+          -39.088573,
+          -66.177841
         ]
       },
       "properties": {
         "label": "Rb deletion in mouse mammary progenitors induces luminal-B or basal-like/EMT tumor subtypes depending on p53 status.",
         "level": 3,
         "paper_id": "20679727",
-        "pos": "-15558.28,-56874.10",
+        "pos": "-23961.15,-57573.28",
         "weight": "85.0"
       }
     },
@@ -482,15 +482,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -26.401343,
-          -59.375026
+          -38.52649,
+          -64.865582
         ]
       },
       "properties": {
         "label": "Repression of mammary stem/progenitor cells by p53 is mediated by Notch and separable from apoptotic activity.",
         "level": 5,
         "paper_id": "21280161",
-        "pos": "-13852.81,-57431.23",
+        "pos": "-23425.15,-54490.19",
         "weight": "34.0"
       }
     },
@@ -500,15 +500,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -23.427396,
-          -59.149398
+          -33.915757,
+          -65.643659
         ]
       },
       "properties": {
         "label": "Intraepithelial paracrine Hedgehog signaling induces the expansion of ciliated cells that express diverse progenitor cell markers in the basal epithelium of the mouse mammary gland.",
         "level": 7,
         "paper_id": "23000969",
-        "pos": "-11001.41,-56958.08",
+        "pos": "-19028.37,-56299.46",
         "weight": "17.0"
       }
     },
@@ -518,15 +518,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -23.137897,
-          -57.93003
+          -35.934315,
+          -64.484688
         ]
       },
       "properties": {
         "label": "Stem/progenitor cells in non-lactating versus lactating equine mammary gland.",
         "level": 7,
         "paper_id": "22574831",
-        "pos": "-10723.84,-54453.64",
+        "pos": "-20953.26,-53623.52",
         "weight": "7.0"
       }
     },
@@ -536,15 +536,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -24.837054,
-          -59.534778
+          -34.327262,
+          -66.231919
         ]
       },
       "properties": {
         "label": "Irradiation of juvenile, but not adult, mammary gland increases stem cell self-renewal and estrogen receptor negative tumors.",
         "level": 6,
         "paper_id": "24038768",
-        "pos": "-12352.98,-57768.14",
+        "pos": "-19420.78,-57703.73",
         "weight": "26.0"
       }
     },
@@ -554,15 +554,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -28.046588,
-          -58.280703
+          -37.415392,
+          -66.502692
         ]
       },
       "properties": {
         "label": "Notch3 marks clonogenic mammary luminal progenitor cells in vivo.",
         "level": 4,
         "paper_id": "24100291",
-        "pos": "-15430.26,-55165.01",
+        "pos": "-22365.61,-58361.14",
         "weight": "42.0"
       }
     },
@@ -572,15 +572,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -26.049474,
-          -57.335251
+          -35.76505,
+          -66.393353
         ]
       },
       "properties": {
         "label": "Stem cell research: a novel boulevard towards improved bovine mastitis management.",
         "level": 7,
         "paper_id": "23983615",
-        "pos": "-13515.44,-53262.81",
+        "pos": "-20791.85,-58094.82",
         "weight": "12.0"
       }
     },
@@ -590,14 +590,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -23.151852,
-          -56.821009
+          -34.449316,
+          -64.471004
         ]
       },
       "properties": {
         "label": "Epithelial vimentin plays a functional role in mammary gland development.",
         "paper_id": "28947532",
-        "pos": "-10737.22,-52248.67",
+        "pos": "-19537.17,-53592.61",
         "weight": "2.0"
       }
     },
@@ -607,15 +607,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -35.732385,
-          -6.769687
+          -34.145802,
+          -30.099066
         ]
       },
       "properties": {
         "label": "Tristetraprolin regulates expression of VEGF and tumorigenesis in human colon cancer.",
         "level": 5,
         "paper_id": "19697322",
-        "pos": "-22799.35,14843.32",
+        "pos": "-19247.74,-1535.93",
         "weight": "40.0"
       }
     },
@@ -625,15 +625,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -38.230869,
-          -7.314716
+          -32.58833,
+          -31.919375
         ]
       },
       "properties": {
         "label": "Depletion of tristetraprolin in breast cancer cells increases interleukin-16 expression and promotes tumor infiltration with monocytes/macrophages.",
         "level": 4,
         "paper_id": "23241166",
-        "pos": "-25194.88,14254.71",
+        "pos": "-17762.54,-3603.14",
         "weight": "28.0"
       }
     },
@@ -643,15 +643,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -40.259919,
-          -6.29039
+          -33.855994,
+          -31.914936
         ]
       },
       "properties": {
         "label": "Inactivation or loss of TTP promotes invasion in head and neck cancer via transcript stabilization and secretion of MMP9, MMP2, and IL-6.",
         "level": 5,
         "paper_id": "23349315",
-        "pos": "-27140.32,15360.39",
+        "pos": "-18971.38,-3598.05",
         "weight": "32.0"
       }
     },
@@ -661,15 +661,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -39.115158,
-          -5.348228
+          -34.73408,
+          -31.098994
         ]
       },
       "properties": {
         "label": "Tristetraprolin regulates interleukin-6 expression through p38 MAPK-dependent affinity changes with mRNA 3' untranslated region.",
         "level": 4,
         "paper_id": "21457063",
-        "pos": "-26042.73,16375.45",
+        "pos": "-19808.72,-2666.59",
         "weight": "49.0"
       }
     },
@@ -679,14 +679,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -39.51346,
-          -8.721243
+          -31.085745,
+          -30.464499
         ]
       },
       "properties": {
         "label": "Tristetraprolin Overexpression in Gastric Cancer Cells Suppresses PD-L1 Expression and Inhibits Tumor Progression by Enhancing Antitumor Immunity.",
         "paper_id": "29936792",
-        "pos": "-26424.62,12732.26",
+        "pos": "-16329.68,-1947.79",
         "weight": "1.0"
       }
     },
@@ -696,15 +696,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -36.495041,
-          -65.074859
+          -36.996325,
+          -72.120176
         ]
       },
       "properties": {
         "label": "A mouse model to dissect progesterone signaling in the female reproductive tract and mammary gland.",
         "level": 6,
         "paper_id": "20029965",
-        "pos": "-23530.58,-70585.57",
+        "pos": "-21965.99,-73930.79",
         "weight": "21.0"
       }
     },
@@ -714,15 +714,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -37.160231,
-          -64.620643
+          -35.746646,
+          -72.271861
         ]
       },
       "properties": {
         "label": "Dual roles for Id4 in the regulation of estrogen signaling in the mammary gland and ovary.",
         "level": 7,
         "paper_id": "25038044",
-        "pos": "-24168.36,-69440.12",
+        "pos": "-20774.30,-74413.62",
         "weight": "9.0"
       }
     },
@@ -732,15 +732,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -42.013467,
-          -66.020949
+          -44.873534,
+          -71.943773
         ]
       },
       "properties": {
         "label": "Perinatal exposure to bisphenol a increases adult mammary gland progesterone response and cell number.",
         "level": 3,
         "paper_id": "21903720",
-        "pos": "-28821.61,-73035.61",
+        "pos": "-29477.67,-73374.24",
         "weight": "54.0"
       }
     },
@@ -750,15 +750,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -39.992239,
-          -66.596843
+          -42.836488,
+          -72.445892
         ]
       },
       "properties": {
         "label": "Pubertal bisphenol A exposure alters murine mammary stem cell function leading to early neoplasia in regenerated glands.",
         "level": 7,
         "paper_id": "24520039",
-        "pos": "-26883.67,-74571.87",
+        "pos": "-27535.15,-74972.53",
         "weight": "15.0"
       }
     },
@@ -768,15 +768,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -45.197386,
-          -65.94907
+          -47.650326,
+          -72.525057
         ]
       },
       "properties": {
         "label": "Chronic oral exposure to bisphenol A results in a nonmonotonic dose response in mammary carcinogenesis and metastasis in MMTV-erbB2 mice.",
         "level": 3,
         "paper_id": "21988766",
-        "pos": "-31874.33,-72846.31",
+        "pos": "-32125.61,-75228.55",
         "weight": "62.0"
       }
     },
@@ -786,15 +786,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -40.526108,
-          -65.606194
+          -43.250772,
+          -71.602914
         ]
       },
       "properties": {
         "label": "Cell proliferation and apoptosis in rat mammary glands following combinational exposure to bisphenol A and genistein.",
         "level": 6,
         "paper_id": "24884420",
-        "pos": "-27395.54,-71950.57",
+        "pos": "-27930.21,-72313.56",
         "weight": "18.0"
       }
     },
@@ -804,15 +804,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -44.878851,
-          -66.650254
+          -48.033517,
+          -71.943675
         ]
       },
       "properties": {
         "label": "Bisphenol A alters the development of the rhesus monkey mammary gland.",
         "level": 3,
         "paper_id": "22566636",
-        "pos": "-31568.92,-74716.15",
+        "pos": "-32491.02,-73373.93",
         "weight": "83.0"
       }
     },
@@ -822,15 +822,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -41.401396,
-          -67.015767
+          -44.178051,
+          -72.784038
         ]
       },
       "properties": {
         "label": "Prenatal exposure to bisphenol A promotes angiogenesis and alters steroid-mediated responses in the mammary glands of cycling rats.",
         "level": 6,
         "paper_id": "21513798",
-        "pos": "-28234.76,-75711.97",
+        "pos": "-28814.46,-76074.02",
         "weight": "29.0"
       }
     },
@@ -840,15 +840,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -42.062227,
-          -65.262665
+          -44.851732,
+          -71.319729
         ]
       },
       "properties": {
         "label": "Low-dose BPA exposure alters the mesenchymal and epithelial transcriptomes of the mouse fetal mammary gland.",
         "level": 5,
         "paper_id": "23704952",
-        "pos": "-28868.36,-71064.90",
+        "pos": "-29456.88,-71446.68",
         "weight": "40.0"
       }
     },
@@ -858,15 +858,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -43.305373,
-          -67.039363
+          -46.047468,
+          -72.827511
         ]
       },
       "properties": {
         "label": "Prenatal exposure to BPA alters the epigenome of the rat mammary gland and increases the propensity to neoplastic development.",
         "level": 4,
         "paper_id": "24988533",
-        "pos": "-30060.28,-75776.77",
+        "pos": "-30597.13,-76217.15",
         "weight": "42.0"
       }
     },
@@ -876,15 +876,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -43.533315,
-          -65.57521
+          -46.395015,
+          -71.589008
         ]
       },
       "properties": {
         "label": "The male mammary gland: a target for the xenoestrogen bisphenol A.",
         "level": 6,
         "paper_id": "23348055",
-        "pos": "-30278.83,-71870.21",
+        "pos": "-30928.55,-72270.69",
         "weight": "26.0"
       }
     },
@@ -894,15 +894,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.976611,
-          -37.720962
+          14.120387,
+          -50.509553
         ]
       },
       "properties": {
         "label": "Lactogenic hormonal induction of long distance interactions between beta-casein gene regulatory elements.",
         "level": 5,
         "paper_id": "19542223",
-        "pos": "27737.68,-21596.84",
+        "pos": "26778.74,-27928.44",
         "weight": "39.0"
       }
     },
@@ -912,15 +912,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          14.710815,
-          -36.988896
+          12.110502,
+          -49.10603
         ]
       },
       "properties": {
         "label": "Progesterone receptor directly inhibits \u03b2-casein gene transcription in mammary epithelial cells through promoting promoter and enhancer repressive chromatin modifications.",
         "level": 2,
         "paper_id": "21527503",
-        "pos": "25565.25,-20609.73",
+        "pos": "24862.12,-25811.57",
         "weight": "22.0"
       }
     },
@@ -930,14 +930,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.368214,
-          -38.165682
+          13.428554,
+          -51.354726
         ]
       },
       "properties": {
         "label": "The chromatin landscape of the casein gene locus.",
         "paper_id": "23914258",
-        "pos": "29071.94,-22201.26",
+        "pos": "26119.01,-29233.67",
         "weight": "2.0"
       }
     },
@@ -947,14 +947,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.997926,
-          -36.725926
+          14.895023,
+          -50.64016
         ]
       },
       "properties": {
         "label": "Lactogenic hormone stimulation and epigenetic control of L-amino acid oxidase expression in lactating mammary glands.",
         "paper_id": "25820447",
-        "pos": "28716.91,-20257.47",
+        "pos": "27517.43,-28128.60",
         "weight": "2.0"
       }
     },
@@ -964,14 +964,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.470763,
-          -38.0537
+          14.705205,
+          -51.454484
         ]
       },
       "properties": {
         "label": "A functional study of proximal goat \u03b2-casein promoter and intron 1 in immortalized goat mammary epithelial cells.",
         "paper_id": "25841968",
-        "pos": "28211.47,-22048.72",
+        "pos": "27336.42,-29389.31",
         "weight": "3.0"
       }
     },
@@ -981,15 +981,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.413476,
-          -36.179703
+          14.420755,
+          -47.43018
         ]
       },
       "properties": {
         "label": "Collaborative interaction of Oct-2 with Oct-1 in transactivation of lactogenic hormones-induced \u03b2-casein gene expression in mammary epithelial cells.",
         "level": 2,
         "paper_id": "24861805",
-        "pos": "30074.13,-19529.61",
+        "pos": "27065.17,-23360.94",
         "weight": "3.0"
       }
     },
@@ -999,15 +999,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.487938,
-          -39.524622
+          13.458388,
+          -46.143056
         ]
       },
       "properties": {
         "label": "Interactions of the ubiquitous octamer-binding transcription factor-1 with both the signal transducer and activator of transcription 5 and the glucocorticoid receptor mediate prolactin and glucocorticoid-induced \u03b2-casein gene expression in mammary epithelial cells.",
         "level": 7,
         "paper_id": "23313770",
-        "pos": "32063.11,-24071.47",
+        "pos": "26147.46,-21531.28",
         "weight": "10.0"
       }
     },
@@ -1017,15 +1017,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.560838,
-          -36.644993
+          14.527226,
+          -48.270712
         ]
       },
       "properties": {
         "label": "Oct-1 functions as a transactivator in the hormonal induction of beta-casein gene expression.",
         "level": 7,
         "paper_id": "19266165",
-        "pos": "30215.42,-20149.30",
+        "pos": "27166.70,-24580.02",
         "weight": "7.0"
       }
     },
@@ -1035,15 +1035,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.05313,
-          -32.482466
+          17.284398,
+          -43.877274
         ]
       },
       "properties": {
         "label": "Gap junctions mediate STAT5-independent \u03b2-casein expression in CID-9 mammary epithelial cells.",
         "level": 2,
         "paper_id": "22142338",
-        "pos": "28769.84,-14729.30",
+        "pos": "29795.93,-18411.48",
         "weight": "1.0"
       }
     },
@@ -1053,15 +1053,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.645208,
-          -40.623649
+          14.410059,
+          -44.893925
         ]
       },
       "properties": {
         "label": "Bovine prolactin elevates hTF expression directed by a tissue-specific goat \u03b2-casein promoter through prolactin receptor-mediated STAT5a activation.",
         "level": 7,
         "paper_id": "22829284",
-        "pos": "32213.90,-25610.90",
+        "pos": "27054.97,-19796.09",
         "weight": "6.0"
       }
     },
@@ -1071,14 +1071,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          23.656935,
-          -39.739162
+          14.793114,
+          -45.547216
         ]
       },
       "properties": {
         "label": "Regulatory roles of Oct proteins in the mammary gland.",
         "paper_id": "27044595",
-        "pos": "34142.73,-24370.04",
+        "pos": "27420.25,-20698.78",
         "weight": "4.0"
       }
     },
@@ -1088,15 +1088,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.650221,
-          -40.647799
+          13.187718,
+          -45.570035
         ]
       },
       "properties": {
         "label": "Dynamic trafficking of STAT5 depends on an unconventional nuclear localization signal.",
         "level": 7,
         "paper_id": "23704351",
-        "pos": "33177.50,-25645.01",
+        "pos": "25889.35,-20730.50",
         "weight": "14.0"
       }
     },
@@ -1106,14 +1106,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.726877,
-          -40.000395
+          12.432315,
+          -46.80504
         ]
       },
       "properties": {
         "label": "Buffalo alpha S1-casein gene 5'-flanking region and its interspecies comparison.",
         "paper_id": "24142689",
-        "pos": "31333.41,-24734.85",
+        "pos": "25169.00,-22466.83",
         "weight": "1.0"
       }
     },
@@ -1123,15 +1123,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.592419,
-          -40.127682
+          18.515757,
+          -50.291876
         ]
       },
       "properties": {
         "label": "CDC2 mediates progestin initiated endometrial stromal cell proliferation: a PR signaling to gene expression independently of its binding to chromatin.",
         "level": 6,
         "paper_id": "24859236",
-        "pos": "27369.32,-24913.11",
+        "pos": "30970.15,-27596.07",
         "weight": "3.0"
       }
     },
@@ -1141,15 +1141,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.290599,
-          -41.572158
+          20.091255,
+          -51.578658
         ]
       },
       "properties": {
         "label": "Inhibition of AKT with the orally active allosteric AKT inhibitor, MK-2206, sensitizes endometrial cancer cells to progestin.",
         "level": 6,
         "paper_id": "22911820",
-        "pos": "28038.73,-26959.98",
+        "pos": "32472.54,-29583.52",
         "weight": "31.0"
       }
     },
@@ -1159,15 +1159,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.961637,
-          -40.374547
+          20.281597,
+          -50.053155
         ]
       },
       "properties": {
         "label": "Increased AKT or MEK1/2 activity influences progesterone receptor levels and localization in endometriosis.",
         "level": 6,
         "paper_id": "24064688",
-        "pos": "29640.91,-25259.79",
+        "pos": "32654.05,-27233.31",
         "weight": "27.0"
       }
     },
@@ -1177,15 +1177,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          15.866006,
-          -41.479544
+          20.691079,
+          -50.852448
         ]
       },
       "properties": {
         "label": "Mutational analysis of progesterone receptor functional domains in stable cell lines delineates sets of genes regulated by different mechanisms.",
         "level": 6,
         "paper_id": "19299443",
-        "pos": "26672.84,-26827.39",
+        "pos": "33044.53,-28455.13",
         "weight": "21.0"
       }
     },
@@ -1195,15 +1195,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.436373,
-          -41.373286
+          18.888902,
+          -51.988861
         ]
       },
       "properties": {
         "label": "Forkhead transcription factor FOXO1 is a direct target of progestin to inhibit endometrial epithelial cell growth.",
         "level": 6,
         "paper_id": "21131554",
-        "pos": "29137.29,-26675.50",
+        "pos": "31325.98,-30228.88",
         "weight": "27.0"
       }
     },
@@ -1213,15 +1213,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          15.705064,
-          -39.183716
+          19.185904,
+          -49.673264
         ]
       },
       "properties": {
         "label": "The PRB-dependent FOXO1/IGFBP-1 axis is essential for progestin to inhibit endometrial epithelial growth.",
         "level": 7,
         "paper_id": "23603247",
-        "pos": "26518.53,-23598.93",
+        "pos": "31609.20,-26659.73",
         "weight": "7.0"
       }
     },
@@ -1231,14 +1231,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          14.932353,
-          -40.253328
+          16.583997,
+          -51.127541
         ]
       },
       "properties": {
         "label": "Progesterone induces progesterone receptor gene (PGR) expression via rapid activation of protein kinase pathways required for cooperative estrogen receptor alpha (ER) and progesterone receptor (PR) genomic action at ER/PR target genes.",
         "paper_id": "27641443",
-        "pos": "25777.66,-25089.40",
+        "pos": "29128.03,-28880.48",
         "weight": "5.0"
       }
     },
@@ -1248,15 +1248,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.512865,
-          -39.216425
+          17.343028,
+          -49.693852
         ]
       },
       "properties": {
         "label": "Influence of AKT on progesterone action in endometrial diseases.",
         "level": 7,
         "paper_id": "25100707",
-        "pos": "29210.63,-23644.17",
+        "pos": "29851.84,-26690.70",
         "weight": "9.0"
       }
     },
@@ -1266,15 +1266,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          15.157136,
-          -40.825767
+          17.498503,
+          -51.857009
         ]
       },
       "properties": {
         "label": "Progestin-mediated activation of MAPK and AKT in nuclear progesterone receptor negative breast epithelial cells: The role of membrane progesterone receptors.",
         "level": 7,
         "paper_id": "27349565",
-        "pos": "25993.18,-25896.75",
+        "pos": "30000.10,-30020.80",
         "weight": "8.0"
       }
     },
@@ -1284,15 +1284,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.134014,
-          -28.472359
+          17.877332,
+          -41.413314
         ]
       },
       "properties": {
         "label": "Serotonin suppresses \u03b2-casein expression via inhibition of the signal transducer and activator of transcription 5 (STAT5) protein phosphorylation in human mammary epithelial cells MCF-12A.",
         "level": 2,
         "paper_id": "25087955",
-        "pos": "31723.77,-9740.43",
+        "pos": "30361.35,-15150.59",
         "weight": "10.0"
       }
     },
@@ -1302,15 +1302,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          29.459301,
-          -30.926923
+          25.746381,
+          -40.998688
         ]
       },
       "properties": {
         "label": "Zinc Finger Homeodomain Factor Zfhx3 Is Essential for Mammary Lactogenic Differentiation by Maintaining Prolactin Signaling Activity.",
         "level": 2,
         "paper_id": "27129249",
-        "pos": "39706.00,-12769.50",
+        "pos": "37865.25,-14614.21",
         "weight": "5.0"
       }
     },
@@ -1320,15 +1320,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.625732,
-          -27.473991
+          18.109998,
+          -42.440047
         ]
       },
       "properties": {
         "label": "Prolactin and epidermal growth factor stimulate adipophilin synthesis in HC11 mouse mammary epithelial cells via the PI3-kinase/Akt/mTOR pathway.",
         "level": 7,
         "paper_id": "22426621",
-        "pos": "30277.64,-8528.79",
+        "pos": "30583.22,-16493.76",
         "weight": "10.0"
       }
     },
@@ -1338,15 +1338,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.265821,
-          -29.608692
+          15.492487,
+          -41.280473
         ]
       },
       "properties": {
         "label": "The bovine mammary gland expresses multiple functional isoforms of serotonin receptors.",
         "level": 5,
         "paper_id": "19654143",
-        "pos": "29932.56,-11133.54",
+        "pos": "28087.17,-14978.37",
         "weight": "37.0"
       }
     },
@@ -1356,14 +1356,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.866879,
-          -28.595638
+          18.092244,
+          -39.876819
         ]
       },
       "properties": {
         "label": "Short communication: retinoic acid plus prolactin to synergistically increase specific casein gene expression in MAC-T cells.",
         "paper_id": "23587393",
-        "pos": "30508.85,-9890.83",
+        "pos": "30566.29,-13179.57",
         "weight": "5.0"
       }
     },
@@ -1373,14 +1373,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.435399,
-          -30.164194
+          19.489837,
+          -41.662748
         ]
       },
       "properties": {
         "label": "Increased STAT5 signaling in the ring dove brain in response to prolactin administration and spontaneous elevations in prolactin during the breeding cycle.",
         "paper_id": "24530808",
-        "pos": "32971.53,-11820.26",
+        "pos": "31899.03,-15474.92",
         "weight": "4.0"
       }
     },
@@ -1390,14 +1390,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.237195,
-          -28.999514
+          15.267623,
+          -41.940605
         ]
       },
       "properties": {
         "label": "Serotonin regulates \u03b2-casein expression via 5-HT7 receptors in human mammary epithelial MCF-12A cells.",
         "paper_id": "25757927",
-        "pos": "34699.08,-10384.80",
+        "pos": "27872.74,-15837.69",
         "weight": "5.0"
       }
     },
@@ -1407,14 +1407,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.042145,
-          -28.305408
+          15.568054,
+          -40.01732
         ]
       },
       "properties": {
         "label": "Inhibitory effect of fluvoxamine on \u03b2-casein expression via a serotonin-independent mechanism in human mammary epithelial cells.",
         "paper_id": "26415980",
-        "pos": "32594.48,-9537.03",
+        "pos": "28159.23,-13357.94",
         "weight": "3.0"
       }
     },
@@ -1424,14 +1424,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.291305,
-          -30.550984
+          16.297198,
+          -42.403625
         ]
       },
       "properties": {
         "label": "Serotonin suppresses \u03b2-casein expression via PTP1B activation in human mammary epithelial cells.",
         "paper_id": "27016479",
-        "pos": "31874.58,-12300.70",
+        "pos": "28854.54,-16445.74",
         "weight": "4.0"
       }
     },
@@ -1441,14 +1441,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.587667,
-          -26.644975
+          20.103944,
+          -40.711161
         ]
       },
       "properties": {
         "label": "[Endogenous Serotonin and Milk Production Regulation in the Mammary Gland].",
         "paper_id": "29863055",
-        "pos": "32158.73,-7531.01",
+        "pos": "32484.64,-14244.23",
         "weight": "0.0"
       }
     },
@@ -1458,14 +1458,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.808994,
-          -32.576052
+          15.581214,
+          -43.448975
         ]
       },
       "properties": {
         "label": "Analysis of mammary specific gene locus regulation in differentiated cells derived by somatic cell fusion.",
         "paper_id": "19014936",
-        "pos": "27576.97,-14848.27",
+        "pos": "28171.78,-17835.25",
         "weight": "4.0"
       }
     },
@@ -1475,15 +1475,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -5.074858,
-          -28.015266
+          -5.751535,
+          -42.927348
         ]
       },
       "properties": {
         "label": "Paracrine-rescued lobulogenesis in chimeric outgrowths comprising progesterone-receptor-null mammary epithelium and redirected wild-type testicular cells.",
         "level": 7,
         "paper_id": "24190884",
-        "pos": "6594.88,-9184.30",
+        "pos": "7828.94,-17138.94",
         "weight": "7.0"
       }
     },
@@ -1493,8 +1493,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -4.533866,
-          -29.014283
+          -7.36833,
+          -42.716146
         ]
       },
       "properties": {
@@ -1502,7 +1502,7 @@
         "label": "Targeting RANKL to a specific subset of murine mammary epithelial cells induces ordered branching morphogenesis and alveologenesis in the absence of progesterone receptor expression.",
         "level": 1,
         "paper_id": "20605949",
-        "pos": "7113.58,-10402.90",
+        "pos": "6287.17,-16858.69",
         "weight": "48.0",
         "width": "14.71"
       }
@@ -1513,15 +1513,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.122912,
-          -35.56802
+          11.388949,
+          -51.147062
         ]
       },
       "properties": {
         "label": "A composite intronic element directs dynamic binding of the progesterone receptor and GATA-2.",
         "level": 6,
         "paper_id": "19036901",
-        "pos": "26919.16,-18720.52",
+        "pos": "24174.05,-28910.76",
         "weight": "28.0"
       }
     },
@@ -1531,15 +1531,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.078089,
-          -34.957842
+          10.744023,
+          -51.697884
         ]
       },
       "properties": {
         "label": "Novel role of signal transducer and activator of transcription 3 as a progesterone receptor coactivator in breast cancer.",
         "level": 7,
         "paper_id": "21184768",
-        "pos": "28793.77,-17919.55",
+        "pos": "23559.05,-29770.49",
         "weight": "17.0"
       }
     },
@@ -1549,15 +1549,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.480508,
-          -34.386938
+          12.233143,
+          -51.981786
         ]
       },
       "properties": {
         "label": "Progesterone induces expression of the prolactin receptor gene through cooperative action of Sp1 and C/EBP.",
         "level": 6,
         "paper_id": "21238538",
-        "pos": "27262.02,-17175.52",
+        "pos": "24979.07,-30217.70",
         "weight": "21.0"
       }
     },
@@ -1567,15 +1567,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.602017,
-          -27.497961
+          0.96147,
+          -39.217156
         ]
       },
       "properties": {
         "label": "Multimodal regulation of E2F1 gene expression by progestins.",
         "level": 6,
         "paper_id": "20123965",
-        "pos": "14914.21,-8557.75",
+        "pos": "14230.44,-12346.95",
         "weight": "19.0"
       }
     },
@@ -1585,14 +1585,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.260112,
-          -27.943467
+          0.625448,
+          -38.871915
         ]
       },
       "properties": {
         "label": "Deep sequencing reveals new aspects of progesterone receptor signaling in breast cancer cells.",
         "paper_id": "24897521",
-        "pos": "16503.98,-9097.16",
+        "pos": "13910.01,-11914.31",
         "weight": "4.0"
       }
     },
@@ -1602,15 +1602,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.745461,
-          -28.931312
+          0.995038,
+          -40.673744
         ]
       },
       "properties": {
         "label": "Progesterone receptor inhibits proliferation of human breast cancer cells via induction of MAPK phosphatase 1 (MKP-1/DUSP1).",
         "level": 5,
         "paper_id": "22020934",
-        "pos": "14092.95,-10301.25",
+        "pos": "14262.45,-14196.20",
         "weight": "32.0"
       }
     },
@@ -1620,15 +1620,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.99788,
-          -26.667247
+          1.10715,
+          -38.327983
         ]
       },
       "properties": {
         "label": "The role of the retinoblastoma/E2F1 tumor suppressor pathway in the lesion recognition step of nucleotide excision repair.",
         "level": 7,
         "paper_id": "19376752",
-        "pos": "15293.76,-7557.72",
+        "pos": "14369.36,-11236.92",
         "weight": "10.0"
       }
     },
@@ -1638,15 +1638,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.369875,
-          -34.767825
+          4.543163,
+          -47.639272
         ]
       },
       "properties": {
         "label": "The progesterone receptor hinge region regulates the kinetics of transcriptional responses through acetylation, phosphorylation, and nuclear retention.",
         "level": 5,
         "paper_id": "20861224",
-        "pos": "19485.60,-17671.34",
+        "pos": "17645.93,-23662.36",
         "weight": "40.0"
       }
     },
@@ -1656,15 +1656,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.057413,
-          -33.23967
+          5.981297,
+          -46.139938
         ]
       },
       "properties": {
         "label": "ck2-dependent phosphorylation of progesterone receptors (PR) on Ser81 regulates PR-B isoform-specific target gene expression in breast cancer cells.",
         "level": 2,
         "paper_id": "21518957",
-        "pos": "21103.60,-15695.49",
+        "pos": "19017.33,-21526.90",
         "weight": "37.0"
       }
     },
@@ -1674,15 +1674,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.808138,
-          -34.880827
+          2.824533,
+          -48.033845
         ]
       },
       "properties": {
         "label": "ALU repeats in promoters are position-dependent co-response elements (coRE) that enhance or repress transcription by dimeric and monomeric progesterone receptors.",
         "level": 6,
         "paper_id": "19372234",
-        "pos": "18947.01,-17818.88",
+        "pos": "16007.05,-24234.47",
         "weight": "23.0"
       }
     },
@@ -1692,15 +1692,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          10.208582,
-          -35.007041
+          4.349737,
+          -48.665324
         ]
       },
       "properties": {
         "label": "Acetylation at lysine 183 of progesterone receptor by p300 accelerates DNA binding kinetics and transactivation of direct target genes.",
         "level": 7,
         "paper_id": "24302725",
-        "pos": "21248.54,-17983.91",
+        "pos": "17461.48,-25159.27",
         "weight": "8.0"
       }
     },
@@ -1710,15 +1710,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          14.671077,
-          -34.815092
+          8.891479,
+          -49.198574
         ]
       },
       "properties": {
         "label": "Cytokine and progesterone receptor interplay in the regulation of MUC1 gene expression.",
         "level": 4,
         "paper_id": "20962044",
-        "pos": "25527.15,-17733.03",
+        "pos": "21792.47,-25949.28",
         "weight": "28.0"
       }
     },
@@ -1728,15 +1728,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          15.36569,
-          -33.838677
+          7.954405,
+          -49.007882
         ]
       },
       "properties": {
         "label": "Peroxisome proliferator-activated receptor gamma activation inhibits progesterone-stimulated human MUC1 expression.",
         "level": 7,
         "paper_id": "20484415",
-        "pos": "26193.14,-16465.76",
+        "pos": "20898.88,-25665.80",
         "weight": "14.0"
       }
     },
@@ -1746,15 +1746,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.970982,
-          -34.23492
+          8.706663,
+          -50.30562
         ]
       },
       "properties": {
         "label": "Expression of human MUC1 during early pregnancy in the human MUC1 transgenic mouse model.",
         "level": 7,
         "paper_id": "19684334",
-        "pos": "23897.11,-16978.26",
+        "pos": "21616.23,-27617.01",
         "weight": "12.0"
       }
     },
@@ -1764,15 +1764,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          14.183568,
-          -33.522758
+          7.245531,
+          -49.690668
         ]
       },
       "properties": {
         "label": "MUC1 protein expression in tumor cells regulates transcription of proinflammatory cytokines by forming a complex with nuclear factor-\u03baB p65 and binding to cytokine promoters: importance of extracellular domain.",
         "level": 4,
         "paper_id": "22021035",
-        "pos": "25059.73,-16058.85",
+        "pos": "20222.90,-26685.91",
         "weight": "44.0"
       }
     },
@@ -1782,15 +1782,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.881216,
-          -17.935135
+          18.019499,
+          -29.688817
         ]
       },
       "properties": {
         "label": "Mammary-specific gene activation is defined by progressive recruitment of STAT5 during pregnancy and the establishment of H3K4me3 marks.",
         "level": 2,
         "paper_id": "24277936",
-        "pos": "28605.01,2571.19",
+        "pos": "30496.92,-1075.37",
         "weight": "19.0"
       }
     },
@@ -1800,15 +1800,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.537868,
-          -18.283411
+          16.011323,
+          -28.264455
         ]
       },
       "properties": {
         "label": "Trp63 is regulated by STAT5 in mammary tissue and subject to differentiation in cancer.",
         "level": 7,
         "paper_id": "24692510",
-        "pos": "31152.19,2178.45",
+        "pos": "28581.93,509.35",
         "weight": "5.0"
       }
     },
@@ -1818,15 +1818,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.998972,
-          -16.407446
+          18.433353,
+          -27.981407
         ]
       },
       "properties": {
         "label": "Coregulation of genetic programs by the transcription factors NFIB and STAT5.",
         "level": 7,
         "paper_id": "24678731",
-        "pos": "27759.12,4285.03",
+        "pos": "30891.57,821.71",
         "weight": "7.0"
       }
     },
@@ -1836,15 +1836,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.364244,
-          -19.328178
+          19.486565,
+          -29.369649
         ]
       },
       "properties": {
         "label": "Loss of EZH2 results in precocious mammary gland development and activation of STAT5-dependent genes.",
         "level": 7,
         "paper_id": "26250110",
-        "pos": "28109.34,995.49",
+        "pos": "31895.91,-718.36",
         "weight": "10.0"
       }
     },
@@ -1854,15 +1854,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          15.967039,
-          -17.309208
+          15.465306,
+          -29.090123
         ]
       },
       "properties": {
         "label": "Genome-wide chromatin occupancy analysis reveals a role for ASH2 in transcriptional pausing.",
         "level": 6,
         "paper_id": "21310711",
-        "pos": "26769.71,3275.10",
+        "pos": "28061.25,-406.61",
         "weight": "27.0"
       }
     },
@@ -1872,15 +1872,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.633475,
-          -16.909409
+          19.881145,
+          -28.86078
         ]
       },
       "properties": {
         "label": "Chromatin signature of embryonic pluripotency is established during genome activation.",
         "level": 2,
         "paper_id": "20336069",
-        "pos": "32202.65,3723.45",
+        "pos": "32272.18,-151.46",
         "weight": "207.0"
       }
     },
@@ -1890,15 +1890,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.806365,
-          -19.360759
+          17.388205,
+          -27.630172
         ]
       },
       "properties": {
         "label": "Three distinct patterns of histone H3Y41 phosphorylation mark active genes.",
         "level": 6,
         "paper_id": "22999934",
-        "pos": "30450.83,958.48",
+        "pos": "29894.92,1208.18",
         "weight": "31.0"
       }
     },
@@ -1908,15 +1908,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.576517,
-          -20.759711
+          15.686227,
+          -31.585558
         ]
       },
       "properties": {
         "label": "Sequential activation of genetic programs in mouse mammary epithelium during pregnancy depends on STAT5A/B concentration.",
         "level": 2,
         "paper_id": "23275557",
-        "pos": "29271.66,-637.82",
+        "pos": "28271.92,-3221.06",
         "weight": "38.0"
       }
     },
@@ -1926,15 +1926,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.346405,
-          -15.888831
+          18.586709,
+          -30.514063
         ]
       },
       "properties": {
         "label": "Epigenetic modifications unlock the milk protein gene loci during mouse mammary gland development and differentiation.",
         "level": 6,
         "paper_id": "23301053",
-        "pos": "29051.03,4863.72",
+        "pos": "31037.81,-2003.77",
         "weight": "28.0"
       }
     },
@@ -1944,15 +1944,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.397998,
-          -18.457765
+          15.715003,
+          -30.065966
         ]
       },
       "properties": {
         "label": "FRA2 is a STAT5 target gene regulated by IL-2 in human CD4 T cells.",
         "level": 7,
         "paper_id": "24587342",
-        "pos": "27182.91,1981.54",
+        "pos": "28299.36,-1498.70",
         "weight": "6.0"
       }
     },
@@ -1962,15 +1962,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.795404,
-          -16.432093
+          17.494046,
+          -30.974077
         ]
       },
       "properties": {
         "label": "Differential cytokine sensitivities of STAT5-dependent enhancers rely on Stat5 autoregulation.",
         "level": 7,
         "paper_id": "27694626",
-        "pos": "30440.32,4257.49",
+        "pos": "29995.85,-2524.70",
         "weight": "7.0"
       }
     },
@@ -1980,15 +1980,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.265208,
-          -56.602536
+          -21.223306,
+          -57.962617
         ]
       },
       "properties": {
         "label": "Development of mammary luminal progenitor cells is controlled by the transcription factor STAT5A.",
         "level": 3,
         "paper_id": "19833766",
-        "pos": "11206.34,-51822.03",
+        "pos": "-6924.89,-40382.62",
         "weight": "90.0"
       }
     },
@@ -1998,15 +1998,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.642342,
-          -57.538563
+          -18.502564,
+          -58.047174
         ]
       },
       "properties": {
         "label": "Mammary epithelial reconstitution with gene-modified stem cells assigns roles to Stat5 in luminal alveolar cell fate decisions, differentiation, involution, and mammary tumor formation.",
         "level": 3,
         "paper_id": "20235097",
-        "pos": "8927.16,-53667.68",
+        "pos": "-4330.40,-40537.94",
         "weight": "53.0"
       }
     },
@@ -2016,15 +2016,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.114922,
-          -56.711296
+          -21.79534,
+          -58.602211
         ]
       },
       "properties": {
         "label": "The miR-17/92 cluster is targeted by STAT5 but dispensable for mammary development.",
         "level": 7,
         "paper_id": "22389215",
-        "pos": "12529.60,-52034.11",
+        "pos": "-7470.38,-41566.71",
         "weight": "16.0"
       }
     },
@@ -2034,15 +2034,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.141908,
-          -55.604134
+          -22.812573,
+          -57.442856
         ]
       },
       "properties": {
         "label": "Basal cell signaling by p63 controls luminal progenitor function and lactation via NRG1.",
         "level": 4,
         "paper_id": "24412575",
-        "pos": "11324.56,-49903.12",
+        "pos": "-8440.41,-39435.84",
         "weight": "45.0"
       }
     },
@@ -2052,15 +2052,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -5.264107,
-          -25.346609
+          -9.637507,
+          -28.128887
         ]
       },
       "properties": {
         "label": "Role of ERalpha in the differential response of Stat5a loss in susceptibility to mammary preneoplasia and DMBA-induced carcinogenesis.",
         "level": 6,
         "paper_id": "20181624",
-        "pos": "6413.43,-5982.72",
+        "pos": "4123.29,659.06",
         "weight": "14.0"
       }
     },
@@ -2070,15 +2070,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -4.819516,
-          -23.835691
+          -9.830345,
+          -29.369121
         ]
       },
       "properties": {
         "label": "Comparison of increased aromatase versus ER\u03b1 in the generation of mammary hyperplasia and cancer.",
         "level": 6,
         "paper_id": "21840986",
-        "pos": "6839.70,-4201.70",
+        "pos": "3939.40,-717.77",
         "weight": "16.0"
       }
     },
@@ -2088,14 +2088,14 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -3.81636,
-          -24.996648
+          -7.951941,
+          -26.931364
         ]
       },
       "properties": {
         "label": "7,8-Dihydroxycoumarin exerts antitumor potential on DMBA-induced mammary carcinogenesis by inhibiting ER\u03b1, PR, EGFR, and IGF1R: involvement of MAPK1/2-JNK1/2-Akt pathway.",
         "paper_id": "29435821",
-        "pos": "7801.52,-5568.27",
+        "pos": "5730.64,1973.43",
         "weight": "3.0"
       }
     },
@@ -2105,15 +2105,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -5.460489,
-          -26.144277
+          -9.985379,
+          -27.680536
         ]
       },
       "properties": {
         "label": "Androgen resistance in female mice increases susceptibility to DMBA-induced mammary tumors.",
         "level": 6,
         "paper_id": "22370991",
-        "pos": "6225.14,-6931.90",
+        "pos": "3791.56,1152.84",
         "weight": "19.0"
       }
     },
@@ -2123,15 +2123,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.865826,
-          -23.03649
+          15.554778,
+          -33.357307
         ]
       },
       "properties": {
         "label": "PIKE-A is required for prolactin-mediated STAT5a activation in mammary gland development.",
         "level": 2,
         "paper_id": "20075866",
-        "pos": "30507.84,-3268.08",
+        "pos": "28146.57,-5265.14",
         "weight": "22.0"
       }
     },
@@ -2141,15 +2141,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          20.261177,
-          -21.67785
+          17.014535,
+          -33.015255
         ]
       },
       "properties": {
         "label": "Forced activation of Stat5 subjects mammary epithelial cells to DNA damage and preferential induction of the cellular response mechanism during proliferation.",
         "level": 7,
         "paper_id": "20717961",
-        "pos": "30886.90,-1693.47",
+        "pos": "29538.59,-4867.35",
         "weight": "6.0"
       }
     },
@@ -2159,15 +2159,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          24.710718,
-          -21.879298
+          19.185012,
+          -33.833301
         ]
       },
       "properties": {
         "label": "Stat5 promotes survival of mammary epithelial cells through transcriptional activation of a distinct promoter in Akt1.",
         "level": 2,
         "paper_id": "20385773",
-        "pos": "35153.09,-1925.98",
+        "pos": "31608.35,-5821.31",
         "weight": "35.0"
       }
     },
@@ -2177,15 +2177,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.374503,
-          -22.516963
+          16.912941,
+          -34.771607
         ]
       },
       "properties": {
         "label": "MiR-21 is under control of STAT5 but is dispensable for mammary development and lactation.",
         "level": 7,
         "paper_id": "24497923",
-        "pos": "29077.97,-2664.15",
+        "pos": "29441.71,-6926.83",
         "weight": "10.0"
       }
     },
@@ -2195,15 +2195,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.477848,
-          -24.930638
+          13.570794,
+          -34.175174
         ]
       },
       "properties": {
         "label": "Prolactin promotes mammary pathogenesis independently from cyclin D1.",
         "level": 7,
         "paper_id": "22658484",
-        "pos": "30135.85,-5490.23",
+        "pos": "26254.65,-6222.68",
         "weight": "7.0"
       }
     },
@@ -2213,15 +2213,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          17.741384,
-          -23.481551
+          16.232339,
+          -35.216015
         ]
       },
       "properties": {
         "label": "Signal transducer and activator of transcription 5 as a key signaling pathway in normal mammary gland developmental biology and breast cancer.",
         "level": 4,
         "paper_id": "22018398",
-        "pos": "28470.94,-3787.30",
+        "pos": "28792.69,-7454.81",
         "weight": "52.0"
       }
     },
@@ -2231,15 +2231,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.573879,
-          -21.842272
+          13.702139,
+          -35.05503
         ]
       },
       "properties": {
         "label": "Dystroglycan controls signaling of multiple hormones through modulation of STAT5 activity.",
         "level": 6,
         "paper_id": "20940259",
-        "pos": "32145.51,-1883.22",
+        "pos": "26379.90,-7263.22",
         "weight": "18.0"
       }
     },
@@ -2249,15 +2249,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          22.391667,
-          -23.81321
+          14.291015,
+          -32.283749
         ]
       },
       "properties": {
         "label": "Fyn regulates adipogenesis by promoting PIKE-A/STAT5a interaction.",
         "level": 7,
         "paper_id": "23438599",
-        "pos": "32929.60,-4175.36",
+        "pos": "26941.45,-4021.78",
         "weight": "10.0"
       }
     },
@@ -2267,15 +2267,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.034774,
-          -24.761632
+          15.563471,
+          -35.246631
         ]
       },
       "properties": {
         "label": "Function of phosphoenolpyruvate carboxykinase in mammary gland epithelial cells.",
         "level": 7,
         "paper_id": "21504969",
-        "pos": "31628.62,-5290.61",
+        "pos": "28154.86,-7491.29",
         "weight": "10.0"
       }
     },
@@ -2285,15 +2285,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          18.389751,
-          -24.504753
+          13.322608,
+          -32.800025
         ]
       },
       "properties": {
         "label": "Phosphoinositide 3-kinase enhancer regulates neuronal dendritogenesis and survival in neocortex.",
         "level": 5,
         "paper_id": "21632930",
-        "pos": "29092.59,-4987.72",
+        "pos": "26017.98,-4617.84",
         "weight": "38.0"
       }
     },
@@ -2303,15 +2303,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          21.359756,
-          2.427916
+          -8.806264,
+          -14.434176
         ]
       },
       "properties": {
         "label": "Prolactin signalling in the mouse hypothalamus is primarily mediated by signal transducer and activator of transcription factor 5b but not 5a.",
         "level": 5,
         "paper_id": "22775396",
-        "pos": "31940.21,24719.11",
+        "pos": "4915.96,15007.69",
         "weight": "15.0"
       }
     },
@@ -2321,15 +2321,15 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          16.110543,
-          3.86843
+          -4.376237,
+          -12.930919
         ]
       },
       "properties": {
         "label": "Prolactin inhibits BCL6 expression in breast cancer through a Stat5a-dependent mechanism.",
         "level": 4,
         "paper_id": "20124477",
-        "pos": "26907.30,26265.44",
+        "pos": "9140.42,16513.54",
         "weight": "49.0"
       }
     }

@@ -1,0 +1,5755 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.113422,
+          26.168158
+        ]
+      },
+      "properties": {
+        "paper_id": "29086508",
+        "label": "Changes in the prevalence, genotypes and antimicrobial resistance phenotypes\u00a0of\u00a0non-typhoidal Salmonella recovered from mail-order hatchling poultry sold at US feed stores, 2013-2015.",
+        "pos": "-4195.72,10647.04",
+        "weight": "0.0",
+        "label_dumb": "1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.689551,
+          26.602153
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21655353",
+        "label": "Clonal differences between Non-Typhoidal Salmonella (NTS) recovered from children and animals living in close contact in the Gambia.",
+        "pos": "-3942.65,10946.04",
+        "weight": "20.0",
+        "label_dumb": "2"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "10",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.220822,
+          -10.821694
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "22672324",
+        "label": "Characterization of Salmonella enterica serovar Enteritidis isolates recovered from blood and stool specimens in Thailand.",
+        "pos": "-16200.76,-12814.96",
+        "weight": "11.0",
+        "width": "0.19",
+        "label_dumb": "10"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "148",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.447665,
+          -16.026047
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "20032253",
+        "label": "Molecular characterization of extended-spectrum cephalosporinase-producing Salmonella enterica serovar Choleraesuis isolates from patients in Thailand and Denmark.",
+        "pos": "-15739.15,-16118.45",
+        "weight": "34.0",
+        "width": "0.29",
+        "label_dumb": "148"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "149",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -31.159332,
+          -11.026572
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "24727511",
+        "label": "Emergence and clonal dissemination of Salmonella enterica serovar Enteritidis causing salmonellosis in Mauritius.",
+        "pos": "-14372.91,-12943.74",
+        "weight": "4.0",
+        "label_dumb": "149"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "153",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -32.204578,
+          -9.064008
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19217348",
+        "label": "A comparison of two PCR-based typing methods with pulsed-field gel electrophoresis in Salmonella enterica serovar Enteritidis.",
+        "pos": "-14996.97,-11713.57",
+        "weight": "21.0",
+        "label_dumb": "153"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "159",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -36.177187,
+          -11.69899
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26860961",
+        "label": "Genetic diversity and antimicrobial resistance pattern of Salmonella enterica serovar Enteritidis clinical isolates in Thailand.",
+        "pos": "-17368.80,-13367.04",
+        "weight": "1.0",
+        "label_dumb": "159"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "160",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.018667,
+          -13.06325
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24139970",
+        "label": "Molecular characterization showed limited genetic diversity among Salmonella Enteritidis isolated from humans and animals in Malaysia.",
+        "pos": "-16677.11,-14229.10",
+        "weight": "13.0",
+        "label_dumb": "160"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "163",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -36.636147,
+          -10.194554
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "23498194",
+        "label": "The combination of CRISPR-MVLST and PFGE provides increased discriminatory power for differentiating human clinical isolates of Salmonella enterica subsp. enterica serovar Enteritidis.",
+        "pos": "-17642.82,-12421.30",
+        "weight": "48.0",
+        "label_dumb": "163"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "167",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.115563,
+          -9.538072
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "21104081",
+        "label": "MLVA and phage typing as complementary tools in the epidemiological investigation of Salmonella enterica serovar Typhimurium clusters.",
+        "pos": "-15540.87,-12010.05",
+        "weight": "14.0",
+        "label_dumb": "167"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "168",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.226091,
+          -13.297507
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23429060",
+        "label": "Analysis of pulsed field gel electrophoresis profiles using multiple enzymes for predicting potential source reservoirs for strains of Salmonella Enteritidis and Salmonella Typhimurium isolated from humans.",
+        "pos": "-15606.86,-14377.59",
+        "weight": "5.0",
+        "label_dumb": "168"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "169",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -35.272651,
+          -9.837782
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24866204",
+        "label": "Multistate outbreak of Salmonella enterica serotype enteritidis infection associated with pet guinea pigs.",
+        "pos": "-16828.75,-12197.70",
+        "weight": "8.0",
+        "label_dumb": "169"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "170",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.373658,
+          -9.263063
+        ]
+      },
+      "properties": {
+        "paper_id": "25790533",
+        "label": "A molecular epidemiological investigation of multistate outbreaks of Salmonella Enteritidis from clinical and environmental samples in Turkey, 2000-2010.",
+        "pos": "-16292.01,-11838.01",
+        "weight": "0.0",
+        "label_dumb": "170"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -43.587271,
+          -5.042316
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "19445730",
+        "label": "Non-typhoidal Salmonella bacteraemia: epidemiology, clinical characteristics and its' association with severe immunosuppression.",
+        "pos": "-21792.96,-9212.02",
+        "weight": "57.0",
+        "width": "0.10",
+        "label_dumb": "4"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "100",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.857244,
+          14.027519
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "21329737",
+        "label": "Rapid identification of Salmonella enterica serovars, Typhimurium, Choleraesuis, Infantis, Hadar, Enteritidis, Dublin and Gallinarum, by multiplex PCR.",
+        "pos": "3121.78,2649.27",
+        "weight": "33.0",
+        "label_dumb": "100"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "101",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.390473,
+          15.060785
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "19833046",
+        "label": "A rapid screen of broth enrichments for Salmonella enterica serovars enteritidis, Hadar, Heidelberg, and Typhimurium by Using an allelotyping multiplex PCR that targets O- and H-antigen alleles.",
+        "pos": "3997.51,3308.10",
+        "weight": "8.0",
+        "label_dumb": "101"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "103",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.390874,
+          10.989896
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "19843307",
+        "label": "Identification of Salmonella enterica subspecies I, Salmonella enterica serovars Typhimurium, Enteritidis and Typhi using multiplex PCR.",
+        "pos": "4464.01,728.69",
+        "weight": "31.0",
+        "label_dumb": "103"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "108",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.317949,
+          14.206731
+        ]
+      },
+      "properties": {
+        "paper_id": "21808227",
+        "label": "An allelotyping PCR for identifying Salmonella enterica serovars Enteritidis, Hadar, Heidelberg, and Typhimurium.",
+        "pos": "4040.81,2763.32",
+        "weight": "0.0",
+        "label_dumb": "108"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "114",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.490907,
+          15.526185
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22344662",
+        "label": "One-step triplex high-resolution melting analysis for rapid identification and simultaneous subtyping of frequently isolated Salmonella serovars.",
+        "pos": "3340.50,3605.88",
+        "weight": "11.0",
+        "label_dumb": "114"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "125",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.323557,
+          12.704738
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25063578",
+        "label": "TRS-based PCR as a potential tool for inter-serovar discrimination of Salmonella Enteritidis, S. Typhimurium, S. Infantis, S. Virchow, S. Hadar, S. Newport and S. Anatum.",
+        "pos": "2843.37,1810.13",
+        "weight": "5.0",
+        "label_dumb": "125"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "511",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.663129,
+          15.544044
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "20164272",
+        "label": "Development of a multiplex primer extension assay for rapid detection of Salmonella isolates of diverse serotypes.",
+        "pos": "2640.63,3617.32",
+        "weight": "19.0",
+        "label_dumb": "511"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "715",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.353377,
+          12.343631
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "21256889",
+        "label": "Validation of a seminested PCR approach for rapid detection of Salmonella enterica subsp. enterica serovar Gallinarum.",
+        "pos": "2228.52,1581.83",
+        "weight": "8.0",
+        "label_dumb": "715"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "716",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.246112,
+          12.652667
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "21515723",
+        "label": "Rapid screening of epidemiologically important Salmonella enterica subsp. enterica serovars by whole-cell matrix-assisted laser desorption ionization-time of flight mass spectrometry.",
+        "pos": "4377.58,1777.19",
+        "weight": "82.0",
+        "label_dumb": "716"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "717",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.109623,
+          13.384675
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "21411262",
+        "label": "A novel real-time polymerase chain reaction for identification of Salmonella enterica subspecies enterica.",
+        "pos": "4296.09,2240.89",
+        "weight": "4.0",
+        "label_dumb": "717"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "718",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.259716,
+          14.101107
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "20039795",
+        "label": "Virulotyping and antimicrobial resistance typing of Salmonella enterica serovars relevant to human health in Europe.",
+        "pos": "2284.44,2696.09",
+        "weight": "75.0",
+        "label_dumb": "718"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "719",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.58691,
+          14.223443
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26840841",
+        "label": "Loop-Mediated Isothermal Amplification of the sefA Gene for Rapid Detection of Salmonella Enteritidis and Salmonella Gallinarum in Chickens.",
+        "pos": "2089.09,2773.96",
+        "weight": "5.0",
+        "label_dumb": "719"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "720",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0832,
+          12.311276
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "21111918",
+        "label": "Differential identification of Salmonella enterica subsp. enterica serovar Gallinarum biovars Gallinarum and Pullorum based on polymorphic regions of glgC and speC genes.",
+        "pos": "3583.92,1561.39",
+        "weight": "22.0",
+        "label_dumb": "720"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "721",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.523943,
+          12.446684
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "19261787",
+        "label": "High-throughput molecular determination of salmonella enterica serovars by use of multiplex PCR and capillary electrophoresis analysis.",
+        "pos": "2723.73,1646.95",
+        "weight": "38.0",
+        "label_dumb": "721"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "722",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.002814,
+          16.975766
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19903399",
+        "label": "Sensitive and rapid molecular detection assays for Salmonella enterica serovars Typhimurium and Heidelberg.",
+        "pos": "4228.96,4537.79",
+        "weight": "19.0",
+        "label_dumb": "722"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "723",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.555435,
+          14.827435
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "23354710",
+        "label": "Microfluidic chip-based detection and intraspecies strain discrimination of Salmonella serovars derived from whole blood of septic mice.",
+        "pos": "3899.02,3159.04",
+        "weight": "20.0",
+        "label_dumb": "723"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "724",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.041827,
+          14.758443
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "19595520",
+        "label": "Deletion of sodCI and spvBC in Salmonella enterica serovar Enteritidis reduced its virulence to the natural virulence of serovars Agona, Hadar and Infantis for mice but not for chickens early after infection.",
+        "pos": "2414.53,3115.00",
+        "weight": "16.0",
+        "label_dumb": "724"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "725",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.593907,
+          15.762922
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "20656064",
+        "label": "Association between phylogeny, virulence potential and serovars of Salmonella enterica.",
+        "pos": "3876.05,3757.61",
+        "weight": "27.0",
+        "label_dumb": "725"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "726",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.14274,
+          12.438361
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "20110454",
+        "label": "Development and evaluation of a multiplex real-time polymerase chain reaction procedure to clinically type prevalent Salmonella enterica serovars.",
+        "pos": "2354.28,1641.69",
+        "weight": "21.0",
+        "label_dumb": "726"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "727",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.773164,
+          12.466635
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "20622226",
+        "label": "Development of microarray and multiplex polymerase chain reaction assays for identification of serovars and virulence genes in Salmonella enterica of human or animal origin.",
+        "pos": "3171.98,1659.56",
+        "weight": "12.0",
+        "label_dumb": "727"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "728",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.503835,
+          13.414465
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "20060189",
+        "label": "A real-time PCR method for the detection of Salmonella enterica from food using a target sequence identified by comparative genomic analysis.",
+        "pos": "2138.69,2259.79",
+        "weight": "57.0",
+        "label_dumb": "728"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "729",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.127163,
+          13.462766
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "20951170",
+        "label": "Validation of DNA and RNA real-time assays for food analysis using the hilA gene of Salmonella enterica serovars.",
+        "pos": "2363.58,2290.44",
+        "weight": "10.0",
+        "label_dumb": "729"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "730",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.353397,
+          12.71762
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24974650",
+        "label": "Development of multiplex PCR for rapid identification of four Salmonella serovars most commonly isolated in Japan.",
+        "pos": "3422.60,1818.28",
+        "weight": "2.0",
+        "label_dumb": "730"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "731",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.690162,
+          15.730813
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "19631101",
+        "label": "Rapid identification of Salmonella enterica subsp. arizonae and S. enterica subsp. diarizonae by real-time polymerase chain reaction.",
+        "pos": "2624.49,3737.02",
+        "weight": "10.0",
+        "label_dumb": "731"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "732",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.814276,
+          12.005101
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "24607499",
+        "label": "Detection of Salmonella enterica serovar Dublin by polymerase chain reaction in multiplex format.",
+        "pos": "4716.80,1368.09",
+        "weight": "7.0",
+        "label_dumb": "732"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "733",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.003012,
+          15.479642
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "22342525",
+        "label": "Application of pyrosequencing for Salmonella enterica rapid identification.",
+        "pos": "3034.75,3576.07",
+        "weight": "5.0",
+        "label_dumb": "733"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "734",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.347247,
+          15.694518
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21478351",
+        "label": "Genome sequences of Salmonella enterica serovar typhimurium, Choleraesuis, Dublin, and Gallinarum strains of well- defined virulence in food-producing animals.",
+        "pos": "2232.18,3713.75",
+        "weight": "33.0",
+        "label_dumb": "734"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "735",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.13396,
+          13.570225
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "19454277",
+        "label": "Host-specificity of Salmonella enterica serovar Gallinarum: insights from comparative genomics.",
+        "pos": "4150.66,2358.65",
+        "weight": "15.0",
+        "label_dumb": "735"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "750",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.762712,
+          16.895181
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "22610712",
+        "label": "Intra- and inter-laboratory evaluation of an improved multiplex-PCR method for detection and typing of Salmonella.",
+        "pos": "3178.22,4485.80",
+        "weight": "3.0",
+        "label_dumb": "750"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "8",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.155041,
+          16.354087
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "20231882",
+        "label": "Identification by PCR of non-typhoidal Salmonella enterica serovars associated with invasive infections among febrile patients in Mali.",
+        "pos": "1749.89,4137.28",
+        "weight": "74.0",
+        "label_dumb": "8"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "736",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.042918,
+          6.74656
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "21908327",
+        "label": "Evaluation of an immunochromatographic assay for rapid detection of Salmonella enterica serovars Typhimurium and Enteritidis.",
+        "pos": "4853.31,-1922.52",
+        "weight": "18.0",
+        "label_dumb": "736"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "751",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.182857,
+          10.841571
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "20381608",
+        "label": "Development of a novel multiplex PCR for the detection and differentiation of Salmonella enterica serovars Typhi and Paratyphi A.",
+        "pos": "3524.42,635.46",
+        "weight": "20.0",
+        "label_dumb": "751"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.824358,
+          2.292823
+        ]
+      },
+      "properties": {
+        "paper_id": "29217765",
+        "label": "Zoonotic potential of <i>Salmonella enterica</i> carried by pet tortoises.",
+        "pos": "-3426.09,-4680.54",
+        "weight": "0.0",
+        "label_dumb": "1000"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "172",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.882169,
+          2.446538
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "29924479",
+        "label": "Salmonella Stanley bacteremia transmitted from a pet hedgehog.",
+        "pos": "-2863.56,-4585.59",
+        "weight": "0.0",
+        "label_dumb": "172"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.338961,
+          2.9099
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26230442",
+        "label": "[Salmonella spp. gastroenteritis associated to pet turtles in three infants].",
+        "pos": "-2539.24,-4299.30",
+        "weight": "2.0",
+        "label_dumb": "1001"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.744374,
+          3.383602
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27734610",
+        "label": "Multistate Outbreak of Human Salmonella Typhimurium Infections Linked to Pet Hedgehogs - United States, 2011-2013.",
+        "pos": "-2781.29,-4006.50",
+        "weight": "2.0",
+        "label_dumb": "1002"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.721569,
+          2.800602
+        ]
+      },
+      "properties": {
+        "paper_id": "28647473",
+        "label": "[Rotavirus-Salmonella coinfection due to turtles: Two cases with exotic pets].",
+        "pos": "-3364.72,-4366.84",
+        "weight": "0.0",
+        "label_dumb": "1003"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2718",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.260321,
+          3.050965
+        ]
+      },
+      "properties": {
+        "paper_id": "29393612",
+        "label": "Salmonellosis beyond the gastrointestinal tract: a case series",
+        "pos": "-3686.38,-4212.12",
+        "weight": "0.0",
+        "label_dumb": "2718"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.601628,
+          3.667778
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "28781305",
+        "label": "Purulent Pericarditis with Salmonella enterica Subspecies arizona in a Patient with Type 2 Diabetes Mellitus.",
+        "pos": "-3293.11,-3830.78",
+        "weight": "0.0",
+        "label_dumb": "1004"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4862",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.55397,
+          3.438707
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24011667",
+        "label": "[Purulent pericarditis: a rare diagnosis].",
+        "pos": "-2667.61,-3972.43",
+        "weight": "8.0",
+        "label_dumb": "4862"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.549798,
+          -17.250431
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19116354",
+        "label": "Occurrence of spvA virulence gene and clinical significance for multidrug-resistant Salmonella strains.",
+        "pos": "15305.72,-16907.15",
+        "weight": "20.0",
+        "label_dumb": "1005"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "173",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.835407,
+          -16.473174
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "22933605",
+        "label": "Microbiological analysis of nontyphoidal Salmonella strains causing distinct syndromes of bacteremia or enteritis in HIV/AIDS patients in San Diego, California.",
+        "pos": "14282.15,-16405.89",
+        "weight": "8.0",
+        "label_dumb": "173"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.839262,
+          -16.61141
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "19594621",
+        "label": "Identification and distribution of accessory genome DNA sequences from an invasive African isolate of Salmonella Heidelberg.",
+        "pos": "13090.36,-16494.89",
+        "weight": "10.0",
+        "label_dumb": "1006"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.511998,
+          -18.942303
+        ]
+      },
+      "properties": {
+        "paper_id": "25539195",
+        "label": "Profound Anemia in a Child Secondary to Salmonella Enteritis.",
+        "pos": "14089.06,-18005.72",
+        "weight": "0.0",
+        "label_dumb": "1007"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.916195,
+          14.357973
+        ]
+      },
+      "properties": {
+        "paper_id": "29279480",
+        "label": "Salmonella houtenae-induced Empyema Complicated with Chronic Tuberculous Empyema.",
+        "pos": "-6466.15,2859.64",
+        "weight": "0.0",
+        "label_dumb": "1008"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "437",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.519298,
+          14.21559
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23905456",
+        "label": "Mixed Salmonella infection: a report of two cases from the Aga Khan University Hospital, Karachi.",
+        "pos": "-6826.23,2768.96",
+        "weight": "2.0",
+        "label_dumb": "437"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.762656,
+          -13.485598
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20838389",
+        "label": "Nontyphoidal Salmonella infection among recipients of hematopoietic SCT.",
+        "pos": "7671.21,-14496.92",
+        "weight": "6.0",
+        "label_dumb": "1009"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "174",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.846469,
+          -12.729205
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "28599007",
+        "label": "Clinical features of children with nontyphoidal Salmonella bacteremia: A single institution survey in rural Japan.",
+        "pos": "7721.25,-14017.60",
+        "weight": "2.0",
+        "label_dumb": "174"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.938884,
+          -12.153655
+        ]
+      },
+      "properties": {
+        "paper_id": "28581280",
+        "label": "Different Age Distribution between Campylobacteriosis and Nontyphoidal Salmonellosis in Hospitalized Korean Children with Acute Inflammatory Diarrhea.",
+        "pos": "7179.38,-13653.84",
+        "weight": "0.0",
+        "label_dumb": "1010"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.823496,
+          -11.589269
+        ]
+      },
+      "properties": {
+        "paper_id": "25418893",
+        "label": "Avoidance of antibiotic administration to Campylobacter enterocolitis mimicking severe salmonellosis by clinical and laboratory features.",
+        "pos": "8304.58,-13297.90",
+        "weight": "1.0",
+        "label_dumb": "1011"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1012",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.902199,
+          1.752895
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23627848",
+        "label": "Invasive nontyphoidal Salmonella disease in Africa: current status.",
+        "pos": "22680.67,-5013.98",
+        "weight": "42.0",
+        "label_dumb": "1012"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "686",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29.765804,
+          2.105592
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "24804797",
+        "label": "Vaccines against invasive Salmonella disease: current status and future directions.",
+        "pos": "22002.19,-4796.18",
+        "weight": "64.0",
+        "label_dumb": "686"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1013",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.906631,
+          0.93137
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21177672",
+        "label": "IncA/C plasmids mediate antimicrobial resistance linked to virulence genes in the Spanish clone of the emerging Salmonella enterica serotype 4,[5],12:i:-.",
+        "pos": "-6460.44,-5521.15",
+        "weight": "30.0",
+        "label_dumb": "1013"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "659",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -19.41685,
+          3.92432
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "19605582",
+        "label": "Report of neonatal meningitis due to Salmonella enterica serotype Agona and review of breast milk-associated neonatal Salmonella infections.",
+        "pos": "-7362.11,-3672.10",
+        "weight": "5.0",
+        "label_dumb": "659"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1014",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.378467,
+          0.352855
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "21343352",
+        "label": "How to become a top model: impact of animal experimentation on human Salmonella disease research.",
+        "pos": "23562.07,-5878.22",
+        "weight": "61.0",
+        "label_dumb": "1014"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "175",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.918218,
+          -0.108453
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "20736739",
+        "label": "Nontyphoidal salmonellosis in Africa.",
+        "pos": "23287.28,-6162.93",
+        "weight": "56.0",
+        "label_dumb": "175"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1015",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20.124652,
+          31.110175
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "27236921",
+        "label": "Polymorphism in a lincRNA Associates with a Doubled Risk of Pneumococcal Bacteremia in Kenyan Children.",
+        "pos": "-7784.70,14124.04",
+        "weight": "6.0",
+        "label_dumb": "1015"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "242",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.649556,
+          31.575667
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "20573224",
+        "label": "High rate of pneumococcal bacteremia in a prospective cohort of older children and adults in an area of high HIV prevalence in rural western Kenya.",
+        "pos": "-6904.00,14460.42",
+        "weight": "26.0",
+        "width": "0.29",
+        "label_dumb": "242"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4864",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -19.059189,
+          30.70655
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23922370",
+        "label": "HIV and influenza virus infections are associated with increased blood pneumococcal load: a prospective, hospital-based observational study in South Africa, 2009-2011.",
+        "pos": "-7148.57,13833.70",
+        "weight": "16.0",
+        "label_dumb": "4864"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4866",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.024834,
+          29.88997
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "22042878",
+        "label": "The incidence of necrotizing changes in adults with pneumococcal pneumonia.",
+        "pos": "-8322.15,13249.99",
+        "weight": "23.0",
+        "label_dumb": "4866"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4868",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -19.630921,
+          30.121121
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "20883110",
+        "label": "Community\u2010acquired bacteremic pneumococcal pneumonia in children: diagnosis and serotyping by real\u2010time polymerase chain reaction using blood samples.",
+        "pos": "-7489.92,13414.73",
+        "weight": "86.0",
+        "label_dumb": "4868"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4869",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.164974,
+          30.732528
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20883111",
+        "label": "Expanding the diagnosis of pediatric bacteremic pneumococcal pneumonia from blood cultures to molecular methods: advantages and caveats.",
+        "pos": "-8405.82,13852.35",
+        "weight": "8.0",
+        "label_dumb": "4869"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4870",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20.507721,
+          30.015616
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "20861332",
+        "label": "PsrP, a protective pneumococcal antigen, is highly prevalent in children with pneumonia and is strongly associated with clonal type.",
+        "pos": "-8013.41,13339.49",
+        "weight": "18.0",
+        "label_dumb": "4870"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4871",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.880497,
+          30.2152
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24595048",
+        "label": "The has-miR-526b binding-site rs8506G>a polymorphism in the lincRNA-NR_024015 exon identified by GWASs predispose to non-cardia gastric cancer risk.",
+        "pos": "-8833.02,13481.89",
+        "weight": "14.0",
+        "label_dumb": "4871"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1016",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.123914,
+          -5.224738
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "19565500",
+        "label": "Variants in TNFAIP3, STAT4, and C12orf30 loci associated with multiple autoimmune diseases are also associated with juvenile idiopathic arthritis.",
+        "pos": "6095.76,-9325.06",
+        "weight": "51.0",
+        "label_dumb": "1016"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "176",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.51034,
+          -6.052671
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "29523850",
+        "label": "Risk of nontyphoidal Salmonella bacteraemia in African children is modified by STAT4.",
+        "pos": "6923.52,-9838.53",
+        "weight": "0.0",
+        "label_dumb": "176"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1017",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.647586,
+          -5.855161
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "23001997",
+        "label": "Identification of a susceptibility locus in STAT4 for Beh\u00e7et's disease in Han Chinese in a genome-wide association study.",
+        "pos": "5811.37,-9715.97",
+        "weight": "80.0",
+        "label_dumb": "1017"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1018",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.499363,
+          -7.093122
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24443544",
+        "label": "Sequential acquisition of T cells and antibodies to nontyphoidal Salmonella in Malawian children.",
+        "pos": "6319.92,-10484.93",
+        "weight": "18.0",
+        "label_dumb": "1018"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1019",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.626502,
+          -5.894585
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24285835",
+        "label": "Altered IFN-\u03b3-mediated immunity and transcriptional expression patterns in N-Ethyl-N-nitrosourea-induced STAT4 mutants confer susceptibility to acute typhoid-like disease.",
+        "pos": "7589.92,-9740.43",
+        "weight": "7.0",
+        "label_dumb": "1019"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "102",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.336358,
+          22.035863
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "26933017",
+        "label": "The Emergence of Reduced Ciprofloxacin Susceptibility in Salmonella enterica Causing Bloodstream Infections in Rural Ghana.",
+        "pos": "-1940.64,7852.26",
+        "weight": "8.0",
+        "width": "0.29",
+        "label_dumb": "102"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "107",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.938544,
+          21.019345
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "26933026",
+        "label": "Validation and Identification of Invasive Salmonella Serotypes in Sub-Saharan Africa by Multiplex Polymerase Chain Reaction.",
+        "pos": "-4091.31,7177.83",
+        "weight": "6.0",
+        "label_dumb": "107"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "115",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.027401,
+          25.186051
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "29351771",
+        "label": "Characterization of Salmonella enterica from invasive bloodstream infections and water sources in rural Ghana.",
+        "pos": "-2950.27,9974.48",
+        "weight": "0.0",
+        "label_dumb": "115"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "137",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.325086,
+          21.216953
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26449952",
+        "label": "Salmonella Infections in The Gambia, 2005-2015.",
+        "pos": "-1933.91,7308.57",
+        "weight": "8.0",
+        "label_dumb": "137"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "139",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -16.602912,
+          27.330729
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "26449950",
+        "label": "Invasive Salmonella Infections Among Children From Rural Mozambique, 2001-2014.",
+        "pos": "-5682.06,11450.56",
+        "weight": "10.0",
+        "label_dumb": "139"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "145",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.099915,
+          23.42597
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "26449953",
+        "label": "Three Epidemics of Invasive Multidrug-Resistant Salmonella Bloodstream Infection in Blantyre, Malawi, 1998-2014.",
+        "pos": "-3590.61,8782.48",
+        "weight": "11.0",
+        "label_dumb": "145"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "244",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.267835,
+          21.211259
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "22970162",
+        "label": "Incidence and characteristics of bacteremia among children in rural Ghana.",
+        "pos": "4390.55,7304.80",
+        "weight": "46.0",
+        "width": "0.29",
+        "label_dumb": "244"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "737",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.466359,
+          19.734888
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "26933020",
+        "label": "A Multicountry Molecular Analysis of Salmonella enterica Serovar Typhi With Reduced Susceptibility to Ciprofloxacin in Sub-Saharan Africa.",
+        "pos": "-4406.44,6332.15",
+        "weight": "7.0",
+        "width": "0.29",
+        "label_dumb": "737"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "740",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.075655,
+          22.763778
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26933021",
+        "label": "Detection of a Novel gyrB Mutation Associated With Fluoroquinolone-Nonsusceptible Salmonella enterica serovar Typhimurium Isolated From a Bloodstream Infection in Ghana.",
+        "pos": "-2979.08,8338.18",
+        "weight": "4.0",
+        "label_dumb": "740"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "743",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.879744,
+          21.371709
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23735312",
+        "label": "Ciprofloxacin-resistant Salmonella enterica serovar Kentucky in Canada.",
+        "pos": "-1668.02,7411.08",
+        "weight": "15.0",
+        "label_dumb": "743"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "744",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.797036,
+          22.619928
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24858603",
+        "label": "Molecular analysis of ciprofloxacin resistance among non-typhoidal Salmonella with reduced susceptibility to ciprofloxacin isolated from patients at a tertiary care hospital in Kuala Lumpur, Malaysia.",
+        "pos": "-1618.64,8241.95",
+        "weight": "4.0",
+        "label_dumb": "744"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "746",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.6095,
+          22.217479
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "22999768",
+        "label": "Prevalence of quinolone resistance and mutations in the topoisomerase genes in Salmonella enterica serotype Enteritidis isolates from Serbia.",
+        "pos": "-3297.81,7973.26",
+        "weight": "8.0",
+        "label_dumb": "746"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "747",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.055178,
+          22.350839
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20872005",
+        "label": "Mutant prevention concentration (MPC) of ciprofloxacin against Salmonella enterica of epidemic and poultry origin.",
+        "pos": "-3563.90,8062.21",
+        "weight": "6.0",
+        "label_dumb": "747"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "748",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.932982,
+          21.323764
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "22000360",
+        "label": "Bacteremia and antimicrobial drug resistance over time, Ghana.",
+        "pos": "-1102.76,7379.31",
+        "weight": "25.0",
+        "label_dumb": "748"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "749",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.843589,
+          24.018516
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "21192872",
+        "label": "Foreign travel and decreased ciprofloxacin susceptibility in Salmonella enterica infections.",
+        "pos": "-2243.48,9181.94",
+        "weight": "14.0",
+        "label_dumb": "749"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1020",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.361625,
+          -4.549103
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "24610875",
+        "label": "Association study of genes controlling IL-12-dependent IFN-\u03b3 immunity: STAT4 alleles increase risk of pulmonary tuberculosis in Morocco.",
+        "pos": "6834.73,-8906.55",
+        "weight": "19.0",
+        "label_dumb": "1020"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1021",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.194884,
+          9.364434
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "22858557",
+        "label": "Cross-reactive gut-directed immune response against Salmonella enterica serovar Paratyphi A and B in typhoid fever and after oral Ty21a typhoid vaccination.",
+        "pos": "25243.60,-290.58",
+        "weight": "32.0",
+        "label_dumb": "1021"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1025",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.88986,
+          7.290849
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "25433216",
+        "label": "Specific and cross-reactive immune response to oral Salmonella Typhi Ty21a and parenteral Vi capsular polysaccharide typhoid vaccines administered concomitantly.",
+        "pos": "27449.67,-1584.06",
+        "weight": "6.0",
+        "label_dumb": "1025"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1171",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.071118,
+          11.89157
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "22446857",
+        "label": "Typhoid fever & vaccine development: a partially answered question.",
+        "pos": "24572.66,1296.47",
+        "weight": "23.0",
+        "label_dumb": "1171"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1832",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.973632,
+          12.321707
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "25458731",
+        "label": "Typhoid fever.",
+        "pos": "26902.64,1567.98",
+        "weight": "96.0",
+        "label_dumb": "1832"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2344",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.558712,
+          7.223262
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "24053396",
+        "label": "Increasing rates of Salmonella Paratyphi A and the current status of its vaccine development.",
+        "pos": "24266.73,-1626.11",
+        "weight": "20.0",
+        "label_dumb": "2344"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2346",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.726733,
+          9.401986
+        ]
+      },
+      "properties": {
+        "paper_id": "28856924",
+        "label": "Review of current typhoid fever vaccines, cross-protection against paratyphoid fever, and the European guidelines.",
+        "pos": "26755.23,-267.09",
+        "weight": "1.0",
+        "label_dumb": "2346"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4879",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.159312,
+          9.957143
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23144798",
+        "label": "O:2-CRM(197) conjugates against Salmonella Paratyphi A.",
+        "pos": "24028.27,80.49",
+        "weight": "33.0",
+        "label_dumb": "4879"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4880",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.055646,
+          10.767388
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "25386175",
+        "label": "Complex adaptive immunity to enteric fevers in humans: lessons learned and the path forward.",
+        "pos": "26354.56,588.85",
+        "weight": "24.0",
+        "label_dumb": "4880"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4882",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          33.500408,
+          7.823915
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19446596",
+        "label": "Parallel analysis of mucosally derived B- and T-cell responses to an oral typhoid vaccine using simplified methods.",
+        "pos": "24231.92,-1252.18",
+        "weight": "25.0",
+        "label_dumb": "4882"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4883",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.124294,
+          11.986605
+        ]
+      },
+      "properties": {
+        "paper_id": "19950412",
+        "label": "A cluster-randomized effectiveness trial of Vi typhoid vaccine in India.",
+        "pos": "25798.50,1356.42",
+        "weight": "1.0",
+        "label_dumb": "4883"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4885",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5298,
+          7.306631
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24837780",
+        "label": "Effectiveness of typhoid vaccination in US travelers.",
+        "pos": "25443.56,-1574.24",
+        "weight": "10.0",
+        "label_dumb": "4885"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4886",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32.453102,
+          8.945425
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "20660136",
+        "label": "Ex Vivo kinetics of early and long-term multifunctional human leukocyte antigen E-specific CD8+ cells in volunteers immunized with the Ty21a typhoid vaccine.",
+        "pos": "23606.63,-552.52",
+        "weight": "32.0",
+        "label_dumb": "4886"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1157",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.451364,
+          4.894618
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "29031693",
+        "label": "A brief review on the immunological scenario and recent developmental status of vaccines against enteric fever.",
+        "pos": "25396.73,-3071.47",
+        "weight": "1.0",
+        "label_dumb": "1157"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1160",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.302044,
+          5.29394
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "24440210",
+        "label": "Evaluation of immune responses to an oral typhoid vaccine, Ty21a, in children from 2 to 5 years of age in Bangladesh.",
+        "pos": "29486.90,-2824.04",
+        "weight": "11.0",
+        "label_dumb": "1160"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1168",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.053139,
+          12.075934
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "22492745",
+        "label": "Live oral typhoid vaccine Ty21a induces cross-reactive humoral immune responses against Salmonella enterica serovar Paratyphi A and S. Paratyphi B in humans.",
+        "pos": "31129.43,1412.79",
+        "weight": "44.0",
+        "label_dumb": "1168"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "212",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.861661,
+          10.437079
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24342246",
+        "label": "Cross-reactive immune response elicited by parenteral Vi polysaccharide typhoid vaccine against non-typhoid Salmonellae.",
+        "pos": "28029.88,381.45",
+        "weight": "5.0",
+        "label_dumb": "212"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "213",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.192353,
+          7.887027
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23084770",
+        "label": "Live oral typhoid vaccine Salmonella Typhi Ty21a - a surrogate vaccine against non-typhoid salmonella?",
+        "pos": "29421.41,-1212.86",
+        "weight": "18.0",
+        "label_dumb": "213"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3998",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.537217,
+          5.018203
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21146460",
+        "label": "Oral priming with Salmonella Typhi vaccine strain CVD 909 followed by parenteral boost with the S. Typhi Vi capsular polysaccharide vaccine induces CD27+IgD-S. Typhi-specific IgA and IgG B memory cells in humans.",
+        "pos": "26642.08,-2994.91",
+        "weight": "32.0",
+        "label_dumb": "3998"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3999",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.972202,
+          4.65602
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "26741681",
+        "label": "Differential Killing of Salmonella enterica Serovar Typhi by Antibodies Targeting Vi and Lipopolysaccharide O:9 Antigen.",
+        "pos": "26304.74,-3219.24",
+        "weight": "17.0",
+        "label_dumb": "3999"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4424",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.170747,
+          9.30766
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24383914",
+        "label": "Cross-reactive immune response induced by the Vi capsular polysaccharide typhoid vaccine against Salmonella Paratyphi strains.",
+        "pos": "29408.51,-326.09",
+        "weight": "8.0",
+        "label_dumb": "4424"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4872",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.482126,
+          9.957766
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23593253",
+        "label": "Head-to-head comparison of humoral immune responses to Vi capsular polysaccharide and Salmonella Typhi Ty21a typhoid vaccines--a randomized trial.",
+        "pos": "27803.28,80.88",
+        "weight": "19.0",
+        "label_dumb": "4872"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4875",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.073595,
+          -0.105262
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "27533046",
+        "label": "Using a Human Challenge Model of Infection to Measure Vaccine Efficacy: A Randomised, Controlled Trial Comparing the Typhoid Vaccines M01ZH09 with Placebo and Ty21a.",
+        "pos": "28753.46,-6160.96",
+        "weight": "20.0",
+        "label_dumb": "4875"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4877",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.90346,
+          3.966639
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26810369",
+        "label": "Oral Typhoid Vaccination With Live-Attenuated Salmonella Typhi Strain Ty21a Generates Ty21a-Responsive and Heterologous Influenza Virus-Responsive CD4+ and CD8+ T Cells at the Human Intestinal Mucosa.",
+        "pos": "27457.79,-3645.92",
+        "weight": "5.0",
+        "label_dumb": "4877"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4881",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.487399,
+          10.373828
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23637957",
+        "label": "Impact of oral typhoid vaccination on the human gut microbiota and correlations with s. Typhi-specific immunological responses.",
+        "pos": "29000.52,341.76",
+        "weight": "28.0",
+        "label_dumb": "4881"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4896",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.058684,
+          10.836558
+        ]
+      },
+      "properties": {
+        "paper_id": "28675263",
+        "label": "Specific and Cross-reactive Plasmablast Response in Humans after Primary and Secondary Immunization with Vi Capsular Polysaccharide Typhoid Vaccine.",
+        "pos": "26953.42,632.31",
+        "weight": "1.0",
+        "label_dumb": "4896"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4897",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.42586,
+          7.772144
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23458379",
+        "label": "Immune adjuvant effect of V. cholerae O1 derived Proteoliposome coadministered by intranasal route with Vi polysaccharide from Salmonella Typhi.",
+        "pos": "30157.87,-1284.43",
+        "weight": "2.0",
+        "label_dumb": "4897"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4898",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.421038,
+          7.018977
+        ]
+      },
+      "properties": {
+        "paper_id": "29150208",
+        "label": "Development of a synthetic Vi polysaccharide vaccine for typhoid fever.",
+        "pos": "25975.67,-1753.17",
+        "weight": "0.0",
+        "label_dumb": "4898"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4899",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.913969,
+          4.535471
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27236002",
+        "label": "Multicenter study for the evaluation of the antibody response against salmonella typhi Vi vaccination (EMPATHY) for the diagnosis of Anti-polysaccharide antibody production deficiency in patients with primary immunodeficiency.",
+        "pos": "28061.11,-3293.88",
+        "weight": "8.0",
+        "label_dumb": "4899"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4904",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.860961,
+          8.235281
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23105026",
+        "label": "Immunological evaluation of Vi capsular polysaccharide of Salmonella enterica subsp. Typhi vaccine by serum bactericidal assay.",
+        "pos": "26835.37,-995.78",
+        "weight": "3.0",
+        "label_dumb": "4904"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4905",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.284248,
+          6.83727
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27803169",
+        "label": "Development of a Live Attenuated Bivalent Oral Vaccine Against Shigella sonnei Shigellosis and Typhoid Fever.",
+        "pos": "25894.00,-1866.14",
+        "weight": "2.0",
+        "label_dumb": "4905"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1022",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.070223,
+          7.31592
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "29073137",
+        "label": "Integration of enteric fever surveillance into the WHO-coordinated Invasive Bacterial-Vaccine Preventable Diseases (IB-VPD) platform: A low cost approach to track an increasingly important disease.",
+        "pos": "6660.75,-1568.46",
+        "weight": "0.0",
+        "label_dumb": "1022"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1029",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.641044,
+          6.96338
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "27090993",
+        "label": "Changing Patterns in Enteric Fever Incidence and Increasing Antibiotic Resistance of Enteric Fever Isolates in the United States, 2008-2012.",
+        "pos": "6404.51,-1787.74",
+        "weight": "14.0",
+        "label_dumb": "1029"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1784",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.021349,
+          8.079768
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25790017",
+        "label": "East London experience with enteric fever 2007-2012.",
+        "pos": "6631.57,-1092.74",
+        "weight": "3.0",
+        "label_dumb": "1784"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1801",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.082293,
+          7.508295
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23433577",
+        "label": "Public health management of Salmonella Typhi/Paratyphi case and contact screening: lessons from North London.",
+        "pos": "6070.91,-1448.73",
+        "weight": "7.0",
+        "label_dumb": "1801"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2366",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28082,
+          7.343609
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25912287",
+        "label": "Towards sustainable public health surveillance for enteric fever.",
+        "pos": "6189.44,-1551.23",
+        "weight": "3.0",
+        "label_dumb": "2366"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2367",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.700242,
+          7.850512
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "28369224",
+        "label": "An Appraisal of the Clinical Features of Pediatric Enteric Fever: Systematic Review and Meta-analysis of the Age-Stratified Disease Occurrence.",
+        "pos": "7036.90,-1235.61",
+        "weight": "8.0",
+        "label_dumb": "2367"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1023",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.090748,
+          8.504124
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "28959915",
+        "label": "Laboratory parameters for predicting Salmonella bacteraemia: a prospective cohort study.",
+        "pos": "7270.05,-828.07",
+        "weight": "0.0",
+        "label_dumb": "1023"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "177",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.174755,
+          9.193221
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "28306338",
+        "label": "The Epidemiology of Childhood Salmonella Infections in Alberta, Canada.",
+        "pos": "6723.16,-397.65",
+        "weight": "1.0",
+        "label_dumb": "177"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1799",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.805721,
+          8.161606
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "19382666",
+        "label": "Predictive value of clinical and laboratory findings in the diagnosis of the enteric fever.",
+        "pos": "6502.83,-1041.72",
+        "weight": "17.0",
+        "label_dumb": "1799"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4244",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.194499,
+          7.863321
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "30261024",
+        "label": "The epidemiology of typhoid fever in the Dhulikhel area, Nepal: A prospective cohort study.",
+        "pos": "7929.04,-1227.63",
+        "weight": "0.0",
+        "label_dumb": "4244"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4266",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.942977,
+          8.642552
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "28130144",
+        "label": "Blood culture-PCR to optimise typhoid fever diagnosis after controlled human infection identifies frequent asymptomatic cases and evidence of primary bacteraemia.",
+        "pos": "7778.87,-741.67",
+        "weight": "4.0",
+        "label_dumb": "4266"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4891",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.381228,
+          8.266213
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "19526258",
+        "label": "Study on blood cultures and bacteria counts in the blood of paratyphoid fever A patients.",
+        "pos": "7443.48,-976.49",
+        "weight": "5.0",
+        "label_dumb": "4891"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1024",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.867104,
+          7.318684
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "28931025",
+        "label": "The clinical and microbiological characteristics of enteric fever in Cambodia, 2008-2015.",
+        "pos": "7733.57,-1566.74",
+        "weight": "2.0",
+        "label_dumb": "1024"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1035",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.988183,
+          6.627732
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23122884",
+        "label": "Enteric fever in Cambodian children is dominated by multidrug-resistant H58 Salmonella enterica serovar Typhi with intermediate susceptibility to ciprofloxacin.",
+        "pos": "7805.86,-1996.36",
+        "weight": "26.0",
+        "label_dumb": "1035"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1782",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.602615,
+          7.982799
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25404003",
+        "label": "Enteric fever in the Pacific: a regional retrospective study from Auckland, New Zealand.",
+        "pos": "8769.75,-1153.18",
+        "weight": "2.0",
+        "label_dumb": "1782"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2692",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.085187,
+          6.350476
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27618918",
+        "label": "Antimicrobial susceptibility pattern and sequence analysis of DNA gyrase and DNA topoisomerase IV in Salmonella enterica serovars Typhi and Paratyphi A isolates with decreased susceptibility to ciprofloxacin.",
+        "pos": "7266.73,-2168.58",
+        "weight": "2.0",
+        "label_dumb": "2692"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4888",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.133321,
+          7.189826
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25808163",
+        "label": "Enteric fever and its impact on returning travellers.",
+        "pos": "8489.56,-1646.91",
+        "weight": "7.0",
+        "label_dumb": "4888"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4892",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.113597,
+          6.224435
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "28329181",
+        "label": "Treatment Response in Enteric Fever in an Era of Increasing Antimicrobial Resistance: An Individual Patient Data Analysis of 2092 Participants Enrolled into 4 Randomized, Controlled Trials in Nepal.",
+        "pos": "6089.60,-2246.84",
+        "weight": "11.0",
+        "label_dumb": "4892"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4893",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.835759,
+          7.344027
+        ]
+      },
+      "properties": {
+        "paper_id": "25394534",
+        "label": "Enteric fever imported to the Czech Republic: epidemiology, clinical characteristics and antimicrobial susceptibility.",
+        "pos": "7117.81,-1550.97",
+        "weight": "0.0",
+        "label_dumb": "4893"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4894",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.505621,
+          8.200787
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24645636",
+        "label": "Antimicrobial resistance in Salmonella enterica serovar typhi and paratyphi in South Asia-current status, issues and prospects.",
+        "pos": "8711.84,-1017.29",
+        "weight": "3.0",
+        "label_dumb": "4894"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4895",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.554283,
+          6.243747
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24904229",
+        "label": "Paratyphoid fever: splicing the global analyses.",
+        "pos": "6352.71,-2234.85",
+        "weight": "12.0",
+        "label_dumb": "4895"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1083",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.112167,
+          6.373905
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "20392916",
+        "label": "Typhoid in Kenya is associated with a dominant multidrug-resistant Salmonella enterica serovar Typhi haplotype that is also widespread in Southeast Asia.",
+        "pos": "8476.93,-2154.03",
+        "weight": "76.0",
+        "width": "0.39",
+        "label_dumb": "1083"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1460",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.413742,
+          7.065482
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23593267",
+        "label": "A prospective study of the causes of febrile illness requiring hospitalization in children in Cambodia.",
+        "pos": "9254.03,-1724.25",
+        "weight": "43.0",
+        "label_dumb": "1460"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2262",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.127807,
+          5.838897
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "24512443",
+        "label": "Risk factors for the development of severe typhoid fever in Vietnam.",
+        "pos": "6695.13,-2486.11",
+        "weight": "20.0",
+        "label_dumb": "2262"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2340",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.583189,
+          5.892409
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27331909",
+        "label": "The Molecular and Spatial Epidemiology of Typhoid Fever in Rural Cambodia.",
+        "pos": "7564.06,-2452.91",
+        "weight": "7.0",
+        "label_dumb": "2340"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2628",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.419595,
+          7.060674
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "20478986",
+        "label": "Multidrug resistant typhoid fever outbreak in Ercek Village-Van, Eastern Anatolia, Turkey: clinical profile, sensitivity patterns and response to antimicrobials.",
+        "pos": "9854.57,-1727.24",
+        "weight": "4.0",
+        "label_dumb": "2628"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1026",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -47.557888,
+          30.282132
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "27523510",
+        "label": "Enteric Fever in a Tertiary Paediatric Hospital: A Retrospective Six-Year Review.",
+        "pos": "-24163.60,13529.71",
+        "weight": "0.0",
+        "width": "0.39",
+        "label_dumb": "1026"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2343",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -41.076995,
+          28.051974
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "20613510",
+        "label": "Enteric fever: a travel medicine oriented view.",
+        "pos": "-20294.21,11953.28",
+        "weight": "32.0",
+        "width": "0.39",
+        "label_dumb": "2343"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3963",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -49.16433,
+          32.128998
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24215240",
+        "label": "The management of antimicrobial-resistant enteric fever.",
+        "pos": "-25122.72,14862.47",
+        "weight": "12.0",
+        "label_dumb": "3963"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3965",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -53.127577,
+          29.442456
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "20014951",
+        "label": "Global trends in typhoid and paratyphoid Fever.",
+        "pos": "-27488.96,12932.13",
+        "weight": "386.0",
+        "width": "0.39",
+        "label_dumb": "3965"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1027",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.840015,
+          7.488825
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "30050612",
+        "label": "Risk factors for transmission of <i>Salmonella</i> Typhi in Mahama refugee camp, Rwanda: a matched case-control study.",
+        "pos": "-1644.30,-1460.85",
+        "weight": "0.0",
+        "label_dumb": "1027"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3594",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.000662,
+          8.744178
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "29883448",
+        "label": "Epidemiology and risk factors for typhoid fever in Central Division, Fiji, 2014-2017: A case-control study.",
+        "pos": "-2337.26,-678.22",
+        "weight": "0.0",
+        "label_dumb": "3594"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3969",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.285056,
+          6.827907
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25486292",
+        "label": "Descriptive epidemiology of typhoid fever during an epidemic in Harare, Zimbabwe, 2012.",
+        "pos": "-1910.01,-1871.96",
+        "weight": "7.0",
+        "label_dumb": "3969"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3978",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.057143,
+          7.202895
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "19397806",
+        "label": "A typhoid fever outbreak in a slum of South Dumdum municipality, West Bengal, India, 2007: evidence for foodborne and waterborne transmission.",
+        "pos": "-1176.89,-1638.78",
+        "weight": "22.0",
+        "label_dumb": "3978"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4906",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.720962,
+          6.593402
+        ]
+      },
+      "properties": {
+        "paper_id": "29184606",
+        "label": "Knowledge, attitude and practice of hygiene and sanitation in a Burundian refugee camp: implications for control of a Salmonella typhi outbreak.",
+        "pos": "-1573.22,-2017.69",
+        "weight": "1.0",
+        "label_dumb": "4906"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4907",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.130773,
+          7.459073
+        ]
+      },
+      "properties": {
+        "paper_id": "30281598",
+        "label": "Typhoid fever outbreak in the Democratic Republic of Congo: Case control and ecological study.",
+        "pos": "-1220.85,-1479.37",
+        "weight": "0.0",
+        "label_dumb": "4907"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1028",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -29.443601,
+          6.126864
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23145487",
+        "label": "A descriptive study of reportable gastrointestinal illnesses in Ontario, Canada, from 2007 to 2009.",
+        "pos": "-13348.54,-2307.41",
+        "weight": "17.0",
+        "label_dumb": "1028"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "381",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.188322,
+          5.934264
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "23663256",
+        "label": "Incidence, distribution, seasonality, and demographic risk factors of Salmonella Enteritidis human infections in Ontario, Canada, 2007-2009.",
+        "pos": "-15584.31,-2426.94",
+        "weight": "11.0",
+        "label_dumb": "381"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1030",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.841719,
+          5.277548
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27479027",
+        "label": "Advances in diagnosis, treatment, and prevention of invasive Salmonella infections.",
+        "pos": "8315.46,-2834.20",
+        "weight": "4.0",
+        "label_dumb": "1030"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "224",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.446081,
+          5.043414
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "25912288",
+        "label": "Antimicrobial resistance and management of invasive Salmonella disease.",
+        "pos": "7482.20,-2979.29",
+        "weight": "62.0",
+        "label_dumb": "224"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1031",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.658419,
+          -27.78575
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "26933019",
+        "label": "Challenges and Opportunities for Typhoid Fever Control: A Call for Coordinated Action.",
+        "pos": "14176.48,-23959.32",
+        "weight": "18.0",
+        "label_dumb": "1031"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1836",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.660201,
+          -28.707721
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "25921727",
+        "label": "Challenges in measuring complications and death due to invasive Salmonella infections.",
+        "pos": "14774.59,-24605.27",
+        "weight": "12.0",
+        "label_dumb": "1836"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "282",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.485484,
+          -30.744324
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "26933014",
+        "label": "What Have We Learned From the Typhoid Fever Surveillance in Africa Program?",
+        "pos": "14073.23,-26052.81",
+        "weight": "8.0",
+        "width": "0.29",
+        "label_dumb": "282"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1032",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.370448,
+          30.609206
+        ]
+      },
+      "properties": {
+        "paper_id": "29975627",
+        "label": "Fluoroquinolone resistance in Salmonella: insights by whole-genome sequencing.",
+        "pos": "-6737.36,13763.86",
+        "weight": "1.0",
+        "label_dumb": "1032"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "178",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -18.21984,
+          30.506725
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "26449937",
+        "label": "A Perspective on Invasive Salmonella Disease in Africa.",
+        "pos": "-6647.44,13690.41",
+        "weight": "15.0",
+        "label_dumb": "178"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1033",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.471813,
+          18.689642
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "24623629",
+        "label": "Serum bactericidal assays to evaluate typhoidal and nontyphoidal Salmonella vaccines.",
+        "pos": "29588.26,5648.99",
+        "weight": "23.0",
+        "label_dumb": "1033"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1212",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.169216,
+          16.704625
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24440968",
+        "label": "Salmonella vaccines: lessons from the mouse model or bad teaching?",
+        "pos": "28810.55,4362.95",
+        "weight": "14.0",
+        "label_dumb": "1212"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "183",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          39.586842,
+          17.652081
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23085530",
+        "label": "Invasive African nontyphoidal Salmonella requires high levels of complement for cell-free antibody-dependent killing.",
+        "pos": "27865.80,4975.01",
+        "weight": "14.0",
+        "label_dumb": "183"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2100",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.639562,
+          20.713985
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27030587",
+        "label": "Opsonophagocytic Assay To Evaluate Immunogenicity of Nontyphoidal Salmonella Vaccines.",
+        "pos": "30285.46,6976.14",
+        "weight": "2.0",
+        "label_dumb": "2100"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2196",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.533135,
+          16.583786
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26998925",
+        "label": "Functional Activity of Antibodies Directed towards Flagellin Proteins of Non-Typhoidal Salmonella.",
+        "pos": "31416.01,4285.11",
+        "weight": "6.0",
+        "label_dumb": "2196"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2386",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.041353,
+          21.679267
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "20133627",
+        "label": "Importance of antibody and complement for oxidative burst and killing of invasive nontyphoidal Salmonella by blood cells in Africans.",
+        "pos": "28734.21,7615.13",
+        "weight": "83.0",
+        "label_dumb": "2386"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3994",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.41899,
+          18.783104
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "25547792",
+        "label": "Design of glycoconjugate vaccines against invasive African Salmonella enterica serovar Typhimurium.",
+        "pos": "31347.86,5709.90",
+        "weight": "26.0",
+        "label_dumb": "3994"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "3995",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.258649,
+          20.012993
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23756206",
+        "label": "Invasive African Salmonella Typhimurium induces bactericidal antibodies against O-antigens.",
+        "pos": "28266.90,6514.66",
+        "weight": "27.0",
+        "label_dumb": "3995"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.492325,
+          19.416082
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21217014",
+        "label": "Absent bactericidal activity of mouse serum against invasive African nontyphoidal Salmonella results from impaired complement function but not a lack of antibody.",
+        "pos": "31988.69,6123.32",
+        "weight": "31.0",
+        "label_dumb": "4005"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4465",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.930036,
+          15.869803
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27057743",
+        "label": "Bactericidal Immunity to Salmonella in Africans and Mechanisms Causing Its Failure in HIV Infection.",
+        "pos": "29861.84,3826.17",
+        "weight": "4.0",
+        "label_dumb": "4465"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4908",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.834603,
+          15.670713
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "27216239",
+        "label": "Serum bactericidal assay for the evaluation of typhoid vaccine using a semi-automated colony-counting method.",
+        "pos": "31596.00,3698.49",
+        "weight": "6.0",
+        "label_dumb": "4908"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4909",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          41.493479,
+          21.577101
+        ]
+      },
+      "properties": {
+        "paper_id": "29969587",
+        "label": "Setup of luminescence-based serum bactericidal assay against Salmonella Paratyphi A.",
+        "pos": "29004.15,7547.30",
+        "weight": "0.0",
+        "label_dumb": "4909"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4910",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38.627317,
+          18.906177
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27578609",
+        "label": "Outer membrane vesicles derived from Salmonella Typhimurium mutants with truncated LPS induce cross-protective immune responses against infection of Salmonella enterica serovars in the mouse model.",
+        "pos": "27292.92,5790.16",
+        "weight": "8.0",
+        "label_dumb": "4910"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4911",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.307109,
+          15.76049
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23803904",
+        "label": "Role of antilipopolysaccharide antibodies in serum bactericidal activity against Salmonella enterica serovar Typhimurium in healthy adults and children in the United States.",
+        "pos": "30086.97,3756.05",
+        "weight": "30.0",
+        "label_dumb": "4911"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4912",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.463888,
+          20.851533
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "25192974",
+        "label": "Impact of conjugation chemistry on the immunogenicity of S. Typhimurium conjugate vaccines.",
+        "pos": "30777.62,7066.94",
+        "weight": "15.0",
+        "label_dumb": "4912"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "765",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.266254,
+          16.186821
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21616112",
+        "label": "Mouse models to assess the efficacy of non-typhoidal Salmonella vaccines: revisiting the role of host innate susceptibility and routes of challenge.",
+        "pos": "28271.44,4029.74",
+        "weight": "30.0",
+        "label_dumb": "765"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "773",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.61974,
+          16.277564
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "23741368",
+        "label": "Sustained protection in mice immunized with fractional doses of Salmonella Enteritidis core and O polysaccharide-flagellin glycoconjugates.",
+        "pos": "26691.35,4088.07",
+        "weight": "30.0",
+        "label_dumb": "773"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "825",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40.366246,
+          19.559113
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "21807911",
+        "label": "Engineering and preclinical evaluation of attenuated nontyphoidal Salmonella strains serving as live oral vaccines and as reagent strains.",
+        "pos": "28331.14,6216.96",
+        "weight": "50.0",
+        "label_dumb": "825"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1034",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.036376,
+          0.230719
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "23555777",
+        "label": "Bloodstream infection among adults in Phnom Penh, Cambodia: key pathogens and resistance patterns.",
+        "pos": "3014.83,-5953.60",
+        "weight": "21.0",
+        "label_dumb": "1034"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1038",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.050965,
+          2.484061
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "23294446",
+        "label": "Does HIV status affect the aetiology, bacterial resistance patterns and recommended empiric antibiotic treatment in adult patients with bloodstream infection in Cambodia?",
+        "pos": "3006.12,-4562.41",
+        "weight": "7.0",
+        "label_dumb": "1038"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "191",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.531525,
+          -0.015287
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "23272255",
+        "label": "Azithromycin and ciprofloxacin resistance in Salmonella bloodstream infections in Cambodian adults.",
+        "pos": "331.02,-6105.43",
+        "weight": "27.0",
+        "width": "0.29",
+        "label_dumb": "191"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4914",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.003859,
+          -0.501155
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "19334378",
+        "label": "[The rate of inducible clindamycin resistance and susceptibilities to other antimicrobial agents in staphylococci].",
+        "pos": "3631.29,-6405.30",
+        "weight": "6.0",
+        "label_dumb": "4914"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4915",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.753476,
+          1.225544
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "21411591",
+        "label": "Nosocomial bloodstream infections in Brazilian hospitals: analysis of 2,563 cases from a prospective nationwide surveillance study.",
+        "pos": "3780.78,-5339.56",
+        "weight": "96.0",
+        "label_dumb": "4915"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4916",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.309009,
+          0.952722
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20549950",
+        "label": "[Trends in antibiotic susceptibility patterns of Streptococcus pneumoniae and Haemophilus influenzae isolates: four years follow up].",
+        "pos": "2255.01,-5507.97",
+        "weight": "6.0",
+        "label_dumb": "4916"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4917",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.413804,
+          0.049022
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "28104185",
+        "label": "Causes and outcomes of sepsis in southeast Asia: a multinational multicentre cross-sectional study.",
+        "pos": "3983.58,-6065.74",
+        "weight": "17.0",
+        "label_dumb": "4917"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4918",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.536673,
+          -0.544982
+        ]
+      },
+      "properties": {
+        "paper_id": "24210153",
+        "label": "[First epidemiologic data on pneumonia in Cambodia].",
+        "pos": "2716.13,-6432.35",
+        "weight": "0.0",
+        "label_dumb": "4918"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4919",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.740198,
+          0.456291
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23587776",
+        "label": "Comparison of pathogens and their antimicrobial resistance patterns in paediatric, adult and elderly patients in Canadian hospitals.",
+        "pos": "1997.57,-5814.38",
+        "weight": "16.0",
+        "label_dumb": "4919"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4920",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.726189,
+          1.039815
+        ]
+      },
+      "properties": {
+        "paper_id": "28980931",
+        "label": "Bacterial etiology and antibiotic resistance pattern of septicemia in HIV and non-HIV patients admitted to tertiary care hospitals, Shiraz, South of Iran.",
+        "pos": "2602.98,-5454.21",
+        "weight": "0.0",
+        "label_dumb": "4920"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4921",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.468075,
+          -0.291042
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "27873603",
+        "label": "First National Workshop on Antibiotic Resistance in Cambodia: Phnom Penh, Cambodia, 16-18 November 2011.",
+        "pos": "2160.04,-6275.62",
+        "weight": "5.0",
+        "label_dumb": "4921"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4922",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.181745,
+          0.765374
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21537027",
+        "label": "Antimicrobial resistance in urinary tract pathogens in Canada from 2007 to 2009: CANWARD surveillance study.",
+        "pos": "4122.13,-5623.61",
+        "weight": "44.0",
+        "label_dumb": "4922"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4923",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.185915,
+          -0.777557
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23949292",
+        "label": "Surveillance of post-caesarean surgical site infections in a hospital with limited resources, Cambodia.",
+        "pos": "4119.64,-6575.90",
+        "weight": "10.0",
+        "label_dumb": "4923"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2432",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.919759,
+          1.492443
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24592979",
+        "label": "Community-onset bloodstream infection with multidrug-resistant organisms: a matched case-control study.",
+        "pos": "2487.41,-5174.79",
+        "weight": "13.0",
+        "label_dumb": "2432"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4925",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.198879,
+          1.901076
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "24643200",
+        "label": "Bloodstream infections in community hospitals in the 21st century: a multicenter cohort study.",
+        "pos": "4111.90,-4922.48",
+        "weight": "15.0",
+        "label_dumb": "4925"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4926",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.288343,
+          1.246878
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22337839",
+        "label": "Five-year evaluation of the antimicrobial susceptibility patterns of bacteria causing bloodstream infections in Iran.",
+        "pos": "3461.44,-5326.39",
+        "weight": "16.0",
+        "label_dumb": "4926"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4928",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.123636,
+          1.638278
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "21835504",
+        "label": "Antimicrobial resistance in pathogens causing nosocomial bloodstream infections in university hospitals in Egypt.",
+        "pos": "1768.64,-5084.75",
+        "weight": "20.0",
+        "label_dumb": "4928"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4929",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.942909,
+          3.161824
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "20122817",
+        "label": "Patterns of antimicrobial therapy in severe nosocomial infections: empiric choices, proportion of appropriate therapy, and adaptation rates--a multicentre, observational survey in critically ill patients.",
+        "pos": "3667.68,-4143.60",
+        "weight": "51.0",
+        "label_dumb": "4929"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4930",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.498167,
+          3.694749
+        ]
+      },
+      "properties": {
+        "paper_id": "19622030",
+        "label": "Rapid adaptation of antibiotic therapy for community-acquired peritonitis using direct cultures on antibiotic agar plates: pilot study.",
+        "pos": "2739.12,-3814.10",
+        "weight": "0.0",
+        "label_dumb": "4930"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4931",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.881444,
+          1.883764
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "21241444",
+        "label": "Comparison of the bacterial isolates and antibiotic resistance patterns of elderly nursing home and general community patients.",
+        "pos": "1913.24,-4933.17",
+        "weight": "14.0",
+        "label_dumb": "4931"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4932",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.883272,
+          3.922769
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "25190722",
+        "label": "Bacteraemia incidence, causative organisms and resistance patterns, antibiotic strategies and outcomes in a single university hospital ICU: continuing improvement between 2000 and 2013.",
+        "pos": "3106.24,-3673.06",
+        "weight": "11.0",
+        "label_dumb": "4932"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4933",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.251442,
+          2.837095
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22006165",
+        "label": "Microbial profile and antibiotic sensitivity pattern in acute bacterial cholangitis.",
+        "pos": "2289.38,-4344.29",
+        "weight": "14.0",
+        "label_dumb": "4933"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4934",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.792231,
+          3.207833
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24997579",
+        "label": "Occult bloodstream infections in adults: a \"benign\" entity.",
+        "pos": "2563.55,-4115.16",
+        "weight": "3.0",
+        "label_dumb": "4934"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4935",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.629118,
+          2.788189
+        ]
+      },
+      "properties": {
+        "paper_id": "27352218",
+        "label": "Factors associated with suitability of empiric antibiotic therapy in hospitalized patients with bloodstream infections.",
+        "pos": "2063.89,-4374.51",
+        "weight": "0.0",
+        "label_dumb": "4935"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4936",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.483715,
+          2.406229
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22595632",
+        "label": "Would earlier microbe identification alter antibiotic therapy in bacteremic emergency department patients?",
+        "pos": "4519.44,-4610.49",
+        "weight": "14.0",
+        "label_dumb": "4936"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4937",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.36018,
+          3.626917
+        ]
+      },
+      "properties": {
+        "paper_id": "24666744",
+        "label": "Retrospective analysis of clinical data associated with patients enrolled in a molecular diagnostic feasibility study highlights the potential utility for rapid detection of bloodstream infection.",
+        "pos": "3418.55,-3856.05",
+        "weight": "1.0",
+        "label_dumb": "4937"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4938",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.87263,
+          2.719633
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25664373",
+        "label": "Microbiology and audit of vascular access-associated bloodstream infections in multi-ethnic Asian hemodialysis patients in a tertiary hospital.",
+        "pos": "3709.64,-4416.87",
+        "weight": "3.0",
+        "label_dumb": "4938"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4939",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.817575,
+          1.453083
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25290580",
+        "label": "Blood culture-positive infections in patients with alcoholic hepatitis.",
+        "pos": "3742.51,-5199.09",
+        "weight": "4.0",
+        "label_dumb": "4939"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4940",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.711802,
+          1.247672
+        ]
+      },
+      "properties": {
+        "paper_id": "29911761",
+        "label": "Antibiotic Exposure in the Community and Resistance Patterns of Escherichia coli Community-Acquired Bloodstream Infection.",
+        "pos": "2611.57,-5325.90",
+        "weight": "0.0",
+        "label_dumb": "4940"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1036",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.87011,
+          11.917492
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "23465712",
+        "label": "First isolation of ciprofloxacin-resistant Salmonella enterica serovar Typhi in Taiwan.",
+        "pos": "-2856.36,1312.82",
+        "weight": "9.0",
+        "width": "0.39",
+        "label_dumb": "1036"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1067",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.717398,
+          9.98791
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "18971360",
+        "label": "Ciprofloxacin-resistant Salmonella enterica serovar typhi from Kuwait with novel mutations in gyrA and parC genes.",
+        "pos": "-3362.23,99.77",
+        "weight": "17.0",
+        "label_dumb": "1067"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1068",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.870016,
+          11.963844
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "25027085",
+        "label": "Induction of resistant mutants of Salmonella enterica serotype Typhi under ciprofloxacin selective pressure.",
+        "pos": "-3453.35,1342.06",
+        "weight": "10.0",
+        "label_dumb": "1068"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1072",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -4.041599,
+          8.079961
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "27916384",
+        "label": "Antimicrobial resistance and molecular subtypes of Salmonella enterica serovar Typhi isolates from Kolkata, India over a 15 years period 1998-2012.",
+        "pos": "1817.62,-1092.62",
+        "weight": "3.0",
+        "width": "0.39",
+        "label_dumb": "1072"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1082",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.129413,
+          12.472694
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "24820472",
+        "label": "Increased quinolone resistance among typhoid Salmonella isolated from Egyptian patients.",
+        "pos": "-2414.13,1663.39",
+        "weight": "3.0",
+        "label_dumb": "1082"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "201",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.401553,
+          7.260215
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "21714829",
+        "label": "Antimicrobial resistance trends in blood culture positive Salmonella Typhi isolates from Pondicherry, India, 2005-2009.",
+        "pos": "-2576.61,-1603.12",
+        "weight": "40.0",
+        "width": "0.29",
+        "label_dumb": "201"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "2265",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.802836,
+          10.718358
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23330551",
+        "label": "Current antibiogram and clonal relatedness among drug-resistant Salmonella enterica serovar Typhi in Northern India.",
+        "pos": "-3413.24,558.05",
+        "weight": "3.0",
+        "label_dumb": "2265"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1037",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.896974,
+          1.099804
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "20498312",
+        "label": "In vitro activity of azithromycin against nontyphoidal Salmonella enterica.",
+        "pos": "112.83,-5417.18",
+        "weight": "19.0",
+        "label_dumb": "1037"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1039",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -50.280476,
+          12.877661
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "24752251",
+        "label": "Emergence of clinical Salmonella enterica serovar Typhimurium isolates with concurrent resistance to ciprofloxacin, ceftriaxone, and azithromycin.",
+        "pos": "-25789.11,1919.57",
+        "weight": "36.0",
+        "label_dumb": "1039"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "205",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -52.796095,
+          12.478721
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "23464603",
+        "label": "Increase in resistance to ceftriaxone and nonsusceptibility to ciprofloxacin and decrease in multidrug resistance among Salmonella strains, United States, 1996-2009.",
+        "pos": "-27291.05,1667.20",
+        "weight": "25.0",
+        "label_dumb": "205"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "104",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.359574,
+          16.636096
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21247297",
+        "label": "A rapid and sensitive method to identify and differentiate Salmonella enterica serotype Typhimurium and Salmonella enterica serotype 4,[5],12:i:- by combining traditional serotyping and multiplex polymerase chain reaction.",
+        "pos": "2224.82,4318.80",
+        "weight": "30.0",
+        "label_dumb": "104"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1040",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.411611,
+          0.812098
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25355768",
+        "label": "Performance of Etest and disk diffusion for detection of ciprofloxacin and levofloxacin resistance in Salmonella enterica.",
+        "pos": "999.66,-5594.77",
+        "weight": "7.0",
+        "label_dumb": "1040"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1041",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.700052,
+          -1.099982
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "23985342",
+        "label": "Trends of etiology and drug resistance in enteric fever in the last two decades in Nepal: a systematic review and meta-analysis.",
+        "pos": "-963.69,-6774.92",
+        "weight": "13.0",
+        "label_dumb": "1041"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1042",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -8.411397,
+          20.869717
+        ]
+      },
+      "properties": {
+        "paper_id": "20575958",
+        "label": "Salmonella aortitis--a case of mistaken identity.",
+        "pos": "-791.35,7078.95",
+        "weight": "0.0",
+        "label_dumb": "1042"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "348",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.513058,
+          21.228387
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20463163",
+        "label": "Salmonella enterica serovar Virchow bacteremia presenting as typhoid-like illness in an immunocompetent patient.",
+        "pos": "-255.00,7316.14",
+        "weight": "1.0",
+        "label_dumb": "348"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1043",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -7.941534,
+          21.746299
+        ]
+      },
+      "properties": {
+        "paper_id": "23024293",
+        "label": "Reply to Chien et al.",
+        "pos": "-510.82,7659.66",
+        "weight": "0.0",
+        "label_dumb": "1043"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1044",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.258218,
+          0.704764
+        ]
+      },
+      "properties": {
+        "paper_id": "23918586",
+        "label": "Human infection of Salmonella matadi in Korea.",
+        "pos": "-4282.17,-5661.02",
+        "weight": "0.0",
+        "label_dumb": "1044"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "660",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.042281,
+          0.820393
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "19550357",
+        "label": "Primary subacute Salmonella osteomyelitis of the navicular bone in a child with normal immunity.",
+        "pos": "-3556.20,-5589.65",
+        "weight": "5.0",
+        "label_dumb": "660"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1045",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.541274,
+          -9.091864
+        ]
+      },
+      "properties": {
+        "paper_id": "20507752",
+        "label": "Pulsed-field gel electrophoresis for Salmonella infection surveillance, Texas, USA, 2007.",
+        "pos": "11121.31,-11730.98",
+        "weight": "1.0",
+        "label_dumb": "1045"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "193",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.215956,
+          -8.769624
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "20104200",
+        "label": "Microbiologic and clinical features of Salmonella species isolated from bacteremic children in eastern Democratic Republic of Congo.",
+        "pos": "10927.08,-11529.66",
+        "weight": "20.0",
+        "label_dumb": "193"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1046",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.592316,
+          -8.29796
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "22299472",
+        "label": "Clinical features of gastrointestinal salmonellosis in children in Bangkok, Thailand.",
+        "pos": "11748.83,-11235.30",
+        "weight": "0.0",
+        "label_dumb": "1046"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "276",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.193818,
+          -8.581227
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "22531240",
+        "label": "Invasive salmonellosis in urban Thai children: a ten-year review.",
+        "pos": "12705.00,-11412.04",
+        "weight": "8.0",
+        "label_dumb": "276"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "455",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.936293,
+          -9.333243
+        ]
+      },
+      "properties": {
+        "paper_id": "25523222",
+        "label": "[Infections caused by non-typhi serovars of Salmonella at the Infectious Diseases Clinic of the University Hospital Brno in 2011-2013].",
+        "pos": "11954.20,-11881.90",
+        "weight": "0.0",
+        "label_dumb": "455"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1047",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.796562,
+          7.415211
+        ]
+      },
+      "properties": {
+        "paper_id": "24819257",
+        "label": "[Molecular epidemiology, antimicrobial resistance and characterization of extended-spectrum beta-lactamases of Salmonella enterica serotype Paratyphi B clinical isolates].",
+        "pos": "-14156.32,-1506.67",
+        "weight": "1.0",
+        "label_dumb": "1047"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "194",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.852102,
+          8.203321
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22773084",
+        "label": "Systemic and extraintestinal forms of human infection due to non-typhoid salmonellae in Bulgaria, 2005-2010.",
+        "pos": "-14189.48,-1015.71",
+        "weight": "7.0",
+        "label_dumb": "194"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1048",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -31.845192,
+          9.661678
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "26517493",
+        "label": "Clonal relatedness and resistance patterns of Salmonella Corvallis from poultry carcasses in a Brazilian slaughterhouse.",
+        "pos": "-14782.40,-104.57",
+        "weight": "4.0",
+        "label_dumb": "1048"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1049",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -29.62486,
+          7.279647
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "19749448",
+        "label": "Isolation, drug resistance and molecular characterization of Salmonella isolates in northern Morocco.",
+        "pos": "-13456.76,-1591.03",
+        "weight": "17.0",
+        "label_dumb": "1049"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "105",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.973766,
+          -7.989249
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "27286886",
+        "label": "Microbiological, clinical and molecular findings of non-typhoidal Salmonella bloodstream infections associated with malaria, Oriental Province, Democratic Republic of the Congo.",
+        "pos": "9588.39,-11042.83",
+        "weight": "4.0",
+        "width": "0.29",
+        "label_dumb": "105"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "117",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          14.23827,
+          -18.142657
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "23843558",
+        "label": "Diversity among human non-typhoidal salmonellae isolates from Zimbabwe.",
+        "pos": "12731.54,-17485.17",
+        "weight": "9.0",
+        "width": "0.29",
+        "label_dumb": "117"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "118",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.163238,
+          -3.791985
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "26449949",
+        "label": "Invasive Nontyphoidal Salmonella Infections Among Children in Mali, 2002-2014: Microbiological and Epidemiologic Features Guide Vaccine Development.",
+        "pos": "7313.33,-8438.03",
+        "weight": "13.0",
+        "label_dumb": "118"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "12",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.473187,
+          -1.705248
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "23516651",
+        "label": "Antimicrobial resistance in invasive non-typhoid Salmonella from the Democratic Republic of the Congo: emergence of decreased fluoroquinolone susceptibility and extended-spectrum beta lactamases.",
+        "pos": "5110.20,-7148.59",
+        "weight": "36.0",
+        "width": "0.19",
+        "label_dumb": "12"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "130",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.106724,
+          -7.686889
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "26449944",
+        "label": "Invasive Salmonellosis in Kilifi, Kenya.",
+        "pos": "8473.68,-10854.46",
+        "weight": "11.0",
+        "label_dumb": "130"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "131",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.025066,
+          -5.948526
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "26449947",
+        "label": "Epidemiology and Genomics of Invasive Nontyphoidal Salmonella Infections in Kenya.",
+        "pos": "10813.11,-9773.90",
+        "weight": "16.0",
+        "label_dumb": "131"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "164",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.292646,
+          -12.61809
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "23975545",
+        "label": "Epidemic increase in Salmonella bloodstream infection in children, Bwamanda, the Democratic Republic of Congo.",
+        "pos": "9181.73,-13947.31",
+        "weight": "15.0",
+        "label_dumb": "164"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "171",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.578155,
+          -6.772336
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "26449946",
+        "label": "Emergence of Community-Acquired, Multidrug-Resistant Invasive Nontyphoidal Salmonella Disease in Rural Western Kenya, 2009-2013.",
+        "pos": "8158.10,-10285.49",
+        "weight": "10.0",
+        "label_dumb": "171"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "207",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.162773,
+          -6.36265
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "26449951",
+        "label": "Invasive Salmonella Infections at Multiple Surveillance Sites in the Democratic Republic of the Congo, 2011-2014.",
+        "pos": "9104.19,-10030.97",
+        "weight": "16.0",
+        "label_dumb": "207"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "239",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.851143,
+          -10.280306
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "29342283",
+        "label": "Non-typhoidal Salmonella serovars associated with invasive and non-invasive disease in the Lao People's Democratic Republic.",
+        "pos": "10709.27,-12475.08",
+        "weight": "0.0",
+        "label_dumb": "239"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "300",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.652189,
+          -16.787727
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "26933016",
+        "label": "The Relationship Between Invasive Nontyphoidal Salmonella Disease, Other Bacterial Bloodstream Infections, and Malaria in Sub-Saharan Africa.",
+        "pos": "7008.21,-16608.50",
+        "weight": "10.0",
+        "width": "0.29",
+        "label_dumb": "300"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "307",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          13.688295,
+          -4.392301
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "24787713",
+        "label": "Malaria parasite infection compromises control of concurrent systemic non-typhoidal Salmonella infection via IL-10-mediated alteration of myeloid cell function.",
+        "pos": "12403.18,-8809.48",
+        "weight": "39.0",
+        "label_dumb": "307"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "365",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.206428,
+          -6.557765
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "25856341",
+        "label": "Clinical indicators for bacterial co-infection in Ghanaian children with P. falciparum infection.",
+        "pos": "9727.30,-10152.16",
+        "weight": "2.0",
+        "label_dumb": "365"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "438",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.980626,
+          -9.122261
+        ]
+      },
+      "properties": {
+        "paper_id": "29165513",
+        "label": "[A five-year experience with zoonotic Salmonella at a pediatric reference centre].",
+        "pos": "8995.44,-11749.98",
+        "weight": "0.0",
+        "label_dumb": "438"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "48",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.378523,
+          -7.665741
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25528352",
+        "label": "Salmonella blood stream infections in a tertiary care setting in Ghana.",
+        "pos": "11024.14,-10841.29",
+        "weight": "9.0",
+        "label_dumb": "48"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1050",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.331405,
+          9.061848
+        ]
+      },
+      "properties": {
+        "paper_id": "27525393",
+        "label": "[Serotype distribution and antimicrobial susceptibilities of Salmonella strains recovered from environmental samples between 2008-2014].",
+        "pos": "-13878.60,-479.77",
+        "weight": "0.0",
+        "label_dumb": "1050"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1051",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -32.156123,
+          8.258853
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25025676",
+        "label": "[Diversity of human Salmonella isolates in the South Moravian Region in 2009-2012].",
+        "pos": "-14968.04,-981.08",
+        "weight": "2.0",
+        "label_dumb": "1051"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1052",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -33.713172,
+          8.66171
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "28141586",
+        "label": "Molecular epidemiology and antimicrobial resistance of Salmonella species from clinical specimens and food Items in Lebanon.",
+        "pos": "-15897.67,-729.71",
+        "weight": "2.0",
+        "label_dumb": "1052"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1053",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -34.346524,
+          9.694597
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "25546947",
+        "label": "Unusual occurrence of Salmonella Mikawasima in 2012-2013 in the Czech Republic: part of a multistate outbreak?",
+        "pos": "-16275.81,-83.96",
+        "weight": "2.0",
+        "label_dumb": "1053"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1054",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -28.919504,
+          6.933094
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "21744280",
+        "label": "Transmission of multiple resistant Salmonella Concord from internationally adopted children to their adoptive families and social environment: proposition of guidelines.",
+        "pos": "-13035.63,-1806.57",
+        "weight": "14.0",
+        "label_dumb": "1054"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1055",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -20.08844,
+          12.864092
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "23703350",
+        "label": "Antimicrobial susceptibility of Salmonella enterica serovars in a tertiary care hospital in southern India.",
+        "pos": "-7763.08,1910.98",
+        "weight": "22.0",
+        "label_dumb": "1055"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1065",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.834762,
+          13.679492
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "21227657",
+        "label": "Analysis of mechanisms involved in reduced susceptibility to ciprofloxacin in Salmonella enterica serotypes Typhi and Paratyphi A isolates from travellers to Southeast Asia.",
+        "pos": "-9402.76,2428.04",
+        "weight": "18.0",
+        "width": "0.39",
+        "label_dumb": "1065"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "430",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -17.92735,
+          11.745776
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "24240035",
+        "label": "Antimicrobial resistance among blood culture isolates of Salmonella enterica in New Delhi.",
+        "pos": "-6472.81,1204.54",
+        "weight": "14.0",
+        "label_dumb": "430"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1056",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -28.367201,
+          10.787921
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22307834",
+        "label": "Antimicrobial resistance in Salmonella spp. recovered from patients admitted to six different hospitals in Tehran, Iran from 2007 to 2008.",
+        "pos": "-12705.88,601.75",
+        "weight": "13.0",
+        "label_dumb": "1056"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "197",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -29.888408,
+          11.156016
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "22706189",
+        "label": "Salmonella isolates serotypes and susceptibility to commonly used drugs at a tertiary care hospital in Riyadh, Saudi Arabia.",
+        "pos": "-13614.11,833.16",
+        "weight": "3.0",
+        "label_dumb": "197"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1057",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -28.606513,
+          10.640881
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20438345",
+        "label": "Prevalence and antimicrobial resistance of Salmonella serotypes in chickens from retail markets in Yaounde (Cameroon).",
+        "pos": "-12848.76,509.39",
+        "weight": "7.0",
+        "label_dumb": "1057"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1058",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.350569,
+          5.38754
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19762961",
+        "label": "High level of resistance to nalidixic acid in Salmonella enterica serovar Typhi in Central India.",
+        "pos": "-2546.17,-2766.02",
+        "weight": "9.0",
+        "label_dumb": "1058"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1080",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -12.736007,
+          6.583149
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19211419",
+        "label": "Re-emerging chloramphenicol sensitivity and emerging low level ciprofloxacin resistance among Salmonella enterica serotype typhi isolates in North India.",
+        "pos": "-3373.34,-2024.06",
+        "weight": "10.0",
+        "label_dumb": "1080"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1098",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.307691,
+          4.315447
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "20727477",
+        "label": "Increasing trend of resistance to nalidixic acid and emerging ceftriaxone and ciprofloxacin resistance in Salmonella enterica serovar Typhimurium in Slovakia, 2005 to 2009.",
+        "pos": "-2520.57,-3430.08",
+        "weight": "9.0",
+        "label_dumb": "1098"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4942",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.91556,
+          4.79523
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "19747660",
+        "label": "Early small bowel perforation and cochleovestibular impairment as rare complications of typhoid fever.",
+        "pos": "-2286.45,-3133.03",
+        "weight": "2.0",
+        "label_dumb": "4942"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4945",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.883342,
+          4.396259
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "21816646",
+        "label": "Effect of biofilm formation on the excretion of Salmonella enterica serovar Typhi in feces.",
+        "pos": "-2864.26,-3380.06",
+        "weight": "9.0",
+        "label_dumb": "4945"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4947",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -11.156965,
+          5.471578
+        ]
+      },
+      "properties": {
+        "paper_id": "19015355",
+        "label": "Nalidixic acid disk for laboratory detection of ciprofloxacin resistance in Neisseria meningitidis.",
+        "pos": "-2430.58,-2713.92",
+        "weight": "1.0",
+        "label_dumb": "4947"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1059",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -13.994084,
+          4.714494
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "21830947",
+        "label": "Prevalence of plasmid-mediated quinolone resistance and mutations in the gyrase and topoisomerase IV genes in Salmonella isolated from 12 tertiary-care hospitals in Korea.",
+        "pos": "-4124.47,-3183.03",
+        "weight": "16.0",
+        "width": "0.39",
+        "label_dumb": "1059"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1070",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -26.692439,
+          12.112373
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "21329318",
+        "label": "Emergence and properties of fluoroquinolone resistant Salmonella enterica serovar Typhi strains isolated from Nepal in 2002 and 2003.",
+        "pos": "-11705.97,1435.79",
+        "weight": "3.0",
+        "width": "0.39",
+        "label_dumb": "1070"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4305",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -10.550077,
+          3.858139
+        ]
+      },
+      "properties": {
+        "height": "0.23",
+        "level": 1,
+        "paper_id": "19481883",
+        "label": "Prevalence of plasmid-mediated quinolone resistance determinants in ESBL Enterobacteriaceae clinical isolates over a 1-year period in a French hospital.",
+        "pos": "-2068.24,-3713.04",
+        "weight": "27.0",
+        "width": "0.39",
+        "label_dumb": "4305"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "738",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -14.789969,
+          6.527534
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "26542649",
+        "label": "Clinical characteristics in adult patients with Salmonella bacteremia and analysis of ciprofloxacin-nonsusceptible isolates.",
+        "pos": "-4599.65,-2058.61",
+        "weight": "0.0",
+        "label_dumb": "738"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "106",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.390912,
+          15.072754
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "23554194",
+        "label": "Comparison of typing methods with a new procedure based on sequence characterization for Salmonella serovar prediction.",
+        "pos": "2206.11,3315.75",
+        "weight": "41.0",
+        "label_dumb": "106"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1060",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.948395,
+          14.428472
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "20890836",
+        "label": "Prevalence of mechanisms decreasing quinolone-susceptibility among Salmonella spp. clinical isolates.",
+        "pos": "-10067.65,2904.56",
+        "weight": "30.0",
+        "label_dumb": "1060"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1061",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -30.198869,
+          12.089718
+        ]
+      },
+      "properties": {
+        "paper_id": "28574025",
+        "label": "Patterns in antimicrobial susceptibility of Salmonellae isolated at a tertiary care hospital in northern India.",
+        "pos": "-13799.47,1421.49",
+        "weight": "0.0",
+        "label_dumb": "1061"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1062",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -31.093826,
+          11.820752
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "21877930",
+        "label": "Agar disk diffusion and automated microbroth dilution produce similar antimicrobial susceptibility testing results for Salmonella serotypes Newport, Typhimurium, and 4,5,12:i-, but differ in economic cost.",
+        "pos": "-14333.80,1251.81",
+        "weight": "10.0",
+        "label_dumb": "1062"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "1063",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.224476,
+          -26.409829
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "23973842",
+        "label": "Aeromonas spp. simultaneously harbouring bla(CTX-M-15), bla(SHV-12), bla(PER-1) and bla(FOX-2), in wild-growing Mediterranean mussel (Mytilus galloprovincialis) from Adriatic Sea, Croatia.",
+        "pos": "2305.48,-23005.39",
+        "weight": "21.0",
+        "label_dumb": "1063"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4327",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.731994,
+          -29.397082
+        ]
+      },
+      "properties": {
+        "level": 6,
+        "paper_id": "21733965",
+        "label": "High prevalence of extended-spectrum \u03b2-lactamases and qnr determinants in Citrobacter species from Japan: dissemination of CTX-M-2.",
+        "pos": "3196.56,-25091.97",
+        "weight": "18.0",
+        "label_dumb": "4327"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4488",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.209177,
+          -23.101467
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "22354297",
+        "label": "Molecular characterization of extended-spectrum-\u03b2-lactamase-producing and plasmid-mediated AmpC \u03b2-lactamase-producing Escherichia coli isolated from stray dogs in South Korea.",
+        "pos": "2911.66,-20756.47",
+        "weight": "52.0",
+        "label_dumb": "4488"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4948",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.892063,
+          -30.700016
+        ]
+      },
+      "properties": {
+        "paper_id": "27966773",
+        "label": "The growing threat of antibiotic resistance in the Eastern Mediterranean Region - what does it take to control it?",
+        "pos": "1906.90,-26021.00",
+        "weight": "0.0",
+        "label_dumb": "4948"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4949",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.10393,
+          -23.228102
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "23093031",
+        "label": "Prevalence and genotypic analysis of plasmid-mediated \u03b2-lactamases among urinary Klebsiella pneumoniae isolates in Moroccan community.",
+        "pos": "1183.36,-20841.48",
+        "weight": "24.0",
+        "label_dumb": "4949"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4950",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.754883,
+          -23.991356
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "21282448",
+        "label": "Chromosome-encoded AmpC and CTX-M extended-spectrum \u03b2-lactamases in clinical isolates of Proteus mirabilis from Korea.",
+        "pos": "3779.94,-21355.58",
+        "weight": "30.0",
+        "label_dumb": "4950"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4951",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.697809,
+          -25.430871
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "21968366",
+        "label": "Bacteremia due to extended-spectrum-\u03b2-lactamase-producing Aeromonas spp. at a medical center in Southern Taiwan.",
+        "pos": "5244.31,-22333.61",
+        "weight": "24.0",
+        "label_dumb": "4951"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4952",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.40017,
+          -24.33031
+        ]
+      },
+      "properties": {
+        "level": 2,
+        "paper_id": "22604450",
+        "label": "Evaluation of a DNA microarray for the rapid detection of extended-spectrum \u03b2-lactamases (TEM, SHV and CTX-M), plasmid-mediated cephalosporinases (CMY-2-like, DHA, FOX, ACC-1, ACT/MIR and CMY-1-like/MOX) and carbapenemases (KPC, OXA-48, VIM, IMP and NDM).",
+        "pos": "4469.56,-21584.86",
+        "weight": "83.0",
+        "label_dumb": "4952"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4953",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.008867,
+          -28.075894
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "20795871",
+        "label": "High prevalence of bla(CTX-M) extended spectrum beta-lactamase genes in Klebsiella pneumoniae isolates from a tertiary care hospital: first report of bla(SHV-12), bla(SHV-31), bla(SHV-38), and bla(CTX-M-15) in Brazil.",
+        "pos": "4832.98,-24162.00",
+        "weight": "32.0",
+        "label_dumb": "4953"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4954",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.658694,
+          -28.528379
+        ]
+      },
+      "properties": {
+        "level": 5,
+        "paper_id": "19229493",
+        "label": "Characterization of conjugative plasmids carrying antibiotic resistance genes encoding 16S rRNA methylase, extended-spectrum beta-lactamase, and/or plasmid-mediated AmpC beta-lactamase.",
+        "pos": "852.14,-24479.18",
+        "weight": "20.0",
+        "label_dumb": "4954"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4955",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -5.101015,
+          -25.645081
+        ]
+      },
+      "properties": {
+        "level": 4,
+        "paper_id": "24135677",
+        "label": "Occurrence of extended-spectrum \u03b2-lactamases among isolates of Salmonella enterica subsp. enterica from food-producing animals and food products, in Portugal.",
+        "pos": "1185.10,-22480.13",
+        "weight": "31.0",
+        "label_dumb": "4955"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4956",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.199122,
+          -29.652987
+        ]
+      },
+      "properties": {
+        "level": 3,
+        "paper_id": "21947397",
+        "label": "Molecular characterization of resistance to extended-spectrum cephalosporins in clinical Escherichia coli isolates from companion animals in the United States.",
+        "pos": "529.48,-25273.48",
+        "weight": "54.0",
+        "label_dumb": "4956"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4957",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.186338,
+          -23.491132
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23398418",
+        "label": "Genetic characterisation of extended-spectrum \u03b2-lactamases in Escherichia coli isolated from retail chicken products including CTX-M-9 containing isolates: a food safety risk factor.",
+        "pos": "2328.25,-21018.31",
+        "weight": "8.0",
+        "label_dumb": "4957"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "4958",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.081424,
+          -29.901053
+        ]
+      },
+      "properties": {
+        "level": 7,
+        "paper_id": "23079829",
+        "label": "Phenotypic and  molecular characterization of CTX-M-14 extended-spectrum \u03b2-lactamase and  plasmid-mediated ACT-like AmpC \u03b2-lactamase produced by Klebsiella  pneumoniae isolates from chickens in Henan Province, China.",
+        "pos": "3584.98,-25449.87",
+        "weight": "7.0",
+        "label_dumb": "4958"
+      }
+    }
+  ]
+}
