@@ -189,7 +189,7 @@ const defaultMinZoom: number = 0;
 const defaultMaxZoom: number = 10;
 
 class ZmltMap {
-    container?: string;
+    container: string;
     config: Configuration;
     sources: Sources;
     edges: Edge[];
@@ -209,7 +209,8 @@ class ZmltMap {
     hoverEdgeID: number | string;
     hoverNodeID: number | string;
 
-    constructor(config: Configuration) {
+    constructor(container: string, config: Configuration) {
+        if (!container) throw new Error("Container is required to Load() ZmltMap.")
         if (!config) throw new Error("Configuration object is required for ZmltMap.")
         if (!config.sources) throw new Error("Sources is a required property of ZmltMap configuration object.")
         if (!config.sources.nodes) throw new Error("'Nodes' is missing from the Sources object.");
@@ -217,6 +218,7 @@ class ZmltMap {
         if (!config.sources.clusters) throw new Error("'Clusters' is missing from the Sources object.");
         if (!config.sources.clusterBoundaries) throw new Error("'ClusterBoundaries' is missing from the Sources object.");
 
+        this.container = container;
         this.config = config;
         this.sources = config.sources;
         this.textOverlapEnabled = false;
@@ -234,12 +236,11 @@ class ZmltMap {
         this.maxZoom = config.maxZoom ? config.maxZoom : defaultMaxZoom;
         this.textOverlapEnabledZoom = config.textOverlapEnabledZoom ? config.textOverlapEnabledZoom : defaulTtextOverlapEnabledZoom;
         this.minimapOptions.style = blankStyle;
+
+        this.load();
     }
 
-    load(container: string): void {
-        if (!container) throw new Error("Container is required to Load() ZmltMap.")
-
-        this.container = container;
+    load(): void {
         this.map = new mapboxgl.Map({
             container: this.container,
             style: blankStyle,
