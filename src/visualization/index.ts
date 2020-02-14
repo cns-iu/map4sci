@@ -1,4 +1,12 @@
 import MiniMap from "./mapboxgl-minimap.js";
+declare global {
+    interface Window { mapboxgl: any; }
+}
+declare module mapboxgl {
+    export type Style = any;
+    export type Map = any;
+    export type Layer = any;
+}
 const mapboxgl = window.mapboxgl as any;
 
 /* @TODO:
@@ -7,6 +15,8 @@ const mapboxgl = window.mapboxgl as any;
     future: could create a scimap2020Map function which does zmltMap + more customization (like specific popups)
     future: push to NPM
 */
+
+
 interface Edge {
     level: number,
     zoom: number,
@@ -108,7 +118,7 @@ const defaultMinimapOptions: MiniMapOptions = {
     center: [0, 0],
     zoom: 0,
 
-    containerStyles: `; 
+    containerStyles: `
         border: 1px solid lightgray; 
         border-radius: 5px; 
         -webkit-box-shadow: 3px 3px 5px 4px #00000021; 
@@ -144,32 +154,32 @@ const defaultMinimapOptions: MiniMapOptions = {
     touchZoomRotate: false
 };
 const defaultNodes: Node[] = [
-    { 'level':0     ,'zoom':0.0   ,'fontSize':0  },
-    { 'level':1     ,'zoom':2.3   ,'fontSize':20 },
-    { 'level':2     ,'zoom':4.5   ,'fontSize':18 },
-    { 'level':3     ,'zoom':5.0   ,'fontSize':18 },
-    { 'level':4     ,'zoom':5.5   ,'fontSize':16 },
-    { 'level':5     ,'zoom':6.0   ,'fontSize':16 },
-    { 'level':6     ,'zoom':6.2   ,'fontSize':14 },
-    { 'level':7     ,'zoom':6.5   ,'fontSize':14 },
-    { 'level':8     ,'zoom':6.7   ,'fontSize':12 },
-    { 'level':9     ,'zoom':7.5   ,'fontSize':12 },
+    { level: 0, zoom: 0.0, fontSize: 0 },
+    { level: 1, zoom: 0.0, fontSize: 20 },
+    { level: 2, zoom: 4.5, fontSize: 18 },
+    { level: 3, zoom: 5.0, fontSize: 18 },
+    { level: 4, zoom: 5.5, fontSize: 16 },
+    { level: 5, zoom: 6.0, fontSize: 16 },
+    { level: 6, zoom: 6.2, fontSize: 14 },
+    { level: 7, zoom: 6.5, fontSize: 14 },
+    { level: 8, zoom: 6.7, fontSize: 12 },
+    { level: 9, zoom: 7.5, fontSize: 12 },
 ];
 const defaultEdges: Edge[] = [
-    { 'level': 0   ,'zoom': 0       ,'color': ''         ,'width': 0     ,'opacity':0.0  ,'borderOpacity':0.0   ,'borderColor':''          ,'borderWidth': 0    },
-    { 'level': 1   ,'zoom': 1.5     ,'color': '#FFEBA1'  ,'width': 3.2   ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'yellow'    ,'borderWidth': 1.2  },
-    { 'level': 2   ,'zoom': 3.5     ,'color': '#FFEBA1'  ,'width': 3     ,'opacity':1.0  ,'borderOpacity':1.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 3   ,'zoom': 4.5     ,'color': '#F9D776'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 4   ,'zoom': 5.0     ,'color': '#c1b276'  ,'width': 2.7   ,'opacity':0.9  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 5   ,'zoom': 5.4     ,'color': '#94895f'  ,'width': 2.2   ,'opacity':0.8  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 6   ,'zoom': 5.7     ,'color': '#615b43'  ,'width': 2.2   ,'opacity':0.8  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 7   ,'zoom': 6.0     ,'color': 'gray'     ,'width': 2     ,'opacity':0.7  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 8   ,'zoom': 6.2     ,'color': 'gray'     ,'width': 2     ,'opacity':0.6  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    },
-    { 'level': 9   ,'zoom': 7.0     ,'color': 'gray'     ,'width': 1     ,'opacity':0.5  ,'borderOpacity':0.0   ,'borderColor':'#F9D776'   ,'borderWidth': 1    }
+    { level: 0, zoom: 0, color: '', width: 0, opacity: 0.0, borderOpacity: 0.0, borderColor: '', borderWidth: 0 },
+    { level: 1, zoom: 1.5, color: '#FFEBA1', width: 3.2, opacity: 1.0, borderOpacity: 1.0, borderColor: 'yellow', borderWidth: 1.2 },
+    { level: 2, zoom: 3.5, color: '#FFEBA1', width: 3, opacity: 1.0, borderOpacity: 1.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 3, zoom: 4.5, color: '#F9D776', width: 2.7, opacity: 0.9, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 4, zoom: 5.0, color: '#c1b276', width: 2.7, opacity: 0.9, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 5, zoom: 5.4, color: '#94895f', width: 2.2, opacity: 0.8, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 6, zoom: 5.7, color: '#615b43', width: 2.2, opacity: 0.8, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 7, zoom: 6.0, color: 'gray', width: 2, opacity: 0.7, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 8, zoom: 6.2, color: 'gray', width: 2, opacity: 0.6, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
+    { level: 9, zoom: 7.0, color: 'gray', width: 1, opacity: 0.5, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 }
 ];
 const defaultClusters: Cluster = {
     fillOpacity: 0.7,
-    borderLineWidth: 5,
+    borderLineWidth: 0.5,
     borderLineOpacity: 0.8,
     borderLineMinZoom: 3
 }
@@ -196,16 +206,16 @@ class ZmltMap {
     initialZoom: number;
     textOverlapEnabledZoom: number;
     textOverlapEnabled: boolean;
-    hoverEdgeID: number|string;
-    hoverNodeID: number|string;
+    hoverEdgeID: number | string;
+    hoverNodeID: number | string;
 
-    constructor(config:Configuration){
-        if(!config) throw new Error("Configuration object is required for ZmltMap.")
-        if(!config.sources) throw new Error("Sources is a required property of ZmltMap configuration object.")
-        if(!config.sources.nodes) throw new Error("'Nodes' is missing from the Sources object.");
-        if(!config.sources.edges) throw new Error("'Edges' is missing from the Sources object.");
-        if(!config.sources.clusters) throw new Error("'Clusters' is missing from the Sources object.");
-        if(!config.sources.clusterBoundaries) throw new Error("'ClusterBoundaries' is missing from the Sources object.");
+    constructor(config: Configuration) {
+        if (!config) throw new Error("Configuration object is required for ZmltMap.")
+        if (!config.sources) throw new Error("Sources is a required property of ZmltMap configuration object.")
+        if (!config.sources.nodes) throw new Error("'Nodes' is missing from the Sources object.");
+        if (!config.sources.edges) throw new Error("'Edges' is missing from the Sources object.");
+        if (!config.sources.clusters) throw new Error("'Clusters' is missing from the Sources object.");
+        if (!config.sources.clusterBoundaries) throw new Error("'ClusterBoundaries' is missing from the Sources object.");
 
         this.config = config;
         this.sources = config.sources;
@@ -226,8 +236,8 @@ class ZmltMap {
         this.minimapOptions.style = blankStyle;
     }
 
-    load(container:string):void{
-        if(!container) throw new Error("Container is required to Load() ZmltMap.")
+    load(container: string): void {
+        if (!container) throw new Error("Container is required to Load() ZmltMap.")
 
         this.container = container;
         this.map = new mapboxgl.Map({
@@ -240,7 +250,7 @@ class ZmltMap {
             renderWorldCopies: false,
             dragRotate: true
         });
-        this.map.on('load', () => { 
+        this.map.on('load', () => {
             this.addSources();
             this.addClusters();
             this.addEdges();
@@ -251,32 +261,26 @@ class ZmltMap {
         });
     }
 
-    addUI():void {   
+    addUI(): void {
         const { map, popups, sources, minimapOptions } = this;
-     
+
         // Add zoom controls (without rotation controls) to the map.
         map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
-    
-        if(popups.length) addPopups(this.map, this.popups);
-    
-        const miniMap: mapboxgl.IControl = new MiniMap(sources, minimapOptions);
-        map.addControl(miniMap, 'bottom-left');
+        map.addControl(new MiniMap(sources, minimapOptions), 'bottom-left');
         map.addControl(new mapboxgl.FullscreenControl());
+        if (popups.length) this.addPopups();
 
         // When the user zooms the map, this method handles showing and hiding data based on zoom level
         map.on('zoom', () => this.updateFilters());
-    
-        // Output the current zoom level every time it changes for testing.
-        map.on('moveend', function (e) { console.log('Zoom Level: ', this.getZoom()) });
     }
 
     // In order to show more or less data based on the zoom level we have to update the layer filters when the map zooms.
-    updateFilters():void{
+    updateFilters(): void {
         const { map, edges, nodes, textOverlapEnabledZoom, textOverlapEnabled } = this;
         const currentZoom: number = this.getZoom();
 
         // When the zoom level changes, check if we need to display a different set of nodes. If we do, update the node filter.
-        if(this.nodeLevelChange()){
+        if (this.nodeLevelChange()) {
             const currentNode = ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]];
             map.setFilter('node_labels', [">=", currentZoom, currentNode]);
         }
@@ -284,50 +288,50 @@ class ZmltMap {
         // When the zoom level changes, check if we need to display a different set of edges. If we do, update the node filter.
         // We decided showing the nodes (without labels) at the same time as the edges was preferable, instead of waiting for
         // when the labels will fit. 
-        if(this.edgeLevelChange()){
+        if (this.edgeLevelChange()) {
             const currentEdge = ["get", "zoom", ["at", ["get", "level"], ["literal", edges]]];
-            map.setFilter('nodes',          [">=", currentZoom, currentEdge]);
-            map.setFilter('edges_border',   [">=", currentZoom, currentEdge]);
-            map.setFilter('edges',          [">=", currentZoom, currentEdge]);
+            map.setFilter('nodes', [">=", currentZoom, currentEdge]);
+            map.setFilter('edges_border', [">=", currentZoom, currentEdge]);
+            map.setFilter('edges', [">=", currentZoom, currentEdge]);
         }
 
         //  Determing if text overlap should be enabled or disabled based on the break point set in the config object.
-        if(!textOverlapEnabled && currentZoom > textOverlapEnabledZoom){
+        if (!textOverlapEnabled && currentZoom > textOverlapEnabledZoom) {
             map.setLayoutProperty('node_labels', 'text-allow-overlap', true);
             this.textOverlapEnabled = true;
-        }else if(textOverlapEnabled && currentZoom <  textOverlapEnabledZoom){
+        } else if (textOverlapEnabled && currentZoom < textOverlapEnabledZoom) {
             map.setLayoutProperty('node_labels', 'text-allow-overlap', false);
             this.textOverlapEnabled = false;
         }
     }
 
     // Returns whether or not the zoom level has changed enough to warrant a change in which nodes we are displaying.
-    nodeLevelChange():boolean{
-        let currentIndex: number =  this.getZoomIndex(this.nodes);
-        if(currentIndex === this.nodeZoomIndex) return false;
+    nodeLevelChange(): boolean {
+        let currentIndex: number = this.getZoomIndex(this.nodes);
+        if (currentIndex === this.nodeZoomIndex) return false;
         this.nodeZoomIndex = currentIndex;
         return true;
     }
 
     // Returns whether or not the zoom level has changed enough to warrant a change in which edges we are displaying.
-    edgeLevelChange():boolean{
-        let currentIndex: number =  this.getZoomIndex(this.edges);
-        if(currentIndex === this.edgeZoomIndex) return false;
+    edgeLevelChange(): boolean {
+        let currentIndex: number = this.getZoomIndex(this.edges);
+        if (currentIndex === this.edgeZoomIndex) return false;
         this.edgeZoomIndex = currentIndex;
         return true;
     }
 
     // Converts the current zoom number, to the index number of the object with the same .zoom property in the lookup array passed in. 
     // Used because getZoom() will return very precise values, and the nodes / edges config objects will not match up exactly.
-    getZoomIndex(zoomLookup:object[]):number{
+    getZoomIndex(zoomLookup: object[]): number {
         const zoom: number = this.getZoom();
-        for(let index = 0; index <= zoomLookup.length; index++){
-            if(index == (zoomLookup.length-1)) return index;
-            if(zoom >= zoomLookup[index]["zoom"] && zoom < zoomLookup[index + 1]["zoom"]) return index;
+        for (let index = 0; index <= zoomLookup.length; index++) {
+            if (index == (zoomLookup.length - 1)) return index;
+            if (zoom >= zoomLookup[index]["zoom"] && zoom < zoomLookup[index + 1]["zoom"]) return index;
         }
     }
 
-    addSources():void{
+    addSources(): void {
         const { map, sources } = this;
         map.addSource('edges_source', {
             'type': 'geojson',
@@ -345,15 +349,15 @@ class ZmltMap {
             'type': 'geojson',
             'data': sources.clusterBoundaries
         });
-        if(sources.allEdges){
+        if (sources.allEdges) {
             map.addSource('all_edges_source', {
                 'type': 'geojson',
                 'data': sources.allEdges
             });
         }
     }
-    
-    addClusters():void{
+
+    addClusters(): void {
         const { map, clusters } = this;
         map.addLayer({
             "id": "cluster",
@@ -366,11 +370,11 @@ class ZmltMap {
                 "fill-outline-color": ['get', 'stroke']
             }
         });
-    
+
         map.addLayer({
             "id": "cluster_boundary",
             "type": "line",
-            "minzoom": 3,
+            "minzoom": clusters.borderLineMinZoom,
             "source": "cluster_boundary_source",
             "layout": {},
             "paint": {
@@ -380,13 +384,13 @@ class ZmltMap {
             },
         });
     }
-    
-    addEdges():void{
+
+    addEdges(): void {
         const { map, edges, sources, maxZoom } = this;
         const currentZoom: number = this.getZoom();
         const edge = ["at", ["get", "level"], ["literal", edges]];
-        const lastEdge = ["at", edges.length-1, ["literal", edges]];
-    
+        const lastEdge = ["at", edges.length - 1, ["literal", edges]];
+
         map.addLayer({
             "id": "edges",
             "type": "line",
@@ -398,7 +402,7 @@ class ZmltMap {
                     ["get", "color", edge]
                 ],
                 "line-width": ["get", "width", edge],
-                "line-opacity":  ["get", "opacity", edge]
+                "line-opacity": ["get", "opacity", edge]
             },
             "filter": [">=", currentZoom, ["get", "zoom", edge]]
         });
@@ -415,8 +419,8 @@ class ZmltMap {
             },
             "filter": [">=", currentZoom, ["get", "zoom", edge]]
         });
-    
-        if(sources.allEdges){
+
+        if (sources.allEdges) {
             map.addLayer({
                 "id": "all_edges",
                 "type": "line",
@@ -432,8 +436,8 @@ class ZmltMap {
             });
         }
     }
-    
-    addNodes():void{
+
+    addNodes(): void {
         const { map, nodes, edges } = this;
         const currentNode: Array<any> = ["at", ["get", "level"], ["literal", nodes]];
         const currentEdge: Array<any> = ["get", "zoom", ["at", ["get", "level"], ["literal", edges]]];
@@ -461,9 +465,9 @@ class ZmltMap {
             "layout": {},
             "paint": {
                 "circle-color": ["case",
-                ['boolean', ['feature-state', 'hover'], false], "red",
-                "black"
-            ],
+                    ['boolean', ['feature-state', 'hover'], false], "red",
+                    "black"
+                ],
                 "circle-radius": 3
             },
             "filter": [">=", currentZoom, currentEdge]
@@ -472,16 +476,17 @@ class ZmltMap {
         map.addLayer(nodeLabelsLayer);
         map.addLayer(nodesLayer);
     }
-    
-    addEdgeHover():void{
+
+    addEdgeHover(): void {
         const map: mapboxgl.Map = this.map;
-        map.on('mousemove', 'edges', function(e) {
+        map.on('mousemove', 'edges', function (e) {
             // When the mouse moves, check if the mouse is on top of a feature from the edges source.
             if (e.features.length > 0) {
                 // If there was already an edge with the hover status, turn that hover status off first
                 if (this.hoverEdgeID) {
                     map.setFeatureState({
-                        source: 'edges_source', id: this.hoverEdgeID },
+                        source: 'edges_source', id: this.hoverEdgeID
+                    },
                         { hover: false }
                     );
                 }
@@ -489,13 +494,13 @@ class ZmltMap {
                 // later, when the mouse moves again.
                 this.hoverEdgeID = e.features[0].id;
                 map.setFeatureState(
-                        { source: 'edges_source', id: this.hoverEdgeID },
-                        { hover: true }
-                    );
-                }
+                    { source: 'edges_source', id: this.hoverEdgeID },
+                    { hover: true }
+                );
+            }
         });
-         
-        map.on('mouseleave', 'edges', function() {
+
+        map.on('mouseleave', 'edges', function () {
             // When the mouse leaves the edge source features, turn the hover status off
             if (this.hoverEdgeID) {
                 map.setFeatureState(
@@ -506,16 +511,17 @@ class ZmltMap {
             this.hoverEdgeID = null;
         });
     }
-    
-    addNodeHover():void{
+
+    addNodeHover(): void {
         const map: mapboxgl.Map = this.map;
-        map.on('mousemove', 'nodes', function(e) {
+        map.on('mousemove', 'nodes', function (e) {
             // When the mouse moves, check if the mouse is on top of a feature from the nodes source.
             if (e.features.length > 0) {
                 // If there was already an node with the hover status, turn that hover status off first
                 if (this.hoverNodeID) {
                     map.setFeatureState({
-                        source: 'nodes_source', id: this.hoverNodeID },
+                        source: 'nodes_source', id: this.hoverNodeID
+                    },
                         { hover: false }
                     );
                 }
@@ -523,13 +529,13 @@ class ZmltMap {
                 // later, when the mouse moves again.
                 this.hoverNodeID = e.features[0].id;
                 map.setFeatureState(
-                        { source: 'nodes_source', id: this.hoverNodeID },
-                        { hover: true }
-                    );
-                }
+                    { source: 'nodes_source', id: this.hoverNodeID },
+                    { hover: true }
+                );
+            }
         });
-    
-        map.on('mouseleave', 'nodes', function() {
+
+        map.on('mouseleave', 'nodes', function () {
             // When the mouse leaves the edge source features, turn the hover status off
             if (this.hoverNodeID) {
                 map.setFeatureState(
@@ -541,62 +547,64 @@ class ZmltMap {
         });
     }
 
+    addPopups(): void {
+        this.popups.forEach(popup => {
+            this.addPopupOnClick(popup.layer, popup.content)
+        })
+    }
+
+    addPopupOnClick(layer: string, content: PopupContent): void {
+        const { map } = this;
+        // When a click event occurs on a feature in the places layer, open a popup at the
+        // location of the feature, with description HTML from its properties.
+        map.on('click', layer, function (e) {
+            let descriptionHTML = createPopupHTML(e.features[0].properties, content);
+            new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(descriptionHTML)
+                .addTo(map);
+        });
+
+        // Change the cursor to a pointer when the mouse is over the places layer.
+        map.on('mouseenter', layer, function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', layer, function () {
+            map.getCanvas().style.cursor = '';
+        });
+    }
+
     // Get the full mapbox zoom number.
-    getZoom():number{
+    getZoom(): number {
         return this.map.getZoom();
     }
-}
-// Bind the ZmltMap to the window so that it is accessible in the main index.html file.
-globalThis.ZmltMap = ZmltMap;
-
-function addPopups(map:mapboxgl.Map, popups:Popup[]):void{
-    popups.forEach(popup => {
-        addPopupOnClick(map, popup.layer, popup.content)
-    })
-}
-
-function addPopupOnClick(map:mapboxgl.Map, layer:string, content:PopupContent):void {
-    // When a click event occurs on a feature in the places layer, open a popup at the
-    // location of the feature, with description HTML from its properties.
-    map.on('click', layer, function (e) {
-        let descriptionHTML = createPopupHTML(e.features[0].properties, content);
-        new mapboxgl.Popup()
-            .setLngLat(e.lngLat)
-            .setHTML(descriptionHTML)
-            .addTo(map);
-    });
-
-    // Change the cursor to a pointer when the mouse is over the places layer.
-    map.on('mouseenter', layer, function () {
-        map.getCanvas().style.cursor = 'pointer';
-    });
-
-    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', layer, function () {
-        map.getCanvas().style.cursor = '';
-    });
 }
 
 // Takes the description field of the element, and uses it with the popup content defined in the config object
 // to return the concatenated html string.
-function createPopupHTML(description:object, content:PopupContent):string{
+function createPopupHTML(description: object, content: PopupContent): string {
     let html: string = '';
     content.forEach((element, index) => {
-        if(!element) return;
+        if (!element) return;
         // The config object for popups is structued like ['<html>', 'propertyName', '</html>]
         // so on even indexes, we just concatenate the html string, on odd indexes we use the string to lookup the property value.
-        if(isEven(index)) html += element;
+        if (isEven(index)) html += element;
 
         // Along with property values, you can pass along a formatting function in form of ['propertyName', function]
         // This checks if there is one, if there is it uses that function to format the value of the property before
         // concatenating it.
-        else if(typeof(element) === 'string') html += description[element];
+        else if (typeof (element) === 'string') html += description[element];
         else html += element[1](description[element[0]]);
     });
 
-    function isEven(index: number):boolean {
-        return index % 2 === 0 
-    }
-
     return html;
 }
+
+function isEven(index: number): boolean {
+    return index % 2 === 0
+}
+
+// Bind the ZmltMap to the window so that it is accessible in the main index.html file.
+globalThis.ZmltMap = ZmltMap;

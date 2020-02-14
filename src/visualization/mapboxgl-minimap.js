@@ -2,32 +2,32 @@
 	https://github.com/brendanmatkin/mapboxgl-minimap
 */
 const blankStyle = {
-    "version": 8,
-    "name": "Blank",
-    "center": [
-        0,
-        0
-    ],
-    "zoom": 0,
-    "sources": {},
-    "sprite": "https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty",
-    "glyphs": "https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf",
-    "layers": [
-        {
-            "id": "background",
-            "type": "background",
-            "paint": {
-                "background-color": "rgba(255,255,255,1)"
-            }
-        }
-    ]
+	"version": 8,
+	"name": "Blank",
+	"center": [
+		0,
+		0
+	],
+	"zoom": 0,
+	"sources": {},
+	"sprite": "https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty",
+	"glyphs": "https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf",
+	"layers": [
+		{
+			"id": "background",
+			"type": "background",
+			"paint": {
+				"background-color": "rgba(255,255,255,1)"
+			}
+		}
+	]
 };
 class Minimap {
-	constructor(sources, _options){
+	constructor(sources, _options) {
 		this.sources = sources;
 		this.options = _options;
 		Object.assign(this.options, _options);
-		
+
 		this._ticking = false;
 		this._lastMouseMoveEvent = null;
 		this._parentMap = null;
@@ -38,8 +38,7 @@ class Minimap {
 		this._trackingRectCoordinates = [[[], [], [], [], []]];
 	}
 
-	onAdd ( parentMap )
-	{
+	onAdd(parentMap) {
 		this._parentMap = parentMap;
 
 		var opts = this.options;
@@ -59,12 +58,11 @@ class Minimap {
 		return this._container;
 	}
 
-	onRemove ( parentMap ) {
+	onRemove(parentMap) {
 		return;
 	}
 
-	_load ()
-	{
+	_load() {
 		var opts = this.options;
 		var parentMap = this._parentMap;
 		var miniMap = this._miniMap;
@@ -73,15 +71,15 @@ class Minimap {
 			"keyboard", "doubleClickZoom", "touchZoomRotate"
 		];
 
-		interactions.forEach(function(i){
-			if( opts[i] !== true ) {
+		interactions.forEach(function (i) {
+			if (opts[i] !== true) {
 				miniMap[i].disable();
 			}
 		});
 
-		if( typeof opts.zoomAdjust === "function" ) {
+		if (typeof opts.zoomAdjust === "function") {
 			this.options.zoomAdjust = opts.zoomAdjust.bind(this);
-		} else if( opts.zoomAdjust === null ) {
+		} else if (opts.zoomAdjust === null) {
 			this.options.zoomAdjust = this._zoomAdjust.bind(this);
 		}
 
@@ -107,7 +105,7 @@ class Minimap {
 		miniMap.addLayer({
 			"id": "cluster",
 			"type": "fill",
-			"source": { "type": "geojson", "data":  this.sources.clusters },
+			"source": { "type": "geojson", "data": this.sources.clusters },
 			"layout": {},
 			"paint": {
 				"fill-color": ['get', 'fill'],
@@ -128,38 +126,38 @@ class Minimap {
 			},
 		});
 		miniMap.addLayer({
-            "id": "node_labels",
-            "type": "symbol",
-            "minzoom": 2,
-            "source": { "type": "geojson", "data": this.sources.nodes },
-            "layout": {
-                "text-field": "{label}",
-                "text-font": ["Open Sans Regular"],
-                "text-size": 14,
-                "text-anchor": "center",
+			"id": "node_labels",
+			"type": "symbol",
+			"minzoom": 2,
+			"source": { "type": "geojson", "data": this.sources.nodes },
+			"layout": {
+				"text-field": "{label}",
+				"text-font": ["Open Sans Regular"],
+				"text-size": 14,
+				"text-anchor": "center",
 				"text-justify": "center",
 				"text-allow-overlap": false
-				
-            },
-            "filter": ["==", "level", 1]
+
+			},
+			"filter": ["==", "level", 1]
 		});
 		miniMap.addLayer({
-            "id": "node_labels_2",
-            "type": "symbol",
-            "minzoom": 3,
-            "source": { "type": "geojson", "data": this.sources.nodes },
-            "layout": {
-                "text-field": "{label}",
-                "text-font": ["Open Sans Regular"],
-                "text-size": 9,
-                "text-anchor": "center",
-                "text-justify": "center"
-            },
+			"id": "node_labels_2",
+			"type": "symbol",
+			"minzoom": 3,
+			"source": { "type": "geojson", "data": this.sources.nodes },
+			"layout": {
+				"text-field": "{label}",
+				"text-font": ["Open Sans Regular"],
+				"text-size": 9,
+				"text-anchor": "center",
+				"text-justify": "center"
+			},
 			"filter": ["all",
 				["<=", "level", 3],
 				[">", "level", 1]
 			]
-        });
+		});
 
 		miniMap.addLayer({
 			"id": "trackingRectOutline",
@@ -204,18 +202,15 @@ class Minimap {
 		this._miniMapCanvas.addEventListener("mousewheel", this._preventDefault);
 	}
 
-	_mouseDown( e )
-	{
-		if( this._isCursorOverFeature )
-		{
+	_mouseDown(e) {
+		if (this._isCursorOverFeature) {
 			this._isDragging = true;
 			this._previousPoint = this._currentPoint;
 			this._currentPoint = [e.lngLat.lng, e.lngLat.lat];
 		}
 	}
 
-	_mouseMove (e)
-	{
+	_mouseMove(e) {
 		this._ticking = false;
 
 		var miniMap = this._miniMap;
@@ -224,14 +219,12 @@ class Minimap {
 		});
 
 		// don't update if we're still hovering the area
-		if( ! (this._isCursorOverFeature && features.length > 0) )
-		{
+		if (!(this._isCursorOverFeature && features.length > 0)) {
 			this._isCursorOverFeature = features.length > 0;
 			this._miniMapCanvas.style.cursor = this._isCursorOverFeature ? "move" : "";
 		}
 
-		if( this._isDragging )
-		{
+		if (this._isDragging) {
 			this._previousPoint = this._currentPoint;
 			this._currentPoint = [e.lngLat.lng, e.lngLat.lat];
 
@@ -249,14 +242,12 @@ class Minimap {
 		}
 	}
 
-	_mouseUp()
-	{
+	_mouseUp() {
 		this._isDragging = false;
 		this._ticking = false;
 	}
 
-	_moveTrackingRect( offset )
-	{
+	_moveTrackingRect(offset) {
 		var source = this._trackingRect;
 		var data = source._data;
 		var bounds = data.properties.bounds;
@@ -272,8 +263,7 @@ class Minimap {
 		return bounds;
 	}
 
-	_setTrackingRectBounds( bounds )
-	{
+	_setTrackingRectBounds(bounds) {
 		var source = this._trackingRect;
 		var data = source._data;
 
@@ -282,8 +272,7 @@ class Minimap {
 		source.setData(data);
 	}
 
-	_convertBoundsToPoints( bounds )
-	{
+	_convertBoundsToPoints(bounds) {
 		var ne = bounds._ne;
 		var sw = bounds._sw;
 		var trc = this._trackingRectCoordinates;
@@ -300,9 +289,8 @@ class Minimap {
 		trc[0][4][1] = ne.lat;
 	}
 
-	_update()
-	{
-		if( this._isDragging  ) {
+	_update() {
+		if (this._isDragging) {
 			return;
 		}
 
@@ -310,13 +298,12 @@ class Minimap {
 
 		this._setTrackingRectBounds(parentBounds);
 
-		if( typeof this.options.zoomAdjust === "function" ) {
+		if (typeof this.options.zoomAdjust === "function") {
 			this.options.zoomAdjust();
 		}
 	}
 
-	_zoomAdjust()
-	{	
+	_zoomAdjust() {
 		var miniMap = this._miniMap;
 		var parentMap = this._parentMap;
 		var miniZoom = parseInt(miniMap.getZoom(), 10);
@@ -324,11 +311,9 @@ class Minimap {
 		var levels = this.options.zoomLevels;
 		var found = false;
 
-		levels.forEach(function(zoom)
-		{
-			if( ! found && parentZoom >= zoom[0] )
-			{
-				if( miniZoom >= zoom[1] ) {
+		levels.forEach(function (zoom) {
+			if (!found && parentZoom >= zoom[0]) {
+				if (miniZoom >= zoom[1]) {
 					miniMap.setZoom(zoom[2]);
 				}
 
@@ -337,35 +322,33 @@ class Minimap {
 			}
 		});
 
-		if( ! found && miniZoom !== this.options.zoom )
-		{
-			if( typeof this.options.bounds === "object" ) {
-				miniMap.fitBounds(this.options.bounds, {duration: 50});
+		if (!found && miniZoom !== this.options.zoom) {
+			if (typeof this.options.bounds === "object") {
+				miniMap.fitBounds(this.options.bounds, { duration: 50 });
 			}
 
 			miniMap.setZoom(this.options.zoom)
 		}
 	}
 
-	_createContainer ( parentMap )
-	{
+	_createContainer(parentMap) {
 		var opts = this.options;
 		var container = document.createElement("div");
 
 		container.className = "mapboxgl-ctrl-minimap mapboxgl-ctrl";
-		container.setAttribute('style', 'width: ' + opts.width + '; height: ' + opts.height + opts.containerStyles);
+		container.setAttribute('style', 'width: ' + opts.width + '; height: ' + opts.height + '; ' + opts.containerStyles);
 		container.addEventListener("contextmenu", this._preventDefault);
 
 		parentMap.getContainer().appendChild(container);
 
-		if( opts.id !== "" ) {
+		if (opts.id !== "") {
 			container.id = opts.id;
 		}
 
 		return container;
 	}
 
-	_preventDefault( e ) {
+	_preventDefault(e) {
 		e.preventDefault();
 	}
 }
