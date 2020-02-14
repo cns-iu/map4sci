@@ -8,8 +8,14 @@ from src.graph import crossings
 from src.transformations import graph as graph_transformations
 
 
-def remove_crossings(graph):
-
+def remove_crossings(graph: nx.Graph) -> None:
+	"""Removes the crossings for the given graph
+	
+	Parameters
+	----------
+	graph : nx.Graph
+		The given graph
+	"""
 	crs = crossings.count_crossings_single_graph(graph)
 	while crs:
 

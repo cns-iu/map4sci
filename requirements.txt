@@ -11,3 +11,4 @@ pandas
 geojson
 networkx
 pygraphviz
+github-pages-publish

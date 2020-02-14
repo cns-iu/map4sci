@@ -7,6 +7,13 @@ from src.forests import extract
 
 
 def setup_cmdline() -> argparse.ArgumentParser:
+    """Sets up the commandline arguments for the forest extractor
+    
+    Returns
+    -------
+    argparse.ArgumentParser
+        Returns the arguments as single object
+    """    
     parser = argparse.ArgumentParser(
         description="Extract forests from a layer")
     parser.add_argument('input', type=pathlib.Path,
@@ -17,6 +24,13 @@ def setup_cmdline() -> argparse.ArgumentParser:
 
 
 def run(args: argparse.Namespace) -> None:
+    """Run extract forest
+    
+    Parameters
+    ----------
+    args : argparse.Namespace
+        Object holding the command line arguments
+    """    
     read_dot = nx.drawing.nx_agraph.read_dot
     write_dot = nx.drawing.nx_agraph.write_dot
 

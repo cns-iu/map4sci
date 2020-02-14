@@ -1,12 +1,13 @@
-import sys
+import math
 import os
+import random
+import sys
 
 import networkx as nx
-from networkx.drawing.nx_agraph import write_dot
 from networkx.drawing.nx_agraph import read_dot as nx_read_dot
-import math
-import random
+from networkx.drawing.nx_agraph import write_dot
 
+from typings import Tuple
 
 
 def getCoordinate(vertex):
@@ -17,12 +18,21 @@ def getCoordinate(vertex):
 
     return x, y
 
-def compute_edge_length(G, edge):
-    """Computes the length of the given edge
-    the position of the vertices is given by the <tt>pos</tt> attribute
-    <strong>return</strong> length of the given edge as a double
+def compute_edge_length(G: nx.Graph, edge: Tuple[int, int]) -> float:
+    """Returns the lenght of the edge in the give graph 
+    
+    Parameters
+    ----------
+    G : nx.Graph
+        The graph in which we want to find the lenght of edge
+    edge : Tuple[int, int]
+        The edge for which we want to know the lenght
+    
+    Returns
+    -------
+    float
+        The edge length
     """
-
     s1_id,t1_id = edge
 
     nodes_position = nx.get_node_attributes(G, 'pos')
@@ -42,30 +52,44 @@ def compute_edge_length(G, edge):
     return curr_length
 
 
-def avg_edge_length(G):
-    """Computes the average length of the given edges set
-    <strong>return</strong> average length of the edges as a double
+def avg_edge_length(graph: nx.Graph) -> float:
+    """Returns the average edge length of the given graph
+    
+    Parameters
+    ----------
+    graph : nx.Graph
+        The given graph for which we want to know the average edge length
+    
+    Returns
+    -------
+    float
+        The average edge lenght of the given graph
     """
-
-    edges = G.edges()
+    edges = graph.edges()
     sum_edge_length = 0.0
     edge_count = len(edges)
 
     for e in edges:
-        curr_length = compute_edge_length(G, e)
+        curr_length = compute_edge_length(graph, e)
         sum_edge_length += curr_length
 
     avg_edge_len = sum_edge_length/edge_count
     return avg_edge_len
 
 
-def extract_leaves(G):
-    """Extracts from <tt>G</tt> the vertices with degree 1, i.e. the leaves."""
+def extract_leaves(graph: nx.Graph):
+    """Returns the leaf node of the given graph 
+    
+    Parameters
+    ----------
+    graph : nx.Graph
+        The given graph
+    """
 
     leaves=[]
 
-    for n in nx.nodes(G):
-        if len(list(G.neighbors(n)))<=1:
+    for n in nx.nodes(graph):
+        if len(list(graph.neighbors(n)))<=1:
             leaves.append(n)
 
     return leaves
@@ -105,12 +129,10 @@ def unify_leaves_edges_leghths(G, value=-1):
         origin = s
         leaf = t
 
-        origin_id = s_id
         leaf_id = t_id
 
         if s in leaves:
             origin = t
-            origin_id = t_id
 
             leaf = s
             leaf_id = s_id
@@ -118,8 +140,6 @@ def unify_leaves_edges_leghths(G, value=-1):
 
         x_origin, y_origin = getCoordinate(origin)
         x_leaf, y_leaf = getCoordinate(leaf)
-
-        original_edge_length = math.sqrt((x_origin-x_leaf)**2 + (y_origin-y_leaf)**2)
 
         x_num = value * (x_leaf - x_origin)
         y_num = value * (y_leaf - y_origin)

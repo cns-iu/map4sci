@@ -1,8 +1,24 @@
+from typing import Tuple, List
+
 import networkx as nx
+
 from src.graph.edge import doIntersect
 
-def count_crossings_single_graph(graph):
+Edge = Tuple[int, int]
 
+def count_crossings_single_graph(graph: nx.Graph) -> List[Edge] :
+    """Returns the edges that have crossing in the graph.
+    
+    Parameters
+    ----------
+    graph : nx.Graph
+        The given graph
+    
+    Returns
+    -------
+    List[Edge]
+        The tuple of edge vertices that have crossings in the graph.
+    """    
     count = 0
     crossings_edges = []
     all_pos = nx.get_node_attributes(graph, "pos")

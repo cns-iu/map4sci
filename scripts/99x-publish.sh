@@ -1,4 +1,4 @@
 #!/bin/bash
 
-github-pages-publish . dist
+github-pages-publish . site
 git push origin gh-pages
