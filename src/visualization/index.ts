@@ -1,4 +1,4 @@
-import MiniMap from "./mapboxgl-minimap.js";
+import MiniMap from './mapboxgl-minimap.js';
 declare global {
     interface Window { mapboxgl: any; }
 }
@@ -90,30 +90,30 @@ interface Configuration {
 }
 
 const blankStyle: mapboxgl.Style = {
-    "version": 8,
-    "name": "Blank",
-    "center": [
+    'version': 8,
+    'name': 'Blank',
+    'center': [
         0,
         0
     ],
-    "zoom": 0,
-    "sources": {},
-    "sprite": "https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty",
-    "glyphs": "https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf",
-    "layers": [
+    'zoom': 0,
+    'sources': {},
+    'sprite': 'https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty',
+    'glyphs': 'https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf',
+    'layers': [
         {
-            "id": "background",
-            "type": "background",
-            "paint": {
-                "background-color": "rgba(255,255,255,1)"
+            'id': 'background',
+            'type': 'background',
+            'paint': {
+                'background-color': 'rgba(255,255,255,1)'
             }
         }
     ]
 };
 const defaultMinimapOptions: MiniMapOptions = {
-    id: "mapboxgl-minimap",
-    width: "320px",
-    height: "180px",
+    id: 'mapboxgl-minimap',
+    width: '320px',
+    height: '180px',
     style: blankStyle,
     center: [0, 0],
     zoom: 0,
@@ -138,11 +138,11 @@ const defaultMinimapOptions: MiniMapOptions = {
         [6, 0, 2]
     ],
 
-    edgeColor: "#08F",
+    edgeColor: '#08F',
     edgeWidth: 1,
     edgeOpacity: 1,
 
-    fillColor: "#F80",
+    fillColor: '#F80',
     fillOpacity: 0.25,
 
     dragPan: false,
@@ -182,7 +182,7 @@ const defaultClusters: Cluster = {
     borderLineWidth: 0.5,
     borderLineOpacity: 0.8,
     borderLineMinZoom: 3
-}
+};
 const defaultInitialZoom: number = 2;
 const defaulTtextOverlapEnabledZoom: number = 3;
 const defaultMinZoom: number = 0;
@@ -210,13 +210,13 @@ class ZmltMap {
     hoverNodeID: number | string;
 
     constructor(container: string, config: Configuration) {
-        if (!container) throw new Error("Container is required to Load() ZmltMap.")
-        if (!config) throw new Error("Configuration object is required for ZmltMap.")
-        if (!config.sources) throw new Error("Sources is a required property of ZmltMap configuration object.")
-        if (!config.sources.nodes) throw new Error("'Nodes' is missing from the Sources object.");
-        if (!config.sources.edges) throw new Error("'Edges' is missing from the Sources object.");
-        if (!config.sources.clusters) throw new Error("'Clusters' is missing from the Sources object.");
-        if (!config.sources.clusterBoundaries) throw new Error("'ClusterBoundaries' is missing from the Sources object.");
+        if (!container) throw new Error('Container is required to Load() ZmltMap.');
+        if (!config) throw new Error('Configuration object is required for ZmltMap.');
+        if (!config.sources) throw new Error('Sources is a required property of ZmltMap configuration object.');
+        if (!config.sources.nodes) throw new Error('Nodes is missing from the Sources object.');
+        if (!config.sources.edges) throw new Error('Edges is missing from the Sources object.');
+        if (!config.sources.clusters) throw new Error('Clusters is missing from the Sources object.');
+        if (!config.sources.clusterBoundaries) throw new Error('ClusterBoundaries is missing from the Sources object.');
 
         this.container = container;
         this.config = config;
@@ -228,7 +228,7 @@ class ZmltMap {
         this.hoverNodeID = null;
         this.edges = config.edges ? config.edges : defaultEdges;
         this.nodes = config.nodes ? config.nodes : defaultNodes;
-        this.clusters = config.clusters ? config.clusters : defaultClusters
+        this.clusters = config.clusters ? config.clusters : defaultClusters;
         this.popups = config.popups ? config.popups : [];
         this.minimapOptions = config.minimapOptions ? config.minimapOptions : defaultMinimapOptions;
         this.currentZoom = config.initialZoom ? config.initialZoom : defaultInitialZoom;
@@ -282,18 +282,18 @@ class ZmltMap {
 
         // When the zoom level changes, check if we need to display a different set of nodes. If we do, update the node filter.
         if (this.nodeLevelChange()) {
-            const currentNode = ["get", "zoom", ["at", ["get", "level"], ["literal", nodes]]];
-            map.setFilter('node_labels', [">=", currentZoom, currentNode]);
+            const currentNode = ['get', 'zoom', ['at', ['get', 'level'], ['literal', nodes]]];
+            map.setFilter('node_labels', ['>=', currentZoom, currentNode]);
         }
 
         // When the zoom level changes, check if we need to display a different set of edges. If we do, update the node filter.
         // We decided showing the nodes (without labels) at the same time as the edges was preferable, instead of waiting for
         // when the labels will fit. 
         if (this.edgeLevelChange()) {
-            const currentEdge = ["get", "zoom", ["at", ["get", "level"], ["literal", edges]]];
-            map.setFilter('nodes', [">=", currentZoom, currentEdge]);
-            map.setFilter('edges_border', [">=", currentZoom, currentEdge]);
-            map.setFilter('edges', [">=", currentZoom, currentEdge]);
+            const currentEdge = ['get', 'zoom', ['at', ['get', 'level'], ['literal', edges]]];
+            map.setFilter('nodes', ['>=', currentZoom, currentEdge]);
+            map.setFilter('edges_border', ['>=', currentZoom, currentEdge]);
+            map.setFilter('edges', ['>=', currentZoom, currentEdge]);
         }
 
         //  Determing if text overlap should be enabled or disabled based on the break point set in the config object.
@@ -328,7 +328,7 @@ class ZmltMap {
         const zoom: number = this.getZoom();
         for (let index = 0; index <= zoomLookup.length; index++) {
             if (index == (zoomLookup.length - 1)) return index;
-            if (zoom >= zoomLookup[index]["zoom"] && zoom < zoomLookup[index + 1]["zoom"]) return index;
+            if (zoom >= zoomLookup[index]['zoom'] && zoom < zoomLookup[index + 1]['zoom']) return index;
         }
     }
 
@@ -361,27 +361,27 @@ class ZmltMap {
     addClusters(): void {
         const { map, clusters } = this;
         map.addLayer({
-            "id": "cluster",
-            "type": "fill",
-            "source": "cluster_source",
-            "layout": {},
-            "paint": {
-                "fill-color": ['get', 'fill'],
-                "fill-opacity": clusters.fillOpacity,
-                "fill-outline-color": ['get', 'stroke']
+            'id': 'cluster',
+            'type': 'fill',
+            'source': 'cluster_source',
+            'layout': {},
+            'paint': {
+                'fill-color': ['get', 'fill'],
+                'fill-opacity': clusters.fillOpacity,
+                'fill-outline-color': ['get', 'stroke']
             }
         });
 
         map.addLayer({
-            "id": "cluster_boundary",
-            "type": "line",
-            "minzoom": clusters.borderLineMinZoom,
-            "source": "cluster_boundary_source",
-            "layout": {},
-            "paint": {
-                "line-color": ['get', 'stroke'],
-                "line-width": clusters.borderLineWidth,
-                "line-opacity": clusters.borderLineOpacity
+            'id': 'cluster_boundary',
+            'type': 'line',
+            'minzoom': clusters.borderLineMinZoom,
+            'source': 'cluster_boundary_source',
+            'layout': {},
+            'paint': {
+                'line-color': ['get', 'stroke'],
+                'line-width': clusters.borderLineWidth,
+                'line-opacity': clusters.borderLineOpacity
             },
         });
     }
@@ -389,89 +389,89 @@ class ZmltMap {
     addEdges(): void {
         const { map, edges, sources, maxZoom } = this;
         const currentZoom: number = this.getZoom();
-        const edge = ["at", ["get", "level"], ["literal", edges]];
-        const lastEdge = ["at", edges.length - 1, ["literal", edges]];
+        const edge = ['at', ['get', 'level'], ['literal', edges]];
+        const lastEdge = ['at', edges.length - 1, ['literal', edges]];
 
         map.addLayer({
-            "id": "edges",
-            "type": "line",
-            "source": "edges_source",
-            "layout": {},
-            "paint": {
-                "line-color": ["case",
-                    ['boolean', ['feature-state', 'hover'], false], "red",
-                    ["get", "color", edge]
+            'id': 'edges',
+            'type': 'line',
+            'source': 'edges_source',
+            'layout': {},
+            'paint': {
+                'line-color': ['case',
+                    ['boolean', ['feature-state', 'hover'], false], 'red',
+                    ['get', 'color', edge]
                 ],
-                "line-width": ["get", "width", edge],
-                "line-opacity": ["get", "opacity", edge]
+                'line-width': ['get', 'width', edge],
+                'line-opacity': ['get', 'opacity', edge]
             },
-            "filter": [">=", currentZoom, ["get", "zoom", edge]]
+            'filter': ['>=', currentZoom, ['get', 'zoom', edge]]
         });
         map.addLayer({
-            "id": "edges_border",
-            "type": "line",
-            "source": "edges_source",
-            "layout": {},
-            "paint": {
-                "line-color": ["get", "borderColor", edge],
-                "line-width": ["get", "borderWidth", edge],
-                "line-opacity": ["get", "borderOpacity", edge],
-                "line-gap-width": ["get", "width", edge],
+            'id': 'edges_border',
+            'type': 'line',
+            'source': 'edges_source',
+            'layout': {},
+            'paint': {
+                'line-color': ['get', 'borderColor', edge],
+                'line-width': ['get', 'borderWidth', edge],
+                'line-opacity': ['get', 'borderOpacity', edge],
+                'line-gap-width': ['get', 'width', edge],
             },
-            "filter": [">=", currentZoom, ["get", "zoom", edge]]
+            'filter': ['>=', currentZoom, ['get', 'zoom', edge]]
         });
 
         if (sources.allEdges) {
             map.addLayer({
-                "id": "all_edges",
-                "type": "line",
-                "source": "all_edges_source",
-                "layout": {},
-                "paint": {
-                    "line-color": ["get", "borderColor", lastEdge],
-                    "line-width": ["get", "borderWidth", lastEdge],
-                    "line-opacity": ["get", "borderOpacity", lastEdge],
-                    "line-gap-width": ["get", "width", lastEdge],
+                'id': 'all_edges',
+                'type': 'line',
+                'source': 'all_edges_source',
+                'layout': {},
+                'paint': {
+                    'line-color': ['get', 'borderColor', lastEdge],
+                    'line-width': ['get', 'borderWidth', lastEdge],
+                    'line-opacity': ['get', 'borderOpacity', lastEdge],
+                    'line-gap-width': ['get', 'width', lastEdge],
                 },
-                "minzoom": maxZoom
+                'minzoom': maxZoom
             });
         }
     }
 
     addNodes(): void {
         const { map, nodes, edges } = this;
-        const currentNode: Array<any> = ["at", ["get", "level"], ["literal", nodes]];
-        const currentEdge: Array<any> = ["get", "zoom", ["at", ["get", "level"], ["literal", edges]]];
+        const currentNode: Array<any> = ['at', ['get', 'level'], ['literal', nodes]];
+        const currentEdge: Array<any> = ['get', 'zoom', ['at', ['get', 'level'], ['literal', edges]]];
         const currentZoom: number = this.getZoom();
 
         const nodeLabelsLayer: mapboxgl.Layer | any = {
-            "id": "node_labels",
-            "type": "symbol",
-            "source": "nodes_source",
-            "layout": {
-                "text-field": "{label}",
-                "text-font": ["Open Sans Regular"],
-                "text-size": ["get", "fontSize", currentNode],
-                "text-variable-anchor": ["top", "bottom", "top-left", "top-right", "bottom-left", "bottom-right", "left", "right", "center"],
-                "text-radial-offset": 0.25,
-                "text-justify": "auto",
-                "text-allow-overlap": false
+            'id': 'node_labels',
+            'type': 'symbol',
+            'source': 'nodes_source',
+            'layout': {
+                'text-field': '{label}',
+                'text-font': ['Open Sans Regular'],
+                'text-size': ['get', 'fontSize', currentNode],
+                'text-variable-anchor': ['top', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'center'],
+                'text-radial-offset': 0.25,
+                'text-justify': 'auto',
+                'text-allow-overlap': false
             },
-            "filter": [">=", currentZoom, ["get", "zoom", currentNode]]
-        }
+            'filter': ['>=', currentZoom, ['get', 'zoom', currentNode]]
+        };
         const nodesLayer: mapboxgl.Layer = {
-            "id": "nodes",
-            "type": "circle",
-            "source": "nodes_source",
-            "layout": {},
-            "paint": {
-                "circle-color": ["case",
-                    ['boolean', ['feature-state', 'hover'], false], "red",
-                    "black"
+            'id': 'nodes',
+            'type': 'circle',
+            'source': 'nodes_source',
+            'layout': {},
+            'paint': {
+                'circle-color': ['case',
+                    ['boolean', ['feature-state', 'hover'], false], 'red',
+                    'black'
                 ],
-                "circle-radius": 3
+                'circle-radius': 3
             },
-            "filter": [">=", currentZoom, currentEdge]
+            'filter': ['>=', currentZoom, currentEdge]
         };
 
         map.addLayer(nodeLabelsLayer);
@@ -485,9 +485,8 @@ class ZmltMap {
             if (e.features.length > 0) {
                 // If there was already an edge with the hover status, turn that hover status off first
                 if (this.hoverEdgeID) {
-                    map.setFeatureState({
-                        source: 'edges_source', id: this.hoverEdgeID
-                    },
+                    map.setFeatureState(
+                        { source: 'edges_source', id: this.hoverEdgeID },
                         { hover: false }
                     );
                 }
@@ -520,9 +519,8 @@ class ZmltMap {
             if (e.features.length > 0) {
                 // If there was already an node with the hover status, turn that hover status off first
                 if (this.hoverNodeID) {
-                    map.setFeatureState({
-                        source: 'nodes_source', id: this.hoverNodeID
-                    },
+                    map.setFeatureState(
+                        { source: 'nodes_source', id: this.hoverNodeID },
                         { hover: false }
                     );
                 }
@@ -551,7 +549,7 @@ class ZmltMap {
     addPopups(): void {
         this.popups.forEach(popup => {
             this.addPopupOnClick(popup.layer, popup.content)
-        })
+        });
     }
 
     addPopupOnClick(layer: string, content: PopupContent): void {
@@ -604,7 +602,7 @@ function createPopupHTML(description: object, content: PopupContent): string {
 }
 
 function isEven(index: number): boolean {
-    return index % 2 === 0
+    return index % 2 === 0;
 }
 
 // Bind the ZmltMap to the window so that it is accessible in the main index.html file.
