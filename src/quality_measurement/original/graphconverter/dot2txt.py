@@ -28,8 +28,8 @@ def dot_to_txt(input_file, output_file):
 
 
 # Main Flow
+if __name__ == '__main__':
+    input_path = sys.argv[1]
+    output_path = sys.argv[2]
 
-input_path = sys.argv[1]
-output_path = sys.argv[2]
-
-dot_to_txt(input_path, output_path)
+    dot_to_txt(input_path, output_path)

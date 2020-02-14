@@ -37,17 +37,17 @@ def set_graph_properties(G):
     return G
 
 
+if __name__ == '__main__':
+    g_path = sys.argv[1]
+    outputpath = sys.argv[2]
+    g_name = os.path.basename(g_path).split(".")[0]
 
-g_path = sys.argv[1]
-outputpath = sys.argv[2]
-g_name = os.path.basename(g_path).split(".")[0]
 
-
-# Reading graph and subgraph
-G = nx.read_gml(g_path)
-G = nx.Graph(G)
-print(nx.info(G))
-G = set_graph_properties(G)
-print(nx.info(G))
-write_dot(G, outputpath)
-print(nx.info(G))
+    # Reading graph and subgraph
+    G = nx.read_gml(g_path)
+    G = nx.Graph(G)
+    print(nx.info(G))
+    G = set_graph_properties(G)
+    print(nx.info(G))
+    write_dot(G, outputpath)
+    print(nx.info(G))
