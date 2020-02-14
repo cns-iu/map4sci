@@ -24,7 +24,7 @@ See [Changelog](CHANGELOG.md)
 ###### 2. Setup virtual environment
 Run [00x-setup-venv.sh](scripts/00x-setup-venv.sh) </a> script to setup the virtual environment and install all the dependencies
 
-	./00x-setup-env.sh
+	./scripts/00x-setup-env.sh
 
 To activate the virtual environment:
 
@@ -36,7 +36,7 @@ For more information on the virtual environment refer to the python [documentati
 	
 Build the libraries by running [01x-build-libs.sh](scripts/01x-build-libs.sh) script.
 
-	./01x-build-libs.sh
+	./scripts/01x-build-libs.sh
 
 ###### 4. Input
 
@@ -62,7 +62,7 @@ Run [run.sh](run.sh) file to run all the steps in the algorithm. This script run
 
 Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
 
-	./90x-serve-site.sh
+	./scripts/90x-serve-site.sh
 
 ###### 7. Deploy to Github Pages
 
