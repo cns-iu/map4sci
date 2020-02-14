@@ -2,22 +2,22 @@
 	https://github.com/brendanmatkin/mapboxgl-minimap
 */
 const blankStyle = {
-	"version": 8,
-	"name": "Blank",
-	"center": [
+	'version': 8,
+	'name': 'Blank',
+	'center': [
 		0,
 		0
 	],
-	"zoom": 0,
-	"sources": {},
-	"sprite": "https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty",
-	"glyphs": "https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf",
-	"layers": [
+	'zoom': 0,
+	'sources': {},
+	'sprite': 'https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty',
+	'glyphs': 'https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf',
+	'layers': [
 		{
-			"id": "background",
-			"type": "background",
-			"paint": {
-				"background-color": "rgba(255,255,255,1)"
+			'id': 'background',
+			'type': 'background',
+			'paint': {
+				'background-color': 'rgba(255,255,255,1)'
 			}
 		}
 	]
@@ -53,7 +53,7 @@ class Minimap {
 
 		if (opts.maxBounds) miniMap.setMaxBounds(opts.maxBounds);
 
-		miniMap.on("load", this._load.bind(this));
+		miniMap.on('load', this._load.bind(this));
 
 		return this._container;
 	}
@@ -67,8 +67,8 @@ class Minimap {
 		var parentMap = this._parentMap;
 		var miniMap = this._miniMap;
 		var interactions = [
-			"dragPan", "scrollZoom", "boxZoom", "dragRotate",
-			"keyboard", "doubleClickZoom", "touchZoomRotate"
+			'dragPan', 'scrollZoom', 'boxZoom', 'dragRotate',
+			'keyboard', 'doubleClickZoom', 'touchZoomRotate'
 		];
 
 		interactions.forEach(function (i) {
@@ -77,7 +77,7 @@ class Minimap {
 			}
 		});
 
-		if (typeof opts.zoomAdjust === "function") {
+		if (typeof opts.zoomAdjust === 'function') {
 			this.options.zoomAdjust = opts.zoomAdjust.bind(this);
 		} else if (opts.zoomAdjust === null) {
 			this.options.zoomAdjust = this._zoomAdjust.bind(this);
@@ -87,119 +87,119 @@ class Minimap {
 
 		this._convertBoundsToPoints(bounds);
 
-		miniMap.addSource("trackingRect", {
-			"type": "geojson",
-			"data": {
-				"type": "Feature",
-				"properties": {
-					"name": "trackingRect"
+		miniMap.addSource('trackingRect', {
+			'type': 'geojson',
+			'data': {
+				'type': 'Feature',
+				'properties': {
+					'name': 'trackingRect'
 				},
-				"geometry": {
-					"type": "Polygon",
-					"coordinates": this._trackingRectCoordinates
+				'geometry': {
+					'type': 'Polygon',
+					'coordinates': this._trackingRectCoordinates
 				}
 			}
 		});
 
 		// Add the geojson layers of our data so the minimap matches the parent map
 		miniMap.addLayer({
-			"id": "cluster",
-			"type": "fill",
-			"source": { "type": "geojson", "data": this.sources.clusters },
-			"layout": {},
-			"paint": {
-				"fill-color": ['get', 'fill'],
-				"fill-opacity": 0.7,
-				"fill-outline-color": ['get', 'stroke']
+			'id': 'cluster',
+			'type': 'fill',
+			'source': { 'type': 'geojson', 'data': this.sources.clusters },
+			'layout': {},
+			'paint': {
+				'fill-color': ['get', 'fill'],
+				'fill-opacity': 0.7,
+				'fill-outline-color': ['get', 'stroke']
 			},
 		});
 		miniMap.addLayer({
-			"id": "cluster_boundary",
-			"type": "line",
-			"minzoom": 2,
-			"source": { "type": "geojson", "data": this.sources.clusters },
-			"layout": {},
-			"paint": {
-				"line-color": ['get', 'stroke'],
-				"line-width": 0.5,
-				"line-opacity": 0.8
+			'id': 'cluster_boundary',
+			'type': 'line',
+			'minzoom': 2,
+			'source': { 'type': 'geojson', 'data': this.sources.clusters },
+			'layout': {},
+			'paint': {
+				'line-color': ['get', 'stroke'],
+				'line-width': 0.5,
+				'line-opacity': 0.8
 			},
 		});
 		miniMap.addLayer({
-			"id": "node_labels",
-			"type": "symbol",
-			"minzoom": 2,
-			"source": { "type": "geojson", "data": this.sources.nodes },
-			"layout": {
-				"text-field": "{label}",
-				"text-font": ["Open Sans Regular"],
-				"text-size": 14,
-				"text-anchor": "center",
-				"text-justify": "center",
-				"text-allow-overlap": false
+			'id': 'node_labels',
+			'type': 'symbol',
+			'minzoom': 2,
+			'source': { 'type': 'geojson', 'data': this.sources.nodes },
+			'layout': {
+				'text-field': '{label}',
+				'text-font': ['Open Sans Regular'],
+				'text-size': 14,
+				'text-anchor': 'center',
+				'text-justify': 'center',
+				'text-allow-overlap': false
 
 			},
-			"filter": ["==", "level", 1]
+			'filter': ['==', 'level', 1]
 		});
 		miniMap.addLayer({
-			"id": "node_labels_2",
-			"type": "symbol",
-			"minzoom": 3,
-			"source": { "type": "geojson", "data": this.sources.nodes },
-			"layout": {
-				"text-field": "{label}",
-				"text-font": ["Open Sans Regular"],
-				"text-size": 9,
-				"text-anchor": "center",
-				"text-justify": "center"
+			'id': 'node_labels_2',
+			'type': 'symbol',
+			'minzoom': 3,
+			'source': { 'type': 'geojson', 'data': this.sources.nodes },
+			'layout': {
+				'text-field': '{label}',
+				'text-font': ['Open Sans Regular'],
+				'text-size': 9,
+				'text-anchor': 'center',
+				'text-justify': 'center'
 			},
-			"filter": ["all",
-				["<=", "level", 3],
-				[">", "level", 1]
+			'filter': ['all',
+				['<=', 'level', 3],
+				['>', 'level', 1]
 			]
 		});
 
 		miniMap.addLayer({
-			"id": "trackingRectOutline",
-			"type": "line",
-			"source": "trackingRect",
-			"layout": {},
-			"paint": {
-				"line-color": opts.edgeColor,
-				"line-width": opts.edgeWidth,
-				"line-opacity": opts.edgeOpacity
+			'id': 'trackingRectOutline',
+			'type': 'line',
+			'source': 'trackingRect',
+			'layout': {},
+			'paint': {
+				'line-color': opts.edgeColor,
+				'line-width': opts.edgeWidth,
+				'line-opacity': opts.edgeOpacity
 			}
 		});
 
 		// needed for dragging
 		miniMap.addLayer({
-			"id": "trackingRectFill",
-			"type": "fill",
-			"source": "trackingRect",
-			"layout": {},
-			"paint": {
-				"fill-color": opts.fillColor,
-				"fill-opacity": opts.fillOpacity
+			'id': 'trackingRectFill',
+			'type': 'fill',
+			'source': 'trackingRect',
+			'layout': {},
+			'paint': {
+				'fill-color': opts.fillColor,
+				'fill-opacity': opts.fillOpacity
 			}
 		});
 
-		this._trackingRect = this._miniMap.getSource("trackingRect");
+		this._trackingRect = this._miniMap.getSource('trackingRect');
 
 		this._update();
 
-		parentMap.on("move", this._update.bind(this));
+		parentMap.on('move', this._update.bind(this));
 
-		miniMap.on("mousemove", this._mouseMove.bind(this));
-		miniMap.on("mousedown", this._mouseDown.bind(this));
-		miniMap.on("mouseup", this._mouseUp.bind(this));
+		miniMap.on('mousemove', this._mouseMove.bind(this));
+		miniMap.on('mousedown', this._mouseDown.bind(this));
+		miniMap.on('mouseup', this._mouseUp.bind(this));
 
-		miniMap.on("touchmove", this._mouseMove.bind(this));
-		miniMap.on("touchstart", this._mouseDown.bind(this));
-		miniMap.on("touchend", this._mouseUp.bind(this));
+		miniMap.on('touchmove', this._mouseMove.bind(this));
+		miniMap.on('touchstart', this._mouseDown.bind(this));
+		miniMap.on('touchend', this._mouseUp.bind(this));
 
 		this._miniMapCanvas = miniMap.getCanvasContainer();
-		this._miniMapCanvas.addEventListener("wheel", this._preventDefault);
-		this._miniMapCanvas.addEventListener("mousewheel", this._preventDefault);
+		this._miniMapCanvas.addEventListener('wheel', this._preventDefault);
+		this._miniMapCanvas.addEventListener('mousewheel', this._preventDefault);
 	}
 
 	_mouseDown(e) {
@@ -215,13 +215,13 @@ class Minimap {
 
 		var miniMap = this._miniMap;
 		var features = miniMap.queryRenderedFeatures(e.point, {
-			layers: ["trackingRectFill"]
+			layers: ['trackingRectFill']
 		});
 
 		// don't update if we're still hovering the area
 		if (!(this._isCursorOverFeature && features.length > 0)) {
 			this._isCursorOverFeature = features.length > 0;
-			this._miniMapCanvas.style.cursor = this._isCursorOverFeature ? "move" : "";
+			this._miniMapCanvas.style.cursor = this._isCursorOverFeature ? 'move' : '';
 		}
 
 		if (this._isDragging) {
@@ -298,7 +298,7 @@ class Minimap {
 
 		this._setTrackingRectBounds(parentBounds);
 
-		if (typeof this.options.zoomAdjust === "function") {
+		if (typeof this.options.zoomAdjust === 'function') {
 			this.options.zoomAdjust();
 		}
 	}
@@ -323,25 +323,25 @@ class Minimap {
 		});
 
 		if (!found && miniZoom !== this.options.zoom) {
-			if (typeof this.options.bounds === "object") {
+			if (typeof this.options.bounds === 'object') {
 				miniMap.fitBounds(this.options.bounds, { duration: 50 });
 			}
 
-			miniMap.setZoom(this.options.zoom)
+			miniMap.setZoom(this.options.zoom);
 		}
 	}
 
 	_createContainer(parentMap) {
 		var opts = this.options;
-		var container = document.createElement("div");
+		var container = document.createElement('div');
 
-		container.className = "mapboxgl-ctrl-minimap mapboxgl-ctrl";
+		container.className = 'mapboxgl-ctrl-minimap mapboxgl-ctrl';
 		container.setAttribute('style', 'width: ' + opts.width + '; height: ' + opts.height + '; ' + opts.containerStyles);
-		container.addEventListener("contextmenu", this._preventDefault);
+		container.addEventListener('contextmenu', this._preventDefault);
 
 		parentMap.getContainer().appendChild(container);
 
-		if (opts.id !== "") {
+		if (opts.id !== '') {
 			container.id = opts.id;
 		}
 
