@@ -6,13 +6,13 @@ The research paper can be found [here.](https://arxiv.org/pdf/1906.05996.pdf)
 
 This algorithm also uses `Impred` which is improved `Pred` algorithm and it can be found [here.](https://hal.inria.fr/inria-00605921/document)
 
-### Change Log
+## Change Log
 
 See [Changelog](CHANGELOG.md)
 
-### Getting Started
+## Getting Started
 
-###### 1. Requirements
+### 1. Requirements
 
 * python3
 * python3-dev
@@ -20,55 +20,54 @@ See [Changelog](CHANGELOG.md)
 * make
 * g++
 
-
-###### 2. Setup virtual environment
+### 2. Setup virtual environment
 Run [00x-setup-venv.sh](scripts/00x-setup-venv.sh) </a> script to setup the virtual environment and install all the dependencies
 
-	./scripts/00x-setup-env.sh
+    ./scripts/00x-setup-venv.sh
 
 To activate the virtual environment:
 
-	source .venv/bin/activate
+    source .venv/bin/activate
 
 For more information on the virtual environment refer to the python [documentation](https://docs.python.org/3/library/venv.html).
 
-###### 3. Building
-	
+### 3. Building
+
 Build the libraries by running [01x-build-libs.sh](scripts/01x-build-libs.sh) script.
 
-	./scripts/01x-build-libs.sh
+    ./scripts/01x-build-libs.sh
 
-###### 4. Input
+### 4. Input
 
 Update the [env.sh](env.sh) file to point to the data source config. The default data source is
 
-	datasets/sample/config.sh
+    datasets/sample/config.sh
 
 The location of the input graph to the algorithm is path assigned to $NETWORK environment variable. This can be updated in config.sh file. The default value is:
 
-	datasets/sample/network.dot 
+    datasets/sample/network.dot 
 
 This location can be changed by changing the value of $NETWORK environment variable in [config.sh](datasets/sample/config.sh)
 
 All the `config.sh` files should follow the format as given in [config.example.sh](datasets/config.example.sh)
 
-###### 5. Run
+### 5. Run
 
 Run [run.sh](run.sh) file to run all the steps in the algorithm. This script runs all the scripts in the [scripts](scripts) folder one by one.
 
-	./run.sh
+    ./run.sh
 
-###### 6. Serve Site
+### 6. Serve Site
 
 Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
 
-	./scripts/90x-serve-site.sh
+    ./scripts/90x-serve-site.sh
 
-###### 7. Deploy to Github Pages
+### 7. Deploy to Github Pages
 
 Run [99x-publish.sh](scripts/99x-publish.sh) to publish the site to the Github pages.
 
-### Details regarding the script files
+## Details regarding the script files
 
 S. No. | Name |Description | Input Location | Output Location
 --- | ---| --- | --- | ---
@@ -91,7 +90,7 @@ S. No. | Name |Description | Input Location | Output Location
 17 | `90x-serve-site.sh` |  |  
 18 | `99x-publish.sh` |  |
 
-### Environment Variables Details
+## Environment Variables Details
 
 S. No. | Name | File | Default Value
 --- | --- | --- | ---
@@ -100,10 +99,10 @@ S. No. | Name | File | Default Value
 3 | $NETWORK | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot`
 4 | $FORESTS_DIR | [constants.sh](constants.sh)| `$OUT/forests`
 
-### Credits
+## Credits
 
 Developed as a collaboration between the [Cyberinfrastructure for Network Science Center at Indiana University](http://cns.iu.edu/) and [University of Arizona](https://www.arizona.edu/)
 
-### License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
