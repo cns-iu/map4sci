@@ -34,7 +34,7 @@ def remove_crossings(graph: nx.Graph) -> None:
 
 		# Getting the edge connecting the main and the smaller component
 		for curr_edge in current_crossing_edges:
-			s, t = curr_edge
+			s, t = curr_edge[:2]
 
 			if s in smaller_component_vertices:
 				main_vertex = t

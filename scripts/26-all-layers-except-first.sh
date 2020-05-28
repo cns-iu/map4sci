@@ -7,7 +7,7 @@ NODE_NODE_REPLUSION=20
 EDGE_NODE_REPULSION=20
 ITERATIONS=10
 
-for i in {1..7}
+for i in $(echo $LAYERS | perl -pe 's/\,/\n/g' | cat -n | perl -pe 's/^\ +//g' | cut -f 1)
 do
   echo "Loop 2 - Iteration $i"
 

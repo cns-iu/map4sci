@@ -5,4 +5,4 @@ set -ev
 INPUT=$OUT/impred/layer7.dot
 
 mkdir -p $OUT/quality_measurement
-python3 -msrc.quality_measurement $INPUT $OUT/quality_measurement/result.txt
+python3 -msrc.quality_measurement $MEASUREMENTS $INPUT $OUT/quality_measurement/result.txt
