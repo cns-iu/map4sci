@@ -157,14 +157,14 @@
     <li>API &raquo; </li><li>Src &raquo; </li><li>Layers</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="srclayerstree_util">src.layers.tree_util</h1>
-<h2 id="parents">parents</h2>
-<pre><code class="python">parents(node:&lt;function NewType.&lt;locals&gt;.new_type at 0x7f46488439d8&gt;, predecessors:Mapping[Node, Node]) -&gt; Iterator[Node]
+                <div id="content"><h1 id="srclayerstree_util">src.layers.tree_util<a class="headerlink" href="#srclayerstree_util" title="Permanent link">&para;</a></h1>
+<h2 id="parents">parents<a class="headerlink" href="#parents" title="Permanent link">&para;</a></h2>
+<pre><code class="python">parents(node:&lt;function NewType.&lt;locals&gt;.new_type at 0x7feeaf483a60&gt;, predecessors:Mapping[Node, Node]) -&gt; Iterator[Node]
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/layers/tree_util.py#L90">src/layers/tree_util.py</a></p>
 <p>Iterate over a node's parents up to root.</p>
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>node</code>: <code>typing.Node</code></p>
@@ -175,17 +175,17 @@
 <p>A mapping of node to parent node.</p>
 </li>
 </ul>
-<h3 id="returns">Returns</h3>
+<h3 id="returns">Returns<a class="headerlink" href="#returns" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>typing.Iterator</code></li>
 </ul>
-<h2 id="sorted_nodes">sorted_nodes</h2>
+<h2 id="sorted_nodes">sorted_nodes<a class="headerlink" href="#sorted_nodes" title="Permanent link">&para;</a></h2>
 <pre><code class="python">sorted_nodes(graph:networkx.classes.graph.Graph, attribute='weight', reverse=False) -&gt; List[Node]
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/layers/tree_util.py#L39">src/layers/tree_util.py</a></p>
 <p>Sorts nodes in a graph</p>
-<h3 id="parameters_1">Parameters</h3>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>graph</code>: <code>networkx.classes.graph.Graph</code></p>
@@ -200,20 +200,20 @@
 <p>Whether the result order should be reversed, by default False</p>
 </li>
 </ul>
-<h3 id="returns_1">Returns</h3>
+<h3 id="returns_1">Returns<a class="headerlink" href="#returns_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>typing.List</code></p>
 <p>A list of the sorted node ids.</p>
 </li>
 </ul>
-<h2 id="spanning_tree">spanning_tree</h2>
+<h2 id="spanning_tree">spanning_tree<a class="headerlink" href="#spanning_tree" title="Permanent link">&para;</a></h2>
 <pre><code class="python">spanning_tree(graph:networkx.classes.graph.Graph, maximum=True, weight='weight', algorithm='prim') -&gt; networkx.classes.graph.Graph
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/layers/tree_util.py#L61">src/layers/tree_util.py</a></p>
 <p>Computes the [minimum/maximum] spanning tree for a graph.</p>
-<h3 id="parameters_2">Parameters</h3>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>graph</code>: <code>networkx.classes.graph.Graph</code></p>
@@ -232,20 +232,20 @@
 <p>Algorithm used to compute the spanning tree, by default 'prim'</p>
 </li>
 </ul>
-<h3 id="returns_2">Returns</h3>
+<h3 id="returns_2">Returns<a class="headerlink" href="#returns_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>networkx.classes.graph.Graph</code></p>
 <p>Subgraph representing the spanning tree.</p>
 </li>
 </ul>
-<h2 id="subtree">subtree</h2>
+<h2 id="subtree">subtree<a class="headerlink" href="#subtree" title="Permanent link">&para;</a></h2>
 <pre><code class="python">subtree(graph:networkx.classes.graph.Graph, nodes:Iterable[Node], predecessors:Mapping[Node, Node]=None) -&gt; networkx.classes.graph.Graph
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/layers/tree_util.py#L111">src/layers/tree_util.py</a></p>
 <p>Extract a subtree with the specified nodes.</p>
-<h3 id="parameters_3">Parameters</h3>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>graph</code>: <code>networkx.classes.graph.Graph</code></p>
@@ -260,7 +260,7 @@
 <p>Mapping of node to parent node, by default None</p>
 </li>
 </ul>
-<h3 id="returns_3">Returns</h3>
+<h3 id="returns_3">Returns<a class="headerlink" href="#returns_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>networkx.classes.graph.Graph</code></p>

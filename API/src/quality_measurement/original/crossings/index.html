@@ -174,25 +174,25 @@
     <li>API &raquo; </li><li>Src &raquo; </li><li>Quality measurement &raquo; </li><li>Original</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="srcquality_measurementoriginalcrossings">src.quality_measurement.original.crossings</h1>
-<h2 id="areedgesadjacent">areEdgesAdjacent</h2>
+                <div id="content"><h1 id="srcquality_measurementoriginalcrossings">src.quality_measurement.original.crossings<a class="headerlink" href="#srcquality_measurementoriginalcrossings" title="Permanent link">&para;</a></h1>
+<h2 id="areedgesadjacent">areEdgesAdjacent<a class="headerlink" href="#areedgesadjacent" title="Permanent link">&para;</a></h2>
 <pre><code class="python">areEdgesAdjacent(p1x, p1y, q1x, q1y, p2x, p2y, q2x, q2y)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L102">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="check_point_in_rectangle">check_point_in_rectangle</h2>
+<h2 id="check_point_in_rectangle">check_point_in_rectangle<a class="headerlink" href="#check_point_in_rectangle" title="Permanent link">&para;</a></h2>
 <pre><code class="python">check_point_in_rectangle(x1, y1, x2, y2, x3, y3, x4, y4, x, y)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L344">src/quality_measurement/original/crossings.py</a></p>
 <p>A function to check whether point P(x, y) lies inside the rectangle formed by A(x1, y1), B(x2, y2), C(x3, y3) and D(x4, y4)</p>
-<h2 id="compute_intersection_point">compute_intersection_point</h2>
+<h2 id="compute_intersection_point">compute_intersection_point<a class="headerlink" href="#compute_intersection_point" title="Permanent link">&para;</a></h2>
 <pre><code class="python">compute_intersection_point(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L225">src/quality_measurement/original/crossings.py</a></p>
 <p>Computes the intersection point Note that the intersection point is for the infinitely long lines defined by the points, and can produce an intersection point beyond the lengths of the line segments but here we know that there is an intersection, and it is unique.</p>
-<h2 id="count_crossings">count_crossings</h2>
+<h2 id="count_crossings">count_crossings<a class="headerlink" href="#count_crossings" title="Permanent link">&para;</a></h2>
 <pre><code class="python">count_crossings(
     G, edges_to_compare=None, stop_when_found=False, ignore_label_edge_cr=False
 )
@@ -200,90 +200,90 @@
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L375">src/quality_measurement/original/crossings.py</a></p>
 <p>Counts the crossings of the given graph <tt>G&lt;      t&gt;. The crossing count can be executed only on the given list of edges of <tt>G&lt;       t&gt; passed as input in <tt>edges_to_compare&lt;       t&gt;. Also the execution can stop as soon as a crossing is found if the boolean value <tt>stop_when_found&lt;        t&gt; is set to True. If the vertices have labels with given height and width the crossings that occur below the labels can be ignored if the boolean value <tt>ignore_label_edge_cr&lt;      t&gt; is set to True. Return a list of crossings where each element has the crossing edge and the intersection point.</p>
-<h2 id="dointersect">doIntersect</h2>
+<h2 id="dointersect">doIntersect<a class="headerlink" href="#dointersect" title="Permanent link">&para;</a></h2>
 <pre><code class="python">doIntersect(p1x, p1y, q1x, q1y, p2x, p2y, q2x, q2y)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L123">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="dosegmentsintersect">doSegmentsIntersect</h2>
+<h2 id="dosegmentsintersect">doSegmentsIntersect<a class="headerlink" href="#dosegmentsintersect" title="Permanent link">&para;</a></h2>
 <pre><code class="python">doSegmentsIntersect(p1x, p1y, q1x, q1y, p2x, p2y, q2x, q2y)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L53">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="getanglelineseg">getAngleLineSeg</h2>
+<h2 id="getanglelineseg">getAngleLineSeg<a class="headerlink" href="#getanglelineseg" title="Permanent link">&para;</a></h2>
 <pre><code class="python">getAngleLineSeg(x1, y1, x2, y2, x3, y3)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L207">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="getanglelinesegdegree">getAngleLineSegDegree</h2>
+<h2 id="getanglelinesegdegree">getAngleLineSegDegree<a class="headerlink" href="#getanglelinesegdegree" title="Permanent link">&para;</a></h2>
 <pre><code class="python">getAngleLineSegDegree(x1, y1, x2, y2, x3, y3)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L188">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="getintersection">getIntersection</h2>
+<h2 id="getintersection">getIntersection<a class="headerlink" href="#getintersection" title="Permanent link">&para;</a></h2>
 <pre><code class="python">getIntersection(x11, y11, x12, y12, x21, y21, x22, y22)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L147">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="get_rectangle">get_rectangle</h2>
+<h2 id="get_rectangle">get_rectangle<a class="headerlink" href="#get_rectangle" title="Permanent link">&para;</a></h2>
 <pre><code class="python">get_rectangle(p1x, p1y, w_1, h_1)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L250">src/quality_measurement/original/crossings.py</a></p>
 <p>Return the corner coordinates of the rectangle centered in p1x p1y and with width w_1 and h_1</p>
-<h2 id="iscolinear">isColinear</h2>
+<h2 id="iscolinear">isColinear<a class="headerlink" href="#iscolinear" title="Permanent link">&para;</a></h2>
 <pre><code class="python">isColinear(p1x, p1y, q1x, q1y, p2x, p2y, q2x, q2y)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L109">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="isendpoint">isEndPoint</h2>
+<h2 id="isendpoint">isEndPoint<a class="headerlink" href="#isendpoint" title="Permanent link">&para;</a></h2>
 <pre><code class="python">isEndPoint(ux, uy, vx, vy, px, py)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L96">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="issamecoord">isSameCoord</h2>
+<h2 id="issamecoord">isSameCoord<a class="headerlink" href="#issamecoord" title="Permanent link">&para;</a></h2>
 <pre><code class="python">isSameCoord(x1, y1, x2, y2)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L90">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="onsegment">onSegment</h2>
+<h2 id="onsegment">onSegment<a class="headerlink" href="#onsegment" title="Permanent link">&para;</a></h2>
 <pre><code class="python">onSegment(px, py, qx, qy, rx, ry)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L12">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="orientation">orientation</h2>
+<h2 id="orientation">orientation<a class="headerlink" href="#orientation" title="Permanent link">&para;</a></h2>
 <pre><code class="python">orientation(px, py, qx, qy, rx, ry)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L29">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="remove_label_edge_crossings">remove_label_edge_crossings</h2>
+<h2 id="remove_label_edge_crossings">remove_label_edge_crossings<a class="headerlink" href="#remove_label_edge_crossings" title="Permanent link">&para;</a></h2>
 <pre><code class="python">remove_label_edge_crossings(G, crossings_edges)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L267">src/quality_measurement/original/crossings.py</a></p>
 <p>Removes from the given list the crossings between edges and labels Instead of starting from the vertex position, the edges start from the boundary of the labels.</p>
-<h2 id="slope">slope</h2>
+<h2 id="slope">slope<a class="headerlink" href="#slope" title="Permanent link">&para;</a></h2>
 <pre><code class="python">slope(x1, y1, x2, y2)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L46">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="strictlyonsegment">strictlyOnSegment</h2>
+<h2 id="strictlyonsegment">strictlyOnSegment<a class="headerlink" href="#strictlyonsegment" title="Permanent link">&para;</a></h2>
 <pre><code class="python">strictlyOnSegment(px, py, qx, qy, rx, ry)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L17">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="to_deg">to_deg</h2>
+<h2 id="to_deg">to_deg<a class="headerlink" href="#to_deg" title="Permanent link">&para;</a></h2>
 <pre><code class="python">to_deg(rad)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L184">src/quality_measurement/original/crossings.py</a></p>
-<h2 id="triangle_area">triangle_area</h2>
+<h2 id="triangle_area">triangle_area<a class="headerlink" href="#triangle_area" title="Permanent link">&para;</a></h2>
 <pre><code class="python">triangle_area(x1, y1, x2, y2, x3, y3)
 </code></pre>
 
 <p>Source: <a href="https://github.com/cns-iu/map4sci/tree/workflow/src/src/quality_measurement/original/crossings.py#L329">src/quality_measurement/original/crossings.py</a></p>
 <p>A utility function to calculate area of triangle formed by (x1, y1), (x2, y2) and (x3, y3)</p>
-<h2 id="yint">yInt</h2>
+<h2 id="yint">yInt<a class="headerlink" href="#yint" title="Permanent link">&para;</a></h2>
 <pre><code class="python">yInt(x1, y1, x2, y2)
 </code></pre>
 
