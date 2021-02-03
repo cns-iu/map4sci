@@ -1,8 +1,3 @@
-mkdocs
-mkdocs-ivory
-mkdocs-macros-plugin
-mktheapidocs[plugin]
-click-man
 mypy
 typing_extensions
 pyyaml
@@ -11,4 +6,3 @@ pandas
 geojson
 networkx
 pygraphviz
-github-pages-publish

@@ -22,7 +22,6 @@ deactivate
 source "$VENV/bin/activate"
 
 # Install node requirements
-npm install http-server -g
 npm install parcel -g
 
 # Deactivate environment before leaving

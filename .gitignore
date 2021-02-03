@@ -115,11 +115,11 @@ env.sh
 /container.sif
 
 # Scratch code (not to be committed)
-**/scratch
-**/tmp
+scratch/
+tmp/
 
 # Node module dependencies
-node_modules
+node_modules/
 
 # Visual Studio Code
 .vscode/
