@@ -5,8 +5,8 @@ IFS=$'\n\t'
 
 # Base paths
 
-DIR="${0%/*}"
-ROOT_DIR="$DIR/.."
+SCRIPT_DIR="${0%/*}"
+ROOT_DIR="$SCRIPT_DIR/.."
 
 
 # Parse arguments
@@ -68,6 +68,7 @@ trap failure ERR
 
 python3 -m venv "$ENV" --clear --prompt "$PROMPT"
 
+
 # Install basic requirements
 
 safe_activate
@@ -87,5 +88,5 @@ safe_deactivate
 
 # Install dependencies if not explicitly disabled
 if [[ "$SKIP_INSTALL" == 0 ]]; then
-  source "$DIR/install-deps.sh" || true
+  source "$SCRIPT_DIR/install-deps.sh" || true
 fi
