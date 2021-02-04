@@ -37,9 +37,27 @@ if [[ ! "$ENV" = /* ]]; then ENV="$ROOT_DIR/$ENV"; fi
 PROMPT=${PARAMS[1]:-map4sci-env}
 
 
+# Utility
+
+function safe_activate() {
+  set +u
+  source "$ENV/bin/activate"
+  set -u
+}
+
+function safe_deactivate() {
+  if [[ "$(type -t deactivate)" = "function" ]]; then
+    set +u
+    deactivate
+    set -u
+  fi
+}
+
+
 # Set cleanup on failures
 
 function failure() {
+  safe_deactivate
   rm -rf "$ENV"
 }
 
@@ -50,19 +68,21 @@ trap failure ERR
 
 python3 -m venv "$ENV" --clear --prompt "$PROMPT"
 
-set +u # Disable in case we are running old venv versions that can't handle strict mode
-source "$ENV/bin/activate"
-set -u
-
 # Install basic requirements
+
+safe_activate
 
 pip install wheel
 pip install nodeenv
 nodeenv -p
 
-set +u # Just to be on the safe side
-deactivate
-set -u
+# Reactivate to ensure npm is visible
+safe_deactivate
+safe_activate
+
+npm install @angular/cli -g
+
+safe_deactivate
 
 
 # Install dependencies if not explicitly disabled
