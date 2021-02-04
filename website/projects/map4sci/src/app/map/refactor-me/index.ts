@@ -1,4 +1,4 @@
-import MiniMap from './mapboxgl-minimap.js';
+import MiniMap from './mapboxgl-minimap';
 declare global {
     interface Window { mapboxgl: any; }
 }
@@ -119,10 +119,10 @@ const defaultMinimapOptions: MiniMapOptions = {
     zoom: 0,
 
     containerStyles: `
-        border: 1px solid lightgray; 
-        border-radius: 5px; 
-        -webkit-box-shadow: 3px 3px 5px 4px #00000021; 
-        -moz-box-shadow: 3px 3px 5px 4px #00000021; 
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        -webkit-box-shadow: 3px 3px 5px 4px #00000021;
+        -moz-box-shadow: 3px 3px 5px 4px #00000021;
         box-shadow: 3px 3px 5px 4px #00000021;
     `,
 
@@ -288,7 +288,7 @@ class ZmltMap {
 
         // When the zoom level changes, check if we need to display a different set of edges. If we do, update the node filter.
         // We decided showing the nodes (without labels) at the same time as the edges was preferable, instead of waiting for
-        // when the labels will fit. 
+        // when the labels will fit.
         if (this.edgeLevelChange()) {
             const currentEdge = ['get', 'zoom', ['at', ['get', 'level'], ['literal', edges]]];
             map.setFilter('nodes', ['>=', currentZoom, currentEdge]);
@@ -322,7 +322,7 @@ class ZmltMap {
         return true;
     }
 
-    // Converts the current zoom number, to the index number of the object with the same .zoom property in the lookup array passed in. 
+    // Converts the current zoom number, to the index number of the object with the same .zoom property in the lookup array passed in.
     // Used because getZoom() will return very precise values, and the nodes / edges config objects will not match up exactly.
     getZoomIndex(zoomLookup: object[]): number {
         const zoom: number = this.getZoom();
