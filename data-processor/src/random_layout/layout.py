@@ -1,14 +1,14 @@
 import jsonlines
+import random
 
 def randomize_layout(input, output) -> None:
     with jsonlines.open(input) as reader, jsonlines.open(output, mode='w') as writer:
         for obj in reader:
-            # assign random position
-            # ensure they are spread somewhat
+            obj["x"] = get_random_coordinate()
+            obj["y"] = get_random_coordinate()
             writer.write(obj)
 
-# read json file, for each object create random coordinates
-# write that into a new file
-# input and output files should be arguments
-# create test file ndjson; each line should be empty object 20 or so.
-# { x: 0, y:0 }
+def get_random_coordinate() -> float:
+    number = random.randint(-99999999, 99999999)
+    number = number / 10**random.randint(1, 8)
+    return number
