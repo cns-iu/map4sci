@@ -1,0 +1,19 @@
+# Schemaspy-generated schema docs
+/docs/schema
+
+# Raw Data
+/raw-data
+
+# Generated documentation site
+/site
+
+# Third party/external library build files
+/libs/eba/kmeans
+/lib/eba/build/
+
+# Only sample datasets should be committed
+/datasets/*
+!/datasets/sample
+!/datasets/lastfm
+!/datasets/google-topics-full
+!/datasets/config.example.sh

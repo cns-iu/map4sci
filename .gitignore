@@ -114,32 +114,12 @@ env.sh
 # Singularity container
 /container.sif
 
-# Schemaspy-generated schema docs
-/docs/schema
-
-# Raw Data
-/raw-data
-
 # Scratch code (not to be committed)
-/scratch
-/tmp
-
-# Generated documentation site
-/site
+scratch/
+tmp/
 
 # Node module dependencies
-node_modules
+node_modules/
 
 # Visual Studio Code
 .vscode/
-
-# Third party/external library build files
-/libs/eba/kmeans
-/lib/eba/build/
-
-# Only sample datasets should be committed
-/datasets/*
-!/datasets/sample
-!/datasets/lastfm
-!/datasets/google-topics-full
-!/datasets/config.example.sh
