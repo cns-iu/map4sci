@@ -11,7 +11,7 @@ def setup_cmdline() -> argparse.ArgumentParser:
         A fully populated parser.
     """
     parser = argparse.ArgumentParser(prog='layers',
-                                     description='Extract layers from a network')
+                                     description='Randomize x and y coordinates')
     parser.add_argument('input', type=pathlib.Path, help='Input network file')
     parser.add_argument('output', type=pathlib.Path, help='Output network file')
 

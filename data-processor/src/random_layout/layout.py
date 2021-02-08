@@ -1,7 +1,8 @@
 import jsonlines
 import random
+import pathlib
 
-def randomize_layout(input, output) -> None:
+def randomize_layout(input: pathlib.Path, output: pathlib.Path) -> None:
     with jsonlines.open(input) as reader, jsonlines.open(output, mode='w') as writer:
         for obj in reader:
             obj["x"] = get_random_coordinate()
