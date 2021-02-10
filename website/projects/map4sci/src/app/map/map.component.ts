@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 import exported from 'mapbox-gl';
-// import Minimap from './mapboxgl-minimap';
+import Minimap from './mapboxgl-minimap.js';
 
 // Takes the description field of the element, and uses it with the popup content defined in the config object
 // to return the concatenated html string.
@@ -278,7 +278,7 @@ class ZmltMap {
 
     // Add zoom controls (without rotation controls) to the map.
     map.addControl(new exported.NavigationControl({ showCompass: false }), 'top-left');
-    // map.addControl(new Minimap(sources, minimapOptions), 'bottom-left');
+    map.addControl(new Minimap(sources, minimapOptions), 'bottom-left');
     map.addControl(new exported.FullscreenControl());
     if (popups.length) this.addPopups();
 

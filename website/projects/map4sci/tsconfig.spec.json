@@ -6,7 +6,8 @@
     "types": [
       "jasmine"
     ],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
   },
   "files": [
     "src/test.ts",
