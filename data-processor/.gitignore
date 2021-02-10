@@ -9,7 +9,11 @@
 
 # Third party/external library build files
 /libs/eba/kmeans
+/libs/eba/build/
 /lib/eba/build/
+/libs/tippecanoe
+/libs/bin
+/libs/share
 
 # Only sample datasets should be committed
 /datasets/*
