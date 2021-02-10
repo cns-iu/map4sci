@@ -1,1 +1,57 @@
-<div [id]="mapId">Map component works!</div>
+<!-- <div [id]="mapId">Map component works!</div> -->
+
+<mgl-map
+  [style]="style"
+  [minZoom]="minZoom"
+  [maxZoom]="maxZoom">
+
+  <!-- Sources -->
+  <mgl-geojson-source
+    id="nodes"
+    [data]="sources.nodes">
+  </mgl-geojson-source>
+  <mgl-geojson-source
+    id="edges"
+    [data]="sources.edges">
+  </mgl-geojson-source>
+  <mgl-geojson-source
+    id="clusters"
+    [data]="sources.clusters">
+  </mgl-geojson-source>
+  <mgl-geojson-source
+    id="clusterBoundaries"
+    [data]="sources.clusterBoundaries">
+  </mgl-geojson-source>
+
+  <!-- Layers -->
+  <mgl-layer
+    id="edges"
+    source="edges"
+    type="line"
+    [paint]="{
+      'line-color': ['get', 'color'],
+      'line-width': ['get', 'width'],
+      'line-opacity': ['-', 1, ['get', 'opacity']]
+    }"
+    (click)="edgeClicked($event)">
+  </mgl-layer>
+  <mgl-layer
+    id="nodes"
+    source="nodes"
+    type="symbol"
+    [paint]="{
+      'text-color': '#000'
+    }"
+    (click)="nodeClicked($event)">
+  </mgl-layer>
+
+  <!-- Popups -->
+  <mgl-popup>
+    <p class="popup-label">Edge</p>
+    <p>{{capitalizeFirstLetter('label')}}</p>
+  </mgl-popup>
+  <mgl-popup>
+    <p class="popup-label">Node</p>
+    <p>label</p>
+  </mgl-popup>
+</mgl-map>
