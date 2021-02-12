@@ -8,7 +8,7 @@ for datasetDir in $OUT/../../*/$VERSION
 do
   dataset=$(basename $(dirname $datasetDir))
   echo $dataset $datasetDir
-  
+
   if [ -e $datasetDir/clustered ]
   then
     mapDir=$OUT/site-data/maps/$dataset

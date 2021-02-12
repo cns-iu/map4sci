@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76, 38]
+      },
+      "type": "Feature",
+      "properties": {
+        "description": "Southern Ave",
+        "marker-symbol": "rail-metro",
+        "title": "Southern Ave",
+        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+        "lines": ["Green"],
+        "address": "1411 Southern Avenue, Temple Hills, MD 20748"
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-96, 40]
+      },
+      "type": "Feature",
+      "properties": {
+        "description": "Southern Ave",
+        "marker-symbol": "rail-metro",
+        "title": "Southern Ave",
+        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+        "lines": ["Green"],
+        "address": "1411 Southern Avenue, Temple Hills, MD 20748"
+      }
+    },
+        {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-56, 41]
+      },
+      "type": "Feature",
+      "properties": {
+        "description": "Southern Ave",
+        "marker-symbol": "rail-metro",
+        "title": "Southern Ave",
+        "url": "http://www.wmata.com/rider_tools/pids/showpid.cfm?station_id=107",
+        "lines": ["Green"],
+        "address": "1411 Southern Avenue, Temple Hills, MD 20748"
+      }
+    }
+  ]
+}
