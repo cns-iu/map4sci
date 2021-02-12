@@ -1,32 +1,32 @@
-<!-- <div [id]="mapId">Map component works!</div> -->
-
 <mgl-map
+  id="map"
   [style]="style"
-  [minZoom]="minZoom"
-  [maxZoom]="maxZoom">
+  [minZoom]="config.minZoom"
+  [maxZoom]="config.maxZoom"
+  (load)="onMapLoad($event)">
 
   <!-- Sources -->
   <mgl-geojson-source
     id="nodes"
-    [data]="sources.nodes">
+    [data]="config.sources.nodes">
   </mgl-geojson-source>
   <mgl-geojson-source
     id="edges"
-    [data]="sources.edges">
+    [data]="config.sources.edges">
   </mgl-geojson-source>
   <mgl-geojson-source
     id="clusters"
-    [data]="sources.clusters">
+    [data]="config.sources.clusters">
   </mgl-geojson-source>
   <mgl-geojson-source
     id="clusterBoundaries"
-    [data]="sources.clusterBoundaries">
+    [data]="config.sources.clusterBoundaries">
   </mgl-geojson-source>
 
   <!-- Layers -->
   <mgl-layer
     id="edges"
-    source="edges"
+    source="config.edges"
     type="line"
     [paint]="{
       'line-color': ['get', 'color'],
@@ -37,7 +37,7 @@
   </mgl-layer>
   <mgl-layer
     id="nodes"
-    source="nodes"
+    source="config.nodes"
     type="symbol"
     [paint]="{
       'text-color': '#000'
@@ -46,12 +46,12 @@
   </mgl-layer>
 
   <!-- Popups -->
-  <mgl-popup>
+  <!-- <mgl-popup [marker]="marker">
     <p class="popup-label">Edge</p>
     <p>{{capitalizeFirstLetter('label')}}</p>
   </mgl-popup>
-  <mgl-popup>
+  <mgl-popup [marker]="marker">
     <p class="popup-label">Node</p>
     <p>label</p>
-  </mgl-popup>
+  </mgl-popup> -->
 </mgl-map>
