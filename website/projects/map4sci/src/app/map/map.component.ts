@@ -1,9 +1,11 @@
-import { ChangeDetectionStrategy, Component, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Output, EventEmitter } from '@angular/core';
 
 import { Map, Style, MapMouseEvent } from 'mapbox-gl';
 import Minimap from './mapboxgl-minimap.js';
+import { Cartesian2dBounds, Cartesian2dProjection } from './cartesian-2d-projection';
+import { EdgesGeojson } from './edges-geojson'
 
-interface Edge {
+export interface Edge {
   level: number,
   zoom: number,
   color?: string,
@@ -91,7 +93,7 @@ const blankStyle: Style = {
       'id': 'background',
       'type': 'background',
       'paint': {
-        'background-color': 'rgba(255,255,255,1)'
+        'background-color': 'red'
       }
     }
   ]
@@ -185,8 +187,12 @@ export class MapComponent {
   readonly mapId = `m4s-mapboxgl-map-${this.idCounter++}`;
   style = blankStyle;
   map!: Map;
-
-  @ViewChild('map') mapElement!: ElementRef;
+  bounds = new Cartesian2dBounds();
+  projection = new Cartesian2dProjection(this.bounds);
+  edgesGeoJson!: EdgesGeojson;
+  // nodesGeoJson!: NodesGeojson;
+  edges: Edge[] = defaultEdges;
+  nodes: Node[] = defaultNodes;
 
   constructor() { };
 
@@ -197,23 +203,25 @@ export class MapComponent {
 
   capitalizeFirstLetter = (string: string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+  };
 
   nodeClicked(event: MapMouseEvent): void {
     this.nodeClick.emit(event);
-  }
+  };
 
   edgeClicked(event: MapMouseEvent): void {
     this.edgeClick.emit(event);
-  }
+  };
 
   onMapLoad(map: Map) {
     this.map = map;
+    this.edgesGeoJson = new EdgesGeojson(this.edges, this.projection);
+    // this.nodesGeoJson = new NodesGeojson(nodes, this.projection);
     this.map.on("style.load", () => {
       this.map.addControl(new Minimap(this.config.minimapOptions), 'top-right');
     });
     this.map.resize();
-  }
+  };
 
   config: Configuration = {
     minZoom: defaultMinZoom,
@@ -249,4 +257,4 @@ export class MapComponent {
     ],
     minimapOptions: defaultMinimapOptions
   };
-}
+};
