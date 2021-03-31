@@ -19,6 +19,6 @@ def get_forest(layer: nx.Graph, sublayer: nx.Graph) -> nx.Graph:
     """
     layer = layer.copy()
     layer.remove_edges_from(sublayer.edges)
-    disconnected_nodes = (node for node in sublayer.nodes if not layer[node])
+    disconnected_nodes = (node for node in sublayer.nodes if not layer.has_node(node))
     layer.remove_nodes_from(disconnected_nodes)
     return layer

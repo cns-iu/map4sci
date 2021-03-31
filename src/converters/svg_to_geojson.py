@@ -195,10 +195,11 @@ def process(graph: nx.Graph, tree: etree.ElementTree,
         elif tag == '{http://www.w3.org/2000/svg}g':
             if child.attrib['class'] == 'node':
                 id = child[0].text
-                x = float(child[2].attrib.pop('x'))
-                y = float(child[2].attrib.pop('y'))
-                node = make_node(graph, id, x, y, config)
-                nodes.append(node)
+                if len(child) > 2:
+                    x = float(child[2].attrib.pop('x'))
+                    y = float(child[2].attrib.pop('y'))
+                    node = make_node(graph, id, x, y, config)
+                    nodes.append(node)
             elif child.attrib['class'] == 'edge':
                 src, dest = child[0].text.split('--')
                 points = split_points(

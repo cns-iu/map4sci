@@ -18,8 +18,8 @@ nav:
 
 plugins:
   - search
-  - macros:
-      module_name: src.mkdocs_macros
+  #- macros:
+  #    module_name: src.mkdocs_macros
   - mktheapidocs:
       modules:
         src: &API_DOCS

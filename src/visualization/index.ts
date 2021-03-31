@@ -266,8 +266,8 @@ class ZmltMap {
         const { map, popups, sources, minimapOptions } = this;
 
         // Add zoom controls (without rotation controls) to the map.
-        map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-left');
-        map.addControl(new MiniMap(sources, minimapOptions), 'bottom-left');
+        map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), 'top-right');
+        map.addControl(new MiniMap(sources, minimapOptions), 'bottom-right');
         map.addControl(new mapboxgl.FullscreenControl());
         if (popups.length) this.addPopups();
 
