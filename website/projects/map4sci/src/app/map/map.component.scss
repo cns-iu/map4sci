@@ -1,3 +1,26 @@
 :host {
-  display: block;
+  ::ng-deep .mapboxgl-zoom-level-display {
+    margin-right: 0.875rem;
+    font-size: .875rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+    float: right;
+    padding-top: .9rem;
+    box-shadow: 1px 1px 3px grey;
+    margin-bottom: .5rem;
+    font-family: ‘Roboto’, sans-serif;
+  }
+
+  ::ng-deep .mapboxgl-popup-content {
+    padding-bottom: 0rem;
+  }
+
+  mgl-map {
+    height: 100%;
+    width: 100%;
+  }
 }
