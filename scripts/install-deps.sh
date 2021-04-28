@@ -25,6 +25,17 @@ set -u
 
 pip install -r "$DATA_PROCESSOR_DIR/requirements.txt"
 (cd "$WEBSITE_DIR"; npm install)
+({
+    cd "$DATA_PROCESSOR_DIR/libs"
+
+    export PREFIX="../"
+    rm -rf "./tippecanoe"
+    git clone https://github.com/mapbox/tippecanoe.git
+    cd tippecanoe
+    make -j
+    make install
+})
+
 
 set +u # Just to be on the safe side
 deactivate
