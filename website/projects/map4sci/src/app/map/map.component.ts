@@ -106,9 +106,8 @@ const defaultMinZoom = 0;
 const defaultMaxZoom = 10;
 
 
-
 @Component({
-  selector: 'spoke-map',
+  selector: 'm4s-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
@@ -223,8 +222,8 @@ export class MapComponent {
 
     // When the user zooms the map, this method handles showing and hiding data based on zoom level
     map.on('zoom', () => this.updateFilters());
-    map.on('zoomend', (e) => this.zoomChange.emit(this.map.getZoom()));
-    map.on('moveend', (e) => this.panChange.emit(this.map.getCenter().toArray() as [number, number]));
+    map.on('zoomend', () => this.zoomChange.emit(this.map.getZoom()));
+    map.on('moveend', () => this.panChange.emit(this.map.getCenter().toArray() as [number, number]));
   }
 
   addMapMarkers(markers: MapMarker[]): void {
@@ -299,9 +298,13 @@ export class MapComponent {
   }
 
   addEdgeHover(map: Map): void {
-    map.on('mousemove', 'edges', (e) => {
+    map.on('mousemove', 'edges', (e: { features: string | any[]; }) => {
         // When the mouse moves, check if the mouse is on top of a feature from the edges source.
-        if (e.features!.length > 0) {
+        if (!e.features) {
+          return;
+        }
+
+        if (e.features.length > 0) {
             // If there was already an edge with the hover status, turn that hover status off first
             if (this.hoverEdgeID) {
                 map.setFeatureState(
@@ -311,7 +314,7 @@ export class MapComponent {
             }
             // Set the hover status of the new edge to true, and save the ID to the object so we can compare
             // later, when the mouse moves again.
-            this.hoverEdgeID = e.features![0].id;
+            this.hoverEdgeID = e.features[0].id;
             map.setFeatureState(
                 { source: 'edges', id: this.hoverEdgeID },
                 { hover: true }
@@ -332,9 +335,13 @@ export class MapComponent {
   }
 
   addNodeHover(map: Map): void {
-    map.on('mousemove', 'nodes', (e) => {
+    map.on('mousemove', 'nodes', (e: { features: string | any[]; }) => {
+      if (!e.features) {
+        return;
+      }
+
       // When the mouse moves, check if the mouse is on top of a feature from the nodes source.
-      if (e.features!.length > 0) {
+      if (e.features.length > 0) {
           // If there was already an node with the hover status, turn that hover status off first
           if (this.hoverNodeID) {
               map.setFeatureState(
@@ -344,7 +351,7 @@ export class MapComponent {
           }
           // Set the hover status of the new node to true, and save the ID to the object so we can compare
           // later, when the mouse moves again.
-          this.hoverNodeID = e.features![0].id;
+          this.hoverNodeID = e.features[0].id;
           map.setFeatureState(
               { source: 'nodes', id: this.hoverNodeID },
               { hover: true }
@@ -374,8 +381,12 @@ export class MapComponent {
     const { map } = this;
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
-    map.on('click', layer, (e) => {
-      const descriptionHTML = this.createPopupHTML(e.features![0].properties, content);
+    map.on('click', layer, (e: { features: any; lngLat: any; }) => {
+      if (!e.features) {
+        return;
+      }
+
+      const descriptionHTML = this.createPopupHTML(e.features[0].properties, content);
       new Popup({
         closeOnClick: true,
         closeOnMove: true,
@@ -402,7 +413,7 @@ export class MapComponent {
   // to return the concatenated html string.
   createPopupHTML(description: Any, content: PopupContent): string {
     let html = '';
-    content.forEach((element, index) => {
+    content.forEach((element: Any[], index: number) => {
         if (!element) {
           return;
         }
