@@ -1,6 +1,6 @@
 import { Feature, Polygon } from 'geojson';
 import { GeoJSONSource, LngLatBounds, Map as MapboxMap, MapMouseEvent, Style } from 'mapbox-gl';
-import { MapSources, MiniMapOptions } from '../../../core/models/Map';
+import { MapSources, MiniMapOptions } from './Map';
 
 
 /*
@@ -58,7 +58,7 @@ export class MiniMap {
     this.trackingRectCoordinates = [[[], [], [], [], []]];
   }
 
-  onAdd(parentMap: MapboxMap) {
+  onAdd(parentMap: MapboxMap): HTMLDivElement {
     this.parentMap = parentMap;
 
     const opts = this.options;
@@ -78,11 +78,11 @@ export class MiniMap {
     return this.container;
   }
 
-  onRemove(parentMap: MapboxMap) {
+  onRemove(parentMap: MapboxMap): void {
     return;
   }
 
-  load() {
+  load(): void {
     const opts = this.options;
     const parentMap = this.parentMap;
     const miniMap = this.miniMap;
@@ -223,7 +223,7 @@ export class MiniMap {
     this.miniMapCanvas.addEventListener('mousewheel', this.preventDefault);
   }
 
-  mouseDown(e: MapMouseEvent) {
+  mouseDown(e: MapMouseEvent): void {
     if (this.isCursorOverFeature) {
       this.isDragging = true;
       this.previousPoint = this.currentPoint;
@@ -231,7 +231,7 @@ export class MiniMap {
     }
   }
 
-  mouseMove(e: MapMouseEvent) {
+  mouseMove(e: MapMouseEvent): void {
     this.ticking = false;
 
     const miniMap = this.miniMap;
@@ -260,12 +260,12 @@ export class MiniMap {
     }
   }
 
-  mouseUp() {
+  mouseUp(): void {
     this.isDragging = false;
     this.ticking = false;
   }
 
-  moveTrackingRect(offset: number[]) {
+  moveTrackingRect(offset: number[]): LngLatBounds {
     const rectPoints = this.trackingRectCoordinates[0] as [number, number][];
     const bounds = new LngLatBounds();
     rectPoints.forEach(coord => bounds.extend(coord));
@@ -283,12 +283,12 @@ export class MiniMap {
     return bounds;
   }
 
-  setTrackingRectBounds(bounds: LngLatBounds) {
+  setTrackingRectBounds(bounds: LngLatBounds): void {
     this.convertBoundsToPoints(bounds);
     this.trackingRect.setData(this.trackingRectData);
   }
 
-  convertBoundsToPoints(bounds: LngLatBounds) {
+  convertBoundsToPoints(bounds: LngLatBounds): void {
     const ne = bounds.getNorthEast();
     const sw = bounds.getSouthWest();
     const trc = this.trackingRectCoordinates;
@@ -305,7 +305,7 @@ export class MiniMap {
     trc[0][4][1] = ne.lat;
   }
 
-  update() {
+  update(): void {
     if (this.isDragging) {
       return;
     }
@@ -319,7 +319,7 @@ export class MiniMap {
     }
   }
 
-  zoomAdjust() {
+  zoomAdjust(): void {
     const miniMap = this.miniMap;
     const parentMap = this.parentMap;
     const miniZoom = miniMap.getZoom();
@@ -347,7 +347,7 @@ export class MiniMap {
     }
   }
 
-  createContainer(parentMap: MapboxMap) {
+  createContainer(parentMap: MapboxMap): HTMLDivElement {
     const opts = this.options;
     const container = document.createElement('div');
 
@@ -364,7 +364,7 @@ export class MiniMap {
     return container;
   }
 
-  preventDefault(e: { preventDefault: () => void }) {
+  preventDefault(e: { preventDefault: () => void }): void {
     e.preventDefault();
   }
 }

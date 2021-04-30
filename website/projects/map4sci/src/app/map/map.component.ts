@@ -1,9 +1,9 @@
 import { Any } from '@angular-ru/common/typings';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
-import { FullscreenControl, Map, MapLayerMouseEvent, Marker, NavigationControl, Style, Popup } from 'mapbox-gl';
+import { FullscreenControl, Map, MapLayerMouseEvent, Marker, NavigationControl, Style, Popup, Layout } from 'mapbox-gl';
 
-import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from '../../../core/models/Map';
+import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './Map';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 
@@ -119,7 +119,7 @@ export class MapComponent {
   @Input() clusterFeatures!: FeatureCollection;
   @Input() boundaryFeatures!: FeatureCollection;
   @Input() currentZoom = defaultInitialZoom;
-  @Input() mapCenter: [number, number] = [0,0];
+  @Input() mapCenter: [number, number] = [0, 0];
   @Input() minimapOptions: MiniMapOptions = defaultMinimapOptions;
   @Input() mapMarkers: MapMarker[] = [];
 
@@ -144,6 +144,15 @@ export class MapComponent {
   currentEdgeFormula: Any = ['get', 'zoom', ['at', ['get', 'level'], ['literal', this.edges]]];
   edgeFormula = ['at', ['get', 'level'], ['literal', this.edges]];
   lastEdgeFormula = ['at', this.edges.length - 1, ['literal', this.edges]];
+
+  nodeLabelsLayout: Layout = {
+    'text-field': '{label}',
+    'text-font': ['Open Sans Regular'],
+    'text-size': ['get', 'fontSize', this.currentNodeFormula],
+    'text-variable-anchor': ['top', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'center'],
+    'text-radial-offset': 0.25,
+    'text-allow-overlap': false
+  } as unknown as Layout;
 
   /*
     Popup content needs to follow specific pattern to function properly.
@@ -298,7 +307,7 @@ export class MapComponent {
   }
 
   addEdgeHover(map: Map): void {
-    map.on('mousemove', 'edges', (e: { features: string | any[]; }) => {
+    map.on('mousemove', 'edges', (e) => {
         // When the mouse moves, check if the mouse is on top of a feature from the edges source.
         if (!e.features) {
           return;
@@ -335,7 +344,7 @@ export class MapComponent {
   }
 
   addNodeHover(map: Map): void {
-    map.on('mousemove', 'nodes', (e: { features: string | any[]; }) => {
+    map.on('mousemove', 'nodes', (e) => {
       if (!e.features) {
         return;
       }
@@ -381,7 +390,7 @@ export class MapComponent {
     const { map } = this;
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
-    map.on('click', layer, (e: { features: any; lngLat: any; }) => {
+    map.on('click', layer, (e) => {
       if (!e.features) {
         return;
       }
@@ -413,7 +422,7 @@ export class MapComponent {
   // to return the concatenated html string.
   createPopupHTML(description: Any, content: PopupContent): string {
     let html = '';
-    content.forEach((element: Any[], index: number) => {
+    content.forEach((element, index: number) => {
         if (!element) {
           return;
         }

@@ -23,6 +23,7 @@ export class ZoomLevelControl implements IControl {
   }
 
   onRemove(map: MapboxMap): void {
+    // tslint:disable-next-line: no-non-null-assertion
     map.off('zoom', this.zoomCallback!);
     this.container?.parentNode?.removeChild(this.container);
   }

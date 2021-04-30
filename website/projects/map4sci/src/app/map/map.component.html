@@ -99,14 +99,7 @@
     id="node_labels"
     source="nodes"
     type="symbol"
-    [layout]="{
-      'text-field': '{label}',
-      'text-font': ['Open Sans Regular'],
-      'text-size': ['get', 'fontSize', currentNodeFormula],
-      'text-variable-anchor': ['top', 'bottom', 'top-left', 'top-right', 'bottom-left', 'bottom-right', 'left', 'right', 'center'],
-      'text-radial-offset': 0.25,
-      'text-allow-overlap': false
-    }"
+    [layout]="nodeLabelsLayout"
     [filter]="['>=', currentZoom, ['get', 'zoom', currentNodeFormula]]">
   </mgl-layer>
 </mgl-map>
