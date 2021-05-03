@@ -1,1 +1,8 @@
-<m4s-map></m4s-map>
+<h3>App.component</h3>
+<button (click)="showFiles()">Log Files</button>
+<m4s-map
+  [edgeFeatures]="testFiles.edges"
+  [nodeFeatures]="testFiles.nodes"
+  [clusterFeatures]="testFiles.cluster"
+  [boundaryFeatures]="testFiles.boundary"
+></m4s-map>

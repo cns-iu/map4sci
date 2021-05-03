@@ -1,7 +1,7 @@
 import { FeatureCollection, Geometry, Feature } from 'geojson';
 
 import { Cartesian2dProjection } from './cartesian-2d-projection';
-import { Edge } from './map.component'
+import { Edge } from './map.component';
 
 
 export class EdgesGeojson implements FeatureCollection<Geometry> {
