@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, takeUntil, tap } from 'rxjs/operators';
 import { FeatureCollection } from 'geojson';
+
+const EMPTY_FEATURES: FeatureCollection = {
+  type: 'FeatureCollection',
+  features: []
+};
 
 @Component({
   selector: 'm4s-root',
@@ -12,10 +16,10 @@ export class AppComponent implements OnInit {
   constructor(private readonly http: HttpClient) { }
 
   testFiles: any = {
-    boundary: {},
-    cluster: {},
-    edges: {},
-    nodes: {}
+    boundary: EMPTY_FEATURES,
+    cluster: EMPTY_FEATURES,
+    edges: EMPTY_FEATURES,
+    nodes: EMPTY_FEATURES
   };
 
   ngOnInit(): void {

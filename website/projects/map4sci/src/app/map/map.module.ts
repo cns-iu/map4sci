@@ -7,9 +7,9 @@ import { MapComponent } from './map.component';
 
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     NgxMapboxGLModule.withConfig({
-      accessToken: 'pk.eyJ1IjoiZWRsdTc3NyIsImEiOiJja2wycDV2dzAwazg1MnFxamd2dDFmdmlyIn0.UxjI5qHgJIN5NZFJRi37DA', // Optional, can also be set per map (accessToken input of mgl-map)
+      accessToken: 'pk.eyJ1IjoiZWRsdTc3NyIsImEiOiJja2wycDV2dzAwazg1MnFxamd2dDFmdmlyIn0.UxjI5qHgJIN5NZFJRi37DA',
     })
   ],
   declarations: [MapComponent],
