@@ -2,7 +2,7 @@
 source constants.sh
 set -ev
 
-rm -rf $OUT/site-data/maps
+rm -rf $OUT/site-data/datasets
 
 for datasetDir in $OUT/../../*/$VERSION
 do
@@ -11,10 +11,9 @@ do
   
   if [ -e $datasetDir/clustered ]
   then
-    mapDir=$OUT/site-data/maps/$dataset
+    mapDir=$OUT/site-data/datasets/$dataset
     mkdir -p $mapDir
-    rm -rf $mapDir
-    cp -r $OUT/site-data/visualization $mapDir
+    rm -f $mapDir/*.geojson
     cp -r $datasetDir/clustered/*.geojson $mapDir
   fi
 done

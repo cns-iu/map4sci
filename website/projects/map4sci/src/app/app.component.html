@@ -1,0 +1,11 @@
+<h3>App.component</h3>
+<button (click)="showFiles()">Log Files</button>
+<div style="width: 100vw; height: 80vh;">
+<m4s-map
+  *ngIf="testFiles.nodes.features.length > 0"
+  [edgeFeatures]="testFiles.edges"
+  [nodeFeatures]="testFiles.nodes"
+  [clusterFeatures]="testFiles.cluster"
+  [boundaryFeatures]="testFiles.boundary"
+></m4s-map>
+</div>
