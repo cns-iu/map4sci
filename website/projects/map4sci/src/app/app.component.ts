@@ -1,7 +1,7 @@
 import { Any } from '@angular-ru/common/typings';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { EMPTY_DATASET, MapDataset } from './map/map';
+import { EMPTY_DATASET } from './map/map';
 
 @Component({
   selector: 'm4s-root',
@@ -37,18 +37,15 @@ export class AppComponent implements OnInit {
     const dataset: Any = {};
 
     if (datasetCache[datasetInfo.id]) {
-      console.log('Pulled from cache');
       return datasetCache[datasetInfo.id];
     }
 
-    console.log('Pulling from http');
     files.forEach(async file => {
       const url = `${datasetInfo.dir}/${file}.geojson`;
       dataset[file] = await http.get(url).toPromise();
     });
 
     this.datasetCache[datasetInfo.id] = dataset;
-    console.log('Added to cache: ', this.datasetCache);
 
     return dataset;
   }
