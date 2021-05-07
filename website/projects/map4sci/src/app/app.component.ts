@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
 
   dataset: Any = EMPTY_DATASET;
   datasetDirectory: Any[] = [];
+  datasetCache: Any = {};
 
   async ngOnInit(): Promise<void> {
     this.datasetDirectory = await this.getMapDataLookup();
@@ -32,13 +33,22 @@ export class AppComponent implements OnInit {
   }
 
   async getMapData(datasetInfo: Any): Promise<Any> {
-    const { http, files } = this;
+    const { http, files, datasetCache } = this;
     const dataset: Any = {};
 
+    if (datasetCache[datasetInfo.id]) {
+      console.log('Pulled from cache');
+      return datasetCache[datasetInfo.id];
+    }
+
+    console.log('Pulling from http');
     files.forEach(async file => {
       const url = `${datasetInfo.dir}/${file}.geojson`;
       dataset[file] = await http.get(url).toPromise();
     });
+
+    this.datasetCache[datasetInfo.id] = dataset;
+    console.log('Added to cache: ', this.datasetCache);
 
     return dataset;
   }

@@ -1,4 +1,3 @@
-<button (click)="mapDataSwitcherChange('test2')">test 2</button>
 <select *ngIf="datasetDirectory.length > 1" (input)="mapDataSwitcherChange($event)">
   <option *ngFor="let dataset of datasetDirectory" [value]="dataset.id">{{dataset.name}}</option>
 </select>
