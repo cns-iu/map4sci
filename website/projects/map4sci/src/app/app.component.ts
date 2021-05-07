@@ -38,7 +38,6 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    console.log('dataset before: ', this.dataset);
     this.datasetDirectory = await this.getMapDataLookup();
     this.updateCurrentDataset(this.datasetDirectory[0]);
   }
@@ -73,7 +72,6 @@ export class AppComponent implements OnInit {
     }
     this.dataset = EMPTY_DATASET;
     this.dataset = await this.getMapData(datasetInfo);
-    console.log('dataset after: ', this.dataset);
   }
 
   mapDataSwitcherChange(event: Any): void {
