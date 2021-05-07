@@ -82,16 +82,21 @@ export interface ZoomLookupItem {
 export type ZoomLookup = ZoomLookupItem[];
 
 export interface MapDataset {
+  [index: string]: FeatureCollection;
   boundary: FeatureCollection;
   cluster: FeatureCollection;
   edges: FeatureCollection;
   nodes: FeatureCollection;
-  id: string;
+}
+
+export interface MapDatasetCache {
+  [key: string]: MapDataset;
 }
 
 export interface MapDatasetDirectory {
-  [key: string]: MapDataset;
-  [index: number]: MapDataset;
+  id: string;
+  name: string;
+  dir: string;
 }
 
 export const EMPTY_FEATURES: FeatureCollection = {
@@ -99,8 +104,7 @@ export const EMPTY_FEATURES: FeatureCollection = {
   features: []
 };
 
-export const EMPTY_DATASET = {
-  id: 'empty',
+export const EMPTY_DATASET: MapDataset = {
   boundary: EMPTY_FEATURES,
   cluster: EMPTY_FEATURES,
   edges: EMPTY_FEATURES,
