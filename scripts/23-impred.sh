@@ -1,5 +1,6 @@
 #!/bin/bash
 source constants.sh
+if [ "$METHOD" != "impred" ]; then exit; fi;
 set -ev
 
 mkdir -p $OUT/impred

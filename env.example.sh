@@ -5,6 +5,8 @@
 DEV_PORT=4444
 BASE_URL="http://localhost:${DEV_PORT}"
 
+METHOD=impred
+
 # Whether to sync with box.com
 DOSYNC=true
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 source constants.sh
+if [ "$METHOD" != "impred" ]; then exit; fi;
 set -ev
 
 EDEGE_ATTRACTION=30

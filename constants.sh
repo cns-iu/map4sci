@@ -25,6 +25,7 @@ LAYOUT_DIR="$OUT/layout"
 _=${DATASET:?"No dataset selected!"}
 _=${NETWORK:?"No network file selected!"}
 _=${LAYERS:?"No layers specified!"}
+_=${METHOD:?"No method (impred, batchtree) specified!"}
 
 # Set defaults
 _=${ITERATIONS:=1}
