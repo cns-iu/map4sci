@@ -11,9 +11,9 @@
 /libs/eba/kmeans
 /libs/eba/build/
 /lib/eba/build/
+/libs/tippecanoe-bin
 /libs/tippecanoe
-/libs/bin
-/libs/share
+/libs/BatchTree
 
 # Only sample datasets should be committed
 /datasets/*
@@ -21,3 +21,6 @@
 !/datasets/lastfm
 !/datasets/google-topics-full
 !/datasets/config.example.sh
+
+# BatchTree leavings
+/Results.txt

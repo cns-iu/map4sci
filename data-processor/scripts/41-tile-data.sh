@@ -2,5 +2,9 @@
 source constants.sh
 set -ev
 
-# need to adjust reference to tippcanoe to right place
-tippecanoe -zg -o out.mbtiles --drop-densest-as-needed in.geojson
+DIR=$OUT/clustered
+
+for f in $DIR/*.geojson
+do
+  libs/tippecanoe-bin/bin/tippecanoe -zg -o ${f%.*}.mbtiles --drop-densest-as-needed $f
+done

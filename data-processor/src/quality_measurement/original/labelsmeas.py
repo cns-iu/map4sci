@@ -143,8 +143,7 @@ def labelsBBRatio(G):
 
     l_area = totLabelsArea(G)
 
-    aspectRatio = bb_area/l_area
-
+    aspectRatio = bb_area/l_area if l_area > 0 else 0
 
     aspectRatio = '%.2E' % decimal.Decimal(aspectRatio)
 
