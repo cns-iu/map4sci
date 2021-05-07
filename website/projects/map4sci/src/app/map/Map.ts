@@ -80,3 +80,29 @@ export interface ZoomLookupItem {
   zoom: number;
 }
 export type ZoomLookup = ZoomLookupItem[];
+
+export interface MapDataset {
+  boundary: FeatureCollection;
+  cluster: FeatureCollection;
+  edges: FeatureCollection;
+  nodes: FeatureCollection;
+  id: string;
+}
+
+export interface MapDatasetDirectory {
+  [key: string]: MapDataset;
+  [index: number]: MapDataset;
+}
+
+export const EMPTY_FEATURES: FeatureCollection = {
+  type: 'FeatureCollection',
+  features: []
+};
+
+export const EMPTY_DATASET = {
+  id: 'empty',
+  boundary: EMPTY_FEATURES,
+  cluster: EMPTY_FEATURES,
+  edges: EMPTY_FEATURES,
+  nodes: EMPTY_FEATURES
+};

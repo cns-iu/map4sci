@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Map, MapLayerMouseEvent, Marker, NavigationControl, Style, Popup, Layout } from 'mapbox-gl';
 
-import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './Map';
+import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './map';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 

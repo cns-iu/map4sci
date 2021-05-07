@@ -1,14 +1,13 @@
-<h3>App.component</h3>
-<button (click)="showFiles()">Log Files</button>
-<select *ngIf="datasetLookup.length > 0" (change)="updateCurrentDataset($event)">
-  <option *ngFor="let dataset of datasetLookup" [value]="dataset.id">{{dataset.name}}</option>
+<button (click)="mapDataSwitcherChange('test2')">test 2</button>
+<select *ngIf="datasetDirectory.length > 1" (input)="mapDataSwitcherChange($event)">
+  <option *ngFor="let dataset of datasetDirectory" [value]="dataset.id">{{dataset.name}}</option>
 </select>
 <div style="width: 100vw; height: 80vh;">
 <m4s-map
-  *ngIf="currentDataset.nodes.features.length > 0"
-  [edgeFeatures]="currentDataset.edges"
-  [nodeFeatures]="currentDataset.nodes"
-  [clusterFeatures]="currentDataset.cluster"
-  [boundaryFeatures]="currentDataset.boundary"
+  *ngIf="dataset.nodes.features.length > 0"
+  [edgeFeatures]="dataset.edges"
+  [nodeFeatures]="dataset.nodes"
+  [clusterFeatures]="dataset.cluster"
+  [boundaryFeatures]="dataset.boundary"
 ></m4s-map>
 </div>
