@@ -3,7 +3,7 @@
 </select>
 <div style="width: 100vw; height: 80vh;">
 <m4s-map
-  *ngIf="dataset.nodes.features.length > 0"
+  *ngIf="displayMap"
   [edgeFeatures]="dataset.edges"
   [nodeFeatures]="dataset.nodes"
   [clusterFeatures]="dataset.cluster"

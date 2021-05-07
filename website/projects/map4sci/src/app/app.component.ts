@@ -22,7 +22,23 @@ export class AppComponent implements OnInit {
   datasetDirectory: Any[] = [];
   datasetCache: Any = {};
 
+  get displayMap(): boolean {
+    const { dataset } = this;
+    if (!dataset.nodes) {
+      return false;
+    }
+    if (!dataset.nodes.features) {
+      return false;
+    }
+    if (dataset.nodes.features.length < 1) {
+      return false;
+    }
+
+    return true;
+  }
+
   async ngOnInit(): Promise<void> {
+    console.log('dataset before: ', this.dataset);
     this.datasetDirectory = await this.getMapDataLookup();
     this.updateCurrentDataset(this.datasetDirectory[0]);
   }
@@ -44,6 +60,7 @@ export class AppComponent implements OnInit {
       const url = `${datasetInfo.dir}/${file}.geojson`;
       dataset[file] = await http.get(url).toPromise();
     });
+    dataset.id = datasetInfo.id;
 
     this.datasetCache[datasetInfo.id] = dataset;
 
@@ -56,6 +73,7 @@ export class AppComponent implements OnInit {
     }
     this.dataset = EMPTY_DATASET;
     this.dataset = await this.getMapData(datasetInfo);
+    console.log('dataset after: ', this.dataset);
   }
 
   mapDataSwitcherChange(event: Any): void {
