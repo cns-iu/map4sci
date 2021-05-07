@@ -45,24 +45,24 @@ export class AppComponent implements OnInit {
   ];
 
   dataset: Any = { };
-  datasetKeys: string[] = [];
+  datasetLookup: Any[] = [];
   currentDataset: MapDataset = EMPTY_DATASET;
 
   async ngOnInit(): Promise<void> {
-    this.datasetKeys = await this.getMapData();
-    this.currentDataset = this.dataset[this.datasetKeys[0]];
+    this.datasetLookup = await this.getMapData();
+    this.currentDataset = this.dataset[this.datasetLookup[0].id];
   }
 
-  async getMapData(): Promise<string[]> {
+  async getMapData(): Promise<Any[]> {
     const { http, dataset, files } = this;
-    const keys: string[] = [];
+    const lookup: Any = [];
 
     // Fetch the index.json file
     const datasetDirectory: any = await http.get('assets/datasets/index.json').toPromise();
 
     // For each directory in the idnex.json file, go through and fetch the map data.
     datasetDirectory.forEach((tempDataset: Any) => {
-      keys.push(tempDataset.id);
+      lookup.push(tempDataset);
       this.dataset[tempDataset.id] = { id: tempDataset.id };
       files.forEach(async file => {
         const url = `${tempDataset.dir}/${file}.geojson`;
@@ -71,7 +71,15 @@ export class AppComponent implements OnInit {
       });
     });
 
-    return keys;
+    return lookup;
+  }
+
+  updateCurrentDataset(key: Any): void {
+    if (!this.dataset[key]) {
+      return;
+    }
+    this.currentDataset = EMPTY_DATASET;
+    this.currentDataset = this.dataset[key];
   }
 
   showFiles(): void {

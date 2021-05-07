@@ -1,5 +1,8 @@
 <h3>App.component</h3>
 <button (click)="showFiles()">Log Files</button>
+<select *ngIf="datasetLookup.length > 0" (change)="updateCurrentDataset($event)">
+  <option *ngFor="let dataset of datasetLookup" [value]="dataset.id">{{dataset.name}}</option>
+</select>
 <div style="width: 100vw; height: 80vh;">
 <m4s-map
   *ngIf="currentDataset.nodes.features.length > 0"

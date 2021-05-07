@@ -1,0 +1,13 @@
+select {
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: whitesmoke;
+  padding: 1rem;
+  padding-bottom: 19px;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 3px solid black;
+    padding-bottom: 17px;
+  }
+}
