@@ -40,8 +40,7 @@ export class AppComponent implements OnInit {
   }
 
   mapDataSwitcherChange(event: Any): void {
-    const mapKey: string = event.target.value;
-    this.mapData.setDataset(mapKey);
+    const mapId: string = event.target.value;
+    this.mapData.setDataset(mapId);
   }
 }
-
