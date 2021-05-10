@@ -11,3 +11,11 @@ cp $OUT/clustered/*.geojson $OUT_DS
 rm -rf site
 cp -r ../website/dist/map4sci/ site
 cp -r $OUT/site-data/* site/assets
+
+if [ ! -e $OUT/site-data/datasets/index.json ]; then
+  cat > site/assets/datasets/index.json << EOF
+[
+  {"id": "$DATASET", "name": "$DATASET", "dir": "assets/datasets/$DATASET"}
+]
+EOF
+fi

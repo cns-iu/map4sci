@@ -1,0 +1,12 @@
+[
+  {
+    "id": "test",
+    "name": "Test Data A",
+    "dir": "assets/datasets/test"
+  },
+  {
+    "id": "test2",
+    "name": "Test Data B",
+    "dir": "assets/datasets/test2"
+  }
+]

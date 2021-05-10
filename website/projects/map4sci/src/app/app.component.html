@@ -1,11 +1,17 @@
-<h3>App.component</h3>
-<button (click)="showFiles()">Log Files</button>
-<div style="width: 100vw; height: 80vh;">
-<m4s-map
-  *ngIf="testFiles.nodes.features.length > 0"
-  [edgeFeatures]="testFiles.edges"
-  [nodeFeatures]="testFiles.nodes"
-  [clusterFeatures]="testFiles.cluster"
-  [boundaryFeatures]="testFiles.boundary"
-></m4s-map>
+<select class="dataset-selector"
+  *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1"
+  (input)="mapDataSwitcherChange($event)">
+  <option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
+      {{ dataset.name }}
+  </option>
+</select>
+
+<div class="map-wrapper">
+  <m4s-map
+    *ngIf="displayMap"
+    [edgeFeatures]="dataset.edges"
+    [nodeFeatures]="dataset.nodes"
+    [clusterFeatures]="dataset.cluster"
+    [boundaryFeatures]="dataset.boundary">
+  </m4s-map>
 </div>

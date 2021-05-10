@@ -1,11 +1,10 @@
+import { Any } from '@angular-ru/common/typings';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { FeatureCollection } from 'geojson';
+import { Subscription } from 'rxjs';
 
-const EMPTY_FEATURES: FeatureCollection = {
-  type: 'FeatureCollection',
-  features: []
-};
+import { EMPTY_DATASET, MapDataset } from './map/map';
+import { MapDataService } from './services/map-data.service';
+
 
 @Component({
   selector: 'm4s-root',
@@ -13,39 +12,35 @@ const EMPTY_FEATURES: FeatureCollection = {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private readonly http: HttpClient) { }
+  private subscriptions = new Subscription();
 
-  testFiles: any = {
-    boundary: EMPTY_FEATURES,
-    cluster: EMPTY_FEATURES,
-    edges: EMPTY_FEATURES,
-    nodes: EMPTY_FEATURES
-  };
+  constructor(readonly mapData: MapDataService) { }
+
+  dataset: MapDataset = EMPTY_DATASET;
+
+  get displayMap(): boolean {
+    const { dataset } = this;
+    if (!dataset.nodes) {
+      return false;
+    }
+    if (!dataset.nodes.features) {
+      return false;
+    }
+    if (dataset.nodes.features.length < 1) {
+      return false;
+    }
+
+    return true;
+  }
 
   ngOnInit(): void {
-    this.getData();
+    this.subscriptions.add(
+      this.mapData.dataset$.subscribe(ds => this.dataset = ds as unknown as MapDataset)
+    );
   }
 
-  getData(): void {
-    console.log('getData()');
-    const files: string[] = [
-      'boundary',
-      'cluster',
-      'edges',
-      'nodes'
-    ];
-
-    files.forEach(file => {
-      // tslint:disable-next-line: deprecation
-      this.http.get(`assets/datasets/test/${file}.geojson`).subscribe(data => {
-        console.log('Adding ', file);
-        this.testFiles[file] = data;
-      });
-    });
-  }
-
-  showFiles(): void {
-    console.log('testFiles: ', this.testFiles);
+  mapDataSwitcherChange(event: Any): void {
+    const mapId: string = event.target.value;
+    this.mapData.setDataset(mapId);
   }
 }
-

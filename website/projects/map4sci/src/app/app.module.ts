@@ -1,3 +1,4 @@
+import { MapDataService } from './services/map-data.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
     MapModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [MapDataService],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })

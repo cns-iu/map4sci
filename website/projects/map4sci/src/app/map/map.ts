@@ -1,4 +1,4 @@
-import { Any } from '@angular-ru/common/typings';
+import { Any, Immutable } from '@angular-ru/common/typings';
 import { FeatureCollection } from 'geojson';
 import { LngLatBoundsLike, Style } from 'mapbox-gl';
 
@@ -80,3 +80,33 @@ export interface ZoomLookupItem {
   zoom: number;
 }
 export type ZoomLookup = ZoomLookupItem[];
+
+export interface MapDataset {
+  [index: string]: FeatureCollection;
+  boundary: FeatureCollection;
+  cluster: FeatureCollection;
+  edges: FeatureCollection;
+  nodes: FeatureCollection;
+}
+
+export interface MapDatasetCache {
+  [key: string]: Immutable<MapDataset>;
+}
+
+export interface MapDatasetDirectory {
+  id: string;
+  name: string;
+  dir: string;
+}
+
+export const EMPTY_FEATURES: FeatureCollection = {
+  type: 'FeatureCollection',
+  features: []
+};
+
+export const EMPTY_DATASET: MapDataset = {
+  boundary: EMPTY_FEATURES,
+  cluster: EMPTY_FEATURES,
+  edges: EMPTY_FEATURES,
+  nodes: EMPTY_FEATURES
+};

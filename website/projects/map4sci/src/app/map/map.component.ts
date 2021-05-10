@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Map, MapLayerMouseEvent, Marker, NavigationControl, Style, Popup, Layout } from 'mapbox-gl';
 
-import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './Map';
+import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './map';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 
@@ -214,9 +214,9 @@ export class MapComponent {
     map.addControl(new NavigationControl({ showCompass: false }), 'top-right');
     map.addControl(new FullscreenControl({}), 'top-right');
     if (this.nodeFeatures.features.length === 0) {
-      console.log('0 node features.');
+      console.warn('0 node features.');
     } else if (this.clusterFeatures.features.length === 0) {
-      console.log('0 cluster features');
+      console.warn('0 cluster features');
     } else {
       map.addControl(new MiniMap({nodes: this.nodeFeatures, clusters: this.clusterFeatures}, this.minimapOptions), 'bottom-right');
     }

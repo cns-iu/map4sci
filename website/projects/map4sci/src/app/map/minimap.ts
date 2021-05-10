@@ -1,6 +1,6 @@
 import { Feature, Polygon } from 'geojson';
 import { GeoJSONSource, LngLatBounds, Map as MapboxMap, MapMouseEvent, Style } from 'mapbox-gl';
-import { MapSources, MiniMapOptions } from './Map';
+import { MapSources, MiniMapOptions } from './map';
 
 
 /*
