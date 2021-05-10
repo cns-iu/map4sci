@@ -1,8 +1,13 @@
-select {
+.dataset-selector {
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  top: 0;
   border: none;
   border-bottom: 1px solid black;
   background-color: whitesmoke;
   padding: 1rem;
+  height: 3rem;
   padding-bottom: 19px;
   cursor: pointer;
 
@@ -10,4 +15,9 @@ select {
     border-bottom: 3px solid black;
     padding-bottom: 17px;
   }
+}
+
+.map-wrapper {
+  width: 100vw;
+  height: 100vh;
 }

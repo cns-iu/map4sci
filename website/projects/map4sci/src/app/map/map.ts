@@ -1,4 +1,4 @@
-import { Any } from '@angular-ru/common/typings';
+import { Any, Immutable } from '@angular-ru/common/typings';
 import { FeatureCollection } from 'geojson';
 import { LngLatBoundsLike, Style } from 'mapbox-gl';
 
@@ -90,7 +90,7 @@ export interface MapDataset {
 }
 
 export interface MapDatasetCache {
-  [key: string]: MapDataset;
+  [key: string]: Immutable<MapDataset>;
 }
 
 export interface MapDatasetDirectory {

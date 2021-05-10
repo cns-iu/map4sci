@@ -1,8 +1,10 @@
-import { MapDataService } from './services/map-data.service';
 import { Any } from '@angular-ru/common/typings';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { EMPTY_DATASET, MapDataset, MapDatasetDirectory } from './map/map';
+import { Subscription } from 'rxjs';
+
+import { EMPTY_DATASET, MapDataset } from './map/map';
+import { MapDataService } from './services/map-data.service';
+
 
 @Component({
   selector: 'm4s-root',
@@ -10,20 +12,11 @@ import { EMPTY_DATASET, MapDataset, MapDatasetDirectory } from './map/map';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private readonly http: HttpClient,
-    private readonly mapData: MapDataService
-  ) { }
+  private subscriptions = new Subscription();
 
-  files: string[] = [
-    'boundary',
-    'cluster',
-    'edges',
-    'nodes'
-  ];
+  constructor(readonly mapData: MapDataService) { }
 
   dataset: MapDataset = EMPTY_DATASET;
-  datasetDirectory: MapDatasetDirectory[] = [];
 
   get displayMap(): boolean {
     const { dataset } = this;
@@ -40,14 +33,15 @@ export class AppComponent implements OnInit {
     return true;
   }
 
-  async ngOnInit(): Promise<void> {
-    this.datasetDirectory = await this.mapData.getDatasetDirectory();
-    this.dataset = await this.mapData.getCurrentDataset();
+  ngOnInit(): void {
+    this.subscriptions.add(
+      this.mapData.dataset$.subscribe(ds => this.dataset = ds as unknown as MapDataset)
+    );
   }
 
   mapDataSwitcherChange(event: Any): void {
     const mapKey: string = event.target.value;
-    this.mapData.setCurrentDataset(mapKey);
+    this.mapData.setDataset(mapKey);
   }
 }
 

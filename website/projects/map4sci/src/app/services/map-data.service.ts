@@ -1,71 +1,72 @@
-import { MapDataset, MapDatasetCache, MapDatasetDirectory } from './../map/map';
-import { Injectable, OnDestroy, OnInit } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { EMPTY_DATASET } from '../map/map';
-import { FeatureCollection } from 'geojson';
+import { Any, Immutable } from '@angular-ru/common/typings';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnDestroy } from '@angular/core';
+import { BehaviorSubject, forkJoin, Observable, of, Subscription } from 'rxjs';
+import { catchError, map, take, tap } from 'rxjs/operators';
+
+import { EMPTY_DATASET, MapDataset, MapDatasetCache, MapDatasetDirectory } from '../map/map';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class MapDataService {
-  private dataset: MapDataset = EMPTY_DATASET;
-  private datasetDirectory: MapDatasetDirectory[] = [];
+export class MapDataService implements OnDestroy {
   private datasetCache: MapDatasetCache = {};
   private files: string[] = [ 'boundary', 'cluster', 'edges', 'nodes' ];
 
-  constructor(private readonly http: HttpClient) { }
+  private datasetSubject = new BehaviorSubject<Immutable<MapDataset>>(EMPTY_DATASET);
+  private datasetDirectorySubject = new BehaviorSubject<Immutable<MapDatasetDirectory[]>>([]);
+  private subscriptions = new Subscription();
 
-  async getCurrentDataset(): Promise<MapDataset> {
-    if (this.dataset === EMPTY_DATASET) {
-      const directory = await this.getDatasetDirectory();
-      const data = await this.getDataset(directory[0].id);
-      this.dataset = data;
-    }
-    return {...this.dataset};
+  public dataset$ = this.datasetSubject.asObservable();
+  public datasetDirectory$ = this.datasetDirectorySubject.asObservable();
+
+  constructor(private readonly http: HttpClient) {
+    // Grab the dataset directory index
+    this.http.get<MapDatasetDirectory[]>('assets/datasets/index.json')
+      .pipe(take(1), tap((dir) => this.datasetDirectorySubject.next(dir)))
+      .subscribe();
+
+    // Set current dataset to the 'first' dataset whenever a directory is loaded
+    this.subscriptions.add(
+      this.datasetDirectory$.pipe(tap((dir) => {
+        if (dir.length > 0) { this.setDataset(dir[0].id); }
+      })).subscribe()
+    );
   }
 
-  async getDatasetDirectory(): Promise<MapDatasetDirectory[]> {
-    if (this.datasetDirectory.length < 1) {
-      const directory = await this.fetchDatasetDirectory();
-      this.datasetDirectory = directory;
-    }
-    return [...this.datasetDirectory];
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
-  async fetchDatasetDirectory(): Promise<MapDatasetDirectory[]> {
-    return await this.http.get('assets/datasets/index.json').toPromise() as MapDatasetDirectory[];
+  setDataset(key: string): void {
+    this.getDataset(key).pipe(tap((dataset) =>
+        this.datasetSubject.next(dataset)
+      )).subscribe();
   }
 
-  async getDataset(key: string): Promise<MapDataset> {
-    const { files, http } = this;
+  getDataset(key: string): Observable<Immutable<MapDataset>> {
     if (this.datasetCache[key]) {
-      return this.datasetCache[key];
+      return of(this.datasetCache[key]);
     }
 
-    const dataDirectory = this.mapKeyToDirectory(key);
-    if (!dataDirectory) {
-      return EMPTY_DATASET;
+    const dataDirectory = this.datasetDirectorySubject.getValue();
+    if (!dataDirectory || !dataDirectory.find(d => d.id === key)) {
+      return of(EMPTY_DATASET);
     }
 
-    const tempDataset: MapDataset = EMPTY_DATASET;
-    files.forEach(async (file: string) => {
-      const url = `${dataDirectory.dir}/${file}.geojson`;
-      tempDataset[file] = await http.get(url).toPromise() as FeatureCollection;
-    });
-    this.datasetCache[dataDirectory.id] = tempDataset;
-    return tempDataset;
-  }
-
-  async setCurrentDataset(key: string): Promise<void> {
-    this.dataset = await this.getDataset(key);
-  }
-
-  mapKeyToDirectory(key: string): MapDatasetDirectory | undefined {
-    if (this.datasetDirectory.find(directory => directory.id === key)) {
-      return this.datasetDirectory.find(directory => directory.id === key);
+    const { files, http } = this;
+    const baseUrl = dataDirectory.find(d => d.id === key)?.dir as string;
+    const dataReqs = {} as Any;
+    for (const file of files) {
+      dataReqs[file] = http.get(`${baseUrl}/${file}.geojson`);
     }
-    return {} as MapDatasetDirectory;
+
+    return forkJoin(dataReqs).pipe(
+      map<unknown, MapDataset>(m => m as MapDataset),
+      catchError(m => of(EMPTY_DATASET)),
+      tap(m => this.datasetCache[key] = m),
+      take(1)
+    );
   }
 }
