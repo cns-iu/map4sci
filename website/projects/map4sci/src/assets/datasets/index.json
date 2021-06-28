@@ -8,5 +8,10 @@
     "id": "test2",
     "name": "Test Data B",
     "dir": "assets/datasets/test2"
+  },
+  {
+    "id": "net_clinical_trials_20180706",
+    "name": "Net Clinical Trials 07/06/2018",
+    "dir": "assets/datasets/net_clinical_trials_20180706"
   }
 ]

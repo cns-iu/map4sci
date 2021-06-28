@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Map, MapLayerMouseEvent, Marker, NavigationControl, Style, Popup, Layout } from 'mapbox-gl';
 
-import { Cluster, Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './map';
+import { Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './map';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 
@@ -72,7 +72,7 @@ const defaultMinimapOptions: MiniMapOptions = {
 const defaultNodes: Node[] = [
   { level: 0, zoom: 0.0, fontSize: 0 },
   { level: 1, zoom: 0.0, fontSize: 20 },
-  { level: 2, zoom: 4.5, fontSize: 18 },
+  { level: 2, zoom: 4.0, fontSize: 18 },
   { level: 3, zoom: 5.0, fontSize: 18 },
   { level: 4, zoom: 5.5, fontSize: 16 },
   { level: 5, zoom: 6.0, fontSize: 16 },
@@ -93,17 +93,9 @@ const defaultEdges: Edge[] = [
   { level: 8, zoom: 6.2, color: 'gray', width: 2, opacity: 0.6, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
   { level: 9, zoom: 7.0, color: 'gray', width: 1, opacity: 0.5, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 }
 ];
-const defaultClusters: Cluster = {
-  fillOpacity: 0.7,
-  borderLineWidth: 0.5,
-  borderLineOpacity: 0.8,
-  borderLineMinZoom: 3
-};
 const defaultInitialZoom = 2;
 const defaultTextOverlapEnabledZoom = 3;
 const defaultTextOverlapEnabled = false;
-const defaultMinZoom = 0;
-const defaultMaxZoom = 10;
 
 
 @Component({
@@ -266,7 +258,7 @@ export class MapComponent {
       map.setFilter('node_labels', ['>=', currentZoom, currentNode]);
     }
 
-    // When the zoom level changes, check if we need to display a different set of edges. If we do, update the node filter.
+    // When the zoom level changes, check if we need to display a different set of edges. If we do, update the edges filter.
     // We decided showing the nodes (without labels) at the same time as the edges was preferable, instead of waiting for
     // when the labels will fit.
     if (this.edgeLevelChange()) {
