@@ -114,8 +114,8 @@ export class MapComponent {
   @Input() mapCenter: [number, number] = [0, 0];
   @Input() minimapOptions: MiniMapOptions = defaultMinimapOptions;
   @Input() mapMarkers: MapMarker[] = [];
-  @Input() edges: Edge[] | undefined = defaultEdges;
-  @Input() nodes: Node[] | undefined = defaultNodes;
+  @Input() edgesConfig: Edge[] | undefined = defaultEdges;
+  @Input() nodesConfig: Node[] | undefined = defaultNodes;
 
   // Outputs
   @Output() nodeClick = new EventEmitter<MapLayerMouseEvent>();
@@ -181,6 +181,14 @@ export class MapComponent {
       -moz-box-shadow: 3px 3px 5px 4px #00000021;
       box-shadow: 3px 3px 5px 4px #00000021;
   `;
+
+  get edges(): Edge[] {
+    return this.edgesConfig ?? defaultEdges;
+  }
+
+  get nodes(): Node[] {
+    return this.nodesConfig ?? defaultNodes;
+  }
 
   capitalizeFirstLetter(input: string): string {
     return input.charAt(0).toUpperCase() + input.slice(1);
@@ -281,10 +289,6 @@ export class MapComponent {
 
   // Returns whether or not the zoom level has changed enough to warrant a change in which nodes we are displaying.
   nodeLevelChange(): boolean {
-    if (!this.nodes) {
-      return false;
-    }
-
     const currentIndex: number = this.getZoomIndex(this.nodes);
     if (currentIndex === this.nodeZoomIndex) {
       return false;
@@ -295,10 +299,6 @@ export class MapComponent {
 
   // Returns whether or not the zoom level has changed enough to warrant a change in which edges we are displaying.
   edgeLevelChange(): boolean {
-    if (!this.edges) {
-      return false;
-    }
-
     const currentIndex: number = this.getZoomIndex(this.edges);
     if (currentIndex === this.edgeZoomIndex) {
       return false;

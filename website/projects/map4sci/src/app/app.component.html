@@ -7,53 +7,13 @@
 </select>
 
 <div class="map-wrapper">
-  <ng-container *ngIf="displayMap">
-
-    <!--
-      Probably a better way to do this but currently if I try just passing it in with datasets that don't
-      have the configs, then the undefined being passed in overwrites the defaultEdge / node settings
-      breaking the visualization.
-    -->
-    <ng-template *ngIf="dataset?.edgeConfig && dataset?.nodeConfig; else tryNodeConfig">
-      <m4s-map
-        [edgeFeatures]="dataset.edges"
-        [nodeFeatures]="dataset.nodes"
-        [clusterFeatures]="dataset.cluster"
-        [boundaryFeatures]="dataset.boundary"
-        [edges]="dataset.edgeConfig"
-        [nodes]="dataset.nodeConfig"
-      ></m4s-map>
-    </ng-template>
-
-    <ng-template #tryNodeConfig>
-      <m4s-map
-        *ngIf="dataset?.nodeConfig; else tryEdgeConfig"
-        [edgeFeatures]="dataset.edges"
-        [nodeFeatures]="dataset.nodes"
-        [clusterFeatures]="dataset.cluster"
-        [boundaryFeatures]="dataset.boundary"
-        [nodes]="dataset.nodeConfig"
-      ></m4s-map>
-    </ng-template>
-
-    <ng-template #tryEdgeConfig>
-      <m4s-map
-        *ngIf="dataset?.edgeConfig; else noConfig"
-        [edgeFeatures]="dataset.edges"
-        [nodeFeatures]="dataset.nodes"
-        [clusterFeatures]="dataset.cluster"
-        [boundaryFeatures]="dataset.boundary"
-        [edges]="dataset.edgeConfig"
-      ></m4s-map>
-    </ng-template>
-
-    <ng-template #noConfig>
-      <m4s-map
-        [edgeFeatures]="dataset.edges"
-        [nodeFeatures]="dataset.nodes"
-        [clusterFeatures]="dataset.cluster"
-        [boundaryFeatures]="dataset.boundary"
-      ></m4s-map>
-    </ng-template>
-  </ng-container>
+  <m4s-map
+    *ngIf="displayMap"
+    [edgeFeatures]="dataset.edges"
+    [nodeFeatures]="dataset.nodes"
+    [clusterFeatures]="dataset.cluster"
+    [boundaryFeatures]="dataset.boundary"
+    [edgesConfig]="dataset.edgeConfig"
+    [nodesConfig]="dataset.nodeConfig"
+  ></m4s-map>
 </div>
