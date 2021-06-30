@@ -8,6 +8,12 @@
 
 <div class="map-wrapper">
   <ng-container *ngIf="displayMap">
+
+    <!--
+      Probably a better way to do this but currently if I try just passing it in with datasets that don't
+      have the configs, then the undefined being passed in overwrites the defaultEdge / node settings
+      breaking the visualization.
+    -->
     <ng-template *ngIf="dataset?.edgeConfig && dataset?.nodeConfig; else tryNodeConfig">
       <m4s-map
         [edgeFeatures]="dataset.edges"
