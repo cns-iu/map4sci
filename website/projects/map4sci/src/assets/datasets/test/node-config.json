@@ -1,0 +1,12 @@
+[
+  { "level": 0, "zoom": 0.0, "fontSize": 0 },
+  { "level": 1, "zoom": 0.0, "fontSize": 20 },
+  { "level": 2, "zoom": 7.0, "fontSize": 18 },
+  { "level": 3, "zoom": 7.1, "fontSize": 18 },
+  { "level": 4, "zoom": 7.2, "fontSize": 16 },
+  { "level": 5, "zoom": 7.3, "fontSize": 16 },
+  { "level": 6, "zoom": 7.4, "fontSize": 14 },
+  { "level": 7, "zoom": 7.5, "fontSize": 14 },
+  { "level": 8, "zoom": 7.6, "fontSize": 12 },
+  { "level": 9, "zoom": 7.7, "fontSize": 12 }
+]

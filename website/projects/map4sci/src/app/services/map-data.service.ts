@@ -4,7 +4,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, forkJoin, Observable, of, Subscription } from 'rxjs';
 import { catchError, take, tap } from 'rxjs/operators';
 
-import { EMPTY_DATASET, MapDataset, MapDatasetDirectory } from '../map/map';
+import { Edge, EMPTY_DATASET, MapDataset, MapDatasetDirectory } from '../map/map';
 
 
 @Injectable({
@@ -52,10 +52,20 @@ export class MapDataService implements OnDestroy {
       return of(EMPTY_DATASET);
     }
 
-    const baseUrl = dataDirectory.find(d => d.id === id)?.dir as string;
-    const dataReqs = {} as Record<string, Observable<MapDataset>>;
+    const selectedDirectory = dataDirectory.find(d => d.id === id);
+    const baseUrl = selectedDirectory?.dir as string;
+    const dataReqs = {} as Record<string, Observable<MapDataset | Node[] | Edge[]>>;
+
     for (const file of this.files) {
       dataReqs[file] = this.http.get<MapDataset>(`${baseUrl}/${file}.geojson`);
+    }
+
+    if (selectedDirectory?.nodeConfig) {
+      dataReqs.nodeConfig = this.http.get<MapDataset>(`${baseUrl}/node-config.json`);
+    }
+
+    if (selectedDirectory?.edgeConfig) {
+      dataReqs.edgeConfig = this.http.get<MapDataset>(`${baseUrl}/edges-config.geojson`);
     }
 
     return forkJoin(dataReqs)

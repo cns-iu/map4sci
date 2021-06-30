@@ -79,7 +79,7 @@ const defaultNodes: Node[] = [
   { level: 6, zoom: 6.2, fontSize: 14 },
   { level: 7, zoom: 6.5, fontSize: 14 },
   { level: 8, zoom: 6.7, fontSize: 12 },
-  { level: 9, zoom: 7.5, fontSize: 12 },
+  { level: 9, zoom: 7.5, fontSize: 12 }
 ];
 const defaultEdges: Edge[] = [
   { level: 0, zoom: 0, color: '', width: 0, opacity: 0.0, borderOpacity: 0.0, borderColor: '', borderWidth: 0 },
@@ -114,6 +114,8 @@ export class MapComponent {
   @Input() mapCenter: [number, number] = [0, 0];
   @Input() minimapOptions: MiniMapOptions = defaultMinimapOptions;
   @Input() mapMarkers: MapMarker[] = [];
+  @Input() edges: Edge[] | undefined = defaultEdges;
+  @Input() nodes: Node[] | undefined = defaultNodes;
 
   // Outputs
   @Output() nodeClick = new EventEmitter<MapLayerMouseEvent>();
@@ -128,14 +130,13 @@ export class MapComponent {
   hoverNodeID: string | number | undefined;
   textOverlapEnabledZoom = defaultTextOverlapEnabledZoom;
   textOverlapEnabled = defaultTextOverlapEnabled;
-  edges: Edge[] = defaultEdges;
-  nodes: Node[] = defaultNodes;
 
   // These allow the layer tags to be much more readable.
   currentNodeFormula: Any = ['at', ['get', 'level'], ['literal', this.nodes]];
   currentEdgeFormula: Any = ['get', 'zoom', ['at', ['get', 'level'], ['literal', this.edges]]];
   edgeFormula = ['at', ['get', 'level'], ['literal', this.edges]];
-  lastEdgeFormula = ['at', this.edges.length - 1, ['literal', this.edges]];
+  // tslint:disable-next-line: no-non-null-assertion
+  lastEdgeFormula = ['at', this.edges!.length - 1, ['literal', this.edges]];
 
   nodeLabelsLayout: Layout = {
     'text-field': '{label}',
@@ -280,6 +281,10 @@ export class MapComponent {
 
   // Returns whether or not the zoom level has changed enough to warrant a change in which nodes we are displaying.
   nodeLevelChange(): boolean {
+    if (!this.nodes) {
+      return false;
+    }
+
     const currentIndex: number = this.getZoomIndex(this.nodes);
     if (currentIndex === this.nodeZoomIndex) {
       return false;
@@ -290,6 +295,10 @@ export class MapComponent {
 
   // Returns whether or not the zoom level has changed enough to warrant a change in which edges we are displaying.
   edgeLevelChange(): boolean {
+    if (!this.edges) {
+      return false;
+    }
+
     const currentIndex: number = this.getZoomIndex(this.edges);
     if (currentIndex === this.edgeZoomIndex) {
       return false;
