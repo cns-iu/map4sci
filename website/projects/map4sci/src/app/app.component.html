@@ -13,7 +13,11 @@
     [nodeFeatures]="dataset.nodes"
     [clusterFeatures]="dataset.cluster"
     [boundaryFeatures]="dataset.boundary"
-    [edgesConfig]="dataset.edgeConfig"
-    [nodesConfig]="dataset.nodeConfig"
+    [edgesConfig]="dataset.config?.edgeConfig"
+    [nodesConfig]="dataset.config?.nodeConfig"
+    [initialZoomConfig]="dataset.config?.initialZoom"
+    [mapCenterConfig]="dataset.config?.mapCenter"
+    [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
+    [minimapConfig]="dataset.config?.minimapConfig"
   ></m4s-map>
 </div>

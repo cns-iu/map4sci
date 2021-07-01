@@ -1,18 +1,19 @@
 import { Any } from '@angular-ru/common/typings';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
-import { FullscreenControl, Map, MapLayerMouseEvent, Marker, NavigationControl, Style, Popup, Layout } from 'mapbox-gl';
+import { FullscreenControl, Layout, Map, MapLayerMouseEvent, Marker, NavigationControl, Popup, Style } from 'mapbox-gl';
 
-import { Edge, MapMarker, MiniMapOptions, Node, PopupContent, ZoomLookup, PopupLayer } from './map';
+import { Edge, MapMarker, MiniMapOptions, Node, PopupContent, PopupLayer, ZoomLookup } from './map';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 
 
+const defaultInitialZoom = 2;
 const blankStyle: Style = {
   version: 8,
   name: 'Blank',
   center: [0, 0],
-  zoom: 0,
+  zoom: defaultInitialZoom,
   sources: {},
   sprite: 'https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty',
   glyphs: 'https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf',
@@ -93,10 +94,8 @@ const defaultEdges: Edge[] = [
   { level: 8, zoom: 6.2, color: 'gray', width: 2, opacity: 0.6, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 },
   { level: 9, zoom: 7.0, color: 'gray', width: 1, opacity: 0.5, borderOpacity: 0.0, borderColor: '#F9D776', borderWidth: 1 }
 ];
-const defaultInitialZoom = 2;
 const defaultTextOverlapEnabledZoom = 3;
-const defaultTextOverlapEnabled = false;
-
+const defaultMapCenter: [number, number] = [0, 0];
 
 @Component({
   selector: 'm4s-map',
@@ -111,11 +110,15 @@ export class MapComponent {
   @Input() clusterFeatures!: FeatureCollection;
   @Input() boundaryFeatures!: FeatureCollection;
   @Input() currentZoom = defaultInitialZoom;
-  @Input() mapCenter: [number, number] = [0, 0];
-  @Input() minimapOptions: MiniMapOptions = defaultMinimapOptions;
   @Input() mapMarkers: MapMarker[] = [];
-  @Input() edgesConfig: Edge[] | undefined = defaultEdges;
-  @Input() nodesConfig: Node[] | undefined = defaultNodes;
+
+  @Input() initialZoomConfig: number | undefined;
+  @Input() mapCenterConfig: [number, number] | undefined;
+  @Input() minimapConfig: MiniMapOptions | undefined;
+  @Input() edgesConfig: Edge[] | undefined;
+  @Input() nodesConfig: Node[] | undefined;
+  @Input() textOverlapEnabledConfig: boolean | undefined;
+  @Input() textOverlapEnabledZoomConfig: number | undefined;
 
   // Outputs
   @Output() nodeClick = new EventEmitter<MapLayerMouseEvent>();
@@ -128,8 +131,7 @@ export class MapComponent {
   edgeZoomIndex = 0;
   hoverEdgeID: string | number | undefined;
   hoverNodeID: string | number | undefined;
-  textOverlapEnabledZoom = defaultTextOverlapEnabledZoom;
-  textOverlapEnabled = defaultTextOverlapEnabled;
+  textOverlapEnabled = false;
 
   // These allow the layer tags to be much more readable.
   currentNodeFormula: Any = ['at', ['get', 'level'], ['literal', this.nodes]];
@@ -190,6 +192,22 @@ export class MapComponent {
     return this.nodesConfig ?? defaultNodes;
   }
 
+  get minimapOptions(): MiniMapOptions {
+    return this.minimapConfig ?? defaultMinimapOptions;
+  }
+
+  get mapCenter(): [number, number] {
+    return this.mapCenterConfig ?? defaultMapCenter;
+  }
+
+  get initialZoom(): number {
+    return this.initialZoomConfig ?? defaultInitialZoom;
+  }
+
+  get textOverlapEnabledZoom(): number {
+    return this.textOverlapEnabledZoomConfig || defaultTextOverlapEnabledZoom;
+  }
+
   capitalizeFirstLetter(input: string): string {
     return input.charAt(0).toUpperCase() + input.slice(1);
   }
@@ -204,6 +222,11 @@ export class MapComponent {
 
   onMapLoad(map: Map): void {
     this.map = map;
+
+    if (this.initialZoom !== defaultInitialZoom) {
+      map.setZoom(this.initialZoom);
+    }
+
     this.currentZoom = map.getZoom();
 
     // Use the same map center for the minimap unless the minimapOptions have been customized.

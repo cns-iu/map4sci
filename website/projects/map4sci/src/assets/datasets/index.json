@@ -3,7 +3,7 @@
     "id": "test",
     "name": "Test Data A",
     "dir": "assets/datasets/test",
-    "nodeConfig": true
+    "config": "config.json"
   },
   {
     "id": "test2",

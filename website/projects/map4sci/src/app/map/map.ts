@@ -81,14 +81,22 @@ export interface ZoomLookupItem {
 }
 export type ZoomLookup = ZoomLookupItem[];
 
+export interface MapDatasetConfig {
+  nodeConfig?: Node[];
+  edgeConfig?: Edge[];
+  minimapConfig?: MiniMapOptions;
+  mapCenter?: [number, number];
+  initialZoom?: number;
+  textOverlapEnabledZoom?: number;
+}
+
 export interface MapDataset {
-  [id: string]: FeatureCollection | Node[] | Edge[] | undefined;
+  [id: string]: FeatureCollection | MapDatasetConfig | undefined;
   boundary: FeatureCollection;
   cluster: FeatureCollection;
   edges: FeatureCollection;
   nodes: FeatureCollection;
-  nodeConfig?: Node[];
-  edgeConfig?: Edge[];
+  config?: MapDatasetConfig;
 }
 
 export interface MapDatasetCache {
@@ -99,8 +107,7 @@ export interface MapDatasetDirectory {
   id: string;
   name: string;
   dir: string;
-  edgeConfig?: boolean;
-  nodeConfig?: boolean;
+  config?: string;
 }
 
 export const EMPTY_FEATURES: FeatureCollection = {
