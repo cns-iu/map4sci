@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   constructor(readonly mapData: MapDataService) { }
 
-  dataset: MapDataset = EMPTY_DATASET;
+  dataset = EMPTY_DATASET;
 
   get displayMap(): boolean {
     const { dataset } = this;

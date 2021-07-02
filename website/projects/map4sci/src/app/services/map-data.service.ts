@@ -4,7 +4,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject, forkJoin, Observable, of, Subscription } from 'rxjs';
 import { catchError, take, tap } from 'rxjs/operators';
 
-import { EMPTY_DATASET, MapDataset, MapDatasetDirectory } from '../map/map';
+import { Edge, EMPTY_DATASET, MapDataset, MapDatasetDirectory } from '../map/map';
 
 
 @Injectable({
@@ -13,7 +13,8 @@ import { EMPTY_DATASET, MapDataset, MapDatasetDirectory } from '../map/map';
 export class MapDataService implements OnDestroy {
   private files: string[] = [ 'boundary', 'cluster', 'edges', 'nodes' ];
 
-  private datasetSubject = new BehaviorSubject<Immutable<MapDataset>>(EMPTY_DATASET);
+  private emptyDataset = EMPTY_DATASET as Immutable<MapDataset>;
+  private datasetSubject = new BehaviorSubject<Immutable<MapDataset>>(this.emptyDataset);
   private datasetDirectorySubject = new BehaviorSubject<Immutable<MapDatasetDirectory[]>>([]);
   private subscriptions = new Subscription();
 
@@ -40,7 +41,7 @@ export class MapDataService implements OnDestroy {
 
   setDataset(id: string): void {
     // Send an empty dataset to clear the map
-    this.datasetSubject.next(EMPTY_DATASET);
+    this.datasetSubject.next(this.emptyDataset);
 
     this.getDataset(id)
       .subscribe((dataset) => this.datasetSubject.next(dataset));
@@ -49,16 +50,22 @@ export class MapDataService implements OnDestroy {
   getDataset(id: string): Observable<Immutable<MapDataset>> {
     const dataDirectory = this.datasetDirectorySubject.getValue();
     if (!dataDirectory || !dataDirectory.find(d => d.id === id)) {
-      return of(EMPTY_DATASET);
+      return of(EMPTY_DATASET) as Observable<Immutable<MapDataset>>;
     }
 
-    const baseUrl = dataDirectory.find(d => d.id === id)?.dir as string;
-    const dataReqs = {} as Record<string, Observable<MapDataset>>;
+    const selectedDirectory = dataDirectory.find(d => d.id === id);
+    const baseUrl = selectedDirectory?.dir as string;
+    const dataReqs = {} as Record<string, Observable<MapDataset | Node[] | Edge[]>>;
+
     for (const file of this.files) {
       dataReqs[file] = this.http.get<MapDataset>(`${baseUrl}/${file}.geojson`);
     }
 
+    if (selectedDirectory?.config) {
+      dataReqs.config = this.http.get<MapDataset>(`${baseUrl}/${selectedDirectory.config}`);
+    }
+
     return forkJoin(dataReqs)
-      .pipe(catchError(m => of(EMPTY_DATASET)), take(1));
+      .pipe(catchError(m => of(this.emptyDataset)), take(1));
   }
 }
