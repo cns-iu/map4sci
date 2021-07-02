@@ -23,8 +23,8 @@
     { "level": 8, "zoom": 6.2, "color": "gray", "width": 2, "opacity": 0.6, "borderOpacity": 0.0, "borderColor": "#F9D776", "borderWidth": 1 },
     { "level": 9, "zoom": 7.0, "color": "gray", "width": 1, "opacity": 0.5, "borderOpacity": 0.0, "borderColor": "#F9D776", "borderWidth": 1 }
   ],
-  "initialZoom": 5,
-  "mapCenter": [ -5, -50 ],
+  "initialZoom": 4,
+  "mapCenter": [ -5, 5 ],
   "textOverlapEnabledZoom": 6,
   "minimapConfig": {
     "id": "mapboxgl-minimap",
