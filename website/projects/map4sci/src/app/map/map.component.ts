@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @angular-eslint/no-input-rename */
 import { Any } from '@angular-ru/common/typings';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Layout, Map, MapLayerMouseEvent, Marker, NavigationControl, Popup } from 'mapbox-gl';
 
 import { Edge, MapMarker, MiniMapOptions, Node, PopupContent, PopupLayer, ZoomLookup } from './map';
-import { blankStyle, defaultEdges, defaultInitialZoom, defaultMapCenter, defaultMinimapOptions,
-  defaultNodes, defaultTextOverlapEnabledZoom } from './map-defaults';
+import {
+  blankStyle, defaultEdges, defaultInitialZoom, defaultMapCenter, defaultMinimapOptions, defaultNodes,
+  defaultTextOverlapEnabledZoom,
+} from './map-defaults';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 
@@ -28,44 +32,44 @@ export class MapComponent {
   private initialZoomConfig: number = defaultInitialZoom;
   @Input('initialZoomConfig')
   set InitialZoomConfig(initialZoom: number | undefined) {
-    this.initialZoomConfig = initialZoom || defaultInitialZoom;
+    this.initialZoomConfig = initialZoom ?? defaultInitialZoom;
   }
 
   private minimapConfig: MiniMapOptions = defaultMinimapOptions;
   @Input('minimapConfig')
   set MinimapConfig(options: MiniMapOptions | undefined) {
-    this.minimapConfig = options || defaultMinimapOptions;
+    this.minimapConfig = options ?? defaultMinimapOptions;
   }
 
   private edgesConfig: Edge[] = defaultEdges;
   @Input('edgesConfig')
   set EdgesConfig(edges: Edge[] | undefined) {
-    this.edgesConfig = edges || defaultEdges;
+    this.edgesConfig = edges ?? defaultEdges;
   }
 
   private nodesConfig: Node[] = defaultNodes;
   @Input('nodesConfig')
   set NodesConfig(nodes: Node[] | undefined) {
-    this.nodesConfig = nodes || defaultNodes;
+    this.nodesConfig = nodes ?? defaultNodes;
   }
 
   private textOverlapEnabledZoomConfig: number = defaultTextOverlapEnabledZoom;
   @Input('textOverlapEnabledZoomConfig')
   set TextOverlapEnabledZoomConfig(zoom: number | undefined) {
-    this.textOverlapEnabledZoomConfig = zoom || defaultTextOverlapEnabledZoom;
+    this.textOverlapEnabledZoomConfig = zoom ?? defaultTextOverlapEnabledZoom;
   }
 
   mapCenterConfig: [number, number] = defaultMapCenter;
   @Input('mapCenterConfig')
-  set MapCenterConfig(mapCenter: [number , number] | undefined) {
-    this.mapCenterConfig = mapCenter || defaultMapCenter;
+  set MapCenterConfig(mapCenter: [number, number] | undefined) {
+    this.mapCenterConfig = mapCenter ?? defaultMapCenter;
   }
 
   // Outputs
-  @Output() nodeClick = new EventEmitter<MapLayerMouseEvent>();
-  @Output() edgeClick = new EventEmitter<MapLayerMouseEvent>();
-  @Output() zoomChange = new EventEmitter<number>();
-  @Output() panChange = new EventEmitter<[number, number]>();
+  @Output() readonly nodeClick = new EventEmitter<MapLayerMouseEvent>();
+  @Output() readonly edgeClick = new EventEmitter<MapLayerMouseEvent>();
+  @Output() readonly zoomChange = new EventEmitter<number>();
+  @Output() readonly panChange = new EventEmitter<[number, number]>();
 
   map!: Map;
   nodeZoomIndex = 0;
@@ -78,8 +82,7 @@ export class MapComponent {
   currentNodeFormula: Any = ['at', ['get', 'level'], ['literal', this.nodesConfig]];
   currentEdgeFormula: Any = ['get', 'zoom', ['at', ['get', 'level'], ['literal', this.edgesConfig]]];
   edgeFormula = ['at', ['get', 'level'], ['literal', this.edgesConfig]];
-  // tslint:disable-next-line: no-non-null-assertion
-  lastEdgeFormula = ['at', this.edgesConfig!.length - 1, ['literal', this.edgesConfig]];
+  lastEdgeFormula = ['at', this.edgesConfig.length - 1, ['literal', this.edgesConfig]];
 
   nodeLabelsLayout: Layout = {
     'text-field': '{label}',
@@ -100,20 +103,20 @@ export class MapComponent {
   */
   popups: PopupLayer[] = [
     {
-        layer: 'edges',
-        content: [
-            '<p class="popup-label">Edge</p><p>',
-            ['label', this.capitalizeFirstLetter],
-            '</p>'
-        ]
+      layer: 'edges',
+      content: [
+        '<p class="popup-label">Edge</p><p>',
+        ['label', this.capitalizeFirstLetter],
+        '</p>'
+      ]
     },
     {
-        layer: 'nodes',
-        content: [
-            '<p class="popup-label">Node</p><p>',
-            'label',
-            '</p>'
-        ]
+      layer: 'nodes',
+      content: [
+        '<p class="popup-label">Node</p><p>',
+        'label',
+        '</p>'
+      ]
     }
   ];
 
@@ -159,7 +162,7 @@ export class MapComponent {
     } else if (this.clusterFeatures.features.length === 0) {
       console.warn('0 cluster features');
     } else {
-      map.addControl(new MiniMap({nodes: this.nodeFeatures, clusters: this.clusterFeatures}, this.minimapConfig), 'bottom-right');
+      map.addControl(new MiniMap({ nodes: this.nodeFeatures, clusters: this.clusterFeatures }, this.minimapConfig), 'bottom-right');
     }
     map.addControl(new ZoomLevelControl(), 'bottom-right');
 
@@ -189,7 +192,7 @@ export class MapComponent {
         className: 'map-marker-popup'
       }).setHTML(`<h3>${marker.title}</h3>`);
 
-      new Marker(marker.config || {})
+      new Marker(marker.config ?? {})
         .setLngLat(marker.coordinates)
         .setPopup(popup)
         .addTo(this.map);
@@ -249,38 +252,38 @@ export class MapComponent {
 
   addEdgeHover(map: Map): void {
     map.on('mousemove', 'edges', (e) => {
-        // When the mouse moves, check if the mouse is on top of a feature from the edges source.
-        if (!e.features) {
-          return;
-        }
+      // When the mouse moves, check if the mouse is on top of a feature from the edges source.
+      if (!e.features) {
+        return;
+      }
 
-        if (e.features.length > 0) {
-            // If there was already an edge with the hover status, turn that hover status off first
-            if (this.hoverEdgeID) {
-                map.setFeatureState(
-                    { source: 'edges', id: this.hoverEdgeID },
-                    { hover: false }
-                );
-            }
-            // Set the hover status of the new edge to true, and save the ID to the object so we can compare
-            // later, when the mouse moves again.
-            this.hoverEdgeID = e.features[0].id;
-            map.setFeatureState(
-                { source: 'edges', id: this.hoverEdgeID },
-                { hover: true }
-            );
+      if (e.features.length > 0) {
+        // If there was already an edge with the hover status, turn that hover status off first
+        if (this.hoverEdgeID) {
+          map.setFeatureState(
+            { source: 'edges', id: this.hoverEdgeID },
+            { hover: false }
+          );
         }
+        // Set the hover status of the new edge to true, and save the ID to the object so we can compare
+        // later, when the mouse moves again.
+        this.hoverEdgeID = e.features[0].id;
+        map.setFeatureState(
+          { source: 'edges', id: this.hoverEdgeID },
+          { hover: true }
+        );
+      }
     });
 
     map.on('mouseleave', 'edges', () => {
-        // When the mouse leaves the edge source features, turn the hover status off
-        if (this.hoverEdgeID) {
-            map.setFeatureState(
-                { source: 'edges', id: this.hoverEdgeID },
-                { hover: false }
-            );
-        }
-        this.hoverEdgeID = undefined;
+      // When the mouse leaves the edge source features, turn the hover status off
+      if (this.hoverEdgeID) {
+        map.setFeatureState(
+          { source: 'edges', id: this.hoverEdgeID },
+          { hover: false }
+        );
+      }
+      this.hoverEdgeID = undefined;
     });
   }
 
@@ -292,38 +295,38 @@ export class MapComponent {
 
       // When the mouse moves, check if the mouse is on top of a feature from the nodes source.
       if (e.features.length > 0) {
-          // If there was already an node with the hover status, turn that hover status off first
-          if (this.hoverNodeID) {
-              map.setFeatureState(
-                  { source: 'nodes', id: this.hoverNodeID },
-                  { hover: false }
-              );
-          }
-          // Set the hover status of the new node to true, and save the ID to the object so we can compare
-          // later, when the mouse moves again.
-          this.hoverNodeID = e.features[0].id;
+        // If there was already an node with the hover status, turn that hover status off first
+        if (this.hoverNodeID) {
           map.setFeatureState(
-              { source: 'nodes', id: this.hoverNodeID },
-              { hover: true }
+            { source: 'nodes', id: this.hoverNodeID },
+            { hover: false }
           );
+        }
+        // Set the hover status of the new node to true, and save the ID to the object so we can compare
+        // later, when the mouse moves again.
+        this.hoverNodeID = e.features[0].id;
+        map.setFeatureState(
+          { source: 'nodes', id: this.hoverNodeID },
+          { hover: true }
+        );
       }
     });
 
     map.on('mouseleave', 'nodes', () => {
-        // When the mouse leaves the edge source features, turn the hover status off
-        if (this.hoverNodeID) {
-            map.setFeatureState(
-                { source: 'nodes', id: this.hoverNodeID },
-                { hover: false }
-            );
-        }
-        this.hoverNodeID = undefined;
+      // When the mouse leaves the edge source features, turn the hover status off
+      if (this.hoverNodeID) {
+        map.setFeatureState(
+          { source: 'nodes', id: this.hoverNodeID },
+          { hover: false }
+        );
+      }
+      this.hoverNodeID = undefined;
     });
   }
 
   addPopups(): void {
     this.popups.forEach(popup => {
-        this.addPopupOnClick(popup.layer, popup.content);
+      this.addPopupOnClick(popup.layer, popup.content);
     });
   }
 
@@ -350,12 +353,12 @@ export class MapComponent {
 
     // Change the cursor to a pointer when the mouse is over the places layer.
     map.on('mouseenter', layer, () => {
-        map.getCanvas().style.cursor = 'pointer';
+      map.getCanvas().style.cursor = 'pointer';
     });
 
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', layer, () => {
-        map.getCanvas().style.cursor = '';
+      map.getCanvas().style.cursor = '';
     });
   }
 
@@ -364,23 +367,24 @@ export class MapComponent {
   createPopupHTML(description: Any, content: PopupContent): string {
     let html = '';
     content.forEach((element, index: number) => {
-        if (!element) {
-          return;
-        }
-        // The config object for popups is structued like ['<html>', 'propertyName', '</html>]
-        // so on even indexes, we just concatenate the html string, on odd indexes we use the string to lookup the property value.
-        if (this.isEven(index)) {
-          html += element;
-        }
+      if (!element) {
+        return;
+      }
+      // The config object for popups is structued like ['<html>', 'propertyName', '</html>]
+      // so on even indexes, we just concatenate the html string, on odd indexes we use the string to lookup the property value.
+      if (this.isEven(index)) {
+        html += element;
 
-        // Along with property values, you can pass along a formatting function in form of ['propertyName', function]
-        // This checks if there is one, if there is it uses that function to format the value of the property before
-        // concatenating it.
-        else if (typeof (element) === 'string'){
-          html += description[element];
-        } else {
-          html += element[1](description[element[0]]);
-        }
+      // Along with property values, you can pass along a formatting function in form of ['propertyName', function]
+      // This checks if there is one, if there is it uses that function to format the value of the property before
+      // concatenating it.
+      } else if (typeof (element) === 'string') {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        html += description[element];
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        html += element[1](description[element[0]]);
+      }
     });
 
     return html;

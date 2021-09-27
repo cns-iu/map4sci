@@ -1,21 +1,17 @@
-import { Any } from '@angular-ru/common/typings';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { EMPTY_DATASET, MapDataset } from './map/map';
+import { EMPTY_DATASET } from './map/map';
 import { MapDataService } from './services/map-data.service';
 
 
 @Component({
   selector: 'm4s-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnInit {
-  private subscriptions = new Subscription();
-
-  constructor(readonly mapData: MapDataService) { }
-
+export class AppComponent implements OnDestroy {
   dataset = EMPTY_DATASET;
 
   get displayMap(): boolean {
@@ -33,14 +29,26 @@ export class AppComponent implements OnInit {
     return true;
   }
 
-  ngOnInit(): void {
-    this.subscriptions.add(
-      this.mapData.dataset$.subscribe(ds => this.dataset = ds as unknown as MapDataset)
-    );
+  private readonly subscriptions = new Subscription();
+
+  constructor(
+    readonly mapData: MapDataService,
+    cdr: ChangeDetectorRef
+  ) {
+    const sub = mapData.dataset$.subscribe(ds => {
+      this.dataset = ds;
+      cdr.markForCheck();
+    });
+
+    this.subscriptions.add(sub);
   }
 
-  mapDataSwitcherChange(event: Any): void {
-    const mapId: string = event.target.value;
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  mapDataSwitcherChange(event: Event): void {
+    const mapId = (event.target as HTMLOptionElement | null)?.value ?? '';
     this.mapData.setDataset(mapId);
   }
 }
