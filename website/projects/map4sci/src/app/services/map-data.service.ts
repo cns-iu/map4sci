@@ -30,7 +30,9 @@ export class MapDataService implements OnDestroy {
     // Set current dataset to the 'first' dataset whenever a directory is loaded
     this.subscriptions.add(
       this.datasetDirectory$.pipe(tap((dir) => {
-        if (dir.length > 0) { this.setDataset(dir[0].id); }
+        if (dir.length > 0) {
+          this.setDataset(dir[0].id);
+        }
       })).subscribe()
     );
   }

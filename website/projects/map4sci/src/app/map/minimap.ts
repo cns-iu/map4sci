@@ -71,7 +71,9 @@ export class MiniMap {
       center: opts.center
     });
 
-    if (opts.maxBounds) { miniMap.setMaxBounds(opts.maxBounds); }
+    if (opts.maxBounds) {
+      miniMap.setMaxBounds(opts.maxBounds);
+    }
 
     miniMap.on('load', this.load.bind(this));
 
@@ -327,7 +329,7 @@ export class MiniMap {
     const levels = this.options.zoomLevels;
     let found = false;
 
-    levels.forEach((zoom: any[]) => {
+    levels.forEach((zoom: unknown[]) => {
       if (!found && parentZoom >= zoom[0]) {
         if (miniZoom >= zoom[1]) {
           miniMap.setZoom(zoom[2]);

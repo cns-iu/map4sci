@@ -1,7 +1,6 @@
 import { LngLat } from 'mapbox-gl';
 
 
-// tslint:disable-next-line: max-line-length
 // See https://github.com/Leaflet/Leaflet/blob/dc6a0ae61a70b1d34f9ee2c4f814bdd21841c774/src/geo/projection/Projection.SphericalMercator.js#L32
 const earthRadius = 6378137;
 const d = 180 / Math.PI;
@@ -9,7 +8,7 @@ function unproject(x: number, y: number): LngLat {
   const lng = x * d / earthRadius;
   const lat = (2 * Math.atan(Math.exp(y / earthRadius)) - (Math.PI / 2)) * d;
   return new LngLat(lng, lat);
-};
+}
 
 export class Cartesian2dBounds {
   constructor(
@@ -26,7 +25,7 @@ export class Cartesian2dBounds {
     this.maxY = Math.max(y, this.maxY);
     return this;
   }
-};
+}
 
 export class Cartesian2dProjection {
   constructor(public sourceBounds: Cartesian2dBounds) {}
@@ -40,4 +39,4 @@ export class Cartesian2dProjection {
 
     return unproject(mercatorX, mercatorY);
   }
-};
+}
