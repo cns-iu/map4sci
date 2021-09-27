@@ -5,27 +5,5 @@
     "main.ts",
     "polyfills.ts",
     "test.ts"
-  ],
-  "overrides": [
-    {
-      "files": [
-        "*.ts"
-      ],
-      "parserOptions": {
-        "project": [
-          "projects/map4sci/tsconfig.app.json",
-          "projects/map4sci/tsconfig.spec.json",
-          "projects/map4sci/e2e/tsconfig.json"
-        ],
-        "createDefaultProgram": true
-      },
-      "rules": {}
-    },
-    {
-      "files": [
-        "*.html"
-      ],
-      "rules": {}
-    }
   ]
 }
