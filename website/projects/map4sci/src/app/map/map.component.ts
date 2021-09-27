@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @angular-eslint/no-input-rename */
 import { Any } from '@angular-ru/common/typings';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Layout, Map, MapLayerMouseEvent, Marker, NavigationControl, Popup } from 'mapbox-gl';
 
 import { Edge, MapMarker, MiniMapOptions, Node, PopupContent, PopupLayer, ZoomLookup } from './map';
-import { blankStyle, defaultEdges, defaultInitialZoom, defaultMapCenter, defaultMinimapOptions,
-  defaultNodes, defaultTextOverlapEnabledZoom } from './map-defaults';
+import {
+  blankStyle, defaultEdges, defaultInitialZoom, defaultMapCenter, defaultMinimapOptions, defaultNodes,
+  defaultTextOverlapEnabledZoom,
+} from './map-defaults';
 import { MiniMap } from './minimap';
 import { ZoomLevelControl } from './zoom-level.control';
 
@@ -28,44 +32,44 @@ export class MapComponent {
   private initialZoomConfig: number = defaultInitialZoom;
   @Input('initialZoomConfig')
   set InitialZoomConfig(initialZoom: number | undefined) {
-    this.initialZoomConfig = initialZoom || defaultInitialZoom;
+    this.initialZoomConfig = initialZoom ?? defaultInitialZoom;
   }
 
   private minimapConfig: MiniMapOptions = defaultMinimapOptions;
   @Input('minimapConfig')
   set MinimapConfig(options: MiniMapOptions | undefined) {
-    this.minimapConfig = options || defaultMinimapOptions;
+    this.minimapConfig = options ?? defaultMinimapOptions;
   }
 
   private edgesConfig: Edge[] = defaultEdges;
   @Input('edgesConfig')
   set EdgesConfig(edges: Edge[] | undefined) {
-    this.edgesConfig = edges || defaultEdges;
+    this.edgesConfig = edges ?? defaultEdges;
   }
 
   private nodesConfig: Node[] = defaultNodes;
   @Input('nodesConfig')
   set NodesConfig(nodes: Node[] | undefined) {
-    this.nodesConfig = nodes || defaultNodes;
+    this.nodesConfig = nodes ?? defaultNodes;
   }
 
   private textOverlapEnabledZoomConfig: number = defaultTextOverlapEnabledZoom;
   @Input('textOverlapEnabledZoomConfig')
   set TextOverlapEnabledZoomConfig(zoom: number | undefined) {
-    this.textOverlapEnabledZoomConfig = zoom || defaultTextOverlapEnabledZoom;
+    this.textOverlapEnabledZoomConfig = zoom ?? defaultTextOverlapEnabledZoom;
   }
 
   mapCenterConfig: [number, number] = defaultMapCenter;
   @Input('mapCenterConfig')
-  set MapCenterConfig(mapCenter: [number , number] | undefined) {
-    this.mapCenterConfig = mapCenter || defaultMapCenter;
+  set MapCenterConfig(mapCenter: [number, number] | undefined) {
+    this.mapCenterConfig = mapCenter ?? defaultMapCenter;
   }
 
   // Outputs
-  @Output() nodeClick = new EventEmitter<MapLayerMouseEvent>();
-  @Output() edgeClick = new EventEmitter<MapLayerMouseEvent>();
-  @Output() zoomChange = new EventEmitter<number>();
-  @Output() panChange = new EventEmitter<[number, number]>();
+  @Output() readonly nodeClick = new EventEmitter<MapLayerMouseEvent>();
+  @Output() readonly edgeClick = new EventEmitter<MapLayerMouseEvent>();
+  @Output() readonly zoomChange = new EventEmitter<number>();
+  @Output() readonly panChange = new EventEmitter<[number, number]>();
 
   map!: Map;
   nodeZoomIndex = 0;
@@ -188,7 +192,7 @@ export class MapComponent {
         className: 'map-marker-popup'
       }).setHTML(`<h3>${marker.title}</h3>`);
 
-      new Marker(marker.config || {})
+      new Marker(marker.config ?? {})
         .setLngLat(marker.coordinates)
         .setPopup(popup)
         .addTo(this.map);
@@ -370,14 +374,15 @@ export class MapComponent {
       // so on even indexes, we just concatenate the html string, on odd indexes we use the string to lookup the property value.
       if (this.isEven(index)) {
         html += element;
-      }
 
       // Along with property values, you can pass along a formatting function in form of ['propertyName', function]
       // This checks if there is one, if there is it uses that function to format the value of the property before
       // concatenating it.
-      else if (typeof (element) === 'string'){
+      } else if (typeof (element) === 'string') {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         html += description[element];
       } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         html += element[1](description[element[0]]);
       }
     });

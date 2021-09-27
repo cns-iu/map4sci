@@ -91,12 +91,13 @@ export interface MapDatasetConfig {
 }
 
 export interface MapDataset {
-  [id: string]: FeatureCollection | MapDatasetConfig | undefined;
   boundary: FeatureCollection;
   cluster: FeatureCollection;
   edges: FeatureCollection;
   nodes: FeatureCollection;
   config?: MapDatasetConfig;
+
+  [id: string]: FeatureCollection | MapDatasetConfig | undefined;
 }
 
 export interface MapDatasetCache {

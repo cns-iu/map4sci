@@ -127,13 +127,9 @@
               "static-field",
               "static-method",
 
-              "public-field",
+              "field",
 
               "signature",
-
-              "protected-field",
-              "private-field",
-              "field",
 
               "constructor",
 

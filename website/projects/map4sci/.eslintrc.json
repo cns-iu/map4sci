@@ -19,24 +19,7 @@
         ],
         "createDefaultProgram": true
       },
-      "rules": {
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "m4s",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "m4s",
-            "style": "kebab-case"
-          }
-        ]
-      }
+      "rules": {}
     },
     {
       "files": [

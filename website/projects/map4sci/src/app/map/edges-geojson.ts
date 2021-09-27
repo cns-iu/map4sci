@@ -1,15 +1,15 @@
-import { FeatureCollection, Geometry, Feature } from 'geojson';
+import { Feature, FeatureCollection, Geometry } from 'geojson';
 
 import { Cartesian2dProjection } from './cartesian-2d-projection';
-import { Edge } from './map.component';
+import { Edge } from './map';
 
 
 export class EdgesGeojson implements FeatureCollection<Geometry> {
   type: 'FeatureCollection' = 'FeatureCollection';
   features: Feature<Geometry, { [name: string]: unknown }>[];
 
-  constructor(edges: Edge[], projection: Cartesian2dProjection) {
-    this.features = edges.map(e => ({
+  constructor(edges: Edge[], _projection: Cartesian2dProjection) {
+    this.features = edges.map(() => ({
       type: 'Feature',
       geometry: {
         type: 'LineString',

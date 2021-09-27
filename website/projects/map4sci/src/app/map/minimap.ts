@@ -1,5 +1,6 @@
 import { Feature, Polygon } from 'geojson';
 import { GeoJSONSource, LngLatBounds, Map as MapboxMap, MapMouseEvent, Style } from 'mapbox-gl';
+
 import { MapSources, MiniMapOptions } from './map';
 
 
@@ -80,7 +81,7 @@ export class MiniMap {
     return this.container;
   }
 
-  onRemove(parentMap: MapboxMap): void {
+  onRemove(_parentMap: MapboxMap): void {
     return;
   }
 
@@ -329,7 +330,7 @@ export class MiniMap {
     const levels = this.options.zoomLevels;
     let found = false;
 
-    levels.forEach((zoom: unknown[]) => {
+    levels.forEach(zoom => {
       if (!found && parentZoom >= zoom[0]) {
         if (miniZoom >= zoom[1]) {
           miniMap.setZoom(zoom[2]);
