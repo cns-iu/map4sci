@@ -32,13 +32,18 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    browsers: ['ChromeHeadless'],
+    singleRun: true,
+
+    customLaunchers: {
+      ChromeHeadlessWSL: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-features=VizDisplayCompositor']
+      }
+    }
   });
 };
