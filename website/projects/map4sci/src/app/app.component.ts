@@ -1,5 +1,5 @@
 import { Any } from '@angular-ru/common/typings';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { EMPTY_DATASET, MapDataset } from './map/map';
@@ -12,6 +12,8 @@ import { MapDataService } from './services/map-data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  @HostBinding('class') readonly clsName = 'm4s-root';
+
   private subscriptions = new Subscription();
 
   constructor(readonly mapData: MapDataService) { }

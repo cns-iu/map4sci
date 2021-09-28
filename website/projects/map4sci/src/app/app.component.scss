@@ -8,3 +8,34 @@
   width: 100vw;
   height: 100vh;
 }
+
+:host {
+  display: block;
+  height: 100%;
+  overflow-y: auto;
+
+  m4s-page-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .content-container {
+    height: calc(100% - 3rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    display: flex;
+    flex-flow: column;
+    max-width: 1328px;
+    padding: 4.5rem 4rem;
+    align-items: center;
+    margin: auto;
+
+    .outlet-wrapper {
+      width: 100%;
+    }
+  }
+}
