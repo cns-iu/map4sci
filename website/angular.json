@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "e9d870c0-3c23-4441-9988-fc4b61d20c66"
+    "analytics": "e9d870c0-3c23-4441-9988-fc4b61d20c66",
+    "defaultCollection": "@angular-eslint/schematics"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -28,7 +29,6 @@
             "main": "projects/map4sci/src/main.ts",
             "polyfills": "projects/map4sci/src/polyfills.ts",
             "tsConfig": "projects/map4sci/tsconfig.app.json",
-            "aot": true,
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
@@ -36,7 +36,13 @@
             "styles": [
               "projects/map4sci/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -66,7 +72,8 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -92,6 +99,7 @@
             "polyfills": "projects/map4sci/src/polyfills.ts",
             "tsConfig": "projects/map4sci/tsconfig.spec.json",
             "karmaConfig": "projects/map4sci/karma.conf.js",
+            "codeCoverage": true,
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
@@ -103,15 +111,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/map4sci/tsconfig.app.json",
-              "projects/map4sci/tsconfig.spec.json",
-              "projects/map4sci/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/map4sci/**/*.ts",
+              "projects/map4sci/**/*.html"
             ]
           }
         },

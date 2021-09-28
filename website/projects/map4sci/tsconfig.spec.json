@@ -5,9 +5,7 @@
     "outDir": "../../out-tsc/spec",
     "types": [
       "jasmine"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "allowJs": true
+    ]
   },
   "files": [
     "src/test.ts",
