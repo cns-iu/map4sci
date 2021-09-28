@@ -99,6 +99,7 @@
             "polyfills": "projects/map4sci/src/polyfills.ts",
             "tsConfig": "projects/map4sci/tsconfig.spec.json",
             "karmaConfig": "projects/map4sci/karma.conf.js",
+            "codeCoverage": true,
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
