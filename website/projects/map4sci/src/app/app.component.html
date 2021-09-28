@@ -1,4 +1,4 @@
-<select class="dataset-selector"
+<!-- <select class="dataset-selector"
   *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1"
   (input)="mapDataSwitcherChange($event)">
   <option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
@@ -20,4 +20,15 @@
     [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
     [minimapConfig]="dataset.config?.minimapConfig"
   ></m4s-map>
+</div> -->
+
+<m4s-header></m4s-header>
+
+<div class="content">
+  <div class="outlet-wrapper">
+    <router-outlet>
+    </router-outlet>
+  </div>
 </div>
+
+<m4s-footer></m4s-footer>
