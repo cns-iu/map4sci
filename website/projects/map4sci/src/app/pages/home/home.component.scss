@@ -1,0 +1,18 @@
+:host {
+  display: block;
+
+  markdown {
+    display: block;
+    background-color: white;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+  }
+}

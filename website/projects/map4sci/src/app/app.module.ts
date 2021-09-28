@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MapModule } from './map/map.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
+import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 
 @NgModule({
@@ -15,7 +16,17 @@ import { CoreModule } from './core/core.module';
     MapModule,
     HttpClientModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    
+    MarkdownModule.forRoot({
+      loader: HttpClient,
+      markedOptions: {
+        provide: MarkedOptions,
+        useValue: {
+          gfm: true
+        }
+      }
+    })
   ],
   providers: [MapDataService],
   declarations: [AppComponent],

@@ -1,25 +1,34 @@
 :host {
   display: flex;
+  justify-content: center;
   height: 3rem;
   background-color: #286F94;
   color: white;
 
-  .copyright {
+  .container {
+    width: 90rem;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+    justify-content: space-between;
 
-  .resources {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    
-    .contact, .privacy {
-      transition: color 0.3s;
+    .copyright {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .resources {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      
+      .contact, .privacy {
+        transition: color 0.3s;
+        color: white;
+        background-color: #286F94;
+      }
     }
   }
 }
