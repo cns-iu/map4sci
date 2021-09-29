@@ -1,4 +1,4 @@
-import { Style } from 'mapbox-gl';
+import { Style } from 'maplibre-gl';
 
 import { Edge, MiniMapOptions, Node } from './map';
 
