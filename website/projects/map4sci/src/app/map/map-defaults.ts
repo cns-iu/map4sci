@@ -23,7 +23,7 @@ export const blankStyle: Style = {
   ]
 };
 export const defaultMinimapOptions: MiniMapOptions = {
-  id: 'mapboxgl-minimap',
+  id: 'maplibregl-minimap',
   width: '320px',
   height: '180px',
   style: blankStyle,

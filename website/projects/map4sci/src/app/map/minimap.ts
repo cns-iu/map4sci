@@ -354,7 +354,7 @@ export class MiniMap {
     const opts = this.options;
     const container = document.createElement('div');
 
-    container.className = 'mapboxgl-ctrl-minimap mapboxgl-ctrl';
+    container.className = 'maplibregl-ctrl-minimap maplibregl-ctrl';
     container.setAttribute('style', 'width: ' + opts.width + '; height: ' + opts.height + '; ' + opts.containerStyles);
     container.addEventListener('contextmenu', this.preventDefault);
 
