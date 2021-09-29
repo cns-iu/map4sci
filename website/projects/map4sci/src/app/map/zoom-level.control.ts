@@ -9,7 +9,7 @@ export class ZoomLevelControl implements IControl {
   onAdd(map: MapboxMap): HTMLElement {
     this.map = map;
     this.container = document.createElement('div');
-    this.container.className = 'mapboxgl-zoom-level-display';
+    this.container.className = 'maplibregl-zoom-level-display';
     this.updateText();
     this.zoomCallback = () => this.updateText();
     map.on('zoom', this.zoomCallback);
