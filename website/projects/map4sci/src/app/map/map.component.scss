@@ -1,5 +1,5 @@
 :host {
-  ::ng-deep .mapboxgl-zoom-level-display {
+  ::ng-deep .maplibregl-zoom-level-display {
     margin-right: 0.875rem;
     font-size: .875rem;
     border-radius: 50%;
@@ -15,7 +15,7 @@
     font-family: ‘Roboto’, sans-serif;
   }
 
-  ::ng-deep .mapboxgl-popup-content {
+  ::ng-deep .maplibregl-popup-content {
     padding-bottom: 0rem;
   }
 

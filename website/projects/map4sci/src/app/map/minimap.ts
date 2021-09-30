@@ -1,5 +1,5 @@
 import { Feature, Polygon } from 'geojson';
-import { GeoJSONSource, LngLatBounds, Map as MapboxMap, MapMouseEvent, Style } from 'mapbox-gl';
+import { GeoJSONSource, LngLatBounds, Map as MapboxMap, MapMouseEvent, Style } from 'maplibre-gl';
 
 import { MapSources, MiniMapOptions } from './map';
 
@@ -354,7 +354,7 @@ export class MiniMap {
     const opts = this.options;
     const container = document.createElement('div');
 
-    container.className = 'mapboxgl-ctrl-minimap mapboxgl-ctrl';
+    container.className = 'maplibregl-ctrl-minimap maplibregl-ctrl';
     container.setAttribute('style', 'width: ' + opts.width + '; height: ' + opts.height + '; ' + opts.containerStyles);
     container.addEventListener('contextmenu', this.preventDefault);
 

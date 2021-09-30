@@ -1,6 +1,6 @@
 import { Any, Immutable } from '@angular-ru/common/typings';
 import { FeatureCollection } from 'geojson';
-import { LngLatBoundsLike, Style } from 'mapbox-gl';
+import { LngLatBoundsLike, Style } from 'maplibre-gl';
 
 
 export interface Edge {
