@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/@compodoc/compodoc/src/config/schema.json",
+  "name": "Application map4sci code documentation",
+  "tsconfig": "./projects/map4sci/tsconfig.compodoc.json",
+  "output": "./docs/map4sci",
+  "silent": true,
+  "coverageTestThresholdFail": false
+}
