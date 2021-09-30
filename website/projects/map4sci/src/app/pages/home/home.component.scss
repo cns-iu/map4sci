@@ -1,6 +1,11 @@
 :host {
   display: block;
   height: 100%;
+  max-width: 1328px;
+  width: 66rem;
+  padding: 4.5rem 4rem;
+  align-items: center;
+  margin: auto;
 
   markdown {
     display: block;
@@ -32,8 +37,11 @@
       border: 1px solid gray;
     }
 
-    button {
+    .visualizer-open {
       margin-top: 1rem;
+      transition: color 0.3s;
+      color: white;
+      background-color: #286F94;
     }
   }
 }
