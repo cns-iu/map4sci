@@ -12,6 +12,9 @@ import { MapDataService } from '../../services/map-data.service';
 })
 export class VisualizerComponent implements OnDestroy {
 
+  events: string[] = [];
+  opened: boolean = true;
+
   dataset = EMPTY_DATASET;
 
   get displayMap(): boolean {

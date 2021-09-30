@@ -14,6 +14,9 @@ import { MapDataService } from './services/map-data.service';
 export class AppComponent implements OnDestroy {
   @HostBinding('class') readonly clsName = 'm4s-root';
 
+  events: string[] = [];
+  opened: boolean = true;
+
   dataset = EMPTY_DATASET;
 
   get displayMap(): boolean {

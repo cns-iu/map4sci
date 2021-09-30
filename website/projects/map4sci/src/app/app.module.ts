@@ -1,6 +1,7 @@
 import { MapDataService } from './services/map-data.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MapModule } from './map/map.module';
@@ -13,6 +14,7 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MapModule,
     HttpClientModule,
     AppRoutingModule,

@@ -1,6 +1,6 @@
 ## TRIPODS: Multi-Level Graph Representation for Exploring Big Data
 
-<img align="right" width="300" height="350" src="/assets/blank.png">
+<img align="right" width="300" height="350" src="assets/blank.png">
 
 Working with social, topical, financial, transportation, biological, and other networks requires a better understanding of their structure and properties. Standard network visualizations of such large real-world networks often resemble hairballs that provide little actionable insight. 
 

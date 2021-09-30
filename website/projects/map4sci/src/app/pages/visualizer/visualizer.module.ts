@@ -6,12 +6,15 @@ import { MapModule } from '../../map/map.module';
 import { VisualizerRoutingModule } from './visualizer-routing.module';
 import { VisualizerComponent } from './visualizer.component';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 @NgModule({
   imports: [
     CommonModule,
     VisualizerRoutingModule,
-    MapModule
+    MapModule,
+    MatSidenavModule
   ],
   declarations: [VisualizerComponent],
   providers: [MapDataService]
