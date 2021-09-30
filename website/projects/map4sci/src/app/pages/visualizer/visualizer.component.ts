@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { EMPTY_DATASET } from '../../map/map';
@@ -10,7 +10,7 @@ import { MapDataService } from '../../services/map-data.service';
   styleUrls: ['./visualizer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VisualizerComponent {
+export class VisualizerComponent implements OnDestroy {
 
   dataset = EMPTY_DATASET;
 

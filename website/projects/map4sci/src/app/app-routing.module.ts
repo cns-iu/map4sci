@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', loadChildren: () => HomeModule },
   { path: 'visualizer', loadChildren: () => VisualizerModule }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

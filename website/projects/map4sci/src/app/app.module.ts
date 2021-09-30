@@ -17,7 +17,6 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
     HttpClientModule,
     AppRoutingModule,
     CoreModule,
-    
     MarkdownModule.forRoot({
       loader: HttpClient,
       markedOptions: {
