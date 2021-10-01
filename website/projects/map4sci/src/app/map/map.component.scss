@@ -20,10 +20,10 @@
   }
 
   mgl-map {
-    height: calc(100% - 3rem);
+    height: calc(100% - 6rem);
     width: 100%;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 3rem;
   }
 }

@@ -1,26 +1,36 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  max-width: 1328px;
-  width: 66rem;
-  padding: 4.5rem 4rem;
   align-items: center;
   margin: auto;
 
   markdown {
     display: block;
-    background-color: white;
     padding-left: 7rem;
     padding-right: 7rem;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 1rem;
   }
-
+  
+  .banner {
+    position: fixed;
+    width: 90rem;
+    height: 30rem;
+    margin: auto;
+    padding-top: 3rem;
+    object-fit: cover;
+  }
+  
   .content {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    background-color: white;
+    max-width: 1328px;
+    width: 66rem;
+    position: relative;
+    margin-top: 10rem;
     padding-bottom: 3rem;
-    height: 100%;
+    height: calc(100% - 13rem);
+    z-index: 1;
+    overflow: hidden;
   }
 
   .visualizer-image {
@@ -28,12 +38,12 @@
     flex-direction: column;
     position: relative;
     float: right;
-    bottom: 50rem;
-    right: 5rem;
+    top: -57rem;
+    right: 7rem;
 
     img {
-      height: 300px;
-      width: 300px;
+      height: 284px;
+      width: 384px;
       border: 1px solid gray;
     }
 
@@ -42,6 +52,9 @@
       transition: color 0.3s;
       color: white;
       background-color: #286F94;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

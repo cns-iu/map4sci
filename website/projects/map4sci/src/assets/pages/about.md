@@ -1,10 +1,12 @@
 ## TRIPODS: Multi-Level Graph Representation for Exploring Big Data
 
-<img align="right" width="300" height="350" src="assets/blank.png">
+<img align="right" width="416" height="350" src="assets/blank.png">
 
 Working with social, topical, financial, transportation, biological, and other networks requires a better understanding of their structure and properties. Standard network visualizations of such large real-world networks often resemble hairballs that provide little actionable insight. 
 
 This project designs, implements, and deploys efficient algorithms for multi-level network representations that support interactive exploration by general audiences. Using the familiar Google map metaphor, the interactive visualizations make it easy to identify important nodes, major pathways, and clusters across multiple levels. Unlike existing methods for visualizing multi-level networks based on meta-nodes and meta-edges, the new visualizations will provide real nodes (prototypes) and real paths (backbones) for each level, similar to geographic maps that show real cities and real roads at every level of detail.
+
+This project designs, implements, and deploys efficient algorithms for multi-level network representations that support interactive exploration by general audiences. Using the familiar Google map metaphor, the interactive visualizations make it easy to identify important nodes, major pathways, and clusters across multiple levels. Unlike existing methods for visualizing multi-level networks based on meta-nodes and meta-edges, the new visualizations will provide real nodes (prototypes) and real paths (backbones) for each level, similar to geographic maps that show real cities and real roads at every level of detail. This project designs, implements, and deploys efficient algorithms for multi-level network representations that support interactive exploration by general audiences. Using the familiar Google map metaphor, the interactive visualizations make it easy to identify important nodes, major pathways, and clusters across multiple levels. Unlike existing methods for visualizing multi-level networks based on meta-nodes and meta-edges, the new visualizations will provide real nodes (prototypes) and real paths (backbones) for each level, similar to geographic maps that show real cities and real roads at every level of detail.
 
 
 ### Publications

@@ -1,5 +1,5 @@
 <div class="map-wrapper">
-  <mat-sidenav-container class="example-container">
+  <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
       <select class="dataset-selector"
       *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1"

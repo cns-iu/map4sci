@@ -16,7 +16,8 @@
       align-items: center;
   
       & > * {
-        margin-left: 1rem;
+        left: calc((100vw - 90rem) / 2 + 1rem);
+        position: absolute;
       }
     }
   }
