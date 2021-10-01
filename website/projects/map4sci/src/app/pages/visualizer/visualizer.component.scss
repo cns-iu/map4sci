@@ -1,7 +1,10 @@
-.dataset-selector {
-  position: absolute;
-  margin: 0.5rem;
-  z-index: 1000;
+.form-field {
+  padding: 1rem;
+  width: 100%;
+
+  ::ng-deep .mat-form-field-flex {
+    background-color: #F2F4F6;
+  }
 }
 
 .map-wrapper, .sidenav-container {
@@ -10,16 +13,41 @@
 }
 
 mat-sidenav {
-  width: 20%;
+  min-width: 20%;
   height: 100%;
   background-color: #F2F4F6;
+  border: none;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
 
 mat-sidenav-content {
   display: flex;
   flex-direction: column;
+  background-color: white;
 
   p {
     z-index: 1;
+    position: relative;
+    top: 3rem;
+
+    button {
+      width: 1.5rem;
+      height: 3rem;
+      border: none;
+      background-color: #F2F4F6;
+      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      border-radius: 3px;
+
+      .expand-collapse-icon {
+        position: relative;
+        right: .5rem;
+        transition: .6s;
+        padding-left: .15rem;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
   }
 }

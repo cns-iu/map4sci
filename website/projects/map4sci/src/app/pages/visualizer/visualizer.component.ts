@@ -14,6 +14,7 @@ export class VisualizerComponent implements OnDestroy {
 
   events: string[] = [];
   opened: boolean = true;
+  iconOpened: boolean = true;
 
   dataset = EMPTY_DATASET;
 
@@ -50,9 +51,16 @@ export class VisualizerComponent implements OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  mapDataSwitcherChange(event: Event): void {
-    const mapId = (event.target as HTMLOptionElement | null)?.value ?? '';
-    this.mapData.setDataset(mapId);
+  mapDataSwitcherChange(value: string): void {
+    this.mapData.setDataset(value);
   }
 
+  toggle(): void {
+    const { opened } = this;
+    if (opened) {
+      this.opened = false;
+    } else {
+      this.opened = true;
+    }
+  }
 }
