@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~maplibre-gl/dist/maplibre-gl.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Lato", sans-serif; }
 
 body {
   box-sizing: border-box;
   font-size: 1rem;
+  color: #424242;
 }
 
 * {
@@ -20,4 +22,5 @@ body {
 h2 {
   font-size: 3.5rem;
   font-weight: normal;
+  color: #616161;
 }

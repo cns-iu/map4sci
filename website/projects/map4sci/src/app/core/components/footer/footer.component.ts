@@ -9,6 +9,6 @@ import { ChangeDetectionStrategy, Component, HostBinding, Output, EventEmitter }
 export class FooterComponent {
   @HostBinding('class') readonly clsName = 'm4s-footer';
 
-  @Output() readonly contactClick = new EventEmitter<void>();
+  @Output() readonly termsClick = new EventEmitter<void>();
   @Output() readonly privacyClick = new EventEmitter<void>();
 }

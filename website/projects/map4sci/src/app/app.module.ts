@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+import { MarkdownModalModule } from './shared/components/markdown-modal/markdown-modal.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
           gfm: true
         }
       }
-    })
+    }),
+    MarkdownModalModule
   ],
   providers: [MapDataService],
   declarations: [AppComponent],
