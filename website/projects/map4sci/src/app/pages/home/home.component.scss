@@ -1,0 +1,47 @@
+:host {
+  display: block;
+  height: 100%;
+  max-width: 1328px;
+  width: 66rem;
+  padding: 4.5rem 4rem;
+  align-items: center;
+  margin: auto;
+
+  markdown {
+    display: block;
+    background-color: white;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+    height: 100%;
+  }
+
+  .visualizer-image {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    float: right;
+    bottom: 50rem;
+    right: 5rem;
+
+    img {
+      height: 300px;
+      width: 300px;
+      border: 1px solid gray;
+    }
+
+    .visualizer-open {
+      margin-top: 1rem;
+      transition: color 0.3s;
+      color: white;
+      background-color: #286F94;
+    }
+  }
+}

@@ -6,6 +6,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 body {
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 * {
@@ -14,4 +15,9 @@ body {
 
 .maplibregl-ctrl-logo {
   display: none !important;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: normal;
 }

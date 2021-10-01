@@ -1,0 +1,12 @@
+:host {
+  display: block;
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    .filler {
+      flex-grow: 1;
+    }
+  }
+}

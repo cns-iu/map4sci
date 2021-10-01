@@ -1,18 +1,16 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { EMPTY_DATASET } from './map/map';
-import { MapDataService } from './services/map-data.service';
-
+import { EMPTY_DATASET } from '../../map/map';
+import { MapDataService } from '../../services/map-data.service';
 
 @Component({
-  selector: 'm4s-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'm4s-visualizer',
+  templateUrl: './visualizer.component.html',
+  styleUrls: ['./visualizer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnDestroy {
-  @HostBinding('class') readonly clsName = 'm4s-root';
+export class VisualizerComponent implements OnDestroy {
 
   events: string[] = [];
   opened: boolean = true;
@@ -56,4 +54,5 @@ export class AppComponent implements OnDestroy {
     const mapId = (event.target as HTMLOptionElement | null)?.value ?? '';
     this.mapData.setDataset(mapId);
   }
+
 }

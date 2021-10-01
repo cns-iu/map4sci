@@ -1,0 +1,26 @@
+.dataset-selector {
+  position: absolute;
+  margin: 0.5rem;
+  z-index: 1000;
+}
+
+.map-wrapper, .example-container {
+  width: 100%;
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 20%;
+  height: 100%;
+  z-index: 999;
+  background-color: grey;
+}
+
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    z-index: 1;
+  }
+}

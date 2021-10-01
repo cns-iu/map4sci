@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  background-color: #286F94;
+  color: white;
+
+  .container {
+    width: 90rem;
+
+    .logos {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      justify-content: flex-start;
+      align-items: center;
+  
+      & > * {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<h2 mat-dialog-title class="header">
+  <div class="title">{{ data.title | uppercase }}</div>
+
+  <div class="filler"></div>
+
+  <button mat-icon-button mat-dialog-close class="close" tabindex="-1">
+    <mat-icon>close</mat-icon>
+  </button>
+</h2>
+
+<mat-dialog-content>
+  <markdown [src]="data.src"></markdown>
+</mat-dialog-content>
