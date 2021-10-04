@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, HostBinding, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 
-import { EMPTY_DATASET } from './map/map';
-import { MapDataService } from './services/map-data.service';
 import { MarkdownModalComponent, MarkdownModalData } from './shared/components/markdown-modal/markdown-modal.component';
+import { TrackingState } from './shared/components/tracking-popup/tracking.state';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TrackingPopupComponent } from './shared/components/tracking-popup/tracking-popup.component';
 
 
 @Component({
@@ -13,51 +14,30 @@ import { MarkdownModalComponent, MarkdownModalData } from './shared/components/m
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnDestroy, OnInit {
   @HostBinding('class') readonly clsName = 'm4s-root';
-
-  events: string[] = [];
-  opened: boolean = true;
-
-  dataset = EMPTY_DATASET;
-
-  get displayMap(): boolean {
-    const { dataset } = this;
-    if (!dataset.nodes) {
-      return false;
-    }
-    if (!dataset.nodes.features) {
-      return false;
-    }
-    if (dataset.nodes.features.length < 1) {
-      return false;
-    }
-
-    return true;
-  }
 
   private readonly subscriptions = new Subscription();
 
   constructor(
-    readonly mapData: MapDataService,
-    cdr: ChangeDetectorRef,
-    private readonly dialog: MatDialog
-  ) {
-    const sub = mapData.dataset$.subscribe(ds => {
-      this.dataset = ds;
-      cdr.markForCheck();
-    });
+    private readonly dialog: MatDialog,
+    readonly tracking: TrackingState,
+    readonly snackbar: MatSnackBar
+  ) { }
 
-    this.subscriptions.add(sub);
+  ngOnInit(): void {
+    const snackBar = this.snackbar.openFromComponent(TrackingPopupComponent, {
+      data: {
+        preClose: () => {
+          snackBar.dismiss();
+        }
+      },
+      duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
+    });
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
-  }
-
-  mapDataSwitcherChange(event: Event): void {
-    const mapId = (event.target as HTMLOptionElement | null)?.value ?? '';
-    this.mapData.setDataset(mapId);
   }
 
   openTerms(): void {
