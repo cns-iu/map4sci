@@ -16,6 +16,7 @@
   "dependencies": {
     "@angular-ru/common": "^15.212.0",
     "@angular/animations": "~12.2.7",
+    "@angular/cdk": "^12.2.7",
     "@angular/common": "~12.2.7",
     "@angular/compiler": "~12.2.7",
     "@angular/core": "~12.2.7",

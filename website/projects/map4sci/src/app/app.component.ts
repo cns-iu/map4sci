@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, HostBinding, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { MarkdownModalComponent, MarkdownModalData } from './shared/components/markdown-modal/markdown-modal.component';
@@ -14,10 +13,8 @@ import { TrackingPopupComponent } from './shared/components/tracking-popup/track
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnDestroy, OnInit {
+export class AppComponent implements OnInit {
   @HostBinding('class') readonly clsName = 'm4s-root';
-
-  private readonly subscriptions = new Subscription();
 
   constructor(
     private readonly dialog: MatDialog,
@@ -34,10 +31,6 @@ export class AppComponent implements OnDestroy, OnInit {
       },
       duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
     });
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
   }
 
   openTerms(): void {
