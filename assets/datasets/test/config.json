@@ -27,7 +27,7 @@
   "mapCenter": [ -5, 5 ],
   "textOverlapEnabledZoom": 6,
   "minimapConfig": {
-    "id": "mapboxgl-minimap",
+    "id": "maplibregl-minimap",
     "width": "500px",
     "height": "200px",
     "style": {
