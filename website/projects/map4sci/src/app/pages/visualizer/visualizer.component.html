@@ -1,16 +1,50 @@
 <div class="map-wrapper">
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-      <select class="dataset-selector"
-      *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1"
-      (input)="mapDataSwitcherChange($event)">
-      <option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
-        {{ dataset.name }}
-      </option>
-    </select>
-  </mat-sidenav>
-  
-  <mat-sidenav-content>
+      <form>
+        <mat-form-field class="w-100" appearance="fill" *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1">
+          <mat-label>Dataset</mat-label>
+          <mat-select
+            class="dataset-selector"
+            (selectionChange)="mapDataSwitcherChange($event.value ?? '')"
+            [formControl]="datasetControl"
+            [value]="(this.mapData.dataset$ | async)?.id"
+          >
+            <mat-option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
+              {{ dataset.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Search...</mat-label>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Search term"
+            aria-label="Search field"
+            matInput
+            [formControl]="searchControl"
+            [matAutocomplete]="auto"
+          >
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+      <button
+        mat-flat-button
+        class="search-button"
+        [disabled]="!searchTerm"
+      >Search</button>
+
+      <!-- @TODO:  Remove this -->
+      <div style="margin-top: 15rem;">{{searchTerm}}</div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
       <p><button mat-button (click)="sidenav.toggle()">close drawer</button></p>
       <m4s-map
         *ngIf="displayMap"

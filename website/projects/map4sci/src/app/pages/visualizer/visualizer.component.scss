@@ -1,7 +1,10 @@
 .dataset-selector {
-  position: absolute;
-  margin: 0.5rem;
-  z-index: 1000;
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  padding: .5rem;
 }
 
 .map-wrapper, .sidenav-container {
@@ -22,4 +25,14 @@ mat-sidenav-content {
   p {
     z-index: 1;
   }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.search-button {
+  width: 100%;
+  background-color: #286F94;
+  color: white;
 }
