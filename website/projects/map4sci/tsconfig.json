@@ -6,7 +6,8 @@
     "types": [],
     "paths": {
       "@core/*": ["app/core/*"],
-      "@shared/*": ["app/shared/*"]
+      "@shared/*": ["app/shared/*"],
+      "@environment": ["environments/environment.ts"]
     }
   },
   "files": [
