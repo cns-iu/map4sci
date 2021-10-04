@@ -6,6 +6,7 @@
   },
   "version": 1,
   "newProjectRoot": "projects",
+  "defaultProject": "map4sci",
   "projects": {
     "map4sci": {
       "projectType": "application",
@@ -28,7 +29,7 @@
             "index": "projects/map4sci/src/index.html",
             "main": "projects/map4sci/src/main.ts",
             "polyfills": "projects/map4sci/src/polyfills.ts",
-            "tsConfig": "projects/map4sci/tsconfig.app.json",
+            "tsConfig": "projects/map4sci/tsconfig.json",
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
@@ -100,6 +101,11 @@
             "tsConfig": "projects/map4sci/tsconfig.spec.json",
             "karmaConfig": "projects/map4sci/karma.conf.js",
             "codeCoverage": true,
+            "codeCoverageExclude": [
+              "projects/map4sci/src/main.ts",
+              "projects/map4sci/src/polyfills.ts",
+              "projects/map4sci/src/test.ts"
+            ],
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
@@ -133,6 +139,5 @@
         }
       }
     }
-  },
-  "defaultProject": "map4sci"
+  }
 }
