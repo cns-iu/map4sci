@@ -101,6 +101,11 @@
             "tsConfig": "projects/map4sci/tsconfig.spec.json",
             "karmaConfig": "projects/map4sci/karma.conf.js",
             "codeCoverage": true,
+            "codeCoverageExclude": [
+              "projects/map4sci/src/main.ts",
+              "projects/map4sci/src/polyfills.ts",
+              "projects/map4sci/src/test.ts"
+            ],
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
