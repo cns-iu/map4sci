@@ -17,7 +17,9 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+        with:
+          ref: develop
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -37,7 +39,6 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          keep_files: true
           publish_dir: website/dist/map4sci
           publish_branch: staging
           commit_message: "Staging deploy -- ${{ github.event.head_commit.message }}"
