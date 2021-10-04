@@ -485,10 +485,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/**
+ * Factory function for initializing site configuration.
+ *
+ * @param config Configuration service.
+ * @param url Url to load configuration from.
+ * @returns An initialization function.
+ */
 function initializeSiteConfigurationFactory(config, url) {
     return () => config.loadYaml(url);
 }
 class SiteConfigurationModule {
+    /**
+     * Configures the site configuration loading.
+     *
+     * @param url Url of site configuration.
+     * @returns This module with the necessary providers.
+     */
     static forRoot(url) {
         return {
             ngModule: SiteConfigurationModule,
@@ -535,21 +548,53 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const SITE_CONFIGURATION_URL = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('Location of site configuration');
+/**
+ * Injection token for the url of the site configuration file.
+ */
+const SITE_CONFIGURATION_URL = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.InjectionToken('URL for site configuration');
+/**
+ * Provides access to site configuration loaded during app initialization.
+ *
+ * @template T Optional type useful for specifiying the entire or parts of the configuration's shape.
+ */
 class SiteConfigurationService {
+    /**
+     * Creates an instance of site configuration service.
+     *
+     * @param http Service used to load configuration yaml files.
+     */
     constructor(http) {
         this.http = http;
+        /** Loaded site configuration. */
         this.configuration = {};
     }
     get(key) {
         return this.configuration[key];
     }
+    /**
+     * Fetches the entire site configuration object.
+     *
+     * @returns The site configuration.
+     */
     getConfigObject() {
         return this.configuration;
     }
+    /**
+     * Loads and sets the site configuration from a yaml file loaded from an url.
+     *
+     * @param url Url of the yaml file.
+     * @returns Observable of the loaded and parsed yaml.
+     */
     loadYaml(url) {
         return this.http.get(url, { responseType: 'text' }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_2__.map)(rawYaml => this.parseAndSetConfig(rawYaml, url)));
     }
+    /**
+     * Parses the yaml and sets it as the new configuration.
+     *
+     * @param rawYaml Raw yaml text.
+     * @param url Url from which the yaml was loaded.
+     * @returns The parsed yaml.
+     */
     parseAndSetConfig(rawYaml, url) {
         var _a;
         const yaml = (_a = (0,js_yaml__WEBPACK_IMPORTED_MODULE_0__.load)(rawYaml, { filename: url })) !== null && _a !== void 0 ? _a : {};
