@@ -35,6 +35,11 @@ jobs:
         working-directory: website
       - run: npm run build -- --output-hashing=none --base-href=/map4sci/
         working-directory: website
+      - name: Setup GitHub Pages files
+        working-directory: website
+        run: |
+          cp dist/map4sci/index.html dist/map4sci/404.html
+          touch dist/map4sci/.nojekyll
 
       - uses: peaceiris/actions-gh-pages@v3
         with:

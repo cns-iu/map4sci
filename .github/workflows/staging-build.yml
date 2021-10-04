@@ -35,6 +35,10 @@ jobs:
         working-directory: website
       - run: npm run build -- --output-hashing=none --base-href=/
         working-directory: website
+      - name: Setup Netlify files
+        working-directory: website
+        run: |
+          echo '/* /index.html 200' > dist/map4sci/_redirects
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
