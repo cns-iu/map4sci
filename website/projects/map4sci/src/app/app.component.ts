@@ -17,7 +17,7 @@ export class AppComponent implements OnDestroy {
   @HostBinding('class') readonly clsName = 'm4s-root';
 
   events: string[] = [];
-  opened: boolean = true;
+  opened = true;
 
   dataset = EMPTY_DATASET;
 
