@@ -1,9 +1,19 @@
 <div class="container">
-  <div class="logos">
-    <a href="/home">
-      <div class="tripods-logo">
-        TRIPODS
-      </div>
+  <div class="logo" [class.reverse-layout]="reverseLogoLayout">
+    <a *ngIf="logoLink; else: logoRouterLink" [href]="logoLink">
+      <ng-container *ngTemplateOutlet="logoContent"></ng-container>
     </a>
+    <ng-template #logoRouterLink>
+      <a routerLink="/home">
+        <ng-container *ngTemplateOutlet="logoContent"></ng-container>
+      </a>
+    </ng-template>
+
+    <ng-template #logoContent>
+      <img class="icon" [src]="logoIcon">
+      <span class="label">{{ logoLabel }}</span>
+    </ng-template>
   </div>
+
+  <div class="filler"></div>
 </div>
