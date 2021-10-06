@@ -21,10 +21,6 @@
       font-weight: bold;
       color: var(--primary-text, #ffffff);
       text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
     }
 
     .logo.reverse-layout > a {

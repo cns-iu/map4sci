@@ -3,4 +3,9 @@ header:
     layout: icon-first # Options: icon-first, label-first
     icon: null # Url
     label: TRIPODS
-    linkTo: null # Url
+    link-to: null # Url
+
+footer:
+  copyright: "Copyright \u00A9 2021 Tripods. All rights reserved."
+  terms-of-service: assets/footer/terms.md
+  privacy-policy: assets/footer/privacy-policy.md

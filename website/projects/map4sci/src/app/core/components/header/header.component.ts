@@ -14,7 +14,7 @@ export interface LogoConfig {
   /** Logo label. */
   label?: string;
   /** External link. */
-  linkTo?: string;
+  'link-to'?: string;
 }
 
 /**
@@ -60,7 +60,7 @@ export class HeaderComponent {
    * @param siteConfig The loaded site configuration.
    */
   constructor(siteConfig: SiteConfigurationService<SiteConfigurationWithHeaderConfig>) {
-    const { layout, icon, label = '', linkTo = '' } = siteConfig.get('header', 'logo') ?? {};
+    const { layout, icon, label = '', 'link-to': linkTo = '' } = siteConfig.get('header', 'logo') ?? {};
 
     this.reverseLogoLayout = layout?.toLowerCase?.() === 'label-first';
     this.logoIcon = icon;
