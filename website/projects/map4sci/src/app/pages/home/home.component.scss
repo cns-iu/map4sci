@@ -36,14 +36,13 @@
   .visualizer-image {
     display: flex;
     flex-direction: column;
-    position: relative;
     float: right;
-    top: -57rem;
-    right: 7rem;
+    width: 50%;
+    padding-left: 1rem;
 
     img {
-      height: 284px;
-      width: 384px;
+      height: 100%;
+      width: 100%;
       border: 1px solid gray;
     }
 
