@@ -1,1 +1,6 @@
-null
+header:
+  logo:
+    layout: icon-first # Options: icon-first, label-first
+    icon: null # Url
+    label: TRIPODS
+    linkTo: null # Url
