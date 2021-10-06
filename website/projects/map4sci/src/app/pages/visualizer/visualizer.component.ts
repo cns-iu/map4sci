@@ -16,9 +16,6 @@ import { MapDataService } from '../../services/map-data.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VisualizerComponent implements OnInit, OnDestroy {
-  // view child of map component
-  @ViewChild('map') map: any;
-
   events: string[] = [];
   opened = true;
   iconOpened = true;
@@ -104,8 +101,6 @@ export class VisualizerComponent implements OnInit, OnDestroy {
       } as MapMarker;
     });
     this.mapPins = [...mapPins];
-    console.log('Search term: "', searchTerm, '"\nresults: ', filteredNodes, '\nmap pins: ', mapPins);
-    console.log('original nodes: ', this.dataset.nodes);
   }
 
   toggle(): void {
