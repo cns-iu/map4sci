@@ -1,6 +1,6 @@
 <div class="container">
   <div class="logo" [class.reverse-layout]="reverseLogoLayout">
-    <a *ngIf="logoLink; else: logoRouterLink" [href]="logoLink">
+    <a *ngIf="logoLink; else: logoRouterLink" [href]="logoLink" target="_blank" rel="noreferrer noopener">
       <ng-container *ngTemplateOutlet="logoContent"></ng-container>
     </a>
     <ng-template #logoRouterLink>
