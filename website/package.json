@@ -16,6 +16,7 @@
   "dependencies": {
     "@angular-ru/common": "^15.212.0",
     "@angular/animations": "~12.2.7",
+    "@angular/cdk": "^12.2.7",
     "@angular/common": "~12.2.7",
     "@angular/compiler": "~12.2.7",
     "@angular/core": "~12.2.7",
@@ -27,6 +28,7 @@
     "geojson": "^0.5.0",
     "js-yaml": "^4.1.0",
     "maplibre-gl": "^1.15.2",
+    "ngx-google-analytics": "^11.2.1",
     "ngx-maplibre-gl": "^12.0.0",
     "ngx-markdown": "^12.0.1",
     "rxjs": "~6.6.0",

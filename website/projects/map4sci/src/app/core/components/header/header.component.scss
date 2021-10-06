@@ -3,7 +3,6 @@
   height: 3rem;
   align-items: center;
   background-color: #286F94;
-  color: white;
 
   .container {
     width: 90rem;
@@ -18,6 +17,8 @@
       & > * {
         left: calc((100vw - 90rem) / 2 + 1rem);
         position: absolute;
+        color: white;
+        text-decoration: none;
       }
     }
   }

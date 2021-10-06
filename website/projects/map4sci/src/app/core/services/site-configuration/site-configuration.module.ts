@@ -4,6 +4,13 @@ import { Observable } from 'rxjs';
 import { SITE_CONFIGURATION_URL, SiteConfigurationService } from './site-configuration.service';
 
 
+/**
+ * Factory function for initializing site configuration.
+ *
+ * @param config Configuration service.
+ * @param url Url to load configuration from.
+ * @returns An initialization function.
+ */
 function initializeSiteConfigurationFactory(
   config: SiteConfigurationService,
   url: string
@@ -14,6 +21,12 @@ function initializeSiteConfigurationFactory(
 
 @NgModule()
 export class SiteConfigurationModule {
+  /**
+   * Configures the site configuration loading.
+   *
+   * @param url Url of site configuration.
+   * @returns This module with the necessary providers.
+   */
   static forRoot(url: string): ModuleWithProviders<SiteConfigurationModule> {
     return {
       ngModule: SiteConfigurationModule,

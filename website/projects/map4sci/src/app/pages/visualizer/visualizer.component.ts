@@ -20,7 +20,8 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   @ViewChild('map') map: any;
 
   events: string[] = [];
-  opened: boolean = true;
+  opened = true;
+  iconOpened = true;
 
   dataset = EMPTY_DATASET;
   filteredNodes: FeatureCollection<Geometry, GeoJsonProperties> = EMPTY_DATASET.nodes;
@@ -107,4 +108,12 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     console.log('original nodes: ', this.dataset.nodes);
   }
 
+  toggle(): void {
+    const { opened } = this;
+    if (opened) {
+      this.opened = false;
+    } else {
+      this.opened = true;
+    }
+  }
 }
