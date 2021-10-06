@@ -14,8 +14,6 @@ import { TrackingPopupModule } from './shared/components/tracking-popup/tracking
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 import { INITIAL_TELEMETRY_SETTING, TrackingState } from './shared/components/tracking-popup/tracking.state';
 import { environment } from '../environments/environment';
-import { NgxsDataPluginModule } from '@ngxs-labs/data';
-import { NgxsModule } from '@ngxs/store';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
@@ -46,10 +44,6 @@ export const ROOT_STATES = [
       INITIAL_TELEMETRY_SETTING === false ? '' : environment.googleAnalyticsToken, [
         { command: 'set', values: [{ app: 'm4s' }] }
       ]),
-    NgxsDataPluginModule.forRoot(),
-    NgxsModule.forRoot(ROOT_STATES, {
-      developmentMode: !environment.production
-    }),
     MatSnackBarModule
   ],
   providers: [MapDataService],

@@ -1,33 +1,38 @@
 import { Injectable } from '@angular/core';
-import { DataAction, StateRepository } from '@ngxs-labs/data/decorators';
-import { NgxsImmutableDataRepository } from '@ngxs-labs/data/repositories';
-import { State } from '@ngxs/store';
-
 
 export interface TrackingStateModel {
   allowTelemetry?: boolean;
 }
 
 export const LOCAL_STORAGE_ALLOW_TELEMETRY_KEY = 'ALLOW_TELEMETRY';
-export const INITIAL_TELEMETRY_SETTING = localStorage.getItem(LOCAL_STORAGE_ALLOW_TELEMETRY_KEY) === null ? undefined
-  : localStorage.getItem(LOCAL_STORAGE_ALLOW_TELEMETRY_KEY)?.toLowerCase() === 'true';
+export const INITIAL_TELEMETRY_SETTING = getTelemetryStorageSetting();
 
-@StateRepository()
-@State<TrackingStateModel>({
-  name: 'tracking',
-  defaults: {
-    allowTelemetry: INITIAL_TELEMETRY_SETTING
-  }
+function getTelemetryStorageSetting(): boolean | undefined {
+  const value = localStorage.getItem(LOCAL_STORAGE_ALLOW_TELEMETRY_KEY);
+  return value === null ? undefined : value.toLowerCase() === 'true';
+}
+
+export const INITIAL_TRACKING_STATE: TrackingStateModel = {
+  allowTelemetry: INITIAL_TELEMETRY_SETTING
+};
+
+@Injectable({
+  providedIn: 'root',
 })
-@Injectable()
-export class TrackingState extends NgxsImmutableDataRepository<TrackingStateModel> {
+export class TrackingState {
 
-  @DataAction()
+  snapshot: TrackingStateModel;
+
+  constructor() {
+    this.snapshot = INITIAL_TRACKING_STATE;
+  }
+
   setAllowTelemetry(allowTelemetry: boolean): void {
-    const oldValue = localStorage.getItem(LOCAL_STORAGE_ALLOW_TELEMETRY_KEY) ?? null;
+    const oldValue = getTelemetryStorageSetting();
     localStorage.setItem(LOCAL_STORAGE_ALLOW_TELEMETRY_KEY, allowTelemetry.toString());
-    this.ctx.patchState({ allowTelemetry });
-    if ((oldValue === null && !allowTelemetry) || (oldValue !== allowTelemetry.toString())) {
+    this.snapshot.allowTelemetry = allowTelemetry;
+
+    if (oldValue !== undefined || allowTelemetry === false) {
       // This ensures that if telemetry is disabled that it _WONT_ send anything to Google Analytics
       location.reload();
     }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostBinding, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, Inject } from '@angular/core';
 import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 import { TrackingState } from './tracking.state';
@@ -13,7 +13,8 @@ type SnackBarData = {
 @Component({
   selector: 'm4s-tracking-popup',
   templateUrl: './tracking-popup.component.html',
-  styleUrls: ['./tracking-popup.component.scss']
+  styleUrls: ['./tracking-popup.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TrackingPopupComponent {
   @HostBinding('class') readonly clsName = 'm4s-tracking-popup';
