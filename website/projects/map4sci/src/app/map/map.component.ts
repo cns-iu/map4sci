@@ -19,7 +19,7 @@ import { ZoomLevelControl } from './zoom-level.control';
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
-export class MapComponent {
+export class MapComponent{
   // Inputs
   @Input() mapStyle = blankStyle;
   @Input() edgeFeatures!: FeatureCollection;

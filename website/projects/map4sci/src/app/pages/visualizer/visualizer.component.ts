@@ -22,6 +22,7 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   dataset = EMPTY_DATASET;
   filteredNodes: FeatureCollection<Geometry, GeoJsonProperties> = EMPTY_DATASET.nodes;
+  filter: string = '';
 
   options: string[] = [];
   filteredOptions?: Observable<string[]>;
@@ -45,6 +46,26 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     }
 
     return true;
+  }
+
+  get buttonTitle(): string {
+    const { searchTerm, filter } = this;
+    if (!searchTerm && filter === '') {
+      return 'Search';
+    }
+    if (searchTerm !== '' && filter === searchTerm) {
+      return 'Clear';
+    }
+
+    return 'Search';
+  }
+
+  get buttonDisabled(): boolean {
+    if (!this.searchTerm && this.filter !== this.searchTerm) {
+      return true;
+    }
+
+    return false;
   }
 
   private readonly subscriptions = new Subscription();
@@ -84,16 +105,23 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
-  addPins(): void {
+  searchButtonClick(): void {
     const { searchTerm } = this;
-    if (!searchTerm) {
+    if (this.buttonTitle === 'Clear' && searchTerm) {
       this.mapPins = [];
+      this.filter = '';
+      this.searchTerm = '';
+      return;
+    }
+
+    if (!searchTerm) {
       return;
     }
 
     const { nodes } = this.dataset;
 
     const filteredNodes = nodes.features.filter(n => n.properties?.label.toLowerCase().includes(searchTerm.toLowerCase())) as Any;
+    this.filter = searchTerm;
     const mapPins: MapMarker[] = filteredNodes.map((n: Any) => {
       return {
         coordinates: n.geometry.coordinates,

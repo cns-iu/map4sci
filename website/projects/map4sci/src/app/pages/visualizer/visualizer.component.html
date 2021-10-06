@@ -33,9 +33,9 @@
       <button
         mat-flat-button
         class="search-button"
-        [disabled]="!searchTerm"
-        (click)="addPins()"
-      >Search</button>
+        [disabled]="buttonDisabled"
+        (click)="searchButtonClick()"
+      >{{ buttonTitle }}</button>
     </mat-sidenav>
 
     <mat-sidenav-content>
