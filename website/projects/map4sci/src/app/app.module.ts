@@ -10,6 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { MarkdownModalModule } from './shared/components/markdown-modal/markdown-modal.module';
+import { TrackingPopupModule } from './shared/components/tracking-popup/tracking-popup.module';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
+import { INITIAL_TELEMETRY_SETTING } from './shared/components/tracking-popup/tracking.state';
+import { environment } from '../environments/environment';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -29,7 +34,13 @@ import { MarkdownModalModule } from './shared/components/markdown-modal/markdown
         }
       }
     }),
-    MarkdownModalModule
+    MarkdownModalModule,
+    TrackingPopupModule,
+    NgxGoogleAnalyticsModule.forRoot(
+      INITIAL_TELEMETRY_SETTING === false ? '' : environment.googleAnalyticsToken, [
+        { command: 'set', values: [{ app: 'm4s' }] }
+      ]),
+    MatSnackBarModule
   ],
   providers: [MapDataService],
   declarations: [AppComponent],
