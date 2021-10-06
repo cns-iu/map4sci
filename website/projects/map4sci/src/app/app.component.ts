@@ -23,14 +23,7 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const snackBar = this.snackbar.openFromComponent(TrackingPopupComponent, {
-      data: {
-        preClose: () => {
-          snackBar.dismiss();
-        }
-      },
-      duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
-    });
+    this.openTrackingPopup();
   }
 
   openTerms(): void {
@@ -52,6 +45,17 @@ export class AppComponent implements OnInit {
         title: 'Privacy Policy',
         src: 'assets/footer/privacy-policy.md'
       }
+    });
+  }
+
+  openTrackingPopup(): void {
+    const snackBar = this.snackbar.openFromComponent(TrackingPopupComponent, {
+      data: {
+        preClose: () => {
+          snackBar.dismiss();
+        }
+      },
+      duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
     });
   }
 }

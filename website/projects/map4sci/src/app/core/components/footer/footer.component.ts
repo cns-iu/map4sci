@@ -11,4 +11,5 @@ export class FooterComponent {
 
   @Output() readonly termsClick = new EventEmitter<void>();
   @Output() readonly privacyClick = new EventEmitter<void>();
+  @Output() readonly optClick = new EventEmitter<void>();
 }
