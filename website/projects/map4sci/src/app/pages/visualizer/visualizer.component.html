@@ -38,10 +38,8 @@
         mat-flat-button
         class="search-button"
         [disabled]="!searchTerm"
+        (click)="addPins()"
       >Search</button>
-
-      <!-- @TODO:  Remove this -->
-      <div style="margin-top: 15rem;">{{searchTerm}}</div>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -58,6 +56,7 @@
         [mapCenterConfig]="dataset.config?.mapCenter"
         [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
         [minimapConfig]="dataset.config?.minimapConfig"
+        [mapMarkers]="mapPins"
       ></m4s-map>
     </mat-sidenav-content>
   </mat-sidenav-container>

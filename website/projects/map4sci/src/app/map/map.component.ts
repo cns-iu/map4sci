@@ -128,6 +128,10 @@ export class MapComponent {
       box-shadow: 3px 3px 5px 4px #00000021;
   `;
 
+  ngOnChanges(): void {
+    this.addMapMarkers(this.mapMarkers);
+  }
+
   capitalizeFirstLetter(input: string): string {
     return input.charAt(0).toUpperCase() + input.slice(1);
   }

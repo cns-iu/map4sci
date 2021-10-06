@@ -1,5 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Any } from '@angular-ru/common/typings';
+import { MapMarker } from './../../map/map';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
@@ -13,18 +16,23 @@ import { MapDataService } from '../../services/map-data.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VisualizerComponent implements OnInit, OnDestroy {
+  // view child of map component
+  @ViewChild('map') map: any;
 
   events: string[] = [];
   opened: boolean = true;
 
   dataset = EMPTY_DATASET;
+  filteredNodes: FeatureCollection<Geometry, GeoJsonProperties> = EMPTY_DATASET.nodes;
 
   options: string[] = [];
+  filteredOptions?: Observable<string[]>;
   searchTerm?: string | null;
+  mapPins: MapMarker[] = [];
 
   datasetControl: FormControl = new FormControl();
   searchControl: FormControl = new FormControl();
-  filteredOptions?: Observable<string[]>;
+
 
   get displayMap(): boolean {
     const { dataset } = this;
@@ -49,8 +57,8 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   ) {
     const sub = mapData.dataset$.subscribe(ds => {
       this.dataset = ds;
+      this.filteredNodes = ds.nodes;
       this.options = ds.nodes.features.map(n => n.properties?.label);
-      console.log('options: ', this.options);
       cdr.markForCheck();
     });
 
@@ -69,9 +77,6 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   }
 
   mapDataSwitcherChange(dataset: string): void {
-    console.log('event: ', dataset);
-    console.log('dataset: ', this.dataset);
-
     this.mapData.setDataset(dataset);
   }
 
@@ -79,6 +84,27 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     const filterValue = value.toLowerCase();
 
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  }
+
+  addPins(): void {
+    const { searchTerm } = this;
+    if (!searchTerm) {
+      this.mapPins = [];
+      return;
+    }
+
+    const { nodes } = this.dataset;
+
+    const filteredNodes = nodes.features.filter(n => n.properties?.label.toLowerCase().includes(searchTerm.toLowerCase())) as Any;
+    const mapPins: MapMarker[] = filteredNodes.map((n: Any) => {
+      return {
+        coordinates: n.geometry.coordinates,
+        title: n.properties?.label
+      } as MapMarker;
+    });
+    this.mapPins = [...mapPins];
+    console.log('Search term: "', searchTerm, '"\nresults: ', filteredNodes, '\nmap pins: ', mapPins);
+    console.log('original nodes: ', this.dataset.nodes);
   }
 
 }
