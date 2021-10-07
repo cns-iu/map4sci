@@ -59,7 +59,7 @@ describe('HeaderComponent', () => {
 
   describe('.logoLink', () => {
     it('is loaded from the configuration', async () => {
-      setLogoConfig({ linkTo: sampleUrl });
+      setLogoConfig({ 'link-to': sampleUrl });
       const { instance } = await shallow.render();
       expect(instance.logoLink).toEqual(sampleUrl);
     });
