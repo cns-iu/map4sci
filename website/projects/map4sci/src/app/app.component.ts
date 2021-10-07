@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { EMPTY_DATASET } from './map/map';
-import { MapDataService } from './services/map-data.service';
+import { TrackingPopupComponent } from './shared/components/tracking-popup/tracking-popup.component';
+import { TrackingState } from './shared/components/tracking-popup/tracking.state';
 
 
 @Component({
@@ -11,49 +11,26 @@ import { MapDataService } from './services/map-data.service';
   styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit {
   @HostBinding('class') readonly clsName = 'm4s-root';
 
-  events: string[] = [];
-  opened = true;
-
-  dataset = EMPTY_DATASET;
-
-  get displayMap(): boolean {
-    const { dataset } = this;
-    if (!dataset.nodes) {
-      return false;
-    }
-    if (!dataset.nodes.features) {
-      return false;
-    }
-    if (dataset.nodes.features.length < 1) {
-      return false;
-    }
-
-    return true;
-  }
-
-  private readonly subscriptions = new Subscription();
-
   constructor(
-    readonly mapData: MapDataService,
-    cdr: ChangeDetectorRef
-  ) {
-    const sub = mapData.dataset$.subscribe(ds => {
-      this.dataset = ds;
-      cdr.markForCheck();
+    readonly tracking: TrackingState,
+    readonly snackbar: MatSnackBar
+  ) { }
+
+  ngOnInit(): void {
+    this.openTrackingPopup();
+  }
+
+  openTrackingPopup(): void {
+    const snackBar = this.snackbar.openFromComponent(TrackingPopupComponent, {
+      data: {
+        preClose: () => {
+          snackBar.dismiss();
+        }
+      },
+      duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
     });
-
-    this.subscriptions.add(sub);
-  }
-
-  ngOnDestroy(): void {
-    this.subscriptions.unsubscribe();
-  }
-
-  mapDataSwitcherChange(event: Event): void {
-    const mapId = (event.target as HTMLOptionElement | null)?.value ?? '';
-    this.mapData.setDataset(mapId);
   }
 }
