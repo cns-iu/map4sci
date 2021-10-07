@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @angular-eslint/no-input-rename */
 import { Any } from '@angular-ru/common/typings';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnChanges } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Layout, Map, MapLayerMouseEvent, Marker, NavigationControl, Popup } from 'maplibre-gl';
 
@@ -17,9 +17,10 @@ import { ZoomLevelControl } from './zoom-level.control';
 @Component({
   selector: 'm4s-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MapComponent{
+export class MapComponent implements OnChanges{
   // Inputs
   @Input() mapStyle = blankStyle;
   @Input() edgeFeatures!: FeatureCollection;

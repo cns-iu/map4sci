@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import { Any } from '@angular-ru/common/typings';
 import { MapMarker } from './../../map/map';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { Observable, Subscription } from 'rxjs';
@@ -22,7 +25,7 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   dataset = EMPTY_DATASET;
   filteredNodes: FeatureCollection<Geometry, GeoJsonProperties> = EMPTY_DATASET.nodes;
-  filter: string = '';
+  filter = '';
 
   options: string[] = [];
   filteredOptions?: Observable<string[]>;
@@ -84,7 +87,7 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     this.subscriptions.add(sub);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.filteredOptions = this.searchControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -109,9 +112,9 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     const { searchTerm } = this;
 
     // Remove all markers before searching
-    const markers = document.querySelectorAll('.maplibregl-marker');
-    for (let i = 0; i < markers.length; i++) {
-      markers[i].remove();
+    const markers = document.querySelectorAll('.maplibregl-marker') as unknown as HTMLElement[];
+    for (const marker of markers) {
+      marker.remove();
     }
 
     if (this.buttonTitle === 'Clear' && searchTerm) {
@@ -130,10 +133,11 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     const filteredNodes = nodes.features.filter(n => n.properties?.label.toLowerCase().includes(searchTerm.toLowerCase())) as Any;
     this.filter = searchTerm;
     const mapPins: MapMarker[] = filteredNodes.map((n: Any) => {
-      return {
+      const x: MapMarker = {
         coordinates: n.geometry.coordinates,
         title: n.properties?.label
-      } as MapMarker;
+      };
+      return x;
     });
     this.mapPins = [...mapPins];
   }
