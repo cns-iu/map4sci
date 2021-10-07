@@ -2,12 +2,13 @@ import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 
 import { MarkdownModalComponent } from '../../../shared/components/markdown-modal/markdown-modal.component';
 import { SiteConfigurationService } from '../../services/site-configuration/site-configuration.service';
+import { AnalyticsConsentComponent } from '../analytics-consent/analytics-consent.component';
 
 
 /**
  * Footer configuration.
  */
-interface FooterConfig {
+export interface FooterConfig {
   /** Copyright text. */
   copyright?: string;
   /** Url to terms of service markdown. */
@@ -19,7 +20,7 @@ interface FooterConfig {
 /**
  * Partial site configuration containing the footer configuration.
  */
-interface SiteConfigurationWithFooterConfig {
+export interface SiteConfigurationWithFooterConfig {
   /** Optional footer configuration. */
   footer?: FooterConfig;
 }
@@ -91,7 +92,7 @@ export class FooterComponent {
   /**
    * Opens the analytics opt in/out popup.
    */
-  openAnalytics(): void {
-    // TODO
+  openAnalyticsConsent(): void {
+    AnalyticsConsentComponent.open();
   }
 }

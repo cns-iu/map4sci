@@ -1,20 +1,16 @@
-import { MapDataService } from './services/map-data.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AppComponent } from './app.component';
-import { MapModule } from './map/map.module';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
-import { CoreModule } from './core/core.module';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { MapModule } from './map/map.module';
+import { MapDataService } from './services/map-data.service';
 import { MarkdownModalModule } from './shared/components/markdown-modal/markdown-modal.module';
-import { TrackingPopupModule } from './shared/components/tracking-popup/tracking-popup.module';
-import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
-import { INITIAL_TELEMETRY_SETTING } from './shared/components/tracking-popup/tracking.state';
-import { environment } from '../environments/environment';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -35,11 +31,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
       }
     }),
     MarkdownModalModule,
-    TrackingPopupModule,
-    NgxGoogleAnalyticsModule.forRoot(
-      INITIAL_TELEMETRY_SETTING === false ? '' : environment.googleAnalyticsToken, [
-        { command: 'set', values: [{ app: 'm4s' }] }
-      ]),
     MatSnackBarModule
   ],
   providers: [MapDataService],
