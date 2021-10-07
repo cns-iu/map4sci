@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, OnDestroy } from '@angular/core';
+import { MatSnackBarRef } from '@angular/material/snack-bar';
+import { take } from 'rxjs/operators';
 
 import { MarkdownModalComponent } from '../../../shared/components/markdown-modal/markdown-modal.component';
 import { SiteConfigurationService } from '../../services/site-configuration/site-configuration.service';
@@ -35,7 +37,7 @@ export interface SiteConfigurationWithFooterConfig {
   styleUrls: ['./footer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent {
+export class FooterComponent implements OnDestroy {
   /** Component css selector. */
   @HostBinding('class') readonly clsName = 'm4s-footer';
 
@@ -45,6 +47,9 @@ export class FooterComponent {
   readonly termsOfService: string | undefined;
   /** Privacy policy markdown url. */
   readonly privacyPolicy: string | undefined;
+
+  /** Currently active analytics consent popup. */
+  private consentPopup?: MatSnackBarRef<AnalyticsConsentComponent>;
 
   /**
    * Creates an instance of footer component.
@@ -61,6 +66,13 @@ export class FooterComponent {
     this.copyright = copyright;
     this.termsOfService = termsOfService;
     this.privacyPolicy = privacyPolicy;
+  }
+
+  /**
+   * Cleans up after this component.
+   */
+  ngOnDestroy(): void {
+    this.dismissAnalyticsConsentPopup();
   }
 
   /**
@@ -90,9 +102,27 @@ export class FooterComponent {
   }
 
   /**
-   * Opens the analytics opt in/out popup.
+   * Toggles the analytics opt in/out popup.
    */
-  openAnalyticsConsent(): void {
-    AnalyticsConsentComponent.open();
+  toggleAnalyticsConsent(): void {
+    if (this.consentPopup) {
+      this.dismissAnalyticsConsentPopup();
+    } else {
+      this.consentPopup = AnalyticsConsentComponent.open({
+        dismissable: true
+      });
+
+      this.consentPopup.afterDismissed().pipe(take(1)).subscribe(() => {
+        this.consentPopup = undefined;
+      });
+    }
+  }
+
+  /**
+   * Closes the analytics consent popup if open.
+   */
+  private dismissAnalyticsConsentPopup(): void {
+    this.consentPopup?.dismiss?.();
+    this.consentPopup = undefined;
   }
 }

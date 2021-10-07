@@ -1,3 +1,4 @@
 <p>We log usage to improve this service.</p>
 <button *ngIf="showGiveConsent" mat-button color="basic" (click)="setConsent(true)">I understand</button>
 <button *ngIf="showRescindConsent" mat-button color="basic" (click)="setConsent(false)">Opt out</button>
+<button *ngIf="dismissable" mat-button color="basic" (click)="dismiss()">Dismiss</button>

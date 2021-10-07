@@ -1,3 +1,5 @@
+import { MatSnackBarDismiss, MatSnackBarRef } from '@angular/material/snack-bar';
+import { Subject } from 'rxjs';
 import { Shallow } from 'shallow-render';
 
 import { BaseModalComponent } from '../../../shared/components/base-modal/base-modal.component';
@@ -13,6 +15,8 @@ describe('FooterComponent', () => {
   let configSpy: jasmine.SpyObj<SiteConfigurationService>;
   let modalOpenSpy: jasmine.Spy<typeof BaseModalComponent.open>;
   let popupOpenSpy: jasmine.Spy<typeof BasePopupComponent.open>;
+  let popupRefSpy: jasmine.SpyObj<MatSnackBarRef<unknown>>;
+  let popupAfterDismissedSubject: Subject<MatSnackBarDismiss>;
   let shallow: Shallow<FooterComponent>;
 
   function setFooterConfig(config: FooterConfig): void {
@@ -23,6 +27,14 @@ describe('FooterComponent', () => {
     configSpy = jasmine.createSpyObj('SiteConfigurationService', ['get']);
     modalOpenSpy = spyOn(BaseModalComponent, 'open');
     popupOpenSpy = spyOn(BasePopupComponent, 'open');
+    popupRefSpy = jasmine.createSpyObj('MatSnackBarRef', ['dismiss', 'afterDismissed']);
+    popupAfterDismissedSubject = new Subject();
+
+    popupOpenSpy.and.returnValue(popupRefSpy);
+    popupRefSpy.afterDismissed.and.returnValue(popupAfterDismissedSubject);
+    popupRefSpy.dismiss.and.callFake(() =>
+      popupAfterDismissedSubject.next({ dismissedByAction: false })
+    );
 
     shallow = new Shallow(FooterComponent, FooterModule)
       .mock(SiteConfigurationService, configSpy);
@@ -58,6 +70,15 @@ describe('FooterComponent', () => {
     });
   });
 
+  describe('.ngOnDestroy()', () => {
+    it('dismisses the consent popup if open', async () => {
+      const { instance } = await shallow.render();
+      instance.toggleAnalyticsConsent();
+      instance.ngOnDestroy();
+      expect(popupRefSpy.dismiss).toHaveBeenCalled();
+    });
+  });
+
   describe('.openTermsOfService()', () => {
     it('opens a modal', async () => {
       const { instance } = await shallow.render();
@@ -74,11 +95,18 @@ describe('FooterComponent', () => {
     });
   });
 
-  describe('.openAnalyticsConsent()', () => {
+  describe('.toggleAnalyticsConsent()', () => {
     it('opens a popup', async () => {
       const { instance } = await shallow.render();
-      instance.openAnalyticsConsent();
+      instance.toggleAnalyticsConsent();
       expect(popupOpenSpy).toHaveBeenCalled();
+    });
+
+    it('closes the popup if already open', async () => {
+      const { instance } = await shallow.render();
+      instance.toggleAnalyticsConsent();
+      instance.toggleAnalyticsConsent();
+      expect(popupRefSpy.dismiss).toHaveBeenCalled();
     });
   });
 });

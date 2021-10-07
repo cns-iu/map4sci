@@ -1,10 +1,15 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnDestroy } from '@angular/core';
-import { MatSnackBarRef } from '@angular/material/snack-bar';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inject, OnDestroy } from '@angular/core';
+import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 
 import { BasePopupComponent } from '../../../shared/components/base-popup/base-popup.component';
 import { AnalyticsConsentService } from '../../services/analytics-consent/analytics-consent.service';
+
+
+export interface AnalyticsConsentComponentData {
+  dismissable?: boolean;
+}
 
 
 @Component({
@@ -14,8 +19,11 @@ import { AnalyticsConsentService } from '../../services/analytics-consent/analyt
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AnalyticsConsentComponent extends BasePopupComponent implements OnDestroy {
+  static readonly DEFAULT_DATA: AnalyticsConsentComponentData = { dismissable: false };
+
   @HostBinding('class') readonly clsName = 'm4s-analytics-consent-popup';
 
+  readonly dismissable: boolean;
   showGiveConsent = false;
   showRescindConsent = false;
 
@@ -24,26 +32,33 @@ export class AnalyticsConsentComponent extends BasePopupComponent implements OnD
   constructor(
     private readonly ref: MatSnackBarRef<AnalyticsConsentComponent>,
     private readonly consentService: AnalyticsConsentService,
+    @Inject(MAT_SNACK_BAR_DATA) data: AnalyticsConsentComponentData,
     cdr: ChangeDetectorRef
   ) {
     super();
 
-    const sub = consentService.consentChanged.pipe(delay(50)).subscribe(() => {
+    this.dismissable = data.dismissable ?? false;
+    this.updateShownButtons();
+
+    this.subscriptions.add(consentService.consentChanged.pipe(
+      delay(50)
+    ).subscribe(() => {
       this.updateShownButtons();
       cdr.markForCheck();
-    });
-
-    this.subscriptions.add(sub);
-    this.updateShownButtons();
+    }));
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
 
+  dismiss(): void {
+    this.ref.dismiss();
+  }
+
   setConsent(consentGiven: boolean): void {
     this.consentService.setConsent(consentGiven);
-    this.ref.dismiss();
+    this.dismiss();
   }
 
   private updateShownButtons(): void {
