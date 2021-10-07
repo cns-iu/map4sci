@@ -107,6 +107,13 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   searchButtonClick(): void {
     const { searchTerm } = this;
+
+    // Remove all markers before searching
+    const markers = document.querySelectorAll('.maplibregl-marker');
+    for (let i = 0; i < markers.length; i++) {
+      markers[i].remove();
+    }
+
     if (this.buttonTitle === 'Clear' && searchTerm) {
       this.mapPins = [];
       this.filter = '';
