@@ -1,10 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MatDialog } from '@angular/material/dialog';
 
 import { EMPTY_DATASET } from './map/map';
 import { MapDataService } from './services/map-data.service';
-import { MarkdownModalComponent, MarkdownModalData } from './shared/components/markdown-modal/markdown-modal.component';
 
 
 @Component({
@@ -40,8 +38,7 @@ export class AppComponent implements OnDestroy {
 
   constructor(
     readonly mapData: MapDataService,
-    cdr: ChangeDetectorRef,
-    private readonly dialog: MatDialog
+    cdr: ChangeDetectorRef
   ) {
     const sub = mapData.dataset$.subscribe(ds => {
       this.dataset = ds;
@@ -58,27 +55,5 @@ export class AppComponent implements OnDestroy {
   mapDataSwitcherChange(event: Event): void {
     const mapId = (event.target as HTMLOptionElement | null)?.value ?? '';
     this.mapData.setDataset(mapId);
-  }
-
-  openTerms(): void {
-    this.dialog.open<MarkdownModalComponent, MarkdownModalData>(MarkdownModalComponent, {
-      width: '800px',
-      height: '600px',
-      data: {
-        title: 'Terms & Conditions',
-        src: 'assets/footer/terms.md'
-      }
-    });
-  }
-
-  openPrivacyPolicy(): void {
-    this.dialog.open<MarkdownModalComponent, MarkdownModalData>(MarkdownModalComponent, {
-      width: '800px',
-      height: '600px',
-      data: {
-        title: 'Privacy Policy',
-        src: 'assets/footer/privacy-policy.md'
-      }
-    });
   }
 }
