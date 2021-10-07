@@ -10,10 +10,19 @@ describe('SiteConfigurationService', () => {
   const sampleConfigYaml = `
     prop1: 1
     prop2: abc
+    prop3:
+      sub1: 2
+      sub2:
+        - a
+        - b
   `;
   const sampleConfig = {
     prop1: 1,
-    prop2: 'abc'
+    prop2: 'abc',
+    prop3: {
+      sub1: 2,
+      sub2: ['a', 'b']
+    }
   };
 
   let http: jasmine.SpyObj<HttpClient>;
@@ -73,6 +82,16 @@ describe('SiteConfigurationService', () => {
     it('returns the value for the key', () => {
       const key = 'prop1';
       expect(service.get(key)).toEqual(sampleConfig[key]);
+    });
+
+    it('can access deep properties using a path of keys', () => {
+      const value = service.get('prop3', 'sub1');
+      expect(value).toEqual(sampleConfig.prop3.sub1);
+    });
+
+    it('returns undefined if any parts of the path is missing', () => {
+      const value = service.get('prop3', 'bad', 'path');
+      expect(value).toBeUndefined();
     });
   });
 

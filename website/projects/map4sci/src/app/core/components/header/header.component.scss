@@ -1,25 +1,34 @@
 :host {
   display: flex;
-  height: 3rem;
-  align-items: center;
-  background-color: #286F94;
+  justify-content: center;
+
+  background-color: var(--primary, #286f94);
 
   .container {
-    width: 90rem;
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    max-width: 90rem;
+    padding: 0 1rem;
+    align-items: center;
 
-    .logos {
+    .logo > a {
       display: flex;
       flex-direction: row;
-      height: 100%;
-      justify-content: flex-start;
       align-items: center;
 
-      & > * {
-        left: calc((100vw - 90rem) / 2 + 1rem);
-        position: absolute;
-        color: white;
-        text-decoration: none;
-      }
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-text, #ffffff);
+      text-decoration: none;
+    }
+
+    .logo.reverse-layout > a {
+      flex-direction: row-reverse;
+    }
+
+    .filler {
+      flex-grow: 1;
     }
   }
 }
