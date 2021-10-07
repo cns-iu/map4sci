@@ -6,6 +6,67 @@ import { map } from 'rxjs/operators';
 
 
 /**
+ * Type for any non-primitive object.
+ */
+// eslint-disable-next-line @typescript-eslint/ban-types -- Any non-primitive object
+type NonPrimitive = object;
+
+
+// Complicated types for deep property access
+// Adapted from https://catchts.com/deep-pick
+// ------------------------------------------
+
+/**
+ * Constructs all possible deep property paths for an object.
+ *
+ * @template T The object type.
+ *
+ * @example
+ * // A = ['a'] | ['a', 'b']
+ * type Foo = { a: { b: string } };
+ * type A = KeyPaths<Foo>;
+ */
+export type KeyPaths<T, Paths extends PropertyKey[] = []> =
+  T extends PropertyKey ? Paths : ({
+    [P in keyof T]: [...Paths, P] | KeyPaths<T[P], [...Paths, P]>
+  }[keyof T]);
+
+/**
+ * Determines the type of value at the specified deep property path.
+ *
+ * @template T The object type.
+ * @template Path The deep path to access.
+ *
+ * @example
+ * // A = { b: string }
+ * type Foo = { a: { b: string } };
+ * type A = ValueForKeyPath<Foo, ['a']>;
+ */
+export type ValueForKeyPath<T, Path extends readonly PropertyKey[]> =
+  // Remove inner nulls and undefineds and put it on the outer result
+  T extends null | undefined ? (
+    ValueForKeyPath<NonNullable<T>, Path> | undefined
+  ) : (
+    // Base case - no more keys
+    Path extends [] ? T : (
+      // Base case - single key
+      Path extends [infer K] ? (
+        K extends keyof T ? T[K] : never
+      ) : (
+        // Recursion case
+        Path extends [infer K, ...infer Rest] ? (
+          Rest extends readonly PropertyKey[] ? (
+            K extends keyof T ? (
+              ValueForKeyPath<T[K], Rest>
+            ) : never
+          ): never
+        ) : never
+      )
+    )
+  );
+
+
+/**
  * Injection token for the url of the site configuration file.
  */
 export const SITE_CONFIGURATION_URL = new InjectionToken<string>('URL for site configuration');
@@ -19,7 +80,7 @@ export const SITE_CONFIGURATION_URL = new InjectionToken<string>('URL for site c
 @Injectable({
   providedIn: 'root'
 })
-export class SiteConfigurationService<T extends Record<string, unknown> = Record<string, unknown>> {
+export class SiteConfigurationService<T extends NonPrimitive = Record<string, unknown>> {
   /** Loaded site configuration. */
   private configuration: Record<string, unknown> = {};
 
@@ -33,13 +94,27 @@ export class SiteConfigurationService<T extends Record<string, unknown> = Record
   /**
    * Retrieves a value from the configuration.
    *
-   * @param key The configuration key to fetch.
-   * @returns The value or undefined if the key did not exist.
+   * @param keys A deep property path.
+   * @returns The value or undefined if any object along the path did not exist.
    */
-  get<K extends keyof T>(key: K): T[K];
-  get<U = unknown>(key: string): U | undefined;
-  get(key: string): unknown {
-    return this.configuration[key];
+  get<Paths extends KeyPaths<T> & readonly PropertyKey[]>(...keys: Paths): ValueForKeyPath<T, Paths>;
+
+  /**
+   * Retrieves a value from the configuration.
+   * This is the general fallback case.
+   *
+   * @template U Optional type to cast result to. It is the user's responsibility to ensure this is correct.
+   *
+   * @param keys A deep property path.
+   * @returns The value or undefined if any object along the path did not exist.
+   */
+  get<U = unknown>(...keys: string[]): U | undefined;
+
+  get(...keys: string[]): unknown {
+    return keys.reduce<Record<string, unknown> | undefined>(
+      (obj, key) => obj?.[key] as Record<string, unknown>,
+      this.configuration
+    );
   }
 
   /**
