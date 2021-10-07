@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { Shallow } from 'shallow-render';
 
 import { SiteConfigurationService } from '../../services/site-configuration/site-configuration.service';
@@ -18,6 +19,7 @@ describe('HeaderComponent', () => {
   beforeEach(() => {
     configSpy = jasmine.createSpyObj('SiteConfigurationService', ['get']);
     shallow = new Shallow(HeaderComponent, HeaderModule)
+      .import(RouterTestingModule.withRoutes([]))
       .mock(SiteConfigurationService, configSpy);
   });
 
