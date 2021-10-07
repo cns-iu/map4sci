@@ -29,7 +29,7 @@
             "index": "projects/map4sci/src/index.html",
             "main": "projects/map4sci/src/main.ts",
             "polyfills": "projects/map4sci/src/polyfills.ts",
-            "tsConfig": "projects/map4sci/tsconfig.json",
+            "tsConfig": "projects/map4sci/tsconfig.app.json",
             "assets": [
               "projects/map4sci/src/favicon.ico",
               "projects/map4sci/src/assets"
