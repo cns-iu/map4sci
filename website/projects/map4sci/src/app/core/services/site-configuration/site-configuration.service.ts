@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, InjectionToken } from '@angular/core';
 import { load } from 'js-yaml';
-import { Observable } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 
@@ -81,6 +81,9 @@ export const SITE_CONFIGURATION_URL = new InjectionToken<string>('URL for site c
   providedIn: 'root'
 })
 export class SiteConfigurationService<T extends NonPrimitive = Record<string, unknown>> {
+  /** Emits whenever a new configuration is loaded. */
+  readonly configurationLoaded = new ReplaySubject<T>(1);
+
   /** Loaded site configuration. */
   private configuration: Record<string, unknown> = {};
 
@@ -154,6 +157,7 @@ export class SiteConfigurationService<T extends NonPrimitive = Record<string, un
     }
 
     this.configuration = yaml;
+    this.configurationLoaded.next(this.configuration as T);
     return yaml;
   }
 }
