@@ -1,18 +1,45 @@
 <div class="map-wrapper">
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-      <mat-form-field appearance="fill" *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1" class="form-field">
-        <mat-label>Select data set ...</mat-label>
-        <mat-select class="dataset-selector"
-          (selectionChange)="mapDataSwitcherChange($event.value)">
-          <mat-option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
-            {{ dataset.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <form>
+        <mat-form-field appearance="fill" *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1" class="form-field">
+          <mat-label>Select data set ...</mat-label>
+          <mat-select class="dataset-selector"
+            (selectionChange)="mapDataSwitcherChange($event.value)" value="test">
+            <mat-option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
+              {{ dataset.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Search...</mat-label>
+          <input
+            type="text"
+            [(ngModel)]="searchTerm"
+            placeholder="Search term"
+            aria-label="Search field"
+            matInput
+            [formControl]="searchControl"
+            [matAutocomplete]="auto"
+          >
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+      <button
+        mat-flat-button
+        class="search-button"
+        [disabled]="buttonDisabled"
+        (click)="searchButtonClick()"
+      >{{ buttonTitle }}</button>
     </mat-sidenav>
-  
+
     <mat-sidenav-content>
+
       <p>
         <button class="drawer-toggle" mat-button (click)="sidenav.toggle(); toggle()" [class.hidden]="opened">
           <mat-icon class="expand-collapse-icon" aria-hidden="false"
@@ -40,6 +67,7 @@
         [mapCenterConfig]="dataset.config?.mapCenter"
         [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
         [minimapConfig]="dataset.config?.minimapConfig"
+        [mapMarkers]="mapPins"
       ></m4s-map>
     </mat-sidenav-content>
   </mat-sidenav-container>

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @angular-eslint/no-input-rename */
 import { Any } from '@angular-ru/common/typings';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnChanges } from '@angular/core';
 import { FeatureCollection } from 'geojson';
 import { FullscreenControl, Layout, Map, MapLayerMouseEvent, Marker, NavigationControl, Popup } from 'maplibre-gl';
 
@@ -17,9 +17,10 @@ import { ZoomLevelControl } from './zoom-level.control';
 @Component({
   selector: 'm4s-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MapComponent {
+export class MapComponent implements OnChanges{
   // Inputs
   @Input() mapStyle = blankStyle;
   @Input() edgeFeatures!: FeatureCollection;
@@ -128,6 +129,10 @@ export class MapComponent {
       box-shadow: 3px 3px 5px 4px #00000021;
   `;
 
+  ngOnChanges(): void {
+    this.addMapMarkers(this.mapMarkers);
+  }
+
   capitalizeFirstLetter(input: string): string {
     return input.charAt(0).toUpperCase() + input.slice(1);
   }
@@ -185,17 +190,19 @@ export class MapComponent {
     }
 
     markers.forEach(marker => {
-      const popup = new Popup({
-        closeOnClick: true,
-        closeOnMove: true,
-        closeButton: false,
-        className: 'map-marker-popup'
-      }).setHTML(`<h3>${marker.title}</h3>`);
+      if (this.map) {
+        const popup = new Popup({
+          closeOnClick: true,
+          closeOnMove: true,
+          closeButton: false,
+          className: 'map-marker-popup'
+        }).setHTML(`<h3>${marker.title}</h3>`);
 
-      new Marker(marker.config ?? {})
-        .setLngLat(marker.coordinates)
-        .setPopup(popup)
-        .addTo(this.map);
+        new Marker(marker.config ?? {})
+          .setLngLat(marker.coordinates)
+          .setPopup(popup)
+          .addTo(this.map);
+      }
     });
   }
 

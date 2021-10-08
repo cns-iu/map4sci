@@ -1,13 +1,28 @@
-.form-field {
-  padding: 1rem;
-  width: 100%;
+::ng-deep {
+  .mat-form-field-flex {
+    background: none !important;
+  }
 
   ::ng-deep .mat-form-field-flex {
     background-color: var(--background);
   }
+
+  .mat-drawer-inner-container {
+    padding: 0.5rem;
+  }
 }
 
-.map-wrapper, .sidenav-container {
+.dataset-selector {
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.map-wrapper,
+.sidenav-container {
   width: 100%;
   height: calc(100vh - 6rem);
 }
@@ -17,7 +32,8 @@ mat-sidenav {
   height: 100%;
   background-color: var(--background);
   border: none;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 }
 
 mat-sidenav-content {
@@ -35,16 +51,17 @@ mat-sidenav-content {
       height: 3rem;
       border: none;
       background-color: var(--background);
-      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 18px 0px rgba(0, 0, 0, 0.12);
       border-radius: 3px;
       outline: none;
       cursor: pointer;
 
       .expand-collapse-icon {
         position: relative;
-        right: .5rem;
-        transition: .6s;
-        padding-left: .15rem;
+        right: 0.5rem;
+        transition: 0.6s;
+        padding-left: 0.15rem;
       }
 
       &.hidden {
@@ -52,4 +69,14 @@ mat-sidenav-content {
       }
     }
   }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.search-button {
+  width: 100%;
+  background-color: #286f94;
+  color: white;
 }
