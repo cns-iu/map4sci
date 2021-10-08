@@ -1,6 +1,6 @@
 ## myAURA: Personalized Web Service for Epilepsy Management
 
-<img align="right" width="416" height="350" src="assets/blank.png">
+<div class="visualizer-anchor"></div>
 
 ### About
 
