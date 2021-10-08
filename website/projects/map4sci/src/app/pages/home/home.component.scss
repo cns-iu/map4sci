@@ -1,7 +1,6 @@
 :host {
   display: flex;
   flex-direction: column;
-  height: 100%;
   align-items: center;
   margin: auto;
 
@@ -26,19 +25,20 @@
     max-width: 1328px;
     width: 66rem;
     position: relative;
-    top: 10rem;
-    padding-bottom: 3rem;
-    height: calc(100% - 13rem);
+    margin-top: 10rem;
+    margin-bottom: 3rem;
     z-index: 1;
-    overflow: hidden;
   }
 
   .visualizer-image {
     display: flex;
     flex-direction: column;
     float: right;
-    width: 50%;
     padding-left: 1rem;
+    position: absolute;
+    top: 19rem;
+    right: 7rem;
+    width: calc(50% - 7rem);
 
     img {
       height: 100%;
