@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
 
-  color: var(--primary-text, #ffffff);
-  background-color: var(--primary, #286f94);
+  color: var(--primary-text);
+  background-color: var(--primary);
 
   .container {
     display: flex;
@@ -21,7 +21,7 @@
 
     .divider {
       height: 1.5rem;
-      border-left: 1px solid var(--primary-text, #ffffff);
+      border-left: 1px solid var(--primary-text);
     }
 
     .filler {

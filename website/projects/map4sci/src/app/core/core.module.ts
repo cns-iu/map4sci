@@ -9,6 +9,7 @@ import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
 import { MenuModule } from './components/menu/menu.module';
 import { SiteConfigurationModule } from './services/site-configuration/site-configuration.module';
+import { ThemingModule } from './services/theming/theming.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { SiteConfigurationModule } from './services/site-configuration/site-conf
 
     // Services
     SiteConfigurationModule.forRoot(environment.siteConfigurationUrl),
+    ThemingModule.forRoot(environment.defaultTheme),
 
     // Components
     AnalyticsConsentModule,
