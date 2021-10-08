@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, ViewChild 
 
 
 @Component({
+  selector: 'm4s-home',
+  templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
