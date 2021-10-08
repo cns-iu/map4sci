@@ -1,10 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 
-import { MarkdownModalComponent, MarkdownModalData } from './shared/components/markdown-modal/markdown-modal.component';
-import { TrackingState } from './shared/components/tracking-popup/tracking.state';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { TrackingPopupComponent } from './shared/components/tracking-popup/tracking-popup.component';
+import { AnalyticsConsentComponent } from './core/components/analytics-consent/analytics-consent.component';
+import { AnalyticsConsentService } from './core/services/analytics-consent/analytics-consent.service';
 
 
 @Component({
@@ -16,46 +13,15 @@ import { TrackingPopupComponent } from './shared/components/tracking-popup/track
 export class AppComponent implements OnInit {
   @HostBinding('class') readonly clsName = 'm4s-root';
 
-  constructor(
-    private readonly dialog: MatDialog,
-    readonly tracking: TrackingState,
-    readonly snackbar: MatSnackBar
-  ) { }
+  constructor(private readonly consentService: AnalyticsConsentService) { }
 
   ngOnInit(): void {
     this.openTrackingPopup();
   }
 
-  openTerms(): void {
-    this.dialog.open<MarkdownModalComponent, MarkdownModalData>(MarkdownModalComponent, {
-      width: '800px',
-      height: '600px',
-      data: {
-        title: 'Terms & Conditions',
-        src: 'assets/footer/terms.md'
-      }
-    });
-  }
-
-  openPrivacyPolicy(): void {
-    this.dialog.open<MarkdownModalComponent, MarkdownModalData>(MarkdownModalComponent, {
-      width: '800px',
-      height: '600px',
-      data: {
-        title: 'Privacy Policy',
-        src: 'assets/footer/privacy-policy.md'
-      }
-    });
-  }
-
   openTrackingPopup(): void {
-    const snackBar = this.snackbar.openFromComponent(TrackingPopupComponent, {
-      data: {
-        preClose: () => {
-          snackBar.dismiss();
-        }
-      },
-      duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
+    AnalyticsConsentComponent.open(undefined, {
+      duration: this.consentService.hasUserSetConsent ? 3000 : Infinity
     });
   }
 }

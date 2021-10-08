@@ -11,7 +11,7 @@
     padding-right: 7rem;
     padding-top: 1rem;
   }
-  
+
   .banner {
     position: fixed;
     width: 90rem;
@@ -20,13 +20,13 @@
     padding-top: 3rem;
     object-fit: cover;
   }
-  
+
   .content {
     background-color: white;
     max-width: 1328px;
     width: 66rem;
     position: relative;
-    margin-top: 10rem;
+    top: 10rem;
     padding-bottom: 3rem;
     height: calc(100% - 13rem);
     z-index: 1;
@@ -49,8 +49,8 @@
     .visualizer-open {
       margin-top: 1rem;
       transition: color 0.3s;
-      color: white;
-      background-color: #286F94;
+      color: var(--primary-text);
+      background-color: var(--primary);
       &:hover {
         text-decoration: underline;
       }

@@ -1,40 +1,31 @@
 :host {
   display: flex;
   justify-content: center;
-  height: 3rem;
-  width: 100vw;
-  background-color: #286F94;
-  color: white;
+
+  color: var(--primary-text);
+  background-color: var(--primary);
 
   .container {
-    width: 90rem;
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    height: 3rem;
+    max-width: 90rem;
+    padding: 0 1rem;
+    align-items: center;
 
-    .copyright {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .resources {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      
-      .terms, .privacy {
-        transition: color 0.3s;
-        color: white;
-        background-color: #286F94;
-
-        &:hover {
-          text-decoration: underline;
-        }
+    .tos, .privacy {
+      &:hover {
+        text-decoration: underline;
       }
+    }
+
+    .divider {
+      height: 1.5rem;
+      border-left: 1px solid var(--primary-text);
+    }
+
+    .filler {
+      flex-grow: 1;
     }
   }
 }
-  

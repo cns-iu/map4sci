@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  min-width: 400px;
+  align-items: center;
+  z-index: 9999;
+
+  color: var(--primary-text);
+
+  p {
+    margin: 1.5rem;
+  }
+
+  button {
+    display: flex;
+    min-width: 6rem;
+    margin: 1rem;
+    justify-content: center;
+
+    background-color: var(--primary);
+  }
+}
