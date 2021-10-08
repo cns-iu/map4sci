@@ -4,7 +4,7 @@ Implementation of a graph algorithm that uses a multi level tree based approach 
 
 The research paper can be found [here.](https://arxiv.org/pdf/1906.05996.pdf)
 
-This algorithm also uses `Impred` which is improved `Pred` algorithm and it can be found [here.](https://hal.inria.fr/inria-00605921/document)
+This algorithm uses the [BatchTree implementation](https://github.com/khaled-rahman/BatchTree) of the ZMLT layout algorithm.
 
 ## Change Log
 
@@ -31,30 +31,25 @@ To activate the virtual environment:
 
 For more information on the virtual environment refer to the python [documentation](https://docs.python.org/3/library/venv.html).
 
-### 3. Building
-
-Build the libraries by running [01x-build-libs.sh](scripts/01x-build-libs.sh) script.
-
-    ./scripts/01x-build-libs.sh
-
-### 4. Input
+### 3. Input
 
 Update the [env.sh](env.sh) file to point to the data source config. The default data source is
 
-    datasets/sample/config.sh
+    data-processor/datasets/sample/config.sh
 
 The location of the input graph to the algorithm is path assigned to $NETWORK environment variable. This can be updated in config.sh file. The default value is:
 
-    datasets/sample/network.dot 
+    data-processor/datasets/sample/network.dot 
 
-This location can be changed by changing the value of $NETWORK environment variable in [config.sh](datasets/sample/config.sh)
+This location can be changed by changing the value of $NETWORK environment variable in [config.sh](data-processor/datasets/sample/config.sh)
 
-All the `config.sh` files should follow the format as given in [config.example.sh](datasets/config.example.sh)
+All the `config.sh` files should follow the format as given in [config.example.sh](data-processor/datasets/config.example.sh)
 
 ### 5. Run
 
-Run [run.sh](run.sh) file to run all the steps in the algorithm. This script runs all the scripts in the [scripts](scripts) folder one by one.
+Run [run.sh](data-processor/run.sh) file to run all the steps in the algorithm. This script runs all the scripts in the [scripts](data-processor/scripts) folder one by one.
 
+    cd data-processor
     ./run.sh
 
 ### 6. Serve Site
@@ -62,10 +57,6 @@ Run [run.sh](run.sh) file to run all the steps in the algorithm. This script run
 Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
 
     ./scripts/90x-serve-site.sh
-
-### 7. Deploy to Github Pages
-
-Run [99x-publish.sh](scripts/99x-publish.sh) to publish the site to the Github pages.
 
 ## Details regarding the script files
 

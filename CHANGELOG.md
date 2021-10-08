@@ -2,6 +2,14 @@
 
 Changelog for map4sci.
 
+## 0.5.0 - 2021-10-08
+
+- A new Angular-based configurable front-end for map4sci generated datasets
+- Now using the BatchTree parallel implemenation of the ZMLT layout algorithm
+- Telemetry tracking to help improve the application based on user usage
+- Mapbox -> MapLibre!
+- Restructured the repository
+
 ## 0.2.0 - 2020-02-14
 
 ### Added in 0.2.0
