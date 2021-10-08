@@ -6,8 +6,6 @@ Working with social, topical, financial, transportation, biological, and other n
 
 This project designs, implements, and deploys efficient algorithms for multi-level network representations that support interactive exploration by general audiences. Using the familiar Google map metaphor, the interactive visualizations make it easy to identify important nodes, major pathways, and clusters across multiple levels. Unlike existing methods for visualizing multi-level networks based on meta-nodes and meta-edges, the new visualizations will provide real nodes (prototypes) and real paths (backbones) for each level, similar to geographic maps that show real cities and real roads at every level of detail.
 
-This project designs, implements, and deploys efficient algorithms for multi-level network representations that support interactive exploration by general audiences. Using the familiar Google map metaphor, the interactive visualizations make it easy to identify important nodes, major pathways, and clusters across multiple levels. Unlike existing methods for visualizing multi-level networks based on meta-nodes and meta-edges, the new visualizations will provide real nodes (prototypes) and real paths (backbones) for each level, similar to geographic maps that show real cities and real roads at every level of detail. This project designs, implements, and deploys efficient algorithms for multi-level network representations that support interactive exploration by general audiences. Using the familiar Google map metaphor, the interactive visualizations make it easy to identify important nodes, major pathways, and clusters across multiple levels. Unlike existing methods for visualizing multi-level networks based on meta-nodes and meta-edges, the new visualizations will provide real nodes (prototypes) and real paths (backbones) for each level, similar to geographic maps that show real cities and real roads at every level of detail.
-
 
 ### Publications
 
@@ -18,3 +16,7 @@ This project designs, implements, and deploys efficient algorithms for multi-lev
 - Saket, Bahador, Carlos Scheidegger, Stephen Kobourov, and Katy Börner. 2015. "Map-Based Visualizations Increase Recall Accuracy of Data". EUROGRAPHICS 2015, Zürich, Switzerland 441-450.
 
 - Saket, Bahador, Paolo Simonetto, Stephen Kobourov, and Katy Börner. 2014. "Node, Node-Link, and Node-Link-Group Diagrams: An Evaluation". IEEE Visual Analytics Science and Technology, IEEE Information Visualization, and IEEE Scientific Visualization, Paris, France 20 (12): 2231-2240.
+
+
+<img class="page-logo" align="left" height="75" src="assets/logo-nsf.svg">
+<img class="page-logo" align="left" height="75" src="assets/logo-cns.svg">
