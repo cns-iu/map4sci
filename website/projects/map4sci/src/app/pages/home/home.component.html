@@ -1,7 +1,7 @@
 <img class="banner" src="assets/pages/banner.png">
 <div class="content">
-  <markdown class="index" src="assets/pages/about.md" id="markdown" #markdown></markdown>
-  <div class="visualizer-image" id="visualizer" #visualizer>
+  <markdown class="index" src="assets/pages/about.md" (ready)="attachVisualizer()" #markdown></markdown>
+  <div class="visualizer-image" #visualizer>
     <img src="assets/network.png">
     <button class="visualizer-open" mat-button routerLink="/visualizer">Open Visualizer</button>
   </div>

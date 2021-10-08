@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostBinding, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -7,16 +7,18 @@ import { ChangeDetectionStrategy, Component, HostBinding, ViewChild, ElementRef,
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent {
   @HostBinding('class') readonly clsName = 'm4s-home';
 
-  @ViewChild('visualizer', { read: ElementRef }) visualizer: ElementRef<HTMLElement>;
   @ViewChild('markdown', { read: ElementRef }) markdown: ElementRef<HTMLElement>;
+  @ViewChild('visualizer', { read: ElementRef }) visualizer: ElementRef<HTMLElement>;
 
-  ngAfterViewInit(): void {
-    window.addEventListener('load', () => {
-      const { visualizer, markdown } = this;
-      markdown.nativeElement.insertBefore(visualizer.nativeElement, markdown.nativeElement.children[1]);
-    });
+  attachVisualizer(): void {
+    const {
+      visualizer: { nativeElement: visualizer },
+      markdown: { nativeElement: markdown }
+    } = this;
+    const anchor = markdown.querySelector('.visualizer-anchor');
+    markdown.insertBefore(visualizer, anchor);
   }
 }
