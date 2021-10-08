@@ -54,15 +54,15 @@ export class ThemingService {
     const {
       primary, 'primary-text': primaryText, background,
       header, body, 'link-text': linkText
-    } = { ...defaultTheme, ...siteConfig.get('theming') };
+    } = siteConfig.get('theming') ?? {};
 
     return `:root {
-      --primary: ${primary};
-      --primary-text: ${primaryText};
-      --background: ${background};
-      --header: ${header};
-      --body: ${body};
-      --link-text: ${linkText};
+      --primary: ${primary ?? defaultTheme.primary};
+      --primary-text: ${primaryText ?? defaultTheme['primary-text']};
+      --background: ${background ?? defaultTheme.background};
+      --header: ${header ?? defaultTheme.header};
+      --body: ${body ?? defaultTheme.body};
+      --link-text: ${linkText ?? defaultTheme['link-text']};
     }`;
   }
 }
