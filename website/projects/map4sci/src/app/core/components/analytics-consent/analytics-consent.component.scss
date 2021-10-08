@@ -4,7 +4,7 @@
   align-items: center;
   z-index: 9999;
 
-  color: var(--primary-text, #ffffff);
+  color: var(--primary-text);
 
   p {
     margin: 1.5rem;
@@ -16,6 +16,6 @@
     margin: 1rem;
     justify-content: center;
 
-    background-color: var(--primary, #286F94);
+    background-color: var(--primary);
   }
 }

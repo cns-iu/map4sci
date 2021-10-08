@@ -8,7 +8,7 @@ body { margin: 0; font-family: Roboto, "Lato", sans-serif; }
 body {
   box-sizing: border-box;
   font-size: 1rem;
-  color: #424242;
+  color: var(--body);
 }
 
 * {
@@ -22,7 +22,7 @@ body {
 h2 {
   font-size: 3.5rem;
   font-weight: normal;
-  color: #616161;
+  color: var(--header);
 }
 
 .mat-snack-bar-container {
