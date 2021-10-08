@@ -9,3 +9,11 @@ footer:
   copyright: "Copyright \u00A9 2021 Tripods. All rights reserved." # Text
   terms-of-service: assets/footer/terms.md # Url
   privacy-policy: assets/footer/privacy-policy.md # Url
+
+theming:
+  primary: null # Css color
+  primary-text: null # Css color
+  background: null # Css color
+  header: null # Css color
+  body: null # Css color
+  link-text: null # Css color
