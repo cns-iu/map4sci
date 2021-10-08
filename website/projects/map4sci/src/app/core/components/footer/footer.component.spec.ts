@@ -5,14 +5,14 @@ import { Shallow } from 'shallow-render';
 import { BaseModalComponent } from '../../../shared/components/base-modal/base-modal.component';
 import { BasePopupComponent } from '../../../shared/components/base-popup/base-popup.component';
 import { SiteConfigurationService } from '../../services/site-configuration/site-configuration.service';
-import { FooterComponent, FooterConfig } from './footer.component';
+import { FooterComponent, FooterConfig, SiteConfigurationWithFooterConfig } from './footer.component';
 import { FooterModule } from './footer.module';
 
 
 describe('FooterComponent', () => {
   const sampleUrl = '/does/not/exist';
 
-  let configSpy: jasmine.SpyObj<SiteConfigurationService>;
+  let configSpy: jasmine.SpyObj<SiteConfigurationService<SiteConfigurationWithFooterConfig>>;
   let modalOpenSpy: jasmine.Spy<typeof BaseModalComponent.open>;
   let popupOpenSpy: jasmine.Spy<typeof BasePopupComponent.open>;
   let popupRefSpy: jasmine.SpyObj<MatSnackBarRef<unknown>>;

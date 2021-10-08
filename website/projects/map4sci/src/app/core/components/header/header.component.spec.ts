@@ -3,14 +3,14 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Shallow } from 'shallow-render';
 
 import { SiteConfigurationService } from '../../services/site-configuration/site-configuration.service';
-import { HeaderComponent, LogoConfig } from './header.component';
+import { HeaderComponent, LogoConfig, SiteConfigurationWithHeaderConfig } from './header.component';
 import { HeaderModule } from './header.module';
 
 
 describe('HeaderComponent', () => {
   const sampleUrl = '/does/not/exist';
 
-  let configSpy: jasmine.SpyObj<SiteConfigurationService>;
+  let configSpy: jasmine.SpyObj<SiteConfigurationService<SiteConfigurationWithHeaderConfig>>;
   let shallow: Shallow<HeaderComponent>;
 
   function setLogoConfig(config: LogoConfig): void {
