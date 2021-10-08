@@ -1,6 +1,7 @@
-<div class="container">
+<div class="container" gaCategory="header_interactions">
   <div class="logo" [class.reverse-layout]="reverseLogoLayout">
-    <a *ngIf="logoLink; else: logoRouterLink" [href]="logoLink" target="_blank" rel="noreferrer noopener">
+    <a *ngIf="logoLink; else: logoRouterLink" [href]="logoLink" gaEvent="logo_link_visited" target="_blank"
+       rel="noreferrer noopener">
       <ng-container *ngTemplateOutlet="logoContent"></ng-container>
     </a>
     <ng-template #logoRouterLink>

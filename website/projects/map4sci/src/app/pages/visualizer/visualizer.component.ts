@@ -1,16 +1,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
-
 import { Any } from '@angular-ru/common/typings';
-import { MapMarker } from './../../map/map';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
+import { MapMouseEvent } from 'maplibre-gl';
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
 import { EMPTY_DATASET } from '../../map/map';
 import { MapDataService } from '../../services/map-data.service';
+import { MapMarker } from './../../map/map';
+
 
 @Component({
   selector: 'm4s-visualizer',
@@ -75,6 +77,7 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   constructor(
     readonly mapData: MapDataService,
+    readonly ga: GoogleAnalyticsService,
     cdr: ChangeDetectorRef
   ) {
     const sub = mapData.dataset$.subscribe(ds => {
@@ -157,5 +160,9 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     } else {
       this.opened = true;
     }
+  }
+
+  logMouseEvent(name: string, event: MapMouseEvent): void {
+    this.ga.event(`${name}_${event.type}`, 'map_interaction', event.lngLat.toString());
   }
 }
