@@ -35,6 +35,11 @@ jobs:
         working-directory: website
       - run: npm run build -- --output-hashing=none --base-href=/map4sci/
         working-directory: website
+      - name: Build docs
+        working-directory: website
+        run: |
+          npm run build:docs
+          cp -r docs/map4sci dist/map4sci
       - name: Setup GitHub Pages files
         working-directory: website
         run: |
