@@ -52,7 +52,8 @@
                [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"
                [initialZoomConfig]="dataset.config?.initialZoom" [mapCenterConfig]="dataset.config?.mapCenter"
                [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
-               [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="mapPins"></m4s-map>
+               [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="mapPins"
+               (nodeClick)="logMouseEvent('node', $event)" (edgeClick)="logMouseEvent('edge', $event)"></m4s-map>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
