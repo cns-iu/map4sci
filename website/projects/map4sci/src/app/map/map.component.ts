@@ -190,17 +190,19 @@ export class MapComponent implements OnChanges{
     }
 
     markers.forEach(marker => {
-      const popup = new Popup({
-        closeOnClick: true,
-        closeOnMove: true,
-        closeButton: false,
-        className: 'map-marker-popup'
-      }).setHTML(`<h3>${marker.title}</h3>`);
+      if (this.map) {
+        const popup = new Popup({
+          closeOnClick: true,
+          closeOnMove: true,
+          closeButton: false,
+          className: 'map-marker-popup'
+        }).setHTML(`<h3>${marker.title}</h3>`);
 
-      new Marker(marker.config ?? {})
-        .setLngLat(marker.coordinates)
-        .setPopup(popup)
-        .addTo(this.map);
+        new Marker(marker.config ?? {})
+          .setLngLat(marker.coordinates)
+          .setPopup(popup)
+          .addTo(this.map);
+      }
     });
   }
 

@@ -5,7 +5,7 @@
         <mat-form-field appearance="fill" *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1" class="form-field">
           <mat-label>Select data set ...</mat-label>
           <mat-select class="dataset-selector"
-            (selectionChange)="mapDataSwitcherChange($event.value)" [value]="'test'">
+            (selectionChange)="mapDataSwitcherChange($event.value)" value="test">
             <mat-option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" [value]="dataset.id">
               {{ dataset.name }}
             </mat-option>

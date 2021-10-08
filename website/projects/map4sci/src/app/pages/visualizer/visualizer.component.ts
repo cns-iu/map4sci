@@ -82,6 +82,10 @@ export class VisualizerComponent implements OnInit, OnDestroy {
       this.filteredNodes = ds.nodes;
       this.options = ds.nodes.features.map(n => n.properties?.label);
       cdr.markForCheck();
+
+      if (this.searchTerm) {
+        this.search(this.searchTerm);
+      }
     });
 
     this.subscriptions.add(sub);
@@ -128,6 +132,10 @@ export class VisualizerComponent implements OnInit, OnDestroy {
       return;
     }
 
+    this.search(searchTerm);
+  }
+
+  search(searchTerm: string): void {
     const { nodes } = this.dataset;
 
     const filteredNodes = nodes.features.filter(n => n.properties?.label.toLowerCase().includes(searchTerm.toLowerCase())) as Any;
