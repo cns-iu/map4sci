@@ -1,10 +1,20 @@
-.form-field {
-  padding: 1rem;
-  width: 100%;
-
-  ::ng-deep .mat-form-field-flex {
-    background-color: #F2F4F6;
+::ng-deep {
+  .mat-form-field-flex {
+    background: none !important;
   }
+
+  .mat-drawer-inner-container {
+    padding: .5rem;
+  }
+}
+
+.dataset-selector {
+  margin-bottom: 0.75rem;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
 }
 
 .map-wrapper, .sidenav-container {
@@ -52,4 +62,14 @@ mat-sidenav-content {
       }
     }
   }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.search-button {
+  width: 100%;
+  background-color: #286F94;
+  color: white;
 }
