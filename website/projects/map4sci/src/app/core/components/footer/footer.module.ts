@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import { MarkdownModalModule } from '../../../shared/components/markdown-modal/markdown-modal.module';
 import { AnalyticsConsentModule } from '../analytics-consent/analytics-consent.module';
@@ -12,6 +13,8 @@ import { FooterComponent } from './footer.component';
     CommonModule,
 
     MatButtonModule,
+
+    NgxGoogleAnalyticsModule,
 
     AnalyticsConsentModule,
     MarkdownModalModule

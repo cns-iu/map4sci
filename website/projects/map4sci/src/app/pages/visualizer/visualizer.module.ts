@@ -9,28 +9,32 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
 import { MapModule } from '../../map/map.module';
 import { MapDataService } from '../../services/map-data.service';
 import { VisualizerRoutingModule } from './visualizer-routing.module';
 import { VisualizerComponent } from './visualizer.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
-    VisualizerRoutingModule,
-    MatSelectModule,
+    ReactiveFormsModule,
+
+    MatAutocompleteModule,
+    MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MapModule,
-    MatSidenavModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
     MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
+    MatOptionModule,
     MatSelectModule,
-    MatOptionModule
+    MatSidenavModule,
+
+    NgxGoogleAnalyticsModule,
+
+    VisualizerRoutingModule,
+    MapModule,
   ],
   declarations: [VisualizerComponent],
   providers: [MapDataService]

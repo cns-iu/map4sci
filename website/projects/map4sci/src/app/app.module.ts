@@ -17,10 +17,10 @@ import { MarkdownModalModule } from './shared/components/markdown-modal/markdown
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MapModule,
     HttpClientModule,
-    AppRoutingModule,
-    CoreModule,
+
+    MatSnackBarModule,
+
     MarkdownModule.forRoot({
       loader: HttpClient,
       markedOptions: {
@@ -30,8 +30,11 @@ import { MarkdownModalModule } from './shared/components/markdown-modal/markdown
         }
       }
     }),
+
+    AppRoutingModule,
+    CoreModule,
+    MapModule,
     MarkdownModalModule,
-    MatSnackBarModule
   ],
   providers: [MapDataService],
   declarations: [AppComponent],

@@ -8,6 +8,7 @@ import { AnalyticsConsentModule } from './components/analytics-consent/analytics
 import { FooterModule } from './components/footer/footer.module';
 import { HeaderModule } from './components/header/header.module';
 import { MenuModule } from './components/menu/menu.module';
+import { MousePositionCollectorModule } from './services/mouse-position-collector/mouse-position-collector.module';
 import { SiteConfigurationModule } from './services/site-configuration/site-configuration.module';
 import { ThemingModule } from './services/theming/theming.module';
 
@@ -26,6 +27,7 @@ import { ThemingModule } from './services/theming/theming.module';
     // Services
     SiteConfigurationModule.forRoot(environment.siteConfigurationUrl),
     ThemingModule.forRoot(environment.defaultTheme),
+    MousePositionCollectorModule.forRoot(),
 
     // Components
     AnalyticsConsentModule,
