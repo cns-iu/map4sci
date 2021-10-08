@@ -1,0 +1,3 @@
+describe('AnalyticsConsentComponent', () => {
+  // TODO
+});

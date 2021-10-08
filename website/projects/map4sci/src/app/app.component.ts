@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { TrackingPopupComponent } from './shared/components/tracking-popup/tracking-popup.component';
-import { TrackingState } from './shared/components/tracking-popup/tracking.state';
+import { AnalyticsConsentComponent } from './core/components/analytics-consent/analytics-consent.component';
+import { AnalyticsConsentService } from './core/services/analytics-consent/analytics-consent.service';
 
 
 @Component({
@@ -14,23 +13,15 @@ import { TrackingState } from './shared/components/tracking-popup/tracking.state
 export class AppComponent implements OnInit {
   @HostBinding('class') readonly clsName = 'm4s-root';
 
-  constructor(
-    readonly tracking: TrackingState,
-    readonly snackbar: MatSnackBar
-  ) { }
+  constructor(private readonly consentService: AnalyticsConsentService) { }
 
   ngOnInit(): void {
     this.openTrackingPopup();
   }
 
   openTrackingPopup(): void {
-    const snackBar = this.snackbar.openFromComponent(TrackingPopupComponent, {
-      data: {
-        preClose: () => {
-          snackBar.dismiss();
-        }
-      },
-      duration: this.tracking.snapshot.allowTelemetry === undefined ? Infinity : 3000
+    AnalyticsConsentComponent.open(undefined, {
+      duration: this.consentService.hasUserSetConsent ? 3000 : Infinity
     });
   }
 }
