@@ -1,17 +1,20 @@
-<div class="container">
+<div class="container" gaCategory="footer_interactions">
   <span class="copyright">{{ copyright }}</span>
 
   <div class="filler"></div>
 
   <ng-container *ngIf="termsOfService">
-    <button mat-button class="tos" disableRipple (click)="openTermsOfService()">Terms of Use</button>
+    <button mat-button class="tos" gaEvent="terms_of_service_viewed" disableRipple (click)="openTermsOfService()">Terms
+      of Use</button>
     <div class="divider"></div>
   </ng-container>
 
   <ng-container *ngIf="privacyPolicy">
-    <button mat-button class="privacy" disableRipple (click)="openPrivacyPolicy()">Privacy Policy</button>
+    <button mat-button class="privacy" gaEvent="privacy_policy_viewed" disableRipple
+            (click)="openPrivacyPolicy()">Privacy Policy</button>
     <div class="divider"></div>
   </ng-container>
 
-  <button mat-button class="analytics" disableRipple (click)="toggleAnalyticsConsent()">Opt In/Out</button>
+  <button mat-button class="analytics" gaEvent="analytics_consent_box_toggled" disableRipple
+          (click)="toggleAnalyticsConsent()">Opt In/Out</button>
 </div>
