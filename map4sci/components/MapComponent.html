@@ -1,0 +1,3322 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application map4sci code documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Application map4sci code documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  MapComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/map4sci/src/app/map/map.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>m4s-map</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./map.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./map.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#containerStyles" >containerStyles</a>
+                            </li>
+                            <li>
+                                <a href="#currentEdgeFormula" >currentEdgeFormula</a>
+                            </li>
+                            <li>
+                                <a href="#currentNodeFormula" >currentNodeFormula</a>
+                            </li>
+                            <li>
+                                <a href="#edgeFormula" >edgeFormula</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#edgesConfig" >edgesConfig</a>
+                            </li>
+                            <li>
+                                <a href="#edgeZoomIndex" >edgeZoomIndex</a>
+                            </li>
+                            <li>
+                                <a href="#hoverEdgeID" >hoverEdgeID</a>
+                            </li>
+                            <li>
+                                <a href="#hoverNodeID" >hoverNodeID</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#initialZoomConfig" >initialZoomConfig</a>
+                            </li>
+                            <li>
+                                <a href="#lastEdgeFormula" >lastEdgeFormula</a>
+                            </li>
+                            <li>
+                                <a href="#map" >map</a>
+                            </li>
+                            <li>
+                                <a href="#mapCenterConfig" >mapCenterConfig</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#minimapConfig" >minimapConfig</a>
+                            </li>
+                            <li>
+                                <a href="#nodeLabelsLayout" >nodeLabelsLayout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#nodesConfig" >nodesConfig</a>
+                            </li>
+                            <li>
+                                <a href="#nodeZoomIndex" >nodeZoomIndex</a>
+                            </li>
+                            <li>
+                                <a href="#popups" >popups</a>
+                            </li>
+                            <li>
+                                <a href="#textOverlapEnabled" >textOverlapEnabled</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#textOverlapEnabledZoomConfig" >textOverlapEnabledZoomConfig</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addEdgeHover" >addEdgeHover</a>
+                            </li>
+                            <li>
+                                <a href="#addMapMarkers" >addMapMarkers</a>
+                            </li>
+                            <li>
+                                <a href="#addNodeHover" >addNodeHover</a>
+                            </li>
+                            <li>
+                                <a href="#addPopupOnClick" >addPopupOnClick</a>
+                            </li>
+                            <li>
+                                <a href="#addPopups" >addPopups</a>
+                            </li>
+                            <li>
+                                <a href="#capitalizeFirstLetter" >capitalizeFirstLetter</a>
+                            </li>
+                            <li>
+                                <a href="#createPopupHTML" >createPopupHTML</a>
+                            </li>
+                            <li>
+                                <a href="#edgeClicked" >edgeClicked</a>
+                            </li>
+                            <li>
+                                <a href="#edgeLevelChange" >edgeLevelChange</a>
+                            </li>
+                            <li>
+                                <a href="#getZoomIndex" >getZoomIndex</a>
+                            </li>
+                            <li>
+                                <a href="#isEven" >isEven</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#nodeClicked" >nodeClicked</a>
+                            </li>
+                            <li>
+                                <a href="#nodeLevelChange" >nodeLevelChange</a>
+                            </li>
+                            <li>
+                                <a href="#onMapLoad" >onMapLoad</a>
+                            </li>
+                            <li>
+                                <a href="#updateFilters" >updateFilters</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#boundaryFeatures" >boundaryFeatures</a>
+                            </li>
+                            <li>
+                                <a href="#clusterFeatures" >clusterFeatures</a>
+                            </li>
+                            <li>
+                                <a href="#currentZoom" >currentZoom</a>
+                            </li>
+                            <li>
+                                <a href="#edgeFeatures" >edgeFeatures</a>
+                            </li>
+                            <li>
+                                <a href="#edgesConfig" >edgesConfig</a>
+                            </li>
+                            <li>
+                                <a href="#initialZoomConfig" >initialZoomConfig</a>
+                            </li>
+                            <li>
+                                <a href="#mapCenterConfig" >mapCenterConfig</a>
+                            </li>
+                            <li>
+                                <a href="#mapMarkers" >mapMarkers</a>
+                            </li>
+                            <li>
+                                <a href="#mapStyle" >mapStyle</a>
+                            </li>
+                            <li>
+                                <a href="#minimapConfig" >minimapConfig</a>
+                            </li>
+                            <li>
+                                <a href="#nodeFeatures" >nodeFeatures</a>
+                            </li>
+                            <li>
+                                <a href="#nodesConfig" >nodesConfig</a>
+                            </li>
+                            <li>
+                                <a href="#textOverlapEnabledZoomConfig" >textOverlapEnabledZoomConfig</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#edgeClick" >edgeClick</a>
+                            </li>
+                            <li>
+                                <a href="#nodeClick" >nodeClick</a>
+                            </li>
+                            <li>
+                                <a href="#panChange" >panChange</a>
+                            </li>
+                            <li>
+                                <a href="#zoomChange" >zoomChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#InitialZoomConfig" >InitialZoomConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#MinimapConfig" >MinimapConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#EdgesConfig" >EdgesConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#NodesConfig" >NodesConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#TextOverlapEnabledZoomConfig" >TextOverlapEnabledZoomConfig</a>
+                                </li>
+                                <li>
+                                    <a href="#MapCenterConfig" >MapCenterConfig</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="boundaryFeatures"></a>
+                        <b>boundaryFeatures</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FeatureCollection</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="clusterFeatures"></a>
+                        <b>clusterFeatures</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FeatureCollection</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currentZoom"></a>
+                        <b>currentZoom</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultInitialZoom</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edgeFeatures"></a>
+                        <b>edgeFeatures</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FeatureCollection</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edgesConfig"></a>
+                        <b>edgesConfig</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:47</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialZoomConfig"></a>
+                        <b>initialZoomConfig</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mapCenterConfig"></a>
+                        <b>mapCenterConfig</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:65</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mapMarkers"></a>
+                        <b>mapMarkers</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/MapMarker.html" target="_self" >MapMarker[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mapStyle"></a>
+                        <b>mapStyle</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>blankStyle</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:25</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="minimapConfig"></a>
+                        <b>minimapConfig</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nodeFeatures"></a>
+                        <b>nodeFeatures</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FeatureCollection</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:27</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nodesConfig"></a>
+                        <b>nodesConfig</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:53</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="textOverlapEnabledZoomConfig"></a>
+                        <b>textOverlapEnabledZoomConfig</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:59</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edgeClick"></a>
+                        <b>edgeClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:71</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nodeClick"></a>
+                        <b>nodeClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:70</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="panChange"></a>
+                        <b>panChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:73</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="zoomChange"></a>
+                        <b>zoomChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:72</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addEdgeHover"></a>
+                    <span class="name">
+                        <span ><b>addEdgeHover</b></span>
+                        <a href="#addEdgeHover"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addEdgeHover(map: Map)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="260"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:260</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>map</td>
+                                    <td>
+                                            <code>Map</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addMapMarkers"></a>
+                    <span class="name">
+                        <span ><b>addMapMarkers</b></span>
+                        <a href="#addMapMarkers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addMapMarkers(markers: <a href="../interfaces/MapMarker.html" target="_self">MapMarker[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="187"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:187</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>markers</td>
+                                    <td>
+                                                <code><a href="../interfaces/MapMarker.html" target="_self" >MapMarker[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNodeHover"></a>
+                    <span class="name">
+                        <span ><b>addNodeHover</b></span>
+                        <a href="#addNodeHover"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addNodeHover(map: Map)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="297"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:297</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>map</td>
+                                    <td>
+                                            <code>Map</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPopupOnClick"></a>
+                    <span class="name">
+                        <span ><b>addPopupOnClick</b></span>
+                        <a href="#addPopupOnClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPopupOnClick(layer: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, content: <a href="../undefineds/PopupContent.html" target="_self">PopupContent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="340"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:340</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>layer</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#PopupContent" target="_self" >PopupContent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPopups"></a>
+                    <span class="name">
+                        <span ><b>addPopups</b></span>
+                        <a href="#addPopups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPopups()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="334"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:334</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="capitalizeFirstLetter"></a>
+                    <span class="name">
+                        <span ><b>capitalizeFirstLetter</b></span>
+                        <a href="#capitalizeFirstLetter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>capitalizeFirstLetter(input: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="136"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:136</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>input</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createPopupHTML"></a>
+                    <span class="name">
+                        <span ><b>createPopupHTML</b></span>
+                        <a href="#createPopupHTML"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createPopupHTML(description: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">Any</a>, content: <a href="../undefineds/PopupContent.html" target="_self">PopupContent</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="374"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:374</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>description</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >Any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>content</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#PopupContent" target="_self" >PopupContent</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeClicked"></a>
+                    <span class="name">
+                        <span ><b>edgeClicked</b></span>
+                        <a href="#edgeClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>edgeClicked(event: MapLayerMouseEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MapLayerMouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeLevelChange"></a>
+                    <span class="name">
+                        <span ><b>edgeLevelChange</b></span>
+                        <a href="#edgeLevelChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>edgeLevelChange()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="251"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:251</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getZoomIndex"></a>
+                    <span class="name">
+                        <span ><b>getZoomIndex</b></span>
+                        <a href="#getZoomIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getZoomIndex(zoomLookup: <a href="../undefineds/ZoomLookup.html" target="_self">ZoomLookup</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="402"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:402</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>zoomLookup</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/typealiases.html#ZoomLookup" target="_self" >ZoomLookup</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEven"></a>
+                    <span class="name">
+                        <span ><b>isEven</b></span>
+                        <a href="#isEven"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isEven(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="417"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:417</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="132"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:132</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeClicked"></a>
+                    <span class="name">
+                        <span ><b>nodeClicked</b></span>
+                        <a href="#nodeClicked"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeClicked(event: MapLayerMouseEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MapLayerMouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeLevelChange"></a>
+                    <span class="name">
+                        <span ><b>nodeLevelChange</b></span>
+                        <a href="#nodeLevelChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeLevelChange()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="241"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:241</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMapLoad"></a>
+                    <span class="name">
+                        <span ><b>onMapLoad</b></span>
+                        <a href="#onMapLoad"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMapLoad(map: Map)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="148"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:148</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>map</td>
+                                    <td>
+                                            <code>Map</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateFilters"></a>
+                    <span class="name">
+                        <span ><b>updateFilters</b></span>
+                        <a href="#updateFilters"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateFilters()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="containerStyles"></a>
+                    <span class="name">
+                        <span ><b>containerStyles</b></span>
+                        <a href="#containerStyles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x60;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      -webkit-box-shadow: 3px 3px 5px 4px #00000021;
+      -moz-box-shadow: 3px 3px 5px 4px #00000021;
+      box-shadow: 3px 3px 5px 4px #00000021;
+  &#x60;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:124</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentEdgeFormula"></a>
+                    <span class="name">
+                        <span ><b>currentEdgeFormula</b></span>
+                        <a href="#currentEdgeFormula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >Any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;get&#x27;, &#x27;zoom&#x27;, [&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, this.edgesConfig]]]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:84</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentNodeFormula"></a>
+                    <span class="name">
+                        <span ><b>currentNodeFormula</b></span>
+                        <a href="#currentNodeFormula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >Any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, this.nodesConfig]]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:83</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeFormula"></a>
+                    <span class="name">
+                        <span ><b>edgeFormula</b></span>
+                        <a href="#edgeFormula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, this.edgesConfig]]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:85</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgesConfig"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>edgesConfig</b></span>
+                        <a href="#edgesConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Edge.html" target="_self" >Edge[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultEdges</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeZoomIndex"></a>
+                    <span class="name">
+                        <span ><b>edgeZoomIndex</b></span>
+                        <a href="#edgeZoomIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hoverEdgeID"></a>
+                    <span class="name">
+                        <span ><b>hoverEdgeID</b></span>
+                        <a href="#hoverEdgeID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/variables.html#d" target="_self" >string | number | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hoverNodeID"></a>
+                    <span class="name">
+                        <span ><b>hoverNodeID</b></span>
+                        <a href="#hoverNodeID"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/variables.html#d" target="_self" >string | number | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:79</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialZoomConfig"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>initialZoomConfig</b></span>
+                        <a href="#initialZoomConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultInitialZoom</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastEdgeFormula"></a>
+                    <span class="name">
+                        <span ><b>lastEdgeFormula</b></span>
+                        <a href="#lastEdgeFormula"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;at&#x27;, this.edgesConfig.length - 1, [&#x27;literal&#x27;, this.edgesConfig]]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="map"></a>
+                    <span class="name">
+                        <span ><b>map</b></span>
+                        <a href="#map"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Map</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:75</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapCenterConfig"></a>
+                    <span class="name">
+                        <span ><b>mapCenterConfig</b></span>
+                        <a href="#mapCenterConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[number, number]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultMapCenter</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:63</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minimapConfig"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>minimapConfig</b></span>
+                        <a href="#minimapConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/MiniMapOptions.html" target="_self" >MiniMapOptions</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultMinimapOptions</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeLabelsLayout"></a>
+                    <span class="name">
+                        <span ><b>nodeLabelsLayout</b></span>
+                        <a href="#nodeLabelsLayout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Layout</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    &#x27;text-field&#x27;: &#x27;{label}&#x27;,
+    &#x27;text-font&#x27;: [&#x27;Open Sans Regular&#x27;],
+    &#x27;text-size&#x27;: [&#x27;get&#x27;, &#x27;fontSize&#x27;, this.currentNodeFormula],
+    &#x27;text-variable-anchor&#x27;: [&#x27;top&#x27;, &#x27;bottom&#x27;, &#x27;top-left&#x27;, &#x27;top-right&#x27;, &#x27;bottom-left&#x27;, &#x27;bottom-right&#x27;, &#x27;left&#x27;, &#x27;right&#x27;, &#x27;center&#x27;],
+    &#x27;text-radial-offset&#x27;: 0.25,
+    &#x27;text-allow-overlap&#x27;: false
+  } as unknown as Layout</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodesConfig"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>nodesConfig</b></span>
+                        <a href="#nodesConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Node.html" target="_self" >Node[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultNodes</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeZoomIndex"></a>
+                    <span class="name">
+                        <span ><b>nodeZoomIndex</b></span>
+                        <a href="#nodeZoomIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:76</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="popups"></a>
+                    <span class="name">
+                        <span ><b>popups</b></span>
+                        <a href="#popups"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PopupLayer.html" target="_self" >PopupLayer[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      layer: &#x27;edges&#x27;,
+      content: [
+        &#x27;&lt;p class&#x3D;&quot;popup-label&quot;&gt;Edge&lt;/p&gt;&lt;p&gt;&#x27;,
+        [&#x27;label&#x27;, this.capitalizeFirstLetter],
+        &#x27;&lt;/p&gt;&#x27;
+      ]
+    },
+    {
+      layer: &#x27;nodes&#x27;,
+      content: [
+        &#x27;&lt;p class&#x3D;&quot;popup-label&quot;&gt;Node&lt;/p&gt;&lt;p&gt;&#x27;,
+        &#x27;label&#x27;,
+        &#x27;&lt;/p&gt;&#x27;
+      ]
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:105</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textOverlapEnabled"></a>
+                    <span class="name">
+                        <span ><b>textOverlapEnabled</b></span>
+                        <a href="#textOverlapEnabled"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="textOverlapEnabledZoomConfig"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>textOverlapEnabledZoomConfig</b></span>
+                        <a href="#textOverlapEnabledZoomConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>defaultTextOverlapEnabledZoom</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="InitialZoomConfig"></a>
+                        <span class="name"><b>InitialZoomConfig</b><a href="#InitialZoomConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>InitialZoomConfig(initialZoom: <a href="../s/d.html" target="_self">number | undefined</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:35</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>initialZoom</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/variables.html#d" target="_self" >number | undefined</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="MinimapConfig"></a>
+                        <span class="name"><b>MinimapConfig</b><a href="#MinimapConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>MinimapConfig(options: <a href="../interfaces/MiniMapOptions.html" target="_self">MiniMapOptions | undefined</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:41</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>options</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../interfaces/MiniMapOptions.html" target="_self" >MiniMapOptions | undefined</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="EdgesConfig"></a>
+                        <span class="name"><b>EdgesConfig</b><a href="#EdgesConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>EdgesConfig(edges: <a href="../interfaces/Edge.html" target="_self">Edge[] | undefined</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:47</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>edges</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../interfaces/Edge.html" target="_self" >Edge[] | undefined</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="NodesConfig"></a>
+                        <span class="name"><b>NodesConfig</b><a href="#NodesConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>NodesConfig(nodes: <a href="../interfaces/Node.html" target="_self">Node[] | undefined</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:53</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>nodes</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../interfaces/Node.html" target="_self" >Node[] | undefined</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TextOverlapEnabledZoomConfig"></a>
+                        <span class="name"><b>TextOverlapEnabledZoomConfig</b><a href="#TextOverlapEnabledZoomConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>TextOverlapEnabledZoomConfig(zoom: <a href="../s/d.html" target="_self">number | undefined</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:59</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>zoom</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/variables.html#d" target="_self" >number | undefined</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="MapCenterConfig"></a>
+                        <span class="name"><b>MapCenterConfig</b><a href="#MapCenterConfig"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>MapCenterConfig(mapCenter: <a href="../s/d.html" target="_self"> | undefined</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">projects/map4sci/src/app/map/map.component.ts:65</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>mapCenter</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/variables.html#d" target="_self" > | undefined</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Any } from &#x27;@angular-ru/common/typings&#x27;;
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, OnChanges } from &#x27;@angular/core&#x27;;
+import { FeatureCollection } from &#x27;geojson&#x27;;
+import { FullscreenControl, Layout, Map, MapLayerMouseEvent, Marker, NavigationControl, Popup } from &#x27;maplibre-gl&#x27;;
+
+import { Edge, MapMarker, MiniMapOptions, Node, PopupContent, PopupLayer, ZoomLookup } from &#x27;./map&#x27;;
+import {
+  blankStyle, defaultEdges, defaultInitialZoom, defaultMapCenter, defaultMinimapOptions, defaultNodes,
+  defaultTextOverlapEnabledZoom,
+} from &#x27;./map-defaults&#x27;;
+import { MiniMap } from &#x27;./minimap&#x27;;
+import { ZoomLevelControl } from &#x27;./zoom-level.control&#x27;;
+
+
+@Component({
+  selector: &#x27;m4s-map&#x27;,
+  templateUrl: &#x27;./map.component.html&#x27;,
+  styleUrls: [&#x27;./map.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class MapComponent implements OnChanges{
+  // Inputs
+  @Input() mapStyle &#x3D; blankStyle;
+  @Input() edgeFeatures!: FeatureCollection;
+  @Input() nodeFeatures!: FeatureCollection;
+  @Input() clusterFeatures!: FeatureCollection;
+  @Input() boundaryFeatures!: FeatureCollection;
+  @Input() currentZoom &#x3D; defaultInitialZoom;
+  @Input() mapMarkers: MapMarker[] &#x3D; [];
+
+  private initialZoomConfig: number &#x3D; defaultInitialZoom;
+  @Input(&#x27;initialZoomConfig&#x27;)
+  set InitialZoomConfig(initialZoom: number | undefined) {
+    this.initialZoomConfig &#x3D; initialZoom ?? defaultInitialZoom;
+  }
+
+  private minimapConfig: MiniMapOptions &#x3D; defaultMinimapOptions;
+  @Input(&#x27;minimapConfig&#x27;)
+  set MinimapConfig(options: MiniMapOptions | undefined) {
+    this.minimapConfig &#x3D; options ?? defaultMinimapOptions;
+  }
+
+  private edgesConfig: Edge[] &#x3D; defaultEdges;
+  @Input(&#x27;edgesConfig&#x27;)
+  set EdgesConfig(edges: Edge[] | undefined) {
+    this.edgesConfig &#x3D; edges ?? defaultEdges;
+  }
+
+  private nodesConfig: Node[] &#x3D; defaultNodes;
+  @Input(&#x27;nodesConfig&#x27;)
+  set NodesConfig(nodes: Node[] | undefined) {
+    this.nodesConfig &#x3D; nodes ?? defaultNodes;
+  }
+
+  private textOverlapEnabledZoomConfig: number &#x3D; defaultTextOverlapEnabledZoom;
+  @Input(&#x27;textOverlapEnabledZoomConfig&#x27;)
+  set TextOverlapEnabledZoomConfig(zoom: number | undefined) {
+    this.textOverlapEnabledZoomConfig &#x3D; zoom ?? defaultTextOverlapEnabledZoom;
+  }
+
+  mapCenterConfig: [number, number] &#x3D; defaultMapCenter;
+  @Input(&#x27;mapCenterConfig&#x27;)
+  set MapCenterConfig(mapCenter: [number, number] | undefined) {
+    this.mapCenterConfig &#x3D; mapCenter ?? defaultMapCenter;
+  }
+
+  // Outputs
+  @Output() readonly nodeClick &#x3D; new EventEmitter&lt;MapLayerMouseEvent&gt;();
+  @Output() readonly edgeClick &#x3D; new EventEmitter&lt;MapLayerMouseEvent&gt;();
+  @Output() readonly zoomChange &#x3D; new EventEmitter&lt;number&gt;();
+  @Output() readonly panChange &#x3D; new EventEmitter&lt;[number, number]&gt;();
+
+  map!: Map;
+  nodeZoomIndex &#x3D; 0;
+  edgeZoomIndex &#x3D; 0;
+  hoverEdgeID: string | number | undefined;
+  hoverNodeID: string | number | undefined;
+  textOverlapEnabled &#x3D; false;
+
+  // These allow the layer tags to be much more readable.
+  currentNodeFormula: Any &#x3D; [&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, this.nodesConfig]];
+  currentEdgeFormula: Any &#x3D; [&#x27;get&#x27;, &#x27;zoom&#x27;, [&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, this.edgesConfig]]];
+  edgeFormula &#x3D; [&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, this.edgesConfig]];
+  lastEdgeFormula &#x3D; [&#x27;at&#x27;, this.edgesConfig.length - 1, [&#x27;literal&#x27;, this.edgesConfig]];
+
+  nodeLabelsLayout: Layout &#x3D; {
+    &#x27;text-field&#x27;: &#x27;{label}&#x27;,
+    &#x27;text-font&#x27;: [&#x27;Open Sans Regular&#x27;],
+    &#x27;text-size&#x27;: [&#x27;get&#x27;, &#x27;fontSize&#x27;, this.currentNodeFormula],
+    &#x27;text-variable-anchor&#x27;: [&#x27;top&#x27;, &#x27;bottom&#x27;, &#x27;top-left&#x27;, &#x27;top-right&#x27;, &#x27;bottom-left&#x27;, &#x27;bottom-right&#x27;, &#x27;left&#x27;, &#x27;right&#x27;, &#x27;center&#x27;],
+    &#x27;text-radial-offset&#x27;: 0.25,
+    &#x27;text-allow-overlap&#x27;: false
+  } as unknown as Layout;
+
+  /*
+    Popup content needs to follow specific pattern to function properly.
+    Property names will be used to look up data from the geoJson sources.
+    Pass in format [&#x27;&lt;anyHTML&gt;and text&lt;/anyHTML&gt;&lt;p&gt;&#x27;, &#x27;propertyName&#x27;, &#x27;&lt;/p&gt;more html or text&#x27;]
+
+    You can pass in as many as you like but they need to alternate between raw html, and property names.
+    You can also pass in a formatter with the property name in format [&#x27;propertyName&#x27;, formatterMethod]
+  */
+  popups: PopupLayer[] &#x3D; [
+    {
+      layer: &#x27;edges&#x27;,
+      content: [
+        &#x27;&lt;p class&#x3D;&quot;popup-label&quot;&gt;Edge&lt;/p&gt;&lt;p&gt;&#x27;,
+        [&#x27;label&#x27;, this.capitalizeFirstLetter],
+        &#x27;&lt;/p&gt;&#x27;
+      ]
+    },
+    {
+      layer: &#x27;nodes&#x27;,
+      content: [
+        &#x27;&lt;p class&#x3D;&quot;popup-label&quot;&gt;Node&lt;/p&gt;&lt;p&gt;&#x27;,
+        &#x27;label&#x27;,
+        &#x27;&lt;/p&gt;&#x27;
+      ]
+    }
+  ];
+
+  containerStyles &#x3D; &#x60;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      -webkit-box-shadow: 3px 3px 5px 4px #00000021;
+      -moz-box-shadow: 3px 3px 5px 4px #00000021;
+      box-shadow: 3px 3px 5px 4px #00000021;
+  &#x60;;
+
+  ngOnChanges(): void {
+    this.addMapMarkers(this.mapMarkers);
+  }
+
+  capitalizeFirstLetter(input: string): string {
+    return input.charAt(0).toUpperCase() + input.slice(1);
+  }
+
+  nodeClicked(event: MapLayerMouseEvent): void {
+    this.nodeClick.emit(event);
+  }
+
+  edgeClicked(event: MapLayerMouseEvent): void {
+    this.edgeClick.emit(event);
+  }
+
+  onMapLoad(map: Map): void {
+    this.map &#x3D; map;
+
+    if (this.initialZoomConfig !&#x3D;&#x3D; defaultInitialZoom) {
+      map.setZoom(this.initialZoomConfig);
+    }
+
+    this.currentZoom &#x3D; map.getZoom();
+
+    // Use the same map center for the minimap unless the minimapOptions have been customized.
+    if (this.minimapConfig &#x3D;&#x3D;&#x3D; defaultMinimapOptions) {
+      this.minimapConfig.center &#x3D; this.mapCenterConfig;
+    }
+
+    // ShowCompass off to disable rotation.
+    map.addControl(new NavigationControl({ showCompass: false }), &#x27;top-right&#x27;);
+    map.addControl(new FullscreenControl({}), &#x27;top-right&#x27;);
+    if (this.nodeFeatures.features.length &#x3D;&#x3D;&#x3D; 0) {
+      console.warn(&#x27;0 node features.&#x27;);
+    } else if (this.clusterFeatures.features.length &#x3D;&#x3D;&#x3D; 0) {
+      console.warn(&#x27;0 cluster features&#x27;);
+    } else {
+      map.addControl(new MiniMap({ nodes: this.nodeFeatures, clusters: this.clusterFeatures }, this.minimapConfig), &#x27;bottom-right&#x27;);
+    }
+    map.addControl(new ZoomLevelControl(), &#x27;bottom-right&#x27;);
+
+    this.map.resize();
+
+    this.addMapMarkers(this.mapMarkers);
+    this.addEdgeHover(map);
+    this.addNodeHover(map);
+    this.addPopups();
+
+    // When the user zooms the map, this method handles showing and hiding data based on zoom level
+    map.on(&#x27;zoom&#x27;, () &#x3D;&gt; this.updateFilters());
+    map.on(&#x27;zoomend&#x27;, () &#x3D;&gt; this.zoomChange.emit(this.map.getZoom()));
+    map.on(&#x27;moveend&#x27;, () &#x3D;&gt; this.panChange.emit(this.map.getCenter().toArray() as [number, number]));
+  }
+
+  addMapMarkers(markers: MapMarker[]): void {
+    if (!markers.length) {
+      return;
+    }
+
+    markers.forEach(marker &#x3D;&gt; {
+      if (this.map) {
+        const popup &#x3D; new Popup({
+          closeOnClick: true,
+          closeOnMove: true,
+          closeButton: false,
+          className: &#x27;map-marker-popup&#x27;
+        }).setHTML(&#x60;&lt;h3&gt;${marker.title}&lt;/h3&gt;&#x60;);
+
+        new Marker(marker.config ?? {})
+          .setLngLat(marker.coordinates)
+          .setPopup(popup)
+          .addTo(this.map);
+      }
+    });
+  }
+
+  // In order to show more or less data based on the zoom level we have to update the layer filters when the map zooms.
+  updateFilters(): void {
+    const { map, edgesConfig, nodesConfig, textOverlapEnabledZoomConfig, textOverlapEnabled } &#x3D; this;
+    const currentZoom: number &#x3D; map.getZoom();
+
+    // When the zoom level changes, check if we need to display a different set of nodes. If we do, update the node filter.
+    if (this.nodeLevelChange()) {
+      const currentNode &#x3D; [&#x27;get&#x27;, &#x27;zoom&#x27;, [&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, nodesConfig]]];
+      map.setFilter(&#x27;node_labels&#x27;, [&#x27;&gt;&#x3D;&#x27;, currentZoom, currentNode]);
+    }
+
+    // When the zoom level changes, check if we need to display a different set of edges. If we do, update the edges filter.
+    // We decided showing the nodes (without labels) at the same time as the edges was preferable, instead of waiting for
+    // when the labels will fit.
+    if (this.edgeLevelChange()) {
+      const currentEdge &#x3D; [&#x27;get&#x27;, &#x27;zoom&#x27;, [&#x27;at&#x27;, [&#x27;get&#x27;, &#x27;level&#x27;], [&#x27;literal&#x27;, edgesConfig]]];
+      map.setFilter(&#x27;nodes&#x27;, [&#x27;&gt;&#x3D;&#x27;, currentZoom, currentEdge]);
+      map.setFilter(&#x27;edges_border&#x27;, [&#x27;&gt;&#x3D;&#x27;, currentZoom, currentEdge]);
+      map.setFilter(&#x27;edges&#x27;, [&#x27;&gt;&#x3D;&#x27;, currentZoom, currentEdge]);
+    }
+
+    //  Determing if text overlap should be enabled or disabled based on the break point set in the config object.
+    if (!textOverlapEnabled &amp;&amp; currentZoom &gt; textOverlapEnabledZoomConfig) {
+      map.setLayoutProperty(&#x27;node_labels&#x27;, &#x27;text-allow-overlap&#x27;, true);
+      this.textOverlapEnabled &#x3D; true;
+    } else if (textOverlapEnabled &amp;&amp; currentZoom &lt; textOverlapEnabledZoomConfig) {
+      map.setLayoutProperty(&#x27;node_labels&#x27;, &#x27;text-allow-overlap&#x27;, false);
+      this.textOverlapEnabled &#x3D; false;
+    }
+  }
+
+  // Returns whether or not the zoom level has changed enough to warrant a change in which nodes we are displaying.
+  nodeLevelChange(): boolean {
+    const currentIndex: number &#x3D; this.getZoomIndex(this.nodesConfig);
+    if (currentIndex &#x3D;&#x3D;&#x3D; this.nodeZoomIndex) {
+      return false;
+    }
+    this.nodeZoomIndex &#x3D; currentIndex;
+    return true;
+  }
+
+  // Returns whether or not the zoom level has changed enough to warrant a change in which edges we are displaying.
+  edgeLevelChange(): boolean {
+    const currentIndex: number &#x3D; this.getZoomIndex(this.edgesConfig);
+    if (currentIndex &#x3D;&#x3D;&#x3D; this.edgeZoomIndex) {
+      return false;
+    }
+    this.edgeZoomIndex &#x3D; currentIndex;
+    return true;
+  }
+
+  addEdgeHover(map: Map): void {
+    map.on(&#x27;mousemove&#x27;, &#x27;edges&#x27;, (e) &#x3D;&gt; {
+      // When the mouse moves, check if the mouse is on top of a feature from the edges source.
+      if (!e.features) {
+        return;
+      }
+
+      if (e.features.length &gt; 0) {
+        // If there was already an edge with the hover status, turn that hover status off first
+        if (this.hoverEdgeID) {
+          map.setFeatureState(
+            { source: &#x27;edges&#x27;, id: this.hoverEdgeID },
+            { hover: false }
+          );
+        }
+        // Set the hover status of the new edge to true, and save the ID to the object so we can compare
+        // later, when the mouse moves again.
+        this.hoverEdgeID &#x3D; e.features[0].id;
+        map.setFeatureState(
+          { source: &#x27;edges&#x27;, id: this.hoverEdgeID },
+          { hover: true }
+        );
+      }
+    });
+
+    map.on(&#x27;mouseleave&#x27;, &#x27;edges&#x27;, () &#x3D;&gt; {
+      // When the mouse leaves the edge source features, turn the hover status off
+      if (this.hoverEdgeID) {
+        map.setFeatureState(
+          { source: &#x27;edges&#x27;, id: this.hoverEdgeID },
+          { hover: false }
+        );
+      }
+      this.hoverEdgeID &#x3D; undefined;
+    });
+  }
+
+  addNodeHover(map: Map): void {
+    map.on(&#x27;mousemove&#x27;, &#x27;nodes&#x27;, (e) &#x3D;&gt; {
+      if (!e.features) {
+        return;
+      }
+
+      // When the mouse moves, check if the mouse is on top of a feature from the nodes source.
+      if (e.features.length &gt; 0) {
+        // If there was already an node with the hover status, turn that hover status off first
+        if (this.hoverNodeID) {
+          map.setFeatureState(
+            { source: &#x27;nodes&#x27;, id: this.hoverNodeID },
+            { hover: false }
+          );
+        }
+        // Set the hover status of the new node to true, and save the ID to the object so we can compare
+        // later, when the mouse moves again.
+        this.hoverNodeID &#x3D; e.features[0].id;
+        map.setFeatureState(
+          { source: &#x27;nodes&#x27;, id: this.hoverNodeID },
+          { hover: true }
+        );
+      }
+    });
+
+    map.on(&#x27;mouseleave&#x27;, &#x27;nodes&#x27;, () &#x3D;&gt; {
+      // When the mouse leaves the edge source features, turn the hover status off
+      if (this.hoverNodeID) {
+        map.setFeatureState(
+          { source: &#x27;nodes&#x27;, id: this.hoverNodeID },
+          { hover: false }
+        );
+      }
+      this.hoverNodeID &#x3D; undefined;
+    });
+  }
+
+  addPopups(): void {
+    this.popups.forEach(popup &#x3D;&gt; {
+      this.addPopupOnClick(popup.layer, popup.content);
+    });
+  }
+
+  addPopupOnClick(layer: string, content: PopupContent): void {
+    const { map } &#x3D; this;
+    // When a click event occurs on a feature in the places layer, open a popup at the
+    // location of the feature, with description HTML from its properties.
+    map.on(&#x27;click&#x27;, layer, (e) &#x3D;&gt; {
+      if (!e.features) {
+        return;
+      }
+
+      const descriptionHTML &#x3D; this.createPopupHTML(e.features[0].properties, content);
+      new Popup({
+        closeOnClick: true,
+        closeOnMove: true,
+        closeButton: false,
+        className: &#x27;map-marker-popup&#x27;
+      })
+        .setLngLat(e.lngLat)
+        .setHTML(descriptionHTML)
+        .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on(&#x27;mouseenter&#x27;, layer, () &#x3D;&gt; {
+      map.getCanvas().style.cursor &#x3D; &#x27;pointer&#x27;;
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on(&#x27;mouseleave&#x27;, layer, () &#x3D;&gt; {
+      map.getCanvas().style.cursor &#x3D; &#x27;&#x27;;
+    });
+  }
+
+  // Takes the description field of the element, and uses it with the popup content defined in the config object
+  // to return the concatenated html string.
+  createPopupHTML(description: Any, content: PopupContent): string {
+    let html &#x3D; &#x27;&#x27;;
+    content.forEach((element, index: number) &#x3D;&gt; {
+      if (!element) {
+        return;
+      }
+      // The config object for popups is structued like [&#x27;&lt;html&gt;&#x27;, &#x27;propertyName&#x27;, &#x27;&lt;/html&gt;]
+      // so on even indexes, we just concatenate the html string, on odd indexes we use the string to lookup the property value.
+      if (this.isEven(index)) {
+        html +&#x3D; element;
+
+      // Along with property values, you can pass along a formatting function in form of [&#x27;propertyName&#x27;, function]
+      // This checks if there is one, if there is it uses that function to format the value of the property before
+      // concatenating it.
+      } else if (typeof (element) &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        html +&#x3D; description[element];
+      } else {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        html +&#x3D; element[1](description[element[0]]);
+      }
+    });
+
+    return html;
+  }
+
+  // Converts the current zoom number, to the index number of the object with the same .zoom property in the lookup array passed in.
+  // Used because getZoom() will return very precise values, and the nodes / edges config objects will not match up exactly.
+  getZoomIndex(zoomLookup: ZoomLookup): number {
+    const zoom: number &#x3D; this.map.getZoom();
+    for (let index &#x3D; 0; index &lt;&#x3D; zoomLookup.length; index++) {
+      if (index &#x3D;&#x3D;&#x3D; (zoomLookup.length - 1)) {
+        return index;
+      }
+      if (zoom &gt;&#x3D; zoomLookup[index].zoom &amp;&amp; zoom &lt; zoomLookup[index + 1].zoom) {
+        return index;
+      }
+    }
+
+    console.error(&#x27;No Zoom index found.  Zoom lookup: &#x27;, zoomLookup);
+    return 0;
+  }
+
+  isEven(index: number): boolean {
+    return index % 2 &#x3D;&#x3D;&#x3D; 0;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mgl-map
+  [style]&#x3D;&quot;mapStyle&quot;
+  [zoom]&#x3D;&quot;[currentZoom]&quot;
+  [center]&#x3D;&quot;mapCenterConfig&quot;
+  (mapLoad)&#x3D;&quot;onMapLoad($event)&quot;
+  [renderWorldCopies]&#x3D;&quot;false&quot;
+&gt;
+  &lt;mgl-geojson-source
+    id&#x3D;&quot;edges&quot;
+    [data]&#x3D;&quot;edgeFeatures&quot;
+  &gt;&lt;/mgl-geojson-source&gt;
+  &lt;mgl-geojson-source
+    id&#x3D;&quot;nodes&quot;
+    [data]&#x3D;&quot;nodeFeatures&quot;
+  &gt;&lt;/mgl-geojson-source&gt;
+  &lt;mgl-geojson-source
+    id&#x3D;&quot;clusters&quot;
+    [data]&#x3D;&quot;clusterFeatures&quot;
+  &gt;&lt;/mgl-geojson-source&gt;
+  &lt;mgl-geojson-source
+    id&#x3D;&quot;boundaries&quot;
+    [data]&#x3D;&quot;boundaryFeatures&quot;
+  &gt;&lt;/mgl-geojson-source&gt;
+
+  &lt;!-- CLUSTERS --&gt;
+  &lt;mgl-layer
+    id&#x3D;&quot;clusters&quot;
+    source&#x3D;&quot;clusters&quot;
+    type&#x3D;&quot;fill&quot;
+    [paint]&#x3D;&quot;{
+      &#x27;fill-color&#x27;: [&#x27;get&#x27;, &#x27;fill&#x27;],
+      &#x27;fill-opacity&#x27;: 0.7,
+      &#x27;fill-outline-color&#x27;: [&#x27;get&#x27;, &#x27;stroke&#x27;]
+    }&quot;&gt;
+  &lt;/mgl-layer&gt;
+
+  &lt;!-- BOUNDARIES --&gt;
+  &lt;mgl-layer
+    id&#x3D;&quot;boundaries&quot;
+    source&#x3D;&quot;boundaries&quot;
+    type&#x3D;&quot;line&quot;
+    minZoom&#x3D;&quot;2&quot;
+    [paint]&#x3D;&quot;{
+      &#x27;line-color&#x27;: [&#x27;get&#x27;, &#x27;stroke&#x27;],
+      &#x27;line-width&#x27;: 0.5,
+      &#x27;line-opacity&#x27;: 0.8
+    }&quot;
+  &gt;&lt;/mgl-layer&gt;
+
+  &lt;!-- EDGES --&gt;
+  &lt;mgl-layer
+    id&#x3D;&quot;edges&quot;
+    source&#x3D;&quot;edges&quot;
+    type&#x3D;&quot;line&quot;
+    [paint]&#x3D;&quot;{
+      &#x27;line-color&#x27;: [&#x27;case&#x27;,
+          [&#x27;boolean&#x27;, [&#x27;feature-state&#x27;, &#x27;hover&#x27;], false], &#x27;red&#x27;,
+          [&#x27;get&#x27;, &#x27;color&#x27;, edgeFormula]
+      ],
+      &#x27;line-width&#x27;: [&#x27;get&#x27;, &#x27;width&#x27;, edgeFormula],
+      &#x27;line-opacity&#x27;: [&#x27;get&#x27;, &#x27;opacity&#x27;, edgeFormula]
+    }&quot;
+    [filter]&#x3D;&quot;[&#x27;&gt;&#x3D;&#x27;, currentZoom, [&#x27;get&#x27;, &#x27;zoom&#x27;, edgeFormula]]&quot;
+    (layerClick)&#x3D;&quot;edgeClicked($event)&quot;&gt;
+  &lt;/mgl-layer&gt;
+
+  &lt;!-- EDGES BORDER --&gt;
+  &lt;mgl-layer
+    id&#x3D;&quot;edges_border&quot;
+    source&#x3D;&quot;edges&quot;
+    type&#x3D;&quot;line&quot;
+    [paint]&#x3D;&quot;{
+      &#x27;line-color&#x27;: [&#x27;get&#x27;, &#x27;borderColor&#x27;, edgeFormula],
+      &#x27;line-width&#x27;: [&#x27;get&#x27;, &#x27;borderWidth&#x27;, edgeFormula],
+      &#x27;line-opacity&#x27;: [&#x27;get&#x27;, &#x27;borderOpacity&#x27;, edgeFormula],
+      &#x27;line-gap-width&#x27;: [&#x27;get&#x27;, &#x27;width&#x27;, edgeFormula]
+    }&quot;
+    [filter]&#x3D;&quot;[&#x27;&gt;&#x3D;&#x27;, currentZoom, [&#x27;get&#x27;, &#x27;zoom&#x27;, edgeFormula]]&quot;&gt;
+  &lt;/mgl-layer&gt;
+
+  &lt;!-- NODES --&gt;
+  &lt;mgl-layer
+    id&#x3D;&quot;nodes&quot;
+    source&#x3D;&quot;nodes&quot;
+    type&#x3D;&quot;circle&quot;
+    [paint]&#x3D;&quot;{
+      &#x27;circle-color&#x27;: [&#x27;case&#x27;,
+          [&#x27;boolean&#x27;, [&#x27;feature-state&#x27;, &#x27;hover&#x27;], false], &#x27;red&#x27;,
+          &#x27;black&#x27;
+      ],
+      &#x27;circle-radius&#x27;: 3
+    }&quot;
+    [filter]&#x3D;&quot;[&#x27;&gt;&#x3D;&#x27;, currentZoom, currentEdgeFormula]&quot;
+    (layerClick)&#x3D;&quot;nodeClicked($event)&quot;&gt;
+  &lt;/mgl-layer&gt;
+
+  &lt;!-- NODE LABELS --&gt;
+  &lt;mgl-layer
+    id&#x3D;&quot;node_labels&quot;
+    source&#x3D;&quot;nodes&quot;
+    type&#x3D;&quot;symbol&quot;
+    [layout]&#x3D;&quot;nodeLabelsLayout&quot;
+    [filter]&#x3D;&quot;[&#x27;&gt;&#x3D;&#x27;, currentZoom, [&#x27;get&#x27;, &#x27;zoom&#x27;, currentNodeFormula]]&quot;&gt;
+  &lt;/mgl-layer&gt;
+&lt;/mgl-map&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./map.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  ::ng-deep .maplibregl-zoom-level-display {
+    margin-right: 0.875rem;
+    font-size: .875rem;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    align-items: center;
+    text-align: center;
+    float: right;
+    padding-top: .9rem;
+    box-shadow: 1px 1px 3px grey;
+    margin-bottom: .5rem;
+    font-family: ‘Roboto’, sans-serif;
+  }
+
+  ::ng-deep .maplibregl-popup-content {
+    padding-bottom: 0rem;
+  }
+
+  mgl-map {
+    height: calc(100% - 6rem);
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 3rem;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mgl-map  [style]="mapStyle"  [zoom]="[currentZoom]"  [center]="mapCenterConfig"  (mapLoad)="onMapLoad($event)"  [renderWorldCopies]="false">  <mgl-geojson-source    id="edges"    [data]="edgeFeatures"  ></mgl-geojson-source>  <mgl-geojson-source    id="nodes"    [data]="nodeFeatures"  ></mgl-geojson-source>  <mgl-geojson-source    id="clusters"    [data]="clusterFeatures"  ></mgl-geojson-source>  <mgl-geojson-source    id="boundaries"    [data]="boundaryFeatures"  ></mgl-geojson-source>  <!-- CLUSTERS -->  <mgl-layer    id="clusters"    source="clusters"    type="fill"    [paint]="{      \'fill-color\': [\'get\', \'fill\'],      \'fill-opacity\': 0.7,      \'fill-outline-color\': [\'get\', \'stroke\']    }">  </mgl-layer>  <!-- BOUNDARIES -->  <mgl-layer    id="boundaries"    source="boundaries"    type="line"    minZoom="2"    [paint]="{      \'line-color\': [\'get\', \'stroke\'],      \'line-width\': 0.5,      \'line-opacity\': 0.8    }"  ></mgl-layer>  <!-- EDGES -->  <mgl-layer    id="edges"    source="edges"    type="line"    [paint]="{      \'line-color\': [\'case\',          [\'boolean\', [\'feature-state\', \'hover\'], false], \'red\',          [\'get\', \'color\', edgeFormula]      ],      \'line-width\': [\'get\', \'width\', edgeFormula],      \'line-opacity\': [\'get\', \'opacity\', edgeFormula]    }"    [filter]="[\'>=\', currentZoom, [\'get\', \'zoom\', edgeFormula]]"    (layerClick)="edgeClicked($event)">  </mgl-layer>  <!-- EDGES BORDER -->  <mgl-layer    id="edges_border"    source="edges"    type="line"    [paint]="{      \'line-color\': [\'get\', \'borderColor\', edgeFormula],      \'line-width\': [\'get\', \'borderWidth\', edgeFormula],      \'line-opacity\': [\'get\', \'borderOpacity\', edgeFormula],      \'line-gap-width\': [\'get\', \'width\', edgeFormula]    }"    [filter]="[\'>=\', currentZoom, [\'get\', \'zoom\', edgeFormula]]">  </mgl-layer>  <!-- NODES -->  <mgl-layer    id="nodes"    source="nodes"    type="circle"    [paint]="{      \'circle-color\': [\'case\',          [\'boolean\', [\'feature-state\', \'hover\'], false], \'red\',          \'black\'      ],      \'circle-radius\': 3    }"    [filter]="[\'>=\', currentZoom, currentEdgeFormula]"    (layerClick)="nodeClicked($event)">  </mgl-layer>  <!-- NODE LABELS -->  <mgl-layer    id="node_labels"    source="nodes"    type="symbol"    [layout]="nodeLabelsLayout"    [filter]="[\'>=\', currentZoom, [\'get\', \'zoom\', currentNodeFormula]]">  </mgl-layer></mgl-map></div>'
+    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
+    var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
+    var ACTUAL_COMPONENT = {'name': 'MapComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MapComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application map4sci code documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Application map4sci code documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li
+  >
+  AnalyticsConsentComponentData</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/map4sci/src/app/core/components/analytics-consent/analytics-consent.component.ts</code>
+        </p>
+
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                            <span class="modifier">Optional</span>
+                                        <a href="#dismissable" 
+>
+                                            dismissable
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="dismissable"></a>
+                                        <span class="name "><b>dismissable</b>
+                                            <a href="#dismissable">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>dismissable:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Optional</i>
+                                        </td>
+                                    </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostBinding, Inject, OnDestroy } from &#x27;@angular/core&#x27;;
+import { MatSnackBarRef, MAT_SNACK_BAR_DATA } from &#x27;@angular/material/snack-bar&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { delay } from &#x27;rxjs/operators&#x27;;
+
+import { BasePopupComponent } from &#x27;../../../shared/components/base-popup/base-popup.component&#x27;;
+import { AnalyticsConsentService } from &#x27;../../services/analytics-consent/analytics-consent.service&#x27;;
+
+
+export interface AnalyticsConsentComponentData {
+  dismissable?: boolean;
+}
+
+
+@Component({
+  selector: &#x27;m4s-analytics-consent&#x27;,
+  templateUrl: &#x27;./analytics-consent.component.html&#x27;,
+  styleUrls: [&#x27;./analytics-consent.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class AnalyticsConsentComponent extends BasePopupComponent implements OnDestroy {
+  static readonly DEFAULT_DATA: AnalyticsConsentComponentData &#x3D; { dismissable: false };
+
+  @HostBinding(&#x27;class&#x27;) readonly clsName &#x3D; &#x27;m4s-analytics-consent-popup&#x27;;
+
+  readonly dismissable: boolean;
+  showGiveConsent &#x3D; false;
+  showRescindConsent &#x3D; false;
+
+  private readonly subscriptions &#x3D; new Subscription();
+
+  constructor(
+    private readonly ref: MatSnackBarRef&lt;AnalyticsConsentComponent&gt;,
+    private readonly consentService: AnalyticsConsentService,
+    @Inject(MAT_SNACK_BAR_DATA) data: AnalyticsConsentComponentData,
+    cdr: ChangeDetectorRef
+  ) {
+    super();
+
+    this.dismissable &#x3D; data.dismissable ?? false;
+    this.updateShownButtons();
+
+    this.subscriptions.add(consentService.consentChanged.pipe(
+      delay(50)
+    ).subscribe(() &#x3D;&gt; {
+      this.updateShownButtons();
+      cdr.markForCheck();
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  dismiss(): void {
+    this.ref.dismiss();
+  }
+
+  setConsent(consentGiven: boolean): void {
+    this.consentService.setConsent(consentGiven);
+    this.dismiss();
+  }
+
+  private updateShownButtons(): void {
+    const { consentService: { hasConsent, hasUserSetConsent } } &#x3D; this;
+    this.showGiveConsent &#x3D; !hasUserSetConsent || !hasConsent;
+    this.showRescindConsent &#x3D; !hasUserSetConsent || hasConsent;
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'AnalyticsConsentComponentData.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

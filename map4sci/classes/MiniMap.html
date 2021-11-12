@@ -1,0 +1,1863 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application map4sci code documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Application map4sci code documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li >MiniMap</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/map4sci/src/app/map/minimap.ts</code>
+        </p>
+
+
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#container" >container</a>
+                            </li>
+                            <li>
+                                <a href="#currentPoint" >currentPoint</a>
+                            </li>
+                            <li>
+                                <a href="#isCursorOverFeature" >isCursorOverFeature</a>
+                            </li>
+                            <li>
+                                <a href="#isDragging" >isDragging</a>
+                            </li>
+                            <li>
+                                <a href="#lastMouseMoveEvent" >lastMouseMoveEvent</a>
+                            </li>
+                            <li>
+                                <a href="#miniMap" >miniMap</a>
+                            </li>
+                            <li>
+                                <a href="#miniMapCanvas" >miniMapCanvas</a>
+                            </li>
+                            <li>
+                                <a href="#options" >options</a>
+                            </li>
+                            <li>
+                                <a href="#parentMap" >parentMap</a>
+                            </li>
+                            <li>
+                                <a href="#previousPoint" >previousPoint</a>
+                            </li>
+                            <li>
+                                <a href="#sources" >sources</a>
+                            </li>
+                            <li>
+                                <a href="#ticking" >ticking</a>
+                            </li>
+                            <li>
+                                <a href="#trackingRect" >trackingRect</a>
+                            </li>
+                            <li>
+                                <a href="#trackingRectCoordinates" >trackingRectCoordinates</a>
+                            </li>
+                            <li>
+                                <a href="#trackingRectData" >trackingRectData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#convertBoundsToPoints" >convertBoundsToPoints</a>
+                            </li>
+                            <li>
+                                <a href="#createContainer" >createContainer</a>
+                            </li>
+                            <li>
+                                <a href="#load" >load</a>
+                            </li>
+                            <li>
+                                <a href="#mouseDown" >mouseDown</a>
+                            </li>
+                            <li>
+                                <a href="#mouseMove" >mouseMove</a>
+                            </li>
+                            <li>
+                                <a href="#mouseUp" >mouseUp</a>
+                            </li>
+                            <li>
+                                <a href="#moveTrackingRect" >moveTrackingRect</a>
+                            </li>
+                            <li>
+                                <a href="#onAdd" >onAdd</a>
+                            </li>
+                            <li>
+                                <a href="#onRemove" >onRemove</a>
+                            </li>
+                            <li>
+                                <a href="#preventDefault" >preventDefault</a>
+                            </li>
+                            <li>
+                                <a href="#setTrackingRectBounds" >setTrackingRectBounds</a>
+                            </li>
+                            <li>
+                                <a href="#update" >update</a>
+                            </li>
+                            <li>
+                                <a href="#zoomAdjust" >zoomAdjust</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(sources: <a href="../interfaces/MapSources.html" target="_self">MapSources</a>, options: <a href="../interfaces/MiniMapOptions.html" target="_self">MiniMapOptions</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:46</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>sources</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/MapSources.html" target="_self" >MapSources</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>options</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/MiniMapOptions.html" target="_self" >MiniMapOptions</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="container"></a>
+                    <span class="name">
+                            <span class="modifier">Optional</span>
+                        <span ><b>container</b></span>
+                        <a href="#container"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HTMLDivElement</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:42</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentPoint"></a>
+                    <span class="name">
+                        <span ><b>currentPoint</b></span>
+                        <a href="#currentPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCursorOverFeature"></a>
+                    <span class="name">
+                        <span ><b>isCursorOverFeature</b></span>
+                        <a href="#isCursorOverFeature"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDragging"></a>
+                    <span class="name">
+                        <span ><b>isDragging</b></span>
+                        <a href="#isDragging"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastMouseMoveEvent"></a>
+                    <span class="name">
+                        <span ><b>lastMouseMoveEvent</b></span>
+                        <a href="#lastMouseMoveEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="miniMap"></a>
+                    <span class="name">
+                        <span ><b>miniMap</b></span>
+                        <a href="#miniMap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MapboxMap</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:43</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="miniMapCanvas"></a>
+                    <span class="name">
+                        <span ><b>miniMapCanvas</b></span>
+                        <a href="#miniMapCanvas"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HTMLElement</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="options"></a>
+                    <span class="name">
+                        <span ><b>options</b></span>
+                        <a href="#options"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/MiniMapOptions.html" target="_self" >MiniMapOptions</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="parentMap"></a>
+                    <span class="name">
+                        <span ><b>parentMap</b></span>
+                        <a href="#parentMap"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MapboxMap</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:36</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousPoint"></a>
+                    <span class="name">
+                        <span ><b>previousPoint</b></span>
+                        <a href="#previousPoint"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number[]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sources"></a>
+                    <span class="name">
+                        <span ><b>sources</b></span>
+                        <a href="#sources"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/MapSources.html" target="_self" >MapSources</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ticking"></a>
+                    <span class="name">
+                        <span ><b>ticking</b></span>
+                        <a href="#ticking"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trackingRect"></a>
+                    <span class="name">
+                        <span ><b>trackingRect</b></span>
+                        <a href="#trackingRect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>GeoJSONSource</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:44</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trackingRectCoordinates"></a>
+                    <span class="name">
+                        <span ><b>trackingRectCoordinates</b></span>
+                        <a href="#trackingRectCoordinates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[][][]</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:41</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trackingRectData"></a>
+                    <span class="name">
+                        <span ><b>trackingRectData</b></span>
+                        <a href="#trackingRectData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Feature&lt;Polygon&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertBoundsToPoints"></a>
+                    <span class="name">
+                        <span ><b>convertBoundsToPoints</b></span>
+                        <a href="#convertBoundsToPoints"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>convertBoundsToPoints(bounds: <a href="../s/d.html" target="_self">LngLatBounds</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="294"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:294</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bounds</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/variables.html#d" target="_self" >LngLatBounds</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createContainer"></a>
+                    <span class="name">
+                        <span ><b>createContainer</b></span>
+                        <a href="#createContainer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createContainer(parentMap: MapboxMap)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="353"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:353</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parentMap</td>
+                                    <td>
+                                            <code>MapboxMap</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>HTMLDivElement</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="load"></a>
+                    <span class="name">
+                        <span ><b>load</b></span>
+                        <a href="#load"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>load()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="88"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:88</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mouseDown"></a>
+                    <span class="name">
+                        <span ><b>mouseDown</b></span>
+                        <a href="#mouseDown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mouseDown(e: MapMouseEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="229"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:229</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>MapMouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mouseMove"></a>
+                    <span class="name">
+                        <span ><b>mouseMove</b></span>
+                        <a href="#mouseMove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mouseMove(e: MapMouseEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="237"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:237</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>MapMouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mouseUp"></a>
+                    <span class="name">
+                        <span ><b>mouseUp</b></span>
+                        <a href="#mouseUp"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>mouseUp()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="266"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:266</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="moveTrackingRect"></a>
+                    <span class="name">
+                        <span ><b>moveTrackingRect</b></span>
+                        <a href="#moveTrackingRect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>moveTrackingRect(offset: number[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="271"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:271</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>offset</td>
+                                    <td>
+                                            <code>number[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >LngLatBounds</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAdd"></a>
+                    <span class="name">
+                        <span ><b>onAdd</b></span>
+                        <a href="#onAdd"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAdd(parentMap: MapboxMap)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>parentMap</td>
+                                    <td>
+                                            <code>MapboxMap</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>HTMLDivElement</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRemove"></a>
+                    <span class="name">
+                        <span ><b>onRemove</b></span>
+                        <a href="#onRemove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRemove(_parentMap: MapboxMap)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>_parentMap</td>
+                                    <td>
+                                            <code>MapboxMap</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preventDefault"></a>
+                    <span class="name">
+                        <span ><b>preventDefault</b></span>
+                        <a href="#preventDefault"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>preventDefault(e: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="370"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:370</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTrackingRectBounds"></a>
+                    <span class="name">
+                        <span ><b>setTrackingRectBounds</b></span>
+                        <a href="#setTrackingRectBounds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTrackingRectBounds(bounds: <a href="../s/d.html" target="_self">LngLatBounds</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="289"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:289</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>bounds</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/variables.html#d" target="_self" >LngLatBounds</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="update"></a>
+                    <span class="name">
+                        <span ><b>update</b></span>
+                        <a href="#update"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>update()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="311"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:311</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoomAdjust"></a>
+                    <span class="name">
+                        <span ><b>zoomAdjust</b></span>
+                        <a href="#zoomAdjust"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>zoomAdjust()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="325"
+                            class="link-to-prism">projects/map4sci/src/app/map/minimap.ts:325</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Feature, Polygon } from &#x27;geojson&#x27;;
+import { GeoJSONSource, LngLatBounds, Map as MapboxMap, MapMouseEvent, Style } from &#x27;maplibre-gl&#x27;;
+
+import { MapSources, MiniMapOptions } from &#x27;./map&#x27;;
+
+
+/*
+  This is a modified and updated version of Brendan Matkin&#x27;s Mapboxgl-Minimap:
+  https://github.com/brendanmatkin/mapboxgl-minimap
+*/
+
+const blankStyle: Style &#x3D; {
+  version: 8,
+  name: &#x27;Blank&#x27;,
+  center: [0, 0],
+  zoom: 0,
+  sources: {},
+  sprite: &#x27;https://cdn.jsdelivr.net/gh/lukasmartinelli/osm-liberty@gh-pages/sprites/osm-liberty&#x27;,
+  glyphs: &#x27;https://cdn.jsdelivr.net/gh/orangemug/font-glyphs@gh-pages/glyphs/{fontstack}/{range}.pbf&#x27;,
+  layers: [
+    {
+      id: &#x27;background&#x27;,
+      type: &#x27;background&#x27;,
+      paint: {
+        &#x27;background-color&#x27;: &#x27;rgba(255,255,255,1)&#x27;
+      }
+    }
+  ]
+};
+
+export class MiniMap {
+  sources: MapSources;
+  options: MiniMapOptions;
+  ticking: boolean;
+  lastMouseMoveEvent: null;
+  parentMap!: MapboxMap;
+  isDragging: boolean;
+  isCursorOverFeature: boolean;
+  previousPoint: number[];
+  currentPoint: number[];
+  trackingRectCoordinates: number[][][];
+  container?: HTMLDivElement;
+  miniMap!: MapboxMap;
+  trackingRect!: GeoJSONSource;
+  trackingRectData!: Feature&lt;Polygon&gt;;
+  miniMapCanvas!: HTMLElement;
+
+  constructor(sources: MapSources, options: MiniMapOptions) {
+    this.sources &#x3D; sources;
+    this.options &#x3D; options;
+    Object.assign(this.options, options);
+
+    this.ticking &#x3D; false;
+    this.lastMouseMoveEvent &#x3D; null;
+    this.isDragging &#x3D; false;
+    this.isCursorOverFeature &#x3D; false;
+    this.previousPoint &#x3D; [0, 0];
+    this.currentPoint &#x3D; [0, 0];
+    this.trackingRectCoordinates &#x3D; [[[], [], [], [], []]];
+  }
+
+  onAdd(parentMap: MapboxMap): HTMLDivElement {
+    this.parentMap &#x3D; parentMap;
+
+    const opts &#x3D; this.options;
+    const container &#x3D; this.container &#x3D; this.createContainer(parentMap);
+    const miniMap &#x3D; this.miniMap &#x3D; new MapboxMap({
+      attributionControl: false,
+      container,
+      style: blankStyle,
+      zoom: opts.zoom,
+      center: opts.center
+    });
+
+    if (opts.maxBounds) {
+      miniMap.setMaxBounds(opts.maxBounds);
+    }
+
+    miniMap.on(&#x27;load&#x27;, this.load.bind(this));
+
+    return this.container;
+  }
+
+  onRemove(_parentMap: MapboxMap): void {
+    return;
+  }
+
+  load(): void {
+    const opts &#x3D; this.options;
+    const parentMap &#x3D; this.parentMap;
+    const miniMap &#x3D; this.miniMap;
+    const interactions &#x3D; [
+      &#x27;dragPan&#x27;, &#x27;scrollZoom&#x27;, &#x27;boxZoom&#x27;, &#x27;dragRotate&#x27;,
+      &#x27;keyboard&#x27;, &#x27;doubleClickZoom&#x27;, &#x27;touchZoomRotate&#x27;
+    ];
+
+    interactions.forEach((i: string) &#x3D;&gt; {
+      const key &#x3D; i as keyof MiniMapOptions;
+      const map &#x3D; this.miniMap as unknown as { [key: string]: { disable: () &#x3D;&gt; void } };
+      if (opts[key] !&#x3D;&#x3D; true) {
+        map[i].disable();
+      }
+    });
+
+    if (typeof opts.zoomAdjust &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+      this.options.zoomAdjust &#x3D; opts.zoomAdjust.bind(this);
+    } else if (opts.zoomAdjust &#x3D;&#x3D;&#x3D; null) {
+      this.options.zoomAdjust &#x3D; this.zoomAdjust.bind(this);
+    }
+
+    const bounds &#x3D; miniMap.getBounds();
+
+    this.convertBoundsToPoints(bounds);
+
+    this.trackingRectData &#x3D; {
+      type: &#x27;Feature&#x27;,
+      properties: {
+        name: &#x27;trackingRect&#x27;
+      },
+      geometry: {
+        type: &#x27;Polygon&#x27;,
+        coordinates: this.trackingRectCoordinates
+      }
+    };
+
+    miniMap.addSource(&#x27;trackingRect&#x27;, { type: &#x27;geojson&#x27;, data: this.trackingRectData });
+
+    // Add the geojson layers of our data so the minimap matches the parent map
+    miniMap.addLayer({
+      id: &#x27;cluster&#x27;,
+      type: &#x27;fill&#x27;,
+      source: { type: &#x27;geojson&#x27;, data: this.sources.clusters },
+      layout: {},
+      paint: {
+        &#x27;fill-color&#x27;: [&#x27;get&#x27;, &#x27;fill&#x27;],
+        &#x27;fill-opacity&#x27;: 0.7,
+        &#x27;fill-outline-color&#x27;: [&#x27;get&#x27;, &#x27;stroke&#x27;]
+      },
+    });
+    miniMap.addLayer({
+      id: &#x27;cluster_boundary&#x27;,
+      type: &#x27;line&#x27;,
+      minzoom: 2,
+      source: { type: &#x27;geojson&#x27;, data: this.sources.clusters },
+      layout: {},
+      paint: {
+        &#x27;line-color&#x27;: [&#x27;get&#x27;, &#x27;stroke&#x27;],
+        &#x27;line-width&#x27;: 0.5,
+        &#x27;line-opacity&#x27;: 0.8
+      },
+    });
+    miniMap.addLayer({
+      id: &#x27;node_labels&#x27;,
+      type: &#x27;symbol&#x27;,
+      minzoom: 2,
+      source: { type: &#x27;geojson&#x27;, data: this.sources.nodes },
+      layout: {
+        &#x27;text-field&#x27;: &#x27;{label}&#x27;,
+        &#x27;text-font&#x27;: [&#x27;Open Sans Regular&#x27;],
+        &#x27;text-size&#x27;: 14,
+        &#x27;text-anchor&#x27;: &#x27;center&#x27;,
+        &#x27;text-justify&#x27;: &#x27;center&#x27;,
+        &#x27;text-allow-overlap&#x27;: false
+
+      },
+      filter: [&#x27;&#x3D;&#x3D;&#x27;, &#x27;level&#x27;, 1]
+    });
+    miniMap.addLayer({
+      id: &#x27;node_labels_2&#x27;,
+      type: &#x27;symbol&#x27;,
+      minzoom: 3,
+      source: { type: &#x27;geojson&#x27;, data: this.sources.nodes },
+      layout: {
+        &#x27;text-field&#x27;: &#x27;{label}&#x27;,
+        &#x27;text-font&#x27;: [&#x27;Open Sans Regular&#x27;],
+        &#x27;text-size&#x27;: 9,
+        &#x27;text-anchor&#x27;: &#x27;center&#x27;,
+        &#x27;text-justify&#x27;: &#x27;center&#x27;
+      },
+      filter: [&#x27;all&#x27;,
+        [&#x27;&lt;&#x3D;&#x27;, &#x27;level&#x27;, 3],
+        [&#x27;&gt;&#x27;, &#x27;level&#x27;, 1]
+      ]
+    });
+
+    miniMap.addLayer({
+      id: &#x27;trackingRectOutline&#x27;,
+      type: &#x27;line&#x27;,
+      source: &#x27;trackingRect&#x27;,
+      layout: {},
+      paint: {
+        &#x27;line-color&#x27;: opts.edgeColor,
+        &#x27;line-width&#x27;: opts.edgeWidth,
+        &#x27;line-opacity&#x27;: opts.edgeOpacity
+      }
+    });
+
+    // needed for dragging
+    miniMap.addLayer({
+      id: &#x27;trackingRectFill&#x27;,
+      type: &#x27;fill&#x27;,
+      source: &#x27;trackingRect&#x27;,
+      layout: {},
+      paint: {
+        &#x27;fill-color&#x27;: opts.fillColor,
+        &#x27;fill-opacity&#x27;: opts.fillOpacity
+      }
+    });
+
+    this.trackingRect &#x3D; this.miniMap.getSource(&#x27;trackingRect&#x27;) as GeoJSONSource;
+
+    this.update();
+
+    parentMap.on(&#x27;move&#x27;, this.update.bind(this));
+
+    miniMap.on(&#x27;mousemove&#x27;, this.mouseMove.bind(this));
+    miniMap.on(&#x27;mousedown&#x27;, this.mouseDown.bind(this));
+    miniMap.on(&#x27;mouseup&#x27;, this.mouseUp.bind(this));
+
+    miniMap.on(&#x27;touchmove&#x27;, this.mouseMove.bind(this));
+    miniMap.on(&#x27;touchstart&#x27;, this.mouseDown.bind(this));
+    miniMap.on(&#x27;touchend&#x27;, this.mouseUp.bind(this));
+
+    this.miniMapCanvas &#x3D; miniMap.getCanvasContainer();
+    this.miniMapCanvas.addEventListener(&#x27;wheel&#x27;, this.preventDefault);
+    this.miniMapCanvas.addEventListener(&#x27;mousewheel&#x27;, this.preventDefault);
+  }
+
+  mouseDown(e: MapMouseEvent): void {
+    if (this.isCursorOverFeature) {
+      this.isDragging &#x3D; true;
+      this.previousPoint &#x3D; this.currentPoint;
+      this.currentPoint &#x3D; [e.lngLat.lng, e.lngLat.lat];
+    }
+  }
+
+  mouseMove(e: MapMouseEvent): void {
+    this.ticking &#x3D; false;
+
+    const miniMap &#x3D; this.miniMap;
+    const features &#x3D; miniMap.queryRenderedFeatures(e.point, {
+      layers: [&#x27;trackingRectFill&#x27;]
+    });
+
+    // don&#x27;t update if we&#x27;re still hovering the area
+    if (!(this.isCursorOverFeature &amp;&amp; features.length &gt; 0)) {
+      this.isCursorOverFeature &#x3D; features.length &gt; 0;
+      this.miniMapCanvas.style.cursor &#x3D; this.isCursorOverFeature ? &#x27;move&#x27; : &#x27;&#x27;;
+    }
+
+    if (this.isDragging) {
+      this.previousPoint &#x3D; this.currentPoint;
+      this.currentPoint &#x3D; [e.lngLat.lng, e.lngLat.lat];
+
+      const offset &#x3D; [
+        this.previousPoint[0] - this.currentPoint[0],
+        this.previousPoint[1] - this.currentPoint[1]
+      ];
+
+      const newBounds &#x3D; this.moveTrackingRect(offset);
+
+      this.parentMap.fitBounds(newBounds, { duration: 80, linear: true });
+    }
+  }
+
+  mouseUp(): void {
+    this.isDragging &#x3D; false;
+    this.ticking &#x3D; false;
+  }
+
+  moveTrackingRect(offset: number[]): LngLatBounds {
+    const rectPoints &#x3D; this.trackingRectCoordinates[0] as [number, number][];
+    const bounds &#x3D; new LngLatBounds();
+    rectPoints.forEach(coord &#x3D;&gt; bounds.extend(coord));
+
+    const ne &#x3D; bounds.getNorthEast();
+    const sw &#x3D; bounds.getSouthWest();
+    ne.lat -&#x3D; offset[1];
+    ne.lng -&#x3D; offset[0];
+    sw.lat -&#x3D; offset[1];
+    sw.lng -&#x3D; offset[0];
+
+    this.convertBoundsToPoints(bounds);
+    this.trackingRect.setData(this.trackingRectData);
+
+    return bounds;
+  }
+
+  setTrackingRectBounds(bounds: LngLatBounds): void {
+    this.convertBoundsToPoints(bounds);
+    this.trackingRect.setData(this.trackingRectData);
+  }
+
+  convertBoundsToPoints(bounds: LngLatBounds): void {
+    const ne &#x3D; bounds.getNorthEast();
+    const sw &#x3D; bounds.getSouthWest();
+    const trc &#x3D; this.trackingRectCoordinates;
+
+    trc[0][0][0] &#x3D; ne.lng;
+    trc[0][0][1] &#x3D; ne.lat;
+    trc[0][1][0] &#x3D; sw.lng;
+    trc[0][1][1] &#x3D; ne.lat;
+    trc[0][2][0] &#x3D; sw.lng;
+    trc[0][2][1] &#x3D; sw.lat;
+    trc[0][3][0] &#x3D; ne.lng;
+    trc[0][3][1] &#x3D; sw.lat;
+    trc[0][4][0] &#x3D; ne.lng;
+    trc[0][4][1] &#x3D; ne.lat;
+  }
+
+  update(): void {
+    if (this.isDragging) {
+      return;
+    }
+
+    const parentBounds &#x3D; this.parentMap.getBounds();
+
+    this.setTrackingRectBounds(parentBounds);
+
+    if (typeof this.options.zoomAdjust &#x3D;&#x3D;&#x3D; &#x27;function&#x27;) {
+      this.options.zoomAdjust();
+    }
+  }
+
+  zoomAdjust(): void {
+    const miniMap &#x3D; this.miniMap;
+    const parentMap &#x3D; this.parentMap;
+    const miniZoom &#x3D; miniMap.getZoom();
+    const parentZoom &#x3D; parentMap.getZoom();
+    const levels &#x3D; this.options.zoomLevels;
+    let found &#x3D; false;
+
+    levels.forEach(zoom &#x3D;&gt; {
+      if (!found &amp;&amp; parentZoom &gt;&#x3D; zoom[0]) {
+        if (miniZoom &gt;&#x3D; zoom[1]) {
+          miniMap.setZoom(zoom[2]);
+        }
+
+        miniMap.setCenter(parentMap.getCenter());
+        found &#x3D; true;
+      }
+    });
+
+    if (!found &amp;&amp; miniZoom !&#x3D;&#x3D; this.options.zoom) {
+      if (typeof this.options.bounds &#x3D;&#x3D;&#x3D; &#x27;object&#x27;) {
+        miniMap.fitBounds(this.options.bounds, { duration: 50 });
+      }
+
+      miniMap.setZoom(this.options.zoom);
+    }
+  }
+
+  createContainer(parentMap: MapboxMap): HTMLDivElement {
+    const opts &#x3D; this.options;
+    const container &#x3D; document.createElement(&#x27;div&#x27;);
+
+    container.className &#x3D; &#x27;maplibregl-ctrl-minimap maplibregl-ctrl&#x27;;
+    container.setAttribute(&#x27;style&#x27;, &#x27;width: &#x27; + opts.width + &#x27;; height: &#x27; + opts.height + &#x27;; &#x27; + opts.containerStyles);
+    container.addEventListener(&#x27;contextmenu&#x27;, this.preventDefault);
+
+    parentMap.getContainer().appendChild(container);
+
+    if (opts.id !&#x3D;&#x3D; &#x27;&#x27;) {
+      container.id &#x3D; opts.id.toString();
+    }
+
+    return container;
+  }
+
+  preventDefault(e: { preventDefault: () &#x3D;&gt; void }): void {
+    e.preventDefault();
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'MiniMap.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

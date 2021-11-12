@@ -713,7 +713,7 @@ body {
 body {
   box-sizing: border-box;
   font-size: 1rem;
-  color: #424242;
+  color: var(--body);
 }
 * {
   box-sizing: inherit;
@@ -724,7 +724,20 @@ body {
 h2 {
   font-size: 3.5rem;
   font-weight: normal;
-  color: #616161;
+  color: var(--header);
+}
+p {
+  line-height: 1.25rem;
+}
+.mat-snack-bar-container {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  min-width: -moz-fit-content !important;
+  min-width: fit-content !important;
+}
+.page-logo {
+  margin-top: 2rem;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
 }
 
 /*# sourceMappingURL=styles.css.map*/
