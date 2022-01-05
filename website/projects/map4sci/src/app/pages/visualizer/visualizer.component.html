@@ -29,6 +29,7 @@
               [disabled]="buttonDisabled" (click)="searchButtonClick()">
         {{ buttonTitle }}
       </button>
+      <button (click)="switchGraph()">Switch view</button>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -47,6 +48,7 @@
           </mat-icon>
         </button>
       </p>
+      <m4s-cytoscape *ngIf="displayCytoscape"></m4s-cytoscape>
       <m4s-map *ngIf="displayMap" [edgeFeatures]="dataset.edges" [nodeFeatures]="dataset.nodes"
                [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"
                [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"

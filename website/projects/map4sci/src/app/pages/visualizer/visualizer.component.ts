@@ -33,13 +33,17 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   filteredOptions?: Observable<string[]>;
   searchTerm?: string | null;
   mapPins: MapMarker[] = [];
+  displayCytoscape: boolean = false;
 
   datasetControl: FormControl = new FormControl();
   searchControl: FormControl = new FormControl();
 
 
   get displayMap(): boolean {
-    const { dataset } = this;
+    const { dataset, displayCytoscape } = this;
+    if (displayCytoscape) {
+      return false;
+    }
     if (!dataset.nodes) {
       return false;
     }
@@ -164,5 +168,9 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   logMouseEvent(name: string, event: MapMouseEvent): void {
     this.ga.event(`${name}_${event.type}`, 'map_interaction', event.lngLat.toString());
+  }
+
+  switchGraph(): void {
+    this.displayCytoscape = !this.displayCytoscape;
   }
 }
