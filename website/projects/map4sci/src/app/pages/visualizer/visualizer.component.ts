@@ -33,7 +33,7 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   filteredOptions?: Observable<string[]>;
   searchTerm?: string | null;
   mapPins: MapMarker[] = [];
-  displayCytoscape: boolean = false;
+  displayCytoscape = false;
 
   datasetControl: FormControl = new FormControl();
   searchControl: FormControl = new FormControl();
