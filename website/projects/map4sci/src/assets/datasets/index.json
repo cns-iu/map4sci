@@ -1,32 +1,47 @@
 [
   {
-    "id": "net_efwebsite_forums_20210321-is_metric",
-    "name": "Efwebsite Forums 20210321 (Metric)",
-    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_metric"
+    "id": "google-topics-full",
+    "name": "Google Topics",
+    "dir": "assets/datasets/google-topics-full"
+  },
+  {
+    "id": "lastfm",
+    "name": "LastFM",
+    "dir": "assets/datasets/lastfm"
+  },
+  {
+    "id": "sample",
+    "name": "Sample Dataset",
+    "dir": "assets/datasets/sample"
   },
   {
     "id": "net_efwebsite_forums_20210321-is_original",
-    "name": "Efwebsite Forums 20210321 (Original)",
+    "name": "MyAURA: Epilepsy Foundation Forums (Original Network)",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_original"
   },
   {
+    "id": "net_efwebsite_forums_20210321-is_metric",
+    "name": "MyAURA: Epilepsy Foundation Forums (Metric Backbone)",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_metric"
+  },
+  {
     "id": "net_efwebsite_forums_20210321-is_ultrametric",
-    "name": "Efwebsite Forums 20210321 (Ultrametric)",
+    "name": "MyAURA: Epilepsy Foundation Forums (Ultrametric Backbone)",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_ultrametric"
   },
   {
-    "id": "net_mega_20210321-is_metric",
-    "name": "Mega 20210321 (Metric)",
-    "dir": "assets/datasets/net_mega_20210321-is_metric"
-  },
-  {
     "id": "net_mega_20210321-is_original",
-    "name": "Mega 20210321 (Original)",
+    "name": "MyAURA: 'Mega' Network (Original Network)",
     "dir": "assets/datasets/net_mega_20210321-is_original"
   },
   {
+    "id": "net_mega_20210321-is_metric",
+    "name": "MyAURA: 'Mega' Network (Metric Backbone)",
+    "dir": "assets/datasets/net_mega_20210321-is_metric"
+  },
+  {
     "id": "net_mega_20210321-is_ultrametric",
-    "name": "Mega 20210321 (Ultrametric)",
+    "name": "MyAURA: 'Mega' Network (Ultrametric Backbone)",
     "dir": "assets/datasets/net_mega_20210321-is_ultrametric"
   }
 ]
