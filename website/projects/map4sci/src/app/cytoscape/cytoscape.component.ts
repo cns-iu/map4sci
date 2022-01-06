@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, HostBinding, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostBinding, Input, OnChanges } from '@angular/core';
 import { FeatureCollection, GeoJsonProperties, Geometry, Feature } from 'geojson';
 import cytoscape, { ElementsDefinition } from 'cytoscape';
 
@@ -7,7 +7,7 @@ import cytoscape, { ElementsDefinition } from 'cytoscape';
   templateUrl: './cytoscape.component.html',
   styleUrls: ['./cytoscape.component.scss']
 })
-export class CytoscapeComponent implements AfterViewInit {
+export class CytoscapeComponent implements OnChanges {
   @HostBinding('class') readonly clsName = 'm4s-cytoscape';
 
   @ViewChild('cy') el: ElementRef;
@@ -16,10 +16,10 @@ export class CytoscapeComponent implements AfterViewInit {
 
   @Input() nodes: FeatureCollection;
 
-  ngAfterViewInit() {
+  ngOnChanges(): void {
     const nodesList = new Set;
     let nodeFeatures = this.nodes.features
-    nodeFeatures = nodeFeatures.filter((node: any) => node.properties.level === 1);
+    nodeFeatures = nodeFeatures.filter((node: any) => node.properties.level === 1); // limit nodes to level 1 for now
     nodeFeatures = nodeFeatures.map((node: any) => {
       nodesList.add(node.id)
       return {
@@ -62,7 +62,7 @@ export class CytoscapeComponent implements AfterViewInit {
             'label': 'data(label)',
             'height': 600,
             'width': 600,
-            'font-size': 600,
+            'font-size': 1000,
             'backgroundColor': 'black'
           }
         },
