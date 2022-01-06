@@ -30,22 +30,6 @@ export class CytoscapeDatasetProcessor {
     const nodes = this.processNodes(dataset, edges);
 
     return { nodes, edges };
-    //
-    // const edgesList = new Set;
-    // let edgeFeatures = this.dataset.edges.features;
-    // edgeFeatures = edgeFeatures.filter((edge: Feature) => edge.properties!.level === 1);
-    // edgeFeatures = edgeFeatures.map((edge: Feature) => {
-    //   edgesList.add(edge.properties!.dest);
-    //   edgesList.add(edge.properties!.src);
-    //   return {
-    //     group: 'edges',
-    //     data: {
-    //       id: edge.id,
-    //       source: edge.properties!.src,
-    //       target: edge.properties!.dest
-    //     }
-    //   }
-    // }) as unknown as Feature[];
   }
 
   private processNodes(dataset: MapDataset, edges: EdgeDefinition[]): NodeDefinition[] {
