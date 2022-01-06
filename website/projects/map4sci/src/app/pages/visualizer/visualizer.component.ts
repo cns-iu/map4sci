@@ -69,6 +69,15 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     return 'Search';
   }
 
+  get switchButtonTitle(): string {
+    const { displayCytoscape } = this;
+    if (displayCytoscape) {
+      return 'Switch to map';
+    } else {
+      return 'Switch to network';
+    }
+  }
+
   get buttonDisabled(): boolean {
     if (!this.searchTerm && this.filter !== this.searchTerm) {
       return true;

@@ -1,162 +1,79 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
-import cytoscape from "cytoscape";
-import dagre from "cytoscape-dagre";
+import { AfterViewInit, Component, ElementRef, ViewChild, HostBinding, Input } from '@angular/core';
+import { FeatureCollection, GeoJsonProperties, Geometry, Feature } from 'geojson';
+import cytoscape, { ElementsDefinition } from 'cytoscape';
 
 @Component({
-  selector: "m4s-cytoscape",
-  templateUrl: "./cytoscape.component.html",
-  styleUrls: ["./cytoscape.component.scss"]
+  selector: 'm4s-cytoscape',
+  templateUrl: './cytoscape.component.html',
+  styleUrls: ['./cytoscape.component.scss']
 })
 export class CytoscapeComponent implements AfterViewInit {
-  @ViewChild("cy") el: ElementRef;
+  @HostBinding('class') readonly clsName = 'm4s-cytoscape';
+
+  @ViewChild('cy') el: ElementRef;
+
+  @Input() edges: FeatureCollection;
+
+  @Input() nodes: FeatureCollection;
 
   ngAfterViewInit() {
-    cytoscape.use(dagre);
+    const nodesList = new Set;
+    let nodeFeatures = this.nodes.features
+    nodeFeatures = nodeFeatures.filter((node: any) => node.properties.level === 1);
+    nodeFeatures = nodeFeatures.map((node: any) => {
+      nodesList.add(node.id)
+      return {
+        group: 'nodes', 
+        data: { 
+          id: node.id,
+          label: node.properties.label
+        },
+        position: {
+          x: parseInt(node.properties.pos.split(',')[0]),
+          y: parseInt(node.properties.pos.split(',')[1])
+        }
+      }
+    }) as unknown as Feature<Geometry, GeoJsonProperties>[]
 
-    var cy = cytoscape({
-      container: document.getElementById("cy"),
+    let edgeFeatures = this.edges.features
+    edgeFeatures = edgeFeatures.filter((edge: any) => nodesList.has(edge.properties.dest) && nodesList.has(edge.properties.src));
+    edgeFeatures = edgeFeatures.map((edge: any) => {
+      return {
+        group: 'edges', 
+        data: { 
+          id: edge.id,
+          source: edge.properties.src,
+          target: edge.properties.dest
+        }
+      }
+    }) as unknown as Feature<Geometry, GeoJsonProperties>[]
+
+    const cy = cytoscape({
+      container: document.getElementById('cy'),
       elements: {
-        nodes: [
-          {
-            data: { id: "Customers" }
-          },
-          {
-            data: { id: "Orders" }
-          },
-          {
-            data: { id: "Items" }
-          },
-          {
-            data: { id: "ItemsTest" }
-          },
-          {
-            data: { id: "Shipping" }
-          },
-          {
-            data: { id: "Returns" }
-          },
-          {
-            data: {
-              id: "Name",
-              parent: "Customers",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Address",
-              parent: "Customers",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Address5",
-              parent: "Customers",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "ShipTest",
-              parent: "Customers",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Heading",
-              parent: "Orders",
-              type: "head"
-            }
-          },
-          {
-            data: {
-              id: "Id",
-              parent: "Orders",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Quantity",
-              parent: "Items",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Item1",
-              parent: "Items",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Item5",
-              parent: "Items",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Ship",
-              parent: "Items",
-              type: "rect"
-            }
-          },
-          {
-            data: {
-              id: "Return1",
-              parent: "Returns",
-              type: "rect"
-            }
+        nodes: nodeFeatures,
+        edges: edgeFeatures
+      } as unknown as ElementsDefinition,
+      layout: { name: "preset" },
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'label': 'data(label)',
+            'height': 600,
+            'width': 600,
+            'font-size': 600,
+            'backgroundColor': 'black'
           }
-        ],
-        edges: [
-          {
-            data: {
-              id: "ad",
-              source: "Name",
-              target: "Id"
-            }
-          },
-          {
-            data: {
-              id: "ad3",
-              source: "Address",
-              target: "Quantity"
-            }
-          },
-          {
-            data: {
-              id: "ad6",
-              source: "Address5",
-              target: "Item5"
-            }
-          },
-
-          {
-            data: {
-              id: "fd8",
-              source: "Item5",
-              target: "Return1"
-            }
+        },
+        {
+          selector: 'edge',
+          style: {
+            'width': 400,
+            'line-color': '#c0c0c0'
           }
-        ]
-      },
-      layout: { name: "dagre" }
-    });
-
-    cy.layout({
-      name: "dagre",
-      spacingFactor: 0,
-    }).run();
-
-    cy.on("tap", "node", function(evt) {
-      var node = evt.target;
-      console.log("tapped " + node.id());
-      cy.nodes(node).classes("foo");
+        }
+      ]
     });
   }
 }
