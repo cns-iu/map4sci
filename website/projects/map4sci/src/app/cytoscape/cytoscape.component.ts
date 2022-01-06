@@ -18,11 +18,26 @@ export class CytoscapeComponent implements OnChanges {
   @Input() nodes: FeatureCollection;
 
   ngOnChanges(): void {
-    const nodesList = new Set;
+    const edgesList = new Set;
+    let edgeFeatures = this.edges.features;
+    edgeFeatures = edgeFeatures.filter((edge: Feature) => edge.properties!.level === 1);
+    edgeFeatures = edgeFeatures.map((edge: Feature) => {
+      edgesList.add(edge.properties!.dest);
+      edgesList.add(edge.properties!.src);
+      return {
+        group: 'edges',
+        data: {
+          id: edge.id,
+          source: edge.properties!.src,
+          target: edge.properties!.dest
+        }
+      }
+    }) as unknown as Feature[];
+
+    // const nodesList = new Set;
     let nodeFeatures = this.nodes.features;
-    nodeFeatures = nodeFeatures.filter((node: Feature) => node.properties!.level === 1); // limit nodes to level 1 for now
+    nodeFeatures = nodeFeatures.filter((node: Feature) => edgesList.has(node.id));
     nodeFeatures = nodeFeatures.map((node: Feature) => {
-      nodesList.add(node.id);
       const pos = node.properties!.pos as string;
       return {
         group: 'nodes',
@@ -37,19 +52,6 @@ export class CytoscapeComponent implements OnChanges {
       };
     }) as unknown as Feature[];
 
-    let edgeFeatures = this.edges.features;
-    edgeFeatures = edgeFeatures.filter((edge: Feature) => nodesList.has(edge.properties!.dest) && nodesList.has(edge.properties!.src));
-    edgeFeatures = edgeFeatures.map((edge: Feature) => (
-      {
-        group: 'edges',
-        data: {
-          id: edge.id,
-          source: edge.properties!.src,
-          target: edge.properties!.dest
-        }
-      }
-    )) as unknown as Feature[];
-
     const cy = cytoscape({
       container: document.getElementById('cy'),
       elements: {
@@ -62,16 +64,16 @@ export class CytoscapeComponent implements OnChanges {
           selector: 'node',
           style: {
             'label': 'data(label)',
-            'height': 600,
-            'width': 600,
-            'font-size': 1000,
+            'height': 2000,
+            'width': 2000,
+            'font-size': 2000,
             'backgroundColor': 'black'
           }
         },
         {
           selector: 'edge',
           style: {
-            'width': 400,
+            'width': 1000,
             'line-color': '#c0c0c0'
           }
         }
