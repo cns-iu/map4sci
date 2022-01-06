@@ -76,7 +76,10 @@ mat-sidenav-content {
 }
 
 .switch-button {
+  width: 100%;
   margin-top: 1rem;
-  background-color: #286f94;
-  color: white;
+
+  .switch-toggle {
+    width: 50%;
+  }
 }

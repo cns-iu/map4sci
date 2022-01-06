@@ -66,7 +66,7 @@ export class CytoscapeComponent implements OnChanges {
             'label': 'data(label)',
             'height': 2000,
             'width': 2000,
-            'font-size': 2000,
+            'font-size': 4000,
             'backgroundColor': 'black'
           }
         },

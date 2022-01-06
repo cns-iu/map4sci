@@ -29,7 +29,10 @@
               [disabled]="buttonDisabled" (click)="searchButtonClick()">
         {{ buttonTitle }}
       </button>
-      <button mat-flat-button class="switch-button" (click)="switchGraph()">{{ switchButtonTitle }}</button>
+      <mat-button-toggle-group class="switch-button" name="switchButton" (change)="switchGraph()">
+        <mat-button-toggle class="switch-toggle" value="Map" checked="true">Map</mat-button-toggle>
+        <mat-button-toggle class="switch-toggle" value="Network">Network</mat-button-toggle>
+      </mat-button-toggle-group>
     </mat-sidenav>
 
     <mat-sidenav-content>

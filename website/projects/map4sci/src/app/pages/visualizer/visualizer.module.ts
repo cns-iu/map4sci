@@ -16,6 +16,7 @@ import { MapDataService } from '../../services/map-data.service';
 import { VisualizerRoutingModule } from './visualizer-routing.module';
 import { VisualizerComponent } from './visualizer.component';
 import { CytoscapeModule } from 'app/cytoscape/cytoscape.module';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CytoscapeModule } from 'app/cytoscape/cytoscape.module';
 
     VisualizerRoutingModule,
     MapModule,
-    CytoscapeModule
+    CytoscapeModule,
+    MatButtonToggleModule
   ],
   declarations: [VisualizerComponent],
   providers: [MapDataService]
