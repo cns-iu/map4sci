@@ -16,32 +16,32 @@
   },
   {
     "id": "net_efwebsite_forums_20210321-is_original",
-    "name": "MyAURA: Epilepsy Foundation Forums (Original Network)",
+    "name": "MyAURA: EF Forums (Original Network)",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_original"
   },
   {
     "id": "net_efwebsite_forums_20210321-is_metric",
-    "name": "MyAURA: Epilepsy Foundation Forums (Metric Backbone)",
+    "name": "MyAURA: EF Forums (Metric Backbone)",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_metric"
   },
   {
     "id": "net_efwebsite_forums_20210321-is_ultrametric",
-    "name": "MyAURA: Epilepsy Foundation Forums (Ultrametric Backbone)",
+    "name": "MyAURA: EF Forums (Ultrametric Backbone)",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_ultrametric"
   },
   {
     "id": "net_mega_20210321-is_original",
-    "name": "MyAURA: 'Mega' Network (Original Network)",
+    "name": "MyAURA: 'Mega' Net (Original Network)",
     "dir": "assets/datasets/net_mega_20210321-is_original"
   },
   {
     "id": "net_mega_20210321-is_metric",
-    "name": "MyAURA: 'Mega' Network (Metric Backbone)",
+    "name": "MyAURA: 'Mega' Net (Metric Backbone)",
     "dir": "assets/datasets/net_mega_20210321-is_metric"
   },
   {
     "id": "net_mega_20210321-is_ultrametric",
-    "name": "MyAURA: 'Mega' Network (Ultrametric Backbone)",
+    "name": "MyAURA: 'Mega' Net (Ultrametric Backbone)",
     "dir": "assets/datasets/net_mega_20210321-is_ultrametric"
   }
 ]
