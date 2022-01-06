@@ -1,12 +1,12 @@
 [
   {
     "id": "google-topics-full",
-    "name": "Google Topics",
+    "name": "Google Scholar Topics",
     "dir": "assets/datasets/google-topics-full"
   },
   {
     "id": "lastfm",
-    "name": "LastFM",
+    "name": "Last.fm",
     "dir": "assets/datasets/lastfm"
   },
   {
