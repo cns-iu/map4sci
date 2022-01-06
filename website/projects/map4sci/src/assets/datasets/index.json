@@ -1,68 +1,47 @@
 [
   {
-    "id": "test",
-    "name": "Test Data A",
-    "dir": "assets/datasets/test",
-    "config": "config.json"
+    "id": "google-topics-full",
+    "name": "Google Topics",
+    "dir": "assets/datasets/google-topics-full"
   },
   {
-    "id": "test2",
-    "name": "Test Data B",
-    "dir": "assets/datasets/test2"
+    "id": "lastfm",
+    "name": "LastFM",
+    "dir": "assets/datasets/lastfm"
   },
   {
-    "id": "net_clinical_trials_20180706",
-    "name": "Net Clinical Trials 07/06/2018",
-    "dir": "assets/datasets/net_clinical_trials_20180706"
+    "id": "sample",
+    "name": "Sample Dataset",
+    "dir": "assets/datasets/sample"
   },
   {
-    "id": "net_clinical_trials_20210321",
-    "name": "Net Clinical Trials 03/21/2021",
-    "dir": "assets/datasets/net_clinical_trials_20210321"
+    "id": "net_efwebsite_forums_20210321-is_original",
+    "name": "MyAURA: Epilepsy Foundation Forums (Original Network)",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_original"
   },
   {
-    "id": "net_efwebsite_forums_20180706",
-    "name": "Net EF Website Forums 07/06/2018",
-    "dir": "assets/datasets/net_efwebsite_forums_20180706"
+    "id": "net_efwebsite_forums_20210321-is_metric",
+    "name": "MyAURA: Epilepsy Foundation Forums (Metric Backbone)",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_metric"
   },
   {
-    "id": "net_efwebsite_forums_20210321",
-    "name": "Net EF Website Forums 03/21/2021",
-    "dir": "assets/datasets/net_efwebsite_forums_20210321"
+    "id": "net_efwebsite_forums_20210321-is_ultrametric",
+    "name": "MyAURA: Epilepsy Foundation Forums (Ultrametric Backbone)",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_ultrametric"
   },
   {
-    "id": "net_instagram_20180706",
-    "name": "Net Instagram 07/06/2018",
-    "dir": "assets/datasets/net_instagram_20180706"
+    "id": "net_mega_20210321-is_original",
+    "name": "MyAURA: 'Mega' Network (Original Network)",
+    "dir": "assets/datasets/net_mega_20210321-is_original"
   },
   {
-    "id": "net_instagram_20210321",
-    "name": "Net Instagram 03/21/2021",
-    "dir": "assets/datasets/net_instagram_20210321"
+    "id": "net_mega_20210321-is_metric",
+    "name": "MyAURA: 'Mega' Network (Metric Backbone)",
+    "dir": "assets/datasets/net_mega_20210321-is_metric"
   },
   {
-    "id": "net_mega_20180706",
-    "name": "Net Mega 07/06/2018",
-    "dir": "assets/datasets/net_mega_20180706"
-  },
-  {
-    "id": "net_mega_20210321",
-    "name": "Net Mega 03/21/2021",
-    "dir": "assets/datasets/net_mega_20210321"
-  },
-  {
-    "id": "net_pubmed_epilepsy_20180706",
-    "name": "Net PubMed Epilepsy 07/06/2018",
-    "dir": "assets/datasets/net_pubmed_epilepsy_20180706"
-  },
-  {
-    "id": "net_pubmed_epilepsy_20210321",
-    "name": "Net PubMed Epilepsy 03/21/2021",
-    "dir": "assets/datasets/net_pubmed_epilepsy_20210321"
-  },
-  {
-    "id": "net_twitter_20180706",
-    "name": "Net Twitter 07/06/2018",
-    "dir": "assets/datasets/net_twitter_20180706"
+    "id": "net_mega_20210321-is_ultrametric",
+    "name": "MyAURA: 'Mega' Network (Ultrametric Backbone)",
+    "dir": "assets/datasets/net_mega_20210321-is_ultrametric"
   }
 ]

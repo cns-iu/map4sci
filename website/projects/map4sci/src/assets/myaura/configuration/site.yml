@@ -1,0 +1,11 @@
+header:
+  logo:
+    layout: icon-first # Options: icon-first, label-first
+    icon: null # Url
+    label: MyAURA # Text
+    link-to: null # Url
+
+footer:
+  copyright: "Copyright \u00A9 2021 MyAURA. All rights reserved." # Text
+  terms-of-service: assets/footer/terms.md # Url
+  privacy-policy: assets/footer/privacy-policy.md # Url
