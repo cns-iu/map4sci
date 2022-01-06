@@ -6,12 +6,12 @@ export LANG=C.UTF-8
 export PYTHONPATH=".:./src"
 export GPG_TTY=$(tty)
 
+VERSION="2022-01-01"
+
 # Load environment
 source env.sh
 
 # Shorthands and configuration options
-VERSION="2020-01-06"
-
 SRC="./src"
 ORIG="./raw-data/$DATASET/original"
 OUT="./raw-data/$DATASET/$VERSION"
