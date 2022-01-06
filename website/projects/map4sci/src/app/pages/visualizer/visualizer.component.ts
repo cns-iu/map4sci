@@ -12,6 +12,7 @@ import { map, startWith } from 'rxjs/operators';
 import { EMPTY_DATASET } from '../../map/map';
 import { MapDataService } from '../../services/map-data.service';
 import { MapMarker } from './../../map/map';
+import { CytoscapeDataset, CytoscapeDatasetProcessor } from './services/cytoscape-dataset-processor.sevice';
 
 
 @Component({
@@ -34,6 +35,7 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   searchTerm?: string | null;
   mapPins: MapMarker[] = [];
   displayCytoscape = false;
+  cytoscapeDataset: CytoscapeDataset = { nodes: [], edges: [] };
 
   datasetControl: FormControl = new FormControl();
   searchControl: FormControl = new FormControl();
@@ -91,12 +93,14 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   constructor(
     readonly mapData: MapDataService,
     readonly ga: GoogleAnalyticsService,
+    cyDatasetProcessor: CytoscapeDatasetProcessor,
     cdr: ChangeDetectorRef
   ) {
     const sub = mapData.dataset$.subscribe(ds => {
       this.dataset = ds;
       this.filteredNodes = ds.nodes;
       this.options = ds.nodes.features.map(n => n.properties?.label);
+      this.cytoscapeDataset = cyDatasetProcessor.process(ds);
       cdr.markForCheck();
 
       if (this.searchTerm) {

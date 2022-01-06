@@ -52,7 +52,7 @@
         </button>
       </p>
 
-      <m4s-cytoscape *ngIf="displayCytoscape" [edges]="dataset.edges" [nodes]="dataset.nodes"></m4s-cytoscape>
+      <m4s-cytoscape *ngIf="displayCytoscape" [edges]="cytoscapeDataset.edges" [nodes]="cytoscapeDataset.nodes"></m4s-cytoscape>
 
       <m4s-map *ngIf="displayMap" [edgeFeatures]="dataset.edges" [nodeFeatures]="dataset.nodes"
                [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"
