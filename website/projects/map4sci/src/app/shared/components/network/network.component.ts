@@ -10,7 +10,7 @@ import {
   EventEmitter,
   Output
 } from '@angular/core';
-import cytoscape, { Collection, Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, ElementDefinition, ElementGroup, NodeDataDefinition, NodeDefinition, Singular } from 'cytoscape';
+import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeDataDefinition, NodeDefinition, Singular } from 'cytoscape';
 
 
 @Component({
