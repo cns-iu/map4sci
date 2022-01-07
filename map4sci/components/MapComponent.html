@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -80,7 +80,7 @@
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
             <tr>
@@ -3250,7 +3250,7 @@ export class MapComponent implements OnChanges{
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><mgl-map  [style]="mapStyle"  [zoom]="[currentZoom]"  [center]="mapCenterConfig"  (mapLoad)="onMapLoad($event)"  [renderWorldCopies]="false">  <mgl-geojson-source    id="edges"    [data]="edgeFeatures"  ></mgl-geojson-source>  <mgl-geojson-source    id="nodes"    [data]="nodeFeatures"  ></mgl-geojson-source>  <mgl-geojson-source    id="clusters"    [data]="clusterFeatures"  ></mgl-geojson-source>  <mgl-geojson-source    id="boundaries"    [data]="boundaryFeatures"  ></mgl-geojson-source>  <!-- CLUSTERS -->  <mgl-layer    id="clusters"    source="clusters"    type="fill"    [paint]="{      \'fill-color\': [\'get\', \'fill\'],      \'fill-opacity\': 0.7,      \'fill-outline-color\': [\'get\', \'stroke\']    }">  </mgl-layer>  <!-- BOUNDARIES -->  <mgl-layer    id="boundaries"    source="boundaries"    type="line"    minZoom="2"    [paint]="{      \'line-color\': [\'get\', \'stroke\'],      \'line-width\': 0.5,      \'line-opacity\': 0.8    }"  ></mgl-layer>  <!-- EDGES -->  <mgl-layer    id="edges"    source="edges"    type="line"    [paint]="{      \'line-color\': [\'case\',          [\'boolean\', [\'feature-state\', \'hover\'], false], \'red\',          [\'get\', \'color\', edgeFormula]      ],      \'line-width\': [\'get\', \'width\', edgeFormula],      \'line-opacity\': [\'get\', \'opacity\', edgeFormula]    }"    [filter]="[\'>=\', currentZoom, [\'get\', \'zoom\', edgeFormula]]"    (layerClick)="edgeClicked($event)">  </mgl-layer>  <!-- EDGES BORDER -->  <mgl-layer    id="edges_border"    source="edges"    type="line"    [paint]="{      \'line-color\': [\'get\', \'borderColor\', edgeFormula],      \'line-width\': [\'get\', \'borderWidth\', edgeFormula],      \'line-opacity\': [\'get\', \'borderOpacity\', edgeFormula],      \'line-gap-width\': [\'get\', \'width\', edgeFormula]    }"    [filter]="[\'>=\', currentZoom, [\'get\', \'zoom\', edgeFormula]]">  </mgl-layer>  <!-- NODES -->  <mgl-layer    id="nodes"    source="nodes"    type="circle"    [paint]="{      \'circle-color\': [\'case\',          [\'boolean\', [\'feature-state\', \'hover\'], false], \'red\',          \'black\'      ],      \'circle-radius\': 3    }"    [filter]="[\'>=\', currentZoom, currentEdgeFormula]"    (layerClick)="nodeClicked($event)">  </mgl-layer>  <!-- NODE LABELS -->  <mgl-layer    id="node_labels"    source="nodes"    type="symbol"    [layout]="nodeLabelsLayout"    [filter]="[\'>=\', currentZoom, [\'get\', \'zoom\', currentNodeFormula]]">  </mgl-layer></mgl-map></div>'
-    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
+    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'NetworkComponent', 'selector': 'm4s-network'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
     var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'MapComponent'};
 </script>
@@ -3283,6 +3283,15 @@ export class MapComponent implements OnChanges{
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
