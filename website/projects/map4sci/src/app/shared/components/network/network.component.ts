@@ -10,17 +10,17 @@ import {
   EventEmitter,
   Output
 } from '@angular/core';
-import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeDataDefinition, NodeDefinition } from 'cytoscape';
+import cytoscape, { Collection, Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, ElementDefinition, ElementGroup, NodeDataDefinition, NodeDefinition, Singular } from 'cytoscape';
 
 
 @Component({
-  selector: 'm4s-cytoscape',
+  selector: 'm4s-network',
   template: '',
-  styleUrls: ['./cytoscape.component.scss'],
+  styleUrls: ['./network.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CytoscapeComponent implements OnChanges, OnDestroy {
-  @HostBinding('class') readonly clsName = 'm4s-cytoscape';
+export class NetworkComponent implements OnChanges, OnDestroy {
+  @HostBinding('class') readonly clsName = 'm4s-network';
 
   @Input() nodes: NodeDefinition[];
   @Input() edges: EdgeDefinition[];
@@ -30,38 +30,21 @@ export class CytoscapeComponent implements OnChanges, OnDestroy {
 
   private cy?: Cytoscape;
 
-
   constructor(private readonly el: ElementRef) { }
 
   ngOnDestroy(): void {
-    this.destroyCytoscape();
+    this.destroyNetwork();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    let { cy } = this;
     if ('nodes' in changes || 'edges' in changes) {
-      this.destroyCytoscape();
-      cy = this.createCytoscape();
-      cy.on('tap', 'node', (event) => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        this.nodeClicked(event.target._private.data);
-      });
-      cy.on('tap', 'edge', (event) => {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        this.edgeClicked(event.target._private.data);
-      });
+      this.destroyNetwork();
+      this.cy = this.createNetwork();
+      this.attachListeners();
     }
   }
 
-  nodeClicked(event: NodeDataDefinition): void {
-    this.nodeClick.emit(event);
-  }
-
-  edgeClicked(event: EdgeDataDefinition): void {
-    this.edgeClick.emit(event);
-  }
-
-  private createCytoscape(): Cytoscape {
+  private createNetwork(): Cytoscape {
     return cytoscape({
       container: this.el.nativeElement,
       elements: {
@@ -91,7 +74,23 @@ export class CytoscapeComponent implements OnChanges, OnDestroy {
     });
   }
 
-  private destroyCytoscape(): void {
+  private destroyNetwork(): void {
     this.cy?.destroy?.();
+  }
+
+  private attachListeners(): void {
+    const { cy } = this;
+
+    if (cy) {
+      cy.on('tap', 'node', event => {
+        const data: NodeDataDefinition = (event.target as Singular).data();
+        this.nodeClick.emit(data);
+      });
+
+      cy.on('tap', 'edge', (event) => {
+        const data: EdgeDataDefinition = (event.target as Singular).data();
+        this.edgeClick.emit(data);
+      });
+    }
   }
 }

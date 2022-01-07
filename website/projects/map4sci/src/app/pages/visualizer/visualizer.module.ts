@@ -15,7 +15,7 @@ import { MapModule } from '../../map/map.module';
 import { MapDataService } from '../../services/map-data.service';
 import { VisualizerRoutingModule } from './visualizer-routing.module';
 import { VisualizerComponent } from './visualizer.component';
-import { CytoscapeModule } from '@shared/components/cytoscape/cytoscape.module';
+import { NetworkModule } from '@shared/components/network/network.module';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
@@ -37,7 +37,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
     VisualizerRoutingModule,
     MapModule,
-    CytoscapeModule,
+    NetworkModule,
     MatButtonToggleModule
   ],
   declarations: [VisualizerComponent],

@@ -52,8 +52,8 @@
         </button>
       </p>
 
-      <m4s-cytoscape *ngIf="displayCytoscape" [edges]="cytoscapeDataset.edges" [nodes]="cytoscapeDataset.nodes"
-                (nodeClick)="logCytoscapeEvent('node', $event)" (edgeClick)="logCytoscapeEvent('edge', $event)"></m4s-cytoscape>
+      <m4s-network *ngIf="displayNetwork" [edges]="networkDataset.edges" [nodes]="networkDataset.nodes"
+                (nodeClick)="logNetworkEvent('node', $event)" (edgeClick)="logNetworkEvent('edge', $event)"></m4s-network>
 
       <m4s-map *ngIf="displayMap" [edgeFeatures]="dataset.edges" [nodeFeatures]="dataset.nodes"
                [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"

@@ -81,5 +81,12 @@ mat-sidenav-content {
 
   .switch-toggle {
     width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+
+    // Force height!
+    ::ng-deep .mat-button-toggle-label-content {
+      line-height: 2rem;
+    }
   }
 }

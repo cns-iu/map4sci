@@ -4,7 +4,7 @@ import { EdgeDefinition, NodeDefinition } from 'cytoscape';
 import { MapDataset } from '../../../map/map';
 
 
-export interface CytoscapeDataset {
+export interface NetworkDataset {
   nodes: NodeDefinition[];
   edges: EdgeDefinition[];
 }
@@ -25,8 +25,8 @@ interface EdgeProperties {
 @Injectable({
   providedIn: 'root'
 })
-export class CytoscapeDatasetProcessor {
-  process(dataset: MapDataset): CytoscapeDataset {
+export class NetworkDatasetProcessor {
+  process(dataset: MapDataset): NetworkDataset {
     const edges = this.processEdges(dataset);
     const nodes = this.processNodes(dataset, edges);
 

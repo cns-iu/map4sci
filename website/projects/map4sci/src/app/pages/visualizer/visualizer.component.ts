@@ -10,10 +10,10 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-import { Edge, EMPTY_DATASET } from '../../map/map';
+import { EMPTY_DATASET } from '../../map/map';
 import { MapDataService } from '../../services/map-data.service';
 import { MapMarker } from './../../map/map';
-import { CytoscapeDataset, CytoscapeDatasetProcessor } from './services/cytoscape-dataset-processor.sevice';
+import { NetworkDataset, NetworkDatasetProcessor } from './services/network-dataset-processor.sevice';
 
 
 @Component({
@@ -35,16 +35,16 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   filteredOptions?: Observable<string[]>;
   searchTerm?: string | null;
   mapPins: MapMarker[] = [];
-  displayCytoscape = false;
-  cytoscapeDataset: CytoscapeDataset = { nodes: [], edges: [] };
+  displayNetwork = false;
+  networkDataset: NetworkDataset = { nodes: [], edges: [] };
 
   datasetControl: FormControl = new FormControl();
   searchControl: FormControl = new FormControl();
 
 
   get displayMap(): boolean {
-    const { dataset, displayCytoscape } = this;
-    if (displayCytoscape) {
+    const { dataset, displayNetwork } = this;
+    if (displayNetwork) {
       return false;
     }
     if (!dataset.nodes) {
@@ -73,8 +73,8 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   }
 
   get switchButtonTitle(): string {
-    const { displayCytoscape } = this;
-    if (displayCytoscape) {
+    const { displayNetwork } = this;
+    if (displayNetwork) {
       return 'Switch to map';
     } else {
       return 'Switch to network';
@@ -94,14 +94,14 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   constructor(
     readonly mapData: MapDataService,
     readonly ga: GoogleAnalyticsService,
-    cyDatasetProcessor: CytoscapeDatasetProcessor,
+    cyDatasetProcessor: NetworkDatasetProcessor,
     cdr: ChangeDetectorRef
   ) {
     const sub = mapData.dataset$.subscribe(ds => {
       this.dataset = ds;
       this.filteredNodes = ds.nodes;
       this.options = ds.nodes.features.map(n => n.properties?.label);
-      this.cytoscapeDataset = cyDatasetProcessor.process(ds);
+      this.networkDataset = cyDatasetProcessor.process(ds);
       cdr.markForCheck();
 
       if (this.searchTerm) {
@@ -184,11 +184,11 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     this.ga.event(`${name}_${event.type}`, 'map_interaction', event.lngLat.toString());
   }
 
-  logCytoscapeEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
-    this.ga.event(`${name}_click}`, 'cytoscape_interaction', event.data);
+  logNetworkEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
+    this.ga.event(`${name}_click}`, 'network_interaction', event.data);
   }
 
   switchGraph(): void {
-    this.displayCytoscape = !this.displayCytoscape;
+    this.displayNetwork = !this.displayNetwork;
   }
 }
