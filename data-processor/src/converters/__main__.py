@@ -4,8 +4,14 @@ import xml.etree.ElementTree as etree
 
 import networkx as nx
 
-from src.converters import svg_to_geojson
+from src.converters import svg_to_geojson, dot_to_cx
 
+def run_dot2cx(args: argparse.Namespace) -> None:
+    graph = nx.drawing.nx_agraph.read_dot(args.input)
+    cx_graph = dot_to_cx.get_cx_from_nx(graph, args.name)
+
+    with open(f'{args.output}', 'w') as file:
+        json.dump(cx_graph.to_cx(), file, indent=2)
 
 def run_svg2geo(args: argparse.Namespace) -> None:
     graph = nx.drawing.nx_agraph.read_dot(args.layer)
@@ -31,6 +37,11 @@ def setup_cmdline() -> argparse.ArgumentParser:
     svg2geo.add_argument('layer', help='Full layer')
     svg2geo.add_argument('output', help='Output folder')
 
+    dot2cx = subparsers.add_parser('dot2cx', help='Convert dot to Cytoscape cx')
+    dot2cx.add_argument('input', help='Input DOT file')
+    dot2cx.add_argument('output', help='Output Cytoscape CX file')
+    dot2cx.add_argument('name', help='Graph name')
+
     return parser
 
 
@@ -39,3 +50,5 @@ if __name__ == '__main__':
     args = setup_cmdline().parse_args()
     if args.command == 'svg2geo':
         run_svg2geo(args)
+    elif args.command == 'dot2cx':
+        run_dot2cx(args)
