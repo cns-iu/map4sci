@@ -87,7 +87,7 @@ export class NetworkComponent implements OnChanges, OnDestroy {
         this.nodeClick.emit(data);
       });
 
-      cy.on('tap', 'edge', (event) => {
+      cy.on('tap', 'edge', event => {
         const data: EdgeDataDefinition = (event.target as Singular).data();
         this.edgeClick.emit(data);
       });
