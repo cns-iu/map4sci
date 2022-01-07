@@ -29,6 +29,10 @@
               [disabled]="buttonDisabled" (click)="searchButtonClick()">
         {{ buttonTitle }}
       </button>
+      <mat-button-toggle-group class="switch-button" name="switchButton" (change)="switchGraph()">
+        <mat-button-toggle class="switch-toggle" value="Map" checked="true">Map</mat-button-toggle>
+        <mat-button-toggle class="switch-toggle" value="Network">Network</mat-button-toggle>
+      </mat-button-toggle-group>
     </mat-sidenav>
 
     <mat-sidenav-content>
@@ -47,6 +51,10 @@
           </mat-icon>
         </button>
       </p>
+
+      <m4s-network *ngIf="displayNetwork" [edges]="networkDataset.edges" [nodes]="networkDataset.nodes"
+                (nodeClick)="logNetworkEvent('node', $event)" (edgeClick)="logNetworkEvent('edge', $event)"></m4s-network>
+
       <m4s-map *ngIf="displayMap" [edgeFeatures]="dataset.edges" [nodeFeatures]="dataset.nodes"
                [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"
                [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"

@@ -15,6 +15,8 @@ import { MapModule } from '../../map/map.module';
 import { MapDataService } from '../../services/map-data.service';
 import { VisualizerRoutingModule } from './visualizer-routing.module';
 import { VisualizerComponent } from './visualizer.component';
+import { NetworkModule } from '@shared/components/network/network.module';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { VisualizerComponent } from './visualizer.component';
 
     VisualizerRoutingModule,
     MapModule,
+    NetworkModule,
+    MatButtonToggleModule
   ],
   declarations: [VisualizerComponent],
   providers: [MapDataService]

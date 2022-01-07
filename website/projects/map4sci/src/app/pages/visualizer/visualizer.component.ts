@@ -3,6 +3,7 @@
 import { Any } from '@angular-ru/common/typings';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { EdgeDataDefinition, NodeDataDefinition } from 'cytoscape';
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { MapMouseEvent } from 'maplibre-gl';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
@@ -12,6 +13,7 @@ import { map, startWith } from 'rxjs/operators';
 import { EMPTY_DATASET } from '../../map/map';
 import { MapDataService } from '../../services/map-data.service';
 import { MapMarker } from './../../map/map';
+import { NetworkDataset, NetworkDatasetProcessor } from './services/network-dataset-processor.sevice';
 
 
 @Component({
@@ -33,13 +35,18 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   filteredOptions?: Observable<string[]>;
   searchTerm?: string | null;
   mapPins: MapMarker[] = [];
+  displayNetwork = false;
+  networkDataset: NetworkDataset = { nodes: [], edges: [] };
 
   datasetControl: FormControl = new FormControl();
   searchControl: FormControl = new FormControl();
 
 
   get displayMap(): boolean {
-    const { dataset } = this;
+    const { dataset, displayNetwork } = this;
+    if (displayNetwork) {
+      return false;
+    }
     if (!dataset.nodes) {
       return false;
     }
@@ -65,6 +72,15 @@ export class VisualizerComponent implements OnInit, OnDestroy {
     return 'Search';
   }
 
+  get switchButtonTitle(): string {
+    const { displayNetwork } = this;
+    if (displayNetwork) {
+      return 'Switch to map';
+    } else {
+      return 'Switch to network';
+    }
+  }
+
   get buttonDisabled(): boolean {
     if (!this.searchTerm && this.filter !== this.searchTerm) {
       return true;
@@ -78,12 +94,14 @@ export class VisualizerComponent implements OnInit, OnDestroy {
   constructor(
     readonly mapData: MapDataService,
     readonly ga: GoogleAnalyticsService,
+    cyDatasetProcessor: NetworkDatasetProcessor,
     cdr: ChangeDetectorRef
   ) {
     const sub = mapData.dataset$.subscribe(ds => {
       this.dataset = ds;
       this.filteredNodes = ds.nodes;
       this.options = ds.nodes.features.map(n => n.properties?.label);
+      this.networkDataset = cyDatasetProcessor.process(ds);
       cdr.markForCheck();
 
       if (this.searchTerm) {
@@ -164,5 +182,13 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   logMouseEvent(name: string, event: MapMouseEvent): void {
     this.ga.event(`${name}_${event.type}`, 'map_interaction', event.lngLat.toString());
+  }
+
+  logNetworkEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
+    this.ga.event(`${name}_click}`, 'network_interaction', event.data);
+  }
+
+  switchGraph(): void {
+    this.displayNetwork = !this.displayNetwork;
   }
 }
