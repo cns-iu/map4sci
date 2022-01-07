@@ -18,6 +18,7 @@ interface EdgeProperties {
   level: number;
   src: string;
   dest: string;
+  label: string;
 }
 
 
@@ -62,12 +63,13 @@ export class CytoscapeDatasetProcessor {
     const definitions = edges.features
       .filter(edge => (edge.properties as EdgeProperties).level === 1)
       .map(({ id, properties }): EdgeDefinition => {
-        const { src, dest } = properties as EdgeProperties;
+        const { src, dest, label } = properties as EdgeProperties;
 
         return {
           group: 'edges',
           data: {
             id: id as string,
+            label: label,
             source: src,
             target: dest
           }

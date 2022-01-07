@@ -3,13 +3,14 @@
 import { Any } from '@angular-ru/common/typings';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { EdgeDataDefinition, NodeDataDefinition } from 'cytoscape';
 import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
 import { MapMouseEvent } from 'maplibre-gl';
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 import { Observable, Subscription } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-import { EMPTY_DATASET } from '../../map/map';
+import { Edge, EMPTY_DATASET } from '../../map/map';
 import { MapDataService } from '../../services/map-data.service';
 import { MapMarker } from './../../map/map';
 import { CytoscapeDataset, CytoscapeDatasetProcessor } from './services/cytoscape-dataset-processor.sevice';
@@ -181,6 +182,10 @@ export class VisualizerComponent implements OnInit, OnDestroy {
 
   logMouseEvent(name: string, event: MapMouseEvent): void {
     this.ga.event(`${name}_${event.type}`, 'map_interaction', event.lngLat.toString());
+  }
+
+  logCytoscapeEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
+    this.ga.event(`${name}_click}`, 'cytoscape_interaction', event.data);
   }
 
   switchGraph(): void {

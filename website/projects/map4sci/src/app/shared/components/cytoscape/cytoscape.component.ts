@@ -7,8 +7,10 @@ import {
   OnChanges,
   OnDestroy,
   SimpleChanges,
+  EventEmitter,
+  Output
 } from '@angular/core';
-import cytoscape, { Core as Cytoscape, EdgeDefinition, NodeDefinition } from 'cytoscape';
+import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeDataDefinition, NodeDefinition } from 'cytoscape';
 
 
 @Component({
@@ -23,6 +25,9 @@ export class CytoscapeComponent implements OnChanges, OnDestroy {
   @Input() nodes: NodeDefinition[];
   @Input() edges: EdgeDefinition[];
 
+  @Output() readonly nodeClick = new EventEmitter<NodeDataDefinition>();
+  @Output() readonly edgeClick = new EventEmitter<EdgeDataDefinition>();
+
   private cy?: Cytoscape;
 
 
@@ -33,10 +38,27 @@ export class CytoscapeComponent implements OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+    let { cy } = this;
     if ('nodes' in changes || 'edges' in changes) {
       this.destroyCytoscape();
-      this.cy = this.createCytoscape();
+      cy = this.createCytoscape();
+      cy.on('tap', 'node', (event) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        this.nodeClicked(event.target._private.data);
+      });
+      cy.on('tap', 'edge', (event) => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        this.edgeClicked(event.target._private.data);
+      });
     }
+  }
+
+  nodeClicked(event: NodeDataDefinition): void {
+    this.nodeClick.emit(event);
+  }
+
+  edgeClicked(event: EdgeDataDefinition): void {
+    this.edgeClick.emit(event);
   }
 
   private createCytoscape(): Cytoscape {
