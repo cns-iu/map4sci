@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { EMPTY, from, merge, Observable } from 'rxjs';
+import { EMPTY, from, Observable } from 'rxjs';
 import { delay, distinctUntilChanged, map, mapTo, mergeAll, scan, shareReplay, startWith, throttle } from 'rxjs/operators';
 
 
