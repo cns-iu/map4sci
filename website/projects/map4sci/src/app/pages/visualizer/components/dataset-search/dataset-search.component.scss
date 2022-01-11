@@ -1,3 +1,12 @@
 :host {
   display: block;
+
+  &, .form, .search {
+    width: 100%;
+  }
+
+  .search:not(:disabled) {
+    color: var(--primary-text);
+    background-color: var(--primary);
+  }
 }
