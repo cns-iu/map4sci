@@ -91,7 +91,7 @@ export class DatasetSearchComponent {
 
     return from(sources).pipe(
       mergeAll(),
-      scan(stateReducer),
+      scan(stateReducer, 'Search'),
       startWith<ButtonType>('Search'),
       distinctUntilChanged(),
       shareReplay(1)
