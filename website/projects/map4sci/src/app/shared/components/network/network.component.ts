@@ -8,9 +8,10 @@ import {
   OnDestroy,
   SimpleChanges,
   EventEmitter,
-  Output
+  Output,
+  OnInit
 } from '@angular/core';
-import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeDataDefinition, NodeDefinition, Singular } from 'cytoscape';
+import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeCollection, NodeDataDefinition, NodeDefinition, Singular } from 'cytoscape';
 
 
 @Component({
@@ -19,7 +20,7 @@ import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeD
   styleUrls: ['./network.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NetworkComponent implements OnChanges, OnDestroy {
+export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
   @HostBinding('class') readonly clsName = 'm4s-network';
 
   @Input() nodes: NodeDefinition[];
@@ -30,7 +31,17 @@ export class NetworkComponent implements OnChanges, OnDestroy {
 
   private cy?: Cytoscape;
 
+  private zoom = 1;
+
+  allNodes: NodeCollection;
+
   constructor(private readonly el: ElementRef) { }
+
+  ngOnInit(): void {
+    this.cy = this.createNetwork();
+    this.attachListeners();
+    this.allNodes = this.cy.filter(element => {return element.isNode()})
+  }
 
   ngOnDestroy(): void {
     this.destroyNetwork();
@@ -56,11 +67,11 @@ export class NetworkComponent implements OnChanges, OnDestroy {
         {
           selector: 'node',
           style: {
-            'label': 'data(label)',
+            'label': '',
             'height': 2000,
             'width': 2000,
-            'font-size': 4000,
-            'backgroundColor': 'black'
+            'backgroundColor': 'black',
+            'font-size': 4000
           }
         },
         {
@@ -69,8 +80,15 @@ export class NetworkComponent implements OnChanges, OnDestroy {
             'width': 1000,
             'line-color': '#c0c0c0'
           }
+        },
+        {
+          selector: '.label-visible',
+          style: {
+            'label': 'data(label)'
+          }
         }
-      ]
+      ],
+      wheelSensitivity: 0.1
     });
   }
 
@@ -90,6 +108,15 @@ export class NetworkComponent implements OnChanges, OnDestroy {
       cy.on('tap', 'edge', event => {
         const data: EdgeDataDefinition = (event.target as Singular).data();
         this.edgeClick.emit(data);
+      });
+
+      cy.on('zoom', () => {
+        let z = cy.zoom();
+        this.zoom = z*1000;
+        console.log(this.zoom)
+        cy.elements(`node[level <= ${this.zoom}]`).addClass('label-visible')
+        cy.elements(`node[level > ${this.zoom}]`).removeClass('label-visible')
+        console.log(cy.elements(`node[level <= ${this.zoom}]`).length);
       });
     }
   }

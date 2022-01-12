@@ -12,6 +12,7 @@ export interface NetworkDataset {
 interface NodeProperties {
   label: string;
   pos: string;
+  level: number;
 }
 
 interface EdgeProperties {
@@ -39,18 +40,19 @@ export class NetworkDatasetProcessor {
     const definitions = nodes.features
       .filter(({ id }) => edgeEndpoints.has(id))
       .map(({ id, properties }): NodeDefinition => {
-        const { label, pos } = properties as NodeProperties;
+        const { label, pos, level } = properties as NodeProperties;
         const [x, y] = pos.split(',');
 
         return {
           group: 'nodes',
           data: {
             id: id as string,
-            label
+            label,
+            level
           },
           position: {
             x: parseInt(x),
-            y: parseInt(y)
+            y: -parseInt(y)
           }
         };
       });
@@ -61,9 +63,9 @@ export class NetworkDatasetProcessor {
   private processEdges(dataset: MapDataset): EdgeDefinition[] {
     const { edges } = dataset;
     const definitions = edges.features
-      .filter(edge => (edge.properties as EdgeProperties).level === 1)
+      // .filter(edge => (edge.properties as EdgeProperties).level === 1)
       .map(({ id, properties }): EdgeDefinition => {
-        const { src, dest, label } = properties as EdgeProperties;
+        const { src, dest, label, level } = properties as EdgeProperties;
 
         return {
           group: 'edges',
@@ -71,7 +73,8 @@ export class NetworkDatasetProcessor {
             id: id as string,
             label: label,
             source: src,
-            target: dest
+            target: dest,
+            level: level
           }
         };
       });
