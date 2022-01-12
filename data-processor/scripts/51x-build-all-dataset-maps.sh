@@ -17,6 +17,9 @@ do
     mkdir -p $mapDir
     rm -f $mapDir/*.geojson
     cp -r $datasetDir/clustered/*.geojson $mapDir
+
+    rm -f $mapDir/*.cx
+    cp -r $datasetDir/clustered/*.cx $mapDir
   fi
 
   if [ ! -e $INDEX ]; then
