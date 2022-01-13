@@ -5,13 +5,17 @@
     width: 100%;
   }
 
-  .toggle-group .toggle {
-    font-size: 14px;
-    font-weight: 500;
+  .toggle-group {
+    height: 2rem;
 
-    // Force height!
-    ::ng-deep .mat-button-toggle-label-content {
-      line-height: 2rem;
+    .toggle {
+      font-size: 14px;
+      font-weight: 500;
+
+      // Force height!
+      ::ng-deep .mat-button-toggle-label-content {
+        line-height: 2rem;
+      }
     }
   }
 }

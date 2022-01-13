@@ -1,0 +1,13 @@
+:host {
+  display: block;
+
+  width: 100%;
+
+  .ds-search, .vis-selector {
+    margin-bottom: 1rem;
+  }
+
+  .ds-summary {
+    margin: 0 0.25rem;
+  }
+}
