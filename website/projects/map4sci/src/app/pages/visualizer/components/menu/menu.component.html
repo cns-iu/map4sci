@@ -1,15 +1,25 @@
-<m4s-visualization-selector class="vis-selector" [visualizations]="visualizations"
-                            [selectedVisualization]="selectedVisualization"
-                            (visualizationSelected)="setSelectedVisualization($event)">
-</m4s-visualization-selector>
+<section *ngIf="visualizations.length > 1">
+  <h3>Visualization Type</h3>
 
-<m4s-dataset-selector class="ds-selector" [datasets]="datasets" [selectedDataset]="selectedDataset"
-                      (datasetSelected)="setSelectedDataset($event)">
-</m4s-dataset-selector>
+  <m4s-visualization-selector class="vis-selector" [visualizations]="visualizations"
+                              [selectedVisualization]="selectedVisualization"
+                              (visualizationSelected)="setSelectedVisualization($event)">
+  </m4s-visualization-selector>
+</section>
+<section>
+  <h3>Dataset Selection</h3>
 
-<m4s-dataset-search class="ds-search" [items]="(selectedDataset?.searchableItems | async) ?? []"
-                    (searchClick)="datasetSearched.emit($event)" (clearClick)="datasetSearchCleared.emit()">
-</m4s-dataset-search>
+  <m4s-dataset-selector class="ds-selector" [datasets]="datasets" [selectedDataset]="selectedDataset"
+                        (datasetSelected)="setSelectedDataset($event)">
+  </m4s-dataset-selector>
 
-<m4s-dataset-summary class="ds-summary" [summary]="(selectedDataset?.summary | async) ?? undefined">
-</m4s-dataset-summary>
+  <m4s-dataset-search class="ds-search" [items]="(selectedDataset?.searchableItems | async) ?? []"
+                      (searchClick)="datasetSearched.emit($event)" (clearClick)="datasetSearchCleared.emit()">
+  </m4s-dataset-search>
+</section>
+<section>
+  <h3>Dataset Statistics</h3>
+
+  <m4s-dataset-summary class="ds-summary" [summary]="(selectedDataset?.summary | async) ?? undefined">
+  </m4s-dataset-summary>
+</section>

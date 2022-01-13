@@ -3,11 +3,34 @@
 
   width: 100%;
 
-  .ds-search, .vis-selector {
-    margin-bottom: 1rem;
-  }
+  section {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
 
-  .ds-summary {
-    margin: 0 0.25rem;
+    h3 {
+      display: flex;
+
+      &::before, &::after {
+        content: "";
+        flex-grow: 1;
+        margin-left: 0.25rem;
+        background: linear-gradient(to right, black, black);
+        background-size: 100% 1.5px;
+        background-position: 0% 50%;
+        background-repeat: repeat-x;
+      }
+
+      &::before {
+        flex-grow: 0;
+        width: 0.5rem;
+        margin-right: 0.25rem;
+        margin-left: 0;
+      }
+    }
+
+    :not(h3) {
+      padding: 0 0.25rem;
+    }
   }
 }
