@@ -5,6 +5,7 @@
     display: flex;
     justify-content: start;
     width: 100%;
+    color: var(--header);
 
     &.value-position-end {
       justify-content: space-between;

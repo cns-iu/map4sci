@@ -8,15 +8,16 @@
       margin-bottom: 2rem;
     }
 
-    h3 {
+    h4 {
       display: flex;
+      color: var(--header);
 
       &::before, &::after {
         content: "";
         flex-grow: 1;
         margin-left: 0.25rem;
-        background: linear-gradient(to right, black, black);
-        background-size: 100% 1.5px;
+        background: linear-gradient(to right, var(--header), var(--header));
+        background-size: 100% 1px;
         background-position: 0% 50%;
         background-repeat: repeat-x;
       }
@@ -29,7 +30,7 @@
       }
     }
 
-    :not(h3) {
+    :not(h4) {
       padding: 0 0.25rem;
     }
   }
