@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Inject, Input, LOCALE_
 
 
 export interface DatasetSummary {
-  name: string;
+  label: string;
   numNodes: number;
   numEdges: number;
 }
@@ -16,7 +16,7 @@ interface Metric {
 
 
 const DEFAULT_DATASET_SUMMARY: DatasetSummary = {
-  name: 'No dataset selected',
+  label: 'No dataset selected',
   numNodes: 0,
   numEdges: 0
 };
@@ -34,10 +34,10 @@ export class DatasetSummaryComponent {
   @Input() summary = DEFAULT_DATASET_SUMMARY;
 
   get metrics(): Metric[] {
-    const { summary: { name, numNodes, numEdges }, locale } = this;
+    const { summary: { label, numNodes, numEdges }, locale } = this;
 
     return [
-      { label: 'Dataset', value: name },
+      { label: 'Dataset', value: label },
       { label: 'Number of nodes', value: formatNumber(numNodes, locale) },
       { label: 'Number of edges', value: formatNumber(numEdges, locale) }
     ];
