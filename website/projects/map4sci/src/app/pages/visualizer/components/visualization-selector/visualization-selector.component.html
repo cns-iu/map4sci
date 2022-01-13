@@ -1,4 +1,4 @@
-<mat-button-toggle-group class="toggle-group" [value]="selectedVisualization"
+<mat-button-toggle-group class="toggle-group" *ngIf="visualizations.length" [value]="selectedVisualization"
                          (change)="visualizationSelected.emit($event.value)">
   <mat-button-toggle *ngFor="let vis of visualizations" class="toggle" [value]="vis">
     {{ vis }}
