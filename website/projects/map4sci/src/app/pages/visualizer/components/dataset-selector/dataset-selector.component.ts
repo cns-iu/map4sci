@@ -10,19 +10,19 @@ export type SelectableDataset = Record<'id' | 'label', string>;
   styleUrls: ['./dataset-selector.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DatasetSelectorComponent {
+export class DatasetSelectorComponent<T extends SelectableDataset = SelectableDataset> {
   @HostBinding('class') readonly clsName = 'm4s-dataset-selector';
 
-  @Input() datasets: SelectableDataset[] = [];
-  @Input() selectedDataset?: SelectableDataset;
+  @Input() datasets: T[] = [];
+  @Input() selectedDataset?: T;
 
-  @Output() readonly datasetSelected = new EventEmitter<SelectableDataset>();
+  @Output() readonly datasetSelected = new EventEmitter<T>();
 
-  datasetEquals(this: void, d1: SelectableDataset, d2: SelectableDataset): boolean {
+  datasetEquals(this: void, d1: T, d2: T): boolean {
     return d1.id === d2.id;
   }
 
-  selectDataset(dataset: SelectableDataset): void {
+  selectDataset(dataset: T): void {
     this.selectedDataset = dataset;
     this.datasetSelected.emit(dataset);
   }

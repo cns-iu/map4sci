@@ -16,10 +16,10 @@ const DEFAULT_AUTO_COMPLETE_THROTTLE = 100;
   styleUrls: ['./dataset-search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DatasetSearchComponent {
+export class DatasetSearchComponent<T extends SearchableDatasetItem = SearchableDatasetItem> {
   @HostBinding('class') readonly clsName = 'm4s-dataset-search';
 
-  @Input() items: SearchableDatasetItem[] = [];
+  @Input() items: T[] = [];
 
   @Input() autoCompleteLimit?: number;
   @Input() autoCompleteThrottle?: number;
@@ -52,10 +52,10 @@ export class DatasetSearchComponent {
   readonly buttonType$ = this.setupButtonTypeObservable();
 
 
-  private filterItems(value: string): SearchableDatasetItem[] {
+  private filterItems(value: string): T[] {
     const { items, autoCompleteLimit: limit } = this;
     const lcaseValue = value.toLowerCase();
-    const matches = (item: SearchableDatasetItem) =>
+    const matches = (item: T) =>
       item.value.toLowerCase().includes(lcaseValue);
 
     if (!value || this.autoCompleteDisabled) {
