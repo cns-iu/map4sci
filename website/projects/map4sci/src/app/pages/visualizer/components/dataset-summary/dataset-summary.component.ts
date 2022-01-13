@@ -31,10 +31,13 @@ const DEFAULT_DATASET_SUMMARY: DatasetSummary = {
 export class DatasetSummaryComponent {
   @HostBinding('class') readonly clsName = 'm4s-dataset-summary';
 
-  @Input() summary = DEFAULT_DATASET_SUMMARY;
+  @Input() summary?: DatasetSummary;
 
   get metrics(): Metric[] {
-    const { summary: { label, numNodes, numEdges }, locale } = this;
+    const {
+      summary: { label, numNodes, numEdges } = DEFAULT_DATASET_SUMMARY,
+      locale
+    } = this;
 
     return [
       { label: 'Dataset', value: label },
