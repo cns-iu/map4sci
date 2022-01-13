@@ -1,0 +1,21 @@
+:host {
+  display: block;
+
+  .metric {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+
+    &.value-position-end {
+      justify-content: space-between;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+  }
+}

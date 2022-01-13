@@ -1,0 +1,4 @@
+<div *ngFor="let metric of metrics" class="metric" [class.value-position-end]="metric.position !== 'start'">
+  <span class="label">{{ metric.label }}:</span>
+  <span class="value">{{ metric.value }}</span>
+</div>
