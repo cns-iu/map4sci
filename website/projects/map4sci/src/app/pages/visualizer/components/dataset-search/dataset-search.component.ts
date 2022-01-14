@@ -40,6 +40,7 @@ export class DatasetSearchComponent<T extends SearchableDatasetItem = Searchable
   readonly controller = new FormControl();
   readonly filteredItems$ = this.controller.valueChanges.pipe(
     throttle(() => this.autoCompleteThrottleSelector),
+    map(value => this.getValue(value)),
     map(value => this.filterItems(value)),
     startWith([])
   );
@@ -51,6 +52,15 @@ export class DatasetSearchComponent<T extends SearchableDatasetItem = Searchable
   );
   readonly buttonType$ = this.setupButtonTypeObservable();
 
+  getValue(this: void, item: string | SearchableDatasetItem | null): string {
+    if (item === null) {
+      return '';
+    } else if (typeof item === 'string') {
+      return item;
+    } else {
+      return item.value;
+    }
+  }
 
   private filterItems(value: string): T[] {
     const { items, autoCompleteLimit: limit } = this;
@@ -81,7 +91,7 @@ export class DatasetSearchComponent<T extends SearchableDatasetItem = Searchable
       }
 
       if (prev === 'Search') {
-        searchClick.emit(controller.value);
+        searchClick.emit(this.getValue(controller.value));
         return 'Clear';
       } else {
         clearClick.emit();

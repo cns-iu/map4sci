@@ -3,7 +3,7 @@
   <input matInput type="text" placeholder="Search term" gaEvent="search_started" gaBind="focus"
          [formControl]="controller" [matAutocomplete]="auto" [matAutocompleteDisabled]="autoCompleteDisabled">
 
-  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+  <mat-autocomplete autoActiveFirstOption [displayWith]="getValue" #auto="matAutocomplete">
     <mat-option *ngFor="let option of filteredItems$ | async" gaEvent="search_autocomplete_value_selected"
                 [gaLabel]="option.id" [value]="option">
       {{ option.value }}
