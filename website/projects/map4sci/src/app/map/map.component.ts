@@ -20,7 +20,7 @@ import { ZoomLevelControl } from './zoom-level.control';
   styleUrls: ['./map.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MapComponent implements OnChanges{
+export class MapComponent implements OnChanges {
   // Inputs
   @Input() mapStyle = blankStyle;
   @Input() edgeFeatures!: FeatureCollection;
@@ -129,6 +129,8 @@ export class MapComponent implements OnChanges{
       box-shadow: 3px 3px 5px 4px #00000021;
   `;
 
+  private markers: Marker[] = [];
+
   ngOnChanges(): void {
     this.addMapMarkers(this.mapMarkers);
   }
@@ -185,12 +187,12 @@ export class MapComponent implements OnChanges{
   }
 
   addMapMarkers(markers: MapMarker[]): void {
-    if (!markers.length) {
-      return;
-    }
+    // Remove old markers
+    this.markers.forEach(marker => marker.remove());
+    this.markers = [];
 
-    markers.forEach(marker => {
-      if (this.map) {
+    if (this.map) {
+      this.markers = markers.map(marker => {
         const popup = new Popup({
           closeOnClick: true,
           closeOnMove: true,
@@ -198,12 +200,12 @@ export class MapComponent implements OnChanges{
           className: 'map-marker-popup'
         }).setHTML(`<h3>${marker.title}</h3>`);
 
-        new Marker(marker.config ?? {})
+        return new Marker(marker.config ?? {})
           .setLngLat(marker.coordinates)
           .setPopup(popup)
           .addTo(this.map);
-      }
-    });
+      });
+    }
   }
 
   // In order to show more or less data based on the zoom level we have to update the layer filters when the map zooms.
@@ -382,9 +384,9 @@ export class MapComponent implements OnChanges{
       if (this.isEven(index)) {
         html += element;
 
-      // Along with property values, you can pass along a formatting function in form of ['propertyName', function]
-      // This checks if there is one, if there is it uses that function to format the value of the property before
-      // concatenating it.
+        // Along with property values, you can pass along a formatting function in form of ['propertyName', function]
+        // This checks if there is one, if there is it uses that function to format the value of the property before
+        // concatenating it.
       } else if (typeof (element) === 'string') {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         html += description[element];
