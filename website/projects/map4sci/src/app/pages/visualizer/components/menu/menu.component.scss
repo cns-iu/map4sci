@@ -1,0 +1,41 @@
+:host {
+  display: block;
+
+  width: 100%;
+
+  section {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    h4 {
+      display: flex;
+      color: var(--header);
+
+      &::before, &::after {
+        content: "";
+        flex-grow: 1;
+        margin-left: 0.25rem;
+        background: linear-gradient(to right, var(--header), var(--header));
+        background-size: 100% 1px;
+        background-position: 0% 50%;
+        background-repeat: repeat-x;
+      }
+
+      &::before {
+        flex-grow: 0;
+        width: 0.5rem;
+        margin-right: 0.25rem;
+        margin-left: 0;
+      }
+    }
+
+    :not(h4) {
+      padding: 0 0.25rem;
+    }
+  }
+
+  ::ng-deep .mat-form-field-flex {
+    background-color: var(--background);
+  }
+}

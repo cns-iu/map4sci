@@ -1,19 +1,15 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-import { Any } from '@angular-ru/common/typings';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { EdgeDataDefinition, NodeDataDefinition } from 'cytoscape';
-import { FeatureCollection, GeoJsonProperties, Geometry } from 'geojson';
-import { MapMouseEvent } from 'maplibre-gl';
-import { GoogleAnalyticsService } from 'ngx-google-analytics';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { filter, map, shareReplay, take } from 'rxjs/operators';
 
-import { EMPTY_DATASET } from '../../map/map';
+import { MapDatasetDirectory } from '../../map/map';
 import { MapDataService } from '../../services/map-data.service';
-import { MapMarker } from './../../map/map';
-import { NetworkDataset, NetworkDatasetProcessor } from './services/network-dataset-processor.sevice';
+import { ContentDatasets, VisualizationType } from './components/content/content.component';
+import { MenuDataset } from './components/menu/menu.component';
+import { NetworkDatasetProcessor } from './services/network-dataset-processor.sevice';
+
+
+export interface Dataset extends MenuDataset, ContentDatasets { }
 
 
 @Component({
@@ -22,173 +18,98 @@ import { NetworkDataset, NetworkDatasetProcessor } from './services/network-data
   styleUrls: ['./visualizer.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VisualizerComponent implements OnInit, OnDestroy {
-  events: string[] = [];
+export class VisualizerComponent implements OnDestroy {
+  readonly visualizations: VisualizationType[] = ['Map', 'Network'];
+  selectedVisualization: VisualizationType = 'Map';
+
+  readonly datasets$ = this.setupDatasets();
+  selectedDataset?: Dataset;
+  datasetSearch?: string;
+
   opened = true;
-  iconOpened = true;
-
-  dataset = EMPTY_DATASET;
-  filteredNodes: FeatureCollection<Geometry, GeoJsonProperties> = EMPTY_DATASET.nodes;
-  filter = '';
-
-  options: string[] = [];
-  filteredOptions?: Observable<string[]>;
-  searchTerm?: string | null;
-  mapPins: MapMarker[] = [];
-  displayNetwork = false;
-  networkDataset: NetworkDataset = { nodes: [], edges: [] };
-
-  datasetControl: FormControl = new FormControl();
-  searchControl: FormControl = new FormControl();
-
-
-  get displayMap(): boolean {
-    const { dataset, displayNetwork } = this;
-    if (displayNetwork) {
-      return false;
-    }
-    if (!dataset.nodes) {
-      return false;
-    }
-    if (!dataset.nodes.features) {
-      return false;
-    }
-    if (dataset.nodes.features.length < 1) {
-      return false;
-    }
-
-    return true;
-  }
-
-  get buttonTitle(): string {
-    const { searchTerm, filter } = this;
-    if (!searchTerm && filter === '') {
-      return 'Search';
-    }
-    if (searchTerm !== '' && filter === searchTerm) {
-      return 'Clear';
-    }
-
-    return 'Search';
-  }
-
-  get switchButtonTitle(): string {
-    const { displayNetwork } = this;
-    if (displayNetwork) {
-      return 'Switch to map';
-    } else {
-      return 'Switch to network';
-    }
-  }
-
-  get buttonDisabled(): boolean {
-    if (!this.searchTerm && this.filter !== this.searchTerm) {
-      return true;
-    }
-
-    return false;
-  }
 
   private readonly subscriptions = new Subscription();
 
   constructor(
-    readonly mapData: MapDataService,
-    readonly ga: GoogleAnalyticsService,
-    cyDatasetProcessor: NetworkDatasetProcessor,
-    cdr: ChangeDetectorRef
+    private readonly mapData: MapDataService,
+    private readonly networkDatasetProcessor: NetworkDatasetProcessor,
+    private readonly cdr: ChangeDetectorRef
   ) {
-    const sub = mapData.dataset$.subscribe(ds => {
-      this.dataset = ds;
-      this.filteredNodes = ds.nodes;
-      this.options = ds.nodes.features.map(n => n.properties?.label);
-      this.networkDataset = cyDatasetProcessor.process(ds);
-      cdr.markForCheck();
-
-      if (this.searchTerm) {
-        this.search(this.searchTerm);
-      }
-    });
-
-    this.subscriptions.add(sub);
-  }
-
-  ngOnInit(): void {
-    this.filteredOptions = this.searchControl.valueChanges.pipe(
-      startWith(''),
-      map(value => this._filter(value))
-    );
+    this.setupInitialDatasetSelection();
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
 
-  mapDataSwitcherChange(dataset: string): void {
-    this.mapData.setDataset(dataset);
+  setSelectedVisualization(visualization: VisualizationType): void {
+    this.selectedVisualization = visualization;
   }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
-
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  setSelectedDataset(dataset: Dataset): void {
+    this.selectedDataset = dataset;
   }
 
-  searchButtonClick(): void {
-    const { searchTerm } = this;
-
-    // Remove all markers before searching
-    const markers = document.querySelectorAll('.maplibregl-marker') as unknown as HTMLElement[];
-    for (const marker of markers) {
-      marker.remove();
-    }
-
-    if (this.buttonTitle === 'Clear' && searchTerm) {
-      this.mapPins = [];
-      this.filter = '';
-      this.searchTerm = '';
-      return;
-    }
-
-    if (!searchTerm) {
-      return;
-    }
-
-    this.search(searchTerm);
+  searchDataset(value: string): void {
+    this.datasetSearch = value;
   }
 
-  search(searchTerm: string): void {
-    const { nodes } = this.dataset;
-
-    const filteredNodes = nodes.features.filter(n => n.properties?.label.toLowerCase().includes(searchTerm.toLowerCase())) as Any;
-    this.filter = searchTerm;
-    const mapPins: MapMarker[] = filteredNodes.map((n: Any) => {
-      const x: MapMarker = {
-        coordinates: n.geometry.coordinates,
-        title: n.properties?.label
-      };
-      return x;
-    });
-    this.mapPins = [...mapPins];
+  clearDatasetSearch(): void {
+    this.datasetSearch = undefined;
   }
 
   toggle(): void {
-    const { opened } = this;
-    if (opened) {
-      this.opened = false;
-    } else {
-      this.opened = true;
-    }
+    this.opened = !this.opened;
   }
 
-  logMouseEvent(name: string, event: MapMouseEvent): void {
-    this.ga.event(`${name}_${event.type}`, 'map_interaction', event.lngLat.toString());
+  private setupDatasets(): Observable<Dataset[]> {
+    const { mapData, networkDatasetProcessor } = this;
+    const dirToDataset = (dir: MapDatasetDirectory): Dataset => {
+      const mapDataset$ = mapData.getDataset(dir.id).pipe(shareReplay(1));
+      const networkDataset$ = mapDataset$.pipe(
+        map(ds => networkDatasetProcessor.process(ds))
+      );
+      const searchableItems$ = mapDataset$.pipe(
+        map(ds => ds.nodes.features.map(node => node.properties?.label)),
+        map(options => options.map(opt => ({ id: opt, value: opt }))),
+      );
+      const summaries$ = mapDataset$.pipe(
+        map(ds => ({
+          label: dir.name,
+          numNodes: ds.nodes.features.length,
+          numEdges: ds.edges.features.length
+        })),
+      );
+
+      return {
+        id: dir.id,
+        label: dir.name,
+        mapDataset$,
+        networkDataset$,
+        searchableItems$,
+        summaries$
+      };
+    };
+
+    return mapData.datasetDirectory$.pipe(
+      map(dirs => dirs.map(dirToDataset))
+    );
   }
 
-  logNetworkEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
-    this.ga.event(`${name}_click}`, 'network_interaction', event.data);
-  }
+  private setupInitialDatasetSelection(): void {
+    const { datasets$, cdr, subscriptions } = this;
+    const firstDataset$ = datasets$.pipe(
+      filter(datasets => datasets.length > 0),
+      map(datasets => datasets[0]),
+      take(1)
+    );
+    const sub = firstDataset$.subscribe(dataset => {
+      if (this.selectedDataset === undefined) {
+        this.setSelectedDataset(dataset);
+        cdr.markForCheck();
+      }
+    });
 
-  switchGraph(): void {
-    this.displayNetwork = !this.displayNetwork;
+    subscriptions.add(sub);
   }
 }

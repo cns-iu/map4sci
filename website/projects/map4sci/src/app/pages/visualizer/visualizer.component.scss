@@ -1,94 +1,47 @@
-::ng-deep {
-  .mat-form-field-flex {
-    background: none !important;
+:host {
+  display: block;
+
+  &, mat-sidenav-container {
+    width: 100%;
+    height: calc(100vh - 6rem);
   }
 
-  ::ng-deep .mat-form-field-flex {
-    background-color: var(--background);
-  }
-
-  .mat-drawer-inner-container {
+  mat-sidenav {
+    width: 20%;
+    height: 100%;
     padding: 0.5rem;
+    background-color: var(--background);
+    border: none;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 18px 0px rgba(0, 0, 0, 0.12);
   }
-}
 
-.dataset-selector {
-  margin-bottom: 0.75rem;
-  width: 100%;
-}
+  mat-sidenav-content {
+    background-color: white;
 
-.form-field {
-  width: 100%;
-}
+    .toggle {
+      z-index: 1;
+      position: relative;
+      top: 3rem;
+      margin: 0;
+      height: 0;
 
-.map-wrapper,
-.sidenav-container {
-  width: 100%;
-  height: calc(100vh - 6rem);
-}
+      button {
+        min-width: 1.5rem;
+        padding: .25rem;
+        height: 3rem;
+        border: none;
+        background-color: var(--background);
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
 
-mat-sidenav {
-  width: 20%;
-  height: 100%;
-  background-color: var(--background);
-  border: none;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-}
-
-mat-sidenav-content {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-
-  p {
-    z-index: 1;
-    position: relative;
-    top: 3rem;
-    margin: 0;
-    height: 0;
-
-    button {
-      min-width: 1.5rem;
-      padding: .25rem;
-      height: 3rem;
-      border: none;
-      background-color: var(--background);
-      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-      border-radius: 3px;
-      outline: none;
-      cursor: pointer;
-
-      &.hidden {
-        display: none;
+        &.hidden {
+          display: none;
+        }
       }
-    }
-  }
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.search-button {
-  width: 100%;
-  background-color: #286f94;
-  color: white;
-}
-
-.switch-button {
-  width: 100%;
-  margin-top: 1rem;
-
-  .switch-toggle {
-    width: 50%;
-    font-size: 14px;
-    font-weight: 500;
-
-    // Force height!
-    ::ng-deep .mat-button-toggle-label-content {
-      line-height: 2rem;
     }
   }
 }
