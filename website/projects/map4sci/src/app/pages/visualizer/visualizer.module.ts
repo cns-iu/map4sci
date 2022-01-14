@@ -1,44 +1,30 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
-import { MatOptionModule } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgxGoogleAnalyticsModule } from 'ngx-google-analytics';
 
-import { MapModule } from '../../map/map.module';
 import { MapDataService } from '../../services/map-data.service';
+import { ContentModule } from './components/content/content.module';
+import { MenuModule } from './components/menu/menu.module';
 import { VisualizerRoutingModule } from './visualizer-routing.module';
 import { VisualizerComponent } from './visualizer.component';
-import { NetworkModule } from '@shared/components/network/network.module';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
 
-    MatAutocompleteModule,
     MatButtonModule,
-    MatFormFieldModule,
     MatIconModule,
-    MatInputModule,
-    MatOptionModule,
-    MatSelectModule,
     MatSidenavModule,
 
     NgxGoogleAnalyticsModule,
 
     VisualizerRoutingModule,
-    MapModule,
-    NetworkModule,
-    MatButtonToggleModule
+    ContentModule,
+    MenuModule
   ],
   declarations: [VisualizerComponent],
   providers: [MapDataService]
