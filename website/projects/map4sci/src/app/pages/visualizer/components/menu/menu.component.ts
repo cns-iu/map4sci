@@ -7,8 +7,8 @@ import { DatasetSummary } from '../dataset-summary/dataset-summary.component';
 
 
 export interface MenuDataset extends SelectableDataset {
-  searchableItems: Observable<SearchableDatasetItem[]>;
-  summary: Observable<DatasetSummary>;
+  searchableItems$: Observable<SearchableDatasetItem[]>;
+  summaries$: Observable<DatasetSummary>;
 }
 
 

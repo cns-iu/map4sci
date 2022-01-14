@@ -13,13 +13,13 @@
                         (datasetSelected)="setSelectedDataset($event)">
   </m4s-dataset-selector>
 
-  <m4s-dataset-search class="ds-search" [items]="(selectedDataset?.searchableItems | async) ?? []"
+  <m4s-dataset-search class="ds-search" [items]="(selectedDataset?.searchableItems$ | async) ?? []"
                       (searchClick)="datasetSearched.emit($event)" (clearClick)="datasetSearchCleared.emit()">
   </m4s-dataset-search>
 </section>
 <section>
   <h4>Dataset Statistics</h4>
 
-  <m4s-dataset-summary class="ds-summary" [summary]="(selectedDataset?.summary | async) ?? undefined">
+  <m4s-dataset-summary class="ds-summary" [summary]="(selectedDataset?.summaries$ | async) ?? undefined">
   </m4s-dataset-summary>
 </section>
