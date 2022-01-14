@@ -35,13 +35,7 @@
     }
   }
 
-  ::ng-deep {
-    .mat-form-field-flex {
-      background: none !important;
-    }
-
-    .mat-form-field-flex {
-      background-color: var(--background);
-    }
+  ::ng-deep .mat-form-field-flex {
+    background-color: var(--background);
   }
 }
