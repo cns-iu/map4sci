@@ -7,11 +7,11 @@ import { ChangeDetectionStrategy, Component, EventEmitter, HostBinding, Input, O
   styleUrls: ['./visualization-selector.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VisualizationSelectorComponent {
+export class VisualizationSelectorComponent<T extends string = string> {
   @HostBinding('class') readonly clsName = 'm4s-visualization-selector';
 
-  @Input() visualizations: string[] = [];
-  @Input() selectedVisualization?: string;
+  @Input() visualizations: T[] = [];
+  @Input() selectedVisualization?: T;
 
-  @Output() readonly visualizationSelected = new EventEmitter<string>();
+  @Output() readonly visualizationSelected = new EventEmitter<T>();
 }

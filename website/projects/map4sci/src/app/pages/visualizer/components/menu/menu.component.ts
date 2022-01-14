@@ -18,21 +18,21 @@ export interface MenuDataset extends SelectableDataset {
   styleUrls: ['./menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MenuComponent<T extends MenuDataset = MenuDataset> {
+export class MenuComponent<T extends MenuDataset = MenuDataset, V extends string = string> {
   @HostBinding('class') readonly clsName = 'm4s-visualizer-menu';
 
-  @Input() visualizations: string[] = [];
-  @Input() selectedVisualization?: string;
+  @Input() visualizations: V[] = [];
+  @Input() selectedVisualization?: V;
 
   @Input() datasets: T[] = [];
   @Input() selectedDataset?: T;
 
-  @Output() readonly visualizationSelected = new EventEmitter<string>();
+  @Output() readonly visualizationSelected = new EventEmitter<V>();
   @Output() readonly datasetSelected = new EventEmitter<T>();
   @Output() readonly datasetSearched = new EventEmitter<string>();
   @Output() readonly datasetSearchCleared = new EventEmitter<void>();
 
-  setSelectedVisualization(visualization: string): void {
+  setSelectedVisualization(visualization: V): void {
     this.selectedVisualization = visualization;
     this.visualizationSelected.emit(visualization);
   }
