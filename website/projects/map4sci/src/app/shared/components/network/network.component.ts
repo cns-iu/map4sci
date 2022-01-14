@@ -24,8 +24,8 @@ import cytoscape, {
 import { Edge, Node } from '../../../map/map';
 
 const nodeConfig: Node[] = [
-  { level: 0, zoom: 0.0, fontSize: 6000 },
-  { level: 1, zoom: 0.0, fontSize: 6000 },
+  { level: 0, zoom: 0.0, fontSize: 10000 },
+  { level: 1, zoom: 0.0, fontSize: 10000 },
   { level: 2, zoom: 0.004, fontSize: 4000 },
   { level: 3, zoom: 0.008, fontSize: 2000 },
   { level: 4, zoom: 0.012, fontSize: 1500 },
@@ -37,13 +37,13 @@ const nodeConfig: Node[] = [
 ];
 
 const edgeConfig: Edge[] = [
-  { level: 0, zoom: 0, color: '#FFEBA1', width: 1000, opacity: 0.0 },
-  { level: 1, zoom: 0.0, color: '#FFEBA1', width: 800, opacity: 1.0 },
-  { level: 2, zoom: 0.004, color: '#FFEBA1', width: 700, opacity: 1.0 },
-  { level: 3, zoom: 0.008, color: '#F9D776', width: 600, opacity: 0.9 },
-  { level: 4, zoom: 0.012, color: '#c1b276', width: 500, opacity: 0.9 },
-  { level: 5, zoom: 0.016, color: '#94895f', width: 400, opacity: 0.8 },
-  { level: 6, zoom: 0.024, color: '#615b43', width: 300, opacity: 0.8 },
+  { level: 0, zoom: 0, color: '#FFEBA1', width: 1200, opacity: 0.0 },
+  { level: 1, zoom: 0.0, color: '#FFEBA1', width: 1000, opacity: 1.0 },
+  { level: 2, zoom: 0.004, color: '#FFEBA1', width: 900, opacity: 1.0 },
+  { level: 3, zoom: 0.008, color: '#F9D776', width: 800, opacity: 0.9 },
+  { level: 4, zoom: 0.012, color: '#c1b276', width: 700, opacity: 0.9 },
+  { level: 5, zoom: 0.016, color: '#94895f', width: 600, opacity: 0.8 },
+  { level: 6, zoom: 0.024, color: '#615b43', width: 500, opacity: 0.8 },
   { level: 7, zoom: 0.028, color: 'gray', width: 200, opacity: 0.7 },
   { level: 8, zoom: 0.032, color: 'gray', width: 200, opacity: 0.6 },
   { level: 9, zoom: 0.036, color: 'gray', width: 200, opacity: 0.5 }
@@ -79,10 +79,8 @@ export class NetworkComponent implements OnChanges, OnDestroy {
     if ('nodes' in changes || 'edges' in changes) {
       this.destroyNetwork();
       this.cy = this.createNetwork();
-      this.cy.zoom(.002);
       this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
       this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
-      this.cy.elements('edge[level > 1]').addClass('edge');
       this.attachListeners();
       this.allNodes = this.cy.filter(element => element.isNode());
     }
@@ -103,17 +101,16 @@ export class NetworkComponent implements OnChanges, OnDestroy {
         }
       },
       {
-        selector: '.edge',
+        selector: 'edge',
         style: {
           'width': 200,
-          'line-color': '#c0c0c0'
+          'line-color': '#3d3d3d'
         }
       },
       {
         selector: '.label-visible',
         style: {
-          'label': 'data(label)',
-          'color': 'white'
+          'label': 'data(label)'
         }
       }
     ];
@@ -171,16 +168,16 @@ export class NetworkComponent implements OnChanges, OnDestroy {
         this.zoom = z;
         const oldNodeIndex = this.nodeZoomIndex;
         const oldEdgeIndex = this.edgeZoomIndex;
-        cy.startBatch();
-        if (this.nodeLevelChange()) {
-          cy.$(`node[level <= ${this.nodeZoomIndex}]`).removeClass(`label-${oldNodeIndex}`).addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
-          cy.$(`node[level > ${this.nodeZoomIndex}]`).removeClass('label-visible');
-        }
-        if (this.edgeLevelChange()) {
-          cy.$(`edge[level = ${this.edgeZoomIndex}]`).addClass(`edge-${this.edgeZoomIndex}`);
-          cy.$(`edge[level > ${this.edgeZoomIndex}]`).removeClass(`edge-${oldEdgeIndex}`);
-        }
-        cy.endBatch();
+        cy.batch(() => {
+          if (this.nodeLevelChange()) {
+            cy.$(`node[level <= ${this.nodeZoomIndex}]`).removeClass(`label-${oldNodeIndex}`).addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
+            cy.$(`node[level > ${this.nodeZoomIndex}]`).removeClass('label-visible');
+          }
+          if (this.edgeLevelChange()) {
+            cy.$(`edge[level = ${this.edgeZoomIndex}]`).addClass(`edge-${this.edgeZoomIndex}`);
+            cy.$(`edge[level > ${this.edgeZoomIndex}]`).removeClass(`edge-${oldEdgeIndex}`);
+          }
+        });
       });
     }
   }
