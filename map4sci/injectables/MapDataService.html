@@ -211,8 +211,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="54"
-                            class="link-to-prism">projects/map4sci/src/app/services/map-data.service.ts:54</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">projects/map4sci/src/app/services/map-data.service.ts:45</a></div>
                 </td>
             </tr>
 
@@ -250,7 +250,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/MapDataset.html" target="_self" >Observable&lt;MapDataset&gt;</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;MapDataset&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -280,8 +280,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">projects/map4sci/src/app/services/map-data.service.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">projects/map4sci/src/app/services/map-data.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -317,8 +317,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">projects/map4sci/src/app/services/map-data.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/map4sci/src/app/services/map-data.service.ts:37</a></div>
                 </td>
             </tr>
 
@@ -386,7 +386,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/MapDataset.html" target="_self" >Observable&lt;MapDataset&gt;</a></code>
+                        <i>Type : </i>    <code>Observable&lt;MapDataset&gt;</code>
 
                     </td>
                 </tr>
@@ -598,15 +598,6 @@ export class MapDataService implements OnDestroy {
     this.http.get&lt;MapDatasetDirectory[]&gt;(&#x27;assets/datasets/index.json&#x27;)
       .pipe(take(1), tap((dir) &#x3D;&gt; this.datasetDirectorySubject.next(dir)))
       .subscribe();
-
-    // Set current dataset to the &#x27;first&#x27; dataset whenever a directory is loaded
-    this.subscriptions.add(
-      this.datasetDirectory$.pipe(tap((dir) &#x3D;&gt; {
-        if (dir.length &gt; 0) {
-          this.setDataset(dir[0].id);
-        }
-      })).subscribe()
-    );
   }
 
   ngOnDestroy(): void {

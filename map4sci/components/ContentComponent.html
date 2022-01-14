@@ -38,7 +38,7 @@
   <li>Components</li>
   <li
   >
-  NetworkComponent</li>
+  ContentComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -47,6 +47,9 @@
         </li>
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
             <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
@@ -61,19 +64,12 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>projects/map4sci/src/app/shared/components/network/network.component.ts</code>
+    <code>projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts</code>
 </p>
 
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
-                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
-    </p>
 
 
 <section>
@@ -97,16 +93,20 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>m4s-network</code></td>
+                <td class="col-md-9"><code>m4s-visualizer-content</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./network.component.scss</code></td>
+                <td class="col-md-9"><code>./content.component.scss</code></td>
             </tr>
 
 
 
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./content.component.html</code></td>
+            </tr>
 
 
 
@@ -136,9 +136,7 @@
                                 <a href="#clsName" >clsName</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                    <span class="modifier">Optional</span>
-                                <a href="#cy" >cy</a>
+                                <a href="#mapPins" >mapPins</a>
                             </li>
                         </ul>
                     </td>
@@ -153,22 +151,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#attachListeners" >attachListeners</a>
+                                <a href="#logMapEvent" >logMapEvent</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#createNetwork" >createNetwork</a>
+                                <a href="#logNetworkEvent" >logNetworkEvent</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#destroyNetwork" >destroyNetwork</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnChanges" >ngOnChanges</a>
-                            </li>
-                            <li>
-                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                                <a href="#searchMapDataset" >searchMapDataset</a>
                             </li>
                         </ul>
                     </td>
@@ -183,32 +172,18 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#edges" >edges</a>
+                                <a href="#datasets" >datasets</a>
                             </li>
                             <li>
-                                <a href="#nodes" >nodes</a>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                <a href="#visualization" >visualization</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Outputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#edgeClick" >edgeClick</a>
-                            </li>
-                            <li>
-                                <a href="#nodeClick" >nodeClick</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -236,12 +211,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(el: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>)</code>
+<code>constructor(ga: GoogleAnalyticsService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -259,10 +234,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>el</td>
+                                                        <td>ga</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                                    <code>GoogleAnalyticsService</code>
                                                         </td>
                                                   
                                                     <td>
@@ -285,19 +260,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="edges"></a>
-                        <b>edges</b>
+                        <a name="datasets"></a>
+                        <b>datasets</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Edge.html" target="_self" >EdgeDefinition[]</a></code>
+                        <i>Type : </i>        <code><a href="../interfaces/ContentDatasets.html" target="_self" >ContentDatasets</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:30</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -306,69 +281,51 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="nodes"></a>
-                        <b>nodes</b>
+                        <a name="search"></a>
+                        <b>search</b>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/Node.html" target="_self" >NodeDefinition[]</a></code>
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visualization"></a>
+                        <b>visualization</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#VisualizationType" target="_self" >VisualizationType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Map&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:29</a></div>
                             </td>
                         </tr>
             </tbody>
         </table>
 </section>
-    <section>
-    <h3 id="outputs">Outputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="edgeClick"></a>
-                        <b>edgeClick</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:29</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="nodeClick"></a>
-                        <b>nodeClick</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
-
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:28</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-</section>
     <section>
     <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
         <tbody>
@@ -383,18 +340,18 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>&quot;m4s-network&quot;</code>
+                        <i>Type : </i>    <code>&quot;m4s-visualizer-content&quot;</code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;m4s-network&#x27;</code>
+                        <i>Default value : </i><code>&#x27;m4s-visualizer-content&#x27;</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -413,141 +370,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="attachListeners"></a>
+                    <a name="logMapEvent"></a>
                     <span class="name">
-                        <span class="modifier">Private</span>
-                        <span ><b>attachListeners</b></span>
-                        <a href="#attachListeners"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>logMapEvent</b></span>
+                        <a href="#logMapEvent"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>attachListeners()</code>
+<code>logMapEvent(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: MapMouseEvent)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="81"
-                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:81</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="createNetwork"></a>
-                    <span class="name">
-                        <span class="modifier">Private</span>
-                        <span ><b>createNetwork</b></span>
-                        <a href="#createNetwork"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createNetwork()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:47</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>    <code>Cytoscape</code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="destroyNetwork"></a>
-                    <span class="name">
-                        <span class="modifier">Private</span>
-                        <span ><b>destroyNetwork</b></span>
-                        <a href="#destroyNetwork"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>destroyNetwork()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="77"
-                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:77</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnChanges"></a>
-                    <span class="name">
-                        <span ><b>ngOnChanges</b></span>
-                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:61</a></div>
                 </td>
             </tr>
 
@@ -568,9 +408,21 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>changes</td>
+                                    <td>name</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MapMouseEvent</code>
                                     </td>
 
                                     <td>
@@ -599,24 +451,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnDestroy"></a>
+                    <a name="logNetworkEvent"></a>
                     <span class="name">
-                        <span ><b>ngOnDestroy</b></span>
-                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>logNetworkEvent</b></span>
+                        <a href="#logNetworkEvent"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnDestroy()</code>
+<code>logNetworkEvent(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: <a href="../s/d.html" target="_self">NodeDataDefinition | EdgeDataDefinition</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -625,8 +477,121 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/variables.html#d" target="_self" >NodeDataDefinition | EdgeDataDefinition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
 
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchMapDataset"></a>
+                    <span class="name">
+                        <span ><b>searchMapDataset</b></span>
+                        <a href="#searchMapDataset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchMapDataset(dataset: <a href="../interfaces/MapDataset.html" target="_self">MapDataset</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataset</td>
+                                    <td>
+                                                <code><a href="../interfaces/MapDataset.html" target="_self" >MapDataset</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/MapMarker.html" target="_self" >MapMarker[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
                     </div>
                 </td>
             </tr>
@@ -658,7 +623,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;m4s-network&#x27;</code>
+                        <i>Default value : </i><code>&#x27;m4s-visualizer-content&#x27;</code>
                     </td>
                 </tr>
                 <tr>
@@ -672,7 +637,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -683,24 +648,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="cy"></a>
+                    <a name="mapPins"></a>
                     <span class="name">
-                            <span class="modifier">Private</span>
-                            <span class="modifier">Optional</span>
-                        <span ><b>cy</b></span>
-                        <a href="#cy"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>mapPins</b></span>
+                        <a href="#mapPins"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>Cytoscape</code>
+                        <i>Type : </i>    <code>[]</code>
 
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:33</a></div>
                         </td>
                     </tr>
 
@@ -713,114 +681,109 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  HostBinding,
-  Input,
-  OnChanges,
-  OnDestroy,
-  SimpleChanges,
-  EventEmitter,
-  Output
-} from &#x27;@angular/core&#x27;;
-import cytoscape, { Core as Cytoscape, EdgeDataDefinition, EdgeDefinition, NodeDataDefinition, NodeDefinition, Singular } from &#x27;cytoscape&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, HostBinding, Input } from &#x27;@angular/core&#x27;;
+import { EdgeDataDefinition, NodeDataDefinition } from &#x27;cytoscape&#x27;;
+import { Point } from &#x27;geojson&#x27;;
+import { MapMouseEvent } from &#x27;maplibre-gl&#x27;;
+import { GoogleAnalyticsService } from &#x27;ngx-google-analytics&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+
+import { MapDataset, MapMarker } from &#x27;../../../../map/map&#x27;;
+import { NetworkDataset } from &#x27;../../services/network-dataset-processor.sevice&#x27;;
+
+
+export type VisualizationType &#x3D; &#x27;Map&#x27; | &#x27;Network&#x27;;
+
+export interface ContentDatasets {
+  mapDataset$: Observable&lt;MapDataset&gt;;
+  networkDataset$: Observable&lt;NetworkDataset&gt;;
+}
 
 
 @Component({
-  selector: &#x27;m4s-network&#x27;,
-  template: &#x27;&#x27;,
-  styleUrls: [&#x27;./network.component.scss&#x27;],
+  selector: &#x27;m4s-visualizer-content&#x27;,
+  templateUrl: &#x27;./content.component.html&#x27;,
+  styleUrls: [&#x27;./content.component.scss&#x27;],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NetworkComponent implements OnChanges, OnDestroy {
-  @HostBinding(&#x27;class&#x27;) readonly clsName &#x3D; &#x27;m4s-network&#x27;;
+export class ContentComponent {
+  @HostBinding(&#x27;class&#x27;) readonly clsName &#x3D; &#x27;m4s-visualizer-content&#x27;;
 
-  @Input() nodes: NodeDefinition[];
-  @Input() edges: EdgeDefinition[];
+  @Input() visualization: VisualizationType &#x3D; &#x27;Map&#x27;;
+  @Input() datasets?: ContentDatasets;
+  @Input() search?: string;
 
-  @Output() readonly nodeClick &#x3D; new EventEmitter&lt;NodeDataDefinition&gt;();
-  @Output() readonly edgeClick &#x3D; new EventEmitter&lt;EdgeDataDefinition&gt;();
+  mapPins &#x3D; [];
 
-  private cy?: Cytoscape;
+  constructor(private readonly ga: GoogleAnalyticsService) { }
 
-  constructor(private readonly el: ElementRef) { }
-
-  ngOnDestroy(): void {
-    this.destroyNetwork();
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (&#x27;nodes&#x27; in changes || &#x27;edges&#x27; in changes) {
-      this.destroyNetwork();
-      this.cy &#x3D; this.createNetwork();
-      this.attachListeners();
+  searchMapDataset(dataset: MapDataset): MapMarker[] {
+    const { search } &#x3D; this;
+    if (!search) {
+      return [];
     }
-  }
 
-  private createNetwork(): Cytoscape {
-    return cytoscape({
-      container: this.el.nativeElement,
-      elements: {
-        nodes: this.nodes,
-        edges: this.edges
-      },
-      layout: { name: &#x27;preset&#x27; },
-      style: [
-        {
-          selector: &#x27;node&#x27;,
-          style: {
-            &#x27;label&#x27;: &#x27;data(label)&#x27;,
-            &#x27;height&#x27;: 2000,
-            &#x27;width&#x27;: 2000,
-            &#x27;font-size&#x27;: 4000,
-            &#x27;backgroundColor&#x27;: &#x27;black&#x27;
-          }
-        },
-        {
-          selector: &#x27;edge&#x27;,
-          style: {
-            &#x27;width&#x27;: 1000,
-            &#x27;line-color&#x27;: &#x27;#c0c0c0&#x27;
-          }
-        }
-      ]
-    });
-  }
+    const lcaseSearch &#x3D; search.toLowerCase();
+    const markers: MapMarker[] &#x3D; [];
+    const matchesSearch &#x3D; (label?: string) &#x3D;&gt;
+      label ? label.toLowerCase().includes(lcaseSearch) : false;
 
-  private destroyNetwork(): void {
-    this.cy?.destroy?.();
-  }
-
-  private attachListeners(): void {
-    const { cy } &#x3D; this;
-
-    if (cy) {
-      cy.on(&#x27;tap&#x27;, &#x27;node&#x27;, event &#x3D;&gt; {
-        const data: NodeDataDefinition &#x3D; (event.target as Singular).data();
-        this.nodeClick.emit(data);
-      });
-
-      cy.on(&#x27;tap&#x27;, &#x27;edge&#x27;, event &#x3D;&gt; {
-        const data: EdgeDataDefinition &#x3D; (event.target as Singular).data();
-        this.edgeClick.emit(data);
-      });
+    for (const node of dataset.nodes.features) {
+      const label: string &#x3D; node.properties?.label;
+      if (matchesSearch(label)) {
+        markers.push({
+          coordinates: (node.geometry as Point).coordinates as [number, number],
+          title: label
+        });
+      }
     }
+
+    return markers;
+  }
+
+  logMapEvent(name: string, event: MapMouseEvent): void {
+    this.ga.event(&#x60;${name}_${event.type}&#x60;, &#x27;map_interaction&#x27;, event.lngLat.toString());
+  }
+
+  logNetworkEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
+    this.ga.event(&#x60;${name}_click}&#x60;, &#x27;network_interaction&#x27;, event.id);
   }
 }
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container [ngSwitch]&#x3D;&quot;visualization&quot;&gt;
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Map&#x27;&quot;&gt;
+    &lt;m4s-map *ngIf&#x3D;&quot;datasets?.mapDataset$ | async as dataset&quot; [edgeFeatures]&#x3D;&quot;dataset.edges&quot;
+             [nodeFeatures]&#x3D;&quot;dataset.nodes&quot; [clusterFeatures]&#x3D;&quot;dataset.cluster&quot; [boundaryFeatures]&#x3D;&quot;dataset.boundary&quot;
+             [edgesConfig]&#x3D;&quot;dataset.config?.edgeConfig&quot; [nodesConfig]&#x3D;&quot;dataset.config?.nodeConfig&quot;
+             [initialZoomConfig]&#x3D;&quot;dataset.config?.initialZoom&quot; [mapCenterConfig]&#x3D;&quot;dataset.config?.mapCenter&quot;
+             [textOverlapEnabledZoomConfig]&#x3D;&quot;dataset.config?.textOverlapEnabledZoom&quot;
+             [minimapConfig]&#x3D;&quot;dataset.config?.minimapConfig&quot; [mapMarkers]&#x3D;&quot;searchMapDataset(dataset)&quot;
+             (nodeClick)&#x3D;&quot;logMapEvent(&#x27;node&#x27;, $event)&quot; (edgeClick)&#x3D;&quot;logMapEvent(&#x27;edge&#x27;, $event)&quot;&gt;&lt;/m4s-map&gt;
+  &lt;/ng-container&gt;
+
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Network&#x27;&quot;&gt;
+    &lt;m4s-network *ngIf&#x3D;&quot;datasets?.networkDataset$ | async as dataset&quot; [edges]&#x3D;&quot;dataset.edges&quot; [nodes]&#x3D;&quot;dataset.nodes&quot;
+                 (nodeClick)&#x3D;&quot;logNetworkEvent(&#x27;node&#x27;, $event)&quot; (edgeClick)&#x3D;&quot;logNetworkEvent(&#x27;edge&#x27;, $event)&quot;&gt;
+    &lt;/m4s-network&gt;
+  &lt;/ng-container&gt;
+&lt;/ng-container&gt;
+</code></pre>
+    </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./network.component.scss</code>
+                    <code>./content.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">:host {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -848,10 +811,10 @@ export class NetworkComponent implements OnChanges, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-container [ngSwitch]="visualization">  <ng-container *ngSwitchCase="\'Map\'">    <m4s-map *ngIf="datasets?.mapDataset$ | async as dataset" [edgeFeatures]="dataset.edges"             [nodeFeatures]="dataset.nodes" [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"             [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"             [initialZoomConfig]="dataset.config?.initialZoom" [mapCenterConfig]="dataset.config?.mapCenter"             [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"             [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="searchMapDataset(dataset)"             (nodeClick)="logMapEvent(\'node\', $event)" (edgeClick)="logMapEvent(\'edge\', $event)"></m4s-map>  </ng-container>  <ng-container *ngSwitchCase="\'Network\'">    <m4s-network *ngIf="datasets?.networkDataset$ | async as dataset" [edges]="dataset.edges" [nodes]="dataset.nodes"                 (nodeClick)="logNetworkEvent(\'node\', $event)" (edgeClick)="logNetworkEvent(\'edge\', $event)">    </m4s-network>  </ng-container></ng-container></div>'
     var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'ContentComponent', 'selector': 'm4s-visualizer-content'},{'name': 'DatasetSearchComponent', 'selector': 'm4s-dataset-search'},{'name': 'DatasetSelectorComponent', 'selector': 'm4s-dataset-selector'},{'name': 'DatasetSummaryComponent', 'selector': 'm4s-dataset-summary'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'MenuComponent', 'selector': 'm4s-visualizer-menu'},{'name': 'NetworkComponent', 'selector': 'm4s-network'},{'name': 'VisualizationSelectorComponent', 'selector': 'm4s-visualization-selector'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
     var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
-    var ACTUAL_COMPONENT = {'name': 'NetworkComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ContentComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -895,7 +858,7 @@ export class NetworkComponent implements OnChanges, OnDestroy {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'NetworkComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContentComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

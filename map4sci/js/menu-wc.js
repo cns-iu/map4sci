@@ -108,7 +108,75 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/BasePopupModule.html" data-type="entity-link" >BasePopupModule</a>
                             </li>
                             <li class="link">
+                                <a href="modules/ContentModule.html" data-type="entity-link" >ContentModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-ContentModule-457e18e1596722383b0b751254f96e3f9c43c16ab49d432d2d852fdc3bc10948c4fd00f522f7f6591716465a749c2b3b5658bde3d02a91eedd7aeb8636ff4a2a"' : 'data-target="#xs-components-links-module-ContentModule-457e18e1596722383b0b751254f96e3f9c43c16ab49d432d2d852fdc3bc10948c4fd00f522f7f6591716465a749c2b3b5658bde3d02a91eedd7aeb8636ff4a2a"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ContentModule-457e18e1596722383b0b751254f96e3f9c43c16ab49d432d2d852fdc3bc10948c4fd00f522f7f6591716465a749c2b3b5658bde3d02a91eedd7aeb8636ff4a2a"' :
+                                            'id="xs-components-links-module-ContentModule-457e18e1596722383b0b751254f96e3f9c43c16ab49d432d2d852fdc3bc10948c4fd00f522f7f6591716465a749c2b3b5658bde3d02a91eedd7aeb8636ff4a2a"' }>
+                                            <li class="link">
+                                                <a href="components/ContentComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >ContentComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
                                 <a href="modules/CoreModule.html" data-type="entity-link" >CoreModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/DatasetSearchModule.html" data-type="entity-link" >DatasetSearchModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-DatasetSearchModule-9f76588521b362cae8fa925bb22441fa9f394e70008a74e94e9dc2f31125e79918ebc913ff058f2f60b413db9b074890766785d946e6e4430b0b43eeb7469610"' : 'data-target="#xs-components-links-module-DatasetSearchModule-9f76588521b362cae8fa925bb22441fa9f394e70008a74e94e9dc2f31125e79918ebc913ff058f2f60b413db9b074890766785d946e6e4430b0b43eeb7469610"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-DatasetSearchModule-9f76588521b362cae8fa925bb22441fa9f394e70008a74e94e9dc2f31125e79918ebc913ff058f2f60b413db9b074890766785d946e6e4430b0b43eeb7469610"' :
+                                            'id="xs-components-links-module-DatasetSearchModule-9f76588521b362cae8fa925bb22441fa9f394e70008a74e94e9dc2f31125e79918ebc913ff058f2f60b413db9b074890766785d946e6e4430b0b43eeb7469610"' }>
+                                            <li class="link">
+                                                <a href="components/DatasetSearchComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DatasetSearchComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/DatasetSelectorModule.html" data-type="entity-link" >DatasetSelectorModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-DatasetSelectorModule-c21d40e4a088e45cc97071581da2016956a81e4b1ac80c263c7995beadf1f69c6aea5f695e456e8dacb15500e2749bbffa17f042338ef445515dafa3e2ab387c"' : 'data-target="#xs-components-links-module-DatasetSelectorModule-c21d40e4a088e45cc97071581da2016956a81e4b1ac80c263c7995beadf1f69c6aea5f695e456e8dacb15500e2749bbffa17f042338ef445515dafa3e2ab387c"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-DatasetSelectorModule-c21d40e4a088e45cc97071581da2016956a81e4b1ac80c263c7995beadf1f69c6aea5f695e456e8dacb15500e2749bbffa17f042338ef445515dafa3e2ab387c"' :
+                                            'id="xs-components-links-module-DatasetSelectorModule-c21d40e4a088e45cc97071581da2016956a81e4b1ac80c263c7995beadf1f69c6aea5f695e456e8dacb15500e2749bbffa17f042338ef445515dafa3e2ab387c"' }>
+                                            <li class="link">
+                                                <a href="components/DatasetSelectorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DatasetSelectorComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/DatasetSummaryModule.html" data-type="entity-link" >DatasetSummaryModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-DatasetSummaryModule-f57894166397be395b2fd32862445d330017cb3a9c039bb51214630e25e5ced139d038beaa39466931979cc00718b8c107fcf2c2b03afcd353308889074820f6"' : 'data-target="#xs-components-links-module-DatasetSummaryModule-f57894166397be395b2fd32862445d330017cb3a9c039bb51214630e25e5ced139d038beaa39466931979cc00718b8c107fcf2c2b03afcd353308889074820f6"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-DatasetSummaryModule-f57894166397be395b2fd32862445d330017cb3a9c039bb51214630e25e5ced139d038beaa39466931979cc00718b8c107fcf2c2b03afcd353308889074820f6"' :
+                                            'id="xs-components-links-module-DatasetSummaryModule-f57894166397be395b2fd32862445d330017cb3a9c039bb51214630e25e5ced139d038beaa39466931979cc00718b8c107fcf2c2b03afcd353308889074820f6"' }>
+                                            <li class="link">
+                                                <a href="components/DatasetSummaryComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DatasetSummaryComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                             </li>
                             <li class="link">
                                 <a href="modules/FooterModule.html" data-type="entity-link" >FooterModule</a>
@@ -216,6 +284,23 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                             </li>
                             <li class="link">
+                                <a href="modules/MenuModule.html" data-type="entity-link" >MenuModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-MenuModule-5f7aed64dcc4c88d626bf6d0183667e3730da9ec1480226d05a3e71a33b48e2abb32cf7dbe39bf4fc3787d065496e5569d6bbfe6af4ae675c27c8ce1b87527dd-1"' : 'data-target="#xs-components-links-module-MenuModule-5f7aed64dcc4c88d626bf6d0183667e3730da9ec1480226d05a3e71a33b48e2abb32cf7dbe39bf4fc3787d065496e5569d6bbfe6af4ae675c27c8ce1b87527dd-1"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-MenuModule-5f7aed64dcc4c88d626bf6d0183667e3730da9ec1480226d05a3e71a33b48e2abb32cf7dbe39bf4fc3787d065496e5569d6bbfe6af4ae675c27c8ce1b87527dd-1"' :
+                                            'id="xs-components-links-module-MenuModule-5f7aed64dcc4c88d626bf6d0183667e3730da9ec1480226d05a3e71a33b48e2abb32cf7dbe39bf4fc3787d065496e5569d6bbfe6af4ae675c27c8ce1b87527dd-1"' }>
+                                            <li class="link">
+                                                <a href="components/MenuComponent-1.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >MenuComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
                                 <a href="modules/MousePositionCollectorModule.html" data-type="entity-link" >MousePositionCollectorModule</a>
                             </li>
                             <li class="link">
@@ -242,16 +327,33 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ThemingModule.html" data-type="entity-link" >ThemingModule</a>
                             </li>
                             <li class="link">
-                                <a href="modules/VisualizerModule.html" data-type="entity-link" >VisualizerModule</a>
+                                <a href="modules/VisualizationSelectorModule.html" data-type="entity-link" >VisualizationSelectorModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' : 'data-target="#xs-components-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' }>
+                                            'data-target="#components-links-module-VisualizationSelectorModule-d7ce1b2a26664f4b0faf585be34012cdea20656658a70704db2558fcbc3c188d6564fa0b3adf0f641c978a8cd0c745bb18d8c14956e96803660c97d59b3a894a"' : 'data-target="#xs-components-links-module-VisualizationSelectorModule-d7ce1b2a26664f4b0faf585be34012cdea20656658a70704db2558fcbc3c188d6564fa0b3adf0f641c978a8cd0c745bb18d8c14956e96803660c97d59b3a894a"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' :
-                                            'id="xs-components-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-VisualizationSelectorModule-d7ce1b2a26664f4b0faf585be34012cdea20656658a70704db2558fcbc3c188d6564fa0b3adf0f641c978a8cd0c745bb18d8c14956e96803660c97d59b3a894a"' :
+                                            'id="xs-components-links-module-VisualizationSelectorModule-d7ce1b2a26664f4b0faf585be34012cdea20656658a70704db2558fcbc3c188d6564fa0b3adf0f641c978a8cd0c745bb18d8c14956e96803660c97d59b3a894a"' }>
+                                            <li class="link">
+                                                <a href="components/VisualizationSelectorComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >VisualizationSelectorComponent</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/VisualizerModule.html" data-type="entity-link" >VisualizerModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' : 'data-target="#xs-components-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' :
+                                            'id="xs-components-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' }>
                                             <li class="link">
                                                 <a href="components/VisualizerComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >VisualizerComponent</a>
                                             </li>
@@ -259,13 +361,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' : 'data-target="#xs-injectables-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' }>
+                                        'data-target="#injectables-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' : 'data-target="#xs-injectables-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' :
-                                        'id="xs-injectables-links-module-VisualizerModule-40f77541b0c84f8c08b0085b7f69843504f418bb51ef8904e0c29866f29feab456205f1b33a588625c8ca4c9da5129f7bd4f878980c8d87716cce1fda0ef4a51"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' :
+                                        'id="xs-injectables-links-module-VisualizerModule-768804ed6a06c96eedcd3124e1ccdee286cc5006cbe247cc3ebefc20a938473af41eb99078b2107f297da02f4da731973e94a81154538be84f02cc708df71556"' }>
                                         <li class="link">
                                             <a href="injectables/MapDataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >MapDataService</a>
                                         </li>
@@ -355,6 +457,15 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/Cluster.html" data-type="entity-link" >Cluster</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/ContentDatasets.html" data-type="entity-link" >ContentDatasets</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Dataset.html" data-type="entity-link" >Dataset</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/DatasetSummary.html" data-type="entity-link" >DatasetSummary</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/Edge.html" data-type="entity-link" >Edge</a>
                             </li>
                             <li class="link">
@@ -392,6 +503,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="interfaces/MarkdownModalData.html" data-type="entity-link" >MarkdownModalData</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/MenuDataset.html" data-type="entity-link" >MenuDataset</a>
+                            </li>
+                            <li class="link">
+                                <a href="interfaces/Metric.html" data-type="entity-link" >Metric</a>
                             </li>
                             <li class="link">
                                 <a href="interfaces/MiniMapOptions.html" data-type="entity-link" >MiniMapOptions</a>

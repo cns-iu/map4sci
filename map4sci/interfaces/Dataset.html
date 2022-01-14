@@ -46,7 +46,7 @@
   <li>Interfaces</li>
   <li
   >
-  MapDatasetCache</li>
+  Dataset</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -64,161 +64,140 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>projects/map4sci/src/app/map/map.ts</code>
+            <code>projects/map4sci/src/app/pages/visualizer/visualizer.component.ts</code>
         </p>
 
 
 
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../interfaces/MenuDataset.html" target="_self" >MenuDataset</a></code>
+            </p>
 
 
 
-            <section>
-    <h3 id="inputs">Indexable</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <code>[key: string]:    <code>Immutable&lt;MapDataset&gt;</code>
-</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">projects/map4sci/src/app/map/map.ts:103</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-</section>
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Any, Immutable } from &#x27;@angular-ru/common/typings&#x27;;
-import { FeatureCollection } from &#x27;geojson&#x27;;
-import { LngLatBoundsLike, Style } from &#x27;maplibre-gl&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Observable, Subscription } from &#x27;rxjs&#x27;;
+import { filter, map, shareReplay, take } from &#x27;rxjs/operators&#x27;;
+
+import { MapDatasetDirectory } from &#x27;../../map/map&#x27;;
+import { MapDataService } from &#x27;../../services/map-data.service&#x27;;
+import { ContentDatasets, VisualizationType } from &#x27;./components/content/content.component&#x27;;
+import { MenuDataset } from &#x27;./components/menu/menu.component&#x27;;
+import { NetworkDatasetProcessor } from &#x27;./services/network-dataset-processor.sevice&#x27;;
 
 
-export interface Edge {
-  level: number;
-  zoom: number;
-  color?: string;
-  width?: number;
-  opacity?: number;
-  borderOpacity?: number;
-  borderColor?: string;
-  borderWidth?: number;
+export interface Dataset extends MenuDataset, ContentDatasets { }
+
+
+@Component({
+  selector: &#x27;m4s-visualizer&#x27;,
+  templateUrl: &#x27;./visualizer.component.html&#x27;,
+  styleUrls: [&#x27;./visualizer.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class VisualizerComponent implements OnDestroy {
+  readonly visualizations: VisualizationType[] &#x3D; [&#x27;Map&#x27;, &#x27;Network&#x27;];
+  selectedVisualization: VisualizationType &#x3D; &#x27;Map&#x27;;
+
+  readonly datasets$ &#x3D; this.setupDatasets();
+  selectedDataset?: Dataset;
+  datasetSearch?: string;
+
+  opened &#x3D; true;
+
+  private readonly subscriptions &#x3D; new Subscription();
+
+  constructor(
+    private readonly mapData: MapDataService,
+    private readonly networkDatasetProcessor: NetworkDatasetProcessor,
+    private readonly cdr: ChangeDetectorRef
+  ) {
+    this.setupInitialDatasetSelection();
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
+
+  setSelectedVisualization(visualization: VisualizationType): void {
+    this.selectedVisualization &#x3D; visualization;
+  }
+
+  setSelectedDataset(dataset: Dataset): void {
+    this.selectedDataset &#x3D; dataset;
+  }
+
+  searchDataset(value: string): void {
+    this.datasetSearch &#x3D; value;
+  }
+
+  clearDatasetSearch(): void {
+    this.datasetSearch &#x3D; undefined;
+  }
+
+  toggle(): void {
+    this.opened &#x3D; !this.opened;
+  }
+
+  private setupDatasets(): Observable&lt;Dataset[]&gt; {
+    const { mapData, networkDatasetProcessor } &#x3D; this;
+    const dirToDataset &#x3D; (dir: MapDatasetDirectory): Dataset &#x3D;&gt; {
+      const mapDataset$ &#x3D; mapData.getDataset(dir.id).pipe(shareReplay(1));
+      const networkDataset$ &#x3D; mapDataset$.pipe(
+        map(ds &#x3D;&gt; networkDatasetProcessor.process(ds))
+      );
+      const searchableItems$ &#x3D; mapDataset$.pipe(
+        map(ds &#x3D;&gt; ds.nodes.features.map(node &#x3D;&gt; node.properties?.label)),
+        map(options &#x3D;&gt; options.map(opt &#x3D;&gt; ({ id: opt, value: opt }))),
+      );
+      const summaries$ &#x3D; mapDataset$.pipe(
+        map(ds &#x3D;&gt; ({
+          label: dir.name,
+          numNodes: ds.nodes.features.length,
+          numEdges: ds.edges.features.length
+        })),
+      );
+
+      return {
+        id: dir.id,
+        label: dir.name,
+        mapDataset$,
+        networkDataset$,
+        searchableItems$,
+        summaries$
+      };
+    };
+
+    return mapData.datasetDirectory$.pipe(
+      map(dirs &#x3D;&gt; dirs.map(dirToDataset))
+    );
+  }
+
+  private setupInitialDatasetSelection(): void {
+    const { datasets$, cdr, subscriptions } &#x3D; this;
+    const firstDataset$ &#x3D; datasets$.pipe(
+      filter(datasets &#x3D;&gt; datasets.length &gt; 0),
+      map(datasets &#x3D;&gt; datasets[0]),
+      take(1)
+    );
+    const sub &#x3D; firstDataset$.subscribe(dataset &#x3D;&gt; {
+      if (this.selectedDataset &#x3D;&#x3D;&#x3D; undefined) {
+        this.setSelectedDataset(dataset);
+        cdr.markForCheck();
+      }
+    });
+
+    subscriptions.add(sub);
+  }
 }
-
-export interface Node {
-  level: number;
-  zoom: number;
-  fontSize: number;
-}
-
-export interface Cluster {
-  fillOpacity: number;
-  borderLineWidth: number;
-  borderLineOpacity: number;
-  borderLineMinZoom: number;
-}
-
-export interface MapSources {
-  clusters: FeatureCollection;
-  nodes: FeatureCollection;
-}
-
-export type ZoomLevel &#x3D; [number, number, number];
-export interface MiniMapOptions {
-  id: number | string;
-  width: string;
-  height: string;
-  style: Style;
-  center: [number, number];
-  zoom: number;
-  containerStyles: string;
-  zoomAdjust: null | (() &#x3D;&gt; unknown);
-  zoomLevels: ZoomLevel[];
-  edgeColor: string;
-  edgeWidth: number;
-  edgeOpacity: number;
-  fillColor: string;
-  fillOpacity: number;
-  dragPan: boolean;
-  scrollZoom: boolean;
-  boxZoom: boolean;
-  dragRotate: boolean;
-  keyboard: boolean;
-  doubleClickZoom: boolean;
-  touchZoomRotate: boolean;
-  maxBounds?: LngLatBoundsLike;
-  bounds?: Any;
-}
-
-export type PopupContent &#x3D; (string | [string, ((input: Any) &#x3D;&gt; string)])[];
-
-export interface PopupLayer {
-  layer: string;
-  content: PopupContent;
-}
-
-export interface MapMarkerConfig {
-  color?: string;
-  rotation?: number;
-}
-export interface MapMarker {
-  config?: MapMarkerConfig;
-  coordinates: [number, number];
-  title: string;
-}
-
-export interface ZoomLookupItem {
-  zoom: number;
-}
-export type ZoomLookup &#x3D; ZoomLookupItem[];
-
-export interface MapDatasetConfig {
-  nodeConfig?: Node[];
-  edgeConfig?: Edge[];
-  minimapConfig?: MiniMapOptions;
-  mapCenter?: [number, number];
-  initialZoom?: number;
-  textOverlapEnabledZoom?: number;
-}
-
-export interface MapDataset {
-  boundary: FeatureCollection;
-  cluster: FeatureCollection;
-  edges: FeatureCollection;
-  nodes: FeatureCollection;
-  config?: MapDatasetConfig;
-
-  [id: string]: FeatureCollection | MapDatasetConfig | undefined;
-}
-
-export interface MapDatasetCache {
-  [key: string]: Immutable&lt;MapDataset&gt;;
-}
-
-export interface MapDatasetDirectory {
-  id: string;
-  name: string;
-  dir: string;
-  config?: string;
-}
-
-export const EMPTY_FEATURES: FeatureCollection &#x3D; {
-  type: &#x27;FeatureCollection&#x27;,
-  features: []
-};
-
-export const EMPTY_DATASET: MapDataset &#x3D; {
-  boundary: EMPTY_FEATURES,
-  cluster: EMPTY_FEATURES,
-  edges: EMPTY_FEATURES,
-  nodes: EMPTY_FEATURES
-};
 </code></pre>
     </div>
 </div>
@@ -255,7 +234,7 @@ export const EMPTY_DATASET: MapDataset &#x3D; {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'MapDatasetCache.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'Dataset.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
