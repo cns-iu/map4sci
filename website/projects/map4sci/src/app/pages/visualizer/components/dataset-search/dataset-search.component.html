@@ -1,0 +1,17 @@
+<mat-form-field class="form" appearance="fill">
+  <mat-label>Search...</mat-label>
+  <input matInput type="text" placeholder="Search term" gaEvent="search_started" gaBind="focus"
+         [formControl]="controller" [matAutocomplete]="auto" [matAutocompleteDisabled]="autoCompleteDisabled">
+
+  <mat-autocomplete autoActiveFirstOption [displayWith]="getValue" #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredItems$ | async" gaEvent="search_autocomplete_value_selected"
+                [gaLabel]="option.id" [value]="option">
+      {{ option.value }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+<button mat-flat-button class="search" gaEvent="search_button_clicked" [gaLabel]="(buttonType$ | async)!"
+        [disabled]="buttonDisabled$ | async" (click)="buttonClick.emit()">
+  {{ buttonType$ | async }}
+</button>

@@ -1,0 +1,9 @@
+<mat-form-field class="form" appearance="fill" gaEvent="data_set_selection_started" gaBind="focus">
+  <mat-label>Select data set ...</mat-label>
+  <mat-select [value]="selectedDataset" [compareWith]="datasetEquals"
+              (selectionChange)="selectDataset($event.value)">
+    <mat-option *ngFor="let dataset of datasets" gaEvent="data_set_selected" [gaLabel]="dataset.id" [value]="dataset">
+      {{ dataset.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

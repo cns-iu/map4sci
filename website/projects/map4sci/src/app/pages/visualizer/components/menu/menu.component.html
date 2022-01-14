@@ -1,0 +1,25 @@
+<section *ngIf="visualizations.length > 1">
+  <h4>Visualization Type</h4>
+
+  <m4s-visualization-selector class="vis-selector" [visualizations]="visualizations"
+                              [selectedVisualization]="selectedVisualization"
+                              (visualizationSelected)="setSelectedVisualization($event)">
+  </m4s-visualization-selector>
+</section>
+<section>
+  <h4>Dataset Selection</h4>
+
+  <m4s-dataset-selector class="ds-selector" [datasets]="datasets" [selectedDataset]="selectedDataset"
+                        (datasetSelected)="setSelectedDataset($event)">
+  </m4s-dataset-selector>
+
+  <m4s-dataset-search class="ds-search" [items]="(selectedDataset?.searchableItems$ | async) ?? []"
+                      (searchClick)="datasetSearched.emit($event)" (clearClick)="datasetSearchCleared.emit()">
+  </m4s-dataset-search>
+</section>
+<section>
+  <h4>Dataset Statistics</h4>
+
+  <m4s-dataset-summary class="ds-summary" [summary]="(selectedDataset?.summaries$ | async) ?? undefined">
+  </m4s-dataset-summary>
+</section>

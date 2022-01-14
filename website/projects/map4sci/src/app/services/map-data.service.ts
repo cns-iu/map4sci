@@ -28,15 +28,6 @@ export class MapDataService implements OnDestroy {
     this.http.get<MapDatasetDirectory[]>('assets/datasets/index.json')
       .pipe(take(1), tap((dir) => this.datasetDirectorySubject.next(dir)))
       .subscribe();
-
-    // Set current dataset to the 'first' dataset whenever a directory is loaded
-    this.subscriptions.add(
-      this.datasetDirectory$.pipe(tap((dir) => {
-        if (dir.length > 0) {
-          this.setDataset(dir[0].id);
-        }
-      })).subscribe()
-    );
   }
 
   ngOnDestroy(): void {

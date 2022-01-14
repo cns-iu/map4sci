@@ -1,67 +1,30 @@
-<div class="map-wrapper">
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" gaCategory="sidebar_interactions" [(opened)]="opened">
-      <form>
-        <mat-form-field appearance="fill" *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1"
-                        gaEvent="data_set_selection_started" gaBind="focus" class="form-field">
-          <mat-label>Select data set ...</mat-label>
-          <mat-select class="dataset-selector" (selectionChange)="mapDataSwitcherChange($event.value)" value="test">
-            <mat-option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" gaEvent="data_set_selected"
-                        [gaLabel]="dataset.name" [value]="dataset.id">
-              {{ dataset.name }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" gaCategory="sidebar_interactions" [(opened)]="opened" #sidenav>
+    <m4s-visualizer-menu [visualizations]="visualizations" [selectedVisualization]="selectedVisualization"
+                         [datasets]="(datasets$ | async) ?? []" [selectedDataset]="selectedDataset"
+                         (visualizationSelected)="setSelectedVisualization($event)"
+                         (datasetSelected)="setSelectedDataset($event)" (datasetSearched)="searchDataset($event)"
+                         (datasetSearchCleared)="clearDatasetSearch()">
+    </m4s-visualizer-menu>
+  </mat-sidenav>
 
-        <mat-form-field class="w-100" appearance="fill">
-          <mat-label>Search...</mat-label>
-          <input type="text" [(ngModel)]="searchTerm" placeholder="Search term" aria-label="Search field" matInput
-                 gaEvent="search_started" gaBind="focus" [formControl]="searchControl" [matAutocomplete]="auto">
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-            <mat-option *ngFor="let option of filteredOptions | async" gaEvent="search_autocomplete_value_selected"
-                        [gaLabel]="option" [value]="option">
-              {{option}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-      </form>
-      <button mat-flat-button class="search-button" gaEvent="search_button_clicked" [gaLabel]="buttonTitle"
-              [disabled]="buttonDisabled" (click)="searchButtonClick()">
-        {{ buttonTitle }}
+  <mat-sidenav-content>
+    <p class="toggle" gaCategory="sidebar_toggle_interactions">
+      <button mat-button gaEvent="opened" (click)="sidenav.toggle(); toggle()" [class.hidden]="opened">
+        <mat-icon aria-hidden="false" aria-label="Open side drawer">
+          arrow_right
+        </mat-icon>
       </button>
-      <mat-button-toggle-group class="switch-button" name="switchButton" (change)="switchGraph()">
-        <mat-button-toggle class="switch-toggle" value="Map" checked="true">Map</mat-button-toggle>
-        <mat-button-toggle class="switch-toggle" value="Network">Network</mat-button-toggle>
-      </mat-button-toggle-group>
-    </mat-sidenav>
 
-    <mat-sidenav-content>
-      <p gaCategory="sidebar_toggle_interactions">
-        <button class="drawer-toggle" mat-button gaEvent="opened" (click)="sidenav.toggle(); toggle()"
-                [class.hidden]="opened">
-          <mat-icon class="expand-collapse-icon" aria-hidden="false" aria-label="Open side drawer">
-            arrow_right
-          </mat-icon>
-        </button>
+      <button mat-button gaEvent="closed" (click)="sidenav.toggle(); toggle()" [class.hidden]="!opened">
+        <mat-icon aria-hidden="false" aria-label="Close side drawer">
+          arrow_left
+        </mat-icon>
+      </button>
+    </p>
 
-        <button class="drawer-toggle" mat-button gaEvent="closed" (click)="sidenav.toggle(); toggle()"
-                [class.hidden]="!opened">
-          <mat-icon class="expand-collapse-icon" aria-hidden="false" aria-label="Close side drawer">
-            arrow_left
-          </mat-icon>
-        </button>
-      </p>
-
-      <m4s-network *ngIf="displayNetwork" [edges]="networkDataset.edges" [nodes]="networkDataset.nodes"
-                (nodeClick)="logNetworkEvent('node', $event)" (edgeClick)="logNetworkEvent('edge', $event)"></m4s-network>
-
-      <m4s-map *ngIf="displayMap" [edgeFeatures]="dataset.edges" [nodeFeatures]="dataset.nodes"
-               [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"
-               [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"
-               [initialZoomConfig]="dataset.config?.initialZoom" [mapCenterConfig]="dataset.config?.mapCenter"
-               [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
-               [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="mapPins"
-               (nodeClick)="logMouseEvent('node', $event)" (edgeClick)="logMouseEvent('edge', $event)"></m4s-map>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
+    <m4s-visualizer-content [visualization]="selectedVisualization" [datasets]="selectedDataset"
+                            [search]="datasetSearch">
+    </m4s-visualizer-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
