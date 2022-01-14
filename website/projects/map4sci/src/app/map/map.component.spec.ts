@@ -1,3 +1,0 @@
-describe('MapComponent', () => {
-  // Add tests
-});

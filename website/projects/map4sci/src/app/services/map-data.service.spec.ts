@@ -1,3 +1,0 @@
-describe('MapDataService', () => {
-  // Add tests
-});
