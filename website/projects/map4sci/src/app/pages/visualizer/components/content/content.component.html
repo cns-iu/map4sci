@@ -1,0 +1,17 @@
+<ng-container [ngSwitch]="visualization">
+  <ng-container *ngSwitchCase="'Map'">
+    <m4s-map *ngIf="datasets?.mapDataset$ | async as dataset" [edgeFeatures]="dataset.edges"
+             [nodeFeatures]="dataset.nodes" [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"
+             [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"
+             [initialZoomConfig]="dataset.config?.initialZoom" [mapCenterConfig]="dataset.config?.mapCenter"
+             [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"
+             [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="searchMapDataset(dataset)"
+             (nodeClick)="logMapEvent('node', $event)" (edgeClick)="logMapEvent('edge', $event)"></m4s-map>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'Network'">
+    <m4s-network *ngIf="datasets?.networkDataset$ | async as dataset" [edges]="dataset.edges" [nodes]="dataset.nodes"
+                 (nodeClick)="logNetworkEvent('node', $event)" (edgeClick)="logNetworkEvent('edge', $event)">
+    </m4s-network>
+  </ng-container>
+</ng-container>
