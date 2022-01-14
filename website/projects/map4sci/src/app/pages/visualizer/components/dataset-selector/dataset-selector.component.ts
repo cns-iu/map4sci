@@ -19,7 +19,7 @@ export class DatasetSelectorComponent<T extends SelectableDataset = SelectableDa
   @Output() readonly datasetSelected = new EventEmitter<T>();
 
   datasetEquals(this: void, d1: T, d2: T): boolean {
-    return d1.id === d2.id;
+    return d1?.id === d2?.id;
   }
 
   selectDataset(dataset: T): void {
