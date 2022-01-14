@@ -190,6 +190,7 @@ export interface NetworkDataset {
 interface NodeProperties {
   label: string;
   pos: string;
+  level: number;
 }
 
 interface EdgeProperties {
@@ -206,29 +207,28 @@ interface EdgeProperties {
 export class NetworkDatasetProcessor {
   process(dataset: MapDataset): NetworkDataset {
     const edges &#x3D; this.processEdges(dataset);
-    const nodes &#x3D; this.processNodes(dataset, edges);
+    const nodes &#x3D; this.processNodes(dataset);
 
     return { nodes, edges };
   }
 
-  private processNodes(dataset: MapDataset, edges: EdgeDefinition[]): NodeDefinition[] {
+  private processNodes(dataset: MapDataset): NodeDefinition[] {
     const { nodes } &#x3D; dataset;
-    const edgeEndpoints &#x3D; new Set&lt;unknown&gt;(this.edgeEndpoints(edges));
     const definitions &#x3D; nodes.features
-      .filter(({ id }) &#x3D;&gt; edgeEndpoints.has(id))
       .map(({ id, properties }): NodeDefinition &#x3D;&gt; {
-        const { label, pos } &#x3D; properties as NodeProperties;
+        const { label, pos, level } &#x3D; properties as NodeProperties;
         const [x, y] &#x3D; pos.split(&#x27;,&#x27;);
 
         return {
           group: &#x27;nodes&#x27;,
           data: {
             id: id as string,
-            label
+            label,
+            level
           },
           position: {
             x: parseInt(x),
-            y: parseInt(y)
+            y: -parseInt(y)
           }
         };
       });
@@ -239,17 +239,17 @@ export class NetworkDatasetProcessor {
   private processEdges(dataset: MapDataset): EdgeDefinition[] {
     const { edges } &#x3D; dataset;
     const definitions &#x3D; edges.features
-      .filter(edge &#x3D;&gt; (edge.properties as EdgeProperties).level &#x3D;&#x3D;&#x3D; 1)
-      .map(({ id, properties }): EdgeDefinition &#x3D;&gt; {
-        const { src, dest, label } &#x3D; properties as EdgeProperties;
+      .map(({ properties }, i): EdgeDefinition &#x3D;&gt; {
+        const { src, dest, label, level } &#x3D; properties as EdgeProperties;
 
         return {
           group: &#x27;edges&#x27;,
           data: {
-            id: id as string,
+            id: &#x27;edge-&#x27; + i,
             label: label,
             source: src,
-            target: dest
+            target: dest,
+            level: level
           }
         };
       });

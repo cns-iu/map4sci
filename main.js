@@ -3028,26 +3028,25 @@ __webpack_require__.r(__webpack_exports__);
 class NetworkDatasetProcessor {
     process(dataset) {
         const edges = this.processEdges(dataset);
-        const nodes = this.processNodes(dataset, edges);
+        const nodes = this.processNodes(dataset);
         return { nodes, edges };
     }
-    processNodes(dataset, edges) {
+    processNodes(dataset) {
         const { nodes } = dataset;
-        const edgeEndpoints = new Set(this.edgeEndpoints(edges));
         const definitions = nodes.features
-            .filter(({ id }) => edgeEndpoints.has(id))
             .map(({ id, properties }) => {
-            const { label, pos } = properties;
+            const { label, pos, level } = properties;
             const [x, y] = pos.split(',');
             return {
                 group: 'nodes',
                 data: {
                     id: id,
-                    label
+                    label,
+                    level
                 },
                 position: {
                     x: parseInt(x),
-                    y: parseInt(y)
+                    y: -parseInt(y)
                 }
             };
         });
@@ -3056,16 +3055,16 @@ class NetworkDatasetProcessor {
     processEdges(dataset) {
         const { edges } = dataset;
         const definitions = edges.features
-            .filter(edge => edge.properties.level === 1)
-            .map(({ id, properties }) => {
-            const { src, dest, label } = properties;
+            .map(({ properties }, i) => {
+            const { src, dest, label, level } = properties;
             return {
                 group: 'edges',
                 data: {
-                    id: id,
+                    id: 'edge-' + i,
                     label: label,
                     source: src,
-                    target: dest
+                    target: dest,
+                    level: level
                 }
             };
         });
@@ -3261,7 +3260,7 @@ VisualizerComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵclassProp"]("hidden", !ctx.opened);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_9__["ɵɵproperty"]("visualization", ctx.selectedVisualization)("datasets", ctx.selectedDataset)("search", ctx.datasetSearch);
-    } }, directives: [_angular_material_sidenav__WEBPACK_IMPORTED_MODULE_10__.MatSidenavContainer, _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_10__.MatSidenav, ngx_google_analytics__WEBPACK_IMPORTED_MODULE_11__.GaEventCategoryDirective, _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_3__.MenuComponent, _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_10__.MatSidenavContent, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButton, ngx_google_analytics__WEBPACK_IMPORTED_MODULE_11__.GaEventDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__.MatIcon, _components_content_content_component__WEBPACK_IMPORTED_MODULE_0__.ContentComponent], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_14__.AsyncPipe], styles: ["[_nghost-%COMP%] {\n  display: block;\n}\n[_nghost-%COMP%], [_nghost-%COMP%]   mat-sidenav-container[_ngcontent-%COMP%] {\n  width: 100%;\n  height: calc(100vh - 6rem);\n}\n[_nghost-%COMP%]   mat-sidenav[_ngcontent-%COMP%] {\n  width: 20%;\n  height: 100%;\n  padding: 0.5rem;\n  background-color: var(--background);\n  border: none;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%] {\n  background-color: white;\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%]   .toggle[_ngcontent-%COMP%] {\n  z-index: 1;\n  position: relative;\n  top: 3rem;\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%]   .toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  min-width: 1.5rem;\n  padding: 0.25rem;\n  height: 3rem;\n  border: none;\n  background-color: var(--background);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  border-radius: 3px;\n  outline: none;\n  cursor: pointer;\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%]   .toggle[_ngcontent-%COMP%]   button.hidden[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpc3VhbGl6ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFBO0FBQ0Y7QUFDRTtFQUNFLFdBQUE7RUFDQSwwQkFBQTtBQUNKO0FBRUU7RUFDRSxVQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQ0FBQTtFQUNBLFlBQUE7RUFDQSwySEFBQTtBQUFKO0FBSUU7RUFDRSx1QkFBQTtBQUZKO0FBSUk7RUFDRSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0FBRk47QUFJTTtFQUNFLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLG1DQUFBO0VBQ0EsMkhBQUE7RUFFQSxrQkFBQTtFQUNBLGFBQUE7RUFDQSxlQUFBO0FBSFI7QUFLUTtFQUNFLGFBQUE7QUFIViIsImZpbGUiOiJ2aXN1YWxpemVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiOmhvc3Qge1xuICBkaXNwbGF5OiBibG9jaztcblxuICAmLCBtYXQtc2lkZW5hdi1jb250YWluZXIge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogY2FsYygxMDB2aCAtIDZyZW0pO1xuICB9XG5cbiAgbWF0LXNpZGVuYXYge1xuICAgIHdpZHRoOiAyMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHBhZGRpbmc6IDAuNXJlbTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kKTtcbiAgICBib3JkZXI6IG5vbmU7XG4gICAgYm94LXNoYWRvdzogMHB4IDNweCA1cHggLTFweCByZ2JhKDAsIDAsIDAsIDAuMiksIDBweCA2cHggMTBweCAwcHggcmdiYSgwLCAwLCAwLCAwLjE0KSxcbiAgICAgIDBweCAxcHggMThweCAwcHggcmdiYSgwLCAwLCAwLCAwLjEyKTtcbiAgfVxuXG4gIG1hdC1zaWRlbmF2LWNvbnRlbnQge1xuICAgIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuXG4gICAgLnRvZ2dsZSB7XG4gICAgICB6LWluZGV4OiAxO1xuICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgICAgdG9wOiAzcmVtO1xuXG4gICAgICBidXR0b24ge1xuICAgICAgICBtaW4td2lkdGg6IDEuNXJlbTtcbiAgICAgICAgcGFkZGluZzogLjI1cmVtO1xuICAgICAgICBoZWlnaHQ6IDNyZW07XG4gICAgICAgIGJvcmRlcjogbm9uZTtcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tYmFja2dyb3VuZCk7XG4gICAgICAgIGJveC1zaGFkb3c6IDBweCAzcHggNXB4IC0xcHggcmdiYSgwLCAwLCAwLCAwLjIpLCAwcHggNnB4IDEwcHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xNCksXG4gICAgICAgICAgMHB4IDFweCAxOHB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMTIpO1xuICAgICAgICBib3JkZXItcmFkaXVzOiAzcHg7XG4gICAgICAgIG91dGxpbmU6IG5vbmU7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcblxuICAgICAgICAmLmhpZGRlbiB7XG4gICAgICAgICAgZGlzcGxheTogbm9uZTtcbiAgICAgICAgfVxuICAgICAgfVxuICAgIH1cbiAgfVxufVxuIl19 */"], changeDetection: 0 });
+    } }, directives: [_angular_material_sidenav__WEBPACK_IMPORTED_MODULE_10__.MatSidenavContainer, _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_10__.MatSidenav, ngx_google_analytics__WEBPACK_IMPORTED_MODULE_11__.GaEventCategoryDirective, _components_menu_menu_component__WEBPACK_IMPORTED_MODULE_3__.MenuComponent, _angular_material_sidenav__WEBPACK_IMPORTED_MODULE_10__.MatSidenavContent, _angular_material_button__WEBPACK_IMPORTED_MODULE_12__.MatButton, ngx_google_analytics__WEBPACK_IMPORTED_MODULE_11__.GaEventDirective, _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__.MatIcon, _components_content_content_component__WEBPACK_IMPORTED_MODULE_0__.ContentComponent], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_14__.AsyncPipe], styles: ["[_nghost-%COMP%] {\n  display: block;\n}\n[_nghost-%COMP%], [_nghost-%COMP%]   mat-sidenav-container[_ngcontent-%COMP%] {\n  width: 100%;\n  height: calc(100vh - 6rem);\n}\n[_nghost-%COMP%]   mat-sidenav[_ngcontent-%COMP%] {\n  width: 20%;\n  height: 100%;\n  padding: 0.5rem;\n  background-color: var(--background);\n  border: none;\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%] {\n  background-color: white;\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%]   .toggle[_ngcontent-%COMP%] {\n  z-index: 1;\n  position: relative;\n  top: 3rem;\n  margin: 0;\n  height: 0;\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%]   .toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  min-width: 1.5rem;\n  padding: 0.25rem;\n  height: 3rem;\n  border: none;\n  background-color: var(--background);\n  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);\n  border-radius: 3px;\n  outline: none;\n  cursor: pointer;\n}\n[_nghost-%COMP%]   mat-sidenav-content[_ngcontent-%COMP%]   .toggle[_ngcontent-%COMP%]   button.hidden[_ngcontent-%COMP%] {\n  display: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpc3VhbGl6ZXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxjQUFBO0FBQ0Y7QUFDRTtFQUNFLFdBQUE7RUFDQSwwQkFBQTtBQUNKO0FBRUU7RUFDRSxVQUFBO0VBQ0EsWUFBQTtFQUNBLGVBQUE7RUFDQSxtQ0FBQTtFQUNBLFlBQUE7RUFDQSwySEFBQTtBQUFKO0FBSUU7RUFDRSx1QkFBQTtBQUZKO0FBSUk7RUFDRSxVQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsU0FBQTtFQUNBLFNBQUE7QUFGTjtBQUlNO0VBQ0UsaUJBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsbUNBQUE7RUFDQSwySEFBQTtFQUVBLGtCQUFBO0VBQ0EsYUFBQTtFQUNBLGVBQUE7QUFIUjtBQUtRO0VBQ0UsYUFBQTtBQUhWIiwiZmlsZSI6InZpc3VhbGl6ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIGRpc3BsYXk6IGJsb2NrO1xuXG4gICYsIG1hdC1zaWRlbmF2LWNvbnRhaW5lciB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiBjYWxjKDEwMHZoIC0gNnJlbSk7XG4gIH1cblxuICBtYXQtc2lkZW5hdiB7XG4gICAgd2lkdGg6IDIwJTtcbiAgICBoZWlnaHQ6IDEwMCU7XG4gICAgcGFkZGluZzogMC41cmVtO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWJhY2tncm91bmQpO1xuICAgIGJvcmRlcjogbm9uZTtcbiAgICBib3gtc2hhZG93OiAwcHggM3B4IDVweCAtMXB4IHJnYmEoMCwgMCwgMCwgMC4yKSwgMHB4IDZweCAxMHB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMTQpLFxuICAgICAgMHB4IDFweCAxOHB4IDBweCByZ2JhKDAsIDAsIDAsIDAuMTIpO1xuICB9XG5cbiAgbWF0LXNpZGVuYXYtY29udGVudCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG5cbiAgICAudG9nZ2xlIHtcbiAgICAgIHotaW5kZXg6IDE7XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0b3A6IDNyZW07XG4gICAgICBtYXJnaW46IDA7XG4gICAgICBoZWlnaHQ6IDA7XG5cbiAgICAgIGJ1dHRvbiB7XG4gICAgICAgIG1pbi13aWR0aDogMS41cmVtO1xuICAgICAgICBwYWRkaW5nOiAuMjVyZW07XG4gICAgICAgIGhlaWdodDogM3JlbTtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1iYWNrZ3JvdW5kKTtcbiAgICAgICAgYm94LXNoYWRvdzogMHB4IDNweCA1cHggLTFweCByZ2JhKDAsIDAsIDAsIDAuMiksIDBweCA2cHggMTBweCAwcHggcmdiYSgwLCAwLCAwLCAwLjE0KSxcbiAgICAgICAgICAwcHggMXB4IDE4cHggMHB4IHJnYmEoMCwgMCwgMCwgMC4xMik7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgICAgICAgb3V0bGluZTogbm9uZTtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuXG4gICAgICAgICYuaGlkZGVuIHtcbiAgICAgICAgICBkaXNwbGF5OiBub25lO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */"], changeDetection: 0 });
 
 
 /***/ }),
@@ -3752,22 +3751,92 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const nodeConfig = [
+    { level: 0, zoom: 0.0, fontSize: 10000 },
+    { level: 1, zoom: 0.0, fontSize: 10000 },
+    { level: 2, zoom: 0.004, fontSize: 4000 },
+    { level: 3, zoom: 0.008, fontSize: 2000 },
+    { level: 4, zoom: 0.012, fontSize: 1500 },
+    { level: 5, zoom: 0.016, fontSize: 1000 },
+    { level: 6, zoom: 0.024, fontSize: 1000 },
+    { level: 7, zoom: 0.028, fontSize: 1000 },
+    { level: 8, zoom: 0.032, fontSize: 500 },
+    { level: 9, zoom: 0.036, fontSize: 500 }
+];
+const edgeConfig = [
+    { level: 0, zoom: 0, color: '#FFEBA1', width: 1200, opacity: 0.0 },
+    { level: 1, zoom: 0.0, color: '#FFEBA1', width: 1000, opacity: 1.0 },
+    { level: 2, zoom: 0.004, color: '#FFEBA1', width: 900, opacity: 1.0 },
+    { level: 3, zoom: 0.008, color: '#F9D776', width: 800, opacity: 0.9 },
+    { level: 4, zoom: 0.012, color: '#c1b276', width: 700, opacity: 0.9 },
+    { level: 5, zoom: 0.016, color: '#94895f', width: 600, opacity: 0.8 },
+    { level: 6, zoom: 0.024, color: '#615b43', width: 500, opacity: 0.8 },
+    { level: 7, zoom: 0.028, color: 'gray', width: 200, opacity: 0.7 },
+    { level: 8, zoom: 0.032, color: 'gray', width: 200, opacity: 0.6 },
+    { level: 9, zoom: 0.036, color: 'gray', width: 200, opacity: 0.5 }
+];
 class NetworkComponent {
     constructor(el) {
         this.el = el;
         this.clsName = 'm4s-network';
         this.nodeClick = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
         this.edgeClick = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-    }
-    ngOnDestroy() {
-        this.destroyNetwork();
+        this.nodeZoomIndex = 0;
+        this.edgeZoomIndex = 0;
     }
     ngOnChanges(changes) {
         if ('nodes' in changes || 'edges' in changes) {
             this.destroyNetwork();
             this.cy = this.createNetwork();
+            this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
+            this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
             this.attachListeners();
+            this.allNodes = this.cy.filter(element => element.isNode());
         }
+    }
+    ngOnDestroy() {
+        this.destroyNetwork();
+    }
+    createStylesheet() {
+        const styles = [
+            {
+                selector: 'node',
+                style: {
+                    'height': 2000,
+                    'width': 2000,
+                    'backgroundColor': 'black'
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    'width': 200,
+                    'line-color': '#3d3d3d'
+                }
+            },
+            {
+                selector: '.label-visible',
+                style: {
+                    'label': 'data(label)'
+                }
+            }
+        ];
+        for (const node of nodeConfig) {
+            styles.push({
+                selector: `.label-${node.level}`,
+                style: {
+                    'font-size': nodeConfig[node.level].fontSize
+                }
+            });
+            styles.push({
+                selector: `.edge-${node.level}`,
+                style: {
+                    'width': edgeConfig[node.level].width,
+                    'line-color': edgeConfig[node.level].color
+                }
+            });
+        }
+        return styles;
     }
     createNetwork() {
         return cytoscape__WEBPACK_IMPORTED_MODULE_0___default()({
@@ -3777,25 +3846,8 @@ class NetworkComponent {
                 edges: this.edges
             },
             layout: { name: 'preset' },
-            style: [
-                {
-                    selector: 'node',
-                    style: {
-                        'label': 'data(label)',
-                        'height': 2000,
-                        'width': 2000,
-                        'font-size': 4000,
-                        'backgroundColor': 'black'
-                    }
-                },
-                {
-                    selector: 'edge',
-                    style: {
-                        'width': 1000,
-                        'line-color': '#c0c0c0'
-                    }
-                }
-            ]
+            style: this.createStylesheet(),
+            wheelSensitivity: 0.1
         });
     }
     destroyNetwork() {
@@ -3813,13 +3865,58 @@ class NetworkComponent {
                 const data = event.target.data();
                 this.edgeClick.emit(data);
             });
+            cy.on('zoom', () => {
+                const z = cy.zoom();
+                this.zoom = z;
+                const oldNodeIndex = this.nodeZoomIndex;
+                const oldEdgeIndex = this.edgeZoomIndex;
+                cy.batch(() => {
+                    if (this.nodeLevelChange()) {
+                        cy.$(`node[level <= ${this.nodeZoomIndex}]`).removeClass(`label-${oldNodeIndex}`).addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
+                        cy.$(`node[level > ${this.nodeZoomIndex}]`).removeClass('label-visible');
+                    }
+                    if (this.edgeLevelChange()) {
+                        cy.$(`edge[level = ${this.edgeZoomIndex}]`).addClass(`edge-${this.edgeZoomIndex}`);
+                        cy.$(`edge[level > ${this.edgeZoomIndex}]`).removeClass(`edge-${oldEdgeIndex}`);
+                    }
+                });
+            });
         }
+    }
+    getZoomIndex(zoomLookup) {
+        const zoom = this.zoom;
+        for (let index = 0; index <= zoomLookup.length; index++) {
+            if (index === (zoomLookup.length - 1)) {
+                return index;
+            }
+            if (zoom >= zoomLookup[index].zoom && zoom < zoomLookup[index + 1].zoom) {
+                return index;
+            }
+        }
+        console.error('No Zoom index found.  Zoom lookup: ', zoomLookup);
+        return 0;
+    }
+    nodeLevelChange() {
+        const currentIndex = this.getZoomIndex(nodeConfig);
+        if (currentIndex === this.nodeZoomIndex) {
+            return false;
+        }
+        this.nodeZoomIndex = currentIndex;
+        return true;
+    }
+    edgeLevelChange() {
+        const currentIndex = this.getZoomIndex(edgeConfig);
+        if (currentIndex === this.edgeZoomIndex) {
+            return false;
+        }
+        this.edgeZoomIndex = currentIndex;
+        return true;
     }
 }
 NetworkComponent.ɵfac = function NetworkComponent_Factory(t) { return new (t || NetworkComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef)); };
 NetworkComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: NetworkComponent, selectors: [["m4s-network"]], hostVars: 2, hostBindings: function NetworkComponent_HostBindings(rf, ctx) { if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMap"](ctx.clsName);
-    } }, inputs: { nodes: "nodes", edges: "edges" }, outputs: { nodeClick: "nodeClick", edgeClick: "edgeClick" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 0, vars: 0, template: function NetworkComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5ldHdvcmsuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtBQUNGIiwiZmlsZSI6Im5ldHdvcmsuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDEwMCU7XG59Il19 */"], changeDetection: 0 });
+    } }, inputs: { nodes: "nodes", edges: "edges" }, outputs: { nodeClick: "nodeClick", edgeClick: "edgeClick" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 0, vars: 0, template: function NetworkComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #c4c7d6;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5ldHdvcmsuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0FBQ0YiLCJmaWxlIjoibmV0d29yay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2M0YzdkNjtcbn0iXX0= */"], changeDetection: 0 });
 
 
 /***/ }),

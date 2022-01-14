@@ -201,8 +201,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/services/network-dataset-processor.sevice.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/services/network-dataset-processor.sevice.ts:30</a></div>
                 </td>
             </tr>
 
@@ -336,15 +336,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>processNodes(dataset: <a href="../interfaces/MapDataset.html" target="_self">MapDataset</a>, edges: <a href="../interfaces/Edge.html" target="_self">EdgeDefinition[]</a>)</code>
+                    <code>processNodes(dataset: <a href="../interfaces/MapDataset.html" target="_self">MapDataset</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/services/network-dataset-processor.sevice.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/services/network-dataset-processor.sevice.ts:37</a></div>
                 </td>
             </tr>
 
@@ -368,18 +368,6 @@
                                     <td>dataset</td>
                                     <td>
                                                 <code><a href="../interfaces/MapDataset.html" target="_self" >MapDataset</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>edges</td>
-                                    <td>
-                                                <code><a href="../interfaces/Edge.html" target="_self" >EdgeDefinition[]</a></code>
                                     </td>
 
                                     <td>
@@ -424,6 +412,7 @@ export interface NetworkDataset {
 interface NodeProperties {
   label: string;
   pos: string;
+  level: number;
 }
 
 interface EdgeProperties {
@@ -440,29 +429,28 @@ interface EdgeProperties {
 export class NetworkDatasetProcessor {
   process(dataset: MapDataset): NetworkDataset {
     const edges &#x3D; this.processEdges(dataset);
-    const nodes &#x3D; this.processNodes(dataset, edges);
+    const nodes &#x3D; this.processNodes(dataset);
 
     return { nodes, edges };
   }
 
-  private processNodes(dataset: MapDataset, edges: EdgeDefinition[]): NodeDefinition[] {
+  private processNodes(dataset: MapDataset): NodeDefinition[] {
     const { nodes } &#x3D; dataset;
-    const edgeEndpoints &#x3D; new Set&lt;unknown&gt;(this.edgeEndpoints(edges));
     const definitions &#x3D; nodes.features
-      .filter(({ id }) &#x3D;&gt; edgeEndpoints.has(id))
       .map(({ id, properties }): NodeDefinition &#x3D;&gt; {
-        const { label, pos } &#x3D; properties as NodeProperties;
+        const { label, pos, level } &#x3D; properties as NodeProperties;
         const [x, y] &#x3D; pos.split(&#x27;,&#x27;);
 
         return {
           group: &#x27;nodes&#x27;,
           data: {
             id: id as string,
-            label
+            label,
+            level
           },
           position: {
             x: parseInt(x),
-            y: parseInt(y)
+            y: -parseInt(y)
           }
         };
       });
@@ -473,17 +461,17 @@ export class NetworkDatasetProcessor {
   private processEdges(dataset: MapDataset): EdgeDefinition[] {
     const { edges } &#x3D; dataset;
     const definitions &#x3D; edges.features
-      .filter(edge &#x3D;&gt; (edge.properties as EdgeProperties).level &#x3D;&#x3D;&#x3D; 1)
-      .map(({ id, properties }): EdgeDefinition &#x3D;&gt; {
-        const { src, dest, label } &#x3D; properties as EdgeProperties;
+      .map(({ properties }, i): EdgeDefinition &#x3D;&gt; {
+        const { src, dest, label, level } &#x3D; properties as EdgeProperties;
 
         return {
           group: &#x27;edges&#x27;,
           data: {
-            id: id as string,
+            id: &#x27;edge-&#x27; + i,
             label: label,
             source: src,
-            target: dest
+            target: dest,
+            level: level
           }
         };
       });
