@@ -23,6 +23,8 @@ import cytoscape, {
 import panzoom from 'cytoscape-panzoom';
 import { Edge, Node } from '../../../map/map';
 
+cytoscape.use(panzoom)
+
 const nodeConfig: Node[] = [
   { level: 0, zoom: 0.0, fontSize: 10000 },
   { level: 1, zoom: 0.0, fontSize: 10000 },
