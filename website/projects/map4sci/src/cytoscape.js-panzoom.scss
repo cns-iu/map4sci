@@ -160,9 +160,9 @@
 }
 
 .cy-panzoom-slider-handle .icon {
-	margin: 0 4px;
 	line-height: 10px;
 	box-sizing: content-box;
+	width: 100%;
 }
 
 .cy-panzoom-no-zoom-tick {
@@ -219,4 +219,11 @@
 
 .cy-panzoom-zoom-only .cy-panzoom-zoom-out {
 	top: 70px;
+}
+
+.material-icons {
+	font-size: unset;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
 }

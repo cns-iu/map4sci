@@ -9,6 +9,8 @@ import {
   OnDestroy,
   Output,
   SimpleChanges,
+  Inject,
+  Renderer2
 } from '@angular/core';
 import cytoscape, {
   Core as Cytoscape,
@@ -22,8 +24,9 @@ import cytoscape, {
 } from 'cytoscape';
 import panzoom from 'cytoscape-panzoom';
 import { Edge, Node } from '../../../map/map';
+import { DOCUMENT } from '@angular/common';
 
-cytoscape.use(panzoom)
+cytoscape.use(panzoom);
 
 const nodeConfig: Node[] = [
   { level: 0, zoom: 0.0, fontSize: 10000 },
@@ -67,12 +70,6 @@ const zoompanDefaults = {
   fitSelector: undefined, // selector of elements to fit
   animateOnFit: () => true, // whether to animate on fit
   fitAnimationDuration: 1000, // duration of animation on fit
-
-  // icon class names
-  sliderHandleIcon: 'fa fa-minus',
-  zoomInIcon: 'fa fa-plus',
-  zoomOutIcon: 'fa fa-minus',
-  resetIcon: 'fa fa-expand'
 };
 
 @Component({
@@ -99,13 +96,17 @@ export class NetworkComponent implements OnChanges, OnDestroy {
   nodeZoomIndex = 0;
   edgeZoomIndex = 0;
 
-  constructor(private readonly el: ElementRef) { }
+  constructor(private readonly el: ElementRef, @Inject(DOCUMENT) private _document: Document, private renderer: Renderer2) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('nodes' in changes || 'edges' in changes) {
       this.destroyNetwork();
       this.cy = this.createNetwork();
       (this.cy as any).panzoom(zoompanDefaults);
+      this.createIcon('.cy-panzoom-reset', 'open_in_full');
+      this.createIcon('.cy-panzoom-zoom-in', 'add');
+      this.createIcon('.cy-panzoom-zoom-out', 'remove');
+      this.createIcon('.cy-panzoom-slider-handle', 'remove');
       this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
       this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
       this.attachListeners();
@@ -115,6 +116,13 @@ export class NetworkComponent implements OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     this.destroyNetwork();
+  }
+
+  createIcon(className: string, name: string): void {
+    const icon = this.renderer.createElement('mat-icon');
+    this.renderer.addClass(icon, 'material-icons');
+    this.renderer.appendChild(icon, this.renderer.createText(name));
+    this.renderer.appendChild(this._document.querySelector(className), icon);
   }
 
   createStylesheet(): Stylesheet[] {
