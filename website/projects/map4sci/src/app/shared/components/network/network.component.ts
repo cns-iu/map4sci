@@ -7,7 +7,9 @@ import {
   Input,
   OnChanges,
   OnDestroy,
+  OnInit,
   Output,
+  Renderer2,
   SimpleChanges,
 } from '@angular/core';
 import cytoscape, {
@@ -20,6 +22,7 @@ import cytoscape, {
   Singular,
   Stylesheet,
 } from 'cytoscape';
+import panzoom from 'cytoscape-panzoom';
 
 import { Edge, Node } from '../../../map/map';
 
@@ -49,13 +52,31 @@ const edgeConfig: Edge[] = [
   { level: 9, zoom: 0.036, color: 'gray', width: 200, opacity: 0.5 }
 ];
 
+const zoompanDefaults = {
+  zoomFactor: 0.1, // zoom factor per zoom tick
+  zoomDelay: 45, // how many ms between zoom ticks
+  minZoom: 0.001, // min zoom level
+  maxZoom: 0.036, // max zoom level
+  fitPadding: 50, // padding when fitting
+  panSpeed: 2, // how many ms in between pan ticks
+  panDistance: 20, // max pan distance per tick
+  panDragAreaSize: 75, // the length of the pan drag box in which the vector for panning is calculated (bigger = finer control of pan speed and direction)
+  panMinPercentSpeed: 0.25, // the slowest speed we can pan by (as a percent of panSpeed)
+  panInactiveArea: 8, // radius of inactive area in pan drag box
+  panIndicatorMinOpacity: 0.5, // min opacity of pan indicator (the draggable nib); scales from this to 1.0
+  zoomOnly: true, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
+  fitSelector: undefined, // selector of elements to fit
+  animateOnFit: () => true, // whether to animate on fit
+  fitAnimationDuration: 1000, // duration of animation on fit
+};
+
 @Component({
   selector: 'm4s-network',
   template: '',
   styleUrls: ['./network.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NetworkComponent implements OnChanges, OnDestroy {
+export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
   @HostBinding('class') readonly clsName = 'm4s-network';
 
   @Input() nodes: NodeDefinition[];
@@ -73,21 +94,32 @@ export class NetworkComponent implements OnChanges, OnDestroy {
   nodeZoomIndex = 0;
   edgeZoomIndex = 0;
 
-  constructor(private readonly el: ElementRef) { }
+  constructor(private readonly el: ElementRef, private renderer: Renderer2) { }
+
+  ngOnInit(): void {
+    this.networkSetup();
+    cytoscape.use(panzoom);
+    // eslint-disable-next-line
+    (this.cy as any).panzoom(zoompanDefaults);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('nodes' in changes || 'edges' in changes) {
-      this.destroyNetwork();
-      this.cy = this.createNetwork();
-      this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
-      this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
-      this.attachListeners();
-      this.allNodes = this.cy.filter(element => element.isNode());
+      this.networkSetup();
     }
   }
 
   ngOnDestroy(): void {
     this.destroyNetwork();
+  }
+
+  networkSetup(): void {
+    this.destroyNetwork();
+    this.cy = this.createNetwork();
+    this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
+    this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
+    this.attachListeners();
+    this.allNodes = this.cy.filter(element => element.isNode());
   }
 
   createStylesheet(): Stylesheet[] {
@@ -97,20 +129,25 @@ export class NetworkComponent implements OnChanges, OnDestroy {
         style: {
           'height': 2000,
           'width': 2000,
-          'backgroundColor': 'black'
+          'backgroundColor': 'black',
+          'color': 'black',
+          'text-background-color': 'white',
+          'text-background-opacity': 0.7,
         }
       },
       {
         selector: 'edge',
         style: {
           'width': 200,
-          'line-color': '#3d3d3d'
+          'line-color': '#3d3d3d',
+          'opacity': 1,
         }
       },
       {
         selector: '.label-visible',
         style: {
-          'label': 'data(label)'
+          'label': 'data(label)',
+          'z-index': 99
         }
       }
     ];
