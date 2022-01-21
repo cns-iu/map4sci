@@ -7,10 +7,10 @@ import {
   Input,
   OnChanges,
   OnDestroy,
+  OnInit,
   Output,
+  Renderer2,
   SimpleChanges,
-  Inject,
-  Renderer2
 } from '@angular/core';
 import cytoscape, {
   Core as Cytoscape,
@@ -23,10 +23,8 @@ import cytoscape, {
   Stylesheet,
 } from 'cytoscape';
 import panzoom from 'cytoscape-panzoom';
-import { Edge, Node } from '../../../map/map';
-import { DOCUMENT } from '@angular/common';
 
-cytoscape.use(panzoom);
+import { Edge, Node } from '../../../map/map';
 
 const nodeConfig: Node[] = [
   { level: 0, zoom: 0.0, fontSize: 10000 },
@@ -78,7 +76,7 @@ const zoompanDefaults = {
   styleUrls: ['./network.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NetworkComponent implements OnChanges, OnDestroy {
+export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
   @HostBinding('class') readonly clsName = 'm4s-network';
 
   @Input() nodes: NodeDefinition[];
@@ -96,21 +94,16 @@ export class NetworkComponent implements OnChanges, OnDestroy {
   nodeZoomIndex = 0;
   edgeZoomIndex = 0;
 
-  constructor(private readonly el: ElementRef, @Inject(DOCUMENT) private _document: Document, private renderer: Renderer2) { }
+  constructor(private readonly el: ElementRef, private renderer: Renderer2) { }
+
+  ngOnInit(): void {
+    this.networkSetup();
+    this.zoompanSetup();
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('nodes' in changes || 'edges' in changes) {
-      this.destroyNetwork();
-      this.cy = this.createNetwork();
-      (this.cy as any).panzoom(zoompanDefaults);
-      this.createIcon('.cy-panzoom-reset', 'open_in_full');
-      this.createIcon('.cy-panzoom-zoom-in', 'add');
-      this.createIcon('.cy-panzoom-zoom-out', 'remove');
-      this.createIcon('.cy-panzoom-slider-handle', 'remove');
-      this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
-      this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
-      this.attachListeners();
-      this.allNodes = this.cy.filter(element => element.isNode());
+      this.networkSetup();
     }
   }
 
@@ -118,11 +111,30 @@ export class NetworkComponent implements OnChanges, OnDestroy {
     this.destroyNetwork();
   }
 
-  createIcon(className: string, name: string): void {
+  networkSetup(): void {
+    this.destroyNetwork();
+    this.cy = this.createNetwork();
+    this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
+    this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
+    this.attachListeners();
+    this.allNodes = this.cy.filter(element => element.isNode());
+  }
+
+  createZoompanIcon(className: string, name: string): void {
     const icon = this.renderer.createElement('mat-icon');
     this.renderer.addClass(icon, 'material-icons');
     this.renderer.appendChild(icon, this.renderer.createText(name));
-    this.renderer.appendChild(this._document.querySelector(className), icon);
+    this.renderer.appendChild(document.querySelector(className), icon);
+  }
+
+  zoompanSetup(): void {
+    cytoscape.use(panzoom);
+    // eslint-disable-next-line
+    (this.cy as any).panzoom(zoompanDefaults);
+    this.createZoompanIcon('.cy-panzoom-reset', 'open_in_full');
+    this.createZoompanIcon('.cy-panzoom-zoom-in', 'add');
+    this.createZoompanIcon('.cy-panzoom-zoom-out', 'remove');
+    this.createZoompanIcon('.cy-panzoom-slider-handle', 'remove');
   }
 
   createStylesheet(): Stylesheet[] {
