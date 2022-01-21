@@ -130,7 +130,7 @@ export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
           'height': 2000,
           'width': 2000,
           'backgroundColor': 'black',
-          'color': '#4665ff'
+          'color': 'red'
         }
       },
       {
