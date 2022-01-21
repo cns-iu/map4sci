@@ -1,0 +1,1503 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application map4sci code documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Application map4sci code documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  NetworkComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/map4sci/src/app/shared/components/network/network.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>m4s-network</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./network.component.scss</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allNodes" >allNodes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#clsName" >clsName</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#cy" >cy</a>
+                            </li>
+                            <li>
+                                <a href="#edgeZoomIndex" >edgeZoomIndex</a>
+                            </li>
+                            <li>
+                                <a href="#nodeZoomIndex" >nodeZoomIndex</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#zoom" >zoom</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#attachListeners" >attachListeners</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#createNetwork" >createNetwork</a>
+                            </li>
+                            <li>
+                                <a href="#createStylesheet" >createStylesheet</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroyNetwork" >destroyNetwork</a>
+                            </li>
+                            <li>
+                                <a href="#edgeLevelChange" >edgeLevelChange</a>
+                            </li>
+                            <li>
+                                <a href="#getZoomIndex" >getZoomIndex</a>
+                            </li>
+                            <li>
+                                <a href="#networkSetup" >networkSetup</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges" >ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#nodeLevelChange" >nodeLevelChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#edges" >edges</a>
+                            </li>
+                            <li>
+                                <a href="#nodes" >nodes</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#edgeClick" >edgeClick</a>
+                            </li>
+                            <li>
+                                <a href="#nodeClick" >nodeClick</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class" >class</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(el: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, renderer: <a href="../s/d.html" target="_self">Renderer2</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:95</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>el</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/variables.html#d" target="_self" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edges"></a>
+                        <b>edges</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Edge.html" target="_self" >EdgeDefinition[]</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:83</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nodes"></a>
+                        <b>nodes</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Node.html" target="_self" >NodeDefinition[]</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:82</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edgeClick"></a>
+                        <b>edgeClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:86</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="nodeClick"></a>
+                        <b>nodeClick</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:85</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class"></a>
+                    <span class="name">
+                        <span ><b>class</b></span>
+                        <a href="#class"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;m4s-network&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;m4s-network&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="attachListeners"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>attachListeners</b></span>
+                        <a href="#attachListeners"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>attachListeners()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="189"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:189</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createNetwork"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>createNetwork</b></span>
+                        <a href="#createNetwork"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createNetwork()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="172"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:172</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Cytoscape</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createStylesheet"></a>
+                    <span class="name">
+                        <span ><b>createStylesheet</b></span>
+                        <a href="#createStylesheet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createStylesheet()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Stylesheet[]</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyNetwork"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>destroyNetwork</b></span>
+                        <a href="#destroyNetwork"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>destroyNetwork()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="185"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:185</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeLevelChange"></a>
+                    <span class="name">
+                        <span ><b>edgeLevelChange</b></span>
+                        <a href="#edgeLevelChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>edgeLevelChange()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="246"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:246</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getZoomIndex"></a>
+                    <span class="name">
+                        <span ><b>getZoomIndex</b></span>
+                        <a href="#getZoomIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getZoomIndex(zoomLookup: <a href="../s/d.html" target="_self">Node[] | Edge[]</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="222"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:222</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>zoomLookup</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/variables.html#d" target="_self" >Node[] | Edge[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="networkSetup"></a>
+                    <span class="name">
+                        <span ><b>networkSetup</b></span>
+                        <a href="#networkSetup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>networkSetup()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <span ><b>ngOnChanges</b></span>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges(changes: <a href="https://angular.io/api/core/SimpleChanges" target="_blank">SimpleChanges</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>changes</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/core/SimpleChanges" target="_blank" >SimpleChanges</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeLevelChange"></a>
+                    <span class="name">
+                        <span ><b>nodeLevelChange</b></span>
+                        <a href="#nodeLevelChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nodeLevelChange()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="237"
+                            class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:237</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="allNodes"></a>
+                    <span class="name">
+                        <span ><b>allNodes</b></span>
+                        <a href="#allNodes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Node.html" target="_self" >NodeCollection</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clsName"></a>
+                    <span class="name">
+                            <span class="modifier">Readonly</span>
+                        <span ><b>clsName</b></span>
+                        <a href="#clsName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;m4s-network&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;class&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cy"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Optional</span>
+                        <span ><b>cy</b></span>
+                        <a href="#cy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Cytoscape</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:88</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeZoomIndex"></a>
+                    <span class="name">
+                        <span ><b>edgeZoomIndex</b></span>
+                        <a href="#edgeZoomIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeZoomIndex"></a>
+                    <span class="name">
+                        <span ><b>nodeZoomIndex</b></span>
+                        <a href="#nodeZoomIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoom"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>zoom</b></span>
+                        <a href="#zoom"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">projects/map4sci/src/app/shared/components/network/network.component.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostBinding,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  Renderer2,
+  SimpleChanges,
+} from &#x27;@angular/core&#x27;;
+import cytoscape, {
+  Core as Cytoscape,
+  EdgeDataDefinition,
+  EdgeDefinition,
+  NodeCollection,
+  NodeDataDefinition,
+  NodeDefinition,
+  Singular,
+  Stylesheet,
+} from &#x27;cytoscape&#x27;;
+import panzoom from &#x27;cytoscape-panzoom&#x27;;
+
+import { Edge, Node } from &#x27;../../../map/map&#x27;;
+
+const nodeConfig: Node[] &#x3D; [
+  { level: 0, zoom: 0.0, fontSize: 10000 },
+  { level: 1, zoom: 0.0, fontSize: 10000 },
+  { level: 2, zoom: 0.004, fontSize: 4000 },
+  { level: 3, zoom: 0.008, fontSize: 2000 },
+  { level: 4, zoom: 0.012, fontSize: 1500 },
+  { level: 5, zoom: 0.016, fontSize: 1000 },
+  { level: 6, zoom: 0.024, fontSize: 1000 },
+  { level: 7, zoom: 0.028, fontSize: 1000 },
+  { level: 8, zoom: 0.032, fontSize: 500 },
+  { level: 9, zoom: 0.036, fontSize: 500 }
+];
+
+const edgeConfig: Edge[] &#x3D; [
+  { level: 0, zoom: 0, color: &#x27;#FFEBA1&#x27;, width: 1200, opacity: 0.0 },
+  { level: 1, zoom: 0.0, color: &#x27;#FFEBA1&#x27;, width: 1000, opacity: 1.0 },
+  { level: 2, zoom: 0.004, color: &#x27;#FFEBA1&#x27;, width: 900, opacity: 1.0 },
+  { level: 3, zoom: 0.008, color: &#x27;#F9D776&#x27;, width: 800, opacity: 0.9 },
+  { level: 4, zoom: 0.012, color: &#x27;#c1b276&#x27;, width: 700, opacity: 0.9 },
+  { level: 5, zoom: 0.016, color: &#x27;#94895f&#x27;, width: 600, opacity: 0.8 },
+  { level: 6, zoom: 0.024, color: &#x27;#615b43&#x27;, width: 500, opacity: 0.8 },
+  { level: 7, zoom: 0.028, color: &#x27;gray&#x27;, width: 200, opacity: 0.7 },
+  { level: 8, zoom: 0.032, color: &#x27;gray&#x27;, width: 200, opacity: 0.6 },
+  { level: 9, zoom: 0.036, color: &#x27;gray&#x27;, width: 200, opacity: 0.5 }
+];
+
+const zoompanDefaults &#x3D; {
+  zoomFactor: 0.1, // zoom factor per zoom tick
+  zoomDelay: 45, // how many ms between zoom ticks
+  minZoom: 0.001, // min zoom level
+  maxZoom: 0.036, // max zoom level
+  fitPadding: 50, // padding when fitting
+  panSpeed: 2, // how many ms in between pan ticks
+  panDistance: 20, // max pan distance per tick
+  panDragAreaSize: 75, // the length of the pan drag box in which the vector for panning is calculated (bigger &#x3D; finer control of pan speed and direction)
+  panMinPercentSpeed: 0.25, // the slowest speed we can pan by (as a percent of panSpeed)
+  panInactiveArea: 8, // radius of inactive area in pan drag box
+  panIndicatorMinOpacity: 0.5, // min opacity of pan indicator (the draggable nib); scales from this to 1.0
+  zoomOnly: true, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
+  fitSelector: undefined, // selector of elements to fit
+  animateOnFit: () &#x3D;&gt; true, // whether to animate on fit
+  fitAnimationDuration: 1000, // duration of animation on fit
+};
+
+@Component({
+  selector: &#x27;m4s-network&#x27;,
+  template: &#x27;&#x27;,
+  styleUrls: [&#x27;./network.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
+  @HostBinding(&#x27;class&#x27;) readonly clsName &#x3D; &#x27;m4s-network&#x27;;
+
+  @Input() nodes: NodeDefinition[];
+  @Input() edges: EdgeDefinition[];
+
+  @Output() readonly nodeClick &#x3D; new EventEmitter&lt;NodeDataDefinition&gt;();
+  @Output() readonly edgeClick &#x3D; new EventEmitter&lt;EdgeDataDefinition&gt;();
+
+  private cy?: Cytoscape;
+
+  private zoom: number;
+
+  allNodes: NodeCollection;
+
+  nodeZoomIndex &#x3D; 0;
+  edgeZoomIndex &#x3D; 0;
+
+  constructor(private readonly el: ElementRef, private renderer: Renderer2) { }
+
+  ngOnInit(): void {
+    this.networkSetup();
+    cytoscape.use(panzoom);
+    // eslint-disable-next-line
+    (this.cy as any).panzoom(zoompanDefaults);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (&#x27;nodes&#x27; in changes || &#x27;edges&#x27; in changes) {
+      this.networkSetup();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.destroyNetwork();
+  }
+
+  networkSetup(): void {
+    this.destroyNetwork();
+    this.cy &#x3D; this.createNetwork();
+    this.cy.elements(&#x27;node[level &lt;&#x3D; 1]&#x27;).addClass(&#x60;label-${this.nodeZoomIndex}&#x60;).addClass(&#x27;label-visible&#x27;);
+    this.cy.elements(&#x27;edge[level &lt;&#x3D; 1]&#x27;).addClass(&#x60;edge-${this.edgeZoomIndex}&#x60;);
+    this.attachListeners();
+    this.allNodes &#x3D; this.cy.filter(element &#x3D;&gt; element.isNode());
+  }
+
+  createStylesheet(): Stylesheet[] {
+    const styles: Stylesheet[] &#x3D; [
+      {
+        selector: &#x27;node&#x27;,
+        style: {
+          &#x27;height&#x27;: 2000,
+          &#x27;width&#x27;: 2000,
+          &#x27;backgroundColor&#x27;: &#x27;black&#x27;,
+          &#x27;color&#x27;: &#x27;black&#x27;,
+          &#x27;text-background-color&#x27;: &#x27;white&#x27;,
+          &#x27;text-background-opacity&#x27;: 0.7,
+        }
+      },
+      {
+        selector: &#x27;edge&#x27;,
+        style: {
+          &#x27;width&#x27;: 200,
+          &#x27;line-color&#x27;: &#x27;#3d3d3d&#x27;,
+          &#x27;opacity&#x27;: 1,
+        }
+      },
+      {
+        selector: &#x27;.label-visible&#x27;,
+        style: {
+          &#x27;label&#x27;: &#x27;data(label)&#x27;,
+          &#x27;z-index&#x27;: 99
+        }
+      }
+    ];
+    for (const node of nodeConfig) {
+      styles.push({
+        selector: &#x60;.label-${node.level}&#x60;,
+        style: {
+          &#x27;font-size&#x27;: nodeConfig[node.level].fontSize
+        }
+      });
+      styles.push({
+        selector: &#x60;.edge-${node.level}&#x60;,
+        style: {
+          &#x27;width&#x27;: edgeConfig[node.level].width,
+          &#x27;line-color&#x27;: edgeConfig[node.level].color
+        }
+      });
+    }
+    return styles;
+  }
+
+  private createNetwork(): Cytoscape {
+    return cytoscape({
+      container: this.el.nativeElement,
+      elements: {
+        nodes: this.nodes,
+        edges: this.edges
+      },
+      layout: { name: &#x27;preset&#x27; },
+      style: this.createStylesheet(),
+      wheelSensitivity: 0.1
+    });
+  }
+
+  private destroyNetwork(): void {
+    this.cy?.destroy?.();
+  }
+
+  private attachListeners(): void {
+    const { cy } &#x3D; this;
+
+    if (cy) {
+      cy.on(&#x27;tap&#x27;, &#x27;node&#x27;, event &#x3D;&gt; {
+        const data: NodeDataDefinition &#x3D; (event.target as Singular).data();
+        this.nodeClick.emit(data);
+      });
+
+      cy.on(&#x27;tap&#x27;, &#x27;edge&#x27;, event &#x3D;&gt; {
+        const data: EdgeDataDefinition &#x3D; (event.target as Singular).data();
+        this.edgeClick.emit(data);
+      });
+
+      cy.on(&#x27;zoom&#x27;, () &#x3D;&gt; {
+        const z &#x3D; cy.zoom();
+        this.zoom &#x3D; z;
+        const oldNodeIndex &#x3D; this.nodeZoomIndex;
+        const oldEdgeIndex &#x3D; this.edgeZoomIndex;
+        cy.batch(() &#x3D;&gt; {
+          if (this.nodeLevelChange()) {
+            cy.$(&#x60;node[level &lt;&#x3D; ${this.nodeZoomIndex}]&#x60;).removeClass(&#x60;label-${oldNodeIndex}&#x60;).addClass(&#x60;label-${this.nodeZoomIndex}&#x60;).addClass(&#x27;label-visible&#x27;);
+            cy.$(&#x60;node[level &gt; ${this.nodeZoomIndex}]&#x60;).removeClass(&#x27;label-visible&#x27;);
+          }
+          if (this.edgeLevelChange()) {
+            cy.$(&#x60;edge[level &#x3D; ${this.edgeZoomIndex}]&#x60;).addClass(&#x60;edge-${this.edgeZoomIndex}&#x60;);
+            cy.$(&#x60;edge[level &gt; ${this.edgeZoomIndex}]&#x60;).removeClass(&#x60;edge-${oldEdgeIndex}&#x60;);
+          }
+        });
+      });
+    }
+  }
+
+  getZoomIndex(zoomLookup: Node[] | Edge[]): number {
+    const zoom: number &#x3D; this.zoom;
+    for (let index &#x3D; 0; index &lt;&#x3D; zoomLookup.length; index++) {
+      if (index &#x3D;&#x3D;&#x3D; (zoomLookup.length - 1)) {
+        return index;
+      }
+      if (zoom &gt;&#x3D; zoomLookup[index].zoom &amp;&amp; zoom &lt; zoomLookup[index + 1].zoom) {
+        return index;
+      }
+    }
+
+    console.error(&#x27;No Zoom index found.  Zoom lookup: &#x27;, zoomLookup);
+    return 0;
+  }
+
+  nodeLevelChange(): boolean {
+    const currentIndex: number &#x3D; this.getZoomIndex(nodeConfig);
+    if (currentIndex &#x3D;&#x3D;&#x3D; this.nodeZoomIndex) {
+      return false;
+    }
+    this.nodeZoomIndex &#x3D; currentIndex;
+    return true;
+  }
+
+  edgeLevelChange(): boolean {
+    const currentIndex: number &#x3D; this.getZoomIndex(edgeConfig);
+    if (currentIndex &#x3D;&#x3D;&#x3D; this.edgeZoomIndex) {
+      return false;
+    }
+    this.edgeZoomIndex &#x3D; currentIndex;
+    return true;
+  }
+}
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./network.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 6rem);
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div></div>'
+    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'ContentComponent', 'selector': 'm4s-visualizer-content'},{'name': 'DatasetSearchComponent', 'selector': 'm4s-dataset-search'},{'name': 'DatasetSelectorComponent', 'selector': 'm4s-dataset-selector'},{'name': 'DatasetSummaryComponent', 'selector': 'm4s-dataset-summary'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'MenuComponent', 'selector': 'm4s-visualizer-menu'},{'name': 'NetworkComponent', 'selector': 'm4s-network'},{'name': 'VisualizationSelectorComponent', 'selector': 'm4s-visualization-selector'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
+    var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
+    var ACTUAL_COMPONENT = {'name': 'NetworkComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NetworkComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

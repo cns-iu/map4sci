@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -68,6 +68,12 @@
                             <a href="#d" title="projects/map4sci/src/app/map/cartesian-2d-projection.ts" ><b>d</b>&nbsp;&nbsp;&nbsp;(projects/.../cartesian-2d-projection.ts)</a>
                         </li>
                         <li>
+                            <a href="#DEFAULT_AUTO_COMPLETE_THROTTLE" title="projects/map4sci/src/app/pages/visualizer/components/dataset-search/dataset-search.component.ts" ><b>DEFAULT_AUTO_COMPLETE_THROTTLE</b>&nbsp;&nbsp;&nbsp;(projects/.../dataset-search.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#DEFAULT_DATASET_SUMMARY" title="projects/map4sci/src/app/pages/visualizer/components/dataset-summary/dataset-summary.component.ts" ><b>DEFAULT_DATASET_SUMMARY</b>&nbsp;&nbsp;&nbsp;(projects/.../dataset-summary.component.ts)</a>
+                        </li>
+                        <li>
                             <a href="#DEFAULT_THEME" title="projects/map4sci/src/app/core/services/theming/theming.service.ts" ><b>DEFAULT_THEME</b>&nbsp;&nbsp;&nbsp;(projects/.../theming.service.ts)</a>
                         </li>
                         <li>
@@ -92,13 +98,22 @@
                             <a href="#earthRadius" title="projects/map4sci/src/app/map/cartesian-2d-projection.ts" ><b>earthRadius</b>&nbsp;&nbsp;&nbsp;(projects/.../cartesian-2d-projection.ts)</a>
                         </li>
                         <li>
+                            <a href="#edgeConfig" title="projects/map4sci/src/app/shared/components/network/network.component.ts" ><b>edgeConfig</b>&nbsp;&nbsp;&nbsp;(projects/.../network.component.ts)</a>
+                        </li>
+                        <li>
                             <a href="#EMPTY_DATASET" title="projects/map4sci/src/app/map/map.ts" ><b>EMPTY_DATASET</b>&nbsp;&nbsp;&nbsp;(projects/.../map.ts)</a>
                         </li>
                         <li>
                             <a href="#EMPTY_FEATURES" title="projects/map4sci/src/app/map/map.ts" ><b>EMPTY_FEATURES</b>&nbsp;&nbsp;&nbsp;(projects/.../map.ts)</a>
                         </li>
                         <li>
+                            <a href="#nodeConfig" title="projects/map4sci/src/app/shared/components/network/network.component.ts" ><b>nodeConfig</b>&nbsp;&nbsp;&nbsp;(projects/.../network.component.ts)</a>
+                        </li>
+                        <li>
                             <a href="#SITE_CONFIGURATION_URL" title="projects/map4sci/src/app/core/services/site-configuration/site-configuration.service.ts" ><b>SITE_CONFIGURATION_URL</b>&nbsp;&nbsp;&nbsp;(projects/.../site-configuration.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#zoompanDefaults" title="projects/map4sci/src/app/shared/components/network/network.component.ts" ><b>zoompanDefaults</b>&nbsp;&nbsp;&nbsp;(projects/.../network.component.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -462,6 +477,68 @@
         </tbody>
     </table>
 </section>
+    <h3>projects/map4sci/src/app/pages/visualizer/components/dataset-search/dataset-search.component.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_AUTO_COMPLETE_THROTTLE"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_AUTO_COMPLETE_THROTTLE</b></span>
+                        <a href="#DEFAULT_AUTO_COMPLETE_THROTTLE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>100</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/map4sci/src/app/pages/visualizer/components/dataset-summary/dataset-summary.component.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="DEFAULT_DATASET_SUMMARY"></a>
+                    <span class="name">
+                        <span ><b>DEFAULT_DATASET_SUMMARY</b></span>
+                        <a href="#DEFAULT_DATASET_SUMMARY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DatasetSummary.html" target="_self" >DatasetSummary</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  label: &#x27;No dataset selected&#x27;,
+  numNodes: 0,
+  numEdges: 0
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
     <h3>projects/map4sci/src/app/core/services/theming/theming.service.ts</h3>
     <section>
     <h3></h3>    <table class="table table-sm table-bordered">
@@ -478,6 +555,125 @@
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>new InjectionToken&lt;Required&lt;ThemingConfig&gt;&gt;(&#x27;Default theme&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>projects/map4sci/src/app/shared/components/network/network.component.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="edgeConfig"></a>
+                    <span class="name">
+                        <span ><b>edgeConfig</b></span>
+                        <a href="#edgeConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Edge.html" target="_self" >Edge[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { level: 0, zoom: 0, color: &#x27;#FFEBA1&#x27;, width: 1200, opacity: 0.0 },
+  { level: 1, zoom: 0.0, color: &#x27;#FFEBA1&#x27;, width: 1000, opacity: 1.0 },
+  { level: 2, zoom: 0.004, color: &#x27;#FFEBA1&#x27;, width: 900, opacity: 1.0 },
+  { level: 3, zoom: 0.008, color: &#x27;#F9D776&#x27;, width: 800, opacity: 0.9 },
+  { level: 4, zoom: 0.012, color: &#x27;#c1b276&#x27;, width: 700, opacity: 0.9 },
+  { level: 5, zoom: 0.016, color: &#x27;#94895f&#x27;, width: 600, opacity: 0.8 },
+  { level: 6, zoom: 0.024, color: &#x27;#615b43&#x27;, width: 500, opacity: 0.8 },
+  { level: 7, zoom: 0.028, color: &#x27;gray&#x27;, width: 200, opacity: 0.7 },
+  { level: 8, zoom: 0.032, color: &#x27;gray&#x27;, width: 200, opacity: 0.6 },
+  { level: 9, zoom: 0.036, color: &#x27;gray&#x27;, width: 200, opacity: 0.5 }
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nodeConfig"></a>
+                    <span class="name">
+                        <span ><b>nodeConfig</b></span>
+                        <a href="#nodeConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Node.html" target="_self" >Node[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { level: 0, zoom: 0.0, fontSize: 10000 },
+  { level: 1, zoom: 0.0, fontSize: 10000 },
+  { level: 2, zoom: 0.004, fontSize: 4000 },
+  { level: 3, zoom: 0.008, fontSize: 2000 },
+  { level: 4, zoom: 0.012, fontSize: 1500 },
+  { level: 5, zoom: 0.016, fontSize: 1000 },
+  { level: 6, zoom: 0.024, fontSize: 1000 },
+  { level: 7, zoom: 0.028, fontSize: 1000 },
+  { level: 8, zoom: 0.032, fontSize: 500 },
+  { level: 9, zoom: 0.036, fontSize: 500 }
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoompanDefaults"></a>
+                    <span class="name">
+                        <span ><b>zoompanDefaults</b></span>
+                        <a href="#zoompanDefaults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  zoomFactor: 0.1, // zoom factor per zoom tick
+  zoomDelay: 45, // how many ms between zoom ticks
+  minZoom: 0.001, // min zoom level
+  maxZoom: 0.036, // max zoom level
+  fitPadding: 50, // padding when fitting
+  panSpeed: 2, // how many ms in between pan ticks
+  panDistance: 20, // max pan distance per tick
+  panDragAreaSize: 75, // the length of the pan drag box in which the vector for panning is calculated (bigger &#x3D; finer control of pan speed and direction)
+  panMinPercentSpeed: 0.25, // the slowest speed we can pan by (as a percent of panSpeed)
+  panInactiveArea: 8, // radius of inactive area in pan drag box
+  panIndicatorMinOpacity: 0.5, // min opacity of pan indicator (the draggable nib); scales from this to 1.0
+  zoomOnly: true, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
+  fitSelector: undefined, // selector of elements to fit
+  animateOnFit: () &#x3D;&gt; true, // whether to animate on fit
+  fitAnimationDuration: 1000, // duration of animation on fit
+}</code>
                     </td>
                 </tr>
 
@@ -593,6 +789,15 @@
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

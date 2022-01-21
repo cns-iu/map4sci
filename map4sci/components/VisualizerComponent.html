@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -74,14 +74,13 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
                     <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
             <tr>
@@ -139,47 +138,31 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#dataset" >dataset</a>
-                            </li>
-                            <li>
-                                <a href="#datasetControl" >datasetControl</a>
-                            </li>
-                            <li>
-                                <a href="#events" >events</a>
-                            </li>
-                            <li>
-                                <a href="#filter" >filter</a>
-                            </li>
-                            <li>
-                                <a href="#filteredNodes" >filteredNodes</a>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#datasets$" >datasets$</a>
                             </li>
                             <li>
                                     <span class="modifier">Optional</span>
-                                <a href="#filteredOptions" >filteredOptions</a>
-                            </li>
-                            <li>
-                                <a href="#iconOpened" >iconOpened</a>
-                            </li>
-                            <li>
-                                <a href="#mapPins" >mapPins</a>
+                                <a href="#datasetSearch" >datasetSearch</a>
                             </li>
                             <li>
                                 <a href="#opened" >opened</a>
                             </li>
                             <li>
-                                <a href="#options" >options</a>
-                            </li>
-                            <li>
-                                <a href="#searchControl" >searchControl</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Optional</span>
-                                <a href="#searchTerm" >searchTerm</a>
+                                <a href="#selectedDataset" >selectedDataset</a>
+                            </li>
+                            <li>
+                                <a href="#selectedVisualization" >selectedVisualization</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
                                     <span class="modifier">Readonly</span>
                                 <a href="#subscriptions" >subscriptions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#visualizations" >visualizations</a>
                             </li>
                         </ul>
                     </td>
@@ -194,26 +177,27 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#_filter" >_filter</a>
-                            </li>
-                            <li>
-                                <a href="#logMouseEvent" >logMouseEvent</a>
-                            </li>
-                            <li>
-                                <a href="#mapDataSwitcherChange" >mapDataSwitcherChange</a>
+                                <a href="#clearDatasetSearch" >clearDatasetSearch</a>
                             </li>
                             <li>
                                 <a href="#ngOnDestroy" >ngOnDestroy</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit" >ngOnInit</a>
+                                <a href="#searchDataset" >searchDataset</a>
                             </li>
                             <li>
-                                <a href="#search" >search</a>
+                                <a href="#setSelectedDataset" >setSelectedDataset</a>
                             </li>
                             <li>
-                                <a href="#searchButtonClick" >searchButtonClick</a>
+                                <a href="#setSelectedVisualization" >setSelectedVisualization</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setupDatasets" >setupDatasets</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#setupInitialDatasetSelection" >setupInitialDatasetSelection</a>
                             </li>
                             <li>
                                 <a href="#toggle" >toggle</a>
@@ -226,26 +210,6 @@
 
 
 
-                    <tr>
-                        <td class="col-md-4">
-                            <h6><b>Accessors</b></h6>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <ul class="index-list">
-                                <li>
-                                    <a href="#displayMap" >displayMap</a>
-                                </li>
-                                <li>
-                                    <a href="#buttonTitle" >buttonTitle</a>
-                                </li>
-                                <li>
-                                    <a href="#buttonDisabled" >buttonDisabled</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
         </tbody>
     </table>
 </section>
@@ -256,12 +220,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(mapData: <a href="../injectables/MapDataService.html" target="_self">MapDataService</a>, ga: GoogleAnalyticsService, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+<code>constructor(mapData: <a href="../injectables/MapDataService.html" target="_self">MapDataService</a>, networkDatasetProcessor: <a href="../injectables/NetworkDatasetProcessor.html" target="_self">NetworkDatasetProcessor</a>, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -291,10 +255,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>ga</td>
+                                                        <td>networkDatasetProcessor</td>
                                                   
                                                         <td>
-                                                                    <code>GoogleAnalyticsService</code>
+                                                                        <code><a href="../injectables/NetworkDatasetProcessor.html" target="_self" >NetworkDatasetProcessor</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -336,26 +300,98 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="_filter"></a>
+                    <a name="clearDatasetSearch"></a>
                     <span class="name">
-                        <span class="modifier">Private</span>
-                        <span ><b>_filter</b></span>
-                        <a href="#_filter"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>clearDatasetSearch</b></span>
+                        <a href="#clearDatasetSearch"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>_filter(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>clearDatasetSearch()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="112"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:112</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchDataset"></a>
+                    <span class="name">
+                        <span ><b>searchDataset</b></span>
+                        <a href="#searchDataset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchDataset(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:53</a></div>
                 </td>
             </tr>
 
@@ -393,87 +429,6 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>string[]</code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logMouseEvent"></a>
-                    <span class="name">
-                        <span ><b>logMouseEvent</b></span>
-                        <a href="#logMouseEvent"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>logMouseEvent(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: MapMouseEvent)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="165"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:165</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>name</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>event</td>
-                                    <td>
-                                            <code>MapMouseEvent</code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
                         <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
 
                     </div>
@@ -488,24 +443,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="mapDataSwitcherChange"></a>
+                    <a name="setSelectedDataset"></a>
                     <span class="name">
-                        <span ><b>mapDataSwitcherChange</b></span>
-                        <a href="#mapDataSwitcherChange"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>setSelectedDataset</b></span>
+                        <a href="#setSelectedDataset"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>mapDataSwitcherChange(dataset: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>setSelectedDataset(dataset: <a href="../interfaces/Dataset.html" target="_self">Dataset</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="108"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:108</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -528,7 +483,7 @@
                                 <tr>
                                     <td>dataset</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../interfaces/Dataset.html" target="_self" >Dataset</a></code>
                                     </td>
 
                                     <td>
@@ -557,98 +512,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnDestroy"></a>
+                    <a name="setSelectedVisualization"></a>
                     <span class="name">
-                        <span ><b>ngOnDestroy</b></span>
-                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>setSelectedVisualization</b></span>
+                        <a href="#setSelectedVisualization"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnDestroy()</code>
+<code>setSelectedVisualization(visualization: <a href="../undefineds/VisualizationType.html" target="_self">VisualizationType</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="104"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:104</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="ngOnInit"></a>
-                    <span class="name">
-                        <span ><b>ngOnInit</b></span>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>ngOnInit()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="97"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:97</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="search"></a>
-                    <span class="name">
-                        <span ><b>search</b></span>
-                        <a href="#search"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>search(searchTerm: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="141"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:141</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:45</a></div>
                 </td>
             </tr>
 
@@ -669,9 +550,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>searchTerm</td>
+                                    <td>visualization</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                <code><a href="../miscellaneous/typealiases.html#VisualizationType" target="_self" >VisualizationType</a></code>
                                     </td>
 
                                     <td>
@@ -700,24 +581,65 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="searchButtonClick"></a>
+                    <a name="setupDatasets"></a>
                     <span class="name">
-                        <span ><b>searchButtonClick</b></span>
-                        <a href="#searchButtonClick"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Private</span>
+                        <span ><b>setupDatasets</b></span>
+                        <a href="#setupDatasets"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>searchButtonClick()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setupDatasets()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="118"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:118</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/Dataset.html" target="_self" >Observable&lt;Dataset[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setupInitialDatasetSelection"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>setupInitialDatasetSelection</b></span>
+                        <a href="#setupInitialDatasetSelection"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>setupInitialDatasetSelection()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:99</a></div>
                 </td>
             </tr>
 
@@ -753,8 +675,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="156"
-                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:156</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:61</a></div>
                 </td>
             </tr>
 
@@ -780,21 +702,22 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="dataset"></a>
+                    <a name="datasets$"></a>
                     <span class="name">
-                        <span ><b>dataset</b></span>
-                        <a href="#dataset"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>datasets$</b></span>
+                        <a href="#datasets$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>EMPTY_DATASET</code>
+                        <i>Default value : </i><code>this.setupDatasets()</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -805,72 +728,11 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="datasetControl"></a>
+                    <a name="datasetSearch"></a>
                     <span class="name">
-                        <span ><b>datasetControl</b></span>
-                        <a href="#datasetControl"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new FormControl()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:37</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="events"></a>
-                    <span class="name">
-                        <span ><b>events</b></span>
-                        <a href="#events"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>string[]</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:24</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="filter"></a>
-                    <span class="name">
-                        <span ><b>filter</b></span>
-                        <a href="#filter"><span class="icon ion-ios-link"></span></a>
+                            <span class="modifier">Optional</span>
+                        <span ><b>datasetSearch</b></span>
+                        <a href="#datasetSearch"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -880,128 +742,9 @@
 
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>&#x27;&#x27;</code>
-                    </td>
-                </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:30</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="filteredNodes"></a>
-                    <span class="name">
-                        <span ><b>filteredNodes</b></span>
-                        <a href="#filteredNodes"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>FeatureCollection&lt;Geometry | GeoJsonProperties&gt;</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>EMPTY_DATASET.nodes</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:29</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="filteredOptions"></a>
-                    <span class="name">
-                            <span class="modifier">Optional</span>
-                        <span ><b>filteredOptions</b></span>
-                        <a href="#filteredOptions"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>Observable&lt;string[]&gt;</code>
-
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:33</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="iconOpened"></a>
-                    <span class="name">
-                        <span ><b>iconOpened</b></span>
-                        <a href="#iconOpened"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>true</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:26</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="mapPins"></a>
-                    <span class="name">
-                        <span ><b>mapPins</b></span>
-                        <a href="#mapPins"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../interfaces/MapMarker.html" target="_self" >MapMarker[]</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:35</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:27</a></div>
                         </td>
                     </tr>
 
@@ -1026,7 +769,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -1037,85 +780,54 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="options"></a>
-                    <span class="name">
-                        <span ><b>options</b></span>
-                        <a href="#options"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>    <code>string[]</code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>[]</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:32</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="searchControl"></a>
-                    <span class="name">
-                        <span ><b>searchControl</b></span>
-                        <a href="#searchControl"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>new FormControl()</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:38</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="searchTerm"></a>
+                    <a name="selectedDataset"></a>
                     <span class="name">
                             <span class="modifier">Optional</span>
-                        <span ><b>searchTerm</b></span>
-                        <a href="#searchTerm"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>selectedDataset</b></span>
+                        <a href="#selectedDataset"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>string | null</code>
+                        <i>Type : </i>        <code><a href="../interfaces/Dataset.html" target="_self" >Dataset</a></code>
 
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedVisualization"></a>
+                    <span class="name">
+                        <span ><b>selectedVisualization</b></span>
+                        <a href="#selectedVisualization"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#VisualizationType" target="_self" >VisualizationType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Map&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:23</a></div>
                         </td>
                     </tr>
 
@@ -1142,7 +854,39 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="visualizations"></a>
+                    <span class="name">
+                            <span class="modifier">Readonly</span>
+                        <span ><b>visualizations</b></span>
+                        <a href="#visualizations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#VisualizationType" target="_self" >VisualizationType[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[&#x27;Map&#x27;, &#x27;Network&#x27;]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -1151,93 +895,22 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="accessors">
-        Accessors
-    </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="displayMap"></a>
-                        <span class="name"><b>displayMap</b><a href="#displayMap"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>displayMap()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:41</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="buttonTitle"></a>
-                        <span class="name"><b>buttonTitle</b><a href="#buttonTitle"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>buttonTitle()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:56</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="buttonDisabled"></a>
-                        <span class="name"><b>buttonDisabled</b><a href="#buttonDisabled"><span class="icon ion-ios-link"></span></a></span>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <span class="accessor"><b>get</b><code>buttonDisabled()</code></span>
-                    </td>
-                </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/visualizer.component.ts:68</a></div>
-                                </td>
-                            </tr>
-
-            </tbody>
-        </table>
-</section>
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Any } from &#x27;@angular-ru/common/typings&#x27;;
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
-import { FormControl } from &#x27;@angular/forms&#x27;;
-import { FeatureCollection, GeoJsonProperties, Geometry } from &#x27;geojson&#x27;;
-import { MapMouseEvent } from &#x27;maplibre-gl&#x27;;
-import { GoogleAnalyticsService } from &#x27;ngx-google-analytics&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from &#x27;@angular/core&#x27;;
 import { Observable, Subscription } from &#x27;rxjs&#x27;;
-import { map, startWith } from &#x27;rxjs/operators&#x27;;
+import { filter, map, shareReplay, take } from &#x27;rxjs/operators&#x27;;
 
-import { EMPTY_DATASET } from &#x27;../../map/map&#x27;;
+import { MapDatasetDirectory } from &#x27;../../map/map&#x27;;
 import { MapDataService } from &#x27;../../services/map-data.service&#x27;;
-import { MapMarker } from &#x27;./../../map/map&#x27;;
+import { ContentDatasets, VisualizationType } from &#x27;./components/content/content.component&#x27;;
+import { MenuDataset } from &#x27;./components/menu/menu.component&#x27;;
+import { NetworkDatasetProcessor } from &#x27;./services/network-dataset-processor.sevice&#x27;;
+
+
+export interface Dataset extends MenuDataset, ContentDatasets { }
 
 
 @Component({
@@ -1246,215 +919,135 @@ import { MapMarker } from &#x27;./../../map/map&#x27;;
   styleUrls: [&#x27;./visualizer.component.scss&#x27;],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VisualizerComponent implements OnInit, OnDestroy {
-  events: string[] &#x3D; [];
+export class VisualizerComponent implements OnDestroy {
+  readonly visualizations: VisualizationType[] &#x3D; [&#x27;Map&#x27;, &#x27;Network&#x27;];
+  selectedVisualization: VisualizationType &#x3D; &#x27;Map&#x27;;
+
+  readonly datasets$ &#x3D; this.setupDatasets();
+  selectedDataset?: Dataset;
+  datasetSearch?: string;
+
   opened &#x3D; true;
-  iconOpened &#x3D; true;
-
-  dataset &#x3D; EMPTY_DATASET;
-  filteredNodes: FeatureCollection&lt;Geometry, GeoJsonProperties&gt; &#x3D; EMPTY_DATASET.nodes;
-  filter &#x3D; &#x27;&#x27;;
-
-  options: string[] &#x3D; [];
-  filteredOptions?: Observable&lt;string[]&gt;;
-  searchTerm?: string | null;
-  mapPins: MapMarker[] &#x3D; [];
-
-  datasetControl: FormControl &#x3D; new FormControl();
-  searchControl: FormControl &#x3D; new FormControl();
-
-
-  get displayMap(): boolean {
-    const { dataset } &#x3D; this;
-    if (!dataset.nodes) {
-      return false;
-    }
-    if (!dataset.nodes.features) {
-      return false;
-    }
-    if (dataset.nodes.features.length &lt; 1) {
-      return false;
-    }
-
-    return true;
-  }
-
-  get buttonTitle(): string {
-    const { searchTerm, filter } &#x3D; this;
-    if (!searchTerm &amp;&amp; filter &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
-      return &#x27;Search&#x27;;
-    }
-    if (searchTerm !&#x3D;&#x3D; &#x27;&#x27; &amp;&amp; filter &#x3D;&#x3D;&#x3D; searchTerm) {
-      return &#x27;Clear&#x27;;
-    }
-
-    return &#x27;Search&#x27;;
-  }
-
-  get buttonDisabled(): boolean {
-    if (!this.searchTerm &amp;&amp; this.filter !&#x3D;&#x3D; this.searchTerm) {
-      return true;
-    }
-
-    return false;
-  }
 
   private readonly subscriptions &#x3D; new Subscription();
 
   constructor(
-    readonly mapData: MapDataService,
-    readonly ga: GoogleAnalyticsService,
-    cdr: ChangeDetectorRef
+    private readonly mapData: MapDataService,
+    private readonly networkDatasetProcessor: NetworkDatasetProcessor,
+    private readonly cdr: ChangeDetectorRef
   ) {
-    const sub &#x3D; mapData.dataset$.subscribe(ds &#x3D;&gt; {
-      this.dataset &#x3D; ds;
-      this.filteredNodes &#x3D; ds.nodes;
-      this.options &#x3D; ds.nodes.features.map(n &#x3D;&gt; n.properties?.label);
-      cdr.markForCheck();
-
-      if (this.searchTerm) {
-        this.search(this.searchTerm);
-      }
-    });
-
-    this.subscriptions.add(sub);
-  }
-
-  ngOnInit(): void {
-    this.filteredOptions &#x3D; this.searchControl.valueChanges.pipe(
-      startWith(&#x27;&#x27;),
-      map(value &#x3D;&gt; this._filter(value))
-    );
+    this.setupInitialDatasetSelection();
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
 
-  mapDataSwitcherChange(dataset: string): void {
-    this.mapData.setDataset(dataset);
+  setSelectedVisualization(visualization: VisualizationType): void {
+    this.selectedVisualization &#x3D; visualization;
   }
 
-  private _filter(value: string): string[] {
-    const filterValue &#x3D; value.toLowerCase();
-
-    return this.options.filter(option &#x3D;&gt; option.toLowerCase().includes(filterValue));
+  setSelectedDataset(dataset: Dataset): void {
+    this.selectedDataset &#x3D; dataset;
   }
 
-  searchButtonClick(): void {
-    const { searchTerm } &#x3D; this;
-
-    // Remove all markers before searching
-    const markers &#x3D; document.querySelectorAll(&#x27;.maplibregl-marker&#x27;) as unknown as HTMLElement[];
-    for (const marker of markers) {
-      marker.remove();
-    }
-
-    if (this.buttonTitle &#x3D;&#x3D;&#x3D; &#x27;Clear&#x27; &amp;&amp; searchTerm) {
-      this.mapPins &#x3D; [];
-      this.filter &#x3D; &#x27;&#x27;;
-      this.searchTerm &#x3D; &#x27;&#x27;;
-      return;
-    }
-
-    if (!searchTerm) {
-      return;
-    }
-
-    this.search(searchTerm);
+  searchDataset(value: string): void {
+    this.datasetSearch &#x3D; value;
   }
 
-  search(searchTerm: string): void {
-    const { nodes } &#x3D; this.dataset;
-
-    const filteredNodes &#x3D; nodes.features.filter(n &#x3D;&gt; n.properties?.label.toLowerCase().includes(searchTerm.toLowerCase())) as Any;
-    this.filter &#x3D; searchTerm;
-    const mapPins: MapMarker[] &#x3D; filteredNodes.map((n: Any) &#x3D;&gt; {
-      const x: MapMarker &#x3D; {
-        coordinates: n.geometry.coordinates,
-        title: n.properties?.label
-      };
-      return x;
-    });
-    this.mapPins &#x3D; [...mapPins];
+  clearDatasetSearch(): void {
+    this.datasetSearch &#x3D; undefined;
   }
 
   toggle(): void {
-    const { opened } &#x3D; this;
-    if (opened) {
-      this.opened &#x3D; false;
-    } else {
-      this.opened &#x3D; true;
-    }
+    this.opened &#x3D; !this.opened;
   }
 
-  logMouseEvent(name: string, event: MapMouseEvent): void {
-    this.ga.event(&#x60;${name}_${event.type}&#x60;, &#x27;map_interaction&#x27;, event.lngLat.toString());
+  private setupDatasets(): Observable&lt;Dataset[]&gt; {
+    const { mapData, networkDatasetProcessor } &#x3D; this;
+    const dirToDataset &#x3D; (dir: MapDatasetDirectory): Dataset &#x3D;&gt; {
+      const mapDataset$ &#x3D; mapData.getDataset(dir.id).pipe(shareReplay(1));
+      const networkDataset$ &#x3D; mapDataset$.pipe(
+        map(ds &#x3D;&gt; networkDatasetProcessor.process(ds))
+      );
+      const searchableItems$ &#x3D; mapDataset$.pipe(
+        map(ds &#x3D;&gt; ds.nodes.features.map(node &#x3D;&gt; node.properties?.label)),
+        map(options &#x3D;&gt; options.map(opt &#x3D;&gt; ({ id: opt, value: opt }))),
+      );
+      const summaries$ &#x3D; mapDataset$.pipe(
+        map(ds &#x3D;&gt; ({
+          label: dir.name,
+          numNodes: ds.nodes.features.length,
+          numEdges: ds.edges.features.length
+        })),
+      );
+
+      return {
+        id: dir.id,
+        label: dir.name,
+        mapDataset$,
+        networkDataset$,
+        searchableItems$,
+        summaries$
+      };
+    };
+
+    return mapData.datasetDirectory$.pipe(
+      map(dirs &#x3D;&gt; dirs.map(dirToDataset))
+    );
+  }
+
+  private setupInitialDatasetSelection(): void {
+    const { datasets$, cdr, subscriptions } &#x3D; this;
+    const firstDataset$ &#x3D; datasets$.pipe(
+      filter(datasets &#x3D;&gt; datasets.length &gt; 0),
+      map(datasets &#x3D;&gt; datasets[0]),
+      take(1)
+    );
+    const sub &#x3D; firstDataset$.subscribe(dataset &#x3D;&gt; {
+      if (this.selectedDataset &#x3D;&#x3D;&#x3D; undefined) {
+        this.setSelectedDataset(dataset);
+        cdr.markForCheck();
+      }
+    });
+
+    subscriptions.add(sub);
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;map-wrapper&quot;&gt;
-  &lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
-    &lt;mat-sidenav #sidenav mode&#x3D;&quot;side&quot; gaCategory&#x3D;&quot;sidebar_interactions&quot; [(opened)]&#x3D;&quot;opened&quot;&gt;
-      &lt;form&gt;
-        &lt;mat-form-field appearance&#x3D;&quot;fill&quot; *ngIf&#x3D;&quot;(this.mapData.datasetDirectory$ | async)!.length &gt; 1&quot;
-                        gaEvent&#x3D;&quot;data_set_selection_started&quot; gaBind&#x3D;&quot;focus&quot; class&#x3D;&quot;form-field&quot;&gt;
-          &lt;mat-label&gt;Select data set ...&lt;/mat-label&gt;
-          &lt;mat-select class&#x3D;&quot;dataset-selector&quot; (selectionChange)&#x3D;&quot;mapDataSwitcherChange($event.value)&quot; value&#x3D;&quot;test&quot;&gt;
-            &lt;mat-option *ngFor&#x3D;&quot;let dataset of (this.mapData.datasetDirectory$ | async)&quot; gaEvent&#x3D;&quot;data_set_selected&quot;
-                        [gaLabel]&#x3D;&quot;dataset.name&quot; [value]&#x3D;&quot;dataset.id&quot;&gt;
-              {{ dataset.name }}
-            &lt;/mat-option&gt;
-          &lt;/mat-select&gt;
-        &lt;/mat-form-field&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-sidenav-container&gt;
+  &lt;mat-sidenav mode&#x3D;&quot;side&quot; gaCategory&#x3D;&quot;sidebar_interactions&quot; [(opened)]&#x3D;&quot;opened&quot; #sidenav&gt;
+    &lt;m4s-visualizer-menu [visualizations]&#x3D;&quot;visualizations&quot; [selectedVisualization]&#x3D;&quot;selectedVisualization&quot;
+                         [datasets]&#x3D;&quot;(datasets$ | async) ?? []&quot; [selectedDataset]&#x3D;&quot;selectedDataset&quot;
+                         (visualizationSelected)&#x3D;&quot;setSelectedVisualization($event)&quot;
+                         (datasetSelected)&#x3D;&quot;setSelectedDataset($event)&quot; (datasetSearched)&#x3D;&quot;searchDataset($event)&quot;
+                         (datasetSearchCleared)&#x3D;&quot;clearDatasetSearch()&quot;&gt;
+    &lt;/m4s-visualizer-menu&gt;
+  &lt;/mat-sidenav&gt;
 
-        &lt;mat-form-field class&#x3D;&quot;w-100&quot; appearance&#x3D;&quot;fill&quot;&gt;
-          &lt;mat-label&gt;Search...&lt;/mat-label&gt;
-          &lt;input type&#x3D;&quot;text&quot; [(ngModel)]&#x3D;&quot;searchTerm&quot; placeholder&#x3D;&quot;Search term&quot; aria-label&#x3D;&quot;Search field&quot; matInput
-                 gaEvent&#x3D;&quot;search_started&quot; gaBind&#x3D;&quot;focus&quot; [formControl]&#x3D;&quot;searchControl&quot; [matAutocomplete]&#x3D;&quot;auto&quot;&gt;
-          &lt;mat-autocomplete autoActiveFirstOption #auto&#x3D;&quot;matAutocomplete&quot;&gt;
-            &lt;mat-option *ngFor&#x3D;&quot;let option of filteredOptions | async&quot; gaEvent&#x3D;&quot;search_autocomplete_value_selected&quot;
-                        [gaLabel]&#x3D;&quot;option&quot; [value]&#x3D;&quot;option&quot;&gt;
-              {{option}}
-            &lt;/mat-option&gt;
-          &lt;/mat-autocomplete&gt;
-        &lt;/mat-form-field&gt;
-      &lt;/form&gt;
-      &lt;button mat-flat-button class&#x3D;&quot;search-button&quot; gaEvent&#x3D;&quot;search_button_clicked&quot; [gaLabel]&#x3D;&quot;buttonTitle&quot;
-              [disabled]&#x3D;&quot;buttonDisabled&quot; (click)&#x3D;&quot;searchButtonClick()&quot;&gt;
-        {{ buttonTitle }}
+  &lt;mat-sidenav-content&gt;
+    &lt;p class&#x3D;&quot;toggle&quot; gaCategory&#x3D;&quot;sidebar_toggle_interactions&quot;&gt;
+      &lt;button mat-button gaEvent&#x3D;&quot;opened&quot; (click)&#x3D;&quot;sidenav.toggle(); toggle()&quot; [class.hidden]&#x3D;&quot;opened&quot;&gt;
+        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Open side drawer&quot;&gt;
+          arrow_right
+        &lt;/mat-icon&gt;
       &lt;/button&gt;
-    &lt;/mat-sidenav&gt;
 
-    &lt;mat-sidenav-content&gt;
-      &lt;p gaCategory&#x3D;&quot;sidebar_toggle_interactions&quot;&gt;
-        &lt;button class&#x3D;&quot;drawer-toggle&quot; mat-button gaEvent&#x3D;&quot;opened&quot; (click)&#x3D;&quot;sidenav.toggle(); toggle()&quot;
-                [class.hidden]&#x3D;&quot;opened&quot;&gt;
-          &lt;mat-icon class&#x3D;&quot;expand-collapse-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Open side drawer&quot;&gt;
-            arrow_right
-          &lt;/mat-icon&gt;
-        &lt;/button&gt;
+      &lt;button mat-button gaEvent&#x3D;&quot;closed&quot; (click)&#x3D;&quot;sidenav.toggle(); toggle()&quot; [class.hidden]&#x3D;&quot;!opened&quot;&gt;
+        &lt;mat-icon aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Close side drawer&quot;&gt;
+          arrow_left
+        &lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/p&gt;
 
-        &lt;button class&#x3D;&quot;drawer-toggle&quot; mat-button gaEvent&#x3D;&quot;closed&quot; (click)&#x3D;&quot;sidenav.toggle(); toggle()&quot;
-                [class.hidden]&#x3D;&quot;!opened&quot;&gt;
-          &lt;mat-icon class&#x3D;&quot;expand-collapse-icon&quot; aria-hidden&#x3D;&quot;false&quot; aria-label&#x3D;&quot;Close side drawer&quot;&gt;
-            arrow_left
-          &lt;/mat-icon&gt;
-        &lt;/button&gt;
-      &lt;/p&gt;
-      &lt;m4s-map *ngIf&#x3D;&quot;displayMap&quot; [edgeFeatures]&#x3D;&quot;dataset.edges&quot; [nodeFeatures]&#x3D;&quot;dataset.nodes&quot;
-               [clusterFeatures]&#x3D;&quot;dataset.cluster&quot; [boundaryFeatures]&#x3D;&quot;dataset.boundary&quot;
-               [edgesConfig]&#x3D;&quot;dataset.config?.edgeConfig&quot; [nodesConfig]&#x3D;&quot;dataset.config?.nodeConfig&quot;
-               [initialZoomConfig]&#x3D;&quot;dataset.config?.initialZoom&quot; [mapCenterConfig]&#x3D;&quot;dataset.config?.mapCenter&quot;
-               [textOverlapEnabledZoomConfig]&#x3D;&quot;dataset.config?.textOverlapEnabledZoom&quot;
-               [minimapConfig]&#x3D;&quot;dataset.config?.minimapConfig&quot; [mapMarkers]&#x3D;&quot;mapPins&quot;
-               (nodeClick)&#x3D;&quot;logMouseEvent(&#x27;node&#x27;, $event)&quot; (edgeClick)&#x3D;&quot;logMouseEvent(&#x27;edge&#x27;, $event)&quot;&gt;&lt;/m4s-map&gt;
-    &lt;/mat-sidenav-content&gt;
-  &lt;/mat-sidenav-container&gt;
-&lt;/div&gt;
+    &lt;m4s-visualizer-content [visualization]&#x3D;&quot;selectedVisualization&quot; [datasets]&#x3D;&quot;selectedDataset&quot;
+                            [search]&#x3D;&quot;datasetSearch&quot;&gt;
+    &lt;/m4s-visualizer-content&gt;
+  &lt;/mat-sidenav-content&gt;
+&lt;/mat-sidenav-container&gt;
 </code></pre>
     </div>
 
@@ -1462,81 +1055,52 @@ export class VisualizerComponent implements OnInit, OnDestroy {
                 <p class="comment">
                     <code>./visualizer.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">::ng-deep {
-  .mat-form-field-flex {
-    background: none !important;
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: block;
+
+  &amp;, mat-sidenav-container {
+    width: 100%;
+    height: calc(100vh - 6rem);
   }
 
-  ::ng-deep .mat-form-field-flex {
-    background-color: var(--background);
-  }
-
-  .mat-drawer-inner-container {
+  mat-sidenav {
+    width: 20%;
+    height: 100%;
     padding: 0.5rem;
+    background-color: var(--background);
+    border: none;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 18px 0px rgba(0, 0, 0, 0.12);
   }
-}
 
-.dataset-selector {
-  margin-bottom: 0.75rem;
-  width: 100%;
-}
+  mat-sidenav-content {
+    background-color: white;
 
-.form-field {
-  width: 100%;
-}
+    .toggle {
+      z-index: 1;
+      position: relative;
+      top: 3rem;
+      margin: 0;
+      height: 0;
 
-.map-wrapper,
-.sidenav-container {
-  width: 100%;
-  height: calc(100vh - 6rem);
-}
+      button {
+        min-width: 1.5rem;
+        padding: .25rem;
+        height: 3rem;
+        border: none;
+        background-color: var(--background);
+        box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 3px;
+        outline: none;
+        cursor: pointer;
 
-mat-sidenav {
-  width: 20%;
-  height: 100%;
-  background-color: var(--background);
-  border: none;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-}
-
-mat-sidenav-content {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-
-  p {
-    z-index: 1;
-    position: relative;
-    top: 3rem;
-
-    button {
-      min-width: 1.5rem;
-      padding: .25rem;
-      height: 3rem;
-      border: none;
-      background-color: var(--background);
-      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
-        0px 1px 18px 0px rgba(0, 0, 0, 0.12);
-      border-radius: 3px;
-      outline: none;
-      cursor: pointer;
-
-      &amp;.hidden {
-        display: none;
+        &amp;.hidden {
+          display: none;
+        }
       }
     }
   }
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.search-button {
-  width: 100%;
-  background-color: #286f94;
-  color: white;
 }
 </code></pre>
     </div>
@@ -1566,8 +1130,8 @@ mat-sidenav-content {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="map-wrapper">  <mat-sidenav-container class="sidenav-container">    <mat-sidenav #sidenav mode="side" gaCategory="sidebar_interactions" [(opened)]="opened">      <form>        <mat-form-field appearance="fill" *ngIf="(this.mapData.datasetDirectory$ | async)!.length > 1"                        gaEvent="data_set_selection_started" gaBind="focus" class="form-field">          <mat-label>Select data set ...</mat-label>          <mat-select class="dataset-selector" (selectionChange)="mapDataSwitcherChange($event.value)" value="test">            <mat-option *ngFor="let dataset of (this.mapData.datasetDirectory$ | async)" gaEvent="data_set_selected"                        [gaLabel]="dataset.name" [value]="dataset.id">              {{ dataset.name }}            </mat-option>          </mat-select>        </mat-form-field>        <mat-form-field class="w-100" appearance="fill">          <mat-label>Search...</mat-label>          <input type="text" [(ngModel)]="searchTerm" placeholder="Search term" aria-label="Search field" matInput                 gaEvent="search_started" gaBind="focus" [formControl]="searchControl" [matAutocomplete]="auto">          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">            <mat-option *ngFor="let option of filteredOptions | async" gaEvent="search_autocomplete_value_selected"                        [gaLabel]="option" [value]="option">              {{option}}            </mat-option>          </mat-autocomplete>        </mat-form-field>      </form>      <button mat-flat-button class="search-button" gaEvent="search_button_clicked" [gaLabel]="buttonTitle"              [disabled]="buttonDisabled" (click)="searchButtonClick()">        {{ buttonTitle }}      </button>    </mat-sidenav>    <mat-sidenav-content>      <p gaCategory="sidebar_toggle_interactions">        <button class="drawer-toggle" mat-button gaEvent="opened" (click)="sidenav.toggle(); toggle()"                [class.hidden]="opened">          <mat-icon class="expand-collapse-icon" aria-hidden="false" aria-label="Open side drawer">            arrow_right          </mat-icon>        </button>        <button class="drawer-toggle" mat-button gaEvent="closed" (click)="sidenav.toggle(); toggle()"                [class.hidden]="!opened">          <mat-icon class="expand-collapse-icon" aria-hidden="false" aria-label="Close side drawer">            arrow_left          </mat-icon>        </button>      </p>      <m4s-map *ngIf="displayMap" [edgeFeatures]="dataset.edges" [nodeFeatures]="dataset.nodes"               [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"               [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"               [initialZoomConfig]="dataset.config?.initialZoom" [mapCenterConfig]="dataset.config?.mapCenter"               [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"               [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="mapPins"               (nodeClick)="logMouseEvent(\'node\', $event)" (edgeClick)="logMouseEvent(\'edge\', $event)"></m4s-map>    </mat-sidenav-content>  </mat-sidenav-container></div></div>'
-    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container>  <mat-sidenav mode="side" gaCategory="sidebar_interactions" [(opened)]="opened" #sidenav>    <m4s-visualizer-menu [visualizations]="visualizations" [selectedVisualization]="selectedVisualization"                         [datasets]="(datasets$ | async) ?? []" [selectedDataset]="selectedDataset"                         (visualizationSelected)="setSelectedVisualization($event)"                         (datasetSelected)="setSelectedDataset($event)" (datasetSearched)="searchDataset($event)"                         (datasetSearchCleared)="clearDatasetSearch()">    </m4s-visualizer-menu>  </mat-sidenav>  <mat-sidenav-content>    <p class="toggle" gaCategory="sidebar_toggle_interactions">      <button mat-button gaEvent="opened" (click)="sidenav.toggle(); toggle()" [class.hidden]="opened">        <mat-icon aria-hidden="false" aria-label="Open side drawer">          arrow_right        </mat-icon>      </button>      <button mat-button gaEvent="closed" (click)="sidenav.toggle(); toggle()" [class.hidden]="!opened">        <mat-icon aria-hidden="false" aria-label="Close side drawer">          arrow_left        </mat-icon>      </button>    </p>    <m4s-visualizer-content [visualization]="selectedVisualization" [datasets]="selectedDataset"                            [search]="datasetSearch">    </m4s-visualizer-content>  </mat-sidenav-content></mat-sidenav-container></div>'
+    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'ContentComponent', 'selector': 'm4s-visualizer-content'},{'name': 'DatasetSearchComponent', 'selector': 'm4s-dataset-search'},{'name': 'DatasetSelectorComponent', 'selector': 'm4s-dataset-selector'},{'name': 'DatasetSummaryComponent', 'selector': 'm4s-dataset-summary'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'MenuComponent', 'selector': 'm4s-visualizer-menu'},{'name': 'NetworkComponent', 'selector': 'm4s-network'},{'name': 'VisualizationSelectorComponent', 'selector': 'm4s-visualization-selector'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
     var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'VisualizerComponent'};
 </script>
@@ -1600,6 +1164,15 @@ mat-sidenav-content {
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

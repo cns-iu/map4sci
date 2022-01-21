@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 	   <link rel="stylesheet" href="../styles/style.css">
-        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
 
@@ -80,7 +80,7 @@
 
 <section>
     <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
+    <table class="table table-sm table-hover metadata">
         <tbody>
 
             <tr>
@@ -508,7 +508,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><m4s-header></m4s-header><div class="content-container">  <div class="content">    <div class="outlet-wrapper">      <router-outlet>      </router-outlet>    </div>  </div>  <m4s-footer></m4s-footer></div></div>'
-    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
+    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'ContentComponent', 'selector': 'm4s-visualizer-content'},{'name': 'DatasetSearchComponent', 'selector': 'm4s-dataset-search'},{'name': 'DatasetSelectorComponent', 'selector': 'm4s-dataset-selector'},{'name': 'DatasetSummaryComponent', 'selector': 'm4s-dataset-summary'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'MenuComponent', 'selector': 'm4s-visualizer-menu'},{'name': 'NetworkComponent', 'selector': 'm4s-network'},{'name': 'VisualizationSelectorComponent', 'selector': 'm4s-visualization-selector'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
     var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
@@ -541,6 +541,15 @@ export class AppComponent implements OnInit {
                <!-- END CONTENT -->
            </div>
        </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;

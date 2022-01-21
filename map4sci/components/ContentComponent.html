@@ -1,0 +1,893 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Application map4sci code documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Application map4sci code documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  ContentComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>m4s-visualizer-content</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./content.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./content.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#clsName" >clsName</a>
+                            </li>
+                            <li>
+                                <a href="#mapPins" >mapPins</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#logMapEvent" >logMapEvent</a>
+                            </li>
+                            <li>
+                                <a href="#logNetworkEvent" >logNetworkEvent</a>
+                            </li>
+                            <li>
+                                <a href="#searchMapDataset" >searchMapDataset</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#datasets" >datasets</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                            <li>
+                                <a href="#visualization" >visualization</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class" >class</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(ga: GoogleAnalyticsService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>ga</td>
+                                                  
+                                                        <td>
+                                                                    <code>GoogleAnalyticsService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="datasets"></a>
+                        <b>datasets</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ContentDatasets.html" target="_self" >ContentDatasets</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="search"></a>
+                        <b>search</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="visualization"></a>
+                        <b>visualization</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#VisualizationType" target="_self" >VisualizationType</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Map&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class"></a>
+                    <span class="name">
+                        <span ><b>class</b></span>
+                        <a href="#class"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>&quot;m4s-visualizer-content&quot;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;m4s-visualizer-content&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logMapEvent"></a>
+                    <span class="name">
+                        <span ><b>logMapEvent</b></span>
+                        <a href="#logMapEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logMapEvent(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: MapMouseEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MapMouseEvent</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logNetworkEvent"></a>
+                    <span class="name">
+                        <span ><b>logNetworkEvent</b></span>
+                        <a href="#logNetworkEvent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logNetworkEvent(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, event: <a href="../s/d.html" target="_self">NodeDataDefinition | EdgeDataDefinition</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/variables.html#d" target="_self" >NodeDataDefinition | EdgeDataDefinition</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/variables.html#d" target="_self" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchMapDataset"></a>
+                    <span class="name">
+                        <span ><b>searchMapDataset</b></span>
+                        <a href="#searchMapDataset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchMapDataset(dataset: <a href="../interfaces/MapDataset.html" target="_self">MapDataset</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>dataset</td>
+                                    <td>
+                                                <code><a href="../interfaces/MapDataset.html" target="_self" >MapDataset</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/MapMarker.html" target="_self" >MapMarker[]</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clsName"></a>
+                    <span class="name">
+                            <span class="modifier">Readonly</span>
+                        <span ><b>clsName</b></span>
+                        <a href="#clsName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;m4s-visualizer-content&#x27;</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @HostBinding(&#x27;class&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mapPins"></a>
+                    <span class="name">
+                        <span ><b>mapPins</b></span>
+                        <a href="#mapPins"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">projects/map4sci/src/app/pages/visualizer/components/content/content.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, HostBinding, Input } from &#x27;@angular/core&#x27;;
+import { EdgeDataDefinition, NodeDataDefinition } from &#x27;cytoscape&#x27;;
+import { Point } from &#x27;geojson&#x27;;
+import { MapMouseEvent } from &#x27;maplibre-gl&#x27;;
+import { GoogleAnalyticsService } from &#x27;ngx-google-analytics&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+
+import { MapDataset, MapMarker } from &#x27;../../../../map/map&#x27;;
+import { NetworkDataset } from &#x27;../../services/network-dataset-processor.sevice&#x27;;
+
+
+export type VisualizationType &#x3D; &#x27;Map&#x27; | &#x27;Network&#x27;;
+
+export interface ContentDatasets {
+  mapDataset$: Observable&lt;MapDataset&gt;;
+  networkDataset$: Observable&lt;NetworkDataset&gt;;
+}
+
+
+@Component({
+  selector: &#x27;m4s-visualizer-content&#x27;,
+  templateUrl: &#x27;./content.component.html&#x27;,
+  styleUrls: [&#x27;./content.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ContentComponent {
+  @HostBinding(&#x27;class&#x27;) readonly clsName &#x3D; &#x27;m4s-visualizer-content&#x27;;
+
+  @Input() visualization: VisualizationType &#x3D; &#x27;Map&#x27;;
+  @Input() datasets?: ContentDatasets;
+  @Input() search?: string;
+
+  mapPins &#x3D; [];
+
+  constructor(private readonly ga: GoogleAnalyticsService) { }
+
+  searchMapDataset(dataset: MapDataset): MapMarker[] {
+    const { search } &#x3D; this;
+    if (!search) {
+      return [];
+    }
+
+    const lcaseSearch &#x3D; search.toLowerCase();
+    const markers: MapMarker[] &#x3D; [];
+    const matchesSearch &#x3D; (label?: string) &#x3D;&gt;
+      label ? label.toLowerCase().includes(lcaseSearch) : false;
+
+    for (const node of dataset.nodes.features) {
+      const label: string &#x3D; node.properties?.label;
+      if (matchesSearch(label)) {
+        markers.push({
+          coordinates: (node.geometry as Point).coordinates as [number, number],
+          title: label
+        });
+      }
+    }
+
+    return markers;
+  }
+
+  logMapEvent(name: string, event: MapMouseEvent): void {
+    this.ga.event(&#x60;${name}_${event.type}&#x60;, &#x27;map_interaction&#x27;, event.lngLat.toString());
+  }
+
+  logNetworkEvent(name: string, event: NodeDataDefinition | EdgeDataDefinition): void {
+    this.ga.event(&#x60;${name}_click}&#x60;, &#x27;network_interaction&#x27;, event.id);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container [ngSwitch]&#x3D;&quot;visualization&quot;&gt;
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Map&#x27;&quot;&gt;
+    &lt;m4s-map *ngIf&#x3D;&quot;datasets?.mapDataset$ | async as dataset&quot; [edgeFeatures]&#x3D;&quot;dataset.edges&quot;
+             [nodeFeatures]&#x3D;&quot;dataset.nodes&quot; [clusterFeatures]&#x3D;&quot;dataset.cluster&quot; [boundaryFeatures]&#x3D;&quot;dataset.boundary&quot;
+             [edgesConfig]&#x3D;&quot;dataset.config?.edgeConfig&quot; [nodesConfig]&#x3D;&quot;dataset.config?.nodeConfig&quot;
+             [initialZoomConfig]&#x3D;&quot;dataset.config?.initialZoom&quot; [mapCenterConfig]&#x3D;&quot;dataset.config?.mapCenter&quot;
+             [textOverlapEnabledZoomConfig]&#x3D;&quot;dataset.config?.textOverlapEnabledZoom&quot;
+             [minimapConfig]&#x3D;&quot;dataset.config?.minimapConfig&quot; [mapMarkers]&#x3D;&quot;searchMapDataset(dataset)&quot;
+             (nodeClick)&#x3D;&quot;logMapEvent(&#x27;node&#x27;, $event)&quot; (edgeClick)&#x3D;&quot;logMapEvent(&#x27;edge&#x27;, $event)&quot;&gt;&lt;/m4s-map&gt;
+  &lt;/ng-container&gt;
+
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;&#x27;Network&#x27;&quot;&gt;
+    &lt;m4s-network *ngIf&#x3D;&quot;datasets?.networkDataset$ | async as dataset&quot; [edges]&#x3D;&quot;dataset.edges&quot; [nodes]&#x3D;&quot;dataset.nodes&quot;
+                 (nodeClick)&#x3D;&quot;logNetworkEvent(&#x27;node&#x27;, $event)&quot; (edgeClick)&#x3D;&quot;logNetworkEvent(&#x27;edge&#x27;, $event)&quot;&gt;
+    &lt;/m4s-network&gt;
+  &lt;/ng-container&gt;
+&lt;/ng-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./content.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container [ngSwitch]="visualization">  <ng-container *ngSwitchCase="\'Map\'">    <m4s-map *ngIf="datasets?.mapDataset$ | async as dataset" [edgeFeatures]="dataset.edges"             [nodeFeatures]="dataset.nodes" [clusterFeatures]="dataset.cluster" [boundaryFeatures]="dataset.boundary"             [edgesConfig]="dataset.config?.edgeConfig" [nodesConfig]="dataset.config?.nodeConfig"             [initialZoomConfig]="dataset.config?.initialZoom" [mapCenterConfig]="dataset.config?.mapCenter"             [textOverlapEnabledZoomConfig]="dataset.config?.textOverlapEnabledZoom"             [minimapConfig]="dataset.config?.minimapConfig" [mapMarkers]="searchMapDataset(dataset)"             (nodeClick)="logMapEvent(\'node\', $event)" (edgeClick)="logMapEvent(\'edge\', $event)"></m4s-map>  </ng-container>  <ng-container *ngSwitchCase="\'Network\'">    <m4s-network *ngIf="datasets?.networkDataset$ | async as dataset" [edges]="dataset.edges" [nodes]="dataset.nodes"                 (nodeClick)="logNetworkEvent(\'node\', $event)" (edgeClick)="logNetworkEvent(\'edge\', $event)">    </m4s-network>  </ng-container></ng-container></div>'
+    var COMPONENTS = [{'name': 'AnalyticsConsentComponent', 'selector': 'm4s-analytics-consent'},{'name': 'AppComponent', 'selector': 'm4s-root'},{'name': 'ContentComponent', 'selector': 'm4s-visualizer-content'},{'name': 'DatasetSearchComponent', 'selector': 'm4s-dataset-search'},{'name': 'DatasetSelectorComponent', 'selector': 'm4s-dataset-selector'},{'name': 'DatasetSummaryComponent', 'selector': 'm4s-dataset-summary'},{'name': 'FooterComponent', 'selector': 'm4s-footer'},{'name': 'HeaderComponent', 'selector': 'm4s-header'},{'name': 'HomeComponent', 'selector': 'm4s-home'},{'name': 'MapComponent', 'selector': 'm4s-map'},{'name': 'MarkdownModalComponent', 'selector': 'm4s-markdown-modal'},{'name': 'MenuComponent', 'selector': 'm4s-menu'},{'name': 'MenuComponent', 'selector': 'm4s-visualizer-menu'},{'name': 'NetworkComponent', 'selector': 'm4s-network'},{'name': 'VisualizationSelectorComponent', 'selector': 'm4s-visualization-selector'},{'name': 'VisualizerComponent', 'selector': 'm4s-visualizer'}];
+    var DIRECTIVES = [{'name': 'BaseModalComponent', 'selector': ''},{'name': 'BasePopupComponent', 'selector': ''}];
+    var ACTUAL_COMPONENT = {'name': 'ContentComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ContentComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

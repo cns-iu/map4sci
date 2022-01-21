@@ -423,7 +423,7 @@ textarea.cdk-textarea-autosize-measuring-firefox{padding:2px 0 !important;box-si
 mat-row,mat-header-row,mat-footer-row,th.mat-header-cell,td.mat-cell,td.mat-footer-cell{border-bottom-color:rgba(0,0,0,.12)}
 .mat-header-cell{color:rgba(0,0,0,.54)}
 .mat-cell,.mat-footer-cell{color:rgba(0,0,0,.87)}
-.mat-calendar-arrow{fill:rgba(0,0,0,.54)}
+.mat-calendar-arrow{border-top-color:rgba(0,0,0,.54)}
 .mat-datepicker-toggle,.mat-datepicker-content .mat-calendar-next-button,.mat-datepicker-content .mat-calendar-previous-button{color:rgba(0,0,0,.54)}
 .mat-calendar-table-header-divider::after{background:rgba(0,0,0,.12)}
 .mat-calendar-table-header,.mat-calendar-body-label{color:rgba(0,0,0,.54)}
@@ -671,22 +671,22 @@ mat-row,mat-header-row,mat-footer-row,th.mat-header-cell,td.mat-cell,td.mat-foot
 .mat-tab-group.mat-background-primary>.mat-tab-header .mat-tab-label,.mat-tab-group.mat-background-primary>.mat-tab-link-container .mat-tab-link,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-tab-label,.mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container .mat-tab-link{color:#fff}
 .mat-tab-group.mat-background-primary>.mat-tab-header .mat-tab-label.mat-tab-disabled,.mat-tab-group.mat-background-primary>.mat-tab-link-container .mat-tab-link.mat-tab-disabled,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-tab-label.mat-tab-disabled,.mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container .mat-tab-link.mat-tab-disabled{color:rgba(255,255,255,.4)}
 .mat-tab-group.mat-background-primary>.mat-tab-header .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-primary>.mat-tab-header-pagination .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-primary>.mat-tab-link-container .mat-focus-indicator::before,.mat-tab-group.mat-background-primary>.mat-tab-header .mat-focus-indicator::before,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container .mat-focus-indicator::before,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-focus-indicator::before{border-color:#fff}
-.mat-tab-group.mat-background-primary>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-primary>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron{border-color:rgba(255,255,255,.4)}
-.mat-tab-group.mat-background-primary>.mat-tab-header .mat-ripple-element,.mat-tab-group.mat-background-primary>.mat-tab-link-container .mat-ripple-element,.mat-tab-group.mat-background-primary>.mat-tab-header-pagination .mat-ripple-element,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-ripple-element,.mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container .mat-ripple-element,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination .mat-ripple-element{background-color:rgba(255,255,255,.12)}
+.mat-tab-group.mat-background-primary>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-primary>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron{border-color:#fff;opacity:.4}
+.mat-tab-group.mat-background-primary>.mat-tab-header .mat-ripple-element,.mat-tab-group.mat-background-primary>.mat-tab-link-container .mat-ripple-element,.mat-tab-group.mat-background-primary>.mat-tab-header-pagination .mat-ripple-element,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header .mat-ripple-element,.mat-tab-nav-bar.mat-background-primary>.mat-tab-link-container .mat-ripple-element,.mat-tab-nav-bar.mat-background-primary>.mat-tab-header-pagination .mat-ripple-element{background-color:#fff;opacity:.12}
 .mat-tab-group.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-group.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),.mat-tab-group.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-group.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-accent .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-accent .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled){background-color:rgba(255,128,171,.3)}
 .mat-tab-group.mat-background-accent>.mat-tab-header,.mat-tab-group.mat-background-accent>.mat-tab-link-container,.mat-tab-group.mat-background-accent>.mat-tab-header-pagination,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header,.mat-tab-nav-bar.mat-background-accent>.mat-tab-link-container,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header-pagination{background-color:#ff4081}
 .mat-tab-group.mat-background-accent>.mat-tab-header .mat-tab-label,.mat-tab-group.mat-background-accent>.mat-tab-link-container .mat-tab-link,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-tab-label,.mat-tab-nav-bar.mat-background-accent>.mat-tab-link-container .mat-tab-link{color:#fff}
 .mat-tab-group.mat-background-accent>.mat-tab-header .mat-tab-label.mat-tab-disabled,.mat-tab-group.mat-background-accent>.mat-tab-link-container .mat-tab-link.mat-tab-disabled,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-tab-label.mat-tab-disabled,.mat-tab-nav-bar.mat-background-accent>.mat-tab-link-container .mat-tab-link.mat-tab-disabled{color:rgba(255,255,255,.4)}
 .mat-tab-group.mat-background-accent>.mat-tab-header .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-accent>.mat-tab-header-pagination .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-accent>.mat-tab-link-container .mat-focus-indicator::before,.mat-tab-group.mat-background-accent>.mat-tab-header .mat-focus-indicator::before,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header-pagination .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-accent>.mat-tab-link-container .mat-focus-indicator::before,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-focus-indicator::before{border-color:#fff}
-.mat-tab-group.mat-background-accent>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-accent>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron{border-color:rgba(255,255,255,.4)}
-.mat-tab-group.mat-background-accent>.mat-tab-header .mat-ripple-element,.mat-tab-group.mat-background-accent>.mat-tab-link-container .mat-ripple-element,.mat-tab-group.mat-background-accent>.mat-tab-header-pagination .mat-ripple-element,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-ripple-element,.mat-tab-nav-bar.mat-background-accent>.mat-tab-link-container .mat-ripple-element,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header-pagination .mat-ripple-element{background-color:rgba(255,255,255,.12)}
+.mat-tab-group.mat-background-accent>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-accent>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron{border-color:#fff;opacity:.4}
+.mat-tab-group.mat-background-accent>.mat-tab-header .mat-ripple-element,.mat-tab-group.mat-background-accent>.mat-tab-link-container .mat-ripple-element,.mat-tab-group.mat-background-accent>.mat-tab-header-pagination .mat-ripple-element,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header .mat-ripple-element,.mat-tab-nav-bar.mat-background-accent>.mat-tab-link-container .mat-ripple-element,.mat-tab-nav-bar.mat-background-accent>.mat-tab-header-pagination .mat-ripple-element{background-color:#fff;opacity:.12}
 .mat-tab-group.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-group.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),.mat-tab-group.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-group.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-warn .mat-tab-label.cdk-program-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-keyboard-focused:not(.mat-tab-disabled),.mat-tab-nav-bar.mat-background-warn .mat-tab-link.cdk-program-focused:not(.mat-tab-disabled){background-color:rgba(255,205,210,.3)}
 .mat-tab-group.mat-background-warn>.mat-tab-header,.mat-tab-group.mat-background-warn>.mat-tab-link-container,.mat-tab-group.mat-background-warn>.mat-tab-header-pagination,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header,.mat-tab-nav-bar.mat-background-warn>.mat-tab-link-container,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header-pagination{background-color:#f44336}
 .mat-tab-group.mat-background-warn>.mat-tab-header .mat-tab-label,.mat-tab-group.mat-background-warn>.mat-tab-link-container .mat-tab-link,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-tab-label,.mat-tab-nav-bar.mat-background-warn>.mat-tab-link-container .mat-tab-link{color:#fff}
 .mat-tab-group.mat-background-warn>.mat-tab-header .mat-tab-label.mat-tab-disabled,.mat-tab-group.mat-background-warn>.mat-tab-link-container .mat-tab-link.mat-tab-disabled,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-tab-label.mat-tab-disabled,.mat-tab-nav-bar.mat-background-warn>.mat-tab-link-container .mat-tab-link.mat-tab-disabled{color:rgba(255,255,255,.4)}
 .mat-tab-group.mat-background-warn>.mat-tab-header .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-warn>.mat-tab-header-pagination .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-warn>.mat-tab-link-container .mat-focus-indicator::before,.mat-tab-group.mat-background-warn>.mat-tab-header .mat-focus-indicator::before,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header-pagination .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-warn>.mat-tab-link-container .mat-focus-indicator::before,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-focus-indicator::before{border-color:#fff}
-.mat-tab-group.mat-background-warn>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-warn>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron{border-color:rgba(255,255,255,.4)}
-.mat-tab-group.mat-background-warn>.mat-tab-header .mat-ripple-element,.mat-tab-group.mat-background-warn>.mat-tab-link-container .mat-ripple-element,.mat-tab-group.mat-background-warn>.mat-tab-header-pagination .mat-ripple-element,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-ripple-element,.mat-tab-nav-bar.mat-background-warn>.mat-tab-link-container .mat-ripple-element,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header-pagination .mat-ripple-element{background-color:rgba(255,255,255,.12)}
+.mat-tab-group.mat-background-warn>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-group.mat-background-warn>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron{border-color:#fff;opacity:.4}
+.mat-tab-group.mat-background-warn>.mat-tab-header .mat-ripple-element,.mat-tab-group.mat-background-warn>.mat-tab-link-container .mat-ripple-element,.mat-tab-group.mat-background-warn>.mat-tab-header-pagination .mat-ripple-element,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header .mat-ripple-element,.mat-tab-nav-bar.mat-background-warn>.mat-tab-link-container .mat-ripple-element,.mat-tab-nav-bar.mat-background-warn>.mat-tab-header-pagination .mat-ripple-element{background-color:#fff;opacity:.12}
 .mat-toolbar{background:#f5f5f5;color:rgba(0,0,0,.87)}
 .mat-toolbar.mat-primary{background:#3f51b5;color:#fff}
 .mat-toolbar.mat-accent{background:#ff4081;color:#fff}
@@ -703,6 +703,201 @@ mat-row,mat-header-row,mat-footer-row,th.mat-header-cell,td.mat-cell,td.mat-foot
 .mat-tree-node{min-height:48px}
 .mat-snack-bar-container{color:rgba(255,255,255,.7);background:#323232;box-shadow:0px 3px 5px -1px rgba(0, 0, 0, 0.2),0px 6px 10px 0px rgba(0, 0, 0, 0.14),0px 1px 18px 0px rgba(0, 0, 0, 0.12)}
 .mat-simple-snackbar-action{color:#ff4081}
+.cy-panzoom {
+  position: absolute;
+  margin: 10px 10px 0 0;
+  right: 0;
+  top: 0;
+  font-family: arial, helvetica, sans-serif;
+  line-height: 1;
+  font-size: 11px;
+  z-index: 99999;
+  box-sizing: content-box;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.cy-panzoom-zoom-button {
+  cursor: pointer;
+  text-align: center;
+  left: 16px;
+  background: #fff;
+  z-index: 1;
+  box-sizing: content-box;
+  width: 29px;
+  height: 29px;
+}
+.cy-panzoom-zoom-button:hover {
+  background-color: #f2f2f2;
+}
+.cy-panzoom-pan-button {
+  position: absolute;
+  z-index: 1;
+  height: 16px;
+  width: 16px;
+  box-sizing: content-box;
+}
+.cy-panzoom-reset {
+  top: 55px;
+  box-sizing: content-box;
+  display: none;
+}
+.cy-panzoom-zoom-in {
+  top: 80px;
+  box-sizing: content-box;
+  background-image: url('plus.svg');
+  border-radius: 4px 4px 0 0;
+}
+.cy-panzoom-zoom-out {
+  top: 197px;
+  box-sizing: content-box;
+  border-top: 1px solid #ddd;
+  background-image: url('minus.svg');
+  border-radius: 0 0 4px 4px;
+}
+.cy-panzoom-pan-up {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #666;
+  box-sizing: content-box;
+}
+.cy-panzoom-pan-down {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #666;
+  box-sizing: content-box;
+}
+.cy-panzoom-pan-left {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #666;
+  box-sizing: content-box;
+}
+.cy-panzoom-pan-right {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #666;
+  box-sizing: content-box;
+}
+.cy-panzoom-pan-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #000;
+  margin-left: -5px;
+  margin-top: -5px;
+  display: none;
+  z-index: 999;
+  opacity: 0.6;
+  box-sizing: content-box;
+}
+.cy-panzoom-slider {
+  position: absolute;
+  top: 97px;
+  left: 17px;
+  height: 100px;
+  width: 15px;
+  box-sizing: content-box;
+}
+.cy-panzoom-slider-background {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100px;
+  left: 5px;
+  background: #fff;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  box-sizing: content-box;
+}
+.cy-panzoom-slider-handle {
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 2px;
+  margin-left: -2px;
+  z-index: 999;
+  line-height: 8px;
+  cursor: default;
+  box-sizing: content-box;
+}
+.cy-panzoom-slider-handle .icon {
+  line-height: 10px;
+  box-sizing: content-box;
+  width: 100%;
+}
+.cy-panzoom-no-zoom-tick {
+  position: absolute;
+  background: #666;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  margin-left: -1px;
+  width: 8px;
+  height: 2px;
+  left: 3px;
+  z-index: 1;
+  margin-top: 3px;
+  box-sizing: content-box;
+}
+.cy-panzoom-panner {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 40px;
+  margin-left: -1px;
+  box-sizing: content-box;
+}
+.cy-panzoom-panner-handle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  z-index: 999;
+  box-sizing: content-box;
+}
+.cy-panzoom-zoom-only .cy-panzoom-slider,
+.cy-panzoom-zoom-only .cy-panzoom-panner {
+  display: none;
+}
+.cy-panzoom-zoom-only .cy-panzoom-reset {
+  top: 20px;
+}
+.cy-panzoom-zoom-only .cy-panzoom-zoom-in {
+  top: 45px;
+}
+.cy-panzoom-zoom-only .cy-panzoom-zoom-out {
+  top: 70px;
+}
 html, body {
   height: 100%;
 }
