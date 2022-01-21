@@ -53,7 +53,7 @@ const edgeConfig: Edge[] = [
 ];
 
 const zoompanDefaults = {
-  zoomFactor: 0.05, // zoom factor per zoom tick
+  zoomFactor: 0.1, // zoom factor per zoom tick
   zoomDelay: 45, // how many ms between zoom ticks
   minZoom: 0.001, // min zoom level
   maxZoom: 0.036, // max zoom level
@@ -64,7 +64,7 @@ const zoompanDefaults = {
   panMinPercentSpeed: 0.25, // the slowest speed we can pan by (as a percent of panSpeed)
   panInactiveArea: 8, // radius of inactive area in pan drag box
   panIndicatorMinOpacity: 0.5, // min opacity of pan indicator (the draggable nib); scales from this to 1.0
-  zoomOnly: false, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
+  zoomOnly: true, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
   fitSelector: undefined, // selector of elements to fit
   animateOnFit: () => true, // whether to animate on fit
   fitAnimationDuration: 1000, // duration of animation on fit
@@ -98,7 +98,9 @@ export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     this.networkSetup();
-    this.zoompanSetup();
+    cytoscape.use(panzoom);
+    // eslint-disable-next-line
+    (this.cy as any).panzoom(zoompanDefaults);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -118,23 +120,6 @@ export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
     this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
     this.attachListeners();
     this.allNodes = this.cy.filter(element => element.isNode());
-  }
-
-  createZoompanIcon(className: string, name: string): void {
-    const icon = this.renderer.createElement('mat-icon');
-    this.renderer.addClass(icon, 'material-icons');
-    this.renderer.appendChild(icon, this.renderer.createText(name));
-    this.renderer.appendChild(document.querySelector(className), icon);
-  }
-
-  zoompanSetup(): void {
-    cytoscape.use(panzoom);
-    // eslint-disable-next-line
-    (this.cy as any).panzoom(zoompanDefaults);
-    this.createZoompanIcon('.cy-panzoom-reset', 'open_in_full');
-    this.createZoompanIcon('.cy-panzoom-zoom-in', 'add');
-    this.createZoompanIcon('.cy-panzoom-zoom-out', 'remove');
-    this.createZoompanIcon('.cy-panzoom-slider-handle', 'remove');
   }
 
   createStylesheet(): Stylesheet[] {
