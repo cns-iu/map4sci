@@ -112,6 +112,9 @@
                         <li>
                             <a href="#SITE_CONFIGURATION_URL" title="projects/map4sci/src/app/core/services/site-configuration/site-configuration.service.ts" ><b>SITE_CONFIGURATION_URL</b>&nbsp;&nbsp;&nbsp;(projects/.../site-configuration.service.ts)</a>
                         </li>
+                        <li>
+                            <a href="#zoompanDefaults" title="projects/map4sci/src/app/shared/components/network/network.component.ts" ><b>zoompanDefaults</b>&nbsp;&nbsp;&nbsp;(projects/.../network.component.ts)</a>
+                        </li>
                     </ul>
                 </td>
             </tr>
@@ -629,6 +632,48 @@
   { level: 8, zoom: 0.032, fontSize: 500 },
   { level: 9, zoom: 0.036, fontSize: 500 }
 ]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="zoompanDefaults"></a>
+                    <span class="name">
+                        <span ><b>zoompanDefaults</b></span>
+                        <a href="#zoompanDefaults"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  zoomFactor: 0.1, // zoom factor per zoom tick
+  zoomDelay: 45, // how many ms between zoom ticks
+  minZoom: 0.001, // min zoom level
+  maxZoom: 0.036, // max zoom level
+  fitPadding: 50, // padding when fitting
+  panSpeed: 2, // how many ms in between pan ticks
+  panDistance: 20, // max pan distance per tick
+  panDragAreaSize: 75, // the length of the pan drag box in which the vector for panning is calculated (bigger &#x3D; finer control of pan speed and direction)
+  panMinPercentSpeed: 0.25, // the slowest speed we can pan by (as a percent of panSpeed)
+  panInactiveArea: 8, // radius of inactive area in pan drag box
+  panIndicatorMinOpacity: 0.5, // min opacity of pan indicator (the draggable nib); scales from this to 1.0
+  zoomOnly: true, // a minimal version of the ui only with zooming (useful on systems with bad mousewheel resolution)
+  fitSelector: undefined, // selector of elements to fit
+  animateOnFit: () &#x3D;&gt; true, // whether to animate on fit
+  fitAnimationDuration: 1000, // duration of animation on fit
+}</code>
                     </td>
                 </tr>
 

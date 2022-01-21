@@ -3745,9 +3745,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NetworkComponent": () => (/* binding */ NetworkComponent)
 /* harmony export */ });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
 /* harmony import */ var cytoscape__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! cytoscape */ 9735);
 /* harmony import */ var cytoscape__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(cytoscape__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var cytoscape_panzoom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cytoscape-panzoom */ 2123);
+/* harmony import */ var cytoscape_panzoom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cytoscape_panzoom__WEBPACK_IMPORTED_MODULE_1__);
+
 
 
 
@@ -3775,27 +3778,54 @@ const edgeConfig = [
     { level: 8, zoom: 0.032, color: 'gray', width: 200, opacity: 0.6 },
     { level: 9, zoom: 0.036, color: 'gray', width: 200, opacity: 0.5 }
 ];
+const zoompanDefaults = {
+    zoomFactor: 0.1,
+    zoomDelay: 45,
+    minZoom: 0.001,
+    maxZoom: 0.036,
+    fitPadding: 50,
+    panSpeed: 2,
+    panDistance: 20,
+    panDragAreaSize: 75,
+    panMinPercentSpeed: 0.25,
+    panInactiveArea: 8,
+    panIndicatorMinOpacity: 0.5,
+    zoomOnly: true,
+    fitSelector: undefined,
+    animateOnFit: () => true,
+    fitAnimationDuration: 1000, // duration of animation on fit
+};
 class NetworkComponent {
-    constructor(el) {
+    constructor(el, renderer) {
         this.el = el;
+        this.renderer = renderer;
         this.clsName = 'm4s-network';
-        this.nodeClick = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
-        this.edgeClick = new _angular_core__WEBPACK_IMPORTED_MODULE_1__.EventEmitter();
+        this.nodeClick = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
+        this.edgeClick = new _angular_core__WEBPACK_IMPORTED_MODULE_2__.EventEmitter();
         this.nodeZoomIndex = 0;
         this.edgeZoomIndex = 0;
     }
+    ngOnInit() {
+        this.networkSetup();
+        cytoscape__WEBPACK_IMPORTED_MODULE_0___default().use((cytoscape_panzoom__WEBPACK_IMPORTED_MODULE_1___default()));
+        // eslint-disable-next-line
+        this.cy.panzoom(zoompanDefaults);
+    }
     ngOnChanges(changes) {
         if ('nodes' in changes || 'edges' in changes) {
-            this.destroyNetwork();
-            this.cy = this.createNetwork();
-            this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
-            this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
-            this.attachListeners();
-            this.allNodes = this.cy.filter(element => element.isNode());
+            this.networkSetup();
         }
     }
     ngOnDestroy() {
         this.destroyNetwork();
+    }
+    networkSetup() {
+        this.destroyNetwork();
+        this.cy = this.createNetwork();
+        this.cy.elements('node[level <= 1]').addClass(`label-${this.nodeZoomIndex}`).addClass('label-visible');
+        this.cy.elements('edge[level <= 1]').addClass(`edge-${this.edgeZoomIndex}`);
+        this.attachListeners();
+        this.allNodes = this.cy.filter(element => element.isNode());
     }
     createStylesheet() {
         const styles = [
@@ -3804,20 +3834,25 @@ class NetworkComponent {
                 style: {
                     'height': 2000,
                     'width': 2000,
-                    'backgroundColor': 'black'
+                    'backgroundColor': 'black',
+                    'color': 'black',
+                    'text-background-color': 'white',
+                    'text-background-opacity': 0.7,
                 }
             },
             {
                 selector: 'edge',
                 style: {
                     'width': 200,
-                    'line-color': '#3d3d3d'
+                    'line-color': '#3d3d3d',
+                    'opacity': 1,
                 }
             },
             {
                 selector: '.label-visible',
                 style: {
-                    'label': 'data(label)'
+                    'label': 'data(label)',
+                    'z-index': 99
                 }
             }
         ];
@@ -3913,10 +3948,10 @@ class NetworkComponent {
         return true;
     }
 }
-NetworkComponent.ɵfac = function NetworkComponent_Factory(t) { return new (t || NetworkComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_1__.ElementRef)); };
-NetworkComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: NetworkComponent, selectors: [["m4s-network"]], hostVars: 2, hostBindings: function NetworkComponent_HostBindings(rf, ctx) { if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMap"](ctx.clsName);
-    } }, inputs: { nodes: "nodes", edges: "edges" }, outputs: { nodeClick: "nodeClick", edgeClick: "edgeClick" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵNgOnChangesFeature"]], decls: 0, vars: 0, template: function NetworkComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #c4c7d6;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5ldHdvcmsuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxXQUFBO0VBQ0EsWUFBQTtFQUNBLHlCQUFBO0FBQ0YiLCJmaWxlIjoibmV0d29yay5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogMTAwJTtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2M0YzdkNjtcbn0iXX0= */"], changeDetection: 0 });
+NetworkComponent.ɵfac = function NetworkComponent_Factory(t) { return new (t || NetworkComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.ElementRef), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__.Renderer2)); };
+NetworkComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: NetworkComponent, selectors: [["m4s-network"]], hostVars: 2, hostBindings: function NetworkComponent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassMap"](ctx.clsName);
+    } }, inputs: { nodes: "nodes", edges: "edges" }, outputs: { nodeClick: "nodeClick", edgeClick: "edgeClick" }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵNgOnChangesFeature"]], decls: 0, vars: 0, template: function NetworkComponent_Template(rf, ctx) { }, styles: ["[_nghost-%COMP%] {\n  position: fixed;\n  left: 0;\n  width: 100%;\n  height: calc(100% - 6rem);\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5ldHdvcmsuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxlQUFBO0VBQ0EsT0FBQTtFQUNBLFdBQUE7RUFDQSx5QkFBQTtBQUNGIiwiZmlsZSI6Im5ldHdvcmsuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgbGVmdDogMDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogY2FsYygxMDAlIC0gNnJlbSk7XG59Il19 */"], changeDetection: 0 });
 
 
 /***/ }),
