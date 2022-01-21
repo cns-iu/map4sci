@@ -130,7 +130,9 @@ export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
           'height': 2000,
           'width': 2000,
           'backgroundColor': 'black',
-          'color': 'red'
+          'color': 'black',
+          'text-background-color': '#c4c7d6',
+          'text-background-opacity': 1,
         }
       },
       {
@@ -138,13 +140,14 @@ export class NetworkComponent implements OnInit, OnChanges, OnDestroy {
         style: {
           'width': 200,
           'line-color': '#3d3d3d',
-          'opacity': 0.5
+          'opacity': 0.5,
         }
       },
       {
         selector: '.label-visible',
         style: {
-          'label': 'data(label)'
+          'label': 'data(label)',
+          'z-index': 99
         }
       }
     ];
