@@ -6,7 +6,7 @@ export LANG=C.UTF-8
 export PYTHONPATH=".:./src"
 export GPG_TTY=$(tty)
 
-VERSION="2022-01-01"
+VERSION="2022-04-19"
 
 # Load environment
 source env.sh

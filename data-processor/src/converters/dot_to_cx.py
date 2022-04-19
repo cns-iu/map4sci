@@ -29,7 +29,7 @@ def get_cx_from_nx(G: nx.Graph, graphName: str = None) -> ndex2.NiceCXNetwork:
         use_this_value = int(v)
         attr_type = 'integer'
       elif k == 'pos':
-        use_this_value = tuple(map(float, v.split(',')))
+        use_this_value = list(map(float, v.split(',')))
         use_this_value[1] = -use_this_value[1] # Flip the Y axis to be consistent with Mapbox
         attr_type = 'list_of_double'
         node_layout.append({'node': node_id, 'x': use_this_value[0], 'y': use_this_value[1]})
