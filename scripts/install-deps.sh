@@ -18,14 +18,15 @@ if [[ ! "$ENV" = /* ]]; then ENV="$ROOT_DIR/$ENV"; fi
 
 
 # Install dependencies
+if [ -e "$ENV/bin/activate" ]; then
+    set +u # Disable in case we are running old venv versions that can't handle strict mode
+    source "$ENV/bin/activate"
+    set -u
 
-set +u # Disable in case we are running old venv versions that can't handle strict mode
-source "$ENV/bin/activate"
-set -u
-
-# Install website (NPM) deps
-pip install -r "$DATA_PROCESSOR_DIR/requirements.txt"
-(cd "$WEBSITE_DIR"; npm install)
+    # Install website (NPM) deps
+    pip3 install -r "$DATA_PROCESSOR_DIR/requirements.txt"
+    (cd "$WEBSITE_DIR"; npm install)
+fi
 
 # Build Tippecanoe GEOJSON optimizer
 ({
@@ -52,6 +53,8 @@ pip install -r "$DATA_PROCESSOR_DIR/requirements.txt"
 # Build kmeans c++ program
 make -C $DATA_PROCESSOR_DIR/libs/eba/
 
-set +u # Just to be on the safe side
-deactivate
-set -u
+if [ -e "$ENV/bin/activate" ]; then
+    set +u # Just to be on the safe side
+    deactivate
+    set -u
+fi

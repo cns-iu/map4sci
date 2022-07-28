@@ -1,0 +1,10 @@
+.env
+website/node_modules
+website/dist
+website/docs
+data-processor/site
+data-processor/libs
+!data-processor/libs/eba
+data-processor/datasets
+!data-processor/datasets/sample
+data-processor/raw-data

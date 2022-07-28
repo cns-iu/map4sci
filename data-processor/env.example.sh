@@ -8,5 +8,9 @@ BASE_URL="http://localhost:${DEV_PORT}"
 # Whether to sync with box.com
 DOSYNC=true
 
+export CURRENT_DATASET=${CURRENT_DATASET:="sample"}
+
 # Load dataset specific configuration
-source datasets/sample/config.sh
+source datasets/${CURRENT_DATASET}/config.sh
+
+export VERSION=${CURRENT_VERSION:="2022-07-28"}
