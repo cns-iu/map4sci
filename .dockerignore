@@ -2,6 +2,7 @@
 website/node_modules
 website/dist
 website/docs
+website/projects/map4sci/src/assets/datasets
 data-processor/site
 data-processor/libs
 !data-processor/libs/eba
