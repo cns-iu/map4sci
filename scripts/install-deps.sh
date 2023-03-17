@@ -45,7 +45,7 @@ fi
     cd "$DATA_PROCESSOR_DIR/libs"
 
     rm -rf ./BatchTree*
-    git clone https://github.com/cns-iu/map4sci-BatchTree
+    git clone https://github.com/cns-iu/map4sci-BatchTree BatchTree
     cd BatchTree
     make
 })
