@@ -1,7 +1,7 @@
 mypy
 typing_extensions
 pyyaml
-numpy
+numpy<1.24.0
 pandas
 geojson
 networkx
