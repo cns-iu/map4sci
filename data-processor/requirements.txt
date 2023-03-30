@@ -7,3 +7,5 @@ geojson
 networkx
 pygraphviz
 ndex2
+natsort
+tqdm
