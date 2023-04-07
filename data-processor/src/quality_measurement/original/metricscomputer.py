@@ -1,6 +1,6 @@
-#Author
-#Felice De Luca
-#https://github.com/felicedeluca
+# Author
+# Felice De Luca
+# https://github.com/felicedeluca
 
 import sys
 import os
@@ -25,15 +25,13 @@ if __name__ == '__main__':
     graphpath = sys.argv[1]
     outputTxtFile = sys.argv[2]
 
-
     input_file_name = os.path.basename(graphpath)
     graph_name = input_file_name.split(".")[0]
-
 
     G = nx_read_dot(graphpath)
     G = nx.Graph(G)
 
-    cmds=[]
+    cmds = []
     all = False
     if len(sys.argv) > 3 and sys.argv[3]:
         cmds = sys.argv[3].split(",")
@@ -41,29 +39,29 @@ if __name__ == '__main__':
         # Compute all measures
         all = True
 
-    cr = ('cr' in cmds) # crossings
-    ue =  ('ue' in cmds) # edge length uniformity
-    st =  ('st' in cmds) # stress
-    np =  ('np' in cmds) # neighbors_preservation
-    lblbb =  ('lblbb' in cmds) #label to boundingBox ratio
-    lblarea =  ('lblarea' in cmds) #labels total area
-    bb =  ('bb' in cmds) #bounding box
-    upflow =  ('upflow' in cmds) #upward flow
-    lblo = ('lblo' in cmds) #labels overlaping area
+    cr = ('cr' in cmds)  # crossings
+    ue = ('ue' in cmds)  # edge length uniformity
+    st = ('st' in cmds)  # stress
+    np = ('np' in cmds)  # neighbors_preservation
+    lblbb = ('lblbb' in cmds)  # label to boundingBox ratio
+    lblarea = ('lblarea' in cmds)  # labels total area
+    bb = ('bb' in cmds)  # bounding box
+    upflow = ('upflow' in cmds)  # upward flow
+    lblo = ('lblo' in cmds)  # labels overlaping area
 
-    weighted = False #Weighted version of measures
+    weighted = False  # Weighted version of measures
 
     output_txt = "Metrics for " + graph_name + "\n"
-    output_txt = nx.info(G) + "\n"
+    # output_txt = nx.info(G) + "\n"
+    output_txt = str(len(G.nodes())) + "\n"
     print(output_txt)
 
     csv_head_line = "filename&"
     csv_line = graph_name+"&"
 
-
     all_pairs_sp = None
     if cr or np:
-        if(weighted):
+        if (weighted):
             # converting weights in float
             all_weights_n = nx.get_node_attributes(G, "weight")
             for nk in all_weights_n.keys():
@@ -81,7 +79,7 @@ if __name__ == '__main__':
     if cr or all:
         crss = crossings.count_crossings(G, ignore_label_edge_cr=True)
         crossings_val = len(crss)
-        output_line =  "CR: " + str(crossings_val)
+        output_line = "CR: " + str(crossings_val)
         output_txt += output_line + "\n"
         print(output_line)
         csv_head_line += "crossings&"
@@ -103,9 +101,9 @@ if __name__ == '__main__':
         csv_head_line += "stress&"
         csv_line += str(stress_val) + "&"
 
-
     if np or all:
-        neigpres_val = neigpres.compute_neig_preservation(G, weighted=weighted, all_sp=all_pairs_sp)
+        neigpres_val = neigpres.compute_neig_preservation(
+            G, weighted=weighted, all_sp=all_pairs_sp)
         output_line = "NP: " + str(neigpres_val)
         output_txt += output_line + "\n"
         print(output_line)
@@ -136,9 +134,9 @@ if __name__ == '__main__':
         csv_head_line += "bounding\_box"
         csv_line += str(bbox_val) + "&"
 
-    if False: # lblo or all:
+    if False:  # lblo or all:
         value = labelsmeas.totLabelsOverlappingArea(G)
-        output_line =  "lblo: " + str(value) + "\n"
+        output_line = "lblo: " + str(value) + "\n"
         output_txt += output_line
         csv_head_line += "lblo;"
         csv_line += str(value) + "&"
@@ -152,10 +150,8 @@ if __name__ == '__main__':
         csv_head_line += "upflow&"
         csv_line += str(upflow_val) + "&"
 
-
     csv_head_line += "\\\\ \\hline \n"
     csv_line += "\\\\ \\hline \n"
-
 
     # print(output_txt)
 

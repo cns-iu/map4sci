@@ -17,7 +17,7 @@ ITERATIONS=1
 # Additional arguments appended when calling the layout algorithm
 # Optional
 EXTRA_ARGS=
-
+LAYOUT="BatchTree"
 # Quality measurement configuration
 # ---------------------------------
 

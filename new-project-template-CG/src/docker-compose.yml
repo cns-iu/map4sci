@@ -1,0 +1,30 @@
+version: '3.9'
+services:
+  map4sci:
+    image: map4sci:latest
+    # image: ghcr.io/cns-iu/map4sci:main
+    deploy:
+      resources:
+        limits:
+          cpus: '0.75'
+          memory: 12G
+        reservations:
+          cpus: '0.25'
+          memory: 3G
+    volumes:
+      - type: bind
+        source: ../datasets
+        target: /workspace/data-processor/datasets
+      - type: bind
+        source: ../raw-data
+        target: /workspace/data-processor/raw-data
+      - type: bind
+        source: ../site
+        target: /workspace/data-processor/site
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
+    working_dir: /workspace/data-processor/
+    environment:
+      - CURRENT_DATASET
+      - CURRENT_VERSION
+    command: ./run.sh

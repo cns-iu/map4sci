@@ -21,9 +21,17 @@ RUN pip3 install -r requirements.txt
 # Clean up extra files
 RUN apt-get -y autoremove --purge && apt-get -y clean
 
+# WORKDIR /workspace
+# COPY . .
+# RUN ./scripts/install-deps.sh
+# RUN cd website && npm ci && npm run build
+
+# CMD "/bin/bash"
+
 WORKDIR /workspace
 COPY . .
-RUN ./scripts/install-deps.sh
 RUN cd website && npm ci && npm run build
+RUN nodeenv --with-npm /usr/local --force
+RUN ./scripts/install-deps.sh
 
 CMD "/bin/bash"

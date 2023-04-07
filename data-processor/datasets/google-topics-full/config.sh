@@ -18,6 +18,7 @@ ITERATIONS=1
 # Optional
 EXTRA_ARGS=
 
+LAYOUT="BatchTree"
 # Quality measurement configuration
 # ---------------------------------
 
