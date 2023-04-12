@@ -123,16 +123,3 @@ node_modules/
 
 # Visual Studio Code
 .vscode/
-
-# Only sample datasets should be committed
-/new-project-template/datasets/*
-!/new-project-template/datasets/sample
-/new-project-template/datasets/sample/map4sci*
-
-/new-project-template/raw-data
-/new-project-template/site
-
-/new-project-template-DELG/raw-data
-/new-project-template-DELG/site
-/new-project-template-CG/raw-data
-/new-project-template-CG/site
