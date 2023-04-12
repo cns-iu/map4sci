@@ -50,6 +50,27 @@ fi
     make
 })
 
+# Build CG layout algorithm
+({
+    cd "$DATA_PROCESSOR_DIR/libs"
+
+    rm -rf ./CG*
+    git clone https://github.com/cns-iu/map4sci-CG CG
+    cd CG
+    npm ci
+    npm run fix-jiggle
+})
+
+# Build DELG layout algorithm
+({
+    cd "$DATA_PROCESSOR_DIR/libs"
+
+    rm -rf ./DELG*
+    git clone https://github.com/cns-iu/map4sci-DELG DELG
+    cd DELG
+    npm ci
+})
+
 # Build kmeans c++ program
 make -C $DATA_PROCESSOR_DIR/libs/eba/
 

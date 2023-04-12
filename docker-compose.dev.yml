@@ -20,6 +20,12 @@ services:
       - type: bind
         source: ./data-processor/site
         target: /workspace/data-processor/site
+      - type: bind
+        source: ./data-processor/src
+        target: /workspace/data-processor/src
+      - type: bind
+        source: ./data-processor/scripts
+        target: /workspace/data-processor/scripts
     stdin_open: true # docker run -i
     tty: true # docker run -t
     working_dir: /workspace/data-processor/

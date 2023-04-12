@@ -4,6 +4,7 @@
 DATASET=sample
 NETWORK="datasets/sample/network.dot"
 
+
 # Algorithm configuration
 # -----------------------
 
@@ -14,9 +15,12 @@ LAYERS="0.005,0.05,0.10,0.20,0.30,0.50,0.85"
 # Optional (but it is highly recommended that this is set)
 ITERATIONS=1
 
+LAYOUT="BatchTree"
 # Additional arguments appended when calling the layout algorithm
 # Optional
 EXTRA_ARGS=
+
+
 
 # Quality measurement configuration
 # ---------------------------------
