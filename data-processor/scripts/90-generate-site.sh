@@ -11,13 +11,13 @@ cp $OUT/clustered/*.geojson $OUT_DS
 rm -f $OUT_DS/*.cx
 cp $OUT/clustered/*.cx $OUT_DS
 
-mkdir -p site
-rm -rf site/*
-cp -r ../website/dist/map4sci/* site
-cp -r $OUT/site-data/* site/assets
+mkdir -p $SITE_DIR
+rm -rf $SITE_DIR/*
+cp -r ../website/dist/map4sci/* $SITE_DIR
+cp -r $OUT/site-data/* $SITE_DIR/assets
 
 if [ ! -e $OUT/site-data/datasets/index.json ]; then
-  cat > site/assets/datasets/index.json << EOF
+  cat > $SITE_DIR/assets/datasets/index.json << EOF
 [
   {"id": "$DATASET", "name": "$DATASET", "dir": "assets/datasets/$DATASET"}
 ]

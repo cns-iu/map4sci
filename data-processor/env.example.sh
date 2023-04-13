@@ -11,6 +11,6 @@ DOSYNC=true
 export CURRENT_DATASET=${CURRENT_DATASET:="sample"}
 
 # Load dataset specific configuration
-source datasets/${CURRENT_DATASET}/config.sh
+source $DATASETS_DIR/${CURRENT_DATASET}/config.sh
 
 export VERSION=${CURRENT_VERSION:="2022-07-28"}

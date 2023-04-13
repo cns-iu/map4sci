@@ -11,10 +11,14 @@ VERSION="2022-04-19"
 # Load environment
 source env.sh
 
+export DATASETS_DIR=${DATASETS_DIR:="./datasets"}
+export RAW_DATA_DIR=${RAW_DATA_DIR:="./raw-data"}
+export SITE_DIR=${SITE_DIR:="./site"}
+
 # Shorthands and configuration options
 SRC="./src"
-ORIG="./raw-data/$DATASET/original"
-OUT="./raw-data/$DATASET/$VERSION"
+ORIG="$RAW_DATA_DIR/$DATASET/original"
+OUT="$RAW_DATA_DIR/$DATASET/$VERSION"
 
 SITE_DATA_DIR="$OUT/site-data"
 LAYERS_DIR="$OUT/layers"

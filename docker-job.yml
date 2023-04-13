@@ -1,0 +1,9 @@
+datasets_dir:
+  class: Directory
+  path: ./data-processor/datasets/
+rawdata_dir:
+  class: Directory
+  path: ./data-processor/raw-data/
+site_dir:
+  class: Directory
+  path: ./data-processor/site/
