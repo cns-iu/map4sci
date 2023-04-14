@@ -5,7 +5,7 @@ class: CommandLineTool
 
 requirements:
   DockerRequirement:
-    dockerPull: map4sci:latest
+    dockerPull: ghcr.io/cns-iu/map4sci:main
     dockerOutputDirectory: /workspace/data-processor/output
   EnvVarRequirement:
     envDef:
@@ -14,7 +14,6 @@ requirements:
       DATASETS_DIR: /workspace/data-processor/output/datasets
       RAW_DATA_DIR: /workspace/data-processor/output/raw-data
       SITE_DIR: /workspace/data-processor/output/site
-      donkeyPull: ghcr.io/cns-iu/map4sci:main
   InitialWorkDirRequirement:
     listing:
     - entryname: datasets

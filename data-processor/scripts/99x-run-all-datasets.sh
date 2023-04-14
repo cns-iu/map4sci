@@ -2,9 +2,9 @@
 source constants.sh
 set -ev
 
-for dataset in $(ls $DATASETS)
+for dataset in $(ls $DATASETS_DIR)
 do
-  OUT=${DATASETS}/${dataset}
+  OUT=${DATASETS_DIR}/${dataset}
   echo $dataset
   if [ ! -e $OUT/map4sci-completed ]
   then

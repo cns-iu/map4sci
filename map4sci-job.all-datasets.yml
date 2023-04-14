@@ -1,0 +1,12 @@
+dataset: sample
+version: v2
+script_cmd: cd /workspace/data-processor && ./scripts/99x-run-all-datasets.sh
+datasets_dir:
+  class: Directory
+  path: ./data-processor/datasets/
+rawdata_dir:
+  class: Directory
+  path: ./data-processor/raw-data/
+site_dir:
+  class: Directory
+  path: ./data-processor/site/
