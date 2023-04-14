@@ -4,13 +4,13 @@ set -ev
 
 for dataset in $(ls $DATASETS_DIR)
 do
-  OUT=${DATASETS_DIR}/${dataset}
+  FULL_DATASET_DIR=${DATASETS_DIR}/${dataset}
   echo $dataset
-  if [ ! -e $OUT/map4sci-completed ]
+  if [ ! -e $FULL_DATASET_DIR/map4sci-completed ]
   then
     export CURRENT_DATASET=$dataset
-    ./run.sh $dataset &> $OUT/map4sci.log.txt
-    touch $OUT/map4sci-completed
+    ./run.sh $dataset &> $FULL_DATASET_DIR/map4sci.log.txt
+    touch $FULL_DATASET_DIR/map4sci-completed
   fi
 done
 
