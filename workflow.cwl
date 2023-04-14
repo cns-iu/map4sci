@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 
-cwlVersion: v1.2
+cwlVersion: v1.0
 class: CommandLineTool
 
 requirements:
@@ -11,19 +11,19 @@ requirements:
     envDef:
       CURRENT_DATASET: $(inputs.dataset)
       CURRENT_VERSION: $(inputs.version)
-      DATASETS_DIR: /workspace/data-processor/datasets
-      RAW_DATA_DIR: /workspace/data-processor/raw-data
-      SITE_DIR: /workspace/data-processor/site
+      DATASETS_DIR: /workspace/data-processor/output/datasets
+      RAW_DATA_DIR: /workspace/data-processor/output/raw-data
+      SITE_DIR: /workspace/data-processor/output/site
       donkeyPull: ghcr.io/cns-iu/map4sci:main
   InitialWorkDirRequirement:
     listing:
-    - entryname: /workspace/data-processor/datasets
+    - entryname: /workspace/data-processor/output/datasets
       writable: false
       entry: $(inputs.datasets_dir)
-    - entryname: /workspace/data-processor/raw-data
+    - entryname: /workspace/data-processor/output/raw-data
       writable: true
       entry: $(inputs.rawdata_dir)
-    - entryname: /workspace/data-processor/site
+    - entryname: /workspace/data-processor/output/site
       writable: true
       entry: $(inputs.site_dir)
 
@@ -39,6 +39,9 @@ inputs:
     type: string?
     inputBinding:
       position: 1
+  script_cmd:
+    type: string
+    default: cd /workspace/data-processor && ./run.sh
   site_dir:
     type: Directory
   version:
@@ -46,23 +49,21 @@ inputs:
     default: v1
 
 outputs:
-  script_output:
-    type: stdout
+  datasets:
+    type: Directory
+    outputBinding:
+      glob: /workspace/data-processor/output/datasets
   raw_data_out:
     type: Directory
     outputBinding:
-      glob: "/workspace/data-processor/output/raw-data"
+      glob: /workspace/data-processor/output/raw-data
   site_data_out:
     type: Directory
     outputBinding:
-      glob: "/workspace/data-processor/output/site"
-  
-
-
+      glob: /workspace/data-processor/output/site
 stdout: output.txt
 
-
-baseCommand:
-- bash
+baseCommand: bash
+arguments:
 - -c
-- cd /workspace/data-processor && ./run.sh && cp -R /workspace/data-processor/site /workspace/data-processor/output && cp -R /workspace/data-processor/raw-data /workspace/data-processor/output 
+- $(inputs.script_cmd)

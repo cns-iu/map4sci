@@ -8,12 +8,12 @@ export GPG_TTY=$(tty)
 
 VERSION="2022-04-19"
 
-# Load environment
-source env.sh
-
 export DATASETS_DIR=${DATASETS_DIR:="./datasets"}
 export RAW_DATA_DIR=${RAW_DATA_DIR:="./raw-data"}
 export SITE_DIR=${SITE_DIR:="./site"}
+
+# Load environment
+source env.sh
 
 # Update network paths to use the DATASETS_DIR if relative to datasets
 if [[ $NETWORK = datasets/* ]]; then

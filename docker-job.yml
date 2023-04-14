@@ -1,5 +1,5 @@
-dataset: net_efwebsite_forums_20210321-is_metric-DELG
-version: v1
+dataset: sample
+version: v2
 datasets_dir:
   class: Directory
   path: ./data-processor/datasets/
