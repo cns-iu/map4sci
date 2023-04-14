@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 
-cwlVersion: v1.2
+cwlVersion: v1.0
 class: CommandLineTool
 
 requirements:
@@ -17,13 +17,13 @@ requirements:
       donkeyPull: ghcr.io/cns-iu/map4sci:main
   InitialWorkDirRequirement:
     listing:
-    - entryname: /workspace/data-processor/output/datasets
-      writable: false
+    - entryname: datasets
+      writable: true
       entry: $(inputs.datasets_dir)
-    - entryname: /workspace/data-processor/output/raw-data
+    - entryname: raw-data
       writable: true
       entry: $(inputs.rawdata_dir)
-    - entryname: /workspace/data-processor/output/site
+    - entryname: site
       writable: true
       entry: $(inputs.site_dir)
 
@@ -52,15 +52,15 @@ outputs:
   datasets:
     type: Directory
     outputBinding:
-      glob: /workspace/data-processor/output/datasets
+      glob: datasets
   raw_data_out:
     type: Directory
     outputBinding:
-      glob: /workspace/data-processor/output/raw-data
+      glob: raw-data
   site_data_out:
     type: Directory
     outputBinding:
-      glob: /workspace/data-processor/output/site
+      glob: site
 stdout: output.txt
 
 baseCommand: bash
