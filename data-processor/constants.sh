@@ -15,6 +15,11 @@ export DATASETS_DIR=${DATASETS_DIR:="./datasets"}
 export RAW_DATA_DIR=${RAW_DATA_DIR:="./raw-data"}
 export SITE_DIR=${SITE_DIR:="./site"}
 
+# Update network paths to use the DATASETS_DIR if relative to datasets
+if [[ $NETWORK = datasets/* ]]; then
+  NETWORK=$DATASETS_DIR/$(echo $NETWORK | perl -pe 's/^datasets\///g')
+fi
+
 # Shorthands and configuration options
 SRC="./src"
 ORIG="$RAW_DATA_DIR/$DATASET/original"
