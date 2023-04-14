@@ -1,6 +1,6 @@
 #!/usr/bin/env cwl-runner
 
-cwlVersion: v1.0
+cwlVersion: v1.2
 class: CommandLineTool
 
 requirements:
@@ -11,16 +11,20 @@ requirements:
     envDef:
       CURRENT_DATASET: $(inputs.dataset)
       CURRENT_VERSION: $(inputs.version)
-      DATASETS_DIR: /workspace/data-processor/output/datasets
-      RAW_DATA_DIR: /workspace/data-processor/output/raw-data
-      SITE_DIR: /workspace/data-processor/output/site
+      DATASETS_DIR: /workspace/data-processor/datasets
+      RAW_DATA_DIR: /workspace/data-processor/raw-data
+      SITE_DIR: /workspace/data-processor/site
       donkeyPull: ghcr.io/cns-iu/map4sci:main
   InitialWorkDirRequirement:
     listing:
-    - entry: $(inputs.datasets_dir)
-    - writable: true
+    - entryname: /workspace/data-processor/datasets
+      writable: false
+      entry: $(inputs.datasets_dir)
+    - entryname: /workspace/data-processor/raw-data
+      writable: true
       entry: $(inputs.rawdata_dir)
-    - writable: true
+    - entryname: /workspace/data-processor/site
+      writable: true
       entry: $(inputs.site_dir)
 
 inputs:
@@ -31,6 +35,10 @@ inputs:
     type: Directory
   rawdata_dir:
     type: Directory
+  script:
+    type: string?
+    inputBinding:
+      position: 1
   site_dir:
     type: Directory
   version:
@@ -40,9 +48,21 @@ inputs:
 outputs:
   script_output:
     type: stdout
+  raw_data_out:
+    type: Directory
+    outputBinding:
+      glob: "/workspace/data-processor/output/raw-data"
+  site_data_out:
+    type: Directory
+    outputBinding:
+      glob: "/workspace/data-processor/output/site"
+  
+
+
 stdout: output.txt
+
 
 baseCommand:
 - bash
 - -c
-- cd /workspace/data-processor && ./run.sh
+- cd /workspace/data-processor && ./run.sh && cp -R /workspace/data-processor/site /workspace/data-processor/output && cp -R /workspace/data-processor/raw-data /workspace/data-processor/output 
