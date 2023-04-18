@@ -6,7 +6,7 @@ services:
       resources:
         limits:
           cpus: '0.75'
-          memory: 12G
+          memory: 24G
         reservations:
           cpus: '0.25'
           memory: 3G
@@ -32,4 +32,5 @@ services:
     environment:
       - CURRENT_DATASET
       - CURRENT_VERSION
+      - NODE_OPTIONS
     command: /bin/bash -c 'cd /workspace/data-processor/ && ./run.sh'

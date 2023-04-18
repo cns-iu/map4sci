@@ -12,12 +12,13 @@ requirements:
       CURRENT_DATASET: $(inputs.dataset)
       CURRENT_VERSION: $(inputs.version)
       DATASETS_DIR: /workspace/data-processor/output/datasets
+      NODE_OPTIONS: --max-old-space-size=24000
       RAW_DATA_DIR: /workspace/data-processor/output/raw-data
       SITE_DIR: /workspace/data-processor/output/site
   InitialWorkDirRequirement:
     listing:
     - entryname: datasets
-      writable: true
+      writable: false
       entry: $(inputs.datasets_dir)
     - entryname: raw-data
       writable: true

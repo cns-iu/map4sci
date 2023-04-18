@@ -11,6 +11,7 @@ VERSION="2022-04-19"
 export DATASETS_DIR=${DATASETS_DIR:="./datasets"}
 export RAW_DATA_DIR=${RAW_DATA_DIR:="./raw-data"}
 export SITE_DIR=${SITE_DIR:="./site"}
+export NODE_OPTIONS=${NODE_OPTIONS:="--max-old-space-size=24000"}
 
 # Load environment
 source env.sh
