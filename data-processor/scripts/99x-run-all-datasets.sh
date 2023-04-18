@@ -2,7 +2,7 @@
 source constants.sh
 set -ev
 
-for dataset in $(ls $DATASETS_DIR)
+for dataset in $(ls $DATASETS_DIR | grep -v config.example.sh)
 do
   echo $dataset
   if [ ! -e $OUT/map4sci-completed ]
