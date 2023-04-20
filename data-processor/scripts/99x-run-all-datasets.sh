@@ -5,11 +5,12 @@ set -ev
 for dataset in $(ls $DATASETS_DIR | grep -v config.example.sh)
 do
   echo $dataset
-  if [ ! -e $OUT/map4sci-completed ]
+  OUTPUT_DIR="$RAW_DATA_DIR/$dataset/$VERSION"
+  if [ ! -e $OUTPUT_DIR/map4sci-completed ]
   then
     export CURRENT_DATASET=$dataset
-    ./run.sh $dataset &> $OUT/map4sci.log.txt
-    touch $OUT/map4sci-completed
+    ./run.sh $dataset &> $OUTPUT_DIR/map4sci.log.txt
+    touch $OUTPUT_DIR/map4sci-completed
   fi
 done
 
