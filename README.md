@@ -21,16 +21,6 @@ To create the dataset, follow these steps:
 
 The config.sh file contains the configuration parameters for the dataset, which are used by the layout algorithm to generate the visualization. Here's a brief overview of the parameters:
 
-`DATASET`: The name of the dataset.
-`NETWORK`: The path to the network file (network.dot) that contains the graph data.
-`LAYOUT`: The algorithm that should be used to generate the layout eg. Batchtree, CG or DELG
-`LAYERS`: A comma-separated list of fractions that determine the number of nodes in each layer of the graph.
-`ITERATIONS`: The number of times the layout algorithm should be run. This is optional, but it's recommended to set this to ensure the best possible layout is generated.
-`LAYOUT`: The layout algorithm to use. The default value is BatchTree.
-`EXTRA_ARGS`: Any additional arguments that should be passed to the layout algorithm.
-`MEASUREMENTS`: The quality measurements to calculate. Leave this empty to calculate all available measurements.
-To configure the dataset, you can modify the values in the config.sh file as needed. Be sure to update the DATASET and NETWORK parameters to match the name and location of your dataset. You can also adjust the other parameters to customize the layout algorithm and quality measurements.
-
 All the `config.sh` files should follow the format as given in [config.example.sh](data-processor/datasets/config.example.sh)
 
 ## Change Log
