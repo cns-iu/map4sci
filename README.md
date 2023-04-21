@@ -1,10 +1,12 @@
 # map4sci
 
+## Introduction
+
 Welcome to the implementation of the graph algorithm that uses a multi-level tree-based approach for interactive graph visualization with semantic zoom, also known as ZMLT. This project is based on a research paper which can be found at the link provided in the project description.
 
 The ZMLT algorithm is designed to provide an efficient and interactive way to visualize large graphs by using a multi-level tree-based approach. This approach is particularly useful for graphs with complex structures, where traditional force-directed layout algorithms may not produce the desired results.
 
-This implementation of the ZMLT algorithm uses three layout algorithms - [BatchTree implementation](https://github.com/khaled-rahman/BatchTree), [CG](https://github.com/cns-iu/map4sci-CG), and [DELG](https://github.com/cns-iu/map4sci-DELG) - to generate layouts for the input graphs. These algorithms are known for their efficiency and ability to handle large graphs.
+This implementation of the ZMLT algorithm uses three layout algorithms - [BatchTree](https://github.com/cns-iu/map4sci-BatchTree), [CG](https://github.com/cns-iu/map4sci-CG), and [DELG](https://github.com/cns-iu/map4sci-DELG) - to generate layouts for the input graphs. These algorithms are known for their efficiency and ability to handle large graphs.
 
 The ZMLT algorithm also provides semantic zoom functionality, which enables users to zoom in and out of the graph while maintaining the integrity of the graph structure. This functionality is especially useful when exploring large graphs that have multiple levels of detail.
 
@@ -26,6 +28,10 @@ To create the dataset, follow these steps:
 The config.sh file contains the configuration parameters for the dataset, which are used by the layout algorithm to generate the visualization. Here's a brief overview of the parameters:
 
 All the `config.sh` files should follow the format as given in [config.example.sh](data-processor/datasets/config.example.sh)
+
+The `network.dot` file plays a crucial role in generating the graph layout, as it provides input graph data to the ZMLT algorithm. Nodes and edges in the network.dot file represent entities or objects in the graph, while labels associated with them provide additional information that can be used to interpret the graph. Levels defined in the network.dot file define the hierarchy of the graph, which enables the ZMLT algorithm to visualize the graph with multiple levels of detail.
+
+Creating and editing the network.dot file can be done manually using a text editor or generated automatically using a script or graph visualization tool. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
 
 ## Change Log
 
