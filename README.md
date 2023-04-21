@@ -1,10 +1,14 @@
 # map4sci
 
-Implementation of a graph algorithm that uses a multi level tree based approach for interactive graph visualization with semantic zoom (ZMLT).
+Welcome to the implementation of the graph algorithm that uses a multi-level tree-based approach for interactive graph visualization with semantic zoom, also known as ZMLT. This project is based on a research paper which can be found at the link provided in the project description.
 
-The research paper can be found [here.](https://arxiv.org/pdf/1906.05996.pdf)
+The ZMLT algorithm is designed to provide an efficient and interactive way to visualize large graphs by using a multi-level tree-based approach. This approach is particularly useful for graphs with complex structures, where traditional force-directed layout algorithms may not produce the desired results.
 
-This algorithm uses the [BatchTree implementation](https://github.com/khaled-rahman/BatchTree) of the ZMLT layout algorithm.
+This implementation of the ZMLT algorithm uses three layout algorithms - [BatchTree implementation](https://github.com/khaled-rahman/BatchTree), [CG](https://github.com/cns-iu/map4sci-CG), and [DELG](https://github.com/cns-iu/map4sci-DELG) - to generate layouts for the input graphs. These algorithms are known for their efficiency and ability to handle large graphs.
+
+The ZMLT algorithm also provides semantic zoom functionality, which enables users to zoom in and out of the graph while maintaining the integrity of the graph structure. This functionality is especially useful when exploring large graphs that have multiple levels of detail.
+
+This implementation of the ZMLT algorithm is designed to be user-friendly and easy to use. We hope that this project will be a useful resource for researchers, developers, and anyone who needs to visualize large graphs in an interactive and efficient way.
 
 ## Quick Start
 
