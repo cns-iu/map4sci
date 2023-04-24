@@ -12,6 +12,7 @@ The ZMLT algorithm also provides semantic zoom functionality, which enables user
 
 This implementation of the ZMLT algorithm is designed to be user-friendly and easy to use. We hope that this project will be a useful resource for researchers, developers, and anyone who needs to visualize large graphs in an interactive and efficient way.
 
+
 ## Quick Start
 
 Users of map4sci should use the map4sci-project-template as a template for their data projects. See <https://github.com/cns-iu/map4sci-project-template> for more information.
@@ -20,7 +21,7 @@ Users of map4sci should use the map4sci-project-template as a template for their
 
 To create the dataset, follow these steps:
 
-1. Create a folder with the name of the dataset.
+1. Create a folder with the name of the dataset inside map4sci/data-processor/dataset.
 2. Inside the folder, create a `config.sh` file and a `network.dot` file.
 
 ## Configuring the Dataset
@@ -32,6 +33,35 @@ All the `config.sh` files should follow the format as given in [config.example.s
 The `network.dot` file plays a crucial role in generating the graph layout, as it provides input graph data to the ZMLT algorithm. Nodes and edges in the network.dot file represent entities or objects in the graph, while labels associated with them provide additional information that can be used to interpret the graph. Levels defined in the network.dot file define the hierarchy of the graph, which enables the ZMLT algorithm to visualize the graph with multiple levels of detail.
 
 Creating and editing the network.dot file can be done manually using a text editor or generated automatically using a script or graph visualization tool. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
+
+## Running using Docker
+
+1. Install Docker 
+2. Clone the Map4Sci repository from GitHub
+3. cd map4sci
+4. Build the Docker image: docker build -t map4sci .
+5. Start a Docker container from the image: docker run -it map4sci 
+
+## Running using Docker Compose
+
+1. Install Docker
+2. Clone the Map4Sci repository from GitHub
+3. cd map4sci
+4. Run the following command to start the containers: docker-compose up
+5. Wait for the containers to start up. This may take a few minutes, depending on your machine
+
+## Running using cwltool/cwl-runner
+
+1. Install CWL using: pip install cwltool
+2. To run all datasets run:  `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`
+3. To run all datasets and to build the combined site run: `cwl-runner map4sci.cwl map4sci-job.combined-site.yml`
+4. To run for single dataset run: `cwl-runner map4sci.cwl map4sci-job.single-dataset.yml`
+
+## Viewing Results
+
+1. Install http-server globally by running the following command:
+2. Then run: npx http-server -c-1 data-processor/site 
+3. Once the server is running, you should be able to access your site by navigating to http://localhost:8080 in your web browser.
 
 ## Change Log
 
