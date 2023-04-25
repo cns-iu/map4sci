@@ -12,7 +12,6 @@ The ZMLT algorithm also provides semantic zoom functionality, which enables user
 
 This implementation of the ZMLT algorithm is designed to be user-friendly and easy to use. We hope that this project will be a useful resource for researchers, developers, and anyone who needs to visualize large graphs in an interactive and efficient way.
 
-
 ## Quick Start
 
 Users of map4sci should use the `map4sci-project-template` as a template for their data projects. See <https://github.com/cns-iu/map4sci-project-template> for more information.
@@ -50,48 +49,6 @@ The edges should have the following properties:
 Creating and editing the network.dot file is recommended to be done by using NetworkX, a popular Python package for creating, manipulating, and analyzing graphs and networks. NetworkX provides a wide range of functionality for working with graphs, including algorithms for graph traversal, centrality, clustering, and more. Additionally, NetworkX provides a `write_dot` function that can be used to export the graph in the Graphviz DOT format, which can be used by the Algorithm. For Javascript libraries such as graphlib can be used to achieve the same to create or export the graph in the Graphviz DOT format. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
 
 for example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
-
-## Running using Docker
-
-1. Install Docker.
-2. Clone the Map4Sci repository: `git clone https://github.com/cns-iu/map4sci`.
-3. `cd map4sci`.
-4. Build the Docker image: `docker build -t map4sci`.
-5. Start a Docker container from the image: `docker compose run -it map4sci`. This will run the run.sh script automatically. 
-
-You can include optional environment variables when starting the container to customize the behavior of the run.sh script. Here are the available options:
-
-`CURRENT_DATASET`: The name of the dataset to use for the workflow. This should match one of the dataset names in the data directory. Default is Sample.
-`CURRENT_VERSION`: The version of the dataset to use for the workflow.
-`NODE_OPTIONS`: Additional Node.js options to pass to the node command.
-
-## Running using Docker Compose
-
-1. Install Docker
-2. Clone the Map4Sci repository:`git clone https://github.com/cns-iu/map4sci`
-3. `cd map4sci`
-4. Run the following command to start the containers: `docker-compose up`
-5. Wait for the containers to start up. This may take a few minutes, depending on your machine
-6. It should now start running for the sample dataset in the repository
-
-## Running using cwltool/cwl-runner
-
-1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
-2. `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.all-datasets.yml. This workflow processes all the datasets and generates outputs for each of them.
-3. `cwl-runner map4sci.cwl map4sci-job.combined-site.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.combined-site.yml. This workflow processes all the datasets and combines the outputs to build a combined site.
-4. `cwl-runner map4sci.cwl map4sci-job.single-dataset.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.single-dataset.yml. This workflow processes a single dataset and generates outputs for it.
-
-To customize these jobs, you can modify the input YAML files (map4sci-job.all-datasets.yml, map4sci-job.combined-site.yml, map4sci-job.single-dataset.yml) to specify your own inputs. You can also modify the map4sci.cwl file to change the workflow steps or add new steps. Additionally, you can modify the commands used to run the jobs depending on your environment and requirements.
-
-You can include Optional Arguments as below,
-
-`CWL_DEBUG`: Set to true to enable debug output from the CWL tool using `--debug`. Default is false.
-`CWLTOOL_ARGS`: Additional arguments to pass to the CWL tool. Default is an empty string.
-
-## Viewing Results
-
-1. Run: `npx http-server -c-1 --cors=* data-processor/site`.
-2. Once the server is running, you should be able to access your site by navigating to http://localhost:8080 in your web browser.
 
 ## Change Log
 
@@ -140,6 +97,48 @@ Run [run.sh](data-processor/run.sh) file to run all the steps in the algorithm. 
     cd data-processor
     ./run.sh
 
+### Running using Docker
+
+1. Install Docker.
+2. Clone the Map4Sci repository: `git clone https://github.com/cns-iu/map4sci`.
+3. `cd map4sci`.
+4. Build the Docker image: `docker build -t map4sci`.
+5. Start a Docker container from the image: `docker compose run -it map4sci`. This will run the run.sh script automatically.
+
+You can include optional environment variables when starting the container to customize the behavior of the run.sh script. Here are the available options:
+
+`CURRENT_DATASET`: The name of the dataset to use for the workflow. This should match one of the dataset names in the data directory. Default is Sample.
+`CURRENT_VERSION`: The version of the dataset to use for the workflow.
+`NODE_OPTIONS`: Additional Node.js options to pass to the node command.
+
+### Running using Docker Compose
+
+1. Install Docker
+2. Clone the Map4Sci repository:`git clone https://github.com/cns-iu/map4sci`
+3. `cd map4sci`
+4. Run the following command to start the containers: `docker-compose up`
+5. Wait for the containers to start up. This may take a few minutes, depending on your machine
+6. It should now start running for the sample dataset in the repository
+
+### Running using cwltool/cwl-runner
+
+1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
+2. `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.all-datasets.yml. This workflow processes all the datasets and generates outputs for each of them.
+3. `cwl-runner map4sci.cwl map4sci-job.combined-site.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.combined-site.yml. This workflow processes all the datasets and combines the outputs to build a combined site.
+4. `cwl-runner map4sci.cwl map4sci-job.single-dataset.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.single-dataset.yml. This workflow processes a single dataset and generates outputs for it.
+
+To customize these jobs, you can modify the input YAML files (map4sci-job.all-datasets.yml, map4sci-job.combined-site.yml, map4sci-job.single-dataset.yml) to specify your own inputs. You can also modify the map4sci.cwl file to change the workflow steps or add new steps. Additionally, you can modify the commands used to run the jobs depending on your environment and requirements.
+
+You can include Optional Arguments as below,
+
+`CWL_DEBUG`: Set to true to enable debug output from the CWL tool using `--debug`. Default is false.
+`CWLTOOL_ARGS`: Additional arguments to pass to the CWL tool. Default is an empty string.
+
+### Viewing Results
+
+1. Run: `npx http-server -c-1 --cors=* data-processor/site`.
+2. Once the server is running, you should be able to access your site by navigating to http://localhost:8080 in your web browser.
+
 ### 6. Serve Site
 
 Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
@@ -148,36 +147,31 @@ Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
 
 ## Details regarding the script files
 
-| S. No. | Name                                 | Description                                                                       | Input Location                                      | Output Location                        |
-| ------ | ------------------------------------ | --------------------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------- |
-| 1      | `00x-setup-venv.sh`                  | This script creates the virtual environment and installs all dependencies.        |                                                     |
-| 2      | `01x-build-libs.sh`                  | Builds the dependent libraries, e.g: Kmeans.                                      |                                                     |
-| 3      | `02-check-requirements.sh`           | Checks if all the dependencies are installed for the algorithm to run end to end. |                                                     |
-| 4      | `03-clear-old-files.sh`              | Deletes the old files located at `$OUT/site-data/`                                |                                                     | [$OUT](constants.sh)/site-data/        |
-| 5      | `10-extract-layers.sh`               | Extracts the beginning layers for the algorithm                                   | [$NETWORK](datasets/sample/config.sh)               | None                                   |
-| 6      | `20-extract-forest.sh`               | Takes the current and next layer to return the set of trees (forest)              | [$LAYERS_DIR](constants.sh)                         | [$FORESTS_DIR](constants.sh)$          |
-| 7      | `21-layout-base-layer.sh`            | Lays down the base layer of the graph                                             | [$LAYERS_DIR](constants.sh)/layer0.dot              | [$LAYERS_DIR](constants.sh)/layer0.dot |
-| 8      | `22-remove-crossings-first-layer.sh` | Removes the crossing if they are present in the first layer                       | [$LAYERS_DIR](constants.sh)/layer0.dot              | None                                   |
-| 9      | `23-impred.sh`                       | Run impred                                                                        | [$LAYERS_DIR](constants.sh)/layer0.dot              | [$OUT](constants.sh)/impred/layer0.dot |
-| 10     | `24-impred-remove-label-overlap.sh`  | Impred to remove the label overlap                                                | [$OUT](constants.sh)/impred/layer0.dot              | [$OUT](constants.sh)/impred/layer0.dot |
-| 11     | `26-all-layers-except-first.sh`      | Adding subcomponents and running impred on all layers except the first one        |                                                     |
-| 12     | `30-generate-clusters.sh`            | Creates clusters for the completed layout                                         | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered/map.svg |
-| 13     | `40-convert-to-geojson.sh`           | Converts to the geojson files                                                     | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
-| 14     | `50-build-map-page.sh`               | None                                                                              | [$OUT](constants.sh)/site-data/visualization        |
-| 15     | `60-measure-quality.sh`              | [$OUT](constants.sh)/impred/layer7.dot                                            | [$OUT](constants.sh)/quality_measurement/result.txt |
-| 16     | `90-generate-site.sh`                |                                                                                   |
-| 17     | `90x-serve-site.sh`                  |                                                                                   |
-| 18     | `99x-publish.sh`                     |                                                                                   |
+| S. No. | Name                            | Description                                                                 | Input Location                                      | Output Location                        |
+| ------ | ------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------- |
+| 1      | `03-clear-old-files.sh`         | Deletes the old files located at `$OUT/site-data/`                          |                                                     | [$OUT](constants.sh)/site-data/        |
+| 2      | `10-extract-layers.sh`          | Extracts the beginning layers for the algorithm                             | [$NETWORK](datasets/sample/config.sh)               | None                                   |
+| 3      | `30-generate-clusters.sh`       | Creates clusters for the completed layout                                   | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered/map.svg |
+| 4      | `40-convert-to-cytoscape.sh`    | Converts to the cytoscape files                                             | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
+| 4      | `40-convert-to-geojson.sh`      | Converts to the geojson files                                               | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
+| 4      | `41-tile-data.sh`               | it uses the Tippecanoe tool to generate MBTiles files for all GeoJSON files |                                                     | [$OUT](constants.sh)/clustered         |
+| 5      | `50-build-site.sh`              | None                                                                        | [$OUT](constants.sh)/site-data/visualization        |
+| 5      | `51x-build-all-dataset-maps.sh` | Builds all dataset                                                          | [$OUT](constants.sh)/site-data/visualization        |
+| 6      | `60-measure-quality.sh`         | [$OUT](constants.sh)/impred/layer7.dot                                      | [$OUT](constants.sh)/quality_measurement/result.txt |
+| 7      | `90-generate-site.sh`           |                                                                             |
+| 8      | `90x-serve-site.sh`             |                                                                             |
+| 9      | `99x-run-all-datasets.sh`       |                                                                             |
 
 ## Environment Variables Details
 
-| S. No. | Name         | File                                   | Default Value                 |
-| ------ | ------------ | -------------------------------------- | ----------------------------- |
-| 1      | $OUT         | [constants.sh](constants.sh)           | `raw-data/$DATASET/$VERSION`  |
-| 2      | $LAYERS_DIR  | [constants.sh](constants.sh)           | `$OUT/layers`                 |
-| 3      | $NETWORK     | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot` |
-| 4      | $FORESTS_DIR | [constants.sh](constants.sh)           | `$OUT/forests`                |
-
+| S. No. | Name          | File                                   | Default Value                 |
+| ------ | ------------- | -------------------------------------- | ----------------------------- |
+| 1      | $OUT          | [constants.sh](constants.sh)           | `raw-data/$DATASET/$VERSION`  |
+| 2      | $LAYERS_DIR   | [constants.sh](constants.sh)           | `$OUT/layers`                 |
+| 3      | $NETWORK      | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot` |
+| 4      | $FORESTS_DIR  | [constants.sh](constants.sh)           | `$OUT/forests`                |
+| 5      | $LAYOUT_DIR   | [constants.sh](constants.sh)           | `$OUT/layout`                 |
+| 6      | SITE_DATA_DIR | [constants.sh](constants.sh)           | `$OUT/site-data`              |
 
 ## Credits
 
