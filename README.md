@@ -16,7 +16,21 @@ This implementation of the ZMLT algorithm is designed to be user-friendly and ea
 
 Users of map4sci should use the `map4sci-project-template` as a template for their data projects. See <https://github.com/cns-iu/map4sci-project-template> for more information.
 
-# Creating a Dataset
+## Change Log
+
+See [Changelog](CHANGELOG.md)
+
+## Getting Started
+
+### 1. Requirements
+
+- python3
+- python3-dev
+- java8-jdk
+- make
+- g++
+
+### 2. Creating a Dataset
 
 To create a dataset, follow these steps:
 
@@ -25,7 +39,7 @@ To create a dataset, follow these steps:
 
 `Note that you can create multiple datasets to be processed.`
 
-## Configuring the Dataset
+### 2.1 Configuring the Dataset
 
 The config.sh file contains the configuration parameters for the dataset, which are used by the layout algorithm to generate the visualization. Here's a brief overview of the parameters:
 
@@ -50,47 +64,8 @@ Creating and editing the network.dot file is recommended to be done by using Net
 
 for example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
 
-## Change Log
 
-See [Changelog](CHANGELOG.md)
-
-## Getting Started
-
-### 1. Requirements
-
-- python3
-- python3-dev
-- java8-jdk
-- make
-- g++
-
-### 2. Setup virtual environment
-
-Run [00x-setup-venv.sh](scripts/00x-setup-venv.sh) </a> script to setup the virtual environment and install all the dependencies
-
-    ./scripts/00x-setup-venv.sh
-
-To activate the virtual environment:
-
-    source .venv/bin/activate
-
-For more information on the virtual environment refer to the python [documentation](https://docs.python.org/3/library/venv.html).
-
-### 3. Input
-
-Update the [env.sh](env.sh) file to point to the data source config. The default data source is
-
-    data-processor/datasets/sample/config.sh
-
-The location of the input graph to the algorithm is path assigned to $NETWORK environment variable. This can be updated in config.sh file. The default value is:
-
-    data-processor/datasets/sample/network.dot
-
-This location can be changed by changing the value of $NETWORK environment variable in [config.sh](data-processor/datasets/sample/config.sh)
-
-All the `config.sh` files should follow the format as given in [config.example.sh](data-processor/datasets/config.example.sh)
-
-### 5. Run
+### 3. Run
 
 Run [run.sh](data-processor/run.sh) file to run all the steps in the algorithm. This script runs all the scripts in the [scripts](data-processor/scripts) folder one by one.
 
@@ -153,14 +128,14 @@ Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
 | 2      | `10-extract-layers.sh`          | Extracts the beginning layers for the algorithm                             | [$NETWORK](datasets/sample/config.sh)               | None                                   |
 | 3      | `30-generate-clusters.sh`       | Creates clusters for the completed layout                                   | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered/map.svg |
 | 4      | `40-convert-to-cytoscape.sh`    | Converts to the cytoscape files                                             | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
-| 4      | `40-convert-to-geojson.sh`      | Converts to the geojson files                                               | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
-| 4      | `41-tile-data.sh`               | it uses the Tippecanoe tool to generate MBTiles files for all GeoJSON files |                                                     | [$OUT](constants.sh)/clustered         |
-| 5      | `50-build-site.sh`              | None                                                                        | [$OUT](constants.sh)/site-data/visualization        |
-| 5      | `51x-build-all-dataset-maps.sh` | Builds all dataset                                                          | [$OUT](constants.sh)/site-data/visualization        |
-| 6      | `60-measure-quality.sh`         | [$OUT](constants.sh)/impred/layer7.dot                                      | [$OUT](constants.sh)/quality_measurement/result.txt |
-| 7      | `90-generate-site.sh`           |                                                                             |
-| 8      | `90x-serve-site.sh`             |                                                                             |
-| 9      | `99x-run-all-datasets.sh`       |                                                                             |
+| 5      | `40-convert-to-geojson.sh`      | Converts to the geojson files                                               | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
+| 6      | `41-tile-data.sh`               | it uses the Tippecanoe tool to generate MBTiles files for all GeoJSON files |                                                     | [$OUT](constants.sh)/clustered         |
+| 7      | `50-build-site.sh`              | None                                                                        | [$OUT](constants.sh)/site-data/visualization        |
+| 8      | `51x-build-all-dataset-maps.sh` | Builds all dataset                                                          | [$OUT](constants.sh)/site-data/visualization        |
+| 9      | `60-measure-quality.sh`         | [$OUT](constants.sh)/impred/layer7.dot                                      | [$OUT](constants.sh)/quality_measurement/result.txt |
+| 10     | `90-generate-site.sh`           |                                                                             |
+| 11     | `90x-serve-site.sh`             |                                                                             |
+| 12     | `99x-run-all-datasets.sh`       |                                                                             |
 
 ## Environment Variables Details
 
