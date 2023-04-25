@@ -15,53 +15,83 @@ This implementation of the ZMLT algorithm is designed to be user-friendly and ea
 
 ## Quick Start
 
-Users of map4sci should use the map4sci-project-template as a template for their data projects. See <https://github.com/cns-iu/map4sci-project-template> for more information.
+Users of map4sci should use the `map4sci-project-template` as a template for their data projects. See <https://github.com/cns-iu/map4sci-project-template> for more information.
 
-# Creating Dataset
+# Creating a Dataset
 
-To create the dataset, follow these steps:
+To create a dataset, follow these steps:
 
-1. Create a folder with the name of the dataset inside map4sci/data-processor/dataset.
+1. Create a folder with the name of the dataset inside `map4sci/data-processor/datasets`.
 2. Inside the folder, create a `config.sh` file and a `network.dot` file.
+
+`Note that you can create multiple datasets to be processed.`
 
 ## Configuring the Dataset
 
 The config.sh file contains the configuration parameters for the dataset, which are used by the layout algorithm to generate the visualization. Here's a brief overview of the parameters:
 
-All the `config.sh` files should follow the format as given in [config.example.sh](data-processor/datasets/config.example.sh)
+All the `config.sh` files should follow the format as given in the [config.example.sh](data-processor/datasets/config.example.sh).
 
-The `network.dot` file plays a crucial role in generating the graph layout, as it provides input graph data to the ZMLT algorithm. Nodes and edges in the network.dot file represent entities or objects in the graph, while labels associated with them provide additional information that can be used to interpret the graph. Levels defined in the network.dot file define the hierarchy of the graph, which enables the ZMLT algorithm to visualize the graph with multiple levels of detail.
+The `network.dot` file plays a crucial role in generating the graph layout, as it provides input graph data to the ZMLT algorithm. To generate a DOT file from JSON data with networkx, the JSON data should contain a list of nodes and a list of edges, where each node and edge has specific properties.
 
-Creating and editing the network.dot file can be done manually using a text editor or generated automatically using a script or graph visualization tool. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
+The nodes should have the following properties:
+
+`id`: A numeric ID from 1 to N, where N is the total number of nodes in the graph.
+`label`: A string label that represents the name or description of the node.
+`weight`: A numeric value that represents the importance or significance of the node. Higher weights indicate more important nodes.
+
+The edges should have the following properties:
+
+`weight`: A numeric value that represents the strength or importance of the edge. Higher weights indicate stronger or more important edges.
+`level`: An integer value typically from 1 to 7, which points to where we generate the levels ourselves in map4sci. This property represents the level or hierarchy of the edge, with lower levels indicating more important edges.
+`source`: The numeric ID of the source node for the edge.
+`target`: The numeric ID of the target node for the edge.
+
+Creating and editing the network.dot file is recommended to be done by using NetworkX, a popular Python package for creating, manipulating, and analyzing graphs and networks. NetworkX provides a wide range of functionality for working with graphs, including algorithms for graph traversal, centrality, clustering, and more. Additionally, NetworkX provides a `write_dot` function that can be used to export the graph in the Graphviz DOT format, which can be used by the Algorithm. For Javascript libraries such as graphlib can be used to achieve the same to create or export the graph in the Graphviz DOT format. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
+
+for example refer [make-network.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
 
 ## Running using Docker
 
-1. Install Docker 
-2. Clone the Map4Sci repository from GitHub
-3. cd map4sci
-4. Build the Docker image: docker build -t map4sci .
-5. Start a Docker container from the image: docker run -it map4sci 
+1. Install Docker.
+2. Clone the Map4Sci repository: `git clone https://github.com/cns-iu/map4sci`.
+3. `cd map4sci`.
+4. Build the Docker image: `docker build -t map4sci`.
+5. Start a Docker container from the image: `docker compose run -it map4sci`. This will run the run.sh script automatically. 
+
+You can include optional environment variables when starting the container to customize the behavior of the run.sh script. Here are the available options:
+
+`CURRENT_DATASET`: The name of the dataset to use for the workflow. This should match one of the dataset names in the data directory. Default is Sample.
+`CURRENT_VERSION`: The version of the dataset to use for the workflow.
+`NODE_OPTIONS`: Additional Node.js options to pass to the node command.
 
 ## Running using Docker Compose
 
 1. Install Docker
-2. Clone the Map4Sci repository from GitHub
-3. cd map4sci
-4. Run the following command to start the containers: docker-compose up
+2. Clone the Map4Sci repository:`git clone https://github.com/cns-iu/map4sci`
+3. `cd map4sci`
+4. Run the following command to start the containers: `docker-compose up`
 5. Wait for the containers to start up. This may take a few minutes, depending on your machine
+6. It should now start running for the sample dataset in the repository
 
 ## Running using cwltool/cwl-runner
 
-1. Install CWL using: pip install cwltool
-2. To run all datasets run:  `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`
-3. To run all datasets and to build the combined site run: `cwl-runner map4sci.cwl map4sci-job.combined-site.yml`
-4. To run for single dataset run: `cwl-runner map4sci.cwl map4sci-job.single-dataset.yml`
+1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
+2. `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.all-datasets.yml. This workflow processes all the datasets and generates outputs for each of them.
+3. `cwl-runner map4sci.cwl map4sci-job.combined-site.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.combined-site.yml. This workflow processes all the datasets and combines the outputs to build a combined site.
+4. `cwl-runner map4sci.cwl map4sci-job.single-dataset.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.single-dataset.yml. This workflow processes a single dataset and generates outputs for it.
+
+To customize these jobs, you can modify the input YAML files (map4sci-job.all-datasets.yml, map4sci-job.combined-site.yml, map4sci-job.single-dataset.yml) to specify your own inputs. You can also modify the map4sci.cwl file to change the workflow steps or add new steps. Additionally, you can modify the commands used to run the jobs depending on your environment and requirements.
+
+You can include Optional Arguments as below,
+
+`CWL_DEBUG`: Set to true to enable debug output from the CWL tool using `--debug`. Default is false.
+`CWLTOOL_ARGS`: Additional arguments to pass to the CWL tool. Default is an empty string.
 
 ## Viewing Results
 
-1. Install http-server globally by running the following command:
-2. Then run: npx http-server -c-1 data-processor/site 
-3. Once the server is running, you should be able to access your site by navigating to http://localhost:8080 in your web browser.
+1. Run: `npx http-server -c-1 --cors=* data-processor/site`.
+2. Once the server is running, you should be able to access your site by navigating to http://localhost:8080 in your web browser.
 
 ## Change Log
 
@@ -147,6 +177,7 @@ Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
 | 2      | $LAYERS_DIR  | [constants.sh](constants.sh)           | `$OUT/layers`                 |
 | 3      | $NETWORK     | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot` |
 | 4      | $FORESTS_DIR | [constants.sh](constants.sh)           | `$OUT/forests`                |
+
 
 ## Credits
 
