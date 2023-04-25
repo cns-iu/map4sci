@@ -49,7 +49,7 @@ The edges should have the following properties:
 
 Creating and editing the network.dot file is recommended to be done by using NetworkX, a popular Python package for creating, manipulating, and analyzing graphs and networks. NetworkX provides a wide range of functionality for working with graphs, including algorithms for graph traversal, centrality, clustering, and more. Additionally, NetworkX provides a `write_dot` function that can be used to export the graph in the Graphviz DOT format, which can be used by the Algorithm. For Javascript libraries such as graphlib can be used to achieve the same to create or export the graph in the Graphviz DOT format. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
 
-for example refer [make-network.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
+for example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
 
 ## Running using Docker
 
