@@ -62,10 +62,11 @@ The edges should have the following properties:
 
 Creating and editing the network.dot file is recommended to be done by using NetworkX, a popular Python package for creating, manipulating, and analyzing graphs and networks. NetworkX provides a wide range of functionality for working with graphs, including algorithms for graph traversal, centrality, clustering, and more. Additionally, NetworkX provides a `write_dot` function that can be used to export the graph in the Graphviz DOT format, which can be used by the Algorithm. For Javascript libraries such as graphlib can be used to achieve the same to create or export the graph in the Graphviz DOT format. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
 
-for example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
+For an example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
 
+`Note: it's recommended to use the write_dot method provided by the AGraph class instead of the write_dot method provided by the pydot library.`
 
-### 3. Run
+### 3. Running Locally
 
 Run [run.sh](data-processor/run.sh) file to run all the steps in the algorithm. This script runs all the scripts in the [scripts](data-processor/scripts) folder one by one.
 
@@ -95,6 +96,12 @@ You can include optional environment variables when starting the container to cu
 5. Wait for the containers to start up. This may take a few minutes, depending on your machine
 6. It should now start running for the sample dataset in the repository
 
+To customize the Map4Sci application running in Docker Compose, you can modify the configuration files and Docker Compose files in the map4sci directory. Here are some steps to help you get started:
+
+1. Change the configuration files: The docker-compose.yml file in the map4sci directory contains the Docker Compose configuration for the application. You can modify this file to change the Docker container settings, such as the port mapping, container name, or environment variables.
+2. Add custom data: To add your own data to the application, you can place the data files in a directory on your local machine and then mount that directory as a volume in the Docker container. To do this, modify the docker-compose.yml file to add a volumes section under the map4sci service. For example, if you have a directory called my_data on your local machine, you can add the following line to the docker-compose.yml file: `volumes: - ./my_data:/app/data`. This will mount the my_data directory on your local machine as a volume at the /app/data directory inside the container.
+3. Modify the application code: If you need to make more substantial changes to the application code, you can modify the code files in the scripts directory. Once you have made your changes, you can rebuild the Docker image using the `docker-compose build` command, and then start the containers again using `docker-compose up`.
+
 ### Running using cwltool/cwl-runner
 
 1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
@@ -109,44 +116,42 @@ You can include Optional Arguments as below,
 `CWL_DEBUG`: Set to true to enable debug output from the CWL tool using `--debug`. Default is false.
 `CWLTOOL_ARGS`: Additional arguments to pass to the CWL tool. Default is an empty string.
 
-### Viewing Results
+### Viewing the Results
 
 1. Run: `npx http-server -c-1 --cors=* data-processor/site`.
 2. Once the server is running, you should be able to access your site by navigating to http://localhost:8080 in your web browser.
 
-### 6. Serve Site
 
-Run [90x-serve-site.sh](scripts/90x-serve-site.sh) to serve the site
-
-    ./scripts/90x-serve-site.sh
 
 ## Details regarding the script files
 
-| S. No. | Name                            | Description                                                                 | Input Location                                      | Output Location                        |
-| ------ | ------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------- |
-| 1      | `03-clear-old-files.sh`         | Deletes the old files located at `$OUT/site-data/`                          |                                                     | [$OUT](constants.sh)/site-data/        |
-| 2      | `10-extract-layers.sh`          | Extracts the beginning layers for the algorithm                             | [$NETWORK](datasets/sample/config.sh)               | None                                   |
-| 3      | `30-generate-clusters.sh`       | Creates clusters for the completed layout                                   | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered/map.svg |
-| 4      | `40-convert-to-cytoscape.sh`    | Converts to the cytoscape files                                             | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
-| 5      | `40-convert-to-geojson.sh`      | Converts to the geojson files                                               | [$OUT](constants.sh)/impred/layer7.dot              | [$OUT](constants.sh)/clustered         |
-| 6      | `41-tile-data.sh`               | it uses the Tippecanoe tool to generate MBTiles files for all GeoJSON files |                                                     | [$OUT](constants.sh)/clustered         |
-| 7      | `50-build-site.sh`              | None                                                                        | [$OUT](constants.sh)/site-data/visualization        |
-| 8      | `51x-build-all-dataset-maps.sh` | Builds all dataset                                                          | [$OUT](constants.sh)/site-data/visualization        |
-| 9      | `60-measure-quality.sh`         | [$OUT](constants.sh)/impred/layer7.dot                                      | [$OUT](constants.sh)/quality_measurement/result.txt |
-| 10     | `90-generate-site.sh`           |                                                                             |
-| 11     | `90x-serve-site.sh`             |                                                                             |
-| 12     | `99x-run-all-datasets.sh`       |                                                                             |
+| S. No. | Name                            | Description                                                                                                                                                                                        | Input Location                          | Output Location                                     |
+| ------ | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- | --------------------------------------------------- |
+| 1      | `03-clear-old-files.sh`         | Deletes the old files located at `$OUT/site-data/`                                                                                                                                                 |                                         | [$OUT](constants.sh)/site-data/                     |
+| 2      | `10-extract-layers.sh`          | Extracts the beginning layers for the algorithm                                                                                                                                                    | [$NETWORK](datasets/sample/config.sh)   | None                                                |
+| 3      | `30-generate-clusters.sh`       | Creates clusters for the completed layout                                                                                                                                                          | [$OUT](constants.sh)/impred/layer7.dot  | [$OUT](constants.sh)/clustered/map.svg              |
+| 4      | `40-convert-to-cytoscape.sh`    | Converts to the cytoscape files                                                                                                                                                                    | [$OUT](constants.sh)/impred/layer7.dot  | [$OUT](constants.sh)/clustered                      |
+| 5      | `40-convert-to-geojson.sh`      | Converts to the geojson files                                                                                                                                                                      | [$OUT](constants.sh)/impred/layer7.dot  | [$OUT](constants.sh)/clustered                      |
+| 6      | `41-tile-data.sh`               | It uses the Tippecanoe tool to generate MBTiles files for all GeoJSON files                                                                                                                        |                                         | [$OUT](constants.sh)/clustered                      |
+| 7      | `50-build-site.sh`              | Checks if the required dependencies are installed, and builds the website using npm                                                                                                                |                                         |
+| 8      | `51x-build-all-dataset-maps.sh` | Generates the index.json file for all available datasets, and copies the necessary files to the site-data directory for each dataset.                                                              | [$OUT](constants.sh)/site-data/datasets |
+| 9      | `60-measure-quality.sh`         | Script to perform network quality measurement on a given network file.                                                                                                                             | [$OUT](constants.sh)/impred/layer7.dot  | [$OUT](constants.sh)/quality_measurement    |
+| 10     | `90-generate-site.sh`           | Copies the clustered GeoJSON and CX files to the site-data directory, copies the website assets to the site directory, and creates an index.json file for the dataset if it doesn't already exist. | [$OUT](constants.sh)/site-data/         | [$OUT](constants.sh)/site-data/datasets/            |
+| 11     | `90x-serve-site.sh`             | Starts an HTTP server for local development, serving the files in the $SITE_DIR directory.                                                                                                         | [$SITE_DIR] (constants.sh)              |          |
+| 12     | `99x-run-all-datasets.sh`       | Script to loop through all datasets in DATASETS_DIR, run Map4Sci for each dataset if not already completed, then generate site and build all dataset maps.                                         | [$DATASETS_DIR] (constants.sh)          | [$OUT](constants.sh)/raw-data/dataset/version/      |
 
 ## Environment Variables Details
 
-| S. No. | Name          | File                                   | Default Value                 |
-| ------ | ------------- | -------------------------------------- | ----------------------------- |
-| 1      | $OUT          | [constants.sh](constants.sh)           | `raw-data/$DATASET/$VERSION`  |
-| 2      | $LAYERS_DIR   | [constants.sh](constants.sh)           | `$OUT/layers`                 |
-| 3      | $NETWORK      | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot` |
-| 4      | $FORESTS_DIR  | [constants.sh](constants.sh)           | `$OUT/forests`                |
-| 5      | $LAYOUT_DIR   | [constants.sh](constants.sh)           | `$OUT/layout`                 |
-| 6      | SITE_DATA_DIR | [constants.sh](constants.sh)           | `$OUT/site-data`              |
+| S. No. | Name           | File                                   | Default Value                                 |
+| ------ | -------------- | -------------------------------------- | --------------------------------------------- |
+| 1      | $OUT           | [constants.sh](constants.sh)           | `raw-data/$DATASET/$VERSION`                  |
+| 2      | $LAYERS_DIR    | [constants.sh](constants.sh)           | `$OUT/layers`                                 |
+| 3      | $NETWORK       | [config.sh](datasets/sample/config.sh) | `datasets/sample/network.dot`                 |
+| 5      | $LAYOUT_DIR    | [constants.sh](constants.sh)           | `$OUT/layout`                                 |
+| 6      | $SITE_DATA_DIR | [constants.sh](constants.sh)           | `$OUT/site-data`                              |
+| 7      | $RAW_DATA_DIR  | [constants.sh](constants.sh)           | `$raw-data`                                   |
+| 8      | $DATASETS_DIR  | [constants.sh](constants.sh)           | `$datasets`                                   |
+| 9      | $NODE_OPTIONS  | [constants.sh](constants.sh)           | `$NODE_OPTIONS:="--max-old-space-size=24000"` |
 
 ## Credits
 
