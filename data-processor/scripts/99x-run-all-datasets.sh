@@ -10,8 +10,7 @@ do
   then
     mkdir -p $OUTPUT_DIR
     export CURRENT_DATASET=$dataset
-    touch $OUTPUT_DIR/map4sci.log.txt
-    ./run.sh $dataset &> $OUTPUT_DIR/map4sci.log.txt
+    ./run.sh $dataset
     touch $OUTPUT_DIR/map4sci-completed
   fi
 done
