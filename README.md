@@ -120,11 +120,11 @@ To customize the Map4Sci application running in Docker Compose, you can modify t
 
 ### Running using cwltool/cwl-runner
 
-#### Requirements
+- #### Requirements
 
-- Python 3.x (version 3.5 or later)
-- pip (Python package installer)
-- cwltool (Common Workflow Language tool) `python -m pip install cwl-runner cwltool`
+- - Python 3.x (version 3.5 or later)
+- - pip (Python package installer)
+- - cwltool (Common Workflow Language tool) `python -m pip install cwl-runner cwltool`
 
 1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
 2. `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.all-datasets.yml. This workflow processes all the datasets and generates outputs for each of them.
