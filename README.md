@@ -60,7 +60,7 @@ The edges should have the following properties:
 `source`: The numeric ID of the source node for the edge.
 `target`: The numeric ID of the target node for the edge.
 
-Creating and editing the network.dot file is recommended to be done by using NetworkX, a popular Python package for creating, manipulating, and analyzing graphs and networks. NetworkX provides a wide range of functionality for working with graphs, including algorithms for graph traversal, centrality, clustering, and more. Additionally, NetworkX provides a `write_dot` function that can be used to export the graph in the Graphviz DOT format, which can be used by the Algorithm. For Javascript libraries such as graphlib can be used to achieve the same to create or export the graph in the Graphviz DOT format. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
+Creating and editing the network.dot file is recommended to be done by using NetworkX, a popular Python package for creating, manipulating, and analyzing graphs and networks. NetworkX provides a wide range of functionality for working with graphs, including algorithms for graph traversal, centrality, clustering, and more. Additionally, NetworkX provides a [write_dot](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_agraph.write_dot.html) function that can be used to export the graph in the Graphviz DOT format, which can be used by the Algorithm. For Javascript libraries such as graphlib can be used to achieve the same to create or export the graph in the Graphviz DOT format. Its importance to the ZMLT algorithm implementation cannot be overstated, as it serves as the backbone for generating visually appealing and informative graph layouts.
 
 For an example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4sci/src/json2dot.py). This script takes a JSON file as input and generates a DOT file representing the network described in the JSON file. To use the script, simply run `python json2dot.py data.json network.dot` where data.json is the JSON file containing the network data and network.dot is the graph in the DOT format.
 
@@ -68,12 +68,22 @@ For an example refer [json2dot.py](https://github.com/cns-iu/obms/blob/main/map4
 
 ### 3. Running Locally
 
-Run [run.sh](data-processor/run.sh) file to run all the steps in the algorithm. This script runs all the scripts in the [scripts](data-processor/scripts) folder one by one.
+Run [run.sh](data-processor/run.sh) file to run all the steps in the algorithm. To run all the scripts in the scripts folder in numerical order from 00-.sh to 99-.sh (skipping scripts not of the form NN-*.sh), you can execute the run.sh script located in the data-processor directory. The run.sh script can be executed by running the following command in the terminal from the data-processor directory:
 
-    cd data-processor
-    ./run.sh
+    `cd data-processor`
+    `./run.sh`
+
+finds all scripts in the scripts folder that match the pattern NN-*.sh, sorts them numerically, and then executes them in order. This allows you to add custom scripts to modify the behavior of the algorithm and have them executed in the appropriate order.
+
+`Note: Make sure that all custom scripts you add to the scripts folder are named in the form NN-*.sh, where NN is a two-digit number (e.g., 01-myscript.sh) to ensure they are executed in the correct order.`
 
 ### Running using Docker
+
+#### Requirements
+
+- Docker
+- Git
+
 
 1. Install Docker.
 2. Clone the Map4Sci repository: `git clone https://github.com/cns-iu/map4sci`.
@@ -89,6 +99,12 @@ You can include optional environment variables when starting the container to cu
 
 ### Running using Docker Compose
 
+#### Requirements
+
+- Docker
+- Docker Compose
+- Git
+
 1. Install Docker
 2. Clone the Map4Sci repository:`git clone https://github.com/cns-iu/map4sci`
 3. `cd map4sci`
@@ -103,6 +119,12 @@ To customize the Map4Sci application running in Docker Compose, you can modify t
 3. Modify the application code: If you need to make more substantial changes to the application code, you can modify the code files in the scripts directory. Once you have made your changes, you can rebuild the Docker image using the `docker-compose build` command, and then start the containers again using `docker-compose up`.
 
 ### Running using cwltool/cwl-runner
+
+#### Requirements
+
+- Python 3.x (version 3.5 or later)
+- pip (Python package installer)
+- cwltool (Common Workflow Language tool) `python -m pip install cwl-runner cwltool`
 
 1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
 2. `cwl-runner map4sci.cwl map4sci-job.all-datasets.yml`: This command runs the workflow specified in the map4sci.cwl file with input specified in map4sci-job.all-datasets.yml. This workflow processes all the datasets and generates outputs for each of them.
