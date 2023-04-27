@@ -1,47 +1,107 @@
 [
   {
     "id": "google-topics-full",
-    "name": "Google Scholar Topics",
+    "name": "Google Scholar Topics, BatchTree",
     "dir": "assets/datasets/google-topics-full"
   },
   {
+    "id": "google-topics-full-CG",
+    "name": "Google Scholar Topics, CG",
+    "dir": "assets/datasets/google-topics-full-CG"
+  },
+  {
+    "id": "google-topics-full-DELG",
+    "name": "Google Scholar Topics, DELG",
+    "dir": "assets/datasets/google-topics-full-DELG"
+  },
+  {
     "id": "lastfm",
-    "name": "Last.fm",
+    "name": "Last.fm, BatchTree",
     "dir": "assets/datasets/lastfm"
   },
   {
+    "id": "lastfm-CG",
+    "name": "Last.fm, CG",
+    "dir": "assets/datasets/lastfm-CG"
+  },
+  {
+    "id": "lastfm-DELG",
+    "name": "Last.fm, DELG",
+    "dir": "assets/datasets/lastfm-DELG"
+  },
+  {
     "id": "sample",
-    "name": "Sample Dataset",
+    "name": "Sample Dataset, BatchTree",
     "dir": "assets/datasets/sample"
   },
   {
+    "id": "sample-CG",
+    "name": "Sample Dataset, CG",
+    "dir": "assets/datasets/sample-CG"
+  },
+  {
+    "id": "sample-DELG",
+    "name": "Sample Dataset, DELG",
+    "dir": "assets/datasets/sample-DELG"
+  },
+  {
     "id": "net_efwebsite_forums_20210321-is_original",
-    "name": "MyAURA: EF Forums (Original Network)",
+    "name": "MyAURA: EF Forums (Original Network), BatchTree",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_original"
   },
   {
+    "id": "net_efwebsite_forums_20210321-is_original-DELG",
+    "name": "MyAURA: EF Forums (Original Network), DELG",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_original-DELG"
+  },
+  {
     "id": "net_efwebsite_forums_20210321-is_metric",
-    "name": "MyAURA: EF Forums (Metric Backbone)",
+    "name": "MyAURA: EF Forums (Metric Backbone), BatchTree",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_metric"
   },
   {
+    "id": "net_efwebsite_forums_20210321-is_metric-DELG",
+    "name": "MyAURA: EF Forums (Metric Backbone), DELG",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_metric-DELG"
+  },
+  {
     "id": "net_efwebsite_forums_20210321-is_ultrametric",
-    "name": "MyAURA: EF Forums (Ultrametric Backbone)",
+    "name": "MyAURA: EF Forums (Ultrametric Backbone), BatchTree",
     "dir": "assets/datasets/net_efwebsite_forums_20210321-is_ultrametric"
   },
   {
+    "id": "net_efwebsite_forums_20210321-is_ultrametric-DELG",
+    "name": "MyAURA: EF Forums (Ultrametric Backbone), DELG",
+    "dir": "assets/datasets/net_efwebsite_forums_20210321-is_ultrametric-DELG"
+  },
+  {
     "id": "net_mega_20210321-is_original",
-    "name": "MyAURA: 'Mega' Net (Original Network)",
+    "name": "MyAURA: 'Mega' Net (Original Network), BatchTree",
     "dir": "assets/datasets/net_mega_20210321-is_original"
   },
   {
+    "id": "net_mega_20210321-is_original-DELG",
+    "name": "MyAURA: 'Mega' Net (Original Network), DELG",
+    "dir": "assets/datasets/net_mega_20210321-is_original-DELG"
+  },
+  {
     "id": "net_mega_20210321-is_metric",
-    "name": "MyAURA: 'Mega' Net (Metric Backbone)",
+    "name": "MyAURA: 'Mega' Net (Metric Backbone), BatchTree",
     "dir": "assets/datasets/net_mega_20210321-is_metric"
   },
   {
+    "id": "net_mega_20210321-is_metric-DELG",
+    "name": "MyAURA: 'Mega' Net (Metric Backbone), DELG",
+    "dir": "assets/datasets/net_mega_20210321-is_metric-DELG"
+  },
+  {
     "id": "net_mega_20210321-is_ultrametric",
-    "name": "MyAURA: 'Mega' Net (Ultrametric Backbone)",
+    "name": "MyAURA: 'Mega' Net (Ultrametric Backbone), BatchTree",
     "dir": "assets/datasets/net_mega_20210321-is_ultrametric"
+  },
+  {
+    "id": "net_mega_20210321-is_ultrametric-DELG",
+    "name": "MyAURA: 'Mega' Net (Ultrametric Backbone), DELG",
+    "dir": "assets/datasets/net_mega_20210321-is_ultrametric-DELG"
   }
 ]
