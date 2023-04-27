@@ -79,10 +79,10 @@ finds all scripts in the scripts folder that match the pattern NN-*.sh, sorts th
 
 ### Running using Docker
 
-#### Requirements
+- #### Requirements
 
-- Docker
-- Git
+  - [Docker](https://docs.docker.com/engine/install/)
+  - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 
 1. Install Docker.
@@ -99,11 +99,11 @@ You can include optional environment variables when starting the container to cu
 
 ### Running using Docker Compose
 
-#### Requirements
+- #### Requirements
 
-- Docker
-- Docker Compose
-- Git
+  - [Docker](https://docs.docker.com/engine/install/)
+  - [Docker Compose](https://docs.docker.com/compose/install/)
+  - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 1. Install Docker
 2. Clone the Map4Sci repository:`git clone https://github.com/cns-iu/map4sci`
@@ -122,8 +122,8 @@ To customize the Map4Sci application running in Docker Compose, you can modify t
 
 - #### Requirements
 
-  - Python 3.x (version 3.5 or later)
-  - pip (Python package installer)
+  - [Python 3.x (version 3.5 or later)](https://www.python.org/downloads/)
+  - [pip (Python package installer)](https://pip.pypa.io/en/stable/installation/)
   - cwltool (Common Workflow Language tool) `python -m pip install cwl-runner cwltool`
 
 1. `pip install cwltool`: This command installs the CWL (Common Workflow Language) tool on your system. CWL is a standard for describing scientific workflows and provides a common language for specifying these workflows.
