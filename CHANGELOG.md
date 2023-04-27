@@ -2,6 +2,21 @@
 
 Changelog for map4sci.
 
+# 1.0.0 - 2023-05-26
+
+### New Features
+
+- Integrated two new layout algorithms, CG and DELG, in addition to the existing ZMLT algorithm
+- Added support for running the application using three different methods: locally, Docker, and CWL
+- Added support for the Singularity container runtime
+- Improved documentation with updated instructions for each method of running the application
+
+### Other Changes
+
+- Restructured the repository for improved organization and clarity(using map4sci-project-template)
+- Updated dependencies and fixed various bugs and issues
+- Improved overall performance and stability of the application
+
 ## 0.5.0 - 2021-10-08
 
 - A new Angular-based configurable front-end for map4sci generated datasets
