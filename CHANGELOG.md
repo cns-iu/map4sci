@@ -10,6 +10,7 @@ Changelog for map4sci.
 - Added support for running the application using three different methods: locally, Docker, and CWL
 - Added support for the Singularity container runtime
 - Improved documentation with updated instructions for each method of running the application
+- Added a [GitHub Template repo](https://github.com/cns-iu/map4sci-project-template) for map4sci users to get started quickly on using map4sci on their data
 
 ### Other Changes
 
